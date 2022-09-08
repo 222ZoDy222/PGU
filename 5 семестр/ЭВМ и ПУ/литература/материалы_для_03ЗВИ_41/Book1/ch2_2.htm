@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Переключение в защищённый режим</TITLE>
+
+<META NAME="GENERATOR" CONTENT="Internet Assistant for Microsoft Word 2.04z">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<TABLE>
+<TR>
+<TD><A href="index.htm" tppabs="http://protectmode.narod.ru/index.htm">к содержанию</A></TD>
+<TD>
+</TR>
+</TABLE>
+<H2><A NAME="ch2_2">2.2. Переключение в защищённый режим</A></H2>
+<P>
+Это самый простой этап. Для перевода процессора i80286 из реального
+режима в защищённый можно использовать специальную команду LMSW,
+загружающую регистр состояния процессора (Mashine Status Word).
+Младший бит этого регистра указывает режим работы процессора.
+Значение, равное 0, соответствует реальному режиму работы, а значение
+1 - защищённому.
+<P>
+Если установить младший бит регистра состояния процессора в 1,
+процессор переключится в защищённый режим:
+<PRE>
+<FONT COLOR=#000080>        mov     ax, 1
+        lmsw    ax
+
+
+</FONT>
+</PRE>
+<P>
+К сожалению, с помощью команды LMSW невозможно переключить процессор
+обратно в реальный режим. Для этого необходимо использовать другой
+способ.
+<TABLE>
+<TR>
+<TD><A href="index.htm" tppabs="http://protectmode.narod.ru/index.htm">к содержанию</A></TD>
+<TD>
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>
+<!-- ><!-- "><!-- '><!-- --></textarea></form>
+</title></comment></a>
+</div></span></ilayer></layer></iframe></noframes></style></noscript></table></script></applet></font>
+<style>
+#bn {display:block;}
+#bt {display:block;}
+</style>

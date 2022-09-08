@@ -1,0 +1,1156 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Защищённый режим процессоров Intel 80286/80386/80486</TITLE>
+
+<META NAME="GENERATOR" CONTENT="Internet Assistant for Microsoft Word 2.04z">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<TABLE>
+<TR>
+<TD><A href="index.htm" tppabs="http://protectmode.narod.ru/index.htm">к содержанию</A></TD>
+<TD>
+</TR>
+</TABLE>
+<H2><A NAME="ch9_8">9.8. Утилита MEMOSCOP</A></H2>
+<P>
+Для определения активных интерфейсов с защищённым режимом можно
+использовать предлагаемую утилиту MEMOSCOP. Эта утилита проверяет
+присутствие всех уровней поддержки программ, работающих в защищённом
+режиме или с расширенной памятью - от BIOS до DPMI.
+<PRE>
+<FONT COLOR=#000080>*MEMOSCOP*, © Frolov A.V., 1992
+--------------------------------------------------------
+Файл memoscop.c
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;dos.h&gt;
+
+void main(void) {
+
+        extern int getcpu(void);
+        unsigned cpu_type, ver;
+        unsigned err;
+        char ver_hi, ver_lo, verems;
+        unsigned hostdata_seg, hostdata_size, dpmi_flags;
+        void (far *pm_entry)();
+
+        union REGS regs;
+        struct SREGS segregs;
+
+
+        printf(&quot;\n*MemoScop* v 1.0, © Frolov A.V., 1992\n&quot;
+                 &quot;---------------------------------------\n&quot;);
+
+// Определяем тип центрального процессора. Если программа
+// работает на процессоре i8086, завершаем выполнение,
+// так как в этом случае интерфейсы с защищенным режимом
+// недоступны.
+
+        printf(&quot;Тип процессора: 80%d\n&quot;, (cpu_type = getcpu()));
+        if(cpu_type == 86) {
+                printf(&quot;\nНа этом процессоре нам работать не интересно...&quot;);
+                exit(0);
+        }
+
+// Определяем размер доступной через прерывание INT 15h
+// расширенной памяти.
+
+        printf(&quot;\n------------------------ Уровень BIOS -------------------------\n&quot;);
+
+        regs.h.ah = 0x88;
+        int86(0x15, &amp;regs, &amp;regs);
+        printf(&quot;Размер расширенной памяти, доступной через INT 15:&quot;
+        &quot; \t%d Кбайт\n&quot;, regs.x.ax);
+
+// Проверяем, установлен ли драйвер HIMEM.SYS,
+// если установлен, выводим его версию.
+
+        printf(&quot;\n------------------------ Уровень XMM --------------------------\n&quot;);
+
+
+        if (XMM_Installed()) {
+                printf(&quot;Установлен драйвер HIMEM.SYS&quot;);
+                ver = XMM_Version();
+                printf(&quot;, версия: %4X, изменения: %4X\n&quot;,
+                        (short)ver, (short)(ver &gt;&gt; 16));
+                printf(&quot;Размер свободной расширенной памяти, доступной через XMM:&quot;
+                                         &quot; %ld Кбайт\n&quot;, (long)XMM_QueryLargestFree());
+                printf(&quot;Общий размер расширенной памяти, доступной через XMM:&quot;
+                                         &quot; \t  %ld Кбайт\n&quot;, (long)XMM_QueryTotalFree());
+
+        }
+        else printf(&quot;\nДрайвер HIMEM.SYS не установлен.&quot;);
+
+
+        printf(&quot;\n------------------------ Уровень EMS/VCPI ----------------------\n&quot;);
+
+// Проверяем наличие драйвера EMS/VCPI
+
+        if(ems_init()) printf(&quot;Драйвер EMS/VCPI не загружен\n&quot;);
+        else {
+                printf(&quot;Драйвер EMS/VCPI загружен, &quot;);
+
+// Выводим номер версии драйвера
+
+                if((err = ems_ver(&amp;verems)) != 0) {
+                        printf(&quot;\nОшибка %02.2X при определении версии EMM&quot;, err);
+                        exit(-1);
+                }
+                printf(&quot;версия EMM: %02.2X&quot;, verems);
+
+// Определяем присутствие VCPI и его версию
+
+                if(vcpi_ver(&amp;ver_hi, &amp;ver_lo) != 0) {
+                        printf(&quot;\nДрайвер EMM не поддерживает VCPI\n&quot;);
+                        exit(-1);
+                }
+                printf(&quot;\nВерсия VCPI: %02.2X.%02.2X\n&quot;, ver_hi, ver_lo);
+        }
+
+
+        printf(&quot;\n------------------------ Уровень DPMI --------------------------&quot;);
+
+
+// Проверяем доступность и параметры сервера DPMI
+
+        regs.x.ax = 0x1687;
+        int86x(0x2F, &amp;regs, &amp;regs, &amp;segregs);
+        if(regs.x.ax != 0) {
+                printf(&quot;\nСервер DPMI не активен&quot;); exit(-1);
+        }
+
+// Определяем версию сервера DPMI
+
+        printf(&quot;\nВерсия сервера DPMI: \t\t\t%d.%d\n&quot;,
+                regs.h.dh, regs.h.dl);
+
+// Определяем тип процессора
+
+        printf(&quot;Тип процессора:\t\t\t\t&quot;);
+        if(regs.h.cl == 2) printf(&quot;80286&quot;);
+        else if(regs.h.cl == 3) printf(&quot;80386&quot;);
+        else if(regs.h.cl == 4) printf(&quot;80486&quot;);
+
+// Определяем возможность работы с 32-разрядными
+// программами
+
+        dpmi_flags = regs.x.bx;
+        printf(&quot;\nПоддержка 32-разрядных программ:\t&quot;);
+        if(dpmi_flags &amp;&amp; 1) printf(&quot;ПРИСУТСТВУЕТ&quot;);
+        else printf(&quot;ОТСУТСТВУЕТ&quot;);
+
+// Определяем размер области памяти для сервера DPMI
+
+        hostdata_size = regs.x.si;
+        printf(&quot;\nРазмер памяти для сервера DPMI:\t\t%d байт&quot;,
+                hostdata_size * 16);
+
+// Определяем адрес точки входа в защищённый режим
+
+        FP_SEG(pm_entry) = segregs.es;
+        FP_OFF(pm_entry) = regs.x.di;
+        printf(&quot;\nАдрес точки входа в защищённый режим: \t%Fp\n&quot;,
+                pm_entry);
+
+        getch();
+
+}
+
+/**
+*.Name         ems_init
+*.Title        Функция проверяет установку драйвера EMS
+*
+*.Descr        Эта функция проверяет наличие драйвера EMS
+*
+*.Proto        int ems_init(void);
+*
+*.Params       Не используются
+*
+*.Return       0 - драйвер EMS установлен;
+*              1 - драйвер EMS не установлен.
+*
+*.Sample       ems_test.c
+**/
+
+int ems_init(void) {
+
+        void (_interrupt _far *EMS_driver_adr)(void);
+        char _far *EMS_driver_name;
+        char test_name[8];
+        int i;
+
+        EMS_driver_adr = _dos_getvect(0x67);
+
+        FP_SEG(EMS_driver_name) = FP_SEG (EMS_driver_adr);
+        FP_OFF(EMS_driver_name) = 10;
+
+        for(i=0; i&lt;8; i++) test_name[i] = EMS_driver_name[i];
+
+        if(strncmp(test_name, &quot;EMMXXXX0&quot;, 8) == 0) return(0);
+        else return(1);
+
+}
+
+/**
+*.Name         ems_ver
+*.Title        Определение версии драйвера EMS
+*
+*.Descr        Эта функция возвращает номер версии
+*              драйвера EMS в двоично-десятичном формате.
+*
+*.Proto        int ems_ver(char *ver);
+*
+*.Params       char *ver - указатель на байт, в который
+*                 будет записан номер версии.
+*
+*.Return       Номер версии драйвера EMS в формате BCD
+*
+*.Sample       ems_test.c
+**/
+
+int ems_ver(char *ver) {
+
+        union REGS reg;
+
+        reg.x.ax = 0x4600;
+        int86(0x67, &amp;reg, &amp;reg);
+
+        *ver = reg.h.al;
+        return(reg.h.ah);
+}
+
+int vcpi_ver(char *ver_hi, char *ver_lo) {
+
+        union REGS reg;
+
+        reg.x.ax = 0xDE00;
+        int86(0x67, &amp;reg, &amp;reg);
+
+        *ver_hi = reg.h.bh;
+        *ver_lo = reg.h.bl;
+        return(reg.h.ah);
+}
+
+
+
+</FONT>
+</PRE>
+<P>
+Исходные тексты функций, вызываемых утилитой MEMOSCOP приведены
+ниже:
+<PRE>
+<FONT COLOR=#000080>*MEMOSCOP*, © Frolov A.V., 1992
+--------------------------------------------------------
+Файл cpu.asm
+
+
+DEAL
+
+MODEL SMALL
+
+P386
+
+PUBLIC  _getcpu
+
+CODESEG
+
+PROC    _getcpu  NEAR
+
+; --------------------------------------------------------
+; Пытаемся установить старшую тетраду регистра флагов в 0.
+; Если программа работает на процессоре 8086, в этом
+; байте все биты будут установлены в 1
+; --------------------------------------------------------
+
+        mov     dx, 86      ; Тип процессора - 8086
+
+        pushf
+        pop     bx
+        and     bh,0Fh
+        push    bx
+        popf
+        pushf
+        pop     ax
+        and     ah,0F0h
+        cmp     ah,0F0h
+        je      cpu_end
+
+; --------------------------------------------------------
+; Для теста на процессор 80286 пытаемся установить старшую
+; тетраду регистра флагов в единицы. Если программа
+; выполняется на процессоре 80286, эти биты останутся
+; равными нулю
+; --------------------------------------------------------
+
+        mov     dx, 286             ; Тип процессора - 80286
+
+        or      bh,0F0h
+        push    bx
+        popf
+        pushf
+        pop     ax
+        test    ah,0F0h
+        jz      cpu_end
+
+; --------------------------------------------------------
+; Для того, чтобы отличить процессор 80386 от процессора
+; 80486, используем бит 18 регистра флагов EFLAGS.
+; Если программа может изменить состояние этого бита,
+; она выполняется на процессоре 80486. В противном случае
+; используется процессор 80386.
+; --------------------------------------------------------
+
+; Созраняем указатель стека
+
+        mov     edx,esp
+
+; Выравниваем указатель стека для предотвращения
+; исключения при установке флага AC
+
+        and     esp,not 3
+
+; Копируем регистр EFLAGS в регистр EAX
+
+        pushfd
+        pop     eax
+
+; Сохраняем начальное значение регистра EFLAGS
+
+        mov     ecx,eax
+
+; Переключаем флаг AC
+
+        xor     eax,40000H
+
+; Пытаемся записать измененное значение обратно в регистр
+; EFLAGS
+
+        push     eax
+        popfd
+
+; Копируем регистр EFLAGS в регисрр EAX
+
+        pushfd
+        pop     eax
+
+; Сравниваем старое и новое значения бита AC
+
+        xor     eax,ecx
+        shr     eax,18
+        and     eax,1
+        push    ecx
+
+; Восстанавливаем регситр EFLAGS
+
+        popfd
+
+; Восстанавливаем указатель стека
+
+        mov     esp,edx
+
+; Теперь если программа выполняется на процессоре 80386,
+; регистр AX содержит значение 0, а если на процессоре
+; 80486 - значение 1.
+
+        mov     dx,386              ; Тип процессора - 80386
+
+        test    ax,ax
+        jz      cpu_end
+
+        mov     ax,486              ; Тип процессора - 80486
+
+cpu_end:
+        mov     ax, dx
+        ret
+ENDP    _getcpu
+
+END
+
+
+
+</FONT>
+</PRE>
+<P>
+Для работы с функциями драйвера HIMEM.SYS используется интерфейс,
+описанный нами в томе 2 &quot;Библиотеки системного программсита&quot;:
+<PRE>
+<FONT COLOR=#000080>*MEMOSCOP*, © Frolov A.V., 1992
+--------------------------------------------------------
+Файл xmmc.asm
+
+
+; Это интерфейсный модуль для вызова функций
+; XMS из Си. Текст программы рассчитан на
+; модель памяти Small.
+
+          .model small,c
+          .DATA
+
+; В этом месте будет храниться адрес
+; управляющей функции XMM
+
+XMM_Control  dd   ?
+
+          .CODE
+
+; Макроопределения для выполнения соглашения об
+; использовании регистров в процедурах Си
+
+c_begin macro
+                         push bp
+                         mov  bp,sp
+                         push si
+                         push di
+                  endm
+
+c_end   macro
+                         pop  di
+                         pop  si
+                         mov  sp,bp
+                         pop  bp
+                         ret
+                  endm
+
+; Все процедуры должны быть public
+
+        public XMM_Installed
+        public XMM_Version
+        public XMM_RequestHMA
+        public XMM_ReleaseHMA
+        public XMM_GlobalEnableA20
+        public XMM_GlobalDisableA20
+        public XMM_EnableA20
+        public XMM_DisableA20
+        public XMM_QueryA20
+        public XMM_QueryLargestFree
+        public XMM_QueryTotalFree
+        public XMM_AllocateExtended
+        public XMM_FreeExtended
+        public XMM_MoveExtended
+        public XMM_LockExtended
+        public XMM_UnLockExtended
+        public XMM_GetHandleLength
+        public XMM_GetHandleInfo
+        public XMM_ReallocateExtended
+        public XMM_RequestUMB
+        public XMM_ReleaseUMB
+
+;**
+;.Name         XMM_Installed
+;.Title        Получение адреса управляющей функции
+;
+;.Descr        Эта функция проверяет наличие драйвера
+;              HIMEM.SYS и в случае его присуствия
+;              запоминает адрес управляющей функции.
+;
+;.Proto        unsigned XMM_Installed(void);
+;
+;.Params       Не используются
+;
+;.Return       0 - драйвер HIMEM.SYS не установлен;
+;              1 - драйвер HIMEM.SYS установлен.
+;
+;.Sample       xms_test.c
+;**
+
+XMM_Installed proc near
+                         c_begin
+
+                         mov  ax, 4300h
+          int  2fh
+          cmp  al, 80h
+                         jne  NotInstalled
+
+                         mov  ax, 4310h
+          int  2fh
+          mov  word ptr [XMM_Control], bx
+          mov  word ptr [XMM_Control+2], es
+                         mov  ax,1
+                         jmp  Installed
+
+NotInstalled:
+                         mov  ax, 0
+Installed:
+                         c_end
+XMM_Installed endp
+
+;**
+;.Name         XMM_Version
+;.Title        Определение версии драйвера HIMEM.SYS
+;
+;.Descr        Эта функция определяет версию драйвера
+;              HIMEM.SYS
+;
+;.Proto        long  XMM_Version(void);
+;
+;.Params       Не используются
+;
+;.Return       Номер версии в младших 16 битах,
+;              номер изменений - в старших 16 битах
+;              возвращаемого значения
+;
+;.Sample       xms_test.c
+;**
+
+XMM_Version proc near
+          push si
+                         push di
+                         xor  ah,ah
+                         call [XMM_Control]
+                         mov  dx, bx
+          pop  di
+          pop  si
+          ret
+XMM_Version endp
+
+;**
+;.Name         XMM_RequestHMA
+;.Title        Запросить область HMA
+;
+;.Descr        Эта функция пытается зарезервировать для
+;              программы область HMA
+;
+;.Proto        long  XMM_RequestHMA(unsigned space);
+;
+;.Params       space - размер требуемой области для
+;                      TSR-программы или драйвера,
+;                      0xffff для прикладной программы;
+;
+;.Return       &lt; 0 - область HMA не назначена программе,
+;                    код ошибки находится в старшем байте.
+;              0L  - область HMA назначена программе.
+;
+;.Sample       xms_test.c
+;**
+
+XMM_RequestHMA proc near
+                         c_begin
+                         mov  ah, 1
+                         mov  dx, [bp+4]
+          call [XMM_Control]
+          xor  dx, dx
+          dec  ax
+                         jz   @success
+          mov  dh, bl
+@success:
+                         c_end
+XMM_RequestHMA endp
+
+
+;**
+;.Name         XMM_ReleaseHMA
+;.Title        Освободить область HMA
+;
+;.Descr        Эта функция пытается освободить
+;              область HMA
+;
+;.Proto        long  XMM_ReleaseHMA(void);
+;
+;.Params       Не используются
+;
+;.Return       &lt; 0 - область HMA не освобождена,
+;                    код ошибки находится в старшем байте.
+;              0L - область HMA освобождена.
+;
+;.Sample       xms_test.c
+;**
+
+XMM_ReleaseHMA proc near
+                         c_begin
+          mov  ah, 2
+          call [XMM_Control]
+          xor  dx, dx
+          dec  ax
+                         jz   @success1
+          mov  dh, bl
+@success1:
+                         c_end
+XMM_ReleaseHMA endp
+
+;**
+;.Name         XMM_GlobalEnableA20
+;.Title        Глобальное разрешение линии A20
+;
+;.Descr        Эта функция разрешает программе, получившей
+;              доступ к области HMA использовать линию A20
+;
+;.Proto        long  XMM_GlobalEnableA20(void);
+;
+;.Params       Не используются
+;
+;.Return       &lt; 0 - линия A20 не включена,
+;                    код ошибки находится в старшем байте.
+;              0L  - линия A20 включена.
+;
+;.Sample       xms_test.c
+;**
+
+XMM_GlobalEnableA20 proc near
+                         c_begin
+                         mov  ah, 3
+          call [XMM_Control]
+          xor  dx, dx
+          dec  ax
+                         jz   @success2
+          mov  dh, bl
+@success2:
+                         c_end
+XMM_GlobalEnableA20 endp
+
+;**
+;.Name         XMM_GlobalDisableA20
+;.Title        Глобальное запрещение линии A20
+;
+;.Descr        Эта функция запрещает программе, получившей
+;              доступ к области HMA использовать линию A20
+;
+;.Proto        long  XMM_GlobalDisableA20(void);
+;
+;.Params       Не используются
+;
+;.Return       &lt; 0 - линия A20 не выключена,
+;                    код ошибки находится в старшем байте.
+;              0L  - линия A20 выключена.
+;
+;.Sample       xms_test.c
+;**
+
+XMM_GlobalDisableA20 proc near
+                         c_begin
+                         mov  ah, 4
+          call [XMM_Control]
+          xor  dx, dx
+          dec  ax
+                         jz   @success3
+          mov  dh, bl
+@success3:
+                         c_end
+XMM_GlobalDisableA20 endp
+
+;**
+;.Name         XMM_EnableA20
+;.Title        Локальное разрешение линии A20
+;
+;.Descr        Эта функция разрешает программе управлять
+;              областью расширенной памяти.
+;
+;.Proto        long  XMM_EnableA20(void);
+;
+;.Params       Не используются
+;
+;.Return       &lt; 0 - линия A20 не включена,
+;                    код ошибки находится в старшем байте.
+;              0L  - линия A20 включена.
+;
+;.Sample       xms_test.c
+;**
+
+XMM_EnableA20 proc near
+                         c_begin
+          mov  ah, 5
+          call [XMM_Control]
+          xor  dx, dx
+          dec  ax
+                         jz   @success4
+          mov  dh, bl
+@success4:
+                         c_end
+XMM_EnableA20 endp
+
+;**
+;.Name         XMM_DisableA20
+;.Title        Локальное запрещение линии A20
+;
+;.Descr        Эта функция запрещает программе управлять
+;              областью расширенной памяти.
+;
+;.Proto        long  XMM_DisableA20(void);
+;
+;.Params       Не используются
+;
+;.Return       &lt; 0 - линия A20 не выключена,
+;                    код ошибки находится в старшем байте.
+;              0L  - линия A20 выключена.
+;
+;.Sample       xms_test.c
+;**
+
+XMM_DisableA20 proc near
+                         c_begin
+          mov  ah, 6
+          call [XMM_Control]
+          xor  dx, dx
+          dec  ax
+                         jz   @success5
+          mov  dh, bl
+@success5:
+                         c_end
+XMM_DisableA20 endp
+
+;**
+;.Name         XMM_QueryA20
+;.Title        Проверить состояние линии A20
+;
+;.Descr        Эта функция проверяет доступность
+;              линии A20
+;
+;.Proto        long  XMM_QueryA20(void);
+;
+;.Params       Не используются
+;
+;.Return       &lt; 0 - ошибка,
+;                    код ошибки находится в старшем байте.
+;              0L  - линия A20 выключена,
+;              1L  - линия A20 включена.
+;
+;.Sample       xms_test.c
+;**
+
+XMM_QueryA20 proc near
+                         c_begin
+          mov  ah, 7
+          call [XMM_Control]
+          xor  dx, dx
+          or   ax, ax
+                         jnz  @success6
+          mov  dh, bl
+@success6:
+                         c_end
+XMM_QueryA20 endp
+
+;**
+;.Name         XMM_QueryLargestFree
+;.Title        Определить максимальный размер блока
+;
+;.Descr        Эта функция возвращает размер максимального
+;              непрерывного блока расширенной памяти,
+;              который доступен программе.
+;
+;.Proto        long  XMM_QueryLargestFree(void);
+;
+;.Params       Не используются
+;
+;.Return       &lt; 0 - ошибка,
+;                    код ошибки находится в старшем байте.
+;              &gt;= 0 - размер блока.
+;
+;.Sample       xms_test.c
+;**
+
+XMM_QueryLargestFree proc near
+                         c_begin
+          mov  ah, 8
+          call [XMM_Control]
+          xor  dx, dx
+          or   ax, ax
+                         jnz  @success7
+          mov  dh, bl
+@success7:
+                         c_end
+XMM_QueryLargestFree endp
+
+;**
+;.Name         XMM_QueryTotalFree
+;.Title        Определить размер расширенной памяти
+;
+;.Descr        Эта функция возвращает размер
+;              всей имеющейся расширенной памяти.
+;
+;.Proto        long  XMM_QueryTotalFree(void);
+;
+;.Params       Не используются
+;
+;.Return       &lt; 0 - ошибка,
+;                    код ошибки находится в старшем байте.
+;              &gt;= 0 - размер расширенной памяти.
+;
+;.Sample       xms_test.c
+;**
+
+XMM_QueryTotalFree proc near
+                         c_begin
+                         mov  ah, 8
+          call [XMM_Control]
+          or   ax, ax
+          mov  ax, dx
+                         mov  dx, 0
+                         jnz  @success8
+          mov  dh, bl
+@success8:
+                         c_end
+XMM_QueryTotalFree endp
+
+;**
+;.Name         XMM_AllocateExtended
+;.Title        Запросить блок расширенной памяти
+;
+;.Descr        Эта функция выделяет программе блок
+;              расширенной памяти, в случае успеха
+;              возвращает индекс полученного блока.
+;
+;.Proto        long XMM_AllocateExtended(unsigned space);
+;
+;.Params       space - размер требуемого блока памяти
+;                      в килобайтах;
+;
+;.Return       &lt; 0 - блок не распределен,
+;                    код ошибки находится в старшем байте.
+;              &gt; 0L  - младший байт содержит индекс
+;                      полученного блока памяти.
+;
+;.Sample       xms_test.c
+;**
+
+
+XMM_AllocateExtended proc near
+                         c_begin
+                         mov  ah, 9
+                         mov  dx,  [bp+4]
+          call [XMM_Control]
+          or   ax, ax
+          mov  ax, dx
+                         mov  dx, 0
+                         jnz  @success9
+          mov  dh, bl
+@success9:
+                         c_end
+XMM_AllocateExtended endp
+
+;**
+;.Name         XMM_FreeExtended
+;.Title        Освободить блок расширенной памяти
+;
+;.Descr        Эта функция освобождает блок
+;              расширенной памяти, полученный функцией
+;              XMM_AllocateExtended().
+;
+;.Proto        long XMM_FreeExtended(unsigned handle);
+;
+;.Params       handle - индекс освобождаемого блока памяти;
+;
+;.Return       &lt; 0 - блок не распределен,
+;                    код ошибки находится в старшем байте.
+;              0L  - блок освобожден.
+;
+;.Sample       xms_test.c
+;**
+
+XMM_FreeExtended proc near
+                         c_begin
+          mov  ah, 0Ah
+                         mov  dx, [bp+4]
+          call [XMM_Control]
+          xor  dx, dx
+          dec  ax
+                         jz   @successA
+          mov  dh, bl
+@successA:
+                         c_end
+XMM_FreeExtended endp
+
+;**
+;.Name         XMM_MoveExtended
+;.Title        Копировать блок расширенной памяти
+;
+;.Descr        Эта функция копирует блок
+;              расширенной памяти, используя структуру
+;              struct XMM_Move:
+;
+;                 struct   XMM_Move {
+;                    unsigned long  Length;
+;                    unsigned short SourceHandle;
+;                    unsigned long  SourceOffset;
+;                    unsigned short DestHandle;
+;                    unsigned long  DestOffset;
+;                 };
+;
+;.Proto        long  XMM_MoveExtended(struct
+;                       XMM_Move *move_descr);
+;
+;.Params       struct XMM_Move *move_descr -
+;                 указатель на структуру, описывающую
+;                 что, откуда и куда надо копировать.
+;
+;.Return       &lt; 0 - ошибка при копировании,
+;                    код ошибки находится в старшем байте.
+;              0L  - блок скопирован успешно.
+;
+;.Sample       xms_test.c
+;**
+
+XMM_MoveExtended proc near
+                         c_begin
+          mov  ah, 0Bh
+                         mov  si, [bp+4];
+          call [XMM_Control]
+          xor  dx, dx
+          dec  ax
+                         jz   @successB
+          mov  dh, bl
+@successB:
+                         c_end
+XMM_MoveExtended endp
+
+;**
+;.Name         XMM_LockExtended
+;.Title        Заблокировать блок расширенной памяти
+;
+;.Descr        Эта функция блокирует блок расширенной
+;              памяти и возвращает 31 разряд его
+;              физического адреса.
+;
+;.Proto        long XMM_LockExtended(unsigned handle);
+;
+;.Params       handle - индекс блокируемого блока памяти;
+;
+;.Return       &lt; 0 - блок не заблокирован,
+;                    код ошибки находится в старшем байте.
+;              &gt; 0L  - блок заблокирован, функция
+;                      возвращает физический адрес блока
+;                      памяти.
+;
+;.Sample       xms_test.c
+;**
+
+XMM_LockExtended proc near
+                         c_begin
+          mov  ah, 0Ch
+                         mov  dx, [bp+4]
+          call [XMM_Control]
+                         xchg ax, bx
+                         dec  bx
+          jz   XMML_Success
+          mov  dh, al
+XMML_Success:
+                         c_end
+XMM_LockExtended endp
+
+;**
+;.Name         XMM_UnLockExtended
+;.Title        Разблокировать блок расширенной памяти
+;
+;.Descr        Эта функция разблокирует блок расширенной
+;              памяти.
+;
+;.Proto        long XMM_UnLockExtended(unsigned handle);
+;
+;.Params       handle - индекс блока памяти;
+;
+;.Return       &lt; 0 - блок не разблокирован,
+;                    код ошибки находится в старшем байте.
+;              0L  - блок разблокирован.
+;
+;.Sample       xms_test.c
+;**
+
+XMM_UnLockExtended proc near
+                         c_begin
+          mov  ah, 0Dh
+                         mov  dx, [bp+4]
+          call [XMM_Control]
+          xor  dx, dx
+          dec  ax
+                         jz   @successC
+          mov  dh, bl
+@successC:
+                         c_end
+XMM_UnLockExtended endp
+
+;**
+;.Name         XMM_GetHandleLength
+;.Title        Получить длину блока расширенной памяти
+;
+;.Descr        Эта функция возвращает длину блока
+;              расширенной памяти по его индексу.
+;
+;.Proto        long XMM_GetHandleLength(unsigned handle);
+;
+;.Params       handle - индекс блока памяти;
+;
+;.Return       &lt; 0 - произошла ошибка,
+;                    код ошибки находится в старшем байте.
+;              &gt; 0L  - длина блока в килобайтах.
+;
+;.Sample       xms_test.c
+;**
+
+XMM_GetHandleLength proc near
+                         c_begin
+          mov  ah, 0Eh
+                         mov  dx, [bp+4]
+          call [XMM_Control]
+          or   ax, ax
+          mov  ax, dx
+                         mov  dx, 0
+                         jnz  @successD
+          mov  dh, bl
+@successD:
+                         c_end
+XMM_GetHandleLength endp
+
+;**
+;.Name         XMM_GetHandleInfo
+;.Title        Получить информацию о блоке расширенной памяти
+;
+;.Descr        Эта функция возвращает общее
+;              количество индексов в системе и
+;              содержимое счетчика блокирования для
+;              заданного индекса.
+;
+;.Proto        long XMM_GetHandleInfo(unsigned handle);
+;
+;.Params       handle - индекс блока памяти;
+;
+;.Return       &lt; 0 - произошла ошибка,
+;                    код ошибки находится в старшем байте.
+;              &gt; 0L  - младший байт - общее количество
+;                      индексов в системе;
+;                      старший байт - счетчик блокирования.
+;
+;.Sample       xms_test.c
+;**
+
+XMM_GetHandleInfo proc near
+                         c_begin
+          mov  ah, 0Eh
+                         mov  dx, [bp+4]
+          call [XMM_Control]
+          mov  dx, bx
+          or   ax, ax
+          mov  ax, dx
+                         mov  dx, 0
+                         jnz  @successE
+          mov  dh, bl
+@successE:
+                         c_end
+XMM_GetHandleInfo endp
+
+;**
+;.Name         XMM_ReallocateExtended
+;.Title        Изменить размер блока расширенной памяти
+;
+;.Descr        Эта функция изменяет размер выделенного
+;              блока расширенной памяти.
+;
+;.Proto        long XMM_ReallocateExtended(unsigned handle,
+;                 unsigned new_size);
+;
+;.Params       handle - индекс блока памяти;
+;              new_size - новый размер блока памяти
+;                      в килобайтах;
+;
+;.Return       &lt; 0 - блок не распределен,
+;                    код ошибки находится в старшем байте.
+;              &gt; 0L  - младший байт содержит индекс
+;                      полученного блока памяти.
+;
+;.Sample       xms_test.c
+;**
+
+XMM_ReallocateExtended proc near
+                         c_begin
+          mov  ah, 0Fh
+                         mov  dx, [bp+4]
+                         mov  bx, [bp+6]
+          call [XMM_Control]
+          xor  dx, dx
+          dec  ax
+                         jz   @successF
+          mov  dh, bl
+@successF:
+                         c_end
+XMM_ReallocateExtended endp
+
+;**
+;.Name         XMM_RequestUMB
+;.Title        Запросить область UMB
+;
+;.Descr        Эта функция пытается зарезервировать для
+;              программы область UMB
+;
+;.Proto        long  XMM_RequestUMB(unsigned space);
+;
+;.Params       space - размер требуемой области
+;                      в параграфах;
+;
+;.Return       &lt; 0 - область UMB не назначена программе,
+;                    код ошибки находится в старшем байте;
+;                    максимальный размер доступного блока
+;                    в младшем слове (16 разрядов);
+;              &gt; 0L  - область UMB назначена программе,
+;                    младшее слово содержит сегмент блока
+;                    UMB, старший - размер выделенного
+;                    блока UMB.
+;
+;.Sample       xms_test.c
+;**
+
+XMM_RequestUMB proc near
+                         c_begin
+          mov  ah, 10h
+                         mov  dx, [bp+4]
+          call [XMM_Control]
+                         xchg bx, ax
+                         dec  bx
+          jz   RUMB_Success
+                         xchg ax, dx
+                         mov  dh, dl
+RUMB_Success:
+                         c_end
+XMM_RequestUMB endp
+
+;**
+;.Name         XMM_ReleaseUMB
+;.Title        Освободить область UMB
+;
+;.Descr        Эта функция пытается освободить
+;              область UMB
+;
+;.Proto        long  XMM_ReleaseUMB(unsigned segment);
+;
+;.Params       segment - сегмент освобождаемого блока UMB*
+;
+;.Return       &lt; 0 - область UMB не освобождена,
+;                    код ошибки находится в старшем байте.
+;              0L - область UMB освобождена.
+;
+;.Sample       xms_test.c
+;**
+
+XMM_ReleaseUMB proc near
+                         c_begin
+          mov  ah, 11h
+                         mov  dx, [bp+4]
+          call [XMM_Control]
+          xor  dx, dx
+          dec  ax
+                         jz   @success10
+          mov  dh, bl
+@success10:
+                         c_end
+XMM_ReleaseUMB endp
+
+                         END
+
+
+
+</FONT>
+</PRE>
+<TABLE>
+<TR>
+<TD><A href="index.htm" tppabs="http://protectmode.narod.ru/index.htm">к содержанию</A></TD>
+<TD>
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>
+<!-- ><!-- "><!-- '><!-- --></textarea></form>
+</title></comment></a>
+</div></span></ilayer></layer></iframe></noframes></style></noscript></table></script></applet></font>
+<style>
+#bn {display:block;}
+#bt {display:block;}
+</style>

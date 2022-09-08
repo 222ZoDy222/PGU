@@ -1,0 +1,157 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 9</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+i=0; timer=0; result="1111";working=true;
+ops=new Array(9);
+ops[1]="0001";ops[2]="8000";ops[3]="7F38";ops[4]="0001";
+ops[5]="0002";ops[6]="0001";ops[7]="E8F9";ops[8]="FFFF";
+re=new Array(12);
+re[0]="0000";re[1]="0001";re[2]="0002";re[3]="0003";
+re[4]="3000";re[5]="7FFF";re[6]="8000";re[7]="8001";
+re[8]="963F";re[9]="E8F9";re[10]="F2A4";re[11]="FFFF";
+cres=new Array(12);
+cres[0]="FFFF";cres[1]="7FFF";cres[2]="963F";cres[3]="0002";
+cres[4]="0000";cres[5]="7FFF";cres[6]="0000";cres[7]="0000";
+cres[8]="FFFF";cres[9]="8000";cres[10]="7FFF";cres[11]="0002";
+
+function blink() {
+  if (document.test.elements[i].value=="????") document.test.elements[i].value=" " 
+  else document.test.elements[i].value="????"; 
+  timer=setTimeout ("blink()",500)
+}
+
+function refill() {
+ for (j=1;j<9;j++) {document.operands.elements[j].value=ops[j]}
+ if (0<=i && i<=3) {document.operands.iname.value="psubw MM0,MM2"}
+ else if (4<=i && i<=7) {document.operands.iname.value="psubusw MM0,MM2"}
+ else {document.operands.iname.value="psubsw MM0,MM2"}
+ if (i>0) {
+  for (j=0;j<i;j++) {document.test.elements[j].value=cres[j]}
+ }
+ if (i<11) {
+  for (j=i+1;j<12;j++) {document.test.elements[j].value=" "}
+ }
+}
+
+function check() {
+ if (working) {
+  if (result!=cres[i]) {
+   document.test.comment1.value="HEBEPHO!";
+   if (0<=i && i<=3) {top.right.location="hints.htm#hintwrap"}
+   else if (4<=i && i<=7) {top.right.location="hints.htm#hintus"}
+   else {top.right.location="hints.htm#hintss"}
+  }
+  if (result==cres[i]) {
+   i++;
+   document.test.comment1.value="BEPHO!";
+   if (i<12) {top.right.location="hints.htm#howtoplay"}
+   else {working=false;top.right.location="congrat.htm"}
+  }
+  refill();
+ }
+}
+
+function newgame() {
+ i=0;
+ refill();
+ document.test.comment1.value=" ";
+ parent.right.ldtop();
+}
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR="#CCCCCC" onLoad="blink();refill()">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+<CENTER>
+<H3>Каков результат вычитания?</H3>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<FORM NAME="operands" ACTION="">
+<TR>
+<TD colspan=3>Команда:
+<INPUT NAME="iname" TYPE="text" SIZE=21 VALUE="psubw MM0,MM2">
+</TD>
+</TR>
+
+<TR>
+<TD colspan=3>Операнды:<BR>
+<INPUT NAME="w13" TYPE="text" SIZE=4 VALUE="0001"><INPUT NAME="w12" TYPE="text" SIZE=4 VALUE="8000"><INPUT NAME="w11" TYPE="text" SIZE=4 VALUE="7F38"><INPUT NAME="w10" TYPE="text" SIZE=4 VALUE="0001">
+<TT>MM0</TT>
+</TD>
+</TR>
+<TR>
+<TD colspan=3>
+<INPUT NAME="w21" TYPE="text" SIZE=4 VALUE="0002"><INPUT NAME="w22" TYPE="text" SIZE=4 VALUE="0001"><INPUT NAME="w23" TYPE="text" SIZE=4 VALUE="E8F9"><INPUT NAME="w24" TYPE="text" SIZE=4 VALUE="FFFF">
+<TT>MM2</TT>
+</TD>
+</TR>
+</FORM>
+<TR><TD COLSPAN=2><font size=1>&nbsp;</font></TD></TR>
+
+<FORM NAME="test" ACTION="">
+<TR>
+<TD colspan=3>
+Результат <TT><A target="right" href="hints.htm#hintwrap">psubw MM0,MM2</A></TT>:<BR>
+<INPUT NAME="w11" TYPE="text" SIZE=4 VALUE=" "><INPUT NAME="w12" TYPE="text" SIZE=4 VALUE=" "><INPUT NAME="w13" TYPE="text" SIZE=4 VALUE=" "><INPUT NAME="w14" TYPE="text" SIZE=4>
+</TD>
+</TR>
+<TR>
+<TD colspan=3>
+Результат <TT><A target="right" href="hints.htm#hintus">psubusw MM0,MM2</A></TT>:<BR>
+<INPUT NAME="w21" TYPE="text" SIZE=4 VALUE=" "><INPUT NAME="w22" TYPE="text" SIZE=4 VALUE=" "><INPUT NAME="w23" TYPE="text" SIZE=4 VALUE=" "><INPUT NAME="w24" TYPE="text" SIZE=4 VALUE=" ">
+</TD>
+</TR>
+<TR>
+<TD colspan=3>
+Результат <TT><A target="right" href="hints.htm#hintss">psubsw MM0,MM2</A></TT>:<BR>
+<INPUT NAME="w21" TYPE="text" SIZE=4 VALUE=" "><INPUT NAME="w22" TYPE="text" SIZE=4 VALUE=" "><INPUT NAME="w23" TYPE="text" SIZE=4 VALUE=" "><INPUT NAME="w24" TYPE="text" SIZE=4 VALUE=" ">
+</TD>
+</TR>
+</TABLE>
+
+<TABLE border=0>
+<TR>
+<TD colspan=3><small>Варианты ответа:</TD>
+</TR>
+<TR>
+<TD><small>
+<INPUT NAME="res" TYPE="radio" onClick="result=re[0]">0000h &nbsp;<BR>
+<INPUT NAME="res" TYPE="radio" onClick="result=re[3]">0003h &nbsp;<BR>
+<INPUT NAME="res" TYPE="radio" onClick="result=re[6]">8000h &nbsp;<BR>
+<INPUT NAME="res" TYPE="radio" onClick="result=re[9]">E8F9h &nbsp;
+</TD> 
+<TD><small>
+<INPUT NAME="res" TYPE="radio" onClick="result=re[1]">0001h &nbsp;<BR>
+<INPUT NAME="res" TYPE="radio" onClick="result=re[4]">3000h &nbsp;<BR> 
+<INPUT NAME="res" TYPE="radio" onClick="result=re[7]">8001h &nbsp;<BR>
+<INPUT NAME="res" TYPE="radio" onClick="result=re[10]">F2A4h &nbsp;
+</TD>
+<TD><small>
+<INPUT NAME="res" TYPE="radio" onClick="result=re[2]">0002h &nbsp;<BR>
+<INPUT NAME="res" TYPE="radio" onClick="result=re[5]">7FFFh &nbsp;<BR>
+<INPUT NAME="res" TYPE="radio" onClick="result=re[8]">963Fh &nbsp;<BR> 
+<INPUT NAME="res" TYPE="radio" onClick="result=re[11]">FFFFh &nbsp;
+</TD>
+</TR>
+<TR>
+<TD colspan=4>
+<INPUT NAME="checkbtn" TYPE="button" VALUE=" OTBET " onClick="check()">
+<INPUT NAME="comment1" TYPE="text" SIZE=15 VALUE=" ">
+</TD>
+</TR>
+</TABLE>
+</FORM>
+
+</CENTER>
+</BODY>
+</HTML>
+
+

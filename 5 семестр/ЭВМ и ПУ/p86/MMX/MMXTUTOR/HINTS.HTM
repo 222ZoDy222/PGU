@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 9</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+function ldtop() {self.location="hints.htm#howtoplay"}
+function ldwrap() {self.location="hints.htm#hintwrap"}
+function ldus() {self.location="#hintus"}
+function ldss() {self.location="#hintss"}
+function ldcongrat() {self.location="congrat.htm"}
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+<A NAME="howtoplay"></A>
+<H3>Правила игры</H3>
+Вам надо предсказать, какой результат получится при выполнении 
+MMX-команд вычитания: 
+<A HREF="#hintwrap">psubw</A>, 
+<A HREF="#hintus">psubusw</A> и 
+<A HREF="#hintss">psubsw</A>. 
+<p>
+Заполните 16-разрядное слово, в котором вы сейчас видите "????".
+Для этого щелчком мыши выберите один из вариантов ответа,
+приведенных слева внизу, и нажмите кнопку ОТВЕТ. 
+Если Вам требуется помощь, щелкните мышью на имени
+команды <TT>-</TT> на экране появится подсказка.
+<p>
+В любой момент Вы можете 
+<A HREF="#howtoplay" onClick="parent.window.left.newgame()">начать игру с начала</A>.
+
+<p><img src="button/space.gif" height=600 width=1>
+<p>
+<A NAME="hintwrap"></A>
+<H3><font COLOR="#FF0000">Подсказка</font></H3>
+Команда <TT>psubw MM0,MM2</TT> 
+вычитает слова регистра MM2 из слов регистра MM0 
+в <B>циклической</B> арифметике.
+<p>
+Обычное вычитание дает:<BR> 
+<TT>0001h - 0002h = -1</TT><BR>
+<TT>8000h - 0001h = 32767</TT><BR>
+<TT>7F38h - E8F9h = -27073</TT><BR>
+<TT>0001h - FFFFh = -65534 </TT>
+<BR><small>Числа справа записаны в десятичной системе. Вам осталось
+применить к ним правила циклической арифметики. Щелчком мыши 
+выберите один из ответов слева внизу.</small>
+
+<p><A HREF="#howtoplay">Правила игры</A>
+
+<p><img src="button/space.gif" height=600 width=1>
+<p>
+<A NAME="hintus"></A>
+<H3><font COLOR="#FF0000">Подсказка</font></H3>
+Команда <TT>psubusw MM0,MM2</TT>
+вычитает слова <B>без знака</B>, находящиеся в регистре MM2, 
+из слов без знака в регистре MM0. Используется арифметика <B>с насыщением</B>.
+Допустимый диапазон для слов без знака: 0..65535.
+<p>
+Обычное вычитание дает:<BR> 
+<TT>0001h - 0002h &lt; 0</TT><BR>
+<TT>8000h - 0001h = 32767</TT><BR>
+<TT>7F38h - E8F9h &lt; 0</TT><BR>
+<TT>0001h - FFFFh &lt; 0</TT>
+<BR><small>Числа справа записаны в десятичной системе. Вам осталось
+применить к ним правила арифметики с насыщением. Щелчком мыши 
+выберите один из ответов слева внизу.</small>
+
+<p><A HREF="#howtoplay">Правила игры</A>
+
+<p><img src="button/space.gif" height=600 width=1>
+<p>
+<A NAME="hintss"></A>
+<H3><font COLOR="#FF0000">Подсказка</font></H3>
+Команда <TT>psubsw MM0,MM2</TT>
+вычитает слова <B>со знаком</B>, находящиеся в регистре MM2, 
+из слов со знаком, находящихся в регистре MM0. Используется арифметика <B>с насыщением</B>.
+Допустимый диапазон для слов со знаком <TT>-</TT>32768..32767.
+<p>
+Обычное вычитание дает:<BR> 
+<TT>0001h - 0002h = -1</TT><BR>
+<TT>8000h - 0001h &lt -32768</TT><BR>
+<TT>7F38h - E8F9h &gt; 32767</TT><BR>
+<TT>0001h - FFFFh = 2</TT>
+<BR><small>Числа справа записаны в десятичной системе. Вам осталось
+применить к ним правила арифметики с насыщением. Щелчком мыши 
+выберите один из ответов слева внизу.</small>
+
+<p><A HREF="#howtoplay">Правила игры</A>
+
+<p><img src="button/space.gif" height=600 width=1>
+<p>&nbsp;
+</BODY>
+</HTML>

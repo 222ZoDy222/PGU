@@ -1,0 +1,204 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 12</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+function ldpadd() { 
+self.location="#padd"
+}
+function ldpadds() { 
+self.location="#padds"
+}
+function ldpaddus() { 
+self.location="#paddus"
+}
+function ldpsub() { 
+self.location="#psub"
+}
+function ldpsubs() { 
+self.location="#psubs"
+}
+function ldpsubus() { 
+self.location="#psubus"
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#CCCCCC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+<A NAME="s"></A>
+MMX-команды сложения и вычитания работают с упакованными байтами и словами 
+со знаком и без знака, а также с упакованными двойными словами со знаком.
+Они могут использовать как 
+<A target="left" HREF="glossary.htm#wraparound">циклическую</A> арифметику, так и
+арифметику с <A target="left" HREF="glossary.htm#saturation">насыщением</A>.
+<p>
+Для получения информации о конкретной команде щелкните мышкой на 
+названии команды:
+
+<TABLE border=0 cellspacing=6 cellpadding=0>
+<TR>
+<TD>
+<UL>
+<LI><A target="figure" HREF="padd.gif" onClick="ldpadd()"><TT>padd</TT></A>
+<LI><A target="figure" HREF="padds.gif" onClick="ldpadds()"><TT>padds</TT></A>
+<LI><A target="figure" HREF="paddus.gif" onClick="ldpaddus()"><TT>paddus</TT></A>
+</UL>
+</TD>
+<TD>
+<UL>
+<LI><A target="figure" HREF="psub.gif" onClick="ldpsub()"><TT>psub</TT></A>
+<LI><A target="figure" HREF="psubs.gif" onClick="ldpsubs()"><TT>psubs</TT></A>
+<LI><A target="figure" HREF="psubus.gif" onClick="ldpsubus()"><TT>psubus</TT></A>
+</UL>
+</TD>
+</TR>
+</TABLE>
+
+<p><img src="space.gif" height=55 width=1>
+
+<p>
+<A NAME="padd"></A>
+<B>Команды padd (циклическая арифметика)</B><BR>
+Команды <font color="#000099"><TT>padd</TT></font> складывают элементы данных (байты, слова или двойные слова)
+входного и выходного операнда.
+Если сумма выходит за границу
+<A target="left" HREF="glossary.htm#datarange">допустимого диапазона</A>,
+то по правилам циклической арифметики
+избыток отсчитывается от другой границы диапазона.
+"Переноса" единицы из одного элемента данных в другой не происходит.
+<BR><B>Входной операнд</B> может находиться в MMX-регистре или в памяти;
+<BR><B>выходной операнд</B> должен находиться в MMX-регистре.
+<BR>
+<B>Поддерживаются команды:</B><BR> 
+<font color="#000099">
+<TT>paddb</TT>, 
+<TT>paddw</TT>, 
+<TT>paddd</TT>. 
+</font>
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+
+<p><img src="space.gif" height=55 width=1>
+
+<p>
+<A NAME="padds"></A>
+<B>Команды padds (арифметика с насыщением, данные со знаком)</B><BR>
+Команды <font color="#000099"><TT>padds</TT></font> складывают элементы данных (байты или слова) 
+входного и выходного операнда.
+Если сумма выходит за граничное значение
+<A target="left" HREF="glossary.htm#datarange">допустимого диапазона</A>,
+то результатом считается это граничное значение.
+<BR><B>Входной операнд</B> может находиться в MMX-регистре или в памяти;
+<BR><B>выходной операнд</B> должен находиться в MMX-регистре.
+<BR>
+<B>Поддерживаются команды:</B><BR> 
+<font color="#000099">
+<TT>paddsb</TT>, 
+<TT>paddsw</TT>. 
+</font>
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+
+<p><img src="space.gif" height=55 width=1>
+
+<p>
+<A NAME="paddus"></A>
+<B>Команды paddus (арифметика с насыщением, данные без знака)</B><BR>
+Команды <font color="#000099"><TT>paddus</TT></font> складывают элементы данных (байты или слова) 
+входного и выходного операнда.
+Если сумма выходит за граничное значение
+<A target="left" HREF="glossary.htm#datarange">допустимого диапазона</A>,
+то результатом считается это граничное значение.
+<BR><B>Входной операнд</B> может находиться в MMX-регистре или в памяти;
+<BR><B>выходной операнд</B> должен находиться в MMX-регистре.
+<BR>
+<B>Поддерживаются команды:</B><BR> 
+<font color="#000099">
+<TT>paddusb</TT>, 
+<TT>paddusw</TT>. 
+</font>
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+
+<p><img src="space.gif" height=55 width=1>
+
+<p>
+<A NAME="psub"></A>
+<B>Команды psub (циклическая арифметика)</B><BR>
+Команды <font color="#000099"><TT>psub</TT></font> вычитают элементы данных (байты, слова или двойные слова) 
+входного операнда из элементов данных выходного операнда.
+Если результат выходит за границу
+<A target="left" HREF="glossary.htm#datarange">допустимого диапазона</A>,
+то по правилам циклической арифметики
+соответствующее число единиц отсчитывается от другой границы диапазона.
+"Переноса" единицы из одного элемента данных в другой не происходит.
+<BR><B>Входной операнд</B> может находиться в MMX-регистре или в памяти;
+<BR><B>выходной операнд</B> должен находиться в MMX-регистре.
+<BR>
+<B>Поддерживаются команды:</B><BR> 
+<font color="#000099">
+<TT>psubb</TT>, 
+<TT>psubw</TT>, 
+<TT>psubd</TT>. 
+</font>
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+
+<p><img src="space.gif" height=55 width=1>
+
+<p>
+<A NAME="psubs"></A>
+<B>Команды psubs (арифметика с насыщением, данные со знаком)</B><BR>
+Команды <font color="#000099"><TT>psubs</TT></font> вычитают элементы данных (байты или слова) входного операнда из
+элементов данных выходного операнда.
+Если разность выходит за граничное значение
+<A target="left" HREF="glossary.htm#datarange">допустимого диапазона</A>,
+то результатом считается это граничное значение.
+<BR><B>Входной операнд</B> может находиться в MMX-регистре или в памяти;
+<BR><B>выходной операнд</B> должен находиться в MMX-регистре.
+<BR>
+<B>Поддерживаются команды:</B><BR> 
+<font color="#000099">
+<TT>psubsb</TT>, 
+<TT>psubsw</TT>. 
+</font>
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+
+<p><img src="space.gif" height=55 width=1>
+<p>
+
+<A NAME="psubus"></A>
+<B>Команды psubus (арифметика с насыщением, данные без знака)</B><BR>
+Команды <font color="#000099"><TT>psubus</TT></font> вычитают элементы данных входного операнда из
+элементов данных выходного операнда.
+Если разность выходит за граничное значение
+<A target="left" HREF="glossary.htm#datarange">допустимого диапазона</A>,
+то результатом считается это граничное значение.
+<BR><B>Входной операнд</B> может находиться в MMX-регистре или в памяти;
+<BR><B>выходной операнд</B> должен находиться в MMX-регистре.
+<BR>
+<B>Поддерживаются команды:</B><BR> 
+<font color="#000099">
+<TT>psubusb</TT>, 
+<TT>psubusw</TT>. 
+</font>
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+<p><img src="space.gif" height=600 width=1>
+
+</BODY>
+</HTML>
+

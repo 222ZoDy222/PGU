@@ -1,0 +1,688 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>
+</title>
+<meta http-equiv="Content-Type" content="text/html;charset=windows-1251">
+</head>
+<body background="../FON.JPG" BGCOLOR="#E7E3E7" TEXT="#000000" LINK="#004080" VLINK="#004080">
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index6.htm">
+<img SRC="Back.gif" BORDER="0">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index8.htm">
+<img SRC="For.gif" BORDER="0">
+</a>
+</font>
+</td>
+</tr>
+</table>
+<p>
+&nbsp;
+</p>
+<p align="center">
+<font face="Arial, Helvetica, sans-serif" size="3">
+<font size="4">
+Вызовы подпрограмм
+</font>
+</p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+
+<p>Практически в любой программе, независимо
+от ее содержания, встречаются участки,
+которые требуется выполнять (возможно, с
+небольшими изменениями) несколько раз по
+ходу программы. Такие повторяющиеся
+участки целесообразно выделить из общей
+программы, оформить в виде подпрограмм и
+обращаться к ним каждый раз, когда в
+основной программе возникает
+необходимость их выполнения.<br>
+Подпрограмма, в зависимости от выполняемых
+ею функций, может требовать передачи из
+вызывающей программы определенных данных (называемых
+аргументами, или параметрами), возвращать в
+вызывающую программу результаты
+вычислений или обходиться и без того, и без
+другого.<br>
+Подпрограмма может быть оформлена в виде
+процедуры, и тогда имя этой процедуры будет
+служить точкой входа в подпрограмму:</p>
+
+</font>
+</font>
+<blockquote>
+<p>
+<font face="Verdana" size="3">
+
+
+drawline proc ;Подпрограмма-процедура
+
+</font>
+  </p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+. . . ;Тело подпрограммы
+
+</font>
+  </p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+ret ;Команда возврата в вызывающую программу
+
+</font>
+  </p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+drawline endp
+
+</font>
+  </p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>С таким же успехом можно обойтись без
+процедуры, просто пометив первую строку
+программы некоторой меткой:</p>
+</font>
+
+</font>
+<blockquote>
+<p>
+<font face="Verdana" size="3">
+
+
+drawline: ;Подпрограмма, начинающаяся с метки
+
+</font>
+  </p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+. . . ;Тело подпрограммы
+
+</font>
+  </p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+ret ;Команда возврата в вызывающую программу
+
+</font>
+  </p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+. . . ;Продолжение основной программы или<br>
+;другие подпрограммы
+
+</font>
+  </p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>В любом случае вызов подпрограммы
+осуществляется командой call. Подпрограмма
+должна завершаться командой ret, служащей
+для возврата управления в ту точку, откуда
+подпрограмма была вызвана.<br>
+Вопросы использования подпрограмм,
+передачи в них параметров и возвращения
+результата будут рассмотрены в следующей
+главе. Здесь мы остановимся только на таких
+принципиальных архитектурных вопросах, как
+механизм выполнения и возможности команд
+call и ret. При этом надо иметь в виду, что
+синтаксические особенности и
+закономерности использования команд call и jmp
+во многом совпадают, и значительная часть
+пояснений к командам перехода справедлива
+и для команд вызова.<br>
+Команда вызова подпрограммы call может
+использоваться в 4 разновидностях. Вызов
+может быть:<br>
+прямым ближним (в пределах текущего
+сегмента команд);<br>
+прямым дальним (в другой сегмент команд);<br>
+косвенным ближним (в пределах текущего
+сегмента команд через ячейку с адресом
+перехода);<br>
+косвенным дальним (в другой сегмент команд
+через ячейку с адресом<br>
+перехода).<br>
+Рассмотрим последовательно перечисленные
+варианты.<br>
+Прямой ближний вызов. Как и в случае прямого
+ближнего перехода, в команде прямого вызова
+в явной форме указывается адрес (смещение)
+точки входа в подпрограмму; в качестве
+этого адреса можно использовать как имя
+процедуры, так и имя метки, характеризующей
+точку входа в подпрограмму. В код команды,
+кроме кода операции E8h, входит смещение к
+вызываемой подпрограмме. В приведенном
+ниже примере подпрограмма оформлена в виде
+процедуры.</p>
+</font>
+
+</font>
+<blockquote>
+<p>
+<font face="Verdana" size="3">
+
+
+code segment
+
+</font>
+  </p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+main proc ;Основная программа<br>
+…<br>
+call sub ;Код Е8 dddd<br>
+…<br>
+main endp
+
+</font>
+  </p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+sub proc near ;Подпрограмма<br>
+…<br>
+ret ;Код СЗ
+
+</font>
+  </p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+sub endp
+
+</font>
+  </p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+code ends
+
+</font>
+  </p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>Процедура-программа находится в том же
+сегменте команд, что и вызывающая программа.
+В коде команды dddd обозначает смещение в
+сегменте команд к точке входа в
+подпрограмму. При выполнении команды call
+процессор помещает адрес возврата (содержимое
+регистра IP) в стек выполняемой программы (рис.
+2.16), после чего к текущему содержимому IP
+прибавляет dddd. В результате в IP оказывается
+адрес подпрограммы. Команда ret, которой
+заканчивается подпрограмма, выполняет
+обратную процедуру - извлекает из стека
+адрес возврата и заносит его в IP.</p>
+<p align="center"><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" alt="" style='width:261.75pt;
+ height:123pt'>
+ <v:imagedata src="Index723.jpg"
+  o:href="p2.16.jpg"/>
+</v:shape><![endif]-->
+<img src="gl2-16.jpg" ></p>
+<p align="center"><b>Рис. 2.16</b>. Участие стека в механизме вызова
+ближней подпрограммы.</p>
+<p>Участие стека в механизме вызова
+подпрограммы и возврата из нее является
+решающим. Поскольку в стеке хранится адрес
+возврата, подпрограмма, сама используя стек,
+например, для хранения промежуточных
+результатов, обязана к моменту выполнения
+команды ret вернуть стек в исходное
+состояние. Команда ret, естественно, никак не
+анализирует состояние или содержимое стека.
+Она просто снимает со стека верхнее слово,
+считая его адресом возврата, и загружает
+это слово в указатель команд IP. Если к
+моменту выполнения команды ret указатель
+стека окажется смещенным в ту или иную
+сторону, команда ret по-прежнему будет
+рассматривать верхнее слово стека, как
+адрес возврата, и передаст по нему
+управление, что неминуемо приведет к краху
+системы.<br>
+Прямой дальний вызов. Этот вызов позволяет
+обратиться к подпрограмме из другого
+сегмента. В код команды, кроме кода операции
+9Ah, входит полный адрес (сегмент плюс
+смещение) вызываемой подпрограммы. Обычно в
+исходном тексте программы с помощью
+описателя far ptr указывается, что вызов
+является дальним, хотя, если транслятор
+настроен на трансляцию в два прохода, этот
+описатель не обязателен. Структура
+программного комплекса, содержащая дальний
+вызов подпрограммы, может выглядеть
+следующим образом:</p>
+</font>
+
+</font>
+<blockquote>
+<p>
+<font face="Verdana" size="3">
+
+
+codel segment
+
+</font>
+  </p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+assume CS:codel
+
+</font>
+  </p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+main proc ;Основная программа
+
+</font>
+  </p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+call far ptr subr ; Код 9А dddd ssss<br>
+…<br>
+main endp
+
+</font>
+  </p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+codel ends
+
+</font>
+  </p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+code2 segment
+
+</font>
+  </p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+assume CS:code2
+
+</font>
+  </p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+subr proc far ;Объявляем подпрограмму дальней<br>
+…<br>
+ret ;Код СВ - дальний возврат
+
+</font>
+  </p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+subr endp
+
+</font>
+  </p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+code2 ends
+
+</font>
+  </p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>Процедура-подпрограмма находится в
+другом сегменте команд той же программы. В
+коде команды dddd обозначает относительный
+адрес точки входа в подпрограмму в ее
+сегменте команд, a ssss - се сегментный адрес.
+При выполнении команды call процессор
+помещает в стек сначала сегментный адрес
+вызывающей программы, а затем
+относительный адрес возврата (рис. 2.17).
+Далее в сегментный регистр CS заносится 5555 (у
+нас это значение code2), а в IP - dddd (у нас это
+значение subr). Поскольку процедура-подпрограмма
+атрибутом far объявлена дальней, команда ret
+имеет код, отличный от кода аналогичной
+команды ближней процедуры и выполняется по-другому:
+из стека извлекаются два верхних слова и
+переносятся в IP и CS, чем и осуществляется
+возврат в вызывающую программу,
+находящуюся в другом сегменте команд. В
+языке ассемблера существует и явное
+мнемоническое обозначение команды
+дальнего возврата - retf.</p>
+<p align="center"><!--[if gte vml 1]><v:shape id="_x0000_i1026" type="#_x0000_t75" alt=""
+ style='width:279.75pt;height:163.5pt'>
+ <v:imagedata src="Index724.jpg"
+  o:href="p2.17.jpg"/>
+</v:shape><![endif]-->
+<img src="gl2-17.jpg" ></p>
+<p align="center"><b>Рис. 2.17.</b> Участие стека в механизме вызова
+дальней подпрограммы.</p>
+<p>Косвенный ближний вызов. Адрес
+подпрограммы содержится либо в ячейке
+памяти, либо в регистре. Это позволяет, как и
+в случае косвенного ближнего перехода,
+модифицировать адрес вызова, а также
+осуществлять вызов не с помощью метки, а по
+известному абсолютному адресу. Структура
+программы с косвенным вызовом подпрограммы
+может выглядеть следующим образом:</p>
+<blockquote>
+<p><br>
+  </font>
+
+</font>
+<font face="Verdana" size="3">
+
+
+code segment
+
+</font>
+</p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+main proc ;Основная программа<br>
+…<br>
+call DS:subadr ;Код FF 16 dddd
+
+</font>
+</p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+main endp
+
+</font>
+</p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+subr proc near ;Подпрограмма<br>
+…<br>
+ret ;Код СЗ
+
+</font>
+</p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+subr endp
+
+</font>
+</p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+code ends
+
+</font>
+</p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+data segment<br>
+…<br>
+subadr dw subr ;Яейка с адресом подпрограммы
+
+</font>
+</p>
+<p>
+<font face="Verdana" size="3">
+
+
+<br>
+data ends<br>
+
+</font>
+</p>
+</blockquote>
+<p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<br>
+Процедура-программа с атрибутом near
+находится в том же сегменте, что и
+вызывающая программа, а ее относительный
+адрес в ячейке subadr в сегменте данных. В коде
+команды dddd обозначает относительный адрес
+слова subadr в сегменте данных. Второй байт
+кода команды (16h в данном примере) зависит от
+способа адресации. Косвенный вызов
+позволяет использовать разнообразные
+способы адресации подпрограммы:</p>
+</font>
+<blockquote>
+<p>
+<font face="Verdana" size="3">
+call BX ; В ВХ адрес подпрограммы</font></p>
+<p>
+<font face="Verdana" size="3">
+<br>
+call[BX] ; В ВХ адрес ячейки с адресом
+подпрограммы</font></p>
+<p>
+<font face="Verdana" size="3">
+<br>
+call[BX][SI] ;В ВХ адрес таблицы адресов
+подпрограмм,</font></p>
+<p>
+<font face="Verdana" size="3">
+;в SI индекс в этой таблице.</font></p>
+<p>
+<font face="Verdana" size="3">
+<br>
+tbl[SI] ;tbl - адрес таблицы адресов подпрограмм,<br>
+;в SI индекс в этой таблице</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>Косвенный дальний вызов. Отличается от
+косвенного ближнего вызова лишь тем, что
+подпрограмма находится в другом сегменте, а
+в ячейке памяти содержится полный адрес
+подпрограммы, включающий сегмент и
+смещение.</p>
+</font>
+<blockquote>
+<p>
+<font face="Verdana" size="3">
+codel segment</font></p>
+<p>
+<font face="Verdana" size="3">
+<br>
+main proc ;Основная программа</font></p>
+<p>
+<font face="Verdana" size="3">
+<br>
+call dword ptr subadr ;Код FF IE dddd<br>
+…<br>
+main endp</font></p>
+<p>
+<font face="Verdana" size="3">
+<br>
+codel ends</font></p>
+<p>
+<font face="Verdana" size="3">
+<br>
+code2 segment</font></p>
+<p>
+<font face="Verdana" size="3">
+<br>
+subr proc far ;Подпрограмма<br>
+…<br>
+ret ;Код СВ</font></p>
+<p>
+<font face="Verdana" size="3">
+<br>
+subr endp</font></p>
+<p>
+<font face="Verdana" size="3">
+<br>
+code2 ends</font></p>
+<p>
+<font face="Verdana" size="3">
+<br>
+data segment<br>
+…<br>
+subadr dd subr ;Двухсловная ячейка с<br>
+;адресом подпрограммы</font></p>
+<p>
+<font face="Verdana" size="3">
+<br>
+data ends</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>Процедура-подпрограмма с атрибутом far
+находится в другом сегменте команд той же
+программы, а ее полный двухсловный адрес - в
+ячейке subadr в сегменте данных. Второй байт
+кода команды (IE в данном примере) зависит от
+способа адресации. Косвенный дальний вызов,
+как и косвенный ближний, позволяет
+использовать различные способы адресации.</p>
+
+<p>
+&nbsp;
+</p>
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index6.htm">
+<img SRC="Back.gif" BORDER="0">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index8.htm">
+<img SRC="For.gif" BORDER="0">
+</a>
+</font>
+</td>
+</tr>
+</table>
+</font>
+</body>
+</html>

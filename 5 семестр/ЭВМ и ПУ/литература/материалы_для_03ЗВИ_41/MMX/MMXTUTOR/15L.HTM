@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 15</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+function ldpmaddwd() { 
+self.location="#pmaddwd"
+}
+function ldpmulhw() { 
+self.location="#pmulhw"
+}
+function ldpmullw() { 
+self.location="#pmullw"
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#CCCCCC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+<A NAME="s"></A>
+MMX-команды умножения попарно перемножают 16-разрядные слова операндов, 
+что дает четыре 32-разрядных произведения.
+<BR>
+Команда <font color="#000099"><TT>pmaddwd</TT></font>
+складывает первое произведение со вторым, а третье с четвертым.
+Суммы записываются в 32-разрядные слова выходного операнда.
+<BR>
+Команда <font color="#000099"><TT>pmulhw</TT></font> 
+записывает в 16-разрядные слова выходного операнда
+старшие разряды каждого из четырех произведений, 
+а <TT><font color="#000099">pmullw</font> -</TT> младшие разряды произведений.
+<BR>
+Для получения информации о конкретной команде щелкните мышкой на 
+названии команды:
+<UL>
+<LI><A target="figure" HREF="pmaddwd.gif" onClick="ldpmaddwd()"><TT>pmaddwd</TT></A>
+<LI><A target="figure" HREF="pmulhw.gif" onClick="ldpmulhw()"><TT>pmulhw</TT></A>
+<LI><A target="figure" HREF="pmullw.gif" onClick="ldpmullw()"><TT>pmullw</TT></A>
+</UL>
+
+
+<p><img src="button/space.gif" height=55 width=1>
+
+<p>
+<A NAME="pmaddwd"></A>
+<B>Команда pmaddwd (циклическая арифметика)</B><BR>
+Команда <font color="#000099"><TT>pmaddwd</TT></font> попарно перемножает 16-разрядные слова со знаком 
+входного и выходного операндов.
+Это дает четыре 32-разрядных произведения.
+Затем первое произведение складывается со вторым, а третье с четвертым.
+Суммы записываются в 32-разрядные слова выходного операнда.
+Если все слова на входе равны 8000h, результатом
+будет 80000000h 
+(это единственный случай, когда перемножение отрицательных чисел дает 
+<I>отрицательный</I> результат).
+
+<BR><B>Входной операнд</B> может находиться в MMX-регистре или в памяти;
+<BR><B>выходной операнд</B> должен находиться в MMX-регистре.
+<BR>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+<p><img src="button/space.gif" height=55 width=1>
+
+<p>
+<A NAME="pmulhw"></A>
+<B>Команда pmulhw (циклическая арифметика)</B><BR>
+Команда <font color="#000099"><TT>pmulhw</TT></font> попарно перемножает 16-разрядные слова со знаком 
+входного и выходного операндов, что дает четыре 32-разрядных произведения.
+Старшие разряды произведений записываются в 16-разрядные слова
+выходного операнда. Младшие разряды произведений теряются.
+
+<BR><B>Входной операнд</B> может находиться в MMX-регистре или в памяти;
+<BR><B>выходной операнд</B> должен находиться в MMX-регистре.
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+<p><img src="button/space.gif" height=55 width=1>
+
+<p>
+<A NAME="pmullw"></A>
+<B>Команда pmullw (циклическая арифметика)</B><BR>
+Команда <font color="#000099"><TT>pmullw</TT></font> попарно перемножает 16-разрядные слова со знаком 
+входного и выходного операндов, что дает четыре 32-разрядных произведения.
+Младшие разряды произведений записываются в 16-разрядные слова
+выходного операнда. Старшие разряды произведений теряются.
+
+<BR><B>Входной операнд</B> может находиться в MMX-регистре или в памяти;
+<BR><B>выходной операнд</B> должен находиться в MMX-регистре.
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+<p><img src="button/space.gif" height=600 width=1>
+
+</BODY>
+</HTML>
+

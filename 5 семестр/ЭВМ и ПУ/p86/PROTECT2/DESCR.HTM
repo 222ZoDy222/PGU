@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0040)http://avsdov.newmail.ru/modes/descr.htm -->
+<HTML><HEAD><TITLE>Соловьев А. Режимы работы процессоров семейста Intel x86. Приложение 2.</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content="Alexei V. Soloviev" name=Author>
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR>
+<META http-equiv=Keywords 
+content="защищенный режим, реальный режим, виртуальный режим, режим системного управления, SMM, V86, PM, RM, Соловьев"></HEAD>
+<BODY text=#000000 vLink=#004080 aLink=#008000 link=#000080 bgColor=#cccccc 
+background=descr.files/paper.gif>
+<H5 align=center>Режимы работы процессоров семейста Intel x86. Приложение 2.</H5>
+<A 
+href="modes.htm"><IMG alt="К началу реферата" 
+src="images/to_top.gif" align=right border=0 width="34" height="46"></A> 
+<H4>ФОРМАТ И ТИПЫ ДЕСКРИПТОРОВ</H4>
+<CENTER><B>Формат дескриптора сегмента</B><BR>
+  <IMG 
+alt="Формат дескриптора сегмента" 
+src="images/descr.gif" width="471" height="158">
+</CENTER>&nbsp;&nbsp;&nbsp; Для всех дескрипторов 
+одинаковое значение имеют биты с 40 по 47. Шестой байт дескриптора называется 
+<I>байтом прав доступа (Access Rights byte)</I>. Он содержит: 
+<LI><I>Биты 40-43 (Type):</I> поле типа дескриптора. Для дескрипторов сегментов 
+бит 40 имеет особое значение - бит обращения (Accessed). Процессор выставляет 
+его всякий раз, когда обращается к этому сегменту. Операционная система может 
+использовать этот бит при организации свопинга на уровне сегментов. 
+<LI><I>Бит 44 (System):</I> бит системности. Когда S=1, дескриптор описывает 
+сегмент. Когда S=0, дескриптор является системным (описывает специальные 
+объекты). 
+<LI><I>Биты 45,46 (Descriptor Privilege Level):</I> уровень привилегий дескриптора. 
+  Подробнее см. <A 
+href="modes.htm#SegmProt">"Защита на уровне сегментов"</A>. 
+<LI><I>Бит 47 (Present):</I> бит присутствия. Когда P=0, считается, что объект, 
+описываемый дескриптором, не присутствует в физической памяти. В таком случае 
+процессор игнорирует остальные биты дескриптора (системное ПО может использовать 
+их по своему усмотрению). При этом генерируется особый случай неприсутствия 
+сегмента (исключение #11).<BR>&nbsp;&nbsp;&nbsp; В дескрипторах сегментов имеют 
+особое значение биты 52-55: 
+<LI><I>Бит 52 (Available):</I> доступный. Процессор не использует этот бит. 
+Системное ПО может использовать его по своему усмотрению. 
+<LI><I>Бит 53 (Reserved):</I> зарезервированный, должен содержать 0. 
+<LI><I>Бит 54 (Default size):</I> размер по умолчанию. Задает разрядность данных 
+по умолчанию для дескрипторов сегментов данных или разрядность команд по 
+умолчанию для дескрипторов сегментов кода: D=0 - 16 бит, D=1 - 32 бит. 
+<LI><I>Бит 55 (Granularity):</I> бит гранулярности. Когда G=0, поле предела 
+содержит значение в байтах, а когда G=1, поле предела содержит значение в 
+4Кбайтных блоках (условное разбиение, никак не связанное со страничной 
+организацией). Таким образом с помощью 20 бит, отведенных под предел, можно 
+задавать 4Гбайтные значения пределов.<BR>&nbsp;&nbsp;&nbsp; Дескрипторы 
+сегментов, LDT и TSS содержат: 
+<LI>в битах 0-15 и 48-51 20-битное значение предела, 
+<LI>в битах 16-39 и 56-63 32-битный линейный базовый 
+адрес.<BR>&nbsp;&nbsp;&nbsp; Дескрипторы шлюзов содержат: 
+<LI>в битах 16-31 16-битный селектор сегмента кода, содержащего точку входа в 
+процедуру, 
+<LI>в битах 0-15 и 48-63 32-битное смещение в сегменте кода точки входа в 
+процедуру.<BR>
+  &nbsp;&nbsp;&nbsp; Для шлюзов задач имеют смысл только биты 16-31, которые содержат 
+  селектор TSS, а биты 0-15 и 48-63 зарезервированы и должны содержать 0. Для 
+  шлюзов вызова кроме описанных битов имеют смысл биты 32-36, в которых содержится 
+  число передаваемых через стек параметров (в словах для 16-битного стека или 
+  в двойных словах для 32-битного, подробнее см. <A 
+href="modes.htm#SegmProt">"Защита на уровне сегментов"</A>). 
+  <P>
+<TABLE width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD width="50%">
+      <CENTER><B>Типы дескрипторов сегментов</b></CENTER><B>
+      <TABLE align=center border=2>
+        <TBODY>
+        <TR>
+          <TD align=middle><B>Поле типа</B></TD>
+          <TD align=middle><B>Описываемый дескриптором сегмент</B></TD></TR>
+        <TR>
+          <TD><FONT face="Courier New"><B>0 E W</B></FONT></TD>
+          <TD>
+            <CENTER><U>Сегменты данных</U></CENTER><FONT size=-1><B>E</B> 
+            (expand-down): расширяется вниз (для стека)<BR><B>W</B> (write 
+            enable): разрешение записи</FONT></TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">0 0 0</FONT></TD>
+          <TD>Data, read-only</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">0 0 1</FONT></TD>
+          <TD>Data, read/write</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">0 1 0</FONT></TD>
+          <TD>Stack, read-only</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">0 1 1</FONT></TD>
+          <TD>Stack, read/write</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New"><B>1 C R</B></FONT></TD>
+          <TD>
+            <CENTER><U>Сегменты кода</U></CENTER>
+              <FONT size=-1><B>C</B> (conforming): подчиняемые, подробнее см. 
+              <A 
+            href="modes.htm#SegmProt">"Защита на уровне сегментов"</A><BR>
+              <B>R</B> (read enable): разрешение 
+            чтения</FONT></TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">1 0 0</FONT></TD>
+          <TD>Code, execute-only</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">1 0 1</FONT></TD>
+          <TD>Code, execute/read</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">1 1 0</FONT></TD>
+          <TD>Conforming code, execute-only</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">1 1 1</FONT></TD>
+          <TD>Conforming code, execute/read</TD></TR></TBODY></TABLE></B></TD>
+    <TD width="50%">
+      <CENTER><B>Типы системных дескрипторов</b></CENTER><B>
+      <TABLE align=center border=2>
+        <TBODY>
+        <TR>
+          <TD align=middle><B>Поле типа</B></TD>
+          <TD align=middle><B>Дескриптор</B></TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">0 0 0 0</FONT></TD>
+          <TD>Зарезервированный</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">0 0 0 1</FONT></TD>
+          <TD>Доступный 16-битный TSS</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">0 0 1 0</FONT></TD>
+          <TD>LDT</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">0 0 1 1</FONT></TD>
+          <TD>Занятый 16-битный TSS</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">0 1 0 0</FONT></TD>
+          <TD>16-битный шлюз вызова</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">0 1 0 1</FONT></TD>
+          <TD>Шлюз задачи</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">0 1 1 0</FONT></TD>
+          <TD>16-битный шлюз прерывания</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">0 1 1 1</FONT></TD>
+          <TD>16-битный шлюз ловушки</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">1 0 0 0</FONT></TD>
+          <TD>Зарезервированный</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">1 0 0 1</FONT></TD>
+          <TD>Доступный 32-битный TSS</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">1 0 1 0</FONT></TD>
+          <TD>Зарезервированный</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">1 0 1 1</FONT></TD>
+          <TD>Занятый 32-битный TSS</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">1 1 0 0</FONT></TD>
+          <TD>32-битный шлюз вызова</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">1 1 0 1</FONT></TD>
+          <TD>Зарезервированный</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">1 1 1 0</FONT></TD>
+          <TD>32-битный шлюз прерывания</TD></TR>
+        <TR>
+          <TD><FONT face="Courier New">1 1 1 1</FONT></TD>
+          <TD>32-битный шлюз 
+ловушки</TD></TR></TBODY></TABLE></B></TD></TR></TBODY></TABLE>
+  <A 
+href="modes.htm"><IMG alt="К началу реферата" 
+src="images/to_top.gif" align=right border=0 width="34" height="46"></A> <BR>
+  &nbsp;<BR><FONT 
+size=1><I>Последние изменения 
+21.03.1999.</I><BR></FONT><BR><p></P></LI></BODY></HTML>

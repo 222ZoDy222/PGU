@@ -1,0 +1,395 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>
+</title>
+<meta http-equiv="Content-Type" content="text/html;charset=windows-1251">
+</head>
+<body background="../FON.JPG" BGCOLOR="#E7E3E7" TEXT="#000000" LINK="#004080" VLINK="#004080">
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index3.htm">
+<img SRC="Back.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index5.htm">
+<img SRC="For.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+</tr>
+</table>
+<p>
+&nbsp;
+</p>
+<p align="center">
+<font face="Arial, Helvetica, sans-serif" size="3">
+<font size="4">
+386+ BSF Прямое сканирование битов
+</font>
+<br>
+</font>
+</p>
+<p align="left">
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+  Команда bsf сканирует слово или двойное слово в поисках бита, равного 1. Сканирование 
+  выполняется от младшего бита (0) к старшему. Если в слове не найдено
+  установленных 
+  битов, то устанавливается флаг ZF. Если установленные биты есть, то номер первого 
+  установленного бита заносится в указанный в команде регистр. Номером бита считается 
+  его позиция в слове, отсчитываемая от бита 0. В качестве первого операнда команды 
+  bsf следует указывать регистр, куда будет помещен результат сканирования, в 
+  качестве второго - регистр или ячейку памяти со сканируемым словом. В команде 
+  bsf допустимо использование как 16-битовых, так и 32-битовых операндов (но и 
+  первый, и второй операнды должны быть одного типа).</p>
+<p align="center"><b>Пример 1</b></p>
+<blockquote>
+<p><br>
+  </font><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov BX,70h ;Анализируемое данное</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  bsf АХ,ВХ ;АХ=4, ZF=0</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+<p></p>
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+    </font><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov SI,0 ;Анализируемое данное</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  bsf BX,SI ;ZF=1, в ВХ прежнее значение</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+<p>&nbsp;</p>
+<p align="center"><b>Пример 3</b></p>
+  <blockquote>
+<p><br>
+    </font><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov SI,8 ;Анализируемое данное</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  bsf BX,SI ;BX=3, ZF=1</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+<p>
+  </p>
+<p align="center"><b>Пример 4</b>
+  </p>
+  <blockquote>
+<p><br>
+    </font><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ;В полях данных</font>
+  </p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mem dw 9000h Анализируемое данное</font>
+  </p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ;В программном сегменте:</font>
+  </p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  bsf AX, mem ;AX=000Ch=12, ZF=0</font>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+  <br>
+  </p>
+  </blockquote>
+<p>&nbsp;</p>
+<p align="center"></font><font face="Arial, Helvetica, sans-serif" size="4">386+ 
+  BSR Обратное сканирование битов</font></p>
+<p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+  <br>
+  Команда bsf сканирует слою или двойное слово в поисках бита, равного 1. Сканирование 
+  выполняется от старшего бита (15 или 31) к младшему. Если в слове не найдено 
+  установленных битов, то устанавливается флаг
+ZF. Если установленные биты есть, 
+  то номер первого установленного бита заносится в указанный в команде регистр. 
+  Номером бита считается его позиция в слове, отсчитываемая от бита 0. В качестве 
+  первого операнда команды bsf следует указывать регистр, куда будет помещен результат 
+  сканирования, в качестве второго - регистр или ячейку памяти со сканируемым 
+  словом. В команде bsf допустимо использование как 16-битовых, так и 32-битовых 
+  операндов, но и первый, и второй операнды должны быть одного типа (за исключением 
+  случая, когда второй операнд - константа).</p>
+<p align="center"><b>Пример 1</b></p>
+<blockquote>
+<p><br>
+  </font><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov BX,70h ;Анализируемое данное</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">bsr AX,BX ;AX=6, ZF=0</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+<p></p>
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+    </font><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov SI,0 ;Анализируемое данное</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  bsr BX,SI ;ZF=1, в ВХ прежнее значение</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+<p>&nbsp;</p>
+<p align="center"><b>Пример 3</b></p>
+  <blockquote>
+<p><br>
+    </font><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov SI,8 ;Анализируемое данное</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  bsf BX,SI ;BX=3, ZF=1</font>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+  <br>
+  <br>
+</font></p>
+<p align="center">
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+  <b>Пример 4</b></font></p>
+<p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+  <br>
+</font><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ; В полях данных</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mem dw 9000h ; Анализируемое данное</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ;В программном сегменте:</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  bsr AX, mem ;AX=000Fh=15, ZF=0</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+<p>&nbsp;</p>
+<p align="center"></font><font face="Arial, Helvetica, sans-serif" size="4">486+ 
+  BSWAP Обмен байтов</font></p>
+<p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+  <br>
+  Команда bswap изменяет порядок байтов в своем единственном операнде, в качестве 
+  которого может выступать только 32-разрядный регистр общего назначения. Биты 
+  7...0 обмениваются с битами 31...24, а биты 15... 18 с битами 23...16. Другими 
+  словами, нумерация байтов регистра изменяется на противополжную (вместо 3, 2, 
+  1,0 - 0, 1, 2, 3). Команда не воздействует на флаги процессора.</p>
+<p align="center"><b>Пример</b></p>
+<blockquote>
+<p><br>
+  </font><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov ЕАХ, 01234567h</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  bswapEAX ;EAX=67452301h</font></p>
+<p>&nbsp;</p>
+</blockquote>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">386+ 
+  ВТ Проверка бита</font></p>
+<p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+  <br>
+  Команда bt позволяет определить, установлен ли в заданном слове определенный 
+  бит. Анализируемое слово выступает в качестве первого операнда, номер бита - 
+  в качестве второго. Первым операндом команды bt может служить регистр или ячейка 
+  памяти, вторым - регистр или непосредственное значение. В команде допустимо 
+  использование как 16-битовых, так и 32-битовых операндов, но и первый, и второй 
+  операнды должны быть одного типа (за исключением случая, когда второй операнд 
+  - константа).<br>
+  Значение проверяемого бита копируется в флаг
+CF.</p>
+<p align="center"><b>Пример 1</b></p>
+<blockquote>
+<p><br>
+  </font><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov AX,00FFh ;Анализируемое данное</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  bt AX,5 ; бит 5=1, ZF=1</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+<p></p>
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+    </font><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov AX,00FFh ;Анализируемое данное</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  bt AX,8 ;бит 8=0, ZF=0</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+<p align="center"></p>
+<p align="center"><b>Пример 3</b></p>
+  <blockquote>
+<p><br>
+    </font><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov AX,8001h ;Анализируемое данное</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov BX,15 ;Номер проверяемого бита</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  bt АХ,ВХ ;бит 15 = 1, ZF=1</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+<p>
+  </p>
+<p align="center"><b>Пример 4</b>
+  </p>
+  <blockquote>
+<p><br>
+    </font><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ;В полях данных</font>
+  </p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mem dw IFh ;Анализируемое данное</font>
+  </p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ;В программном сегменте:</font>
+  </p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  bt mem, 4 ;бит 4 = 1, ZF=1<br>
+</font>
+  </p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+<p>&nbsp;</p>
+</font>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">386+ 
+  ВТС Проверка и инверсия бита</font></p>
+<p><font size="3">
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+  <br>
+  Команда btc проверяет определенный бит в слове, заданном первым операндом, копирует 
+  его значение в флаг CF и инвертирует. Номер бита выступает в качестве второго 
+  операнда. Первым операндом команды btc может служить регистр или ячейка памяти, 
+  вторым - регистр или непосредственное значение. В команде допустимо использование 
+  как 16-битовых, так и 32-битовых операндов, но и первый, и второй операнды должны 
+  быть одного типа (за исключением случая, когда второй операнд - константа).</p>
+<p align="center"><b>Пример 1</b></p>
+<blockquote>
+<p><br>
+  </font><font face="Verdana, Arial, Helvetica, sans-serif">
+  mov AX,00FFh ;Анализируемое данное</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif">
+  btc АХ, 5 ;AX=00DFh Бит 5 был = 1</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif">
+  ;Сброс бита 5, ZF=1</font>
+
+</font>
+</p>
+</blockquote>
+<font size="3">
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+<p></p>
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+    </font><font face="Verdana, Arial, Helvetica, sans-serif">
+  mov AX,OOFFh /Анализируемое данное</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif">
+  btc АХ, 8 ;AX=lFFh Бит 8 был = О</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif">
+  ;Установка бита 8, ZF=0</font>
+
+</font>
+</p>
+</blockquote>
+<font size="3">
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+<p></p>
+<p align="center"><b>Пример 3</b></p>
+  <blockquote>
+<p><br>
+    </font><font face="Verdana, Arial, Helvetica, sans-serif">
+  mov AX,8001h ;Анализируемое данное</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif">
+  mov BX,15 ;Номер проверяемого бита</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif">
+  btc AX,BX ;AX=0001h, ZF=1</font>
+
+</font>
+</p>
+</blockquote>
+<font size="3">
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+<p>
+  </p>
+
+<p align="center"><b>Пример 4</b>
+  </p>
+
+  <blockquote>
+<p><br>
+    </font><font face="Verdana, Arial, Helvetica, sans-serif">
+  ; В полях данных</font>
+  </p>
+
+<p><font face="Verdana, Arial, Helvetica, sans-serif">
+  mem dw IFh</font>
+  </p>
+
+<p><font face="Verdana, Arial, Helvetica, sans-serif">
+  ;В программном сегменте: ; Анализируемое данное</font>
+  </p>
+
+<p><font face="Verdana, Arial, Helvetica, sans-serif">
+  btc mem, I /mem=lEh, ZF=1</font></font>
+  </p>
+
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+
+<p>
+&nbsp;
+</p>
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index3.htm">
+<img SRC="Back.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index5.htm">
+<img SRC="For.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+</tr>
+</table>
+</font>
+</body>
+</html>

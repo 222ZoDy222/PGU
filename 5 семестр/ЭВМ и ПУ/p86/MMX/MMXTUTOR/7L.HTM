@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 7</TITLE>
+</HEAD>
+<BODY BGCOLOR="#CCCCCC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+<A NAME="s"></A>
+
+MMX-команды имеют следующий синтаксис:
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<TT><font color="#000099"><I>instruction</I></font> [<font color="#000099"><I>dest,src</I></font>]</TT>
+<BR>Здесь <TT><font color="#000099"><I>instruction</I></font> - </TT>имя команды,  
+<BR><TT><font color="#000099"><I>dest</I></font></TT> обозначает выходной  
+<A target="right" HREF="glossary.htm#operand">операнд</A>,
+<TT><font color="#000099"><I>src</I></font>&nbsp;-</TT> входной операнд.
+<BR>
+Большинство команд имеют суффикс, который определяет тип данных и используемую
+арифметику:
+
+<UL>
+<LI><font color="#000099"><TT>US</TT></font> (unsigned saturation) <TT>-</TT> арифметика с 
+<A target="right" HREF="glossary.htm#saturation">насыщением</A>, 
+данные без знака.
+<LI><font color="#000099"><TT>S</TT></font> или <font color="#000099"><TT>SS</TT></font> (signed saturation) <TT>-</TT> арифметика с насыщением, данные со знаком.
+Если в суффиксе нет ни <TT>S</TT>, ни <TT>SS</TT>, используется
+<A target="right" HREF="glossary.htm#wraparound">циклическая</A> 
+арифметика (wraparound).
+<LI><font color="#000099"><TT>B</TT>, <TT>W</TT>, <TT>D</TT>, <TT>Q</TT></font> указывают 
+<A target="right" HREF="glossary.htm#datatype">тип данных</A>.
+Если в суффиксе есть две из этих букв, первая соответствует входному операнду,
+а вторая <TT>-</TT> выходному.
+</UL>
+
+Например, MMX-команда <font color="#000099"><TT>paddusw&nbsp;MM4,mem1</TT></font> выполняет сложение слов без знака.
+Первые слагаемые находятся в MMX-регистре <font color="#000099"><TT>MM4</TT></font>, 
+вторые <TT>-</TT> в памяти по адресу <font color="#000099"><TT>mem1</TT></font>.
+Суммы записываются в регистр <font color="#000099"><TT>MM4</TT></font>. 
+Игра в правой части экрана поможет Вам проверить, освоили ли Вы
+синтаксис MMX-команд.
+
+
+</BODY>
+</HTML>
+

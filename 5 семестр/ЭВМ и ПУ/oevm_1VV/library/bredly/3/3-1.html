@@ -1,0 +1,86 @@
+<html><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+
+
+
+<body background="../images/bgrwhite.gif">
+<LINK REL="stylesheet" TYPE="text/css" HREF="../default.css">
+<head>
+	<TITLE>Дэвид Дж. Брэдли</TITLE>
+</head>
+
+
+
+<h2>3.1. Модель программирования 8088</h2>
+
+<p>
+Для того, чтобы понять 8088 и научиться программировать для него, мы начнем с его внутреннего устройства. Внутри процессора имеются специальные ячейки памяти, называемые регистрами. В регистрах можно сохранять данные-операнды или адреса памяти.
+<p>
+Набор регистров 8088 состоит из нескольких групп. Все регистры 8088 показаны по группам на Фиг 3.1.
+<p>
+<table border=1 align="center">
+  <tr>
+    <th class="high" colspan=3>Регистры общего назначения</th>
+  </tr>
+  <tr>
+    <th>&nbsp;&nbsp;( 16 бит )&nbsp;&nbsp;</th><th>Старший 8 бит</th><th>Младший 8 бит</th>
+  </tr>
+  <tr>
+    <td align="center">AX</td><td align="center">AH</td><td align="center">AL</td>
+  </tr>
+  <tr>
+    <td align="center">BX</td><td align="center">BH</td><td align="center">BL</td>
+  </tr>
+  <tr>
+    <td align="center">CX</td><td align="center">CH</td><td align="center">CL</td>
+  </tr>
+  <tr>
+    <td align="center">DX</td><td align="center">DH</td><td align="center">DL</td>
+  </tr>
+  <tr>
+    <th class="high" colspan=3>Адресные регистры</th>
+  </tr>
+  <tr>
+    <td align="center" colspan=3>SI</td>
+  </tr>
+  <tr>
+    <td align="center" colspan=3>DI</td>
+  </tr>
+  <tr>
+    <td align="center" colspan=3>BP</td>
+  </tr>
+  <tr>
+    <th class="high" colspan=3>Регистры управления </th>
+  </tr>
+  <tr>
+    <td align="center" colspan=3>SP</td>
+  </tr>
+  <tr>
+    <td align="center" colspan=3>IP</td>
+  </tr>
+  <tr>
+    <td align="center" colspan=3>FLAGS</td>
+  </tr>
+  <tr>
+    <th class="high" colspan=3>Сегментные регистры</th>
+  </tr>
+  <tr>
+    <td align="center" colspan=3>CS</td>
+  </tr>
+  <tr>
+    <td align="center" colspan=3>DS</td>
+  </tr>
+  <tr>
+    <td align="center" colspan=3>ES</td>
+  </tr>
+  <tr>
+    <td align="center" colspan=3>SS</td>
+  </tr>
+</table>
+<P class="center">Фиг. 3.1 Регистры 8088
+<p>
+Поскольку регистры расположены внутри самого процессора, он имеет очень быстрый доступ к находящимся в них данным, намного более быстрый, чем к данным в памяти. Если в программе требуется быстрыый доступк какой-либо переменной, то хранение ее значения в регистре ускоряет выполнение.
+
+<p><div align="center"><a href="../index.html"><img src="../images/index.gif" border=0 alt=""></a></div><p></p>
+
+</body>
+</html>

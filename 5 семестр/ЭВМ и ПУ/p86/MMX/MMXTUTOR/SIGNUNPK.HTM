@@ -1,0 +1,111 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 22</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+ireg0=8;
+ireg1=8;
+ireg2=8;
+ireg3=8;
+ireg4=8;
+
+msg0="HEBEPHO выбpaны комaнды";
+msg1="HEBEPHO выбpaны pегиcтpы";
+msg2="HEBEPHO выбpaн cдвиг";
+
+function check() {
+
+reg0=document.code.dst1.value;
+reg1=document.code.src2.value;
+reg2=document.code.dst3.value;
+reg3=document.code.dst4.value;
+reg4=document.code.src4.value;
+
+inst2str=document.code.inst2.value;
+inst4str=document.code.inst4.value;
+
+ireg0=iregInit(reg0);
+ireg1=iregInit(reg1);
+ireg2=iregInit(reg2);
+ireg3=iregInit(reg3);
+
+if (inst2str!="punpckhwd") {document.code.comment.value=msg0}
+else if (inst4str!="psrad")  {document.code.comment.value=msg0}
+else if (ireg0==2 || ireg0==3 || ireg0==8) {document.code.comment.value=msg1}
+else if (ireg1!=3) {document.code.comment.value=msg1}
+else if (ireg2==8) {document.code.comment.value=msg1}
+else if (ireg3==8) {document.code.comment.value=msg1}
+else if (ireg2==ireg3) {document.code.comment.value=msg1}
+else if (ireg2!=2 && ireg3!=2) {document.code.comment.value=msg1}
+else if (ireg2!=ireg0 && ireg3!=ireg0) {document.code.comment.value=msg1}
+else if (reg4!="16" && reg4!="16 ") {document.code.comment.value=msg2}
+else {document.code.comment.value="   B E P H O !"}
+}
+
+function iregInit (rg) {
+if (rg=="MM0" || rg=="mm0" || rg=="mM0" || rg=="Mm0") return 0;
+else if (rg=="MM1" || rg=="mm1" || rg=="mM1" || rg=="Mm1") return 1;
+else if (rg=="MM2" || rg=="mm2" || rg=="mM2" || rg=="Mm2") return 2;
+else if (rg=="MM3" || rg=="mm3" || rg=="mM3" || rg=="Mm3") return 3;
+else if (rg=="MM4" || rg=="mm4" || rg=="mM4" || rg=="Mm4") return 4;
+else if (rg=="MM5" || rg=="mm5" || rg=="mM5" || rg=="Mm5") return 5;
+else if (rg=="MM6" || rg=="mm6" || rg=="mM6" || rg=="Mm6") return 6;
+else if (rg=="MM7" || rg=="mm7" || rg=="mM7" || rg=="Mm7") return 7;
+else return 8;
+}
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+<CENTER>
+<H4>Составляем программу распаковки с "размножением" знакового бита</H4>
+</CENTER>
+Исходные 16-разрядные слова находятся в регистре MM3.
+Заполните недостающие фрагменты программы и нажмите кнопку 
+<B>Ответ</B>.
+<p>
+<CENTER>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=1>
+<FORM NAME="code" ACTION="">
+<TR>
+<TD align=middle colspan=3><TT>/* unpack words and shift */</TD>
+<TR>
+<TD><TT>punpcklwd</TD>
+<TD><TT><INPUT NAME="dst1" TYPE="text" SIZE=5 VALUE="">,</TD>
+<TD><TT>MM3</TD>
+<TR>
+<TD><TT><INPUT NAME="inst2" TYPE="text" SIZE=11 VALUE=""></TD>
+<TD><TT>MM2,</TD>
+<TD><TT><INPUT NAME="src2" TYPE="text" SIZE=5 VALUE=""></TD>
+<TR>
+<TD><TT>psrad</TD>
+<TD><TT><INPUT NAME="dst3" TYPE="text" SIZE=5 VALUE="">,</TD>
+<TD><TT>16 </TD>
+<TR>
+<TD><TT><INPUT NAME="inst4" TYPE="text" SIZE=11 VALUE=""></TD>
+<TD><TT><INPUT NAME="dst4" TYPE="text" SIZE=5 VALUE="">,</TD>
+<TD><TT><INPUT NAME="src4" TYPE="text" SIZE=5 VALUE=""></TD>
+</TR>
+<TR>
+<TD><font size=1>&nbsp;</font></TD>
+</TR>
+
+<TR>
+<TD colspan=5>
+<INPUT NAME="checkbtn" TYPE="button" VALUE=" OTBET " onClick="check()">
+<INPUT NAME="comment" TYPE="text" SIZE=33 VALUE=" ">
+</TD>
+</TR>
+</FORM>
+</TABLE>
+
+</CENTER>
+</BODY>
+</HTML>

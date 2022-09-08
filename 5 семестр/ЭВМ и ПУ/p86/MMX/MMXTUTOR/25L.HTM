@@ -1,0 +1,34 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 25</TITLE>
+</HEAD>
+<BODY BGCOLOR="#CCCCCC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+
+MMX-команды используют восемь 64-разрядных регистров.
+К регистрам обеспечивается прямой доступ по именам:
+<font color="#000099"><TT>MM0</TT></font>,..., <font color="#000099"><TT>MM7</TT></font>. 
+Никакие другие команды не могут обращаться к этим регистрам.
+"Физически" регистры технологии MMX размещены в 
+мантиссах регистров с плавающей запятой (биты 0-63).
+Таким образом, при записи любого значения в MMX-регистр это
+значение попадает в один из регистров с плавающей запятой.
+<BR>
+При выполнении MMX-команд 
+<UL>
+<LI>все биты порядка и знаковый бит в соответствующем регистре с плавающей запятой
+заполняются единицами (это биты 64-79)
+<LI>все слово состояния регистров с плавающей запятой заполняется нулями.
+</UL>
+
+
+
+
+</BODY>
+</HTML>
+

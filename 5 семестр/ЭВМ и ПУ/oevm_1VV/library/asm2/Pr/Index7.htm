@@ -1,0 +1,378 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>
+</title>
+<meta http-equiv="Content-Type" content="text/html;charset=windows-1251">
+</head>
+<body background="../FON.JPG" BGCOLOR="#E7E3E7" TEXT="#000000" LINK="#004080" VLINK="#004080">
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index6.htm">
+<img SRC="Back.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index8.htm">
+<img SRC="For.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+</tr>
+</table>
+<p>
+&nbsp;
+</p>
+<p align="center">
+<font face="Arial, Helvetica, sans-serif" size="3">
+<font size="4">
+СМР Сравнение 
+</font>
+<br>
+</font>
+</p>
+<p align="left">
+<font face="Arial, Helvetica, sans-serif" size="3">
+  Сами операнды не изменяются. Таким образом, если команду сравнения записать 
+  в общем виде</p>
+
+</font>
+<blockquote>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">стр операнд_1, операнд_2</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p> <br>
+  то ее действие можно условно изобразить следующим образом:</p>
+  <blockquote>
+<p>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">операнд_1 - операнд_2 -&gt; флаги 
+  процессора</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>В качестве первого операнда команды 
+  сmр можно указывать регистр (кроме сегментного) или ячейку памяти, в качестве 
+  второго - регистр (кроме сегментного), ячейку памяти или непосредственное значение, 
+  однако не допускается определять оба операнда одновременно, как ячейки памяти. 
+  Операнды могут быть байтами или словами и представлять числа со знаком или без 
+  знака. Обычно вслед за командой сmр стоит одна из команд условных переходов, 
+  анализирующих состояние флагов процесс<br>
+  сора. При сравнении чисел без знака необходимо использовать команды условных 
+  переходов, предназначенные для анализа чисел без знака
+(ja, jb и проч.). При 
+  сравнении чисел со знаком необходимо использовать команды условных переходов, 
+  предназначенные для анализа чисел со знаком
+(jl, jg и проч.).</p>
+<p align="center"><b>Пример 1</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  cmp АХ,10000 ;АХ-10000</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  je eqlOOOO ;Переход на метку eql0000,</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ;если АХ=10000</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ;В полях данных:<br>
+  base dw 8002h<br>
+  ;В программном сегменте:<br>
+  cmp DX,base DX-base<br>
+  jb below ;Переход на метку below, <br>
+  ;если DX, рассматриваемое <br>
+  ;как число без знака, меньше <br>
+  ;числа без знака 8002h=32770</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 3</b>
+   </p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ;В полях данных:<br>
+  base dw 8002h<br>
+  ;В программном сегменте:<br>
+  cmp DX,base DX-base<br>
+  jl less ;Переход на метку less, если <br>
+;DX, рассматриваемое как <br>
+  ;число со знаком, меньше <br>
+  ;числа со знаком 8002h=-32766</font>
+<font face="Arial, Helvetica, sans-serif" size="3">
+  <br>
+   </p>
+  </blockquote>
+<p><img src="pr.gif" > Допустимо использование 
+  32-битовых операндов и дополнительных режимов адресации 32-разрядных процессоров.</p>
+<p align="center"><b>Пример</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  cmp EAX,8000000 Oh</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ja above ;Переход, если</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+;EAX=80000001h...FFFFFFFFh</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>&nbsp;</p>
+<p align="center"></font><font face="Arial, Helvetica, sans-serif" size="4">CMPS 
+  Сравнение строк</font></p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center">&nbsp;</font><font face="Arial, Helvetica, sans-serif" size="4">CMPSB 
+  Сравнение строк по байтам</font></p>
+
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center">&nbsp;</font><font face="Arial, Helvetica, sans-serif" size="4">CMPSW 
+  Сравнение строк по словам</font></p>
+
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  Команды предназначены для операций над строками (строкой называется последовательность 
+  байтов или слов памяти с любым содержимым). Они сравнивают по одному элементу 
+  каждой строки, фактически осуществляя вычитание второго операнда из первого 
+  и устанавливая в соответствии с результатом вычитания флаги
+CF, PF, AF, ZF, 
+  SF и OF. Команда cmpsb выполняет сравнение по байтам, команда cmpsw - по словам, 
+  а команда cmps может быть использована для сравнения как байтов, так и слов. 
+  В последнем случае размер сравниваемых элементов определяется их описанием (с 
+  помощью директив db или dw). Первый операнд адресуется через
+DS:SI, второй - 
+  через ES:DI. Таким образом, операцию сравнения можно условно изобразить следующим 
+  образом:</p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">(DS:SI) - (ES:DI) -&gt; флаги процессора</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p> <br>
+  После каждой операции сравнения регистры SI и DI получают положительное (если 
+  флаг DF=0) или отрицательное (если флаг DF=1) приращение. Величина приращения 
+  составляет 1 или 2 в зависимости от размера сравниваемых элементов (байт или 
+  слово).<br>
+  Вариант команды cmps имеет формат</p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  cmps строка_1, строка_2</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  (что не избавляет от необходимости инициализировать регистры DS:SI и ES:DI адресами 
+  строк строка_1 и строка_2 соответственно). В этом формате возможна замена сегмента 
+  первой строки:</p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  cmps ES:строка_ 1, строка_2</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  Рассматриваемые команды могут предваряться префиксами повторения
+repe/repz (повторять, 
+  пока элементы равны, т.е. до первого неравенства) и
+repne/repiiz (повторять, 
+  пока элементы не равны, т.е. до первого равенства). В любом случае выполняется 
+  не более СХ операций над последовательными элементами.<br>
+  После выполнения рассматриваемых команд регистры SI и DI указывают на ячейки 
+  памяти, находящиеся за теми (если DF=0) или перед теми (если
+DF=1) элементами 
+  строк, на которых закончились операции сравнения.</p>
+<p align="center"><b>Пример 1</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ;В полях данных сегмента данных, адресуемого через
+DS:<br>
+  strl db 'FILE.001' ;1-я строка<br>
+  ;В полях данных сегмента данных, адресуемого через
+ES:<br>
+  str2 db 'FILE.012' ;2-я строка<br>
+  ;В программном сегменте:<br>
+  eld ;Сравнение вперед<br>
+  mov SI,offset strl ;DS:SI ® strl<br>
+  mov DI, off set str2 ;ES:DI ® str2<br>
+  mov CX,8 ;Длина сравниваемых строк <br>
+  repe cmpsb ;Поиск различия в строках<br>
+  je equal ;Переход, если строки<br>
+  ;совпадают<br>
+notequ: ;Продолжение, если строки<br>
+  ;не совпадают</font></p>
+</blockquote>
+<p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+  <br>
+  В примере 1 строки не совпадают, и команда je выполнена не будет. После завершения 
+  сравнения строк управление будет передано на метку
+notequ. Содержимое регистров 
+  в этой точке: СХ=1 (так как не выполнено сравнение одной последней пары символов), 
+  SI = &lt;смещение strl&gt; + 7, DI = &lt;смещение strl&gt; + 7 (выполнено сравнение 
+  7 пар символов).</p>
+<p align="center"><b>Пример 2</b></p>
+<blockquote>
+<p><br>
+
+</font>
+  <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ;В полях данных сегмента данных, адресуемого через
+DS:<br>
+  strl db '12345678*90' ;1-я строка<br>
+  ;В полях данных сегмента данных, адресуемого через
+ES:<br>
+  str2 db ' abcdefgh*ij' ;2-я строка<br>
+  ; В программном сегменте:<br>
+  cld ;Сравнение вперед <br>
+  mov SI,offset strl;DS:SI ' strl <br>
+  mov DI,offset str2;ES:DI ' str2 <br>
+  mov CX,11 ;Длина сравниваемых строк <br>
+  repne cmpsb ;Поиск первой пары<br>
+  ;одинаковых элементов<br>
+  jne notequ ;Переход, если таковой нет <br>
+found: ;Продолжение, если пара<br>
+  ;одинаковых элементов найдена</font>
+<font face="Arial, Helvetica, sans-serif" size="3">
+  <br>
+
+</font>
+</p>
+</blockquote>
+<p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+  В примере 2 имеется пара одинаковых элементов
+(*) в позиции 8 от начата строк. 
+  Поэтому команда jne выполнена не будет. После завершения сравнения строк управление 
+  будет передано на метку found. Содержимое регистров в этой точке: СХ=2 (так 
+  как не выполнено сравнение двух последних пар символов), SI = &lt;смещение strl&gt; 
+  + 9, DI = &lt;смешенис strl&gt; + 9 (выполнено сравнение 9 пар символов).</p>
+<p align="center"><b>Пример 3</b></p>
+
+<blockquote>
+<p><br>
+
+</font>
+  <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ;В полях данных сегмента, адресуемого через
+ES:<br>
+  strl db '09.12.1998' ;1-я строка<br>
+  str2 db '09.12.1998' ;2-я строка<br>
+  ;В программном сегменте:<br>
+  eld ;Сравнение вперед<br>
+  mov SI, off set strl ;DS:SI -&gt; strl<br>
+  mov DI,offset str2 ;ES:DI -&gt; str2<br>
+  mov CX,10 ;Длина сравниваемых строк<br>
+  repe cmps ES:str1,ES:str2 ;Поиск различия в строках <br>
+  je equal ; Переход, если строки<br>
+  ;одинаковы<br>
+notequal: ;Продолжение, строки<br>
+  ;различаются</font></p>
+
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>
+  <br>
+  В примере 3 строки одинаковы и после завершения сравнения управление будет передано 
+  на метку equal. Поскольку строки описаны с помощью директив
+db, фактически выполняется 
+  команда cmpsb, т.е. побайто вое сравнение.</p>
+
+<p><br>
+  <img src="pr.gif" > Допустимо использование 32-битовых операндов и дополнительных режимов 
+  адресации 32-разрядных процессоров.</p>
+
+<p>&nbsp;</p>
+</font>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">386+ 
+  CMPSD Сравнение строк по двойным словам</font></p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  Команда аналогична командам МП 86 cmpsb и cmpsw, но позволяет сравнивать 32-битовые 
+  участки строк, адресуемых через регистры DS:ESI и ES:EDI (или, в 16-разрядных 
+  приложениях, через DS:SI и ES:DI). Использование мнемоники cinpsd с префиксом 
+  rep не означает, что в качестве счетчика будет автоматически использоваться 
+  расширенный регистр ЕСХ.</font></p>
+<p align="center"><b>Пример</b></p>
+<blockquote>
+<p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<br>
+  </font><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ;В полях данных сегмента, адресуемого через DS<br>
+  areal dd 152345,168666,954333<br>
+  area2 dd 152345,168666,954331<br>
+;B программном сегменте <br>
+  push DS<br>
+  pop ES ;ES=DS <br>
+  mov SI,offset areal ;DS:SI -&gt;areal <br>
+  mov DI,offset area2 ;ES:DI -&gt;area2 <br>
+  mov CX,3 ;Будем сравнивать З числа<br>
+  repe cmpsd<br>
+  je equal</font>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<br>
+  </p>
+</blockquote>
+<p>В приведенном примере в 
+  строках (фактически это целочисленные массивы) различаются последние элементы, 
+  и команды jc выполнена не будет.&nbsp;</p>
+
+<p>
+&nbsp;
+</p>
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index6.htm">
+<img SRC="Back.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index8.htm">
+<img SRC="For.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+</tr>
+</table>
+</body>
+</html>

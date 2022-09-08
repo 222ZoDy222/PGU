@@ -1,0 +1,289 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>
+</title>
+<meta http-equiv="Content-Type" content="text/html;charset=windows-1251">
+</head>
+<body background="../FON.JPG" BGCOLOR="#E7E3E7" TEXT="#000000" LINK="#004080" VLINK="#004080">
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index22.htm">
+<img SRC="Back.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index24.htm">
+<img SRC="For.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+</tr>
+</table>
+<p>
+&nbsp;
+</p>
+<p align="center">
+<font face="Arial, Helvetica, sans-serif" size="3">
+<font size="4">
+PUSH Занесение операнда в стек 
+</font>
+<br>
+</font>
+</p>
+<p align="left">
+<font face="Arial, Helvetica, sans-serif" size="3">
+  Команда push уменьшает на 2 содержимое указателя стека SP и заносит на эту новую 
+  вершину двухбайтовый операнд-источник (проталкивает в стек новое данное). Проталкивать 
+  в стек можно только целые слова (не байты). Программа должна строго следить 
+  за тем, чтобы каждой команде проталкивания в стек push отвечала обратная команда 
+  выталкивания из стека pop. Если стек используется для временного хранения некоторых 
+  данных, то извлекать эти данные из стека следует в порядке, обратном их сохранению.<br>
+  В качестве операнда-источника может использоваться любой 16-разрядный регистр 
+  (включая сегментный) или ячейка памяти. Не допускается занесение в стек непосредственного 
+  значения, хотя некоторые трансляторы преобразуют команду вида</p>
+<blockquote>
+<p>
+
+</font>
+  <font face="Verdana, Arial, Helvetica, sans-serif" size="3">push 1234h</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>в неэффективную последовательность 
+  операций со стеком, результатом которой будет проталкивание указанного операнда 
+  в стек. Команда push не воздействует на флаги процессора.<br>
+  Пара команд push - pop часто используется для пересылки данного из регистра 
+  в регистр (особенно, в сегментный) через стек.</p>
+<p align="center"><b>Пример 1</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  push ES:mem ;Сохранение содержимого <br>
+  push DS ;слова памяти mem из <br>
+  push BP ;дополнительного сегмента <br>
+  ;а также регистров DS и ВР<br>
+  … ;<br>
+  pop PP ;Восстановление из стека<br>
+  pop DS ;трех операндов<br>
+  pop ES: mem ;в обратном порядке</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  push DS ;Пересылка DS через стек <br>
+  pop ES ;Теперь ES=DS</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><b><img src="pr.gif" ></b> Допустима засылка в 
+  стек 32-битовых операндов (регистров и ячеек памяти), а также занесение в стек 
+  8-, 16- и 32-битовых непосредственных значений. Каждое 8-битовое значение занимает 
+  в стеке целое слово. Операнды любого допустимого размера могут заноситься з 
+  стек вперемежку', если это не вступает в противоречие с операциями по извлечению 
+  этих данных из стека.</p>
+<p align="center"><b>Пример 1</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  push AX ; Сохранение в стеке регистра АХ <br>
+  push 32h ;Сохранение в стеке<br>
+  ;константы 32h (она займет в<br>
+  ;стеке 1 слово) <br>
+  push EAX ;Сохранение в стеке регистра<br>
+  ;ЕАХ (два слова стека)</font></p>
+<p>&nbsp;</p>
+</blockquote>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">386+ PUSHA 
+  Сохранение в стеке всех регистров</font></p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  Команда pusha сохраняет в стеке содержимое всех регистров в следующем порядке: 
+  АХ, СХ, DX, ВХ, значение указателя стека SP перед выполнением данной команды, 
+  дачее ВР, SI и DI. Команда не имеет параметров и не воздействует на флаги процессора.</p>
+<p align="center"><b>Пример</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  pusha</font></p>
+<p>&nbsp;</p>
+</blockquote>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">386+ PUSHAD 
+  Сохранение в стеке всех регистров в 32-разрядном режиме</font></p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  Команда pushad сохраняет в стеке содержимое всех регистров в следующем порядке: 
+  EAX, ECX, EDX, ЕВХ, значение указателя стека ESP перед выполнением данной команды, 
+  далее EBP, ESI и EDI. Команда не имеет параметров и не воздействует на флаги 
+  процессора.</p>
+<p align="center"><b>Пример</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  pushad</font></p>
+<p>&nbsp;</p>
+</blockquote>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">386+ PUSHFD 
+  Занесение в стек содержимого расширенного регистра флагов</font></p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  Команда pushfd уменьшает на 4 содержимое указателя стека ESP и заносит на эту 
+  новую вершину содержимое расширенного регистра флагов EFALGS. При этом сохраняются 
+  все флаги процессора. Команда pushfd не имеет параметров и не воздействует на 
+  флаги процессора.</p>
+<p align="center"><b>Пример</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  pushfd ;Содержимое регистра флагов <br>
+  ;сохраняется в стеке</font></p>
+<p>&nbsp;</p>
+</blockquote>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">RCL Циклический 
+  сдвиг влево через бит переноса</font></p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  Команда гсl осуществляет сдвиг влево всех битов операнда. Если команда записана 
+  в формате</p>
+  <blockquote>
+<p>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">rcl операнд,1</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>сдвиг осуществляется на 1 бит. В 
+  младший бит операнда заносится значение флага CF; старший бит операнда загружается 
+  в CF. Если команда записана в формате</p>
+  <blockquote>
+<p>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">rcl операнд,CL</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>сдвиг осуществляется на число бит, 
+  указанное в регистре-счетчике CL, при этом в процессе последовательных сдвигов 
+  старшие биты операнда поступают сначала в CF, а оттуда - в младшие биты операнда 
+  (рис. П4).</p>
+<p align="center"><img src="pr-4.jpg"></p>
+<p align="center"><b>Рис. П4</b>. Действие команды rcl.</p>
+<p>В качестве операнда команды rcl 
+  можно указывать любой регистр (кроме сегментного) или ячейку памяти размером 
+  как в байт, так и в слово. Не допускается использовать в качестве операнда непосредственное 
+  значение. Команда воздействует на флаги OF и CF.</p>
+<p align="center"><b>Пример 1</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  clc ;Сбросим CF<br>
+  mov AX, 7<br>
+  rcl АХ,1 ' ;AX=000Eh=14, CF=0</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  stc ;Установим CF<br>
+  mov DL,7<br>
+  rcl DL,1 ;DL=0Fh=15, CF=0</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 3</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  clc ;Сбросим CF<br>
+  mov BX,0FFFFh<br>
+  rcl BX,1 ' ;BX=FFFEh, CF=1</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 4</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  clc ;Сбросим CF <br>
+  mov DH,3<br>
+  mov CL,4 ;Счетчик сдвигов <br>
+  rcl DH,CL ;DH=30h=48, CF=0</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><b><img src="pr.gif" ></b> Допустим сдвиг 32-битовых 
+  операндов. Допустимо указание числа битов сдвига как с помощью регистра CL, 
+  так и непосредственным значением. Максимальная величина сдвига составляет 31 
+  бит.</p>
+<p align="center"><b>Пример</b></p>
+
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov EAX,0С0000003h<br>
+  clc ;Сбросим CF<br>
+  rcl EAX,2 ;EAX=0000000Dh, CF=1</font></p>
+
+</blockquote>
+<p>
+&nbsp;
+</p>
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index22.htm">
+<img SRC="Back.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index24.htm">
+<img SRC="For.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+</tr>
+</table>
+</body>
+</html>
+

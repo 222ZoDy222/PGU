@@ -1,0 +1,257 @@
+IRP_MJ_CREATE			=	00h
+IRP_MJ_CREATE_NAMED_PIPE	=	01h
+IRP_MJ_CLOSE			=	02h
+IRP_MJ_READ			=	03h
+IRP_MJ_WRITE			=	04h
+IRP_MJ_QUERY_INFORMATION	=	05h
+IRP_MJ_SET_INFORMATION		=	06h
+IRP_MJ_QUERY_EA			=	07h
+IRP_MJ_SET_EA			=	08h
+IRP_MJ_FLUSH_BUFFERS		=	09h
+IRP_MJ_QUERY_VOLUME_INFORMATION	=	0Ah
+IRP_MJ_SET_VOLUME_INFORMATION	=	0Bh
+IRP_MJ_DIRECTORY_CONTROL	=	0Ch
+IRP_MJ_FILE_SYSTEM_CONTROL	=	0Dh
+IRP_MJ_DEVICE_CONTROL		=	0Eh
+IRP_MJ_INTERNAL_DEVICE_CONTROL	=	0Fh
+IRP_MJ_SHUTDOWN			=	10h
+IRP_MJ_LOCK_CONTROL		=	11h
+IRP_MJ_CLEANUP			=	12h
+IRP_MJ_CREATE_MAILSLOT		=	13h
+IRP_MJ_QUERY_SECURITY		=	14h
+IRP_MJ_SET_SECURITY		=	15h
+IRP_MJ_POWER			=	16h
+IRP_MJ_SYSTEM_CONTROL		=	17h
+IRP_MJ_DEVICE_CHANGE		=	18h
+IRP_MJ_QUERY_QUOTA		=	19h
+IRP_MJ_SET_QUOTA		=	1Ah
+IRP_MJ_PNP			=	1Bh
+IRP_MJ_PNP_POWER		=	IRP_MJ_PNP	; Obsolete....
+IRP_MJ_MAXIMUM_FUNCTION		=	1Bh
+
+POINTER_SIZE			=	8		; we are on long mode = 64 bit pointers
+
+IRP_MJ_CREATE_OFFSET		=	POINTER_SIZE * IRP_MJ_CREATE
+IRP_MJ_CREATE_NAMED_PIPE_OFFSET	=	POINTER_SIZE * IRP_MJ_CREATE_NAMED_PIPE
+IRP_MJ_CLOSE_OFFSET		=	POINTER_SIZE * IRP_MJ_CLOSE
+IRP_MJ_READ_OFFSET		=	POINTER_SIZE * IRP_MJ_READ
+IRP_MJ_WRITE_OFFSET		=	POINTER_SIZE * IRP_MJ_WRITE
+IRP_MJ_QUERY_INFORMATION_OFFSET	=	POINTER_SIZE * IRP_MJ_QUERY_INFORMATION
+IRP_MJ_SET_INFORMATION_OFFSET	=	POINTER_SIZE * IRP_MJ_SET_INFORMATION
+IRP_MJ_QUERY_EA_OFFSET		=	POINTER_SIZE * IRP_MJ_QUERY_EA
+IRP_MJ_SET_EA_OFFSET		=	POINTER_SIZE * IRP_MJ_SET_EA
+IRP_MJ_FLUSH_BUFFERS_OFFSET	=	POINTER_SIZE * IRP_MJ_FLUSH_BUFFERS
+IRP_MJ_QUERY_VOLUME_INFORMATION_OFFSET	=	POINTER_SIZE * IRP_MJ_QUERY_VOLUME_INFORMATION
+IRP_MJ_SET_VOLUME_INFORMATION_OFFSET	=	POINTER_SIZE * IRP_MJ_SET_VOLUME_INFORMATION
+IRP_MJ_DIRECTORY_CONTROL_OFFSET		=	POINTER_SIZE * IRP_MJ_DIRECTORY_CONTROL
+IRP_MJ_FILE_SYSTEM_CONTROL_OFFSET	=	POINTER_SIZE * IRP_MJ_FILE_SYSTEM_CONTROL
+IRP_MJ_DEVICE_CONTROL_OFFSET		=	POINTER_SIZE * IRP_MJ_DEVICE_CONTROL
+IRP_MJ_INTERNAL_DEVICE_CONTROL_OFFSET	=	POINTER_SIZE * IRP_MJ_INTERNAL_DEVICE_CONTROL
+IRP_MJ_SHUTDOWN_OFFSET		=	POINTER_SIZE * IRP_MJ_SHUTDOWN
+IRP_MJ_LOCK_CONTROL_OFFSET	=	POINTER_SIZE * IRP_MJ_LOCK_CONTROL
+IRP_MJ_CLEANUP_OFFSET		=	POINTER_SIZE * IRP_MJ_CLEANUP
+IRP_MJ_CREATE_MAILSLOT_OFFSET	=	POINTER_SIZE * IRP_MJ_CREATE_MAILSLOT
+IRP_MJ_QUERY_SECURITY_OFFSET	=	POINTER_SIZE * IRP_MJ_QUERY_SECURITY
+IRP_MJ_SET_SECURITY_OFFSET	=	POINTER_SIZE * IRP_MJ_SET_SECURITY
+IRP_MJ_POWER_OFFSET		=	POINTER_SIZE * IRP_MJ_POWER
+IRP_MJ_SYSTEM_CONTROL_OFFSET	=	POINTER_SIZE * IRP_MJ_SYSTEM_CONTROL
+IRP_MJ_DEVICE_CHANGE_OFFSET	=	POINTER_SIZE * IRP_MJ_DEVICE_CHANGE
+IRP_MJ_QUERY_QUOTA_OFFSET	=	POINTER_SIZE * IRP_MJ_QUERY_QUOTA
+IRP_MJ_SET_QUOTA_OFFSET		=	POINTER_SIZE * IRP_MJ_SET_QUOTA
+IRP_MJ_PNP_OFFSET		=	POINTER_SIZE * IRP_MJ_PNP
+IRP_MJ_PNP_POWER_OFFSET		=	POINTER_SIZE * IRP_MJ_PNP_POWER	; Obsolete....
+
+FILE_DEVICE_UNKNOWN		=	00000022h
+
+STATUS_SUCCESS			=	0
+STATUS_UNSUCCESSFUL		=	0C0000001h
+STATUS_NOT_IMPLEMENTED		=	0C0000002h
+
+IO_NO_INCREMENT			=	0
+
+; Define I/O Request Packet (IRP) flags
+IRP_NOCACHE			=	00000001h
+IRP_PAGING_IO			=	00000002h
+IRP_MOUNT_COMPLETION		=	00000002h
+IRP_SYNCHRONOUS_API		=	00000004h
+IRP_ASSOCIATED_IRP		=	00000008h
+IRP_BUFFERED_IO			=	00000010h
+IRP_DEALLOCATE_BUFFER		=	00000020h
+IRP_INPUT_OPERATION		=	00000040h
+IRP_SYNCHRONOUS_PAGING_IO	=	00000040h
+IRP_CREATE_OPERATION		=	00000080h
+IRP_READ_OPERATION		=	00000100h
+IRP_WRITE_OPERATION		=	00000200h
+IRP_CLOSE_OPERATION		=	00000400h
+IRP_DEFER_IO_COMPLETION		=	00000800h
+IRP_OB_QUERY_NAME		=	00001000h
+IRP_HOLD_DEVICE_QUEUE		=	00002000h
+
+; Define I/O request packet (IRP) alternate flags for allocation control.
+IRP_QUOTA_CHARGED		=	01h
+IRP_ALLOCATED_MUST_SUCCEED	=	02h
+IRP_ALLOCATED_FIXED_SIZE	=	04h
+IRP_LOOKASIDE_ALLOCATION	=	08h
+
+
+struc	UNICODE_STRING
+{
+.Length				rw	1
+.MaximumLength			rw	1	; usually size in Lenght + 2
+				rd	1	; padding
+.Buffer				rq	1	; pointer to string
+}
+
+
+struc	DRIVER_OBJECT
+{
+.Type				rw	1
+.Size				rw	1
+				rd	1	; padding
+
+.DeviceObject			rq	1
+.Flags				rd	1
+				rd	1	; padding
+
+.DriverStart			rq	1
+.DriverSize			rq	1
+.DriverSection			rq	1
+.DriverExtension		rq	1
+
+.DriverName			UNICODE_STRING
+
+.HardwareDatabase		rq	1	; PUNICODE_STRING
+
+.FastIoDispatch			rq	1
+
+.DriverInit			rq	1
+.DriverStartIo			rq	1
+.DriverUnload			rq	1
+.MajorFunction			rq	IRP_MJ_MAXIMUM_FUNCTION + 1
+}
+
+struc IO_STATUS_BLOCK
+{
+.Status				rd	1
+				rd	1	; padding
+label IO_STATUS_BLOCK.Pointer	qword
+.Information			rq	1
+}
+
+
+; I/O Request Packet (IRP) definition
+struc IRP
+{
+.Type				rw	1
+.Size				rw	1
+				rd	1	; padding
+
+
+
+.MdlAddress			rq	1
+
+.Flags				rq	1	; offset 10h
+
+
+label .AssociatedIrp.MasterIrp	qword		; offset 18h
+label .AssociatedIrp.IrpCount	dword		; offset 18h
+.AssociatedIrp.SystemBuffer	rq	1	; offset 18h
+
+
+.ThreadListEntry		rq	2	; is it OK ?
+
+.IoStatus			IO_STATUS_BLOCK	; offset 30h
+
+.RequestorMode			rb	1	; offset 40h
+
+
+.PendingReturned		rb	1
+
+.StackCount			rb	1
+.CurrentLocation		rb	1
+
+.Cancel				rb	1
+
+.CancelIrql			rb	1
+
+
+.ApcEnvironment			rb	1
+
+.AllocationFlags		rb	1
+
+.UserIosb			rq	1	; offset 48h
+.UserEvent			rq	1	; offset 50h
+label .Overlay.AsynchronousParameters.UserApcRoutine qword	; offset 58h
+label .Overlay.AsynchronousParameters.UserApcContext qword at $+8	; offset 60h
+.Overlay.AllocationSize		rq	2	; offset 58h
+
+.CancelRoutine			rq	1	; offset 68h
+
+.UserBuffer			rq	1	; offset 70h
+
+
+.Tail.Overlay.DeviceQueueEntry:			; offset 78h
+
+
+.Tail.Overlay.DriverContext	rq	4	; offset 78h
+
+.Tail.Overlay.Thread		rq	1	; offset 98h
+
+.Tail.Overlay.AuxiliaryBuffer	rq	1	; offset A0h
+
+.Tail.Overlay.ListEntry		rq	2	; offset A8h
+
+label .Tail.Overlay.CurrentStackLocation	qword	; offset B8h
+
+.Tail.Overlay.PacketType	rd	1	; offset B8h
+				rd	1	; padding
+
+.Tail.Overlay.OriginalFileObject	rq	1	; offset C0h
+
+label .Tail.Apc at .Tail.Overlay.DeviceQueueEntry
+
+label .Tail.CompletionKey	qword at .Tail.Overlay.DeviceQueueEntry
+}
+
+
+struc	IO_STACK_LOCATION
+{
+.MajorFunction			rb	1	; 00h
+.MinorFunction			rb	1	; 01h
+.Flags				rb	1	; 02h
+.Control			rb	1	; 03h
+				rd	1	; padding
+				
+.Parameters.Create.SecurityContext	rq	1	; 08h PTR IO_SECURITY_CONTEXT
+.Parameters.Create.Options		rd	1	; 10h
+					rd	1	; padding
+.Parameters.Create.FileAttributes	rw	1	; 18h POINTER_ALIGNMENT
+.Parameters.Create.ShareAccess		rw	1	; 1Ah
+					rd	1	; padding
+.Parameters.Create.EaLength		rq	1	; 20h POINTER_ALIGNMENT
+				; 08h
+label .Parameters.Read.Length	dword at 8	; 08h
+label .Parameters.Read.Key	qword at 10h	; 10h POINTER_ALIGNMENT
+label .Parameters.Read.ByteOffset dqword at 18h	; LARGE_INTEGER <> ; 18h
+				; 08h
+label .Parameters.Write.Length	dword at 8	; 08h
+label .Parameters.Write.KeyKey	qword at 10h	; 10h POINTER_ALIGNMENT
+label .Parameters.Write.ByteOffset dqword at 18h	; LARGE_INTEGER <> ; 18h
+
+label .Parameters.QueryFile.Length	dword at 8	; 08h
+label .Parameters.QueryFile.FileInformationClass	qword at 10h	; 10h POINTER_ALIGNMENT
+
+label .Parameters.DeviceIoControl.OutputBufferLength	dword at 8
+label .Parameters.DeviceIoControl.InputBufferLength	dword at 10h
+label .Parameters.DeviceIoControl.IoControlCode		dword at 18h
+label .Parameters.DeviceIoControl.Type3InputBuffer	qword at 20h
+
+.DeviceObject			rq	1		; offset 28h
+
+.FileObject			rq	1
+
+
+.CompletionRoutine		rq	1
+
+.Context			rq	1		; offset 40h
+}

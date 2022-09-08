@@ -1,0 +1,461 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>
+</title>
+<meta http-equiv="Content-Type" content="text/html;charset=windows-1251">
+</head>
+<body background="../FON.JPG" BGCOLOR="#E7E3E7" TEXT="#000000" LINK="#004080" VLINK="#004080">
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index25.htm">
+<img SRC="Back.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index27.htm">
+<img SRC="For.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+</tr>
+</table>
+<p>
+&nbsp;
+</p>
+<p align="center">
+<font face="Arial, Helvetica, sans-serif" size="3">
+<font size="4">
+ROL Циклический сдвиг влево 
+</font>
+<br>
+</font>
+</p>
+<p align="left">
+<font face="Arial, Helvetica, sans-serif" size="3">
+  Команда rol осуществляет сдвиг влево всех битов операнда. Если команда записана 
+  в формате</p>
+<blockquote>
+<p>
+
+</font>
+  <font face="Verdana, Arial, Helvetica, sans-serif" size="3">rol операнд,1</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>сдвиг осуществляется на 1 бит. Старший 
+  бит операнда загружается в его младший разряд и одновременно заносится в флаг 
+  CF (рис. П6). Если команда записана в формате</p>
+  <blockquote>
+<p>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">rol операнд,CL</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>сдвиг осуществляется на число бит, 
+  указанное в регистре-счетчике CL, при этом в процессе последовательных сдвигов 
+  старшие биты операнда перемещаются в его младшие разряды. Последний перенесенный 
+  бит одновременно заносится в флаг CF.</p>
+<p align="center"><img src="pr-6.jpg" ></p>
+<p align="center"><b>Рис. П6. Действие команды rol.</b></p>
+<p>В качестве операнда можно указывать 
+  любой регистр (кроме сегментного) или ячейку памяти размером как в байт, так 
+  и в слово. Не допускается использовать в качестве операнда непосредственное 
+  значение. Команда воздействует на флаги OF и CF.</p>
+<p align="center"><b>Пример 1</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov AX,1<br>
+  rol AX,1 ;AX=0002h, CF=0</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov DL,8 Oh<br>
+  rol DL,1 ;DL=01h, CF=1</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 3</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov DX,3000h<br>
+  mov CL,4<br>
+  rol DX,CL ;DX=0003h, CF=1</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 4</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov DX,2000h<br>
+  mov CL,4<br>
+  rol DX,CL ;DX=0002h, CF=0</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  <b><img src="pr.gif" > </b>Допустим сдвиг 32-битовых операндов. Допустимо указание числа бит 
+  сдвига как с помощью регистра CL, так и непосредственным значением. Максимальная 
+  величина сдвига составляет 31 бит.</p>
+<p align="center"><b>Пример</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov ЕАХ,012345678h<br>
+  rol EАХ,16 ;EAX=56781234h</font></p>
+<p>&nbsp;</p>
+</blockquote>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">>ROR Циклический 
+  сдвиг вправо</font></p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  Команда ROR осуществляет циклический сдвиг вправо всех битов операнда. Если 
+  команда записана в формате</p>
+  <blockquote>
+<p>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">ror операнд,1</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>сдвиг осуществляется на 1 бит. Младший 
+  бит операнда записывается в его старший разряд и одновременно поступает в флаг 
+  CF (рис.Ш). Если команда записана в формате</p>
+  <blockquote>
+<p>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">ror операнд,CL</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>сдвиг осуществляется на число бит, 
+  указанное в регистре-счетчике CL, при этом в процессе последовательных сдвигов 
+  младшие биты операнда перемещаются в его старшие разряды. Последний перенесенный 
+  бит одновременно заносится в флаг CF.</p>
+<p align="center"><img src="pr-7.jpg" ></p>
+<p align="center"><b>Рис. П7.</b> Действие команды ror.</p>
+<p>В качестве операнда можно указывать 
+  любой регистр (кроме сегментного) или ячейку памяти размером как в байт, так 
+  и в слово. Не допускается использовать в качестве операнда непосредственное 
+  значение. Команда воздействует на флаги OF и CF.</p>
+<p align="center"><b>Пример 1</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov AX,2<br>
+  ror AX,1 ;AX=0001h, CF=0</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov DL,81h<br>
+  ror DL,1 ;DL=C0h, CF=1</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 3</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov BX,000Eh<br>
+  mov CL,4<br>
+  ror BX,CL ;BX=E000h, CF=1</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 4</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov BX,0009h<br>
+  mov CL,4<br>
+  ror BX,CL ;BX=9000h, CF=1</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><b><img src="pr.gif" ></b> Допустим сдвиг 32-битовых 
+  операндов. Допустимо указание числа бит сдвига как с помощью регистра CL, так 
+  и непосредственным значением. Максимальная величина сдвига составляет 31 бит.</p>
+<p align="center"><b>Пример</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov EDI,90000001h<br>
+  ror EDI,12 ;EDI=00190000h</font></p>
+<p>&nbsp;</p>
+</blockquote>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">SAHF Запись 
+  содержимого регистра АН в регистр флагов</font></p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  Команда sahf копирует разряды 7, 6, 4, 2 и 0 регистра АН в регистр флагов процессора, 
+  устанавливая тем самым значения флагов SF, ZF, AF, PF и CF соответственно. Команда 
+  не имеет операндов.<br>
+  Команда sahf (совместно с командой lahf) дает возможность читать и изменять 
+  значения флагов процессора, в том числе флагов SF, ZF, AF и PF, которые нельзя 
+  изменить непосредственно. Однако следует иметь в виду, что команда sahf заполняет 
+  только младший байт регистра флагов. Поэтому нельзя изменить с ее помощью, например, 
+  состояние флага OF.</p>
+<p align="center"><b>Пример 1</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  lahf ;Регистр АН отображает<br>
+  ;состояние регистра флагов <br>
+  or АН,80h ;Установка бита 7 = SF <br>
+  sahf ;Загрузка АН в регистр<br>
+  ;флагов, где теперь будет SF = 1</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  lahf ;Регистр АН отображает<br>
+  ;состояние регистра флагов <br>
+  and АН,0BFh ;Сброс бита 6 = ZF <br>
+  sahf ;Загрузка АН в регистр<br>
+  ;флагов, где теперь будет ZF = 0</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 3</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov АН, 5<br>
+  sahf ;Устанавливаются флаги PF и<br>
+  ;CF и сбрасывается флаги SF,<br>
+  ;ZF и AF</font></p>
+<p>&nbsp;</p>
+</blockquote>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">SAL Арифметический 
+  сдвиг влево</font></p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  Команда sal осуществляет сдвиг влево всех битов операнда. Старший бит операнда 
+  поступает в флаг CF. Если команда записана в формате</p>
+  <blockquote>
+<p>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">sal операнд, 1</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>сдвиг осуществляется на 1 бит. В 
+  младший бит операнда загружается 0. Если команда записана в формате</p>
+  <blockquote>
+<p>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">sal операнд,CL</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>сдвиг осуществляется на число битов, 
+  указанное в регистре-счетчике CL, при этом в процессе последовательных сдвигов 
+  старшие биты операнда, пройдя через флаг CF, теряются, а младшие заполняются 
+  нулями (рис. П8.).</p>
+<p align="center"><img src="pr-8.jpg" ></p>
+<p align="center"><b>Рис. П8. </b> Действие команды sal.</p>
+<p>В качестве операнда команды sal 
+  можно указывать любой регистр (кроме сегментного) или ячейку памяти размером 
+  как в байт, так и в слово. Не допускается использовать в качестве операнда непосредственное 
+  значение.<br>
+  Каждый сдвиг влево эквивалентен умножению знакового числа на 2, поэтому команду 
+  sal удобно использовать для возведения операнда в степень 2.<br>
+  Команда воздействует на флаги OF, SF, ZF, PF и CF.</p>
+<p align="center"><b>Пример 1</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov AL,7<br>
+  sal AL,1 ;AL= 0Eh=7*2, CF=0</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov AX,IFh<br>
+  mov CL,8<br>
+  sal AX,CL ;AX=lF00h=lFFh*256, CF=0</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 3</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov SI,-1 ;SI=FFFFh<br>
+  mov CL,4<br>
+  sal SI,CL ;SI=FFF0h=-l*16=-16, CF=1</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><b><img src="pr.gif" > </b>Допустим сдвиг 32-битовых 
+  операндов. Допустимо указание числа бит сдвига как с помощью регистра CL, так 
+  и непосредственным значением. Максимальная величина сдвига составляет 31 бит.</p>
+<p align="center"><b>Пример</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov EBX,0000C835h<br>
+  sal EBX,5 ;EBX=001906A0h</font></p>
+<p>&nbsp;</p>
+</blockquote>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">SAR Арифметический 
+  сдвиг вправо</font></p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  Команда sar осуществляет сдвиг вправо всех битов операнда. Младший бит операнда 
+  поступает в флаг CF. Если команда записана в формате</p>
+  <blockquote>
+<p>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">sar операнд,1</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>сдвиг осуществляется на 1 бит. Старший 
+  бит операнда сохраняет свое значение. Если команда записана в формате</p>
+  <blockquote>
+<p>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">sar операнд,CL</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>сдвиг осуществляется на число бит, 
+  указанное в регистре-счетчике CL, при этом в процессе последовательных сдвигов 
+  младшие биты операнда, пройдя через флаг CF, теряются, а старший бит расширяется 
+  вправо (рис. П9).</p>
+<p align="center"><img src="pr-9.jpg" ></p>
+<p align="center"><b>Рис. П.9. </b> Действие команды sar.</p>
+<p>В качестве операнда можно указывать 
+  любой регистр (кроме сегментного) или ячейку памяти размером как в байт, так 
+  и в слово. Не допускается использовать в качестве операнда непосредственное 
+  значение.<br>
+  Каждый сдвиг вправо эквивалентен делению знакового числа на 2, поэтому команду 
+  sar удобно использовать для деления операнда на целые степени 2. Команда воздействует 
+  на флаги OF, SF, ZF, AF, PF и CF.</p>
+<p align="center"><b>Пример 1</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov AL,7<br>
+  sar AL,1 ;AL=3=7/2, CF=1. Остаток <br>
+  ;потерян</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov AX,lFF0h<br>
+  mov CL,4<br>
+  sar AX,CL ;AX=01FFh=lFF0h/16, CF=0</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 3</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov BX,-8 ;BX=FFF8h<br>
+  mov CL,2<br>
+  sar BX,CL ;BX=FFFEh=-2=-8/4, CF=0</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><b><img src="pr.gif" > </b>Допустим сдвиг 32-битовых 
+  операндов. Допустимо указание числа бит сдвига как с помощью регистра CL, так 
+  и непосредственным значением. Максимальная величина сдвига составляет 31 бит.</p>
+<p align="center"><b>Пример</b></p>
+
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov EAX,0F0001234h<br>
+  sar EAX,8 EAX=FFF00012h</font></p>
+
+</blockquote>
+<p>
+&nbsp;
+</p>
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index25.htm">
+<img SRC="Back.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index27.htm">
+<img SRC="For.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+</tr>
+</table>
+</body>
+</html>

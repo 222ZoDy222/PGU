@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>
+</title>
+<meta http-equiv="Content-Type" content="text/html;charset=windows-1251">
+</head>
+<body background="../FON.JPG" BGCOLOR="#E7E3E7" TEXT="#000000" LINK="#004080" VLINK="#004080">
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index20.htm">
+<img SRC="Back.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index22.htm">
+<img SRC="For.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+</tr>
+</table>
+<p>
+&nbsp;
+</p>
+<p align="center">
+<font face="Arial, Helvetica, sans-serif" size="3">
+<font size="4">
+OUTS Вывод строки в порт 
+</font>
+</font>
+</p>
+<p align="center">
+<font face="Arial, Helvetica, sans-serif" size="4">
+  OUTSB Вывод байта в порт</font>
+</p>
+<p align="center">
+<font face="Arial, Helvetica, sans-serif" size="4">
+ OUTSW Вывод слова в порт</font>
+</p>
+<p align="center">
+<font face="Arial, Helvetica, sans-serif" size="4">
+ OUTSD Вывод двойного слова в порт</font></p>
+<p align="left">
+<font face="Arial, Helvetica, sans-serif" size="3">
+  <br>
+  Команды предназначены для вывода данных в порт непосредственно из памяти. Адрес 
+  порта указывается, как и для команды out, в регистре DX, при этом задание адреса 
+  порта непосредственным значением не допускается. Данные извлекаются из памяти 
+  по адресу, находящемуся в паре регистров DS:ESI. Замена сегмента не допускается. 
+  Команда outsb передает в порт 1 байт, команда outsw - 1 слово, команда outsd 
+  - 1 двойное слово, а команда outs может быть использована для передачи байтов, 
+  слов и двойных слов. В последнем случае размер загружаемого данного определяется 
+  описанием строки (с помощью директив db, dw или dd). После передачи данных регистр 
+  ESI получает положительное (если флаг DF=0) или отрицательное (если флаг DF=1) 
+  приращение. Величина приращения составляет 1, 2 или 4 в зависимости от размера 
+  передаваемых данных.<br>
+  Вариант команды outs имеет формат</p>
+<blockquote>
+<p>
+
+</font>
+  <font face="Verdana, Arial, Helvetica, sans-serif" size="3">outs DX, строка</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>(что не избавляет от необходимости 
+  инициализировать регистры DS:ESI адресом строки).<br>
+  Если устройство, адресуемое через порт, может принимать последовательность данных, 
+  то команды outs можно предварить префиксом повторения rep. В этом случае в порт 
+  пересылается СХ элементов данных заданного размера.<br>
+  Команды outs не воздействуют на флаги процессора.</p>
+<p align="center"><b>Пример 1</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ; В полях данных<br>
+  mem dw 0FFh<br>
+  ;В программном сегменте<br>
+  mov SI, offset mem;ES:DI ® mem <br>
+  mov DX,303h ;Адрес порта <br>
+  outsb ;Вывод в порт 8-битового <br>
+  ;данного</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 2</b></p>
+
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ; В полях данных<br>
+  string dw 0FFh,1,5,0Bh, 0<br>
+  ; В программном сегменте<br>
+  mov SI, off set mem;ES:DI -&gt; mem<br>
+  mov DX,340h Адрес порта<br>
+  mov CX, 5 ;Число данных<br>
+  eld ;Движение по данным вперед <br>
+  rep outsb ;Последовательный вывод в<br>
+  ;порт пяти 8-битовых данных</font></p>
+
+</blockquote>
+<p>
+&nbsp;
+</p>
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index20.htm">
+<img SRC="Back.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index22.htm">
+<img SRC="For.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+</tr>
+</table>
+</body>
+</html>

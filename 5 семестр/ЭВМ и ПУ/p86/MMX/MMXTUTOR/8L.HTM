@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 8</TITLE>
+</HEAD>
+<BODY BGCOLOR="#CCCCCC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+
+Большинство команд технологии MMX обрабатывают данные в
+<A target="right" HREF="glossary.htm#wraparound">циклической</A> арифметике,
+а некоторые команды используют арифметику с 
+<A target="right" HREF="glossary.htm#saturation">насыщением</A>.
+<BR>
+<B>Циклическая арифметика</B>. Eсли результат операции выходит за пределы
+<A target="right" HREF="glossary.htm#datarange">допустимого диапазона</A>,
+то "лишние" старшие биты результата отбрасываются.
+Например, сложение байтов 01h и FFh дает 00h.
+<BR>
+<B>Арифметика с насыщением</B>.
+Если результат оказался вне допустимого диапазона, то
+он считается равным граничному значению диапазона.
+Например, при сложении байтов без знака сумма 01h и FFh считается равной FFh.
+<p>
+Предлагаем Вам поупражняться в арифметике MMX-команд, 
+нажимая на кнопки <B>Сложение</B> и <B>Вычитание</B> в правой части экрана.
+
+</BODY>
+</HTML>
+

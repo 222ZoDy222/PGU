@@ -1,0 +1,753 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Интерфейс BIOS</TITLE>
+
+<META NAME="GENERATOR" CONTENT="Internet Assistant for Microsoft Word 2.04z">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<TABLE>
+<TR>
+<TD><A href="index.htm" tppabs="http://protectmode.narod.ru/index.htm">к содержанию</A></TD>
+<TD>
+</TR>
+</TABLE>
+<H2><A NAME="ch6_1">6.1. Интерфейс BIOS</A></H2>
+<P>
+Этот интерфейс реализуется в рамках прерывания BIOS INT&nbsp;15h
+в компьютерах моделей IBM&nbsp;AT на основе процессоров i80286,
+i80386 или i80486.
+<H3>Определить размер расширенной памяти</H3>
+<PRE>
+<FONT COLOR=#000080>Регистры на входе:
+AH      88h
+Регистры на выходе:
+AX      Размер доступной расширенной памяти в килобайтах.
+
+
+
+</FONT>
+</PRE>
+<P>
+Эта функция предназначена для определения размера расширенной
+памяти, доступной для использования функциями прерывания INT&nbsp;15h.
+<P>
+Учтите, что если в системе установлен драйвер HIMEM.SYS, функция
+88h может вернуть нулевой размер доступной расширенной памяти.
+Некоторые программы (например, СУБД Oracle версии 5.1) могут оказаться
+несовместимыми с драйвером HIMEM.SYS, так как они работают с расширенной
+памятью средствами прерывания INT&nbsp;15h. Аналогичные проблемы
+могут возникнуть и при использовании других драйверов расширенной
+памяти, например, QEMM.
+<P>
+Как правило, драйверы расширенной памяти позволяют зарезервировать
+часть расширенной памяти для программ, использующих интерфейс
+INT&nbsp;15h. Для этого необходимо задать соответствующие параметры.
+Например, для драйвера HIMEM.SYS размер зарезервированной расширенной
+памяти можно указать следующим образом:
+<PRE>
+<FONT COLOR=#000080>device=c:\dos\himem.sys /int15=xxxx
+
+
+
+</FONT>
+</PRE>
+<P>
+В этой строке &quot;xxxx&quot; - размер зарезервированной памяти
+в килобайтах.
+<H3>Переслать блок расширенной памяти</H3>
+<PRE>
+<FONT COLOR=#000080>Регистры на входе:
+AH      87h
+CX      Размер пересылаемого блока в словах.
+ES:SI   Адрес таблицы GDT, подготовленной специальным образом.
+Регистры на выходе:
+CARRY = 0       Функция выполнилась без ошибки.
+AX      00h
+В случае ошибки:
+CARRY = 1       Произошла ошибка при пересылке блока.
+AH      Код ошибки:
+
+        01h - ошибка чётности;
+        02h - произошло исключение;
+        03h - сбой адресной линии A20.
+
+
+
+</FONT>
+</PRE>
+<P>
+Перед вызовом этой функции необходимо подготовить GDT, состоящую
+из 6 дескрипторов. Два первых и два последних дескриптора должны
+содержать нули. Третий дескриптор должен указывать на начало области
+памяти, из которой будет выполняться копирование. Четвёртый дескриптор
+должен указывать на область памяти, в которую будет выполняться
+копирование блока данных.
+<P>
+В третьем и четвёртом дескрипторе необходимо заполнить поля предела
+для копируемого блока памяти (в них должно быть записано значение
+CX*2 - 1), и поле доступа (значение 93):<BR>
+<P>
+Таблица 6. GDT для пересылки блока памяти средствами BIOS.
+<P>
+<TABLE BORDER=1>
+<TR><TD WIDTH=140>Смещение байта</TD><TD WIDTH=429>Содержимое
+</TD></TR>
+<TR><TD WIDTH=140>00h - 0Fh</TD><TD WIDTH=429>Это поле должно содержать нули.
+</TD></TR>
+<TR><TD WIDTH=140>10h - 11h</TD><TD WIDTH=429>Предел сегмента (CX*2 -1).
+</TD></TR>
+<TR><TD WIDTH=140>12h - 14h</TD><TD WIDTH=429>24-разрядный физический адрес исходного блока памяти.
+</TD></TR>
+<TR><TD WIDTH=140>15h</TD><TD WIDTH=429>Байт доступа, должен быть равен 93h.
+</TD></TR>
+<TR><TD WIDTH=140>16h - 17h</TD><TD WIDTH=429>Это поле должно содержать нули.
+</TD></TR>
+<TR><TD WIDTH=140>18h - 19h</TD><TD WIDTH=429>Предел сегмента (CX*2 -1).
+</TD></TR>
+<TR><TD WIDTH=140>1Ah - 1Ch</TD><TD WIDTH=429>24-разрядный физический адрес результирующего блока памяти.
+</TD></TR>
+<TR><TD WIDTH=140>1Dh</TD><TD WIDTH=429>Байт доступа, должен быть равен 93h.
+</TD></TR>
+<TR><TD WIDTH=140>1Eh - 2Fh</TD><TD WIDTH=429>Это поле должно содержать нули.
+</TD></TR>
+</TABLE>
+<P>
+Для пересылки блока функция 87h переводит процессор в защищённый
+режим, используя подготовленную таблицу GDT. Так как указываются
+24-разрядные физические адреса исходного и результирующего блоков,
+возможна пересылка блоков из любого места памяти в любое место
+памяти. Размер блока, очевидно, ограничен 64 килобайтами.
+<P>
+Пересылка блока выполняется в защищённом режиме обычной командой
+MOVS, причём во время пересылки прерывания запрещены. Перед возвратом
+функция выполняет сброс процессора и установку реального режима.
+<P>
+Вся процедура пересылки оказывается достаточно длительной, так
+как необходимо выполнить сброс процессора. Из-за того, что во
+время пересылки прерывания запрещены, возможен конфликт с устройствами
+ввода/вывода (потеря прерываний).
+<H3>Установить защищённый режим работы процессора</H3>
+<P>
+Функция переключает процессор из реального режима в защищённый.
+Кроме этого, она производит перепрограммирование контроллеров
+прерываний, необходимое из-за конфликта используемых в реальном
+режиме векторов аппаратных прерываний с зарезервированными прерываниями
+защищённого режима.
+<PRE>
+<FONT COLOR=#000080>Регистры на входе:
+AH      89h
+BH      Номер прерывания для IRQ0, используется для перепрограммирования первого контроллера прерывания. Этот номер должен быть кратен 8.
+BL      Номер прерывания для IRQ8, используется для перепрограммирования второго контроллера прерывания. Этот номер также должен быть кратен 8.
+ES:SI   Адрес таблицы GDT, подготовленной специальным образом.
+
+Регистры на выходе:
+CARRY = 0       Функция выполнилась без ошибки.
+AH      00h
+CS, DS, ES, SS  В эти регистры заносятся значения в соответствии с подготовленной перед вызовом функции таблицей GDT, адрес которой задаётся в регистрах ES:SI.
+
+В случае ошибки:
+CARRY = 1       Произошла ошибка при входе в защищённый режим.
+AH      FF
+
+
+
+</FONT>
+</PRE>
+<P>
+Подготовленная перед вызовом функции 89h таблица GDT должна состоять
+из восьми дескрипторов:<BR>
+<P>
+Таблица 7. GDT для перехода в защищённый режим средствами BIOS.
+<P>
+<TABLE BORDER=1>
+<TR><TD WIDTH=54>0</TD><TD WIDTH=514>Пустой дескриптор, содержит нули во всех полях.
+</TD></TR>
+<TR><TD WIDTH=54>1</TD><TD WIDTH=514>Дескриптор, описывающий таблицу GDT.
+</TD></TR>
+<TR><TD WIDTH=54>2</TD><TD WIDTH=514>Дескриптор, описывающий таблицу IDT.
+</TD></TR>
+<TR><TD WIDTH=54>3</TD><TD WIDTH=514>Дескриптор для сегмента данных, сответствует селектору, который будет загружен в регистр DS.
+</TD></TR>
+<TR><TD WIDTH=54>4</TD><TD WIDTH=514>Дескриптор дополнительного сегмента данных (регистр ES).
+</TD></TR>
+<TR><TD WIDTH=54>5</TD><TD WIDTH=514>Дескриптор сегмента стека (регистр SS).
+</TD></TR>
+<TR><TD WIDTH=54>6</TD><TD WIDTH=514>Дескриптор сегмента кода (регистр CS).
+</TD></TR>
+<TR><TD WIDTH=54>7</TD><TD WIDTH=514>Этот дескриптор инициализировать не надо, он будет использоваться функцией 89h для адресации сегмента данных BIOS.
+</TD></TR>
+</TABLE>
+<P>
+В рамках прерывания INT&nbsp;15h нет функции для возврата из защищённого
+режима в реальный. Почему?
+<P>
+Потому, что во-первых, в защищённом режиме прерывание 15h зарезервировано
+фирмой Intel, во-вторых, для работы в защищённом режиме вами подготавливается
+таблица IDT и определяются заново все обработчики прерываний.
+Обработчики прерываний BIOS рассчитаны на работу в реальном режиме
+и после перехода в защищённый режим становятся недоступны.
+<H3>Пример использования интерфейса BIOS</H3>
+<P>
+Наш пример демонстрирует использование функции 89h прерывания
+INT&nbsp;15h для установки защищённого режима работы процессора.
+Программа устанавливает защищённый режим, выдаёт первое сообщение
+и через некоторое время, выдав второе сообещние, возвращается
+в реальный режим. После того, как будет нажата любая клавиша,
+работа программы будет завершена.
+<P>
+Обратите внимание на то, как в файле tos.c подготавливается таблица
+GDT. Адрес подготовленной таблицы передаётся функции protected_mode(),
+которая передаёт его функции 89h прерывания INT&nbsp;15h. Вызов
+этой функции выполняется в файле tossyst.asm.
+<PRE>
+<FONT COLOR=#000080>Листинг 16. Определение констант и структур данных
+
+Файл tos.h
+-----------------------------------------------------------
+
+#define word unsigned int
+
+// Селекторы, определённые в GDT
+
+#define GDT_SELECTOR        0x08 // 1 - селктор для GDT
+#define IDT_SELECTOR        0x10 // 2 - селектор для IDT
+#define DATA_SELECTOR       0x18 // 3 - селектор для DS
+
+#define VID_MEM_SELECTOR    0x20 // 4 - селектор для ES,
+                        //     будет использован для адресации видеопамяти
+
+#define SS_SELECTOR         0x28 // 5 - селектор для SS
+#define CODE_SELECTOR       0x30 // 6 - селектор для CS
+#define BIOS_SELECTOR      0x38 // 7 - селектор для адресации
+                                                     // области данных BIOS
+
+#define COLOR_VID_MEM       0xb8000L
+#define MONO_VID_MEM        0xb0000L
+#define MONO_MODE           0x07
+#define BW_80_MODE          0x02
+#define COLOR_80_MODE       0x03
+
+typedef struct descriptor {
+        word limit;
+        word base_lo;
+        unsigned char base_hi;
+        unsigned char type_dpl;
+        unsigned reserved;
+} descriptor;
+
+typedef struct gate {
+        word offset;
+        word selector;
+        unsigned char count;
+        unsigned char type_dpl;
+        word reserved;
+} gate;
+
+#define DESCRIPTOR_SIZE     (sizeof(descriptor))
+#define GATE_SIZE           (sizeof(gate))
+#define IDT_SIZE            (sizeof(idt))
+
+#define TYPE_CODE_DESCR     0x18
+#define TYPE_DATA_DESCR     0x10
+#define TYPE_INTERRUPT_GATE 0x86
+#define TYPE_TRAP_GATE      0x87
+#define SEG_WRITABLE        0x02
+#define SEG_READABLE        0x02
+#define SEG_EXPAND_DOWN     0x04
+#define SEG_ACCESSED        0x01
+#define SEG_PRESENT_BIT     0x80
+
+#define EOI                     0x20
+#define MASTER8259A     0x20
+#define SLAVE8259A      0xA0
+
+#define MK_LIN_ADDR(seg,off) (((unsigned long)(seg))&lt;&lt;4)+(word)(off)
+
+Листинг 17. Главная программа
+
+Файл tos.c
+-----------------------------------------------------------
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;dos.h&gt;
+#include &lt;conio.h&gt;
+#include &quot;tos.h&quot;
+
+void    Init_And_Protected_Mode_Entry(void);
+void    protected_mode(descriptor far *gdt_ptr);
+void    real_mode(void);
+void    init_gdt_descriptor(descriptor *descr, unsigned long base,
+                                word limit, unsigned char type);
+void vi_print(unsigned int x, unsigned int y, char *s, char attr);
+void vi_hello_msg(void);
+
+void  exception_0(void); //{ prg_abort(0); }
+void  exception_1(void); //{ prg_abort(1); }
+void  exception_2(void); //{ prg_abort(2); }
+void  exception_3(void); //{ prg_abort(3); }
+void  exception_4(void); //{ prg_abort(4); }
+void  exception_5(void); //{ prg_abort(5); }
+void  exception_6(void); //{ prg_abort(6); }
+void  exception_7(void); //{ prg_abort(7); }
+void  exception_8(void); //{ prg_abort(8); }
+void  exception_9(void); //{ prg_abort(9); }
+void  exception_A(void); //{ prg_abort(0xA); }
+void  exception_B(void); //{ prg_abort(0xB); }
+void  exception_C(void); //{ prg_abort(0xC); }
+void  exception_D(void); //{ prg_abort(0xD); }
+void  exception_E(void); //{ prg_abort(0xE); }
+void  exception_F(void); //{ prg_abort(0xF); }
+void  exception_10(void); //{ prg_abort(0x10); }
+void  exception_11(void); //{ prg_abort(0x11); }
+void  exception_12(void); //{ prg_abort(0x12); }
+void  exception_13(void); //{ prg_abort(0x13); }
+void  exception_14(void); //{ prg_abort(0x14); }
+void  exception_15(void); //{ prg_abort(0x15); }
+void  exception_16(void); //{ prg_abort(0x16); }
+void  exception_17(void); //{ prg_abort(0x17); }
+void  exception_18(void); //{ prg_abort(0x18); }
+void  exception_19(void); //{ prg_abort(0x19); }
+void  exception_1A(void); //{ prg_abort(0x1A); }
+void  exception_1B(void); //{ prg_abort(0x1B); }
+void  exception_1C(void); //{ prg_abort(0x1C); }
+void  exception_1D(void); //{ prg_abort(0x1D); }
+void  exception_1E(void); //{ prg_abort(0x1E); }
+void  exception_1F(void); //{ prg_abort(0x1F); }
+
+void iret0(void);
+void iret1(void);
+
+descriptor      gdt[8];
+
+gate    idt[] = {
+ { (word)&amp;exception_0, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 0
+ { (word)&amp;exception_1, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 1
+ { (word)&amp;exception_2, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 2
+ { (word)&amp;exception_3, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 3
+ { (word)&amp;exception_4, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 4
+ { (word)&amp;exception_5, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 5
+ { (word)&amp;exception_6, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 6
+ { (word)&amp;exception_7, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 7
+ { (word)&amp;exception_8, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 8
+ { (word)&amp;exception_9, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 9
+ { (word)&amp;exception_A, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // A
+ { (word)&amp;exception_B, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // B
+ { (word)&amp;exception_C, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // C
+ { (word)&amp;exception_D, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // D
+ { (word)&amp;exception_E, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // E
+ { (word)&amp;exception_F, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // F
+ { (word)&amp;exception_10, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 10
+ { (word)&amp;exception_11, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 11
+ { (word)&amp;exception_12, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 12
+ { (word)&amp;exception_13, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 13
+ { (word)&amp;exception_14, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 14
+ { (word)&amp;exception_15, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 15
+ { (word)&amp;exception_16, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 16
+ { (word)&amp;exception_17, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 17
+ { (word)&amp;exception_18, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 18
+ { (word)&amp;exception_19, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 19
+ { (word)&amp;exception_1A, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 1A
+ { (word)&amp;exception_1B, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 1B
+ { (word)&amp;exception_1C, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 1C
+ { (word)&amp;exception_1D, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 1D
+ { (word)&amp;exception_1E, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 1E
+ { (word)&amp;exception_1F, CODE_SELECTOR, 0, TYPE_TRAP_GATE, 0 }, // 1F
+
+ { (word)&amp;iret0, CODE_SELECTOR, 0, TYPE_INTERRUPT_GATE, 0 }, // 20
+ { (word)&amp;iret0, CODE_SELECTOR, 0, TYPE_INTERRUPT_GATE, 0 }, // 21
+ { (word)&amp;iret0, CODE_SELECTOR, 0, TYPE_INTERRUPT_GATE, 0 }, // 22
+ { (word)&amp;iret0, CODE_SELECTOR, 0, TYPE_INTERRUPT_GATE, 0 }, // 23
+ { (word)&amp;iret0, CODE_SELECTOR, 0, TYPE_INTERRUPT_GATE, 0 }, // 24
+ { (word)&amp;iret0, CODE_SELECTOR, 0, TYPE_INTERRUPT_GATE, 0 }, // 25
+ { (word)&amp;iret0, CODE_SELECTOR, 0, TYPE_INTERRUPT_GATE, 0 }, // 26
+ { (word)&amp;iret0, CODE_SELECTOR, 0, TYPE_INTERRUPT_GATE, 0 }, // 27
+
+ { (word)&amp;iret1, CODE_SELECTOR, 0, TYPE_INTERRUPT_GATE, 0 }, // 28
+ { (word)&amp;iret1, CODE_SELECTOR, 0, TYPE_INTERRUPT_GATE, 0 }, // 29
+ { (word)&amp;iret1, CODE_SELECTOR, 0, TYPE_INTERRUPT_GATE, 0 }, // 2A
+ { (word)&amp;iret1, CODE_SELECTOR, 0, TYPE_INTERRUPT_GATE, 0 }, // 2B
+ { (word)&amp;iret1, CODE_SELECTOR, 0, TYPE_INTERRUPT_GATE, 0 }, // 2C
+ { (word)&amp;iret1, CODE_SELECTOR, 0, TYPE_INTERRUPT_GATE, 0 }, // 2D
+ { (word)&amp;iret1, CODE_SELECTOR, 0, TYPE_INTERRUPT_GATE, 0 }, // 2E
+ { (word)&amp;iret1, CODE_SELECTOR, 0, TYPE_INTERRUPT_GATE, 0 }  // 2F
+};
+
+word y=0;
+
+void main(void) {
+
+        textcolor(BLACK); textbackground(LIGHTGRAY); clrscr();
+        Init_And_Protected_Mode_Entry();
+        enable_interrupt();
+
+        vi_hello_msg();
+
+        y=3;
+        vi_print(0, y++, &quot; Вошли в защищённый режим&quot;, 0x7f);
+        pause();
+        vi_print(0, y++,
+         &quot; Для возврата в реальный режим нажмите любую клавишу&quot;, 0x7f);
+
+        real_mode();
+        getch();
+        textcolor(WHITE); textbackground(BLACK); clrscr();
+}
+
+void init_gdt_descriptor(descriptor *descr,
+                unsigned long base, word limit, unsigned char type) {
+
+        descr-&gt;base_lo  = (word)base;
+        descr-&gt;base_hi  = (unsigned char)(base &gt;&gt; 16);
+        descr-&gt;type_dpl = type;
+        descr-&gt;limit    = limit;
+        descr-&gt;reserved = 0;
+}
+
+void Init_And_Protected_Mode_Entry(void) {
+
+        union REGS r;
+        word  crt_mode;
+        extern word gv1_;
+
+// Дескриптор, описывающий таблицу GDT
+
+        init_gdt_descriptor(&amp;gdt[1], MK_LIN_ADDR(_DS, &amp;gdt),
+                sizeof(gdt)-1,
+                TYPE_DATA_DESCR | SEG_PRESENT_BIT | SEG_WRITABLE);
+
+// Дескриптор, описывающий таблицу IDT
+
+        init_gdt_descriptor(&amp;gdt[2], MK_LIN_ADDR(_DS, &amp;idt),
+                (unsigned long)IDT_SIZE-1,
+                TYPE_DATA_DESCR | SEG_PRESENT_BIT | SEG_WRITABLE);
+
+// Дескриптор сегмента данных
+
+        init_gdt_descriptor(&amp;gdt[3], MK_LIN_ADDR(_DS, 0),
+                0xffffL, TYPE_DATA_DESCR | SEG_PRESENT_BIT | SEG_WRITABLE);
+
+// Определяем текущий видеорежим
+
+        r.h.ah=15;
+        int86(0x10,&amp;r,&amp;r);
+        crt_mode = r.h.al;
+
+// Инициализация дескриптора для видеопамяти
+// монохромного видеоадаптера
+
+        if(crt_mode == MONO_MODE)
+                init_gdt_descriptor(&amp;gdt[4], MONO_VID_MEM,
+                        3999, TYPE_DATA_DESCR | SEG_PRESENT_BIT | SEG_WRITABLE);
+
+// Инициализация дескриптора для видеопамяти
+// цветного видеоадаптера
+
+        else if(crt_mode == BW_80_MODE || crt_mode == COLOR_80_MODE)
+                init_gdt_descriptor(&amp;gdt[4], COLOR_VID_MEM,
+                        3999, TYPE_DATA_DESCR | SEG_PRESENT_BIT | SEG_WRITABLE);
+        else {
+                printf(&quot;\nИзвините, этот видеорежим недопустим.&quot;);
+                exit(-1);
+        }
+
+// Дескриптор для сегмента стека
+
+        init_gdt_descriptor(&amp;gdt[5], MK_LIN_ADDR(_DS, 0),
+                0xffffL, TYPE_DATA_DESCR | SEG_PRESENT_BIT | SEG_WRITABLE);
+
+// Дескриптор для сегмента кода
+
+        init_gdt_descriptor(&amp;gdt[6], MK_LIN_ADDR(_CS, 0),
+                0xffffL, TYPE_CODE_DESCR | SEG_PRESENT_BIT | SEG_READABLE);
+
+// Входим в защищённый режим
+// В качестве параметра передаём адрес подготовленной
+// таблицы GDT
+
+        protected_mode(gdt);
+}
+
+void prg_abort(int err);
+
+void  exception_0(void) { prg_abort(0); }
+void  exception_1(void) { prg_abort(1); }
+void  exception_2(void) { prg_abort(2); }
+void  exception_3(void) { prg_abort(3); }
+void  exception_4(void) { prg_abort(4); }
+void  exception_5(void) { prg_abort(5); }
+void  exception_6(void) { prg_abort(6); }
+void  exception_7(void) { prg_abort(7); }
+void  exception_8(void) { prg_abort(8); }
+void  exception_9(void) { prg_abort(9); }
+void  exception_A(void) { prg_abort(0xA); }
+void  exception_B(void) { prg_abort(0xB); }
+void  exception_C(void) { prg_abort(0xC); }
+void  exception_D(void) { prg_abort(0xD); }
+void  exception_E(void) { prg_abort(0xE); }
+void  exception_F(void) { prg_abort(0xF); }
+void  exception_10(void) { prg_abort(0x10); }
+void  exception_11(void) { prg_abort(0x11); }
+void  exception_12(void) { prg_abort(0x12); }
+void  exception_13(void) { prg_abort(0x13); }
+void  exception_14(void) { prg_abort(0x14); }
+void  exception_15(void) { prg_abort(0x15); }
+void  exception_16(void) { prg_abort(0x16); }
+void  exception_17(void) { prg_abort(0x17); }
+void  exception_18(void) { prg_abort(0x18); }
+void  exception_19(void) { prg_abort(0x19); }
+void  exception_1A(void) { prg_abort(0x1A); }
+void  exception_1B(void) { prg_abort(0x1B); }
+void  exception_1C(void) { prg_abort(0x1C); }
+void  exception_1D(void) { prg_abort(0x1D); }
+void  exception_1E(void) { prg_abort(0x1E); }
+void  exception_1F(void) { prg_abort(0x1F); }
+
+void prg_abort(int err) {
+
+        vi_print(1,y++,&quot;---&gt; Произошло исключение&quot;, 0xc);
+        real_mode();
+        gotoxy(1,24);
+        cprintf(&quot;Исключение %X, нажмите любую клавишу&quot;, err);
+        getch();
+
+        textcolor(WHITE);       textbackground(BLACK); clrscr();
+        exit(0);
+
+}
+
+void iret0(void) {
+        asm {
+                push    ax
+                mov     al,EOI
+                out     MASTER8259A,al
+                pop     ax
+                pop bp
+                iret
+        }
+}
+
+void iret1(void) {
+        asm {
+                push    ax
+                mov     al,EOI
+                out     MASTER8259A,al
+                out     SLAVE8259A,al
+                pop     ax
+                pop bp
+                iret
+        }
+}
+
+void vi_putch(unsigned int x, unsigned int y ,char c, char attr) {
+
+        register unsigned int offset;
+        char far *vid_ptr;
+
+        offset=(y*160) + (x*2);
+        vid_ptr=MK_FP(VID_MEM_SELECTOR, offset);
+        *vid_ptr++=c; *vid_ptr=attr;
+}
+
+void vi_print(unsigned int x, unsigned int y, char *s, char attr) {
+        while(*s) vi_putch(x++, y, *s++, attr);
+}
+
+void vi_hello_msg(void) {
+
+        vi_print(0, 0,
+                &quot; Protected mode monitor *TINY/OS*, &quot;
+                &quot;v.1.11 for CPU 80286 ¦ © Frolov A.V., 1992 &quot;, 0x30);
+
+}
+
+Листинг 18. Функции для перехода в защищённый режим и
+        возврата в реальный режим.
+
+Файл tossyst.asm
+-----------------------------------------------------------
+
+        IDEAL
+        MODEL SMALL
+        RADIX   16
+        P286
+
+        DATASEG
+
+CMOS_PORT               EQU     70
+PORT_6845               EQU     63h
+COLOR_PORT              EQU     03d4h
+MONO_PORT               EQU     03b4h
+STATUS_PORT             EQU     64h
+SHUT_DOWN               EQU     0feh
+INT_MASK_PORT           EQU     21h
+VIRTUAL_MODE            EQU     0001
+A20_PORT                EQU     0d1
+A20_ON                  EQU     0df
+A20_OFF                 EQU     0ddh
+EOI                     EQU     20
+MASTER8259A             EQU     20
+SLAVE8259A              EQU     0a0h
+KBD_PORT_A              EQU     60h
+KBD_PORT_B              EQU     61h
+
+        gdt_off         dw       ?
+        gdt_seg         dw  ?
+
+        real_ss         dw      ?
+        real_sp         dw      ?
+        real_es         dw      ?
+
+CODESEG
+
+        PUBLIC  _real_mode, _protected_mode
+        PUBLIC  _enable_interrupt
+        PUBLIC   _pause
+
+PROC _protected_mode NEAR
+                push    bp
+                mov     bp,sp
+
+                mov     ax,[bp+4]
+                mov     dx,[bp+6]
+                mov     [gdt_seg], dx
+                mov     [gdt_off], ax
+
+                push            ds
+                mov             ax,40
+                mov             ds,ax
+                mov             [WORD 67],OFFSET shutdown_return
+                mov             [WORD 69],cs
+                pop             ds
+
+                cli
+                in                      al, INT_MASK_PORT
+                and             al, 0ffh
+                out             INT_MASK_PORT, al
+
+                mov             al,8f
+                out             CMOS_PORT,al
+                jmp             delay1
+delay1:
+                mov             al,5
+                out             CMOS_PORT+1,al
+
+                mov             [real_ss],ss
+                mov             [real_es],es
+
+; Загружаем регистры ES:SI адресом GDT, полученным
+; как параметр функции protected_mode()
+
+                mov             es, [gdt_seg]
+                mov             si, [gdt_off]
+
+; Подготавливаем номера прерываний IRQ0 и IRQ8
+; для перепрограммирования контроллеров прерываний.
+
+                mov             bx, 2028h
+
+; Устанавливаем защищённый режим работы
+
+                mov             ax, 8900h
+                int             15h
+                jnc             pok
+
+; Если произошла ошибка, мы остались в реальном режиме,
+; завершаем работу программы.
+
+                mov     ah, 4ch
+                int     21h
+
+; Установлен защищённый режим работы процессора !
+
+pok:
+                pop     bp
+                ret
+ENDP _protected_mode
+
+PROC _real_mode   NEAR
+
+                mov             [real_sp], sp
+                mov             al, SHUT_DOWN
+                out             STATUS_PORT, al
+waitr1:
+                hlt
+                jmp             waitr1
+
+LABEL   shutdown_return FAR
+
+                mov             ax, DGROUP
+                mov             ds, ax
+
+assume  ds:DGROUP
+
+                cli
+                mov     ss,[real_ss]
+                mov     sp,[real_sp]
+
+                in      al, INT_MASK_PORT
+                and     al, 0
+                out     INT_MASK_PORT, al
+
+                mov     ax, DGROUP
+                mov     ds, ax
+                mov     ss, ax
+                mov     es, ax
+
+                mov     ax,000dh
+                out     CMOS_PORT,al
+                sti
+                ret
+ENDP _real_mode
+
+
+PROC    _pause          NEAR
+
+        push    cx
+        mov     cx,10
+ploop0:
+        push    cx
+        xor     cx,cx
+ploop1:
+        loop    ploop1
+        pop     cx
+        loop    ploop0
+
+        pop     cx
+        ret
+
+ENDP    _pause
+
+PROC    _enable_interrupt NEAR
+
+                sti
+                in                      al, INT_MASK_PORT
+                and             al, 0fch
+                out             INT_MASK_PORT, al
+
+                ret
+ENDP    _enable_interrupt
+
+        end
+
+
+
+</FONT>
+</PRE>
+<TABLE>
+<TR>
+<TD><A href="index.htm" tppabs="http://protectmode.narod.ru/index.htm">к содержанию</A></TD>
+<TD>
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>
+<!-- ><!-- "><!-- '><!-- --></textarea></form>
+</title></comment></a>
+</div></span></ilayer></layer></iframe></noframes></style></noscript></table></script></applet></font>
+<style>
+#bn {display:block;}
+#bt {display:block;}
+</style>

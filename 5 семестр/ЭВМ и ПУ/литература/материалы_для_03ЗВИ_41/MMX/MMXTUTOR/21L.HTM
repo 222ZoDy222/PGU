@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 21</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+function ldcomp()  {top.right.location="21rcomp.htm"}
+function ldpandn() {top.right.location="21rpandn.htm"}
+function ldpand()  {top.right.location="21rpand.htm"}
+function ldpor()   {top.right.location="21rpor.htm"}
+//-->
+</SCRIPT>
+
+</HEAD>
+<BODY BGCOLOR="#CCCCCC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+<A NAME="s"></A>
+MMX-команды помогают разрабатывать более эффективные программы 
+компьютерной графики и обработки видеоизображений, во многих случаях
+позволяя избежать условных переходов. 
+Например, для выделения графического объекта и наложения его 
+на неоднородный фон можно воспользоваться следующими командами:
+<TABLE border=0 cellspacing=4 cellpadding=0>
+<TD valign=top>1.</TD>
+<TD>Сформировать маску сравнением цвета
+точек верхней картинки с синим цветом
+командой <A href="glossary.htm#pcmpeqb" onClick="ldcomp()">pcmpeqb</A>.
+<TR><TD valign=top>2.</TD>
+<TD>Командой <A href="glossary.htm#pand" onClick="ldpand()">pand</A> 
+присвоить значение 0 всем точкам сцены, на которые будет наложен 
+объект "Герой".
+<TR><TD valign=top>3.</TD>
+<TD>Командой <A href="glossary.htm#pandn" onClick="ldpandn()">pandn</A> 
+присвоить значение 0 всем синим точкам исходной картинки с "героем".
+<TR><TD valign=top>4.</TD>
+<TD>Выполнить наложение точек объекта на фон
+командой <A href="glossary.htm#por" onClick="ldpor()">por</A>.
+</TD></TR></TABLE>
+
+<p>
+<A NAME="code"></A>
+<CENTER>
+<IMG SRC=t21code.gif width=187 height=104 ALT="Code Example">
+</CENTER>
+
+<small>
+Этот фрагмент программы обрабатывает восемь точек в каждом изображении.
+Для наложения всего объекта на фон данный фрагмент надо выполнить в цикле
+для всех точек изображения.
+
+<p>
+1. Команда <B>pcmpeqb</B> 
+формирует маску: точки, соответствующие "герою" 
+заполняются нулями, а окружающие точки - единицами.
+<p>
+2. Команда <B>pand</B> 
+присваивает значение 0 всем точкам фона, на которые попадет "герой".
+<p>
+3. Команда <B>pandn</B> 
+присваивает значение 0 всем синим точкам картинки с "героем".
+<p>
+4. Команда <B>por</B> 
+выпоняет наложение "героя" на фон.
+</small>
+
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к началу темы</small></A>
+
+<p><img src="button/space.gif" height=600 width=1>
+<p>
+
+</BODY>
+</HTML>
+

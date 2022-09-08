@@ -1,0 +1,484 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>
+</title>
+<meta http-equiv="Content-Type" content="text/html;charset=windows-1251">
+</head>
+<body background="../FON.JPG" BGCOLOR="#E7E3E7" TEXT="#000000" LINK="#004080" VLINK="#004080">
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index3.htm">
+<img SRC="Back.gif" BORDER="0">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index5.htm">
+<img SRC="For.gif" BORDER="0">
+</a>
+</font>
+</td>
+</tr>
+</table>
+<p>
+&nbsp;
+</p>
+<p align="center">
+<font face="Arial, Helvetica, sans-serif" size="3">
+<font size="4">
+Использование подпрограмм 
+</font>
+<br>
+</font>
+</p>
+<p align="left">
+<font face="Arial, Helvetica, sans-serif" size="3">
+ 
+  Общая идея использования подпрограмм очевидна: если в программе требуется многократно 
+  выполнять один и тот же фрагмент, его можно оформить в виде подпрограммы и вызвать 
+  по мере необходимости. Если подпрограмма не требует для своего выполнения никаких 
+  параметров и не должна возвращать в основную программу результат своей работы, 
+  то дело ограничивается оформлением текста подпрограммы в виде процедуры, завершающейся 
+  командой ret, и вызовом этой процедуры с помощью команды
+call. Как уже отмечалось 
+  ранее, подпрограмма может и не образовывать процедуру, а быть просто частью 
+  основной программы. Важно только, чтобы у нее была входная метка, и чтобы она 
+  завершалась командой ret.<br>
+  В следующем примере подпрограмма delay используется для включения в основной 
+  текст программы программных задержек фиксированной величины. </font></p>
+<p align="center">
+<font face="Arial, Helvetica, sans-serif" size="3"><b>Пример 3-8.</b>
+Вызов подпрограммы без параметров</p>
+<blockquote>
+<p align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3">code segment</font></p>
+<p align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3">assume
+cs:code,ds:data</font></p>
+<p align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3">delay proc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;Процедура-подпрограмма</font></p>
+<p align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3">push CX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;Сохраним СХ основной программы</font></p>
+<p align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3">mov
+CX,2000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;Счетчик
+внешнего цикла</font></p>
+<p align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3">del1:&nbsp; push CX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;Сохраним его</font></p>
+<p align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3">mov
+CX,0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;Счетчик внутреннего цикла</font></p>
+<p align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3">del2:&nbsp; loop
+del2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;Внутренний
+цикл (64К шагов)</font></p>
+<p align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3">pop CX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;Восстановим внешний счетчик</font></p>
+<p align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3">loop
+del1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;Внешний цикл (2000 шагов)</font></p>
+<p align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3">pop CX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+; Восстановим СХ программы</font></p>
+<p align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3">ret&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;Возврат в подпрограмму</font></p>
+<p align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3">delay endp</font></p>
+<p align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3">main proc</font></p>
+<p align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3">mov AX,data&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;Настроим DS</font></p>
+<p align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3">mov DX,AX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;на сегмент данных</font></p>
+<p align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3">mov&nbsp;
+AH,09h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;Функция
+вывода на экран</font></p>
+<p align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3">mov DX,offset
+npl1&nbsp; ;Адрес первой строки</font></p>
+<p align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3">mov
+CX,3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;Будем выводить строки в цикле</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">cntrl1:
+  int 21h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;Вызов
+  DOS</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">cal1
+  delay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;Вызов подпрограммы задержки</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">add
+  DX,msg_len&nbsp;&nbsp;&nbsp;&nbsp; ;Прибавим к смещению
+  длину строки</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">loop
+  cntrl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;Цикл вызовов DOS</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">mov
+  AX,4C00h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;Завершение
+  программы</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">int
+  21h</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">main
+  endp</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">code
+  ends</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">data
+  segment</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">msg1
+  db &quot;Процесс стартовал&quot;,13,10,'$'</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">msg_len=$-msg1</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">msg2
+  db &quot;Процесс идет&quot;,13,10,'$'</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">msg3
+  db &quot;Процесс завершается&quot;,13,10,'$'</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">data
+  ends</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">stk
+  segment stack</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">dw
+  128 dup(')</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">stk
+  ends</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">end
+  main</font></p>
+</blockquote>
+<p>В тексте программы сначала 
+  описана процедура-подпрограмма, затем основная программа. Как уже отмечалось, 
+  порядок их описания роли не играет; важно только, чтобы в завершающей директиве 
+  окончания трансляции end был указан в качестве точки входа адрес основной программы
+(main в нашем примере).<br>
+  Подпрограмма реализует задержку с помощью вложенных циклов с командой
+loop, 
+  использующей в качестве счетчика шагов регистр СХ. В основной программе этот 
+  регистр используется для организации цикла вывода трех строк. Поэтому первое, 
+  что должна сделать подпрограмма - это сохранить содержимое регистра СХ, для 
+  чего естественно использовать стек. Перед завершающей командой ret регистр СХ 
+  должен быть восстановлен. Фрагмент, реализующий задержку, был описан ранее, 
+  в разделе 3.2.<br>
+  Основная программа выводит на экран с помощью функции 09h три строки текста. 
+  Для упрощения программы, а также чтобы продемонстрировать некоторые приемы программирования, 
+  вывод строк реализован в цикле. Строки сделаны одной длины, и модификация смещения 
+  к очередной строке выполняется прибавлением к содержимому регистра DX длины 
+  строки. Полезно обратить внимание на организацию цикла в основной программе. 
+  В цикл, помимо команды вызова подпрограммы задержки и предложения, модифицирующего 
+  регистр DX, включена лишь команда int 21h. Регистр АН с номером функции заново 
+  не настраивается. Это и не нужно, так как DOS, выполняя затребованную операцию, 
+  первым делом сохраняет все регистры программы, а перед возвратом в программу 
+  их восстанавливает. Поэтому, вызывая функции DOS (или
+BIOS) можно не заботиться 
+  о сохранении регистров - их содержимое система на разрушает. Надо только иметь 
+  в виду, что многие функции DOS и BIOS после своего завершения возвращают в программу 
+  некоторую информацию (число реально введенных символов, доступный объем памяти, 
+  номер видеорежима и т.п.) Обычно эта информация возвращается в регистре АХ, 
+  однако могут использоваться и другие регистры или их сочетания. Поэтому, обращаясь 
+  в программе к системным функциям, необходимо ознакомиться с их описанием и, 
+  в частности, посмотреть, какие регистры они могут использовать для возвращаемых 
+  значений.<br>
+  Запустив программу, можно убедиться в том, что строки текста появляются на экране 
+  через заметные промежутки времени.<br>
+  В примере 3-8 подпрограмма не требовала параметров. Чаще, однако, подпрограмма 
+  должна принимать один или несколько параметров и возвращать результат. В этом 
+  случае необходимо организовать взаимодействие основной программы и подпрограммы. 
+  Никаких специальных средств языка для этого не существует; передачу параметров 
+  в подпрограмму и из нее программист организует по своему усмотрению. Для передачи 
+  параметров как в одну, так и в другую сторону можно использовать регистры общего 
+  назначения, ячейки памяти или стек. Например, нетрудно преобразовать подпрограмму 
+  delay из примера 3-8 так, чтобы ей можно было передавать величину требуемой 
+  задержки. Пусть эта величина (в числе шагов внешнего цикла) передается в регистре
+SI.</p>
+<p align="center"><b>Пример 3-8а. </b>Подпрограмма
+задержки с одним параметром, передаваемом в
+регистре SI</p>
+</font>
+<blockquote>
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">delay
+proc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;Процедура- подпрограмма</font></p>
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">push
+CX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;Сохраним СХ основной программы</font></p>
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">mov
+CX,SI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;Счетчик внешнего цикла</font></p>
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">del1:
+push CX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;Сохраним
+его</font></p>
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">mov
+CX,0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;Счетчик внутреннего цикла</font></p>
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">del2:
+loop del2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;Внутренний
+цикл (64К шагов)</font></p>
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">pop
+CX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;Восстановим внешний счетчик</font></p>
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">loop
+del1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;Внешний цикл (2000 шагов)</font></p>
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">pop
+CX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;Восстановим СХ программы</font></p>
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">ret&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;Возврат в программу</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>Можно пойти еще дальше 
+  и составить подпрограмму таким образом, чтобы передаваемый в нее параметр характеризовал 
+  время задержки в секундах. Если не связываться с использованием системного таймера 
+  в качестве инструмента для определения интервала времени, а
+по-прежнему реализовывать 
+  задержку с помощью процессорного цикла, ее величина будет зависеть от скорости 
+  работы конкретного компьютера и должна быть подобрана экспериментально. Приведенный 
+  ниже вариант подпрограммы правильно работал на процессоре Pentium с тактовой 
+  частотой 200 МГц.</p>
+<p align="center"><b>Пример 3-8б. </b>Подпрограмма
+задержки с преобразованием параметра,
+передаваемого в регистре SI</p>
+</font>
+<blockquote>
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">delay
+proc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;Процедура-подпрограмма</font></p>
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">push
+AX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;Сохраним все</font></p>
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">push
+BX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;используемые</font></p>
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">push
+CX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;в программе</font></p>
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">push
+DX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;регистры</font></p>
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">mov
+AX,SI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;первый сомножитель в AX</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">mov
+  BX,600&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;второй экспериментально</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;подобранный сомножитель</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">mul
+  BX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;Произведение в DX:AX</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">mov
+  CX,AX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;Нам оно нужно в CX</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">del1:&nbsp;
+  push CX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;Сохраним его</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">mov
+  CX,0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;Счетчик внутреннего цикла</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">del2:
+  loop
+  del2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;внутренний цикл (64К шагов)</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">pop
+  CX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;Восстановим внешний счетчик</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">loop
+  del1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;Внешний цикл ( 2000 шагов)</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">pop
+  DX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;Восстановим&nbsp;</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">pop
+  CX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;все сохраненные&nbsp;</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">pop
+  BX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ; в начале подпрограммы</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">pop
+  AX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;регистры</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">ret&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;Возврат в программу&nbsp;</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>Эксперименты показали, 
+  что для получения правильной задержки значение параметра, обозначающее число 
+  секунд, следует умножать на 600. Поскольку при умножении в системе команд МП 
+  86 первый сомножитель должен находиться в регистре АХ, а второй не может быть 
+  непосредственным значением и тоже, следовательно, должен быть помещен в один 
+  из регистров, и, к тому же, произведение занимает два регистра
+DX:AX, приходится 
+  сохранять при входе в подпрограмму не один регистр, как в предыдущем примере, 
+  а 4. Передаваемый в SI параметр переносится в АХ, в ВХ загружается второй сомножитель, 
+  а из полученного с помощью команды mul произведения используется младшая часть, 
+  находящаяся в АХ. Таким образом, для данного варианта подпрограммы значение 
+  задержки не должно превышать 109 с (109 х 600 = 65500, что почти совпадает с 
+  максимально возможным значением 65535).<br>
+  Следует обратить внимание на опасность, подстерегающую нас при выполнении операции 
+  умножения. Пусть значение передаваемого параметра составляет всего 5. При умножении 
+  на 600 получится число 3000, которое безусловно помещается в регистре АХ. Однако 
+  операция умножения 16-разрядных операндов</p>
+<blockquote>
+<p></font><font face="Verdana, Arial, Helvetica, sans-serif" size="3">mul BX</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>всегда, независимо от конкретной 
+  величины произведения, помещает его в пару регистров
+DX:AX, и, следовательно, 
+  при небольшой величине произведения регистр DX будет обнуляться. Поэтому, хотя 
+  мы и не используем старшую часть произведения и фактически ее может и не быть, 
+  сохранение и последующее восстановление регистра DX является обязательным.<br>
+  Передача параметров в подпрограмму через регистры общего назначения или даже 
+  через сегментные регистры вполне возможна, однако на практике для передачи параметров 
+  чаще всего используют стек, хотя бы потому, что регистров немного, а в стек 
+  можно поместить любое число параметров. При этом применяется своеобразная методика 
+  работы со стеком не с помощью команд push и pop, а с помощью команд mov с косвенной 
+  адресацией через регистр ВР, который архитектурно предназначен именно для адресации 
+  к стеку. Преобразуем пример 3-8а так, чтобы единственный в этом примере параметр 
+  (условная величина задержки) передавался в подпрограмму не через регистр
+SI, 
+  а через стек. Вызов подпрограммы delay в этом случае должен выполняться следующим 
+  образом:</p>
+</font>
+<blockquote>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">push 2000 ;Проталкиваем 
+  в стек значение параметра</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><BR>call delay ;Вызываем подпрограмму delay</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>Текст подпрограммы подвергнется 
+  значительным изменениям:</p>
+<p align="center"><b>Пример 3-8в.</b> Передача параметра
+через стек</p>
+</font>
+<blockquote>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">delay
+  proc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;Процедура-подпрограмма&nbsp;</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">push
+  CX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;Сохраним СХ основной программы</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">push
+  BP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;Сохраним BP</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">mov
+  BP,SP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;Настроим BP на текущую вершину стека</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">mov
+  CX, [BP+6]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;Скопируем из
+  стека параметр</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">del1:&nbsp;
+  push CX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;Сохраним
+  его</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">mov
+  CX,0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;Счетчик внутреннего цикла</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">del2&nbsp;
+  loop del2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;Внутренний
+  цикл(64К шагов)</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">pop
+  CX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;Восстановим внешний счетчик</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">loop
+  del1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;Внешний цикл</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">pop
+  BP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;Восстановим BP</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">pop
+  CX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;и СХ программы</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">ret&nbsp;&nbsp;
+  2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;Возврат и снятие со стека</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ;ненужного уже параметра&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>Команда call, передавая 
+  управление подпрограмме, сохраняет в стеке адрес возврата в основную программу. 
+  Подпрограмма сохраняет в стеке еще два 16-разрядных регистра. В результате стек 
+  оказывается в состоянии, изображенном на рис. 3.9.<br>
+  После сохранения в стеке исходного содержимого регистра ВР (в основной программе 
+  нашего примера этот регистр не используется, однако в общем случае это может 
+  быть и не так), в регистр ВР копируется содержимое указателя стека, после чего 
+  в ВР оказывается смещение вершины стека. Далее командой mov в регистр СХ заносится 
+  содержимое ячейки стека, на 6 байтов ниже текущей вершины. В этом месте стека 
+  как раз находится передаваемый в подпрограмму параметр, как это показано в левом 
+  столбце рис. 3.8. Конкретную величину смещения относительно вершины стека надо 
+  для каждой подпрограммы определять индивидуально,</p>
+<p align="center"><img src="gl3-8.jpg" ></p>
+<p align="center"><b>Рис. 3.8. </b> Состояние 
+  стека в подпрограмме после сохранения регистров.</p>
+<p>исходя из того, сколько 
+  слов сохранено ею в стеке к этому моменту. Напомним, что при использовании косвенной 
+  адресации с регистром ВР в качестве базового, по умолчанию адресуется стек, 
+  что в данном случае и требуется.<br>
+  Параметр, полученный таким образом, используется далее в подпрограмме точно 
+  так же, как и в примере 3-8а.<br>
+  Выполнив возложенную на нее задачу, подпрограмма восстанавливает сохраненные 
+  ранее регистры и осуществляет возврат в основную программу с помощью команды
+ret, в качестве аргумента которой указывается число байтов, занимаемых в стеке 
+  отправленными туда перед вызовом подпрограммы параметрами. В нашем случае единственный 
+  параметр занимает 2 байт. Если здесь использовать обычную команду ret без аргумента, 
+  то после возврата в основную программу параметр останется в стеке, и его надо 
+  будет оттуда извлекать (между прочим, не очень понятно, куда именно, ведь все 
+  регистры у нас могут быть заняты). Команда же с аргументом, осуществив возврат 
+  в вызывающую программу, увеличивает содержимое указателя стека на значение ее 
+  аргумента, тем самым осуществляя логическое снятие параметра. Физически этот 
+  параметр, как, впрочем, и все остальные данные, помещенные в стек, остается 
+  в стеке и будет затерт при дальнейших обращениях к стеку.<br>
+  Разумеется, в стек можно было поместить не один, а сколько угодно параметров. 
+  Тогда для их чтения надо было использовать несколько команд mov со значениями 
+  смещения ВР+6, ВР+8, BP+0Ah и т.д.<br>
+  Рассмотренная методика может быть использована и при дальних вызовах подпрограмм, 
+  но в этом случае необходимо учитывать, что дальняя команда call сохраняет в 
+  стеке не одно, а два слова, что повлияет на величину рассчитываемого смещения 
+  относительно вершины стека.
+</p>
+<p>
+&nbsp;
+</p>
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index3.htm">
+<img SRC="Back.gif" BORDER="0">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index5.htm">
+<img SRC="For.gif" BORDER="0">
+</a>
+</font>
+</td>
+</tr>
+</table>
+</body>
+</html>

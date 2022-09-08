@@ -1,0 +1,147 @@
+<html>
+
+<head><script LANGUAGE="JScript">
+<!--
+function GON()
+{
+  if(event.srcElement.tagName == "IMG") 
+    event.srcElement.style.filter = "Gray"; 
+}
+function GOFF()
+{
+  if(event.srcElement.tagName == "IMG") 
+    event.srcElement.style.filter = ""; 
+}
+// -->
+</script>
+
+<title>Операционная система MS-DOS</title>
+</head>
+
+<body BGCOLOR="#FFFFFF">
+<div align="right">
+
+<table border="0" width="100" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%" onMouseOver="GON()" onMouseOut="GOFF()"><a target="mainpage" href="../v01a/index.html"><img src="../../../images/prev.gif" alt="[Назад]" border="0" WIDTH="56" HEIGHT="16"></a></td>
+    <td width="50%" onMouseOver="GON()" onMouseOut="GOFF()"><a target="mainpage" href="../v02/index.html"><img src="../../../images/next.gif" alt="[Дальше]" border="0" WIDTH="56" HEIGHT="16"></a></td>
+  </tr>
+</table>
+</div>
+
+<table border="0" width="500" cellspacing="5" cellpadding="0">
+  <tr>
+    <td width="172"><img src="bsp1b.gif" border="0" WIDTH="156" HEIGHT="227"></td>
+    <td width="316" valign="top"><h3>Операционная система MS-DOS</h3>
+    <address>
+      © Александр Фролов, Григорий Фролов<br>
+      Том 1, книга 3, М.: Диалог-МИФИ, 1992, 222 стр. 
+    </address>
+    </td>
+  </tr>
+</table>
+
+<h3>Аннотация</h3>
+
+<p>В третьей книге первого тома приводится
+обширная информация о работе с дисками
+различными способами - от программирования
+контроллера до высокоуровневых средств,
+входящих в состав библиотек трансляторов Microsoft C.
+Подробно рассмотрена логическая структура
+дисков в MS-DOS. Описаны способы защиты данных от
+несанкционированного доступа и копирования,
+защиты от отладки. Приводится много программ на
+языке Си. Для системных программистов,
+аспирантов, студентов вузов. </p>
+
+<p><a HREF="dbsp1b.zip"><img SRC="../../../images/disk.gif" ALIGN="TOP" BORDER="0" WIDTH="35" HEIGHT="35">Дискета
+с исходными текстами программ (79,8 Кбайт)</a> </p>
+
+<h3>Оглавление</h3>
+
+<p><a HREF="intro.htm">Введение</a> 
+
+<ul>
+  <li>1. <a HREF="ch1.htm"><b>Работа с дисками на физическом
+    уровне</b></a> <ul>
+      <li>1.1. <a HREF="ch1.htm#ch1_1">Дисководы и контроллеры</a> </li>
+      <li>1.2. <a HREF="ch1.htm#ch1_2">Сектора, головки, цилиндры...</a> </li>
+      <li>1.3. <a HREF="ch1.htm#ch1_3">Характеристики дисководов</a> </li>
+      <li>1.4. <a HREF="ch1.htm#ch1_4">Программирование контроллера
+        НГМД</a> </li>
+      <li>1.5. <a HREF="ch1.htm#ch1_5">Функции BIOS для работы с дисками</a>
+      </li>
+      <li>1.6. <a HREF="ch1.htm#ch1_6">Использование функций BIOS</a> </li>
+      <li>1.7. <a HREF="ch1.htm#ch1_7">Функция _bios_disk()</a> </li>
+    </ul>
+  </li>
+  <li>2. <a HREF="ch2.htm"><b>Логическая структура диска в DOS</b></a>
+    <ul>
+      <li>2.1. <a HREF="ch2.htm#ch2_1">Таблица разделов и логические
+        диски</a> </li>
+      <li>2.2. <a HREF="ch2.htm#ch2_2">Загрузочная запись BOOT</a> </li>
+      <li>2.3. <a HREF="ch2.htm#ch2_3">Таблица размещения файлов</a> </li>
+      <li>2.4. <a HREF="ch2.htm#ch2_4">Файлы и каталоги</a> </li>
+      <li>2.5. <a HREF="ch2.htm#ch2_5">Программа FDISK и диск-менеджеры</a>
+      </li>
+    </ul>
+  </li>
+  <li>3. <a HREF="ch3.htm"><b>Файловая система DOS</b></a> <ul>
+      <li>3.1. <a HREF="ch3.htm#ch3_1">Получение справочной
+        информации</a> </li>
+      <li>3.2. <a HREF="ch3.htm#ch3_2">Создание, удаление и
+        переименование каталогов</a> </li>
+      <li>3.3. <a HREF="ch3.htm#ch3_3">Поиск в каталогах</a> </li>
+      <li>3.4. <a HREF="ch3.htm#ch3_4">Работа с файлами</a> </li>
+      <li>3.5. <a HREF="ch3.htm#ch3_5">Чтение/запись файлов</a> </li>
+      <li>3.6. <a HREF="ch3.htm#ch3_6">Позиционирование</a> </li>
+      <li>3.7. <a HREF="ch3.htm#ch3_7">Изменение атрибутов, времени и
+        даты файлов</a> </li>
+      <li>3.8. <a HREF="ch3.htm#ch3_8">Буферизация ввода/вывода</a> </li>
+      <li>3.9. <a HREF="ch3.htm#ch3_9">Другие функции для работы с
+        файлами</a> </li>
+      <li>3.10. <a HREF="ch3.htm#ch3_10">Таблица открытых файлов</a> </li>
+    </ul>
+  </li>
+  <li>4. <a HREF="ch4.htm"><b>Использование функций IOCTL</b></a> <ul>
+      <li>4.1. <a HREF="ch4.htm#ch4_1">Получение различной информации</a>
+      </li>
+      <li>4.2. <a HREF="ch4.htm#ch4_2">Общее управление вводом/выводом</a>
+      </li>
+    </ul>
+  </li>
+  <li>5. <a HREF="ch5.htm"><b>Обработка критических ошибок</b></a> </li>
+  <li>6. <a HREF="ch6.htm"><b>Защита информации от
+    несанкционированного доступа </b></a><ul>
+      <li>6.1. <a HREF="ch6.htm#ch6_1">Ограничение доступа при
+        загрузке MS-DOS</a> </li>
+      <li>6.2. <a HREF="ch6.htm#ch6_2">Защита дискет от копирования</a> </li>
+      <li>6.3. <a HREF="ch6.htm#ch6_3">Защита программ на жестком
+        диске</a> </li>
+      <li>6.4. <a HREF="ch6.htm#ch6_4">Защита программ от трассировки</a>
+      </li>
+    </ul>
+  </li>
+  <li>7. <a HREF="appendix.htm"><b>Приложение</b></a> <ul>
+      <li>7.1. <a HREF="appendix.htm#a7_1">Управляющие блоки MS-DOS</a> </li>
+      <li>7.2. <a HREF="appendix.htm#a7_2">Контроллер прерываний 8259</a> </li>
+      <li>7.3. <a HREF="appendix.htm#a7_3">Сегментная адресация памяти</a>
+      </li>
+      <li>7.4. <a HREF="appendix.htm#a7_4">Содержимое файла sysp.h</a> </li>
+      <li>7.5 <a HREF="appendix.htm#a7_5">Содержимое файла sysp.inc</a> </li>
+      <li>7.6. <a HREF="appendix.htm#a7_6">MS-DOS версии 5.0</a> </li>
+    </ul>
+  </li>
+</ul>
+<div align="right">
+
+<table border="0" width="100" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%" onMouseOver="GON()" onMouseOut="GOFF()"><a target="mainpage" href="../v01a/index.html"><img src="../../../images/prev.gif" alt="[Назад]" border="0" WIDTH="56" HEIGHT="16"></a></td>
+    <td width="50%" onMouseOver="GON()" onMouseOut="GOFF()"><a target="mainpage" href="../v02/index.html"><img src="../../../images/next.gif" alt="[Дальше]" border="0" WIDTH="56" HEIGHT="16"></a></td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 8</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+bar1="|||||||]"; bar2=bar1+bar1; bar3=bar2+bar1;
+barval1=bar2; barval2=bar2; lastlen1=16; lastlen2=16;
+startnum=128; num1=128; num2=128; signpm=" + "; addend=0;
+
+endplus=126; endminus=130;
+upperlimit=255; lowerlimit=0;
+step=8; bigstep=64;
+timer=0; cont1=false; cont2=false; corr=0;
+
+function redraw() {
+ document.satuwrap.number1.value=num1+corr;
+ document.satuwrap.number2.value=num2+corr;
+ document.satuwrap.comment1.value=(startnum+corr) + signpm + addend + " = " + (num1+corr);
+ document.satuwrap.comment2.value=(startnum+corr) + signpm + addend + " = " + (num2+corr);
+ if (barval1.length!=lastlen1) {document.satuwrap.bar1.value=barval1; lastlen1=barval1.length} 
+ if (barval2.length!=lastlen2) {document.satuwrap.bar2.value=barval2; lastlen2=barval2.length}
+}
+
+function demoplus() {
+ cont2=false;
+ if (cont1) {
+  addend++;
+  num1++;
+  if (num1>upperlimit) {
+   num1=lowerlimit;
+   barval1="";
+  }
+  if (num1 % bigstep == bigstep-1) {barval1=barval1+"]"}
+  else if (num1 % step == step-1) barval1=barval1+"|";
+
+  if (num2<upperlimit) {
+   num2++; 
+   barval2=barval1
+  }
+  redraw();
+  if (num1 != endplus) timer=setTimeout("demoplus()",40);
+  else cont1=false;
+ }
+}
+
+function demominus() {
+ cont1=false;
+ if (cont2) {
+  addend++;
+  num1--;
+  if (num1<lowerlimit) {
+    num1=upperlimit;
+    barval1=bar2+bar2;
+  }
+  if (num1 % step == step-2) barval1=barval1.substring(0,barval1.length-1);
+
+  if (num2>lowerlimit) {
+   num2--; 
+   barval2=barval1
+  }
+  redraw();
+  if (num1 != endminus) timer=setTimeout("demominus()",40);
+  else cont2=false;
+ }
+}
+
+function initval() {
+ endminus=130; endplus=126; 
+ num1=128; num2=128; startnum=128; 
+ barval1=bar2; barval2=bar2; 
+}
+
+
+function initplus() {
+ cont1=true;
+ if (corr==-128) {endplus=62; num1=192; num2=192; startnum=192; barval1=bar3; barval2=bar3};
+ if (corr==0) initval();
+ addend=0;
+ signpm=" + ";
+ redraw()
+}
+
+function initminus() {
+ cont2=true;
+ if (corr==-128) {endminus=194; num1=64; num2=64; startnum=64; barval1=bar1; barval2=bar1}
+ if (corr==0) initval();
+ addend=0;
+ signpm=" - ";
+ redraw()
+}
+
+function resetdemo() {
+ if (corr==-128) {endplus=62; endminus=194; num1=192; num2=192; startnum=192; barval1=bar3; barval2=bar3}
+ if (corr==0) initval();
+ addend=0;
+ cont1=false;
+ cont2=false;
+ redraw();
+}
+
+function startplus() {
+ if (!cont1 && !cont2) {initplus();setTimeout("demoplus()",600)}
+}
+
+function startminus() {
+ if (!cont1 && !cont2) {initminus();setTimeout("demominus()",600)}
+}
+
+function stopboth() {
+ cont1=false;
+ cont2=false;
+}
+
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR="#CCCCCC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+<A NAME="s"></A>
+
+<CENTER>
+<H3>Арифметика MMX-команд</H3>
+
+<FORM NAME="satuwrap" ACTION="">
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+
+<TR>
+<TD colspan=2><B>Тип данных:</B></TD>
+</TR>
+<TR>
+<TD colspan=2><INPUT NAME="dtype" TYPE="radio" CHECKED VALUE=" " onClick="corr=0;resetdemo()"> байт без знака (0..255)</TD> 
+</TR>
+<TR>
+<TD colspan=2><INPUT NAME="dtype" TYPE="radio" VALUE=" " onClick="corr=-128;resetdemo()"> байт со знаком (-128..127)</TD>
+</TR>
+<TR><TD COLSPAN=2><font size=1>&nbsp;</font></TD></TR>
+
+<TR>
+<TD><B>Арифметика:</B></TD><TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TD valign=top>Циклическая</TD> 
+<TD>&nbsp;<INPUT NAME="number1" TYPE="text" SIZE=3 VALUE="128"><INPUT 
+NAME="bar1" TYPE="text" SIZE=13 VALUE="|||||||]|||||||]" onChange="lastlen1=99"></TD>
+</TR>
+<TR>
+<TD valign=top>С&nbsp;насыщением</TD>
+<TD>&nbsp;<INPUT NAME="number2" TYPE="text" SIZE=3 VALUE="128"><INPUT 
+NAME="bar2" TYPE="text" SIZE=13 VALUE="|||||||]|||||||]" onChange="lastlen2=99"></TD>
+</TR>
+
+<TR><TD COLSPAN=2><font size=1>&nbsp;</font></TD></TR>
+
+<TR>
+<TD valign="top" COLSPAN=2 ALIGN=MIDDLE>
+<A HREF="javascript:startplus()"><IMG SRC="button/add.gif" border=0 width=93 height=22 ALT="Addition"></A>
+<A HREF="javascript:stopboth()"><IMG SRC="button/stop.gif" border=0 width=40 height=22 ALT="Stop"></A>
+</TD>
+</TR>
+<TR><TD COLSPAN=2><font size=1>&nbsp;</font></TD></TR>
+<TR>
+<TD valign="top" COLSPAN=2 ALIGN=MIDDLE>
+<A HREF="javascript:startminus()"><IMG SRC="button/subtract.gif" border=0 width=93 height=22 ALT="Subtraction"></A>
+<A HREF="javascript:stopboth()"><IMG SRC="button/stop.gif" border=0 width=40 height=22 ALT="Stop"></A>
+</TD>
+</TR>
+</TABLE>
+<p>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<TD align=right valign=top><small>В циклической арифметике </small></TD>
+<TD>
+&nbsp;<INPUT NAME="comment1" TYPE="text" SIZE=15 VALUE=" ">
+<TD>
+</TR>
+<TR>
+<TD align=right valign=top><small>В арифметике с&nbsp;насыщением </small></TD>
+<TD>
+&nbsp;<INPUT NAME="comment2" TYPE="text" SIZE=15 VALUE=" ">
+<TD>
+</TR>
+</TABLE>
+</FORM>
+
+</CENTER>
+
+</BODY>
+</HTML>

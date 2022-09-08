@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>
+</title>
+<meta http-equiv="Content-Type" content="text/html;charset=windows-1251">
+</head>
+<body background="../FON.JPG" BGCOLOR="#E7E3E7" TEXT="#000000" LINK="#004080" VLINK="#004080">
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index26.htm">
+<img SRC="Back.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index28.htm">
+<img SRC="For.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+</tr>
+</table>
+<p>
+&nbsp;
+</p>
+<p align="center">
+<font face="Arial, Helvetica, sans-serif" size="3">
+<font size="4">
+SBB Целочисленное вычитание с займом
+</font>
+<br>
+</font>
+</p>
+<p align="left">
+<font face="Arial, Helvetica, sans-serif" size="3">
+  Команда sbb вычитает второй операнд (источник) из первого (приемника). Результат 
+  замещает первый операнд, предыдущее значение которого теряется. Если установлен 
+  флаг CF, из результата вычитается еще 1. Таким образом, если команду вычитания 
+  записать в общем виде</p>
+<blockquote>
+<p>
+
+</font>
+  <font face="Verdana, Arial, Helvetica, sans-serif" size="3">sbb операнд__1, операнд_2</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>то ее действие можно условно изобразить 
+  следующим образом:</p>
+  <blockquote>
+<p> <br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  операнд_1 - операнд_2 - CF -&gt; операнд_1</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>В качестве первого операнда можно 
+  указывать регистр (кроме сегментного) или ячейку памяти, в качестве второго 
+  - регистр (кроме сегментного), ячейку памяти или непосредственное значение, 
+  однако не допускается определять оба операнда одновременно как ячейки памяти. 
+  Операнды могут быть байтами или словами и представлять числа со знаком или без 
+  знака. Команда sbb обычно используется для вычитания 32-разрядных чисел. Команда 
+  воздействует на флаги OF, SF, ZF, PF и CF.</p>
+<p align="center"><b>Пример 1</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov AX,76A5h<br>
+  sbb AX,76A3h ;AX=1, если CF был = 1 <br>
+  ;AX=2, если CF был = 0</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ; В полях данных:<br>
+  numlow dw 000Ah ;Младшая часть вычитаемого<br>
+  numhigh dw 0001h ;Старшая часть вычитаемого<br>
+  ;Число 1000Ah=65546 <br>
+  ;В программном сегменте:<br>
+  mov AX, 0 ;Младшая часть уменьшаемого <br>
+  mov DX,0002 ;Старшая часть уменьшаемого<br>
+  ;Число 20000h=131072 <br>
+  sub AX, numlow ;Вычитание младших частей.<br>
+  ;AX=FFF6h, CF=1<br>
+  sbb DX,numhigh ;Вычитание старших частей с <br>
+  ;займом. <br>
+  ;DX:AX=0000:FFF6h=65526</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><b><img src="pr.gif" ></b> Допустимо использование 
+  32-битовых операндов и дополнительных режимов адресации 32-разрядных процессоров.</p>
+<p align="center"><b>Пример</b>
+  </p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ;В полях данных:<br>
+  nlow dd 0Ch ;Младшая часть вычитаемого<br>
+  nhi dd 40000000h ;Старшая часть вычитаемого<br>
+  ;Число 400000000000000Ch ;В программном сегменте:<br>
+  mov EAX,0Bh ;Младшая часть уменьшаемого<br>
+  mov EBX,60000000h ;Старшая часть уменьшаемого<br>
+  ;Число 600000000000000Bh <br>
+  sub EAX,nlow ;Вычитание младших частей.<br>
+  ;EAX=FFFFFFFFh, CF=1<br>
+  sbb EBX,nhi ;Вычитание старших частей с <br>
+  ;займом. EBX=lFFFFFFFh <br>
+  ;Разность IFFFFFFFFFFFFFFFh</font>
+<font face="Arial, Helvetica, sans-serif" size="3">
+  <br>
+  </p>
+  </blockquote>
+
+</font>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">SCAS 
+  Сканирование строки с целью сравнения</font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">
+  SCASB Сканирование строки байтов с целью сравнения</font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">
+ SCASW Сканирование строки слов с целью сравнения</font></p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  Команды предназначены для операций над строками (строкой называется последовательность 
+  байтов или слов памяти с любым содержимым). Они сравнивают содержимое регистра 
+  AL (в случае операций над байтами) или АХ (в случае операций над словами) с 
+  содержимым ячейки памяти по адресу, находящемуся в паре регистров ES:DI. Операция 
+  сравнения осуществляется путем вычитания содержимого ячейки памяти из содержимого 
+  AL или АХ. Результат операции воздействует на регистр флагов, но не изменяет 
+  ни один из операндов. Таким образом, операцию сравнения можно условно изобразить 
+  следующим образом:</p>
+  <blockquote>
+<p>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">АХ или AL - (ES:DI) ® флаги процессора</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>После каждой операции сравнения 
+  регистр DI получает положительное (если флаг DF=0) или отрицательное (если флаг 
+  DF=1) приращение. Величина приращения составляет 1 или 2, в зависимости от размера 
+  сравниваемых элементов.<br>
+  Вариант команды SCAS имеет формат</p>
+  <blockquote>
+<p>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">sсas строка</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>(что не избавляет от необходимости 
+  инициализировать регистры ES:DI адресом строки строка). Замена сегмента строки 
+  невозможна.<br>
+  Рассматриваемые команды могут предваряться префиксами повторения repe/repz (повторять, 
+  пока элементы равны, т.е. до первого неравенства) и repne/repiiz (повторять, 
+  пока элементы не равны, т.е. до первого равенства). В любом случае выполняется 
+  не более СХ операций над последовательными элементами.<br>
+  После выполнения рассматриваемых команд регистр DI указывает на ячейку памяти, 
+  находящуюся за тем (если DF=0) или перед тем (если DF=1) элементом строки, на 
+  котором закончились операции сравнения. Команда воздействует на флаги OF, SF, 
+  ZF, AF, PF и CF.</p>
+<p align="center"><b>Пример 1</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ;В полях данных сегмента данных, адресуемого через ES: <br>
+  string db ' /Т:4' <br>
+  ;В программном сегменте:<br>
+  сld ;Поиск вперед по строке<br>
+  lea DI,string ;ES:DI ® string<br>
+  mov AL, ' ' ;Символ, который мы пропускаем<br>
+  mov CX,8 ;Длина строки repe scasb <br>
+  ;Поиск первого символа,<br>
+  ;отличного от пробела<br>
+  je blank ;Символ не найден - одни пробелы <br>
+  gotit: ;Продолжение, если символ найден</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>В примере 1 в строке имеются символы, 
+  отличные от искомого (кода пробела), и команда je выполнена не будет. После 
+  завершения сканирования управление будет передано на метку gotit. Содержимое 
+  регистров в этой точке: СХ=3 (так как не выполнено сканирование 3 символов), 
+  DI = &lt;смещение string&gt; + 5 (выполнено сканирование 5 символов). ES:D1 
+  указывают на символ строки, следующий за отличным от пробела (в данном случае 
+  символ &quot;Т&quot;).</p>
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ; В полях данных сегмента данных, адресуемого через ES: <br>
+  string db ' /Т:4' <br>
+  ; В программном сегменте:<br>
+  cld ;Поиск вперед по строке<br>
+  lea DI,string ;ES:DI ® string<br>
+  mov AL, '/' ;Искомый символ<br>
+  mov CX,8 ;Длина строки <br>
+  repne scasb ;Поиск символа / в строке<br>
+  jne blank ;Искомого символа нет <br>
+  g'otit: ;Искомый символ найден</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>В примере 2 в строке имеется искомый 
+  символ (&quot;/&quot;), и команда jne выполнена не будет. После завершения сканирования 
+  управление будет передано на метку gotit. Содержимое регистров в этой точке: 
+  СХ=3 (так как не выполнено сканирование 3 символов), DI = &lt;смещение string&gt; 
+  + 5 (выполнено сканирование 5 символов). ES:DI указывают на символ строки, следующий 
+  за найденным знаком &quot;/&quot; (в данном случае символ &quot;Т&quot;).</p>
+<p>&nbsp;</p>
+
+</font>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">386+ SCASD</font></p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  Сканирование строки двойных слов с целью сравнения<br>
+  Команда аналогична командам МП 86 scab и scasw, но позволяет сравнивать содержимое 
+  расширенного регистра ЕАХ с двойным словом в памяти, адресуемым через регистры 
+  ES:EDI.</p>
+<p align="center"><b>Пример</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ;В полях данных сегмента данных, адресуемого через ES: <br>
+  nums dd 156000,432666,100000,0,4567890, ... <br>
+  ;В программном сегменте:<br>
+  cld ;Поиск вперед<br>
+  mov DI,offset nums ;ES:DI -&gt; nums<br>
+  mov EAX,0 ;Искомое число<br>
+  mov CX,10000 ;Максимальное число элементов <br>
+  repne scasd ;Поиск 0 среди чисел массива<br>
+  jne no0 ;Искомого числа нет <br>
+  isO: ;Искомое число найдено</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p>В примере в массиве чисел имеется 
+  искомое число 0 (с таким же успехом можно было искать любое другое число, например, 
+  4567890). Команда jne выполнена не будет. После завершения сканирования управление 
+  будет передано на метку is0. Содержимое регистров в этой точке: СХ
+уменьшится   на 4 (просмотрено 4 элемента), DI будет увеличено на 10h (4 числа по 4 байт 
+  в числе).</font></p>
+
+<p>
+&nbsp;
+</p>
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index26.htm">
+<img SRC="Back.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index28.htm">
+<img SRC="For.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 18</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+function ldmovd() {self.location="#movd"}
+function ldmovq() {self.location="#movq"}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#CCCCCC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+<A NAME="s"></A>
+MMX-команды передачи данных 
+<A target="figure" HREF="movd.gif" onClick="ldmovd()"><TT>movd</TT></A> и
+<A target="figure" HREF="movq.gif" onClick="ldmovq()"><TT>movq</TT></A>
+выполняют копирование:
+<UL>
+<LI>из одного MMX-регистра в другой,
+<LI>из MMX-регистра в память и обратно,
+<LI>из MMX-регистра в целочисленный регистр и обратно
+(только команда <TT><font color="#000099">movd</font></TT>).
+</UL>
+
+Среди всех MMX-команд только 
+<TT><font color="#000099">movd</font></TT> и <TT><font color="#000099">movq</font></TT> могут иметь выходной операнд в памяти;
+<TT><font color="#000099">movd</font> - </TT> единственная команда, у которой операнд 
+может быть в целочисленном регистре.
+
+<p><img src="space.gif" height=155 width=1>
+
+<p>
+<A NAME="movd"></A>
+<B>Команда movd</B><BR>
+Команда <TT><font color="#000099">movd</font></TT> копирует 32 бита:
+<UL>
+<LI>из младших разрядов одного MMX-регистра в младшие разряды другого
+(старшие разряды заполняются нулями)
+<LI>из памяти либо из целочисленного регистра в младшие 32 разряда MMX-регистра
+(старшие разряды заполняются нулями)
+<LI>из младших разрядов MMX-регистра в память либо в целочисленный регистр.
+</UL>
+
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+<p><img src="space.gif" height=55 width=1>
+
+<p>
+<A NAME="movq"></A>
+<B>Команда movq</B><BR>
+Команда <TT><font color="#000099">movq</font></TT> копирует 64 бита:
+<UL>
+<LI>из одного MMX-регистра в другой;
+<LI>из памяти в MMX-регистр;
+<LI>из MMX-регистра в память.
+</UL>
+
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+<p><img src="space.gif" height=600 width=1>
+
+</BODY>
+</HTML>
+

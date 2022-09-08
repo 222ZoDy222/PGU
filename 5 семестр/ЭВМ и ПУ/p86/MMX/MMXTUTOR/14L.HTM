@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 14</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+function ldpand() {self.location="#pand"}
+function ldpandn() {self.location="#pandn"}
+function ldpor() {self.location="#por"}
+function ldpxor() {self.location="#pxor"}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#CCCCCC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+<A NAME="s"></A>
+Логические MMX-команды выполняют поразрядные логические операции
+над всеми 64 битами своих операндов.
+<p>
+Для получения информации о конкретной команде щелкните мышкой на 
+названии команды:
+
+<UL>
+<LI><A target="figure" HREF="pand.gif"  onClick="ldpand()"><TT>pand</TT></A>
+<LI><A target="figure" HREF="pandn.gif" onClick="ldpandn()"><TT>pandn</TT></A>
+<LI><A target="figure" HREF="por.gif"   onClick="ldpor()"><TT>por</TT></A>
+<LI><A target="figure" HREF="pxor.gif"  onClick="ldpxor()"><TT>pxor</TT></A>
+</UL>
+
+<p><img src="button/space.gif" height=155 width=1>
+
+<p>
+<A NAME="pand"></A>
+<B>Команда pand (логическoe И)</B><BR>
+Команда <font color="#000099"><TT>pand</TT></font> вычисляет поразрядное логическое И своих
+операндов.
+<BR><B>Входной операнд</B> может находиться в MMX-регистре или в памяти. 
+<BR><B>Выходной операнд</B> должен находиться в MMX-регистре. 
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+<p><img src="button/space.gif" height=55 width=1>
+
+<p>
+<A NAME="pandn"></A>
+<B>Команда pandn (логическoe НЕ-И)</B><BR>
+Команда <font color="#000099"><TT>pandn</TT></font> вычисляет обращение (поразрядное НЕ) выходного операнда,
+а затем поразрядное логическое И между входным операндом и обращенным
+значением выходного.
+<BR><B>Входной операнд</B> может находиться в MMX-регистре или в памяти. 
+<BR><B>Выходной операнд</B> должен находиться в MMX-регистре. 
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+<p><img src="button/space.gif" height=55 width=1>
+
+<p>
+<A NAME="por"></A>
+<B>Команда por (логическoe ИЛИ)</B><BR>
+Команда <font color="#000099"><TT>por</TT></font> вычисляет поразрядное логическое ИЛИ своих
+операндов.
+<BR><B>Входной операнд</B> может находиться в MMX-регистре или в памяти. 
+<BR><B>Выходной операнд</B> должен находиться в MMX-регистре. 
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+<p><img src="button/space.gif" height=55 width=1>
+
+<p>
+<A NAME="pxor"></A>
+<B>Команда pxor (исключающее ИЛИ)</B><BR>
+Команда <font color="#000099"><TT>pxor</TT></font> вычисляет поразрядное логическое исключающее ИЛИ своих
+операндов.
+<BR><B>Входной операнд</B> может находиться в MMX-регистре или в памяти. 
+<BR><B>Выходной операнд</B> должен находиться в MMX-регистре. 
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+<p><img src="button/space.gif" height=600 width=1>
+
+</BODY>
+</HTML>
+

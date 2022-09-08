@@ -1,0 +1,851 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head> 
+<title> Видеосистема  </title>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+
+<BASE TARGET="main">
+
+<link rel="stylesheet" href="../images/styles.css" type="text/css">
+<link rel="stylesheet" href="../images/styles.css" type="text/css">
+<link rel="stylesheet" href="../images/styles.css" type="text/css">
+</head>
+
+
+<body>
+<h1 ALIGN="CENTER">ВИДЕОСИСТЕМА</H1>
+<p ALIGN="left">Видеосистема персонального компьютера состоит из следующих составных 
+  элементов:</p>
+<p><big><b>Графический процессор</b></big>- специальное устройство, выполняющее 
+  различные операции над поступающими в видеосистему данными и записывающее данные 
+  в видеопамять. Как правило, включает в себя контроллер шины <a href="interface.htm">(PCI 
+  или AGP)</a>. </p>
+<p><big><b>Видеопамять</b></big>- модули оперативной памяти, расположенные на 
+  видеоплате (видеокарте) или часть оперативной памяти, выделенной для нужд видеосистемы.</p>
+<p> <big><b>Контроллер CRT</b></big><b> </b>- устройство, управляющее выдачей 
+  информации видеовход дисплея. Контроллер может оперировать как цифровыми данными 
+  (EGA и более старые системы), так и аналоговыми (современные 
+  системы).</p>
+<p class="Y"><b>Дисплей -</b> устрайство отображения информации на экране.</p>
+<p><big><b>RAMDAC</b></big> - цифроаналоговый преобразователь с оперативной памятью, 
+  который используется в современных видеосистемах для конвертации данных из видеопамяти 
+  в аналоговый вид (подача аналогового напряжения на три канала - R, G и B аналогового 
+  дисплея).</p>
+<p>Кроме того всовременных видеосистемах важную роль играют так называемые <b>Видеоускорители</b> 
+  - специализированные процессоры для ускорения таких специфических задач, как 
+  вывод на экран 2D и 3D графики, декодирования MPEG-видеоданных и оцифровки аналогового 
+  видеосигнала.</p>
+<p>Все компоненты, кроме видеопамяти, встраиваются в графический контроллер.</p>
+<p>Как правило, для видеопамяти применяются как стандартные типы модулей памяти 
+  (<a href="file:///E|/oevm_by/ARHM.HTM#DRAM">EDO DRAM, SDRAM</a>), так и специализированные 
+  (SGRAM, MDRAM, VRAM). В видеопамяти хранится содержимое экрана - его образ, 
+  который используется при выводе на экран. Текстовая информация хранится в виде 
+  «символ + атрибут» (по 8 бит на каждый), графическая информация может храниться 
+  как в плоскостном виде (каждому пикселю отводится один бит, в памяти хранится 
+  несколько плоскостей), так и в поэлементном с глубиной 8, 15, 16, 24 или 32 
+  бита на каждый пиксель. </p>
+<p>Видеопамять подключается к графическому чипу по специальной локальной высокоскоростной 
+  шине разрядностью 64 или 128 бит. Необходимость в такой шине появилась в связи 
+  с тем, что минимальная частота обновления экрана дисплея, при которой человек 
+  не замечает мерцания, составляет 75 Герц, чем она больше, тем лучше. При разрешении 
+  1200 на 1024 точек частота выдачи информации на видеовыход уже превышает 75 
+  МГц. Поэтому минимально допустимой частотой работы RAMDAC считается 170 МГц, 
+  и такое же требование накладывается на видеопамять. Поэтому она чаще всего дороже 
+  и сложнее обычной памяти. Для быстрой «закачки» больших массивов видеоданных 
+  из основной памяти в видеопамять видеосистема подключается к наиболее быстродействующей 
+  шине - <a href="file:///E|/oevm_by/ARHM.HTM#PCI">PCI или AGP</a>.</p>
+<p><big>Видеопамять </big> организована в виде банков , при этом все строки пикселей 
+  разбиваются на две или четыре группы. Строки одной группы хранятся вместе в 
+  одном банке - области видеопамяти - друг за другом. Таким образом, размещение 
+  строк в видеопамяти не соответствует размещению их на экране. Такая схема применяется 
+  в видеосистемах: </p>
+
+  
+<p>1) CGA - банки имеют адреса 0B800:0000 и 0B800:2000, в них хранятся отдельно 
+  четные и нечетные строки</p>
+
+
+
+  
+<p>2) HGC - банки имеют адреса 0B000:0000,2000,4000,6000, в них хранятся первые, 
+  вторые, третьи и четвертые строки.</p>
+
+<p><b>Видеосистемы бывают нескольких типов:</b> </p>
+<p class="w"><b>MDA (Monochrome Data Adapter) - </b>видеосистема первых персональных 
+  компьютеры IBM PC, сейчас эта видеосистема работает только в монохромном текстовом 
+  видеорежиме 7. </p>
+<p class="w"><b>HGC</b> - видеосистема фирмы Hercules Computer Technology, использующая 
+  текстовой режим, как у MDA, и реализующую видеорежим 8 - монохромный режим 748 
+  на 380 пикселей. </p>
+<p></p>
+<p class="w"><b>CGA (Color Graphics Adapter) - </b>первая графическая система 
+  фирмы IBM, имеющая низкое разрешение. В современных ЭВМ реализуется в т в текстовых 
+  режимах 0-3 и графических 4-6.</p>
+<p><b>EGA (Enhanced Graphics Adapter)</b> - видеосистема фирмы IBM, имеющая улучшеное 
+  графическое разрешение (до 640x350).</p>
+<p class="w"><b>VGA (Video Graphics Array) - п</b>оследний общепринятый стандарт 
+  на видеосистему, улучшено разрешение в текстовых режимах и добавлены режимы 
+  11h-13h, снято ограничение на максимальное число цветов </p>
+<p></p>
+<p></p>
+<p><b>ТЕКСТОВЫЕ ВИДЕОРЕЖИМЫ</b></p>
+
+<p>К текстовым относятся режимы с номерами от 0 до 3 и режим 7. В этом режиме 
+  видеопамять отображается на диапазон физических адресов 0B8000h-0BFFFFh для 
+  режимов 0-3 и на адреса 0B0000h-0B7FFFFh для режима 7. . Вся видеопамять разбивается 
+  на 8 видеостраниц по 2000 или 4000 байт (для режимов 40x25 и 80x25 текселей). 
+  Тексель - знакоместо на экране, символ, состоящий из матрицы точек. Для CGA 
+  матрица составляет 8x8, для EGA - 8x14, для MDA и HGC - 9x14, для VGA - 9x16 
+  точек. В видеопамяти каждому текселю соответствует два байта - первый - ASCII-код 
+  символа, второй - атрибут. Атрибут имеет формат<b> I R G B i r g b</b>, где 
+  I - бит яркости фона или мигания, R G B&nbsp; -&nbsp;&nbsp;&nbsp; для цвета 
+  фона символов, i r g b - для цвета символов. 
+<p>В видеопамяти хранится 8 видеостраниц, на экране отображается только одна. 
+  При необходимости их можно легко переключать. Каждая видеостраница представляет 
+  собой простую последовательность 16-битных слов. При этом первое слово соответствует 
+  текселю в левом верхнем углу экрана, следующие слова соответствуют текселям 
+  в первой строке, второй строке и т.д., т.е. данные хранятся построчно сверху 
+  вниз. 
+<p>Работа в текстовом режиме поддерживается и средствами BIOS, и средствами DOS. 
+  Для ускорения вывода можно работать напрямую с видеопамятью.</p>
+<p> </p>
+<p CLASS="Y"><b>ГРАФИЧЕСКИЕ ВИДЕОРЕЖИМЫ</b></p>
+<p>При работе видеосистемы в графическом режиме каждому пикселю (логической точке 
+  на экране) соответствует определенное количество бит видеопамяти, называемое 
+  глубиной цвета. (Следует заметить, что нет прямого соответствия между физическим 
+  пикселем (зерном) экрана и логическим пикселем - размер логического пикселя 
+  может быть как больше, так и меньше физического, и не обязательно кратен ему.) 
+  При этом организация данных, отвечающих за цвета пикселей, может быть различной.</p>
+<p> Существует две основные модели организации видеопамяти :</p>
+
+    
+<p><b>Плоскостная</b> - битовые плоскости друг хранятся за другом .<big> Битовые 
+  плоскости</big>- особая организация видеопамяти, при которой каждому пикселю 
+  соответствует один бит в блоке данных. Каждый блок (плоскость) отвечает за один 
+  бит глубины цвета для всех пикселей. Для получения цвета пикселя выбираются 
+  биты из всех плоскостей по соответствующему адресу. Наиболее распространена 
+  модель четырех плоскостей R- ,G- ,B- и I-плоскости. Первые три отвечают за компоненты 
+  красного, зеленого и синего цвета соответственно, последняя - за повышенную 
+  яркость пикселя. При этом, как правило, число этих плоскостей соответствует 
+  глубине цвета. Впрочем, при глубине цвета более 4 бит (количество цветов более 
+  16-ти) такая модель не применяется. </p>
+<p><b>Последовательная</b> (упакованная или RGB) -данных хранения в текстовых 
+  режимах и является более простой для программирования. Все пиксели содержатся 
+  друг за другом, каждому соответствует некоторое количество бит (обычно кратное 
+  8-ми).</p>
+
+<p>Существует такая особенность организация видеопамяти, как банковое чередование 
+  Впрочем, такая схема применяется только в очень древних видеосистемах. </p>
+<p>Работа в графическом режиме с помощью средств BIOS не рекомендуется в связи 
+  с неприлично низкой скоростью вывода на экран. Поэтому единственными операциями, 
+  где без функций BIOS обойтись трудно, являются</p>
+<ul>
+  <li> 
+    <p>переключение видеорежимов</p>
+  <li> 
+    <p>загрузка палитры</p>
+  <li> 
+    <p>переключение банков при работе с VESA-режимами </p>
+</ul>
+<p>Все графические видеорежимы подразделяются на две группы - стандартные и VESA- 
+  режимы. Стандартные режимы были воплощены в видеосистемах VGA и более старых 
+  и являются общим стандартом для всех производителей видеосистем и видео BIOS 
+  . VESA - режимы не являются стандартными для всех видеосистем, другими словами, 
+  некоторые видеосистемы могут не поддерживать все режимы .</p>
+<p> Стандартные видеорежимы переключаются функцией 0 прерывания 10h (прерывания 
+  videoBIOS), для переключения VESA- режимов требуется использование функций 480xh 
+  того же прерывания. </p>
+<p>Обобщенная информация по всем видеорежимам представлена в сводной таблице:</p>
+
+<div align="center">
+
+
+    
+  <table border="1"  width="738">
+    <tr> 
+      <td width="56"  height="53"> 
+        <p>Номер режима </p>
+      </td>
+      <td width="133" height="53"> 
+        <p>Тип (текст, графика) </p>
+      </td>
+      <td width="133"  height="53"> 
+        <p>Глубина цвета, бит </p>
+      </td>
+      <td width="133"  height="53"> 
+        <p>Разрешение (пиксели, тексели) </p>
+      </td>
+      <td width="133"  height="53"> 
+        <p>Организация &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1-упак., 2-плоск) </p>
+      </td>
+      <td width="133"  height="53"> 
+        <p>Поддерживается видеосистемами </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" > 
+        <p align="center">0 </p>
+      </td>
+      <td width="105" valign="TOP"> 
+        <p align="center">Текст </p>
+      </td>
+      <td width="124" valign="TOP"> 
+        <p align="center">- </p>
+      </td>
+      <td width="146" valign="TOP" > 
+        <p align="center">40x25 </p>
+      </td>
+      <td width="133" valign="TOP" > 
+        <div align="center">-</div>
+      </td>
+      <td width="134" valign="TOP" > 
+        <p align="center">CGA и старше </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="27"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="105" valign="TOP" height="27"> 
+        <p align="center">Текст </p>
+      </td>
+      <td width="124" valign="TOP" height="27"> 
+        <p align="center">- </p>
+      </td>
+      <td width="146" valign="TOP" height="27"> 
+        <p align="center">80x25 </p>
+      </td>
+      <td width="133" valign="TOP" height="27"> 
+        <div align="center">-</div>
+      </td>
+      <td width="134" valign="TOP" height="27"> 
+        <p align="center">CGA и старше </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="27"> 
+        <p align="center">2 </p>
+      </td>
+      <td width="105" valign="TOP" height="27"> 
+        <p align="center">Текст </p>
+      </td>
+      <td width="124" valign="TOP" height="27"> 
+        <p align="center">- </p>
+      </td>
+      <td width="146" valign="TOP" height="27"> 
+        <p align="center">40x25 </p>
+      </td>
+      <td width="133" valign="TOP" height="27"> 
+        <div align="center">-</div>
+      </td>
+      <td width="134" valign="TOP" height="27"> 
+        <p align="center">CGA и старше </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="27"> 
+        <p align="center">3 </p>
+      </td>
+      <td width="105" valign="TOP" height="27"> 
+        <p align="center">Текст </p>
+      </td>
+      <td width="124" valign="TOP" height="27"> 
+        <p align="center">- </p>
+      </td>
+      <td width="146" valign="TOP" height="27"> 
+        <p align="center">80x25 </p>
+      </td>
+      <td width="133" valign="TOP" height="27"> 
+        <div align="center">-</div>
+      </td>
+      <td width="134" valign="TOP" height="27"> 
+        <p align="center">CGA и старше </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="29"> 
+        <p align="center">4 </p>
+      </td>
+      <td width="105" valign="TOP" height="29"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="29"> 
+        <p align="center">2 </p>
+      </td>
+      <td width="146" valign="TOP" height="29"> 
+        <p align="center">320x200 </p>
+      </td>
+      <td width="133" valign="TOP" height="29"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="134" valign="TOP" height="29"> 
+        <p align="center">CGA и старше </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="31"> 
+        <p align="center">5 </p>
+      </td>
+      <td width="105" valign="TOP" height="31"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="31"> 
+        <p align="center">2 </p>
+      </td>
+      <td width="146" valign="TOP" height="31"> 
+        <p align="center">320x200 </p>
+      </td>
+      <td width="133" valign="TOP" height="31"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="134" valign="TOP" height="31"> 
+        <p align="center">CGA и старше </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="31"> 
+        <p align="center">6 </p>
+      </td>
+      <td width="105" valign="TOP" height="31"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="31"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="146" valign="TOP" height="31"> 
+        <p align="center">640x200 </p>
+      </td>
+      <td width="133" valign="TOP" height="31"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="134" valign="TOP" height="31"> 
+        <p align="center">CGA и старше </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">7 </p>
+      </td>
+      <td width="105" valign="TOP" height="19"> 
+        <p align="center">Текст </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">- </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">80x25 </p>
+      </td>
+      <td width="133" valign="TOP" height="19"> 
+        <div align="center">- </div>
+      </td>
+      <td width="134" valign="TOP" height="19"> 
+        <p align="center">Все </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="27"> 
+        <p align="center">8 </p>
+      </td>
+      <td width="105" valign="TOP" height="27"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="27"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="146" valign="TOP" height="27"> 
+        <p align="center">739x348 </p>
+      </td>
+      <td width="133" valign="TOP" height="27"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="134" valign="TOP" height="27"> 
+        <p align="center">HGC </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="29"> 
+        <p align="center">9 - 0Ch </p>
+      </td>
+      <td width="105" valign="TOP" height="29"> 
+        <p align="center">- </p>
+      </td>
+      <td width="124" valign="TOP" height="29"> 
+        <p align="center">- </p>
+      </td>
+      <td width="146" valign="TOP" height="29"> 
+        <p align="center">- </p>
+      </td>
+      <td width="133" valign="TOP" height="29"> 
+        <p align="center">- </p>
+      </td>
+      <td width="134" valign="TOP" height="29"> 
+        <p align="center">Резерв </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="32"> 
+        <p align="center">0Dh </p>
+      </td>
+      <td width="105" valign="TOP" height="32"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="32"> 
+        <p align="center">4 </p>
+      </td>
+      <td width="146" valign="TOP" height="32"> 
+        <p align="center">320x200 </p>
+      </td>
+      <td width="133" valign="TOP" height="32"> 
+        <p align="center">2 </p>
+      </td>
+      <td width="134" valign="TOP" height="32"> 
+        <p align="center">EGA и старше </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="27"> 
+        <p align="center">0Eh </p>
+      </td>
+      <td width="105" valign="TOP" height="27"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="27"> 
+        <p align="center">4 </p>
+      </td>
+      <td width="146" valign="TOP" height="27"> 
+        <p align="center">640x200 </p>
+      </td>
+      <td width="133" valign="TOP" height="27"> 
+        <p align="center">2 </p>
+      </td>
+      <td width="134" valign="TOP" height="27"> 
+        <p align="center">EGA и старше </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="27"> 
+        <p align="center">0Fh </p>
+      </td>
+      <td width="105" valign="TOP" height="27"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="27"> 
+        <p align="center">1,5 </p>
+      </td>
+      <td width="146" valign="TOP" height="27"> 
+        <p align="center">640x350 </p>
+      </td>
+      <td width="133" valign="TOP" height="27"> 
+        <p align="center">- </p>
+      </td>
+      <td width="134" valign="TOP" height="27"> 
+        <p align="center">EGA и старше </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">10h </p>
+      </td>
+      <td width="105" valign="TOP" height="19"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">4 </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">640x350 </p>
+      </td>
+      <td width="133" valign="TOP" height="19"> 
+        <p align="center">2 </p>
+      </td>
+      <td width="134" valign="TOP" height="19"> 
+        <p align="center">VGA </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">11h </p>
+      </td>
+      <td width="105" valign="TOP" height="19"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">640x480 </p>
+      </td>
+      <td width="133" valign="TOP" height="19"> 
+        <p align="center">- </p>
+      </td>
+      <td width="134" valign="TOP" height="19"> 
+        <p align="center">VGA </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">12h </p>
+      </td>
+      <td width="105" valign="TOP" height="19"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">4 </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">640x480 </p>
+      </td>
+      <td width="133" valign="TOP" height="19"> 
+        <p align="center">2 </p>
+      </td>
+      <td width="134" valign="TOP" height="19"> 
+        <p align="center">VGA </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">13h </p>
+      </td>
+      <td width="105" valign="TOP" height="19"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">8 </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">320x200 </p>
+      </td>
+      <td width="133" valign="TOP" height="19"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="134" height="19"> 
+        <p align="center">VGA </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56"  height="19"> 
+        <p align="center">100h </p>
+      </td>
+      <td width="105" height="19"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">8 </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">640x400 </p>
+      </td>
+      <td width="133" valign="TOP" height="19"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="134" valign="TOP" height="19"> 
+        <p align="center">sVGA(VESA) </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">101h </p>
+      </td>
+      <td width="105" height="19"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124"  height="19"> 
+        <p align="center">8 </p>
+      </td>
+      <td width="146"  height="19"> 
+        <p align="center">640x480 </p>
+      </td>
+      <td width="133"  height="19"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="134"  height="19"> 
+        <p align="center">sVGA(VESA) </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">102h </p>
+      </td>
+      <td width="105" valign="TOP" height="19"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">4 </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">800x600 </p>
+      </td>
+      <td width="133" valign="TOP" height="19"> 
+        <p align="center">2 </p>
+      </td>
+      <td width="134" valign="TOP" height="19"> 
+        <p align="center">sVGA(VESA) </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">103h </p>
+      </td>
+      <td width="105" valign="TOP" height="19"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">8 </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">800x600 </p>
+      </td>
+      <td width="133" valign="TOP" height="19"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="134" valign="TOP" height="19"> 
+        <p align="center">sVGA(VESA) </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">104h </p>
+      </td>
+      <td width="105" valign="TOP" height="19"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">4 </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">1024x768 </p>
+      </td>
+      <td width="133" valign="TOP" height="19"> 
+        <p align="center">2 </p>
+      </td>
+      <td width="134" valign="TOP" height="19"> 
+        <p align="center">sVGA(VESA) </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">105h </p>
+      </td>
+      <td width="105" valign="TOP" height="19"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">8 </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">1024x768 </p>
+      </td>
+      <td width="133" valign="TOP" height="19"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="134" valign="TOP" height="19"> 
+        <p align="center">sVGA(VESA) </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">108h </p>
+      </td>
+      <td width="105" valign="TOP" height="19"> 
+        <p align="center">Текст </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">- </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">80x60 </p>
+      </td>
+      <td width="133"  height="19"> 
+        <div align="center">-</div>
+      </td>
+      <td width="134" valign="TOP" height="19"> 
+        <p align="center">sVGA(VESA) </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">109h </p>
+      </td>
+      <td width="105" valign="TOP" height="19"> 
+        <p align="center">Текст </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">- </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">132x25 </p>
+      </td>
+      <td width="133" valign="TOP" height="19"> 
+        <div align="center">-</div>
+      </td>
+      <td width="134" valign="TOP" height="19"> 
+        <p align="center">sVGA(VESA) </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">10Ah </p>
+      </td>
+      <td width="105" valign="TOP" height="19"> 
+        <p align="center">Текст </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">- </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">132x43 </p>
+      </td>
+      <td width="133" valign="TOP" height="19"> 
+        <div align="center">-</div>
+      </td>
+      <td width="134" valign="TOP" height="19"> 
+        <p align="center">sVGA(VESA)</p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">110h </p>
+      </td>
+      <td width="105" valign="TOP" height="19"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">15 </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">640x480 </p>
+      </td>
+      <td width="133" valign="TOP" height="19"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="134" valign="TOP" height="19"> 
+        <p align="center">sVGA(VESA) </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">111h </p>
+      </td>
+      <td width="105" valign="TOP" height="19"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">16 </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">640x480 </p>
+      </td>
+      <td width="133" valign="TOP" height="19"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="134" valign="TOP" height="19"> 
+        <p align="center">sVGA(VESA) </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">112h </p>
+      </td>
+      <td width="105" valign="TOP" height="19"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">24 </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">640x480 </p>
+      </td>
+      <td width="133" valign="TOP" height="19"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="134" valign="TOP" height="19"> 
+        <p align="center">sVGA(VESA) </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">113h </p>
+      </td>
+      <td width="105" valign="TOP" height="19"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">15 </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">800x600 </p>
+      </td>
+      <td width="133" valign="TOP" height="19"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="134" valign="TOP" height="19"> 
+        <p align="center">sVGA(VESA) </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">114h </p>
+      </td>
+      <td width="105" valign="TOP" height="19"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">16 </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">800x600 </p>
+      </td>
+      <td width="133" valign="TOP" height="19"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="134" valign="TOP" height="19"> 
+        <p align="center">sVGA(VESA) </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">116h </p>
+      </td>
+      <td width="105" valign="TOP" height="19"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">15 </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">1024x768 </p>
+      </td>
+      <td width="133" valign="TOP" height="19"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="134" valign="TOP" height="19"> 
+        <p align="center">sVGA(VESA) </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="56" valign="TOP" height="19"> 
+        <p align="center">117h </p>
+      </td>
+      <td width="105" valign="TOP" height="19"> 
+        <p align="center">Графика </p>
+      </td>
+      <td width="124" valign="TOP" height="19"> 
+        <p align="center">16 </p>
+      </td>
+      <td width="146" valign="TOP" height="19"> 
+        <p align="center">1024x768 </p>
+      </td>
+      <td width="133" valign="TOP" height="19"> 
+        <p align="center">1 </p>
+      </td>
+      <td width="134" valign="TOP" height="19"> 
+        <p align="center">sVGA(VESA) </p>
+      </td>
+    </tr>
+  </table>
+    
+  <p align="left">материал по видеосистемам можно изучить по учебникам <a href="../library/jourdain/410.htm" target_blank>[7]</a> 
+    , <a href="../library/bredly/8/8-6.html"target_blank>[8]</a>.</p>
+</div>
+</body>
+</html>

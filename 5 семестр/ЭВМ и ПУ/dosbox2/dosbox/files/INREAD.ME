@@ -1,0 +1,23 @@
+******************************************************************************
+* Unsuccessful Unarchiving During Installation				     *
+******************************************************************************
+It is possible that the install program may fail in its attempt to unarchive
+the files on the second disk. If it does fail, it will not copy the archived
+files to the destination directory. You will therefore be missing several
+very important files. You can get around this by doing the following:
+
+    1. If you're installating from a 360K 5¬ floppy disk, make sure that you
+       have the Commander Disk 2 in the drive. (All of the programs and files
+       are contained on one 720K 3« floppy, so just make sure that you have
+       this disk in the drive).
+    2. Change to the drive you installed from.
+    3. You can extract the archived files with this command:
+         nc_arc -o <destination directory>
+
+    For example, assume that you have been installing from your 360K floppy
+    drive (drive A:), to the directory C:\NC. To unpack the archived files,
+    you need to enter the following (Don't type anything that's enclosed in 
+    brackets):
+    	1. [Make sure that the Comamnder Disk 2 Commander is in the drive.]
+	2. A: [enter]
+	3. nc_arc -o c:\nc [enter]

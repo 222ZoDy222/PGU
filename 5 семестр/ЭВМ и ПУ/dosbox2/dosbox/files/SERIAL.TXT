@@ -1,0 +1,201 @@
+x1k1
+        ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+        ³                                          ³
+        ³       The Norton Commander, V3.0         ³
+        ³        Commander Link and Mail           ³
+        ³      Trouble-Shooting Suggestions        ³
+        ³                                          ³
+        ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+If you are having problems with either the Link or the MCI Mail
+portion of the Norton Commander, the problems may be due to the
+configuration of your serial communications adapter.  These problems
+could manifest themselves in one of the following ways:
+
+    Link:
+        Inability to establish connection to other computer: Verify that
+the connection is to the correct serial port, and is connected through a
+null-modem cable.
+
+        Extremely high resend rate: try reducing the line noise (described
+below), or try switching out of "Turbo" mode.  (See "Turbo-mode Notes"
+below).
+
+        The error message "The COM# port is not available.": the serial
+port is not responding.  Try using the other setting (COM2: vs COM1:). 
+You may have a serial port in your computer that has been deactivated 
+(perhaps for an internal modem that was later removed), so you may wish 
+to try using a different port.
+
+    Mail:
+        "Modem did not respond": This is generated when an invalid 
+serial port was chosen.  Using a valid serial port with no
+modem attached leads to a "Session Complete" message instead.  Try
+configuring the program for a different port.
+
+
+          ******************************************
+          *       Diagnosing the serial port       *
+          ******************************************
+
+    The easiest way to determine if the serial port is responding
+properly is to try using it.  If it works, it works.  To help with
+this, we have included a program called Ser-Test.EXE.  We suggest you
+not use it unless necessary because it will reset all of your
+serial ports, messing up whatever mouse drivers are present.  This
+program will tell you how many serial ports your computer thinks it
+has, their allocated addresses, and if they are responding. It also 
+makes a stab at determining where there are active modems, but due to 
+the many different ways modems can be set up and the other types of 
+serial equipment out there, this is not to be considered definative.  
+This program will NOT tell you whether the IRQs are properly matched 
+to the COM numbers.
+
+
+
+
+	If you have a diagnostics disk for your PC or AT, and if you have
+problems using or accessing the serial ports, you should run the
+diagnostics.  (Alternatively, you may see one of the following messages at
+boot-up, but this is unlikely since serial ports are counted at boot-up,
+rather than before in hardware the way video and disk drives are).  The
+error messages to look for span from 1100 to 1157 for COM1: and from 1200
+to 1257 for COM2:.  They include:
+	XX00:	Everything seems to be O.K.
+	XX01:	Adapter failure
+	XX42:	Problem with IRQ4
+	XX43:	Problem with IRQ3
+
+	There are many other messages, but these are the most likely
+serial-port specific errors you may run into.  Other error messages, such
+as XX11 and XX14, may occur if you have a modem attached (those are "Ring 
+Detect" and "Data Signal Ready".)
+	
+    If you run into any other error numbers, either look them up in a 
+Technical Reference Manual or ask your service person- there may be a 
+problem with some other area of your system.
+
+	If you receive either a 4800 or a 4801 (or 4900/4901), you have an IBM 
+modem.  The 4801 would indicate that this modem is in fact not working 
+properly, which is a moot point at best.  Most programs, including the 
+Commander, are preconfigured to work only with Hayes compatible modems (of 
+which this is not one), so we suggest you purchase a new modem if you wish
+to use the MCI Mail portion of the program.  (480X would be on COM1:, 
+490X would be on COM2:)
+
+	
+      ****************************************************
+      *     Non-serial-port problems with MCI Mail:      *
+      ****************************************************
+        
+        "Session Complete" before anything has been done: the modem
+setting may be too fast for the modem: i.e. you may have configured the
+program to send characters at 2400 baud to a 1200 buad modem.  Also,
+modem may not be properly attached to the computer, may not be turned on,
+or simply may be misconfigured so as not to be recognized.
+
+        Dials and then "No Carrier or Busy.": the telephone line may 
+be busy, it may not have reset from the last call (if it was not
+properly hung up), or the modem may not be properly attached to the
+phone line.  If all of these have been checked, try a different phone
+number for MCI, and then go to the "minimizing noise" section of this
+file.
+    
+    If the problem with Mail is that the modem is not hanging up and you
+are using a 2400 baud modem, you should add two commands to the modem 
+initialization string: &C1 &D2
+
+
+         *****************************************************
+         *   Cable Specifications for the  Commander Link:   *
+         *****************************************************
+
+    If the problem is with Link, first make certain that you are
+using the correct type of cable: a null-modem cable (3-wire, although
+7-wire will work).  Null-modem cables have pins two and three crossed, 
+and are straight pass-through for pin seven (DB-25 connector
+numbers).  Pins two and three are reversed on the nine-pin connectors, 
+and pin seven on the DB-25 is connected to pin five on the DB-9.
+
+
+
+
+
+         *****************************************************
+         *   Turbo-Mode and Speed Notes (Commander Link):    *
+         *****************************************************
+    
+    The Turbo Mode refers to the speed that characters are sent.  The
+speed of reception is not affected.  This is a different speed measurement
+than that of the baud rate.
+    The baud rate refers to the speed that the serial port is run at. 
+This is the maximum speed that characters can be sent at.  Non-Turbo mode
+inserts an extra delay between characters to aid in the recognition of the
+characters.  If the characters are sent before the other computer is ready
+for them, some of the data can be lost.  This loss is recognized by our
+error-checking, and the data is resent (the NAK'd and resent numbers on
+the slave computer), but the resend rate rate speeds up the transfer rate.                    
+
+    When running a 386 to an 8086, if you receive many NAK'd errors (if
+the 8086 is the slave), you should switch "Turbo" OFF on the 386 computer,
+leaving Turbo ON on the 8086 computer.  Doing this can increase the
+transfer rate by a factor of two, if the error rate was around 10%!
+    
+    Some computers, such as the IBM PS/2 386 models (70 and 80) can not
+run the serial port at 115,200 baud.  They must be run at 57K instead. 
+However, even at 57KB, one or both of the computers may need to be taken
+out of Turbo mode.    
+
+NOTE: TURBO and NON-TURBO modes refer to the Link dialog box.  They do NOT
+      refer to the speed of the computer on which they are running, such 
+      as a Turbo-XT.  
+
+                ***********************************
+                *     Serial Port Solutions:      *
+                ***********************************
+
+        The serial ports MUST be configured for COM1: on IRQ4, and
+COM2: on IRQ3.  Although some programs support COM3 and COM4 (which
+should be configured on IRQ4 and IRQ3 respectively), we do not:
+versions of DOS prior to 3.3 did not explicitly support these ports,
+nor did the ROM-BIOS of computers prior to the PS/2 series.
+
+    Examine your AUTOEXEC.BAT file for "mode" commands and
+printer drivers that are sending data to the serial ports (most
+likely if you have an older LaserJet).  
+
+    Check for mouse drivers.  In general, mouse drivers will not
+install themselves if a mouse was not found at boot-up, but some may. 
+The mouse driver will install itself if it saw the mouse.  When the
+mouse driver is installed, it expects control of the serial port, and
+may cause some problems with our program if you plug the modem into
+the same port the mouse was in.  (This only applies to serial mice. 
+PS/2 and Bus mice do not share this problem.)
+
+
+
+
+
+                 ******************************
+                 *     Minimizing Noise:      *
+                 ******************************
+
+        1)  Use a shielded RS-232 cable (a round cable) instead of a
+ribbon (flat) cable, either as your null-modem cable or to connect the
+modem to your computer (not an issue with internal modems).
+        2)  Keep the cables as far away from the monitor and power
+supply as possible.
+        3)  If line noise still persists, try turning off all other
+electrical appliances (especially televisions and florescent lights)
+to see if that eliminates the problem.  If so, turn them back on a
+few at a time until you find the offending units.
+        4)  You may not be able to do anything about it: some
+switching stations are noisier than others (the noise may come from
+the phone company).  Try calling numbers in different areas.  If this
+fails, it may be the line and station that your dwelling is routed
+through.
+        5)  As always, make certain that all connections are tightly
+attached.
+
+

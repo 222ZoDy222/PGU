@@ -1,0 +1,146 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="ru">
+<title>Отладка или зачем нужен Turbo Debugger</title>
+<link rel="stylesheet" type="text/css" href="../main.css">
+</head>
+
+<body>
+
+<hr width="745" align="left">
+<table border="0" width="745" id="table21">
+	<tr>
+		<td>
+<h2><a name="начало0">Отладка или зачем нужен <span lang="en-us">Turbo Debugger</span></a></h2>
+		</td>
+	</tr>
+</table>
+<table border="0" width="745" id="table22">
+	<tr>
+		<td>
+<ol>
+	<li><strong><a href="#как"><span lang="en-us">Turbo Debugger</span></a></strong></li>
+	<li><strong><a href="#где">Отладка</a></strong></li>
+</ol>
+		</td>
+	</tr>
+</table>
+
+<hr width="745" align="left">
+<table border="0" width="745" id="table23">
+	<tr>
+		<td>
+<h3><a name="как"><span lang="en-us">Turbo Debugger</span></a></h3>
+		</td>
+	</tr>
+</table>
+<table border="0" width="745" id="table24">
+	<tr>
+		<td><span lang="en-us">Turbo Debugger </span>используется для отладки и 
+		проверки правильности работы программ.<br>
+		Запускается <span lang="en-us">Turbo Debugger</span> простой командой:<p>
+		<img border="0" src="../images/td1.jpg" width="103" height="25"></p>
+		<p>Чтобы при запуске загрузить в отладчик нашу программу нужно передать 
+		ее имя в качестве параметра:</p>
+		<p><img border="0" src="../images/td2.jpg" width="152" height="24"></p>
+		<p>В этом случае запустится <span lang="en-us">Turbo Debugger</span> и в 
+		него загрузится наша программа <span lang="en-us">PRIM.exe</span>, 
+		конечно программу всегда можно загрузить уже находясь в
+		<span lang="en-us">Turbo Debugger'</span>е (пункт <span lang="en-us">
+		Open </span>в меню <span lang="en-us">File</span>).<br>
+		Итак при запуске <span lang="en-us">Turbo Debugger'</span>а мы наблюдаем 
+		следующее:</p>
+		<p><img border="0" src="../images/td.jpg" width="572" height="338"></p>
+		<p>Перед нами окно <span lang="en-us">CPU 80486</span>, разделенное на 5 
+		окошек поменьше. Первое самое большое окошко содержит сегмент кода (там 
+		можно разглядеть нашу программу). Правее находится окошко регистров (это 
+		те самые регистры с которыми мы работаем в нашей программе). Самое 
+		правое - окно флагов. Внизу под окошком сегмента кода находится сегмент 
+		данных (в нем находятся наши данные - <span lang="en-us">a,b,c</span>, 
+		чтобы узнать их расположение стоит заглянуть в <span lang="en-us">
+		PRIM.lst </span>там все написано).</td>
+	</tr>
+</table>
+<table border="0" width="745" id="table25">
+	<tr>
+		<td>
+<h5><a href="#начало">Возврат в начало</a><span lang="en-us">|</span><strong><a href="../index.htm">Главная 
+страница</a></strong></h5>
+		</td>
+	</tr>
+</table>
+
+<hr width="745" align="left">
+<table border="0" width="745" id="table26">
+	<tr>
+		<td>
+<h3><a name="где">Отладка</a></h3>
+		</td>
+	</tr>
+</table>
+<table border="0" width="745" id="table27">
+	<tr>
+		<td>По большому счету смысл отладки заключается в том чтобы выполнить 
+		программу по шагам и пронаблюдать за её поведением.<br>
+		Итак запускаем <span lang="en-us">Turbo Debugger</span> и открываем в 
+		нем нашу программу (Появится сообщение вида &quot;<span lang="en-us">Program 
+		has no symbol table</span>&quot;, стоит нажать &quot;Ок&quot; и продолжить работу).<p>
+		<img border="0" src="../images/td3.jpg" width="572" height="338"></p>
+		<p>В окошке кода мы можем увидеть небольшой треугольничек, он указывает 
+		на ту строчку программы которая будет выполнятся следующей. Сейчас он 
+		указывает на первую строчку нашей программы, это значит мы еще не начали 
+		выполнять программу.<br>
+		Чтобы выполнить одну строку программы нужно нажать <b>
+		<span lang="en-us">F7</span>:</b></p>
+		<p><img border="0" src="../images/td4.jpg" width="572" height="338"></p>
+		<p>Как видно ничего особенного не произошло, только изменился указатель 
+		в окошке кода.<br>
+		Теперь если мы продолжим нажимать <b><span lang="en-us">F7</span> </b>
+		можно заметить что содержимое других окошек тоже начнет изменяться. 
+		Например по команде <span lang="en-us">mov ax,[0000] </span>мы заносим в 
+		регистр <span lang="en-us">ax</span> содержимое сегмента данных по 
+		адресу 0000, значит после выполнения данной строчки у нас изменится 
+		регистр <span lang="en-us">ax</span>, смотрим:</p>
+		<p><img border="0" src="../images/td5.jpg" width="572" height="338"></p>
+		<p>То есть мы знаем как работает программа (или по крайней мере как она 
+		должна работать) и наша задача убедиться в том она работает так как 
+		задумывалось!</p>
+		<p>Если программа довольно большая то нажимать <b><span lang="en-us">F7</span>
+		</b>на каждой строчке довольно утомительно, да и часто большинство 
+		строчек не необходимости контролировать. Поэтому придумали так 
+		называемые <span lang="en-us">Breakpoints (</span>точки останова<span lang="en-us">)</span>, 
+		суть их в следующем: мы ставим курсор на нужную строчку программы и 
+		нажимаем <b><span lang="en-us">F</span>2. </b>Если затем убрать курсор с 
+		данной строчки она окажется выделенной красным цветом.</p>
+		<p><img border="0" src="../images/td6.jpg" width="572" height="338"></p>
+		<p>Теперь можно смело нажимать <b><span lang="en-us">F</span>9 </b>
+		(выполнение всей программы) и выполнение остановится на той строчке на 
+		которой мы поставили <span lang="en-us">Breakpoint</span>, но сама 
+		строчка не выполнится! (состояние всех окошек будет примерно таким как 
+		на предыдущем скриншоте).<span lang="en-us">Breakpoint'</span>ов можно 
+		ставить сколько угодно, но не больше чем нужно для анализа программы.</td>
+	</tr>
+</table>
+<table border="0" width="745" id="table28">
+	<tr>
+		<td>
+<h5><a href="#начало">Возврат в начало</a><span lang="en-us">|</span><strong><a href="../index.htm">Главная 
+страница</a></strong></h5>
+		</td>
+	</tr>
+</table>
+
+<hr width="745" align="left">
+			<dl>
+				<dd>
+<h1 align="left"><font size="3">©&nbsp;ПГУ, 2004. Все права защищены.</font></h1>
+				</dd>
+			</dl>
+			
+</body>
+
+</html>

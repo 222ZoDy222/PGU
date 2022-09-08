@@ -1,0 +1,397 @@
+<HTML>
+<HEAD>
+<TITLE>Tutorial Glossary</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+<A NAME="s"></A>
+<A NAME="datatype"></A>
+<B>Типы данных</B><BR>
+
+MMX-команды используют новые типы данных:
+упакованные байты (packed byte, суффикс команды <B>b</B>),
+упакованные слова (packed word, суффикс <B>w</B>),
+упакованные двойные слова (packed doubleword, суффикс <B>d</B>) и
+64-разрядные слова (quadword, суффикс <B>q</B>).
+<p>
+Одни и те же 64 бита могут трактоваться
+одной MMX-командой как 8 байт, другой командой - как 4 слова, и т.д.
+Тип данных определяется суффиксом команды.
+
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src="button/space.gif" height=55 width=1>
+
+<p>
+<A NAME="datarange"></A>
+<B>Допустимый диапазон данных</B><BR>
+
+
+<TABLE>
+<TR bgcolor="#ffffcc"><TD align=middle><small>тип данных</TD><TD align=middle><small>минимальное значение</TD><TD align=middle><small>максимальное значение</TD></TR>
+<TR><TD><small>Байт со знаком</TD><TD align=right><small>80h (-128)</TD><TD align=right><small>7Fh (127)</TD></TR>
+<TR bgcolor="#ffffcc"><TD><small>Байт без знака</TD><TD align=right><small>00h</TD><TD align=right><small>FFh (256)</TD></TR>
+<TR><TD><small>Слово со знаком</TD><TD align=right><small>8000h (-32768)</TD><TD align=right><small>7FFFh (32767)</TD></TR>
+<TR bgcolor="#ffffcc"><TD><small>Слово без знака</TD><TD align=right><small>0000h</TD><TD align=right><small>FFFFh (65535)</TD></TR>
+<TR><TD><small>Двойное слово со знаком</TD><TD align=right><small>80000000h (-2147483648)</TD><TD align=right><small>7FFFFFFFh (2147483647)</TD></TR>
+<TR bgcolor="#ffffcc"><TD><small>Двойное слово без знака</TD><TD align=right><small>00000000h</TD><TD align=right><small>FFFFFFFFh (4294967295)</TD></TR></TABLE>
+
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src="button/space.gif" height=55 width=1>
+<p>
+
+<A NAME="operand"></A>
+<B>Операнд</B><BR>
+
+Большинство MMX-команд имеет два операнда: выходной и входной.
+Обычно входная информация берется из обоих операндов;
+результат записывается в выходной операнд.
+<p>
+<B>Пример:</B>
+<TT>pand MM2,MM4</TT><BR>
+Здесь регистр <TT>MM2 - </TT> выходной операнд,
+регистр <TT>MM4 - </TT> входной.
+Эта команда вычисляет поразрядное логическое И между значениями
+в регистрах <TT>MM2</TT> и <TT>MM4</TT> и записывает результат в регистр 
+<TT>MM2</TT>.
+
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src="button/space.gif" height=55 width=1><p>
+
+<A NAME="saturation"></A>
+<B>Арифметика с насыщением<BR>(saturation arithmetic)</B><BR>
+Если команда использует арифметику с насыщением и
+результат операции превышает максимальное представимое значение,
+то в выходной операнд записывается это максимальное значение
+(происходит "насыщение").
+<BR>
+Аналогично, если результат операции оказался меньше нижней границы допустимого
+диапазона, то в выходной операнд записывается минимально возможное значение.
+<BR>
+Например, если результат меньше 8000h,
+то 16-разрядное слово со знаком считается равным 8000h; если получилось больше 7FFFh,
+то слово со знаком считается равным 7FFFh.
+<BR>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src="button/space.gif" height=55 width=1>
+<p>
+
+<A NAME="wraparound"></A>
+<B>Циклическая арифметика (wraparound arithmetic)</B><BR>
+Если команда использует циклическую арифметику и
+результат операции выходит за двоичную разрядную сетку 
+используемого типа данных, то "лишние" старшие биты результата отбрасываются.
+Иначе говоря, если результат
+превышает максимально возможное значение на
+<B>n</B> единиц, то результатом считается
+<BR><B>минимальное значение <TT>+</TT> n <TT>-</TT> 1</B>.
+
+<BR>
+Примеры:<BR><TT> 
+7FFFh + 0002h = 8001h<BR>
+(32767 + 2 = -32767 или 32769)<BR>
+FFFFh + 0002h = 0001h<BR>
+(65535 + 2 = 1 или -1 + 2 = 1)
+</TT>
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src="button/space.gif" height=55 width=1><p>
+
+<A NAME="emms"></A>
+<B>Команда EMMS</B><BR>
+Команда EMMS присваивает значение 1 всем разрядам слова состояния
+регистров с плавающей запятой, что соответствует состоянию Empty.
+Это обеспечивает переход процессора из режима исполнения
+MMX-команд в режим исполнения обычных команд с плавающей запятой.
+<p>
+Не забывайте ставить команду EMMS в конце процедур, использующих MMX-команды!
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src=button/space.gif height=55 width=1>
+<p>
+<A NAME="addsub"></A>
+<B>Команды сложения и вычитания</B><BR>
+MMX-команды сложения и вычитания работают с упакованными байтами, словами и
+двойными словами. Обрабатываются данные как со знаком, так и без знака.
+
+<TABLE>
+<TR bgcolor="#ffffcc"><TD align=middle><B>Команды сложения</B></TD><TD align=middle><B>Команды вычитания</B></TD></TR>
+<TR><TD><TT>paddb/w/d</TD><TD><TT>psubb/w/d</TD></TR>
+<TR><TD><TT>paddsb/w</TD> <TD><TT>psubsb/w</TD></TR>
+<TR><TD><TT>paddusb/w</TD><TD><TT>psubusb/w</TD></TR>
+</TABLE>
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src=button/space.gif height=55 width=1>
+
+<p>
+<A NAME="shift"></A>
+<B>Команды сдвига</B><BR>
+MMX-команды сдвига выполняют арифметический и логический сдвиг разрядов в элементах данных выходного операнда.
+При логическом сдвиге освободившиеся разряды заполняются нулями.
+При арифметическом сдвиге крайний из сдвигаемых битов "размножается"
+и заполняет все освободившиеся разряды.
+
+<TABLE>
+<TR bgcolor="#ffffcc"><TD><B>Команды сдвига</B></TD></TR>
+<TR><TD><TT>psllw/d/q</TD></TR>
+<TR><TD><TT>psraw/d</TD></TR>
+<TR><TD><TT>psrlw/d/q</TD></TR>
+</TABLE>
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src=button/space.gif height=55 width=1>
+
+<p>
+<A NAME="logical"></A>
+<B>Логические команды</B><BR>
+Эта группа MMX-команд выполняет поразрядные логические операции над 64 битами данных.
+
+<TABLE>
+<TR bgcolor="#ffffcc"><TD align=middle colspan=2><B>Логические команды</B></TD></TR>
+<TR><TD><TT>pand</TD><TD><TT>por</TD></TR>
+<TR><TD><TT>pandn</TD><TD><TT>pxor</TD></TR>
+</TABLE>
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src=button/space.gif height=55 width=1>
+<p>
+<A NAME="multiply"></A>
+<B>Команды умножения</B><BR>
+MMX-команды умножения вычисляют произведения 16-разрядных слов своих операндов.
+Команда <TT>pmulhw</TT> записывает в каждое слово выходного операнда старшие
+16 разрядов этих произведений, а команда
+<TT>pmullw</TT> <TT>-</TT> младшие 16 разрядов.
+Команда <TT>pmaddwd</TT> попарно складывает произведения и записывает
+полученные суммы в 32-разрядные двойные слова выходного операнда.
+<TABLE>
+<TR bgcolor="#ffffcc"><TD><B>Команды умножения</B></TD></TR>
+<TR><TD><TT>pmulhw</TD></TR>
+<TR><TD><TT>pmullw</TD></TR>
+<TR><TD><TT>pmaddwd</TD></TR>
+</TABLE>
+
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src=button/space.gif height=55 width=1>
+
+<p>
+<A NAME="compare"></A>
+<B>Команды сравнения</B><BR>
+Эти MMX-команды сравнивают элементы данных в операндах и генерируют маску
+в выходном операнде. MMX-команды сравнения не устанавливают флагов (признаков).
+<TABLE>
+<TR bgcolor="#ffffcc"><TD><B>Команды сравнения</B></TD></TR>
+<TR><TD><TT>pcmpeqb/w/d</TD></TR>
+<TR><TD><TT>pcmpgtb/w/d</TD></TR>
+</TABLE>
+
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src=button/space.gif height=55 width=1>
+
+<p>
+<A NAME="pack"></A>
+<B>Команды упаковки и распаковки</B><BR>
+MMX-команды упаковки "укорачивают" элементы данных в своих операндах
+и записывают полученные короткие данные в выходной операнд.
+MMX-команды распаковки составляют из элементов данных в своих операндах
+новые элементы данных удвоенной длины и записывают их в выходной операнд.
+
+<TABLE>
+<TR bgcolor="#ffffcc"><TD><B>Команды упаковки</B></TD><TD><B>Команды распаковки</B></TD></TD></TR>
+<TR><TD><TT>packsswb/dw</TD><TD><TT>punpckhbw/wd/dq</TD></TR>
+<TR><TD><TT>packuswd</TD><TD><TT>punpcklbw/wd/dq</TD></TR>
+</TABLE>
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src=button/space.gif height=55 width=1>
+
+<p>
+<A NAME="transfer"></A>
+<B>Команды передачи данных</B><BR>
+MMX-команды передачи данных выполняют копирование данных
+из одного MMX-регистра в другой, а также пересылку между
+MMX-регистрами, целочисленными регистрами и памятью.
+
+<TABLE>
+<TR bgcolor="#ffffcc"><TD><B>Команды передачи данных</B></TD></TR>
+<TR><TD><TT>movd</TD></TR>
+<TR><TD><TT>movq</TD></TR>
+</TABLE>
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src=button/space.gif height=55 width=1>
+<p>
+<A NAME="dotprod"></A>
+<B> </B><BR>
+<B>Скалярное произведение векторов</B>
+<BR>
+Эта операция часто используется в приложениях линейной алгебры
+и цифровой обработки сигналов.
+<p>
+Скалярное произведение <i>a</i>&#183;<i>b</i> векторов
+<I>a<sub>k</sub></I> и
+<I>b<sub>k</sub></I> (<i>k</i>&nbsp;=&nbsp;1,...,&nbsp;<I>n</I>) вычисляется так:
+<BR>
+<i>a</i>&#183;<i>b</i> =
+<I>a</I><sub>1</sub><I>b</I><sub>1</sub> +
+<I>a</I><sub>2</sub><I>b</I><sub>2</sub> + ... +
+<I>a<sub>n</sub></I><I>b<sub>n</sub></I>
+
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src=button/space.gif height=55 width=1>
+
+<p>
+<A NAME="absdiff"></A>
+<B>Абсолютные величины разностей</B><BR>
+Абсолютные величины разностей чисел используются в
+алгоритмах распознавания и сжатия в качестве метрики <TT>-</TT>
+меры "расстояния" между числами.
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src=button/space.gif height=55 width=1>
+
+<p>
+<A NAME="condsel"></A>
+<B>Условный выбор фрагмента изображения</B><BR>
+Выделение фрагмента изображения по какому-либо условию <TT>-</TT>
+обычная операция в графических программах, например,
+при наложении объекта или текста на картинку-фон.
+Такая операция требует многих ветвлений в программе;
+их можно избежать, если воспользоваться MMX-командами.
+
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src=button/space.gif height=55 width=1>
+
+<p>
+<A NAME="signunpack"></A>
+<B>Распаковка с "размножением" знака</B><BR>
+Распаковка с "размножением" знакового бита часто требуется при
+преобразовании коротких типов данных к длинным.
+
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src=button/space.gif height=55 width=1>
+
+<p>
+<A NAME="movq"></A>
+<B>Команда movq</B><BR>
+Команда <TT>movq</TT> выполняет копирование 64 бит из одного MMX-регистра в
+другой, а также из MMX-регистра в память и обратно.
+
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src=button/space.gif height=55 width=1>
+
+<p>
+<A NAME="pmaddwd"></A>
+<B>Команда pmaddwd</B><BR>
+Команда <TT>pmaddwd</TT> попарно перемножает слова (со знаком) входного и
+выходного операнда, что дает четыре 32-разрядных произведения.
+Затем первое произведение складывается со вторым, а третье с четвертым.
+Полученные суммы записываются в 32-разрядные слова выходного операнда.
+
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src=button/space.gif height=55 width=1>
+
+
+<p>
+<A NAME="paddd"></A>
+<B>Команда paddd</B><BR>
+Команда <TT>paddd</TT> складывает 32-разрядные слова входного операнда с 
+32-разрядными словами выходного операнда в 
+<A HREF="#wraparound">циклической</A> арифметике. 
+
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src=button/space.gif height=55 width=1>
+
+<p>
+<A NAME="pcmpeqb"></A>
+<B>Команда pcmpeqb</B><BR>
+Команда <TT>pcmpeqb</TT> сравнивает байты входного операнда с соответствующими
+байтами выходного. Если байт выходного операнда равен байту входного, такой
+байт заполняется единицами, а если не равен, то он заполняется нулями.
+
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src=button/space.gif height=55 width=1>
+
+
+<p>
+<A NAME="pand"></A>
+<B>Команда pand</B><BR>
+Команда <TT>pand</TT> 
+вычисляет поразрядное логическое И входного и выходного операнда.
+При выполнении этой команды  
+значение 1 остается только в тех битах выходного операнда,
+для которых соответствующие биты <B>обоих</B> операндов на входе были равны 1.
+
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src=button/space.gif height=55 width=1>
+
+<p>
+<A NAME="pandn"></A>
+<B>Команда pandn</B><BR>
+Команда <TT>pandn</TT> 
+вычисляет обращение (поразрядное логическое НЕ) выходного операнда,
+а затем поразрядное логическое И между входным операндом и
+обращенным значением выходного.
+
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src=button/space.gif height=55 width=1>
+
+<p>
+<A NAME="por"></A>
+<B>Команда por</B><BR>
+Команда <TT>por</TT> 
+вычисляет поразрядное логическое ИЛИ входного и выходного операнда.
+При выполнении этой команды  
+значение 1 записывается в те биты выходного операнда,
+для которых хотя бы один из соответствующих битов обоих 
+операндов на входе был равен 1. В остальные биты записывается 0.
+
+<p>
+<A HREF="#s" onClick="parent.showlr()"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s" onClick="parent.showlr()"><small>Возврат к изучаемой теме</small></A>
+<p><img src=button/space.gif height=600 width=1>
+
+</BODY>
+</HTML>
+

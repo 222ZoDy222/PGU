@@ -1,0 +1,148 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 17</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+function ldpackss() { 
+self.location="#packss"
+}
+function ldpackus() { 
+self.location="#packus"
+}
+function ldpunpckh() { 
+self.location="#punpckh"
+}
+function ldpunpckl() { 
+self.location="#punpckl"
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#CCCCCC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+<A NAME="s"></A>
+MMX-команды упаковки преобразуют длинные элементы данных (16- и 32-разрядные
+слова) в более короткие. Если исходное значение 
+"не помещается" в коротком элементе данных, то происходит 
+"<A target="left" HREF="glossary.htm#saturation">насыщение</A>" <TT>-</TT>
+результатом считается граничное значение
+<A target="left" HREF="glossary.htm#datarange">допустимого диапазона</A> 
+выходного типа данных.
+<BR>
+Команды распаковки попарно объединяют элементы данных 
+из обоих операндов в более длинные элементы выходного операнда. 
+Этими командами можно пользоваться для повышения числа значащих 
+разрядов при вычислениях.
+<BR>
+Для получения информации о конкретной команде щелкните мышкой на 
+названии команды:
+<TABLE border=0 cellpadding=0 cellspacing=4><TR>
+<TD>
+<UL>
+<LI><A target="figure" HREF="packss.gif" onClick="ldpackss()"><TT>packss</TT></A>
+<LI><A target="figure" HREF="packus.gif" onClick="ldpackus()"><TT>packus</TT></A>
+</UL>
+</TD>
+<TD>
+<UL>
+<LI><A target="figure" HREF="punpckh.gif" onClick="ldpunpckh()"><TT>punpckh</TT></A>
+<LI><A target="figure" HREF="punpckl.gif" onClick="ldpunpckl()"><TT>punpckl</TT></A>
+</UL>
+</TD>
+</TR></TABLE>
+
+<p><img src="space.gif" height=55 width=1>
+
+<p>
+<A NAME="packss"></A>
+<B>Команды packss</B><BR>
+Команды <font color="#000099"><TT>packss</TT></font> преобразуют длинные элементы данных 
+(16- и 32-разрядные слова со знаком) в более короткие 
+(байты или 16-разрядные слова со знаком). 
+Если исходное значение было за пределами 
+<A target="left" HREF="glossary.htm#datarange">допустимого диапазона</A> 
+для выходного типа данных, то результатом упаковки считается ближайшее
+граничное значение диапазона.
+
+<BR><B>Входной операнд</B> может находиться в MMX-регистре или в памяти;
+<BR><B>выходной операнд</B> должен находиться в MMX-регистре.
+<BR><B>Поддерживаются команды:</B><BR>
+<font color="#000099"><TT>packsswb</TT></font>,
+<font color="#000099"><TT>packssdw</TT></font>.
+
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+<p><img src="space.gif" height=55 width=1>
+
+<p>
+<A NAME="packus"></A>
+<B>Команда packuswb</B><BR>
+Команда <font color="#000099"><TT>packuswb</TT></font> преобразует 16-разрядные слова со знаком 
+из обоих операндов в байты без знака и записывает их в выходной операнд. 
+<p>
+Если исходное слово со знаком было больше FFh,
+результатом преобразования считается FFh. 
+Если исходное слово со знаком отрицательно,
+результатом преобразования считается 00h. 
+
+<p><B>Входной операнд</B> может находиться в MMX-регистре или в памяти;
+<BR><B>выходной операнд</B> должен находиться в MMX-регистре.
+
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+<p><img src="space.gif" height=55 width=1>
+
+<p>
+<A NAME="punpckh"></A>
+<B>Команды punpckh</B><BR>
+Команды <font color="#000099"><TT>punpckh</TT></font> 
+попарно объединяют исходные элементы данных (байты, 16- или 32-разрядные слова), 
+находившиеся в старших 32 разрядах обоих операндов. 
+Полученные в результате более длинные элементы данных записываются в выходной
+операнд.
+Исходные значения младших разрядов операндов на результат не влияют.
+
+<p><B>Входной операнд</B> может находиться в MMX-регистре или в памяти;
+<BR><B>выходной операнд</B> должен находиться в MMX-регистре.
+<BR><B>Поддерживаются команды:</B><BR>
+<font color="#000099"><TT>punpckhbw</TT></font>,
+<font color="#000099"><TT>punpckhwd</TT></font>,
+<font color="#000099"><TT>punpckhdq</TT></font>.
+
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+<p><img src="space.gif" height=55 width=1>
+
+<p>
+<A NAME="punpckl"></A>
+<B>Команды punpckl</B><BR>
+Команды <font color="#000099"><TT>punpckl</TT></font> 
+попарно объединяют исходные элементы данных (байты, 16- или 32-разрядные слова), 
+находившиеся в младших 32 разрядах обоих операндов. 
+Полученные в результате более длинные элементы данных записываются в выходной
+операнд.
+Исходные значения старших разрядов операндов на результат не влияют.
+
+<p><B>Входной операнд</B> может находиться в MMX-регистре или в памяти;
+<BR><B>выходной операнд</B> должен находиться в MMX-регистре.
+<BR><B>Поддерживаются команды:</B><BR>
+<font color="#000099"><TT>punpcklbw</TT></font>,
+<font color="#000099"><TT>punpcklwd</TT></font>,
+<font color="#000099"><TT>punpckldq</TT></font>.
+
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+<p><img src="space.gif" height=600 width=1>
+
+</BODY>
+</HTML>
+

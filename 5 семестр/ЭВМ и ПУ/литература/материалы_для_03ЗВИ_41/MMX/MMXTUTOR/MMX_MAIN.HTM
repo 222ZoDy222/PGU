@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<TITLE>Introduction to MMX(TM) Technology</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+curtopic=0;
+arrivedfrom=0;
+lasttopic=27;
+exitAllowed=false;
+
+function next() {
+ showtopic(curtopic+1)
+}
+
+function prev() {
+ showtopic(curtopic-1)
+}
+
+function help() {
+ helpWin=open("help.htm","helpWin","width=600,height=470,resizable=yes,scrollbars=yes");
+}
+
+function showtopic(k) {
+ exitAllowed=false;
+ arrivedfrom=curtopic;
+ if (0<=k && k<=lasttopic){
+  curtopic=k;
+  window.topic.location=k + "t.htm";
+  window.left.location =k + "l.htm";
+  window.right.location=k + "r.htm";
+  if (k!=lasttopic && arrivedfrom==lasttopic) window.buttons.location="buttons.htm";
+  if (k==lasttopic) window.buttons.location="buttons1.htm";
+ }
+}
+
+function showmap() {
+ exitAllowed=false;
+ arrivedfrom=curtopic;
+ if (arrivedfrom==lasttopic) window.buttons.location="buttons.htm";
+ curtopic=0;
+ window.topic.location="0t.htm";
+ window.left.location ="0l.htm";
+ if (arrivedfrom<=9) window.right.location="0r.htm#s";
+ else if (arrivedfrom<=18) window.right.location="0r.htm#lesson2";
+ else if (arrivedfrom<=23) window.right.location="0r.htm#lesson3";
+ else window.right.location="0r.htm#lesson4";
+}
+
+function showlr() {
+  window.left.location=curtopic + "l.htm";
+  window.right.location=curtopic + "r.htm";
+}
+
+function exit() {
+  exitAllowed=true;
+  window.topic.location="0t.htm";
+}
+
+function exitOK() {
+ if (exitAllowed) {self.close()}
+}
+
+function exitNO() {
+ window.topic.location=curtopic + "t.htm";
+ exitAllowed=false;
+}
+
+//-->
+</SCRIPT>
+</HEAD>
+
+<FRAMESET cols="*,53" FRAMEBORDER=NO BORDER=1>
+ <FRAMESET rows="66,*" FRAMEBORDER=NO BORDER=1>
+  <FRAME SRC="0t.htm" NAME="topic" marginwidth=2 marginheight=2 scrolling="no">
+  <FRAMESET cols="50%,50%" FRAMEBORDER=NO BORDER=0>
+   <FRAME SRC="0l.htm" NAME="left"  marginwidth=5 marginheight=3>
+   <FRAME SRC="0r.htm" NAME="right" marginwidth=5 marginheight=3>
+  </FRAMESET>
+ </FRAMESET>
+ <FRAME SRC="buttons.htm" NAME="buttons" marginwidth=2 marginheight=2 scrolling="no">
+</FRAMESET>
+
+<NOFRAMES>
+<HTML>
+<HEAD>
+<TITLE>Introduction to MMX(TM) Technology</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+Welcome to Introduction to MMX(TM) Technology Tutorial!
+To start learning, please use a frame-enabled browser.
+</BODY>
+</HTML>
+</NOFRAMES>
+
+
+
+

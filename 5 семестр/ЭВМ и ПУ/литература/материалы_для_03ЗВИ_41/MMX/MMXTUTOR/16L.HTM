@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 16</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+function ldpcmpeq() { 
+self.location="#pcmpeq"
+}
+function ldpcmpgt() { 
+self.location="#pcmpgt"
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#CCCCCC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+<A NAME="s"></A>
+MMX-команды сравнени€ попарно сравнивают элементы данных 
+(байты, 16- или 32-разр€дные слова) входного и выходного операндов. 
+¬ зависимости от результата сравнени€ соответствующий элемент данных 
+выходного операнда заполн€етс€ нул€ми либо единицами.
+<BR>
+Ёти команды, как и все остальные MMX-команды, не устанавливают
+флагов (признаков).
+<p>
+ƒл€ получени€ информации о конкретной команде щелкните мышкой на 
+названии команды:
+<UL>
+<LI><A target="figure" HREF="pcmpeq.gif" onClick="ldpcmpeq()"><TT>pcmpeq</TT></A>
+<LI><A target="figure" HREF="pcmpgt.gif" onClick="ldpcmpgt()"><TT>pcmpgt</TT></A>
+</UL>
+
+
+<p><img src="space.gif" height=55 width=1>
+
+<p>
+<A NAME="pcmpeq"></A>
+<B> оманды pcmpeq</B><BR>
+ оманды <font color="#000099"><TT>pcmpeq</TT></font> попарно сравнивают элементы данных 
+(байты, 16- или 32-разр€дные слова) входного и выходного операндов. 
+≈сли элемент данных выходного операнда равен соответствующему элементу
+входного, такой элемент выходного операнда заполн€етс€ единицами.
+≈сли равенства нет, он заполн€етс€ нул€ми.
+
+<BR><B>¬ходной операнд</B> может находитьс€ в MMX-регистре или в пам€ти;
+<BR><B>выходной операнд</B> должен находитьс€ в MMX-регистре.
+<BR><B>ѕоддерживаютс€ команды:</B><BR>
+<font color="#000099">
+<TT>pcmpeqb</TT>,
+<TT>pcmpeqw</TT>,
+<TT>pcmpeqd</TT>.
+</font>
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>¬озврат к началу темы</small></A>
+<p><img src="space.gif" height=55 width=1>
+
+<p>
+<A NAME="pcmpgt"></A>
+<B> оманды pcmpgt</B><BR>
+ оманды <font color="#000099"><TT>pcmpgt</TT></font> попарно сравнивают элементы данных 
+(байты, 16- или 32-разр€дные слова <B>со знаком</B>) входного и выходного операндов. 
+≈сли элемент данных выходного операнда больше соответствующего элемента
+входного, такой элемент выходного операнда заполн€етс€ единицами;
+eсли же он не больше входного, то он заполн€етс€ нул€ми.
+
+<BR><B>¬ходной операнд</B> может находитьс€ в MMX-регистре или в пам€ти;
+<BR><B>выходной операнд</B> должен находитьс€ в MMX-регистре.
+<BR><B>ѕоддерживаютс€ команды:</B><BR>
+<font color="#000099">
+<TT>pcmpgtb</TT>,
+<TT>pcmpgtw</TT>,
+<TT>pcmpgtd</TT>.
+</font>
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>¬озврат к началу темы</small></A>
+<p><img src="space.gif" height=600 width=1>
+
+</BODY>
+</HTML>
+

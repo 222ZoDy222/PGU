@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 21</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+function ldcomp()  {top.right.location="21rcomp.htm"}
+function ldpandn() {top.right.location="21rpandn.htm"}
+function ldpand()  {top.right.location="21rpand.htm"}
+function ldpor()   {top.right.location="21rpor.htm"}
+//-->
+</SCRIPT>
+
+</HEAD>
+<BODY BGCOLOR="#CCCCCC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+Часто бывает нужно преобразовать короткие данные в более длинные. 
+Если это слова без знака, можно воспользоваться одной из команд группы 
+<A HREF="glossary.htm#pack" target="right">punpck</A>,
+позаботившись, чтобы в старшие разряды результатов сразу попали нули.
+<BR>
+Если же надо повысить разрядность слов со знаком,
+можно действовать следующим образом: 
+<TABLE border=0 cellspacing=4 cellpadding=0>
+<TD valign=top>1.</TD>
+<TD>Распаковать слова из младших 32 разрядов 
+командой <A HREF="glossary.htm#pack" target="right">punpcklwd</A>,
+так, чтобы знаковый бит попал в самый старший разряд двойного слова-результата
+(см. рисунок).
+<TR><TD valign=top>2.</TD>
+<TD>Распаковать слова из старших 32 разрядов 
+командой <A HREF="glossary.htm#pack" target="right">punpckhwd</A>
+(в другой регистр).
+<TR><TD valign=top>3.</TD>
+<TD>Выполнить арифметический сдвиг полученных двойных слов направо
+командой <A HREF="glossary.htm#shift" target="right">psrad</A>.
+При этом знаковый бит в каждом слове размножится, и 
+32-разрядные слова со знаком будут иметь те же численные значения,
+что и исходные 16-разрядные слова со знаком.
+</TD></TR></TABLE>
+
+</BODY>
+</HTML>
+

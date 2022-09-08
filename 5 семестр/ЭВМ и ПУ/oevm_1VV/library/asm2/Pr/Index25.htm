@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>
+</title>
+<meta http-equiv="Content-Type" content="text/html;charset=windows-1251">
+</head>
+<body background="../FON.JPG" BGCOLOR="#E7E3E7" TEXT="#000000" LINK="#004080" VLINK="#004080">
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index24.htm">
+<img SRC="Back.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index26.htm">
+<img SRC="For.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+</tr>
+</table>
+<p>
+&nbsp;
+</p>
+<p align="center">
+<font face="Arial, Helvetica, sans-serif" size="3">
+<font size="4">
+RET Возврат из процедуры 
+</font>
+</font>
+</p>
+<p align="center">
+<font face="Arial, Helvetica, sans-serif" size="4">
+  RETN Возврат из ближней процедуры</font>
+</p>
+<p align="center">
+<font face="Arial, Helvetica, sans-serif" size="4">
+ RETF Возврат из дальней процедуры</font></p>
+<p align="left">
+<font face="Arial, Helvetica, sans-serif" size="3">
+  <br>
+  Команда ret извлекает из стека адрес возврата и передает управление назад в 
+  программу, первоначально вызвавшую процедуру. Если командой ret завершается 
+  ближняя процедура, объявленная с атрибутом near, или используется модификация 
+  команды retn, со стека снимается одно слово- относительный адрес точки возврата. 
+  Передача управления в этом случае осуществляется в пределах одного программного 
+  сегмента. Если командой ret завершается дальняя процедура, объявленная с атрибутом 
+  far, или используется модификация команды retf, со стека снимаются два слова: 
+  смещение и сегментный адрес точки возврата. В этом случае передача управления 
+  может быть межсегментной.<br>
+  В команду ret может быть включен необязательный операнд (кратный 2), который 
+  указывает, на сколько байтов дополнительно смещается указатель стека после возврата 
+  в вызывающую программу. Прибавляя эту константу к новому значению SP, команда 
+  ret обходит аргументы, помещенные в стек вызывающей программой (для передачи 
+  процедуре) перед выполнением команды call. Обе разновидности команды не воздействуют 
+  на флаги процессора.</p>
+<p align="center"><b>Пример 1</b></p>
+<blockquote>
+<p><br>
+
+</font>
+  <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  …<br>
+  call subr ;Вызов подпрограммы<br>
+  subr proc near<br>
+  . . . ;Тело процедуры-подпрограммы<br>
+  ret subr endp</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 2</b></p>
+
+</font>
+<blockquote>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><br>
+  push AX ;Параметр 1, передаваемый в<br>
+  ;подпрограмму <br>
+  push SI ;Параметр 2, передаваемый в<br>
+  ;подпрограмму <br>
+  call subr ;Вызов подпрограммы<br>
+  …<br>
+  subr proc near<br>
+  …<br>
+  ;Извлечение из стека параметров <br>
+  ; (без изменения содержимого SP)<br>
+  ret 4 ;Возврат в вызывающую<br>
+  ;программу и снятие со стека <br>
+  ;двух слов с параметрами <br>
+  subr endp</font></p>
+
+</blockquote>
+<p>
+&nbsp;
+</p>
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index24.htm">
+<img SRC="Back.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index26.htm">
+<img SRC="For.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+</tr>
+</table>
+</body>
+</html>

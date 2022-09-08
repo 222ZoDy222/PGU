@@ -1,0 +1,161 @@
+#def {
+; Font-Family: Arial, HELVETICA;
+; Font-size: 12px;
+}
+A {
+; Font-weight: bold; Font-size: 12px;
+; Text-decoration: none;
+
+}
+A:hover {
+; color: BLACK;
+
+}
+A:visited {
+; color: BLUE;
+
+}
+#menu1 {
+; Font-Family: System;
+; Font-size: 14px;
+; Text-align: center;
+BORDER-RIGHT:#804040 1PX SOLID;
+BORDER-TOP:#804040 1PX SOLID;
+BORDER-LEFT:#804040 1PX SOLID;
+BORDER-BOTTOM:#804040 1PX SOLID;
+
+}
+#menu1 A {
+; color: BLACK;
+; BackGround-color: #9FB9DF;
+; Display: block;
+BORDER-RIGHT:#8080FF 2PX OUTSET;
+BORDER-TOP:#8080FF 2PX OUTSET;
+BORDER-LEFT:#8080FF 2PX OUTSET;
+BORDER-BOTTOM:#804040 2PX OUTSET;
+
+}
+#menu1 A:hover {
+; color: WHITE;
+; BackGround-color: BLUE;
+
+}
+#img1 {
+CURSOR:HAND;
+
+}
+#tab1 {
+; Font-weight: bold;
+; Text-align: center;
+; Width: 100%;
+
+}
+#t1 {
+; Font-size: 10px;
+
+}
+#t2 {
+; Font-size: 12px;
+
+}
+#t3 {
+; Font-size: 14px;
+
+}
+#t4 {
+; Font-size: 16px;
+
+}
+#t5 {
+; Font-size: 18px;
+
+}
+#t6 {
+; Font-size: 20px;
+
+}
+#t7 {
+; Font-size: 22px;
+
+}
+#text1 {
+; Font-size: 12px;
+; BackGround-color: #9FB9DF;
+BORDER-TOP-WIDTH:2PX;
+BORDER-LEFT-WIDTH:2PX;
+BORDER-LEFT-COLOR:#DED6F8;
+BORDER-BOTTOM-WIDTH:2PX;
+BORDER-BOTTOM-COLOR:#DED6F8;
+BORDER-TOP-COLOR:#DED6F8;
+BORDER-RIGHT-WIDTH:2PX;
+BORDER-RIGHT-COLOR:#DED6F8;
+
+}
+#text2 {
+; Font-weight: lighter; Font-size: 15px;
+; BackGround-color: #00CCFF;
+BORDER-TOP-WIDTH:2PX;
+BORDER-LEFT-WIDTH:2PX;
+BORDER-LEFT-COLOR:#DED6F8;
+BORDER-BOTTOM-WIDTH:2PX;
+BORDER-BOTTOM-COLOR:#DED6F8;
+BORDER-TOP-COLOR:#DED6F8;
+BORDER-RIGHT-WIDTH:2PX;
+BORDER-RIGHT-COLOR:#DED6F8;
+
+}
+#sel1 {
+; Font-Family: System;
+; Font-weight: bold; Font-size: 12px;
+; color: BLACK;
+; BackGround-color: #9FB9DF;
+
+}
+#butt1 {
+; Font-Family: System;
+; Font-weight: bold; Font-size: 10px;
+; BackGround-color: #9FB9DF;
+BORDER-RIGHT:#8080FF 2PX OUTSET;
+BORDER-TOP:#8080FF 2PX OUTSET;
+BORDER-LEFT:#8080FF 2PX OUTSET;
+BORDER-BOTTOM:#804040 2PX OUTSET;
+CURSOR:HAND;
+
+}
+#butt2 {
+; Font-Family: System;
+; Font-size: 12px;
+; Border-style: outset;
+; BackGround-color: #9FB9DF;
+; Height: 23px; Width: 40px;
+BORDER-RIGHT:#8080FF 2PX OUTSET;
+BORDER-TOP:#8080FF 2PX OUTSET;
+BORDER-LEFT:#8080FF 2PX OUTSET;
+BORDER-BOTTOM:#804040 2PX OUTSET;
+CURSOR:HAND;
+
+}
+#butt3 {
+; Font-Family: System;
+; Font-size: 12px;
+; Border-style: outset;
+; BackGround-color: #9FB9DF;
+; Height: 23px; Width: 40px;
+BORDER-RIGHT:#8080FF 2PX OUTSET;
+BORDER-TOP:#8080FF 2PX OUTSET;
+BORDER-LEFT:#8080FF 2PX OUTSET;
+BORDER-BOTTOM:#804040 2PX OUTSET;
+CURSOR:HAND;
+
+}
+#cell10 {
+; BackGround-color: #9FB9DF;
+BORDER-RIGHT:#C9BEF5 1PX OUTSET;
+BORDER-TOP:#C9BEF5 1PX OUTSET;
+BORDER-LEFT:#C9BEF5 1PX OUTSET;
+BORDER-BOTTOM:#C9BEF5 1PX OUTSET;
+
+}
+#hi1 {
+; Display: none;
+}

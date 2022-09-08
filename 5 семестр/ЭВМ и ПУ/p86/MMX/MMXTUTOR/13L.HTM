@@ -1,0 +1,109 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 13</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+function ldpsrl() {
+self.location="#psrl"
+}
+function ldpsll() {
+self.location="#psll"
+}
+function ldpsra() {
+self.location="#psra"
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#CCCCCC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+<A NAME="s"></A>
+MMX-команды сдвига выполняют сдвиг каждого элемента данных
+(16-, 32- или 64-разрядного слова) в выходном операнде
+на величину, задаваемую входным операндом.
+<p>
+Для получения информации о конкретной команде щелкните мышкой на 
+названии команды:
+
+<UL>
+<LI><A target="figure" HREF="psll.gif" onClick="ldpsll()"><TT>psll</TT></A>
+<LI><A target="figure" HREF="psra.gif" onClick="ldpsra()"><TT>psra</TT></A>
+<LI><A target="figure" HREF="psrl.gif" onClick="ldpsrl()"><TT>psrl</TT></A>
+</UL>
+
+<p><img src="button/space.gif" height=155 width=1>
+
+<p>
+<A NAME="psll"></A>
+<B>Команды psll (логический сдвиг налево)</B><BR>
+Команды <font color="#000099"><TT>psll</TT></font> выполняют сдвиг элементов данных 
+(16-, 32- или 64-разрядных слов) в выходном операнде на число бит,
+задаваемое входным операндом. Освободившиеся младшие разряды заполняются
+нулями.
+<BR><B>Входной операнд</B> может быть непосредственным операндом либо 
+находиться в MMX-регистре или в памяти. 
+<BR><B>Выходной операнд</B> должен находиться в MMX-регистре. 
+<BR>
+<B>Поддерживаются команды:</B><BR> 
+<font color="#000099">
+<TT>psllw</TT>, 
+<TT>pslld</TT>, 
+<TT>psllq</TT>. 
+</font>
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+<p><img src="button/space.gif" height=55 width=1>
+
+<p>
+<A NAME="psra"></A>
+<B>Команды psra (арифметический сдвиг направо)</B><BR>
+Команды <font color="#000099"><TT>psra</TT></font> выполняют сдвиг элементов данных 
+(16- или 32-разрядных слов) в выходном операнде на число бит,
+задаваемое входным операндом. Если сдвигается положительное число, то
+освободившиеся старшие разряды заполняются нулями, а если отрицательное,
+то единицами.
+<BR><B>Входной операнд</B> может быть непосредственным операндом либо 
+находиться в MMX-регистре или в памяти. 
+<BR><B>Выходной операнд</B> должен находиться в MMX-регистре. 
+<BR>
+<B>Поддерживаются команды:</B><BR> 
+<font color="#000099">
+<TT>psraw</TT>, 
+<TT>psrad</TT>. 
+</font>
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+<p><img src="button/space.gif" height=55 width=1>
+
+<p>
+<A NAME="psrl"></A>
+<B>Команды psrl (логический сдвиг направо)</B><BR>
+Команды <font color="#000099"><TT>psrl</TT></font> выполняют сдвиг элементов данных 
+(16-, 32- или 64-разрядных слов) в выходном операнде на число бит,
+задаваемое входным операндом. Освободившиеся старшие разряды заполняются
+нулями.
+<BR><B>Входной операнд</B> может быть непосредственным операндом либо 
+находиться в MMX-регистре или в памяти. 
+<BR><B>Выходной операнд</B> должен находиться в MMX-регистре. 
+<BR>
+<B>Поддерживаются команды:</B><BR> 
+<font color="#000099">
+<TT>psrlw</TT>, 
+<TT>psrld</TT>, 
+<TT>psrlq</TT>. 
+</font>
+<p>
+<A HREF="#s"><IMG SRC="button/back.gif" alt="back" width=44 height=47 border=0 align="middle"></A>
+<A HREF="#s"><small>Возврат к началу темы</small></A>
+<p><img src="button/space.gif" height=600 width=1>
+
+</BODY>
+</HTML>
+

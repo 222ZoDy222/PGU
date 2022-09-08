@@ -1,0 +1,425 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>
+</title>
+<meta http-equiv="Content-Type" content="text/html;charset=windows-1251">
+</head>
+<body background="../FON.JPG" BGCOLOR="#E7E3E7" TEXT="#000000" LINK="#004080" VLINK="#004080">
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index19.htm">
+<img SRC="Back.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index21.htm">
+<img SRC="For.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+</tr>
+</table>
+<p>
+&nbsp;
+</p>
+<p align="center">
+<font face="Arial, Helvetica, sans-serif" size="3">
+<font size="4">
+MUL Умножение целых чисел без знака
+</font>
+<br>
+</font>
+</p>
+<p align="left">
+<font face="Arial, Helvetica, sans-serif" size="3">
+  Команда inul выполняет умножение целого числа без знака, находящегося в регистре 
+  AL (в случае умножения на байт) или АХ (в случае умножения на слово), на операнд-источник 
+  (целое число без знака). Размер произведения в два раза больше размера сомножителей.<br>
+  Для однобайтовых операций один из сомножителей помещается в регистр AL; после 
+  выполнения операции произведение записывается в регистр АХ.<br>
+  Для двухбайтовых операций один из сомножителей помещается в регистр АХ; после 
+  выполнения операции произведение записывается в регистры DX:AX (в DX - старшая 
+  часть, в АХ - младшая). Предыдущее содержимое регистра DX затирается.<br>
+  Если содержимое регистра АН после однобайтового умножения или содержимое регистра 
+  DX после двухбайтового умножения не равны 0, флаги CF и OF устанавливаются в 
+  1. В противном случае оба флага сбрасываются в 0.<br>
+  В качестве операнда-сомножителя команды mul можно указывать регистр (кроме сегментного) 
+  или ячейку памяти; не допускается умножение на непосредственное значение. Команда 
+  воздействует на флаги OF и CF.<br>
+  </p>
+<p align="center"><b>Пример 1</b></p>
+<blockquote>
+<p><br>
+
+</font>
+  <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov AL,5 ;Первый сомножитель <br>
+  mov BL,3 ;Второй сомножитель <br>
+  mul BL ;AX=000Fh, произведение</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov AX,256 ;Первый сомножитель <br>
+  mov BX,256 ;Второй сомножитель <br>
+  mul BX ;DX=0001h, AX=0000h<br>
+  ;(DX:AX=65536, произведение)</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 3</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ;В полях данных<br>
+  coef db 100 ;Первый сомножитель<br>
+  datal db 126 ;Второй сомножитель<br>
+  mov AL,datal ;AL=7Eh=126<br>
+  mul coef ;AX=3138h=12600,произведение</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 4</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">;B полях данных<br>
+  coef dw 5000 ;Первый сомножитель <br>
+  datal dw 1200 ;Второй сомножитель <br>
+  mov AX,datal ;AX=4BOh=1200 <br>
+  mul coef ;DX=005Bh, AX=8D80h <br>
+  ;Произведение=ВХ:AX= <br>
+  ;5B8D80h=6000000</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><b><img src="pr.gif" ></b> Допустимо использование 
+  32-битовых операндов и дополнительных режимов адресации 32-разрядных процессоров. 
+  При этом, если указанный операнд представляет собой 32-байтовую величину, то 
+  результат размещается в регистрах EDX:EAX.<br>
+  </p>
+<p align="center"><b>Пример 1</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov EAX,200h ;Первый сомножитель <br>
+  mov ESI,l000000lh ;Второй сомножитель <br>
+  mul ESI ;Произведение в EDX:EAX<br>
+  ;EDX=00000020h,EAX=00000200h</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ; В полях данных<br>
+  nmbs db 15,22,36,78,84,98,100<br>
+  ;В программном сегменте<br>
+  mov EDX,offset nmbs ;Относительный адрес<br>
+  movzx EDX,DX ;массива<br>
+  mov ECX,5 ;Смещение в массиве<br>
+  mov AL,10 ;Множитель<br>
+  mul byte ptr [EDX] [ЕСХ] ;Умножаем элемент<br>
+  ;массива с индексом 5 (98) <br>
+  ;на AL (10) Результат в <br>
+  ;АХ=980</font></p>
+<p>&nbsp;</p>
+</blockquote>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">NEG Изменение 
+  знака, дополнение до 2</font></p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  Команда neg выполняет вычитание целочисленного операнда со знаком из нуля, превращая 
+  положительное число в отрицательное и наоборот. Исходный операнд затирается. 
+  В качестве операнда можно указывать регистр (кроме сегментного) или ячейку памяти 
+  размером как в байт, так и в слово. Не допускается использовать в качестве операнда 
+  непосредственное значение. Команда воздействует на флаги OF, SF, ZF, AF, PF 
+  и CF.</p>
+<p align="center"><b>Пример 1</b></p>
+  <blockquote>
+    <p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov АХ,0 0 01<br>
+  neg AX ;AX=FFFFh=-1</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov BX,-2 ;BX=FFFEh=-2 <br>
+  neg BX ;BX=0002h</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 3</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ;В полях данных<br>
+  nmb dw 800lh ;Если число со знаком,<br>
+  ;то -32767 <br>
+  ;В программном сегменте<br>
+  neg nmb ;nmb=7FFFh=+32767</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><b><img src="pr.gif" ></b> Допустимо использование 
+  32-битовых операндов и дополнительных режимов адресации 32-разрядных процессоров.</p>
+<p align="center"><b>Пример</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov ECX, 5 <br>
+  neg ECX ;ECX=FFFFFFFBh=-5</font></p>
+<p>&nbsp;</p>
+</blockquote>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">NOP Холостая 
+  команда</font></p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  По команде пор процессор не выполняет никаких действий, кроме увеличения на 
+  1 содержимого указателя команд IP (поскольку команда пор занимает 1 байт). Команда 
+  иногда используется в отладочных целях, чтобы &quot;забить&quot; какие-то ненужные 
+  команды, не изменяя длину загрузочного модуля или, наоборот, оставить место 
+  в загрузочном модуле для последующей вставки команд. В ряде случаев команды 
+  пор включаются в текст объектного модуля транслятором. Команда не имеет ни параметров, 
+  ни операндов и не воздействует на флаги процессора.</p>
+<p>&nbsp;</p>
+
+</font>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">NOT Инверсия, 
+  дополнение до 1, логическое отрицание</font></p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  Команда not выполняет инверсию битов указанного операнда, заменяя 0 на 1 и наоборот. 
+  В качестве операнда можно указывать регистр (кроме сегментного) или ячейку памяти 
+  размером как в байт, так и в слово. Не допускается использовать в качестве операнда 
+  непосредственное значение. Команда не воздействует на флаги процессора.</p>
+<p>Правила побитовой инверсии:</p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  Операнд-бит 0 1 <br>
+  Бит результата 1 0</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 1</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov AX,0FFFFh<br>
+  not AX ;AX=0000h</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov SI,5551h<br>
+  not SI ;SI=AAAEh</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><b><img src="pr.gif" ></b> Допустимо использование 
+  32-битовых операндов и дополнительных режимов адресации 32-разрядных процессоров.<br>
+  </p>
+<p align="center"><b>Пример</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov EAX,0C00SFF00h<br>
+  not EAX ;EAX=3FFC00FFh</font></p>
+<p>&nbsp;</p>
+</blockquote>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">OR Логическое 
+  ВКЛЮЧАЮЩЕЕ ИЛИ</font></p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  Команда or выполняет операцию логического (побитового) сложения двух операндов. 
+  Результат замещает первый операнд (приемник); второй операнд (источник) не изменяется. 
+  В качестве первого операнда можно указывать регистр (кроме сегментного) или 
+  ячейку памяти, в качестве второго - регистр (кроме сегментного), ячейку памяти 
+  или непосредственное значение, однако не допускается определять оба операнда 
+  одновременно как ячейки памяти. Операнды команды or могут быть байтами или словами. 
+  Команда воздействует на флаги OF, SF, ZF, PF и CF, при этом флаги CF и OF всегда 
+  сбрасываются в 0.</p>
+<p align="center"><b>Правила побитового сложения:</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  Первый операнд-бит 0101 <br>
+  Второй операнд-бит 0011 <br>
+  Бит результата 0111</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 1</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov AX,000Fh <br>
+  mov BX,00F0h <br>
+  or AX,BX ;AX=00FFh, BX=00F0h</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov AX,000Fh <br>
+  mov BX,00F7h <br>
+  or AX,BX ;AX=00FFh, BX=00F7h</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 3</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov AX,000Fh<br>
+  or AX,8001h ;AX=800Fh</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 4</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ; В полях данных<br>
+  mask db 80h<br>
+  ;B программном сегменте<br>
+  mov CH,17h<br>
+  or CH,mask ;CH=97h</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><b><img src="pr.gif" > </b>Допустимо использование 
+  32-битовых операндов и дополнительных режимов адресации 32-разрядных процессоров.</p>
+<p align="center"><b>Пример</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  ;В полях данных<br>
+  mem dd 80000000h<br>
+  ; В программном сегменте<br>
+  or mem,0C0h ;mem=800000C0h</font></p>
+<p>&nbsp;</p>
+</blockquote>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="4">OUT Вывод в 
+  порт</font></p>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><br>
+  Команда out выводит в порт, указываемый первым операндом, байт или слово соответственно 
+  из регистра AL или АХ. Адрес порта помещается в регистр DX. Если адрес порта 
+  не превышает 255, он может быть указан непосредственным значением. Указание 
+  регистра-источника (AL или АХ) обязательно, хотя с другими регистрами команда 
+  out не работает, и их указывать нельзя. Команда не воздействует на флаги процессора.</p>
+<p align="center"><b>Пример 1</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov AL,20h ;Команда конца прерывания (EOI) <br>
+  out 20h,AL ;Вывод команды EOI в порт<br>
+  ;20h контроллера прерываний</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p align="center"><b>Пример 2</b></p>
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov DX,3CEh ; Адрес порта<br>
+  mov AL,5 ;Данное<br>
+  out DX,AL ;Вывод байта из AL в порт 3CEh</font></p>
+</blockquote>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<p><b><img src="pr.gif" ></b> Допустимо использование 
+  в качестве операнда-источника расширенного регистра ЕАХ (если адресуемое устройство 
+  позволяет записать в его порт двойное слово).</p>
+<p align="center"><b>Пример</b></p>
+
+  <blockquote>
+<p><br>
+
+</font>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+  mov ЕАХ,1А008РРЗh;Пересылаемое данное<br>
+  mov DX,345h ;Адрес порта<br>
+  out DX,EAX ;Вывод в порт двойного слова</font></p>
+
+</blockquote>
+<p>
+&nbsp;
+</p>
+<table COLS="3" WIDTH="16%">
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index19.htm">
+<img SRC="Back.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td WIDTH="10%">
+<font face="Arial, Helvetica, sans-serif">
+<a href="../index.html">
+<img SRC="Menu.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+<td ALIGN="RIGHT">
+<font face="Arial, Helvetica, sans-serif">
+<a href="Index21.htm">
+<img SRC="For.gif" BORDER="0" width="73" height="22">
+</a>
+</font>
+</td>
+</tr>
+</table>
+</body>
+</html>

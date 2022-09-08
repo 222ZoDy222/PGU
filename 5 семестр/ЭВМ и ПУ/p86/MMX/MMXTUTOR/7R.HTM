@@ -1,0 +1,145 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 7</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+var maxn=10;
+var n=0;
+var instname = new Array(maxn);
+var arithm = new Array(maxn);
+var datatype = new Array(maxn);
+
+instname[0]="paddd";   arithm[0]=1; datatype[0]=4;
+instname[1]="psubusb"; arithm[1]=4; datatype[1]=1;
+instname[2]="paddsw";  arithm[2]=2; datatype[2]=2;
+instname[3]="pmaddwd"; arithm[3]=1; datatype[3]=6;
+instname[4]="packuswb";arithm[4]=4; datatype[4]=3;
+instname[5]="psubsw";  arithm[5]=2; datatype[5]=2;
+instname[6]="paddusb"; arithm[6]=4; datatype[6]=1;
+instname[7]="packssdw";arithm[7]=2; datatype[7]=6;
+instname[8]="psubd";   arithm[8]=1; datatype[8]=4;
+instname[9]="packsswb";arithm[9]=2; datatype[9]=3;
+
+function uncheckall() {
+ document.syntest.wrap.checked=false;
+ document.syntest.sign.checked=false;
+ document.syntest.unsi.checked=false;
+ document.syntest.byt.checked =false;
+ document.syntest.word.checked=false;
+ document.syntest.doub.checked=false;
+ document.syntest.quad.checked=false;
+}
+
+function checkanswer() {
+var dty=0;
+var ari=0;
+if (document.syntest.wrap.checked) ari=1;
+if (document.syntest.sign.checked) ari=ari+2;
+if (document.syntest.unsi.checked) ari=ari+4;
+if (document.syntest.byt.checked) dty=1;
+if (document.syntest.word.checked) dty=dty+2;
+if (document.syntest.doub.checked) dty=dty+4;
+if (document.syntest.quad.checked) dty=dty+8;
+if (dty==datatype[n] && ari==arithm[n]) {
+  document.syntest.comment.value = "BEPHO!"
+ }
+ else {
+  document.syntest.comment.value = "HET. Пoпpoбуйтe eщe paз!"
+ }
+}
+
+function newplay() {
+ n++;
+ if (n==maxn) n=0;
+ uncheckall();
+ document.syntest.curinst.value=instname[n];
+ document.syntest.comment.value=" ";
+}
+
+function corranswer() {
+ uncheckall();
+ if (arithm[n]==1) document.syntest.wrap.checked=true;
+ if (arithm[n]==2) document.syntest.sign.checked=true;
+ if (arithm[n]==4) document.syntest.unsi.checked=true;
+ dty=datatype[n];
+ if (dty>=8) {document.syntest.quad.checked=true; dty=dty-8}
+ if (dty>=4) {document.syntest.doub.checked=true; dty=dty-4}
+ if (dty>=2) {document.syntest.word.checked=true; dty=dty-2}
+ if (dty==1) {document.syntest.byt.checked=true}
+}
+
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR="#CCCCCC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+<A NAME="s"></A>
+<CENTER>
+<H3> Проверьте себя! </H3>
+Отметьте мышкой арифметику и тип(ы) данных команды,
+которую Вы видите в верхнем окошке, и нажмите кнопку <B>Ответ</B>.
+
+<FORM NAME="syntest" ACTION="">
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<TD valign="top" COLSPAN=2><B>Команда:</B> <INPUT NAME="curinst" TYPE="Text" SIZE=10 VALUE="paddd"></TD>
+</TR>
+<TR>
+<TD valign="top"><B>Арифметика</B></TD>
+<TD valign="top"><B>Тип данных</B></TD>
+</TR>
+<TR>
+<TD valign="top"><INPUT NAME="wrap" TYPE="checkbox">wraparound</TD>
+<TD valign="top"><INPUT NAME="byt" TYPE="checkbox">byte</TD>
+</TR>
+<TR>
+<TD valign="top"><INPUT NAME="sign" TYPE="checkbox">signed&nbsp;saturation</TD>
+<TD valign="top"><INPUT NAME="word" TYPE="checkbox">word</TD>
+</TR>
+<TR>
+<TD valign="top"><INPUT NAME="unsi" TYPE="checkbox">unsigned&nbsp;saturation&nbsp;</TD>
+<TD valign="top"><INPUT NAME="doub" TYPE="checkbox">doubleword</TD>
+</TR>
+<TR>
+<TD valign="top"> </TD>
+<TD valign="top"><INPUT NAME="quad" TYPE="checkbox">quadword</TD>
+</TR>
+
+<TR><TD COLSPAN=2><font size=1>&nbsp;</TD></TR>
+
+<TR>
+<TD valign="top" COLSPAN=2 ALIGN=MIDDLE>
+<INPUT NAME="answer" TYPE="button" VALUE="OTBET" onClick="checkanswer()">
+</TD>
+</TR>
+
+<TR><TD COLSPAN=2><font size=1>&nbsp;</TD></TR>
+
+<TR>
+<TD valign="top" COLSPAN=2 ALIGN=MIDDLE><INPUT NAME="comment" TYPE="text" SIZE=30 VALUE=" "></TD>
+</TR>
+
+<TR><TD COLSPAN=2><font size=1>&nbsp;</TD></TR>
+
+<TR>
+<TD valign="top" COLSPAN=2 ALIGN=MIDDLE>
+<A HREF="javascript:corranswer()"><IMG SRC="button/hint.gif" border=0 width=85 height=22 ALT="Hint, please"></A>
+<A HREF="javascript:newplay()"><IMG SRC="button/newtest.gif" border=0 width=94 height=22 ALT="New test"></A>
+</TD>
+</TR>
+
+</TABLE>
+</FORM>
+</FONT>
+
+</CENTER>
+
+</BODY>
+</HTML>
+

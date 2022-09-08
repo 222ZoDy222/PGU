@@ -1,0 +1,2 @@
+rus.com
+nc.exe

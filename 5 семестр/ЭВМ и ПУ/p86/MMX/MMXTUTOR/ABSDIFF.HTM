@@ -1,0 +1,126 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 23</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+i=1; timer=0; working=true; variant=0;
+msg=new Array(5);
+msg[1]="";
+msg[1]="   move b_block";
+msg[2]="   a_block - b_block";
+msg[3]="   b_block - a_block";
+msg[4]="   bitwise OR";
+
+inst=new Array(7);
+inst[0]="movq MM0,a_block";
+inst[1]="movq MM1,b_block";
+inst[2]="psubusb MM0,MM1";
+inst[3]="psubusb MM1,a_block";
+inst[4]="por MM0,MM1";
+
+function blink() {
+ if (working) {
+  if (document.test.elements[i].value==msg[i]) document.test.elements[i].value=" " 
+  else document.test.elements[i].value=msg[i]; 
+  timer=setTimeout ("blink()",500)
+ }
+}
+
+function refill() {
+ for (j=0;j<i;j++) {document.test.elements[j].value=inst[j]}
+ if (i<4) {
+  for (j=i+1;j<5;j++) {document.test.elements[j].value=" "}
+ }
+}
+
+function check() {
+ if (working) {
+  if (variant==i) {
+   i++;
+   document.test.comment.value="  B E P H O !";
+   if (i==5) {
+    working=false; 
+    top.right.location="congrat1.htm";
+   }
+  }
+  else {document.test.comment.value="Используйте " + inst[i]}
+  refill();
+ }
+}
+
+function newgame() {i=1; refill()}
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" onLoad="blink();refill()">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+<small>
+Щелчком мыши выберите команду, которая должна быть 
+на том месте, где сейчас мигает подсказка. 
+Hажмите кнопку <B>Ответ</B>.
+</small>
+
+<p>
+<FORM NAME="test" ACTION="">
+<CENTER>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=1>
+<TR>
+<TD><TT><INPUT NAME="instr0" TYPE="text" SIZE=25 VALUE=""></TD>
+</TR>
+<TR>
+<TD><TT><INPUT NAME="instr1" TYPE="text" SIZE=25 VALUE=""></TD>
+</TR>
+<TR>
+<TD><TT><INPUT NAME="instr2" TYPE="text" SIZE=25 VALUE=""></TD>
+</TR>
+<TR>
+<TD><TT><INPUT NAME="instr3" TYPE="text" SIZE=25 VALUE=""></TD>
+</TR>
+<TR>
+<TD><TT><INPUT NAME="instr4" TYPE="text" SIZE=25 VALUE=""></TD>
+</TR>
+<TR>
+<TD><font size=1>&nbsp;</font></TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<CENTER>
+<TABLE border=0 width=100% cellpadding=0 cellspacing=1>
+<TR>
+<TD colspan=2><small><B>Варианты ответа:</B></TD>
+</TR>
+<TR>
+<TD><small>
+<INPUT NAME="res" TYPE="radio" onClick="variant=6">psubsb&nbsp;MM0,MM1<BR>
+<INPUT NAME="res" TYPE="radio" onClick="variant=2">psubusb&nbsp;MM0,MM1<BR>
+<INPUT NAME="res" TYPE="radio" onClick="variant=4">por&nbsp;MM0,MM1&nbsp;<BR>
+<INPUT NAME="res" TYPE="radio" onClick="variant=6">pand&nbsp;MM0,MM1&nbsp;<BR>
+<INPUT NAME="res" TYPE="radio" onClick="variant=6">pxor&nbsp;MM0,MM1&nbsp;<BR>
+</TD>
+<TD><small>
+<INPUT NAME="res" TYPE="radio" onClick="variant=1">movq&nbsp;MM1,b_block&nbsp;<BR>
+<INPUT NAME="res" TYPE="radio" onClick="variant=6">movq&nbsp;MM0,b_block&nbsp;<BR>
+<INPUT NAME="res" TYPE="radio" onClick="variant=6">psubusb&nbsp;MM1,MM0<BR>
+<INPUT NAME="res" TYPE="radio" onClick="variant=3">psubusb&nbsp;MM1,a_block<BR>
+<INPUT NAME="res" TYPE="radio" onClick="variant=6">psubusb&nbsp;MM1,b_block<BR>
+</TD> 
+</TR>
+</TABLE>
+<p>
+<INPUT TYPE="button" VALUE=" OTBET " onClick="check()">
+<INPUT NAME="comment" TYPE="text" SIZE=38 VALUE=" ">
+</CENTER>
+</FORM>
+
+</BODY>
+</HTML>
+
+
+

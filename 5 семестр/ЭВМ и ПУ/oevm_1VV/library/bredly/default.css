@@ -1,0 +1,115 @@
+A  {
+	color : Blue;
+	text-decoration : none;
+	font-weight : bold;
+}
+A:Visited  {
+	color : #B0B0F0;
+}
+A:Active  {
+	color : Green;
+}
+A:Hover  {
+	font-family : Times New Roman, Arial, Tahoma;
+	color : #FF8000;
+	text-decoration : underline;
+}
+P  {
+	text-align : justify;
+; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-style: normal; line-height: normal; font-weight: normal; color: #000000
+}
+.LEFT   {	text-align : left;}
+.CENTER {	text-align : center;}
+.RIGHT  {	text-align : right;}
+H1  {
+	font-family : Arial, Tahoma;
+	color : #0000CC;
+	font-weight : bold;
+	text-align : center;
+; font-size: 16px
+}
+H2  {
+	font-family : Arial, Tahoma;
+	color : #800000;
+	font-weight : bold;
+	text-align : center;
+}
+H3  {
+	font-family : Tahoma, Arial;
+	font-weight : bold;
+	color : #800000;
+	text-align : center;
+}
+TABLE  {
+	font-family : Tahoma, Arial;
+	font-size : x-small;
+	background-color : #FFFFFF;
+	text-align : left;
+	align : center;
+  border-style : solid;
+  border-width : 1pt;
+}
+TH  {
+	font-weight : bold;
+	font-size : medium;
+	font-family : Tahoma, Arial;
+	text-align : center;
+	color : Black;
+	background-color : #F0F0F0;
+	padding-left : 4pt;
+	padding-right : 4pt;
+  border-style : solid;
+  border-width : 1pt;
+}
+TH.high  {
+	font-weight : bold;
+	font-size : medium;
+	font-family : Tahoma, Arial;
+	color : White;
+	background-color : Black;
+	padding-left : 4pt;
+	padding-right : 4pt;
+}
+TD  {
+	text-align : left;
+	color : black;
+	background-color : White;
+	padding-left : 4pt;
+	padding-right : 4pt;
+  border-style : solid;
+  border-width : 1pt;
+}
+.note  {
+	border-color : Gray;
+	border-width : thin;
+	border-style : solid;
+	padding : 5;
+	background-color : #FFF0F0;
+	text-indent : 10pt;
+	line-height : 1;
+	margin-left : 20pt;
+	margin-right : 20pt;
+	margin-top : 5pt;
+	margin-bottom : 5pt;
+}
+.copyr  {
+	color : "Maroon";
+	font-size : 'xx-small';
+	background-color : #FFC891;
+	font-weight : bold;
+	text-align : center;
+}
+.FOOTNOTE  {
+	font-size : x-small;
+	text-align : justify;
+	margin-left : 30pt;
+	margin-right : 20pt;
+	margin-top : 0;
+	margin-bottom : 20pt;
+}
+.SeeAlso  {
+	font-size : medium;
+	color : Maroon;
+	font-weight : bold;
+	text-decoration : underline;
+}

@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 23</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+function ldcomp()  {top.right.location="21rcomp.htm"}
+function ldpandn() {top.right.location="21rpandn.htm"}
+function ldpand()  {top.right.location="21rpand.htm"}
+function ldpor()   {top.right.location="21rpor.htm"}
+//-->
+</SCRIPT>
+
+</HEAD>
+<BODY BGCOLOR="#CCCCCC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Introduction to MMX&#153; Technology tutorial. To start the tutorial, please open the MMXSTART.HTM page in the same directory!</H3></CENTER>")
+//-->
+</SCRIPT>
+Абсолютные величины разностей чисел используются  
+как мера различия  в алгоритмах сжатия и распознавания.
+MMX-команды помогут Вам быстро вычислять эти величины. Идея программы
+проста: 
+
+<TABLE border=0 cellspacing=4 cellpadding=0>
+<TR><TD valign=top>1.</TD>
+<TD>Скопировать элементы исходных векторов из памяти в MMX-регистры
+командой <A HREF="glossary.htm#movq" target="right">movq</A>.
+<TR><TD valign=top>2.</TD>
+<TD>Вычесть элементы второго вектора из элементов первого в арифметике
+с <A HREF="glossary.htm#saturation" target="right">насыщением</A>,
+рассматривая их как числа без знака. Если разность отрицательна, соответствующий элемент выходного операнда
+станет равным нулю; если разность положительна, она попадет в выходной операнд.
+
+<TR><TD valign=top>3.</TD>
+<TD>Таким же образом вычесть элементы первого вектора из элементов второго.
+Там, где в предыдущем случае получились нули, теперь будут 
+неотрицательные разности. 
+
+<TR><TD valign=top>4.</TD>
+<TD>Вычислить поразрядное логическое ИЛИ 
+от результатов шагов 2 и 3. 
+При этом из каждой пары элементов данных на входе ИЛИ
+в выходной операнд попадет тот, который не равен нулю. 
+Это и требовалось.
+
+</TD></TR></TABLE>
+
+</BODY>
+</HTML>
+

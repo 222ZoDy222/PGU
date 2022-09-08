@@ -1,0 +1,698 @@
+<html>
+<head>
+<title>Арифметико-логические команды</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<link rel="stylesheet" href="../images/styles.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h1 align="center">Арифметико-логические команды </h1>
+<p>Микропроцессор может выполнять целочисленные операции. Для выполнения операций 
+  с плавающей точкой к центральному процессору должен быть подключен арифметический 
+  сопроцессор, имеющий свою систему команд. Для большинства задач, использующих 
+  язык ассемблера, достаточно целочисленной арифметики.</p>
+<p>Команды целочисленной арифметики в свою очередь можно разделить на команды:</p>
+<ul>
+  <li> двоичной арифметики, </li>
+  <br>
+  <li>десятичной арифметики,</li>
+  <br>
+  <li> преобразования типов,</li>
+  <br>
+  <li> вспомогательные</li>
+  <br>
+  <li>логические</li>
+  <br>
+</ul>
+<p>Команды этой группы могу быть двух- и одноадресными.</p>
+<p> Коды некоторых команд данной группы приведены в таблице2</p>
+<div align="center">
+  <table width="612">
+    <tr> 
+      <td width="527"> 
+        <div align="center"></div>
+      </td>
+      <td width="73"> 
+        <p align="right">таблица 2</p>
+      </td>
+    </tr>
+  </table>
+</div>
+<table border=1 cellspacing=0 cellpadding=0 align=center>
+  <thead> 
+  <tr> 
+    <td colspan=9 class="Normal" height="21"> 
+      <p style='text-align:center;      '><span style='font-weight:normal'>Команды 
+        арифметико- логические</span></p>
+    </td>
+  </tr>
+  </thead> 
+  <tr> 
+    <td colspan=2 valign=top class="Normal"> 
+      <p style='text-align:center;    '>Мнемокод</p>
+    </td>
+    <td colspan=6 valign=top class="Normal"> 
+      <p style='text-align:center;    '>Флаги</p>
+    </td>
+    <td width=305 rowspan=2 class="Normal"> 
+      <p style='text-align:center;    '><span style='font-weight:normal'>Действие</span></p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal" height="23"> 
+      <p style='  '><b>Код</b></p>
+    </td>
+    <td width=106 valign=top class="Normal" height="23"> 
+      <p style='  '><b>Операнды</b></p>
+    </td>
+    <td width=24 valign=top class="Normal" height="23"> 
+      <p><span lang=EN-US
+  style='font-weight:normal'>O</span><span style='  font-weight:normal'></span></p>
+    </td>
+    <td width=22 valign=top class="Normal" height="23"> 
+      <p style='text-align:center;    '><span lang=EN-US>S</span></p>
+    </td>
+    <td width=21 valign=top class="Normal" height="23"> 
+      <p style='text-align:center;    '><span lang=EN-US>Z</span></p>
+    </td>
+    <td width=22 valign=top class="Normal" height="23"> 
+      <p style='text-align:center;    '><span lang=EN-US>A</span></p>
+    </td>
+    <td width=22 valign=top class="Normal" height="23"> 
+      <p style='text-align:center;    '><span lang=EN-US>P</span></p>
+    </td>
+    <td width=23 valign=top class="Normal" height="23"> 
+      <p style='text-align:center;    '><span lang=EN-US>C</span></p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>add</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>dst, src</span></b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>сложение</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>adc</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b>dst, src</b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>сложение с переносом</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>inc</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>dst</span></b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>увеличить на единицу</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>sub</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>dst, src</span></b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>вычитание</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>sbb</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b>dst, src</b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>вычитание с заемом</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>dec</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b>dst</b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>х</p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>уменьшение на единицу</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>neg</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b>dst</b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>изменение знака</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>rcl</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b>dst,счетчик</b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>циклический сдвиг влево</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>rcr</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b>dst,счетчик</b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>циклический сдвиг вправо</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>rol</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>dst,</span>счетчик</b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>циклический сдвиг влево</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>ror</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b>dst,счетчик</b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>циклический сдвиг вправо</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>sal</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>dst,</span>счетчик</b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US style='font-size:12.0pt;'>u</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>арифметический сдвиг влево</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>sar</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b>dst,счетчик</b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US style='font-size:12.0pt;'>u</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>арифметический сдвиг вправо</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal" height="21"> 
+      <p style='  '><b><span lang=EN-US>shl</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal" height="21"> 
+      <p style='  '><b>dst,счетчик</b></p>
+    </td>
+    <td width=24 valign=top class="Normal" height="21"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal" height="21"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=21 valign=top class="Normal" height="21"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal" height="21"> 
+      <p style='text-align:center;    '><span lang=EN-US style='font-size:12.0pt;'>u</span></p>
+    </td>
+    <td width=22 valign=top class="Normal" height="21"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=23 valign=top class="Normal" height="21"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=305 valign=top class="Normal" height="21"> 
+      <p style='text-align:left;    '>логический сдвиг влево</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>shp</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b>dst,счетчик</b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US style='font-size:12.0pt;'>u</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>логический сдвиг вправо</p>
+    </td>
+  </tr>
+<
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p><b><span lang=EN-US>and</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p><b><span lang=EN-US>dst, src</span></b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p align=center style='text-align:center'><span lang=EN-US>0 </span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p align=center style='text-align:center'><span lang=EN-US>x</span></p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p align=center style='text-align:center'><span lang=EN-US>x</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p align=center style='text-align:center'><span lang=EN-US>u</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p align=center style='text-align:center'><span lang=EN-US>x</span></p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p align=center style='text-align:center'>0</p>
+    </td>
+    <td width=303 valign=top class="Normal"> 
+      <p align=left style='text-align:left'>логическое И</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p><b><span lang=EN-US>or</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p><b><span lang=EN-US>dst, src</span></b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p align=center style='text-align:center'><span lang=EN-US>0 </span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p align=center style='text-align:center'><span lang=EN-US>x</span></p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p align=center style='text-align:center'><span lang=EN-US>x</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p align=center style='text-align:center'><span lang=EN-US>u</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p align=center style='text-align:center'><span lang=EN-US>x</span></p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p align=center style='text-align:center'>0</p>
+    </td>
+    <td width=303 valign=top class="Normal"> 
+      <p align=left style='text-align:left'>логическое ИЛИ</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p><b><span lang=EN-US>xor</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p><b><span lang=EN-US>dst, src</span></b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p align=center style='text-align:center'><span lang=EN-US>0 </span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p align=center style='text-align:center'><span lang=EN-US>x</span></p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p align=center style='text-align:center'><span lang=EN-US>x</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p align=center style='text-align:center'><span lang=EN-US>u</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p align=center style='text-align:center'><span lang=EN-US>x</span></p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p align=center style='text-align:center'>0</p>
+    </td>
+    <td width=303 valign=top class="Normal"> 
+      <p align=left style='text-align:left'>логическое исключающее ИЛИ</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p><b><span lang=EN-US>not</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p><b><span lang=EN-US>Dst</span></b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p align=center style='text-align:center'>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p align=center style='text-align:center'>-</p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p align=center style='text-align:center'>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p align=center style='text-align:center'>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p align=center style='text-align:center'>-</p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p align=center style='text-align:center'>-</p>
+    </td>
+    <td width=303 valign=top class="Normal"> 
+      <p align=left style='text-align:left'>логическое НЕТ</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal" height="22"> 
+      <p><b><span lang=EN-US>test</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal" height="22"> 
+      <p><b><span lang=EN-US>dst, src</span></b></p>
+    </td>
+    <td width=24 valign=top class="Normal" height="22"> 
+      <p align=center style='text-align:center'><span lang=EN-US>0 </span></p>
+    </td>
+    <td width=22 valign=top class="Normal" height="22"> 
+      <p align=center style='text-align:center'><span lang=EN-US>x</span></p>
+    </td>
+    <td width=21 valign=top class="Normal" height="22"> 
+      <p align=center style='text-align:center'><span lang=EN-US>x</span></p>
+    </td>
+    <td width=22 valign=top class="Normal" height="22"> 
+      <p align=center style='text-align:center'><span lang=EN-US>u</span></p>
+    </td>
+    <td width=22 valign=top class="Normal" height="22"> 
+      <p align=center style='text-align:center'><span lang=EN-US>x</span></p>
+    </td>
+    <td width=23 valign=top class="Normal" height="22"> 
+      <p align=center style='text-align:center'>0</p>
+    </td>
+    <td width=303 valign=top class="Normal" height="22"> 
+      <p align=left style='text-align:left'>логическое И без изменения <span lang=EN-US>dst</span></p>
+    </td>
+  </tr>
+</table>
+<p>Примечание:<br>
+  - флажок не модифицируется; <br>
+  х Устанавливается или сбрасывается в соответствии с результатом;<br>
+  u не определен;<br>
+  0 Сбрасывается в 0.<br>
+</p>
+<p>Подробное описание этих команд можно посмотреть в <a href="../library/asm/guide/guide/Start.htm" target=_blank>справочнике</a>, 
+  там же приведены особенности использования <a href="../library/asm/guide/guide/LESSON/LESSON09/Les_09.htm"target=target=_blank >логических</a> 
+  и <a href="../library/asm/guide/guide/LESSON/LESSON08/Les_08.htm" target=_blank>арифметических</a> 
+  команд </p>
+<hr class=forhr align="center">
+<div align="center">
+  <table width="597">
+    <tr> 
+      <td> 
+        <p align="center"><b><a href="istr0.htm" target="mainFrame">назад</a></b></p>
+      </td>
+      <td> 
+        <p align="center"><b> <a href="cpu.htm" target="mainFrame">в начало раздела</a></b></p>
+      </td>
+      <td> 
+        <p align="center"><b><a href="inter2.htm" target="mainFrame">вперед</a></b></p>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>&nbsp;</p>
+  </body>
+</html>

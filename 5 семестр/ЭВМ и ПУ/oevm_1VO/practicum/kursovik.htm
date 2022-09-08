@@ -1,0 +1,651 @@
+<html>
+<head>
+<title>Курсовое проектирование</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<link rel="stylesheet" href="../images/styles.css" type="text/css">
+
+</head>
+
+<body >
+<table width="82%">
+  <tr> 
+    <td> 
+      <h1 align="center">МЕТОДИЧЕСКИЕ УКАЗАНИЯ<br>
+        к выполнению курсовой работы по дисциплине <br>
+        &quot;Организация ЭВМ и систем&quot; </h1>
+      <p>1. <b>Наименование работы</b>:<font size="+2"> <b>&quot;Управление аппаратными 
+        средствами ПЭВМ&quot; </b></font></p>
+      <p> 2. <b>Цель работы:</b> изучение методов обмена данными между устройствами 
+        ПЭВМ. </p>
+      <p> 3. <b>Задание на курсовую работу:</b> разработать алгоритм и программу 
+        для ввода информационного потока с одного из периферийных устройств ПЭВМ 
+        и вывода на два других </p>
+      <p>4. <b>Содержание работы:</b></p>
+      <table width="100%">
+        <tr> 
+          <td width="4%">&nbsp;</td>
+          <td width="96%"> 
+            <p>-введение с указанием цели проекта и назначения программы <br>
+              -описание алгоритма работы ПЭВМ при выполнении разработанных процедур 
+              обработки &nbsp;информации <br>
+              -описание программы;<br>
+              -описание форматов управляющей информации, используемых функций 
+              BIOS; <br>
+              -инструкция оператору и методика тестирования программы;<br>
+              -описание принципов работы, технических характеристик одного из 
+              используемых устройств;<br>
+              -схемы данных, программы, работы системы; <br>
+              -листинг программы ввода-вывода на языке Ассемблера; </p>
+          </td>
+        </tr>
+      </table>
+      <p><b>5. Требования к оформлению:</b><br>
+        Отчетной документацией по курсовому проектированию являются пояснительная 
+        записка в электронной и печатной формах и файлы программы на дискете (исходник, 
+        исполняемый и все промежуточные модули).<br>
+        Пояснительная записка объемом 20-25 страниц формата А4 должна содержать:. 
+      </p>
+      <table width="100%">
+        <tr> 
+          <td width="4%">&nbsp;</td>
+          <td width="96%"> 
+            <p>- титульный лист (см. образец);<br>
+              - задание на курсовой проект, <br>
+              - содержание с указанием страниц;<br>
+              - тематические разделы; <br>
+              - перечень использованной литературы.</p>
+          </td>
+        </tr>
+      </table>
+      <p>Электронная форма пояснительной записки представляется в виде одного 
+        файла в формате WinWord 97. Формат страницы: А4. Поля страницы: сверху 
+        -2.5 см., снизу - 2.5 см., слева - 3 см., справа - 1.5 см. Шрифт: Times 
+        New Roman 14. Межстрочный интервал: минимум 23 п. Отступ красной строки: 
+        1 см. Выравнивание: по ширине. Все листы записки должны иметь сквозную 
+        нумерацию. Документ должен быть структурирован по разделам и предусмотрено 
+        соответствующее стилевое оформление. Рисунки и таблицы должны быть пронумерованы. 
+        Листинг оформляется как рисунок. Схемная документация должна соответствовать 
+        ГОСТ 19.701-90 </p>
+      <p> <b>6. Литература: </b><br>
+        <a   href="../library/asm/guide/start.htm" target=_blank>1. Юров В.И. 
+        Assembler: учебный курс_- СПб:«Питер», 1998 </a><br>
+        <a href="../library/frolov/278.html"target=_blank>2.Фролов А. , Фролов 
+        Г. Аппаратное обеспечение IBM PC</a><a href="v01a/index.html"target=_blank> 
+        - М..: Диалог-МИФИ, 1992</a><br>
+        <a href="../library/jourdain/index.htm"target=_blank>3.Джордейн Р. Справочник 
+        программиста персональных компьютеров IBM РС - М.: Финансы и статистика, 
+        1992 </a><br>
+        <a href="../library/bredly/index.html"target=_blank>4. Брэдли Д. Д. Программирование 
+        на языке ассемблера для IBM PС</a><br>
+        5. Нортон П. Персональный компьютер фирмы IBM и операционная система MS 
+        DOS - М.: Радио и связь, 1991 <br>
+        6. Скляров В.А. Применение ПЭВМ. Организация и управление ресурсами ПЭВМ 
+        - М.: Высшая школа, 1992<br>
+        <a href="gost/282.html" target=_blank>7. Схемы алгоритмов, программ, данных 
+        и систем. Условные обозначения и правила выполнения ГОСТ 19.701-90</a> 
+      </p>
+      <p></p>
+      <p><b>Варианты заданий</b></p>
+      <table border= 2 cellspacing=1 cellpadding=1>
+        <tr> 
+          <td width=62 > 
+            <p >№ варианта</p>
+          </td>
+          <td width=87 > 
+            <p >Входное устройство</p>
+          </td>
+          <td width=86 > 
+            <p >Выходное устройство1</p>
+          </td>
+          <td width=86 > 
+            <p >Выходное устройство2</p>
+          </td>
+          <td width=97 > 
+            <p >Кол.символов</p>
+          </td>
+          <td width=86 > 
+            <p >Порядок вводо- вывода</p>
+          </td>
+          <td width=93 > 
+            <p >Символ прекращения ввода</p>
+          </td>
+          <td width=116 > 
+            <p >Дополнительно выводимая информация</p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >1</p>
+          </td>
+          <td width=87 > 
+            <p >К</p>
+          </td>
+          <td width=86 > 
+            <p >П</p>
+          </td>
+          <td width=86 > 
+            <p >Т</p>
+          </td>
+          <td width=97 > 
+            <p >12</p>
+          </td>
+          <td width=86 > 
+            <p >FIFO</p>
+          </td>
+          <td width=93 > 
+            <p >A</p>
+          </td>
+          <td width=116 > 
+            <p >В</p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >2</p>
+          </td>
+          <td width=87 > 
+            <p >К</p>
+          </td>
+          <td width=86 > 
+            <p >ГМД</p>
+          </td>
+          <td width=86 > 
+            <p >Т</p>
+          </td>
+          <td width=97 > 
+            <p >22</p>
+          </td>
+          <td width=86 > 
+            <p >FIFO</p>
+          </td>
+          <td width=93 > 
+            <p >C</p>
+          </td>
+          <td width=116 > 
+            <p >В</p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >3</p>
+          </td>
+          <td width=87 > 
+            <p >ГМД</p>
+          </td>
+          <td width=86 > 
+            <p >П</p>
+          </td>
+          <td width=86 > 
+            <p >Т</p>
+          </td>
+          <td width=97 > 
+            <p >11</p>
+          </td>
+          <td width=86 > 
+            <p >LIFO</p>
+          </td>
+          <td width=93 > 
+            <p >D</p>
+          </td>
+          <td width=116 > 
+            <p >Д</p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >4</p>
+          </td>
+          <td width=87 > 
+            <p >ГМД</p>
+          </td>
+          <td width=86 > 
+            <p >ГМД</p>
+          </td>
+          <td width=86 > 
+            <p >Т</p>
+          </td>
+          <td width=97 > 
+            <p >18</p>
+          </td>
+          <td width=86 > 
+            <p >LIFO</p>
+          </td>
+          <td width=93 > 
+            <p >Ctrl-B</p>
+          </td>
+          <td width=116 > 
+            <p >Д</p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >5</p>
+          </td>
+          <td width=87 > 
+            <p >К</p>
+          </td>
+          <td width=86 > 
+            <p >П</p>
+          </td>
+          <td width=86 > 
+            <p >Т</p>
+          </td>
+          <td width=97 > 
+            <p >19</p>
+          </td>
+          <td width=86 > 
+            <p >LIFO</p>
+          </td>
+          <td width=93 > 
+            <p >Ctrl-C</p>
+          </td>
+          <td width=116 > 
+            <p >В</p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >5</p>
+          </td>
+          <td width=87 > 
+            <p >К</p>
+          </td>
+          <td width=86 > 
+            <p >ГМД</p>
+          </td>
+          <td width=86 > 
+            <p >Т</p>
+          </td>
+          <td width=97 > 
+            <p >23</p>
+          </td>
+          <td width=86 > 
+            <p >LIFO</p>
+          </td>
+          <td width=93 > 
+            <p >Ctrl-Q</p>
+          </td>
+          <td width=116 > 
+            <p >В</p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >7</p>
+          </td>
+          <td width=87 > 
+            <p >ГМД</p>
+          </td>
+          <td width=86 > 
+            <p >П</p>
+          </td>
+          <td width=86 > 
+            <p >Т</p>
+          </td>
+          <td width=97 > 
+            <p >13</p>
+          </td>
+          <td width=86 > 
+            <p >FIFO</p>
+          </td>
+          <td width=93 > 
+            <p >F1</p>
+          </td>
+          <td width=116 > 
+            <p >Д</p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >8</p>
+          </td>
+          <td width=87 > 
+            <p >ГМД</p>
+          </td>
+          <td width=86 > 
+            <p >ГМД</p>
+          </td>
+          <td width=86 > 
+            <p >Т</p>
+          </td>
+          <td width=97 > 
+            <p >19</p>
+          </td>
+          <td width=86 > 
+            <p >FIFO</p>
+          </td>
+          <td width=93 > 
+            <p >F3</p>
+          </td>
+          <td width=116 > 
+            <p >Д</p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >9</p>
+          </td>
+          <td width=87 > 
+            <p >К</p>
+          </td>
+          <td width=86 > 
+            <p >П</p>
+          </td>
+          <td width=86 > 
+            <p >Т</p>
+          </td>
+          <td width=97 > 
+            <p >14</p>
+          </td>
+          <td width=86 > 
+            <p >LIFO</p>
+          </td>
+          <td width=93 > 
+            <p >Alt-A</p>
+          </td>
+          <td width=116 > 
+            <p >В</p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >10</p>
+          </td>
+          <td width=87 > 
+            <p >К</p>
+          </td>
+          <td width=86 > 
+            <p >ГМД</p>
+          </td>
+          <td width=86 > 
+            <p >Т</p>
+          </td>
+          <td width=97 > 
+            <p >10</p>
+          </td>
+          <td width=86 > 
+            <p >LIFO</p>
+          </td>
+          <td width=93 > 
+            <p >Alt-C</p>
+          </td>
+          <td width=116 > 
+            <p >В</p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >11</p>
+          </td>
+          <td width=87 > 
+            <p >ГМД</p>
+          </td>
+          <td width=86 > 
+            <p >П</p>
+          </td>
+          <td width=86 > 
+            <p >Т</p>
+          </td>
+          <td width=97 > 
+            <p >25</p>
+          </td>
+          <td width=86 > 
+            <p >FIFO</p>
+          </td>
+          <td width=93 > 
+            <p >Alt-D</p>
+          </td>
+          <td width=116 > 
+            <p >Д</p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >12</p>
+          </td>
+          <td width=87 > 
+            <p >К</p>
+          </td>
+          <td width=86 > 
+            <p >Т</p>
+          </td>
+          <td width=86 > 
+            <p >З</p>
+          </td>
+          <td width=97 > 
+            <p >21</p>
+          </td>
+          <td width=86 > 
+            <p >LIFO</p>
+          </td>
+          <td width=93 > 
+            <p >Alt-Q</p>
+          </td>
+          <td width=116 > 
+            <p >Д</p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >13</p>
+          </td>
+          <td width=87 > 
+            <p >ГМД</p>
+          </td>
+          <td width=86 > 
+            <p >ГМД</p>
+          </td>
+          <td width=86 > 
+            <p >Т</p>
+          </td>
+          <td width=97 > 
+            <p >19</p>
+          </td>
+          <td width=86 > 
+            <p >LIFO</p>
+          </td>
+          <td width=93 > 
+            <p >F4</p>
+          </td>
+          <td width=116 > 
+            <p >В</p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >14</p>
+          </td>
+          <td width=87 > 
+            <p >К</p>
+          </td>
+          <td width=86 > 
+            <p >П</p>
+          </td>
+          <td width=86 > 
+            <p >Т</p>
+          </td>
+          <td width=97 > 
+            <p >26</p>
+          </td>
+          <td width=86 > 
+            <p >FIFO</p>
+          </td>
+          <td width=93 > 
+            <p >F5</p>
+          </td>
+          <td width=116 > 
+            <p >В</p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >15</p>
+          </td>
+          <td width=87 > 
+            <p >ГМД</p>
+          </td>
+          <td width=86 > 
+            <p >ВМ</p>
+          </td>
+          <td width=86 > 
+            <p >З</p>
+          </td>
+          <td width=97 > 
+            <p >11</p>
+          </td>
+          <td width=86 > 
+            <p >LIFO</p>
+          </td>
+          <td width=93 > 
+            <p >F6</p>
+          </td>
+          <td width=116 > 
+            <p >Д</p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >16</p>
+          </td>
+          <td width=87 > 
+            <p >К</p>
+          </td>
+          <td width=86 > 
+            <p >ГМД</p>
+          </td>
+          <td width=86 > 
+            <p >Т</p>
+          </td>
+          <td width=97 > 
+            <p >11</p>
+          </td>
+          <td width=86 > 
+            <p >FIFO</p>
+          </td>
+          <td width=93 > 
+            <p >F7</p>
+          </td>
+          <td width=116 > 
+            <p >Д</p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >17</p>
+          </td>
+          <td width=87 > 
+            <p >ГМД</p>
+          </td>
+          <td width=86 > 
+            <p >П</p>
+          </td>
+          <td width=86 > 
+            <p >Т</p>
+          </td>
+          <td width=97 > 
+            <p >18</p>
+          </td>
+          <td width=86 > 
+            <p >LIFO</p>
+          </td>
+          <td width=93 > 
+            <p >Alt-Z</p>
+          </td>
+          <td width=116 > 
+            <p >В </p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >18</p>
+          </td>
+          <td width=87 > 
+            <p >К</p>
+          </td>
+          <td width=86 > 
+            <p >Т</p>
+          </td>
+          <td width=86 > 
+            <p >З</p>
+          </td>
+          <td width=97 > 
+            <p >20</p>
+          </td>
+          <td width=86 > 
+            <p >FIFO</p>
+          </td>
+          <td width=93 > 
+            <p >Ctrl-0</p>
+          </td>
+          <td width=116 > 
+            <p >В</p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >19</p>
+          </td>
+          <td width=87 > 
+            <p >ГМД</p>
+          </td>
+          <td width=86 > 
+            <p >ГМД</p>
+          </td>
+          <td width=86 > 
+            <p >Т</p>
+          </td>
+          <td width=97 > 
+            <p >16</p>
+          </td>
+          <td width=86 > 
+            <p >LIFO</p>
+          </td>
+          <td width=93 > 
+            <p >Ctrl-W</p>
+          </td>
+          <td width=116 > 
+            <p >Д</p>
+          </td>
+        </tr>
+        <tr> 
+          <td width=62 > 
+            <p >20</p>
+          </td>
+          <td width=87 > 
+            <p >ГМД</p>
+          </td>
+          <td width=86 > 
+            <p >Т</p>
+          </td>
+          <td width=86 > 
+            <p >З</p>
+          </td>
+          <td width=97 > 
+            <p >21</p>
+          </td>
+          <td width=86 > 
+            <p >FIFO</p>
+          </td>
+          <td width=93 > 
+            <p >F1</p>
+          </td>
+          <td width=116 > 
+            <p >Д</p>
+          </td>
+        </tr>
+      </table>
+      <p><b>Примечание:</b><br>
+        1. К-клавиатура, ГМД-гибкий диск, П-печать, З-звуковой сигнал; Т-видеомонитор 
+        в режиме терминала, В-время, Д-дата, LIFO-обратный порядок вывода, FIFO 
+        - прямой порядок вывода ; <br>
+        2. Номера дорожки и сектора дискеты вводятся задаются преаодавателем. 
+      </p>
+      <p></p>
+    </td>
+  </tr>
+</table>
+<h1>&nbsp;</h1>
+<h1><br>
+</h1>
+  </body>
+</html>
