@@ -1,1 +1,0 @@
-start files\dos2 files\start.bat
