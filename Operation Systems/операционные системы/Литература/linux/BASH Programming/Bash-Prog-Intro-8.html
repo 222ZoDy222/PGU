@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0072)http://ruslandh.narod.ru/howto_ru/Bash-Prog-Intro/Bash-Prog-Intro-8.html -->
+<HTML><HEAD><TITLE>BASH Programming - Introduction HOW-TO: Функции</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=koi8-u">
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR><LINK 
+href="Bash-Prog-Intro-9.html" rel=next><LINK href="Bash-Prog-Intro-7.html" 
+rel=previous><LINK href="Bash-Prog-Intro.html#toc8" rel=contents></HEAD>
+<BODY><A 
+href="http://ruslandh.narod.ru/howto_ru/Bash-Prog-Intro/Bash-Prog-Intro-9.html">Next</A> 
+<A 
+href="http://ruslandh.narod.ru/howto_ru/Bash-Prog-Intro/Bash-Prog-Intro-7.html">Previous</A> 
+<A 
+href="http://ruslandh.narod.ru/howto_ru/Bash-Prog-Intro/Bash-Prog-Intro.html#toc8">Contents</A> 
+
+<HR>
+
+<H2><A name=s8>8. Функции</A> </H2>
+<P>Аналогично любому другому языку программирования, Вы можете использовать 
+функции для группировки кусков кода более логичным способом, а также для 
+практического применения волшебного искусства рекурсии. 
+<P>Объявление функции - это только лишь запись function my_func { my_code }. 
+<P>Вызов функции осуществляется аналогичным образом, что и вызов других 
+программ. Вы просто пишете её имя. 
+<P>
+<H2><A name=ss8.1>8.1 Пример функций</A> </H2>
+<P>
+<BLOCKQUOTE><CODE><PRE>           #!/bin/bash
+           function quit {
+               exit
+           }
+           function hello {
+               echo Hello!
+           }
+           hello
+           quit
+           echo foo
+           
+</PRE></CODE></BLOCKQUOTE>
+<P>В строках 2-4 содержится функция 'quit'. В строках 5-7 - функция 'hello'. 
+Если Вам недостаточно понятен процесс, выполняемый данным скриптом, испытайте 
+его! 
+<P>Следует заметить, что совсем необязательно объявлять функции в каком-то 
+определённом порядке. 
+<P>Если Вы запустите скрипт, обратите внимание, что сначала вызывается функция 
+'hello', а затем функция 'quit'. Что касается программы, она никогда не 
+достигает 10-й строки. 
+<H2><A name=ss8.2>8.2 Пример функций с параметрами</A> </H2>
+<P>
+<BLOCKQUOTE><CODE><PRE>                #!/bin/bash
+                function quit {
+                   exit
+                }
+                function e {
+                    echo $1
+                }
+                e Hello
+                e World
+                quit
+                echo foo
+
+           
+</PRE></CODE></BLOCKQUOTE>
+<P>Данный скрипт практически идентичен предыдущему. Главное отличие - это 
+функция 'e'. Она выводит самый первый получаемый аргумент. Аргументы в функциях 
+обрабатываются таким же образом, что и аргументы, переданные скрипту. 
+<HR>
+<A 
+href="http://ruslandh.narod.ru/howto_ru/Bash-Prog-Intro/Bash-Prog-Intro-9.html">Next</A> 
+<A 
+href="http://ruslandh.narod.ru/howto_ru/Bash-Prog-Intro/Bash-Prog-Intro-7.html">Previous</A> 
+<A 
+href="http://ruslandh.narod.ru/howto_ru/Bash-Prog-Intro/Bash-Prog-Intro.html#toc8">Contents</A> 
+<!-- ><!-- "><!-- '><!-- --></TEXTAREA></FORM></TITLE></COMMENT></A>
+<DIV></DIV></SPAN></ILAYER></LAYER></IFRAME></NOFRAMES></STYLE></NOSCRIPT></TABLE></SCRIPT></APPLET></FONT>
+<STYLE>#bn {
+	DISPLAY: block
+}
+#bt {
+	DISPLAY: block
+}
+</STYLE>
+
+<DIV 
+style="BACKGROUND: url(http://www.tns-counter.ru/V13a****yandex_ru/ru/CP1251/tmsec=narod_total/)"></DIV>
+<SCRIPT language=JavaScript src="Bash-Prog-Intro-8.files/163.htm"></SCRIPT>
+<!-- mailto:spm111@yandex.ru --></BODY></HTML>

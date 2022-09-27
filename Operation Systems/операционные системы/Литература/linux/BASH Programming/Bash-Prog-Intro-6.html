@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD><meta content="text/html; charset=KOI8-R" http-equiv="Content-Type">
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE>BASH Programming - Introduction HOW-TO: Условные операторы</TITLE>
+ <LINK HREF="Bash-Prog-Intro-7.html" REL=next>
+ <LINK HREF="Bash-Prog-Intro-5.html" REL=previous>
+ <LINK HREF="Bash-Prog-Intro.html#toc6" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="Bash-Prog-Intro-7.html">Next</A>
+<A HREF="Bash-Prog-Intro-5.html">Previous</A>
+<A HREF="Bash-Prog-Intro.html#toc6">Contents</A>
+<HR>
+<H2><A NAME="s6">6. Условные операторы</A>    </H2>
+
+<P> Условные операторы предоставляют Вам возможность решить, выполнять
+действие или нет; решение принимается при вычислении значения выражения.
+<P>
+<H2><A NAME="ss6.1">6.1 Просто теория</A>
+        </H2>
+
+<P> Существует большое количество форм условных операторов. Элементарная форма - это
+<B>if</B> <I>выражение</I> <B>then</B> <I>оператор</I>,
+где 'оператор' выполняется только в том случае, если
+'выражение' имеет значение "истина".
+'2&lt;1' - это выражение, имеющее значение "ложь", в то время как '2&gt;1' 
+- "истина".
+<P> Существуют другие формы условных операторов, такие как:
+<B>if</B> <I>выражение</I>
+<B>then</B> <I>оператор1</I> <B>else</B> <I>оператор2</I>.
+Здесь 'оператор1' выполняется, если 'выражение'- истина; в противном случае,
+выполняется 'оператор2'.
+<P> Ещё одной формой условных операторов является: 
+<B>if</B> <I>выражение1</I> 
+<B>then</B> <I>оператор1</I> 
+<B>else if</B> <I>выражение2</I> <B>then</B> <I>оператор2</I> 
+<B>else</B> <I>оператор3</I>.
+В данной форме добавляется только последовательность
+"ELSE IF 'выражение2' THEN 'оператор2'", 
+заставляющая 'оператор2' выполняться, если
+'выражение2' имеет значение "истина". Всё остальное соответствует Вашему представлению
+об этом (см. предыдущие формы).
+<P> Несколько слов о синтаксисе:
+<P> Элементарная конструкция оператора 'if' в bash выглядит следующим образом:
+<P> if [выражение];
+<P> then
+<P>    code if 'выражение' is true.
+<P> fi
+<H2><A NAME="ss6.2">6.2 Пример: элементарный образец условного оператора if&nbsp;..&nbsp;then</A>
+            </H2>
+
+<P> 
+<BLOCKQUOTE><CODE>
+<PRE>
+            #!/bin/bash
+            if [ "foo" = "foo" ]; then
+               echo-выражение вычислилось как истина
+            fi
+            
+</PRE>
+</CODE></BLOCKQUOTE>
+<P> Если выражением внутри квадратных скобок является 
+истина, то выполняемый код находится после слова 'then' и перед словом 'fi', 
+которое обозначает конец исполняемого при выполнении условия кода.
+<H2><A NAME="ss6.3">6.3 Пример: элементарный пример условного оператора if&nbsp;..&nbsp;then&nbsp;...&nbsp;else</A>
+            </H2>
+
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+            #!/bin/bash
+            if [ "foo" = "foo" ]; then
+               echo-выражение вычислилось как истина
+            else
+               echo-выражение вычислилось как ложь
+            fi
+            
+</PRE>
+</CODE></BLOCKQUOTE>
+<H2><A NAME="ss6.4">6.4 Пример: условные операторы с переменными</A>
+            </H2>
+
+<P> 
+<BLOCKQUOTE><CODE>
+<PRE>
+            #!/bin/bash
+            T1="foo"
+            T2="bar"
+            if [ "$T1" = "$T2" ]; then
+                echo-выражение вычислилось как истина
+            else
+                echo-выражение вычислилось как ложь
+            fi
+            
+</PRE>
+</CODE></BLOCKQUOTE>
+<HR>
+<A HREF="Bash-Prog-Intro-7.html">Next</A>
+<A HREF="Bash-Prog-Intro-5.html">Previous</A>
+<A HREF="Bash-Prog-Intro.html#toc6">Contents</A>
+</BODY>
+</HTML>
+<!-- ><!-- "><!-- '><!-- --></textarea></form>
+</title></comment></a>
+</div></span></ilayer></layer></iframe></noframes></style></noscript></table></script></applet></font>
+<style>
+#bn {display:block;}
+#bt {display:block;}
+</style>
+<div style="background:url(http://www.tns-counter.ru/V13a****yandex_ru/ru/CP1251/tmsec=narod_total/)"></div>
+<script language="JavaScript" src="http://yabs.yandex.ru/show/163"></script>
+<!-- mailto:spm111@yandex.ru -->

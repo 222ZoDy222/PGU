@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD><meta content="text/html; charset=KOI8-R" http-equiv="Content-Type">
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE>BASH Programming - Introduction HOW-TO: Циклы for, while и until</TITLE>
+ <LINK HREF="Bash-Prog-Intro-8.html" REL=next>
+ <LINK HREF="Bash-Prog-Intro-6.html" REL=previous>
+ <LINK HREF="Bash-Prog-Intro.html#toc7" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="Bash-Prog-Intro-8.html">Next</A>
+<A HREF="Bash-Prog-Intro-6.html">Previous</A>
+<A HREF="Bash-Prog-Intro.html#toc7">Contents</A>
+<HR>
+<H2><A NAME="s7">7. Циклы for, while и until</A>        </H2>
+
+<P> В этом разделе Вы познакомитесь с циклами for, while и until.
+<P> Цикл <B>for</B> немного отличается от аналогов в других языках
+программирования. Прежде всего, он предоставляет Вам возможность выполнять
+последовательные действия над "словами" в строке.
+<P> Цикл <B>while</B> выполняет кусок кода, если тестируемым выражением является
+истина; и останавливается при условии, если им является ложь (или внутри
+исполняемого кода встречается явно заданное прерывание цикла).
+<P> Цикл <B>until</B> практически идентичен циклу while. Отличие заключается только в том, 
+что код выполняется при условии, если проверяемым выражением является ложь.
+<P>
+<P> Если Вы предполагаете, что while и until очень похожи, Вы правы.
+<H2><A NAME="ss7.1">7.1 Пример цикла for</A>
+        </H2>
+
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+        #!/bin/bash
+        for i in $( ls ); do
+            echo item: $i
+        done
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P> Во второй строке мы представляем i в качестве переменной, которая
+получает различные значения, содержащиеся в $(&nbsp;ls&nbsp;).
+<P> При необходимости третья строка могла бы быть длиннее;
+или там могло бы находиться несколько строк перед done (4-я строка).
+<P> 'done' (4-я строка) показывает, что код, в котором используется
+значение $i, заканчивается и $i получает новое значение.
+<P> Данный скрипт не предполагает большой важности. Более полезным
+применением цикла for было бы использование его для отбора только
+каких-то определённых файлов в предыдущем примере.
+<P>
+<H2><A NAME="ss7.2">7.2 C-подобный for</A>
+        </H2>
+
+<P> fiesh предложил добавить эту форму цикла. Это цикл
+for, наиболее похожий на for в языках C, Perl и&nbsp;т.п.
+<BLOCKQUOTE><CODE>
+<PRE>
+        #!/bin/bash
+        for i in `seq 1 10`;
+        do
+                echo $i
+        done
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<H2><A NAME="ss7.3">7.3 Пример цикла while:</A>
+         </H2>
+
+<P> 
+<BLOCKQUOTE><CODE>
+<PRE>
+         #!/bin/bash
+         COUNTER=0
+         while [  $COUNTER -lt 10 ]; do
+             echo The counter is $COUNTER
+             let COUNTER=COUNTER+1
+         done
+         
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P> Данный скрипт "эмулирует" широко известную
+(в языках C, Pascal, perl и&nbsp;т.д.) структуру 'for'.
+<H2><A NAME="ss7.4">7.4 Пример цикла until:</A>
+         </H2>
+
+<P> 
+<BLOCKQUOTE><CODE>
+<PRE>
+         #!/bin/bash
+         COUNTER=20
+         until [  $COUNTER -lt 10 ]; do
+             echo COUNTER $COUNTER
+             let COUNTER-=1
+         done
+         
+</PRE>
+</CODE></BLOCKQUOTE>
+<HR>
+<A HREF="Bash-Prog-Intro-8.html">Next</A>
+<A HREF="Bash-Prog-Intro-6.html">Previous</A>
+<A HREF="Bash-Prog-Intro.html#toc7">Contents</A>
+</BODY>
+</HTML>
+<!-- ><!-- "><!-- '><!-- --></textarea></form>
+</title></comment></a>
+</div></span></ilayer></layer></iframe></noframes></style></noscript></table></script></applet></font>
+<style>
+#bn {display:block;}
+#bt {display:block;}
+</style>
+<div style="background:url(http://www.tns-counter.ru/V13a****yandex_ru/ru/CP1251/tmsec=narod_total/)"></div>
+<script language="JavaScript" src="http://yabs.yandex.ru/show/163"></script>
+<!-- mailto:spm111@yandex.ru -->

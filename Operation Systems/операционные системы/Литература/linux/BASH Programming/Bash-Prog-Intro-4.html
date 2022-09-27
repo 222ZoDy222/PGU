@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD><meta content="text/html; charset=KOI8-R" http-equiv="Content-Type">
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE>BASH Programming - Introduction HOW-TO: Конвейеры</TITLE>
+ <LINK HREF="Bash-Prog-Intro-5.html" REL=next>
+ <LINK HREF="Bash-Prog-Intro-3.html" REL=previous>
+ <LINK HREF="Bash-Prog-Intro.html#toc4" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="Bash-Prog-Intro-5.html">Next</A>
+<A HREF="Bash-Prog-Intro-3.html">Previous</A>
+<A HREF="Bash-Prog-Intro.html#toc4">Contents</A>
+<HR>
+<H2><A NAME="s4">4. Конвейеры</A>        </H2>
+
+<P> Данный раздел объясняет достаточно простым и практичным способом, каким
+образом следует использовать конвейеры и для чего Вам это может потребоваться.
+<P>
+<H2><A NAME="ss4.1">4.1 Что это такое и зачем Вам это использовать?</A>
+                </H2>
+
+<P> Конвейеры предоставляют Вам возможность использовать (автор убеждён, что 
+это достаточно просто) вывод одной программы в качестве входа другой.   
+<H2><A NAME="ss4.2">4.2 Пример: простой конвейер с sed</A>
+        </H2>
+
+<P> Это очень простой способ использования конвейеров.
+<BLOCKQUOTE><CODE>
+<PRE>
+        ls -l | sed -e "s/[aeio]/u/g"
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Здесь происходит следующее: первоначально выполняется команда ls&nbsp;-l, 
+и её вывод, вместо отображения на экране, отправляется
+в программу sed, которая, в свою очередь, выводит на экран то, что должна.
+<H2><A NAME="ss4.3">4.3 Пример: альтернатива для ls&nbsp;-l&nbsp;*.txt</A>
+        </H2>
+
+<P> Возможно, это значительно более сложный способ, чем ls&nbsp;-l&nbsp;*.txt, но он
+приводится здесь только для того, чтобы проиллюстрировать работу с конвейерами, а 
+не для решения вопроса выбора из этих двух способов листинга.
+<BLOCKQUOTE><CODE>
+<PRE>
+        ls -l | grep "\.txt$"
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Здесь вывод программы ls -l отправляется в программу grep, которая, в
+свою очередь, выводит на экран строки, соответствующие регулярному
+выражению "\.txt$".
+<HR>
+<A HREF="Bash-Prog-Intro-5.html">Next</A>
+<A HREF="Bash-Prog-Intro-3.html">Previous</A>
+<A HREF="Bash-Prog-Intro.html#toc4">Contents</A>
+</BODY>
+</HTML>
+<!-- ><!-- "><!-- '><!-- --></textarea></form>
+</title></comment></a>
+</div></span></ilayer></layer></iframe></noframes></style></noscript></table></script></applet></font>
+<style>
+#bn {display:block;}
+#bt {display:block;}
+</style>
+<div style="background:url(http://www.tns-counter.ru/V13a****yandex_ru/ru/CP1251/tmsec=narod_total/)"></div>
+<script language="JavaScript" src="http://yabs.yandex.ru/show/163"></script>
+<!-- mailto:spm111@yandex.ru -->

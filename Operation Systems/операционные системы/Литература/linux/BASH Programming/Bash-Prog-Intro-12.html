@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD><meta content="text/html; charset=KOI8-R" http-equiv="Content-Type">
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE>BASH Programming - Introduction HOW-TO: Ещё скрипты</TITLE>
+ <LINK HREF="Bash-Prog-Intro-13.html" REL=next>
+ <LINK HREF="Bash-Prog-Intro-11.html" REL=previous>
+ <LINK HREF="Bash-Prog-Intro.html#toc12" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="Bash-Prog-Intro-13.html">Next</A>
+<A HREF="Bash-Prog-Intro-11.html">Previous</A>
+<A HREF="Bash-Prog-Intro.html#toc12">Contents</A>
+<HR>
+<H2><A NAME="s12">12. Ещё скрипты</A>     </H2>
+
+<H2><A NAME="ss12.1">12.1 Применение команды ко всем файлам в каталоге.      </A>
+</H2>
+
+<P> 
+<H2><A NAME="ss12.2">12.2 Пример: очень простой скрипт резервного копирования (более эффективный)</A>
+           </H2>
+
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+#!/bin/bash
+SRCD="/home/"                #SRCD - SouRCe Directory - исходный каталог
+TGTD="/var/backups/"         #TGTD - TarGeT Directory - конечный каталог
+OF=home-$(date +%Y%m%d).tgz  #OF - Output File - выходной файл
+tar -cZf $TGTD$OF $SRCD
+           
+</PRE>
+</CODE></BLOCKQUOTE>
+ 
+<P>
+<H2><A NAME="ss12.3">12.3 Программа переименования файлов</A>
+          </H2>
+
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+          
+#!/bin/sh
+# renna: переименование нескольких файлов по специальным правилам
+# Автор - felix hudson Jan - 2000
+
+#Прежде всего, посмотрите на различные "режимы", которые имеются у этой программы.
+#Если первый аргумент ($1) является подходящим, мы выполняем эту часть
+#программы и выходим.
+
+# Проверка на возможность добавления префикса.
+if [ $1 = p ]; then
+
+#Теперь переходим от переменной режима ($1) и префикса ($2)
+prefix=$2 ; shift ; shift
+
+# Необходимо проверить, задан ли, по крайней мере, хотя бы один файл.
+# В противном случае, лучше ничего не предпринимать, чем переименовывать несуществующие
+# файлы!!
+
+  if [$1 = ]; then
+     echo "не задано ни одного файла"
+     exit 0
+  fi
+
+# Этот цикл for обрабатывает все файлы, которые мы задали
+# программе.
+# Он осуществляет одно переименование на файл.
+  for file in $*
+    do
+    mv ${file} $prefix$file
+  done
+
+#После этого выполняется выход из программы.
+  exit 0
+fi
+
+# Проверка на условие добавления суффикса.
+# В остальном, данная часть фактически идентична предыдущему разделу;
+# пожалуйста, смотрите комментарии, содержащиеся в нем.
+if [ $1 = s ]; then
+  suffix=$2 ; shift ; shift
+  if [$1 = ]; then
+   echo "не задано ни одного файла"
+   exit 0
+  fi
+
+ for file in $*
+  do
+   mv ${file} $file$suffix
+ done
+
+ exit 0
+fi
+
+# Проверка на условие переименования с заменой.
+if [ $1 = r ]; then
+
+  shift
+
+# Из соображений безопасности автор включил эту часть, чтобы не повредить ни один файл, если пользователь
+# не определил, что следует выполнить:
+
+  if [ $# -lt 3 ] ; then
+    echo "Ошибка; правильный ввод: renna r [выражение] [замена] файлы... "
+    exit 0
+  fi
+
+# Рассмотрим другую информацию
+  OLD=$1 ; NEW=$2 ; shift ; shift
+
+# Данный цикл for последовательно проходит через все файлы, которые мы 
+# задали программе.
+# Он совершает одно переименование на файл, используя программу 'sed'.
+# Это простая программа с командной строки, которая анализирует стандартный 
+# ввод и заменяет регулярное выражение на заданную строку.
+# Здесь мы задаём для sed имя файла (в качестве стандартного ввода) и заменяем
+# необходимый текст.
+
+  for file in $*
+  do
+    new=`echo ${file} | sed s/${OLD}/${NEW}/g`
+    mv ${file} $new
+  done
+exit 0
+fi
+
+# Если мы достигли этой строки, это означает, что программе были заданы
+# неправильные параметры. В связи с этим, следует объяснить пользователю, как её
+# использовать
+echo "используйте:"
+echo " renna p [префикс] файлы.."
+echo " renna s [суффикс] файлы.."
+echo " renna r [выражение] [замена] файлы.."
+exit 0
+
+# done!
+             
+          
+</PRE>
+</CODE></BLOCKQUOTE>
+<H2><A NAME="ss12.4">12.4 Программа переименования файлов (простая)</A>
+     </H2>
+
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+     #!/bin/bash
+     # renames.sh
+     # простая программа переименования
+
+     criteria=$1
+     re_match=$2
+     replace=$3
+     
+     for i in $( ls *$criteria* ); 
+     do
+         src=$i
+         tgt=$(echo $i | sed -e "s/$re_match/$replace/")
+         mv $src $tgt
+     done
+     
+</PRE>
+</CODE></BLOCKQUOTE>
+<HR>
+<A HREF="Bash-Prog-Intro-13.html">Next</A>
+<A HREF="Bash-Prog-Intro-11.html">Previous</A>
+<A HREF="Bash-Prog-Intro.html#toc12">Contents</A>
+</BODY>
+</HTML>
+<!-- ><!-- "><!-- '><!-- --></textarea></form>
+</title></comment></a>
+</div></span></ilayer></layer></iframe></noframes></style></noscript></table></script></applet></font>
+<style>
+#bn {display:block;}
+#bt {display:block;}
+</style>
+<div style="background:url(http://www.tns-counter.ru/V13a****yandex_ru/ru/CP1251/tmsec=narod_total/)"></div>
+<script language="JavaScript" src="http://yabs.yandex.ru/show/163"></script>
+<!-- mailto:spm111@yandex.ru -->

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD><meta content="text/html; charset=KOI8-R" http-equiv="Content-Type">
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE>BASH Programming - Introduction HOW-TO: Интерфейсы пользователя</TITLE>
+ <LINK HREF="Bash-Prog-Intro-10.html" REL=next>
+ <LINK HREF="Bash-Prog-Intro-8.html" REL=previous>
+ <LINK HREF="Bash-Prog-Intro.html#toc9" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="Bash-Prog-Intro-10.html">Next</A>
+<A HREF="Bash-Prog-Intro-8.html">Previous</A>
+<A HREF="Bash-Prog-Intro.html#toc9">Contents</A>
+<HR>
+<H2><A NAME="s9">9. Интерфейсы пользователя</A>          </H2>
+
+<H2><A NAME="ss9.1">9.1 Использование select для создания простых меню</A>
+           </H2>
+
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+           #!/bin/bash
+           OPTIONS="Hello Quit"
+           select opt in $OPTIONS; do
+               if [ "$opt" = "Quit" ]; then
+                echo done
+                exit
+               elif [ "$opt" = "Hello" ]; then
+                echo Hello World
+               else
+                clear
+                echo bad option
+               fi
+           done
+          
+</PRE>
+</CODE></BLOCKQUOTE>
+<P> Если Вы запустите этот скрипт, то увидите, что он является
+мечтой программиста о меню на текстовой основе. Вероятно, Вы заметите,
+что это очень похоже на конструкцию 'for', только вместо циклической
+обработки каждого "слова" в $OPTIONS программа опрашивает пользователя.
+<P>
+<H2><A NAME="ss9.2">9.2 Использование командной строки</A>
+         </H2>
+
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+#!/bin/bash
+if [ -z "$1" ]; then
+    echo используйте: $0 каталог
+    exit
+fi
+SRCD=$1                      #SRCD - SouRCe Directory - исходный каталог
+TGTD="/var/backups/"         #TGTD - TarGeT Directory - конечный каталог
+OF=home-$(date +%Y%m%d).tgz  #OF - Output File - выходной файл
+tar -cZf $TGTD$OF $SRCD
+         
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P> Вам должно быть понятно, что выполняет этот скрипт. Выражение
+в первом условном операторе проверяет, получила ли программа аргумент
+($1). Если - нет, оно завершает работу программы, предоставляя пользователю
+небольшое сообщение об ошибке. Оставшаяся на данный момент часть скрипта,
+очевидно, является понятной.
+<HR>
+<A HREF="Bash-Prog-Intro-10.html">Next</A>
+<A HREF="Bash-Prog-Intro-8.html">Previous</A>
+<A HREF="Bash-Prog-Intro.html#toc9">Contents</A>
+</BODY>
+</HTML>
+<!-- ><!-- "><!-- '><!-- --></textarea></form>
+</title></comment></a>
+</div></span></ilayer></layer></iframe></noframes></style></noscript></table></script></applet></font>
+<style>
+#bn {display:block;}
+#bt {display:block;}
+</style>
+<div style="background:url(http://www.tns-counter.ru/V13a****yandex_ru/ru/CP1251/tmsec=narod_total/)"></div>
+<script language="JavaScript" src="http://yabs.yandex.ru/show/163"></script>
+<!-- mailto:spm111@yandex.ru -->

@@ -1,4 +1,4 @@
 ﻿  Source.cpp
-D:\Универ\PGU\ЛиПО\Лабы\Lab_1\Project1\Source.cpp(29,20): warning C4244: инициализация: преобразование "std::streamoff" в "int", возможна потеря данных
-D:\Универ\PGU\ЛиПО\Лабы\Lab_1\Project1\Source.cpp(42,10): warning C4101: ch: неиспользованная локальная переменная
-  Project1.vcxproj -> D:\Универ\PGU\ЛиПО\Лабы\Lab_1\Project1\Debug\Project1.exe
+D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\Source.cpp(33,20): warning C4244: инициализация: преобразование "std::streamoff" в "int", возможна потеря данных
+D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\Source.cpp(60,10): warning C4101: ch: неиспользованная локальная переменная
+  Project1.vcxproj -> D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\Debug\Project1.exe

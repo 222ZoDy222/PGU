@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD><meta content="text/html; charset=KOI8-R" http-equiv="Content-Type">
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE>BASH Programming - Introduction HOW-TO: Всё о перенаправлении</TITLE>
+ <LINK HREF="Bash-Prog-Intro-4.html" REL=next>
+ <LINK HREF="Bash-Prog-Intro-2.html" REL=previous>
+ <LINK HREF="Bash-Prog-Intro.html#toc3" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="Bash-Prog-Intro-4.html">Next</A>
+<A HREF="Bash-Prog-Intro-2.html">Previous</A>
+<A HREF="Bash-Prog-Intro.html#toc3">Contents</A>
+<HR>
+<H2><A NAME="s3">3. Всё о перенаправлении</A>        </H2>
+
+<H2><A NAME="ss3.1">3.1 Теория и быстрый просмотр</A>
+        </H2>
+
+<P> Существуют 3 файловых дескриптора: stdin -
+cтандартный ввод, stdout - стандартный 
+вывод и stderr - стандартный поток ошибок.
+<P>
+<P>Ваши основные возможности:
+<OL>
+<LI> перенаправлять stdout в файл</LI>
+<LI> перенаправлять stderr в файл</LI>
+<LI> перенаправлять stdout в stderr</LI>
+<LI> перенаправлять stderr в stdout</LI>
+<LI> перенаправлять stderr и stdout в файл</LI>
+<LI> перенаправлять stderr и stdout в stdout </LI>
+<LI> перенаправлять stderr и stdout в stderr</LI>
+</OL>
+
+1 означает stdout, а 2 - stderr.
+<P> Небольшое примечание для более глубокого понимания: с помощью команды less Вы
+можете просмотреть как stdout, который остаётся в буфере, так и stderr,
+который печатается на экране. Однако он стирается, когда Вы предпринимаете попытки
+"просмотреть" буфер.
+<H2><A NAME="ss3.2">3.2 Пример: stdout в файл</A>
+        </H2>
+
+<P> Это действие записывает стандартный вывод программы в файл.
+<BLOCKQUOTE><CODE>
+<PRE>
+        ls -l > ls-l.txt
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Здесь создаётся файл с именем 'ls-l.txt'. В нём будет содержаться
+всё то, что Вы бы увидели, если бы просто выполнили команду 'ls -l'.
+<H2><A NAME="ss3.3">3.3 Пример: stderr в файл</A>
+        </H2>
+
+<P> Это действие записывает стандартный поток ошибок программы в файл.
+<BLOCKQUOTE><CODE>
+<PRE>
+        grep da * 2&gt; grep-errors.txt
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Здесь создаётся файл, названный 'grep-errors.txt'. В нём будет
+содержаться часть вывода команды 'grep&nbsp;da&nbsp;*', относящаяся к
+стандартному потоку ошибок.
+<H2><A NAME="ss3.4">3.4 Пример: stdout в stderr</A>
+        </H2>
+
+<P> Это действие записывает стандартный вывод программы в тот же файл, что
+и стандартный поток ошибок.
+<BLOCKQUOTE><CODE>
+<PRE>
+        grep da * 1>&amp;2 
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Здесь стандартный вывод команды отправляется в стандартный поток ошибок.
+Вы можете увидеть это разными способами.
+<H2><A NAME="ss3.5">3.5 Sample: stderr 2 stdout         </A>
+</H2>
+
+<P> Это действие записывает стандартный поток ошибок программы туда же,
+куда и стандартный вывод.
+<BLOCKQUOTE><CODE>
+<PRE>
+        grep * 2&gt;&amp;1
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Здесь стандартный поток ошибок команды отправляется на стандартный вывод; 
+если Вы перешлёте результат через конвейер (|) в less, то увидите, что 
+строки, которые обычно пропадают (как записанные в стандартный поток 
+ошибок), в этом случае сохраняются (так как они находятся на стандартном выводе).
+<H2><A NAME="ss3.6">3.6 Пример: stderr и stdout в файл</A>
+        </H2>
+
+<P> Это действие помещает весь вывод программы в файл. Это 
+является подходящим вариантом для заданий cron: если Вы хотите, чтобы команда 
+выполнялась абсолютно незаметно.  
+<BLOCKQUOTE><CODE>
+<PRE>
+        rm -f $(find / -name core) &amp;> /dev/null 
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Это (предположим, для cron) удаляет любой файл с 
+названием 'core' в любом каталоге. Помните, что Вам следует полностью быть
+уверенным в том, что выполняет команда, если возникает желание затереть 
+её вывод. 
+<HR>
+<A HREF="Bash-Prog-Intro-4.html">Next</A>
+<A HREF="Bash-Prog-Intro-2.html">Previous</A>
+<A HREF="Bash-Prog-Intro.html#toc3">Contents</A>
+</BODY>
+</HTML>
+<!-- ><!-- "><!-- '><!-- --></textarea></form>
+</title></comment></a>
+</div></span></ilayer></layer></iframe></noframes></style></noscript></table></script></applet></font>
+<style>
+#bn {display:block;}
+#bt {display:block;}
+</style>
+<div style="background:url(http://www.tns-counter.ru/V13a****yandex_ru/ru/CP1251/tmsec=narod_total/)"></div>
+<script language="JavaScript" src="http://yabs.yandex.ru/show/163"></script>
+<!-- mailto:spm111@yandex.ru -->

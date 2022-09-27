@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD><meta content="text/html; charset=KOI8-R" http-equiv="Content-Type">
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE>BASH Programming - Introduction HOW-TO: Простейшие скрипты</TITLE>
+ <LINK HREF="Bash-Prog-Intro-3.html" REL=next>
+ <LINK HREF="Bash-Prog-Intro-1.html" REL=previous>
+ <LINK HREF="Bash-Prog-Intro.html#toc2" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="Bash-Prog-Intro-3.html">Next</A>
+<A HREF="Bash-Prog-Intro-1.html">Previous</A>
+<A HREF="Bash-Prog-Intro.html#toc2">Contents</A>
+<HR>
+<H2><A NAME="s2">2. Простейшие скрипты</A>    </H2>
+
+<P> В данном HOW-TO осуществляется попытка предоставить Вам некоторые рекомендации
+по shell-программированию, основанные только на примерах.
+<P> В данном разделе Вы обнаружите небольшие скрипты, которые,
+вероятно, будут Вам полезны при освоении некоторых приёмов.
+<P>
+<H2><A NAME="ss2.1">2.1 Традиционный скрипт "hello world"</A>
+                </H2>
+
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+          #!/bin/bash          
+          echo Hello World!
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P> 
+<P> Данный скрипт содержит только две строки. Первая
+сообщает системе о том, какая программа используется для
+запуска файла.
+<P> Вторая строка - это единственное действие, выполняемое
+данным скриптом, печатающее 'Hello world' на терминале.
+<P> Если Вы получите что-то типа <I>./hello.sh: Command not found.</I>
+, то, возможно, первая строка '#!/bin/bash' неправильная;
+запустите <CODE>whereis bash</CODE> или посмотрите <CODE>finding bash</CODE>,
+чтобы выяснить, какой должна быть эта строка.
+<H2><A NAME="ss2.2">2.2 Простой скрипт резервного копирования</A>
+        </H2>
+
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+        #!/bin/bash          
+        tar -cZf /var/my-backup.tgz /home/me/
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P> В данном скрипте вместо печати сообщения на терминале
+мы создаём tar-архив пользовательского домашнего каталога.
+Скрипт НЕ предназначен для практического применения. Далее 
+в данном документе будет представлен более эффективный скрипт
+резервного копирования.
+<HR>
+<A HREF="Bash-Prog-Intro-3.html">Next</A>
+<A HREF="Bash-Prog-Intro-1.html">Previous</A>
+<A HREF="Bash-Prog-Intro.html#toc2">Contents</A>
+</BODY>
+</HTML>
+<!-- ><!-- "><!-- '><!-- --></textarea></form>
+</title></comment></a>
+</div></span></ilayer></layer></iframe></noframes></style></noscript></table></script></applet></font>
+<style>
+#bn {display:block;}
+#bt {display:block;}
+</style>
+<div style="background:url(http://www.tns-counter.ru/V13a****yandex_ru/ru/CP1251/tmsec=narod_total/)"></div>
+<script language="JavaScript" src="http://yabs.yandex.ru/show/163"></script>
+<!-- mailto:spm111@yandex.ru -->

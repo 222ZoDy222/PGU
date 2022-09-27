@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD><meta content="text/html; charset=KOI8-R" http-equiv="Content-Type">
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE>BASH Programming - Introduction HOW-TO: Разное</TITLE>
+ <LINK HREF="Bash-Prog-Intro-11.html" REL=next>
+ <LINK HREF="Bash-Prog-Intro-9.html" REL=previous>
+ <LINK HREF="Bash-Prog-Intro.html#toc10" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="Bash-Prog-Intro-11.html">Next</A>
+<A HREF="Bash-Prog-Intro-9.html">Previous</A>
+<A HREF="Bash-Prog-Intro.html#toc10">Contents</A>
+<HR>
+<H2><A NAME="s10">10. Разное</A>         </H2>
+
+<H2><A NAME="ss10.1">10.1 Чтение пользовательского ввода с помощью read</A>
+         </H2>
+
+<P> В некоторых случаях, возможно, возникнет необходимость попросить пользователя
+что-нибудь ввести. Существуют различные способы выполнения этого. Одним из способов 
+является следующий:
+<BLOCKQUOTE><CODE>
+<PRE>
+                #!/bin/bash
+                echo Введите, пожалуйста, Ваше имя
+                read NAME
+                echo "Привет, $NAME!"
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P> В качестве варианта Вы можете получать сразу несколько значений с помощью read.
+Следующий пример поясняет это:
+<BLOCKQUOTE><CODE>
+<PRE>
+          #!/bin/bash
+          echo "Введите, пожалуйста, Ваше имя и фамилию"
+          read FN LN   #FN - First Name - имя; LN - Last Name - фамилия
+          echo "Hi! $LN, $FN !"
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<H2><A NAME="ss10.2">10.2 Арифметические вычисления</A>
+         </H2>
+
+<P> В командной строке (или оболочке) попробуйте ввести следующее:
+<P> echo&nbsp;1&nbsp;+&nbsp;1
+<P> Если Вы рассчитываете увидеть '2', то будете разочарованы.
+Что следует выполнить, если возникает необходимость, чтобы BASH произвёл вычисления
+над Вашими числами? Решение заключается в следующем:
+<P> echo&nbsp;$((1+1))
+<P> В результате этого вывод будет более "логичным". Такая запись
+используется для вычисления арифметических выражений. Вы также
+можете выполнить это следующим образом:
+<P> echo&nbsp;$[1+1]
+<P>
+<P> Если Вам необходимо использовать дроби или более сложную математику, то
+можно использовать bc для вычисления арифметических выражений.
+<P> Когда автор запустил "echo&nbsp;$[3/4]" в командной оболочке, она вернула
+значение 0. Это связано с тем, что если bash отвечает, он использует только целые значения.
+Если Вы запустите "echo&nbsp;3/4|bc&nbsp;-l", оболочка вернёт правильное 
+значение 0.75.
+<H2><A NAME="ss10.3">10.3 Поиск bash</A>
+        </H2>
+
+<P> Из сообщения от mike (смотрите раздел "Благодарность"):
+<P> Вы всегда используете #!/bin/bash .. Вы могли бы привести пример, каким образом
+можно обнаружить, где расположен bash.
+<P> Предпочтительнее использовать 'locate bash', но locate имеется не на всех машинах. 
+<P> 'find ./ -name bash' из корневого каталога обычно срабатывает.
+<P> Можно проверить следующие расположения:
+<P>         ls -l /bin/bash
+<P>         ls -l /sbin/bash
+<P>         ls -l /usr/local/bin/bash
+<P>         ls -l /usr/bin/bash
+<P>         ls -l /usr/sbin/bash
+<P>         ls -l /usr/local/sbin/bash
+<P> (автор не способен сразу придумать какой-либо другой каталог...
+Он находил bash в большинстве этих мест на различных системах).
+<P> Вы также можете попробовать 'which bash'.
+<H2><A NAME="ss10.4">10.4 Получение возвратного значения программы</A>
+        </H2>
+
+<P> В bash возвратное значение программы сохраняется в специальной 
+переменной $?.
+<P> Данный пример иллюстрирует, как перехватить возвратное 
+значение программы; автор предположил, что каталог 
+<I>dada</I> не существует (это также предложил mike).
+<BLOCKQUOTE><CODE>
+<PRE>
+        #!/bin/bash
+        cd /dada &amp;> /dev/null
+        echo rv: $?
+        cd $(pwd) &amp;> /dev/null
+        echo rv: $?
+        
+</PRE>
+ 
+</CODE></BLOCKQUOTE>
+<H2><A NAME="ss10.5">10.5 Перехват вывода команды          </A>
+</H2>
+
+<P> Этот небольшой скрипт представляет все таблицы из всех баз данных
+(предполагается, что у Вас установлен MySQL). Кроме того, следует подумать
+о способах преобразования команды 'mysql' для использования подходящего имени
+пользователя и пароля.
+<BLOCKQUOTE><CODE>
+<PRE>
+        #!/bin/bash
+        DBS=`mysql -uroot  -e"show databases"`
+        for b in $DBS ;
+        do
+                mysql -uroot -e"show tables from $b"
+        done
+        
+</PRE>
+</CODE></BLOCKQUOTE>
+<H2><A NAME="ss10.6">10.6 Несколько исходных файлов</A>
+        </H2>
+
+<P> Вы можете запускать несколько файлов с помощью команды source. 
+<P> __TO-DO__
+<HR>
+<A HREF="Bash-Prog-Intro-11.html">Next</A>
+<A HREF="Bash-Prog-Intro-9.html">Previous</A>
+<A HREF="Bash-Prog-Intro.html#toc10">Contents</A>
+</BODY>
+</HTML>
+<!-- ><!-- "><!-- '><!-- --></textarea></form>
+</title></comment></a>
+</div></span></ilayer></layer></iframe></noframes></style></noscript></table></script></applet></font>
+<style>
+#bn {display:block;}
+#bt {display:block;}
+</style>
+<div style="background:url(http://www.tns-counter.ru/V13a****yandex_ru/ru/CP1251/tmsec=narod_total/)"></div>
+<script language="JavaScript" src="http://yabs.yandex.ru/show/163"></script>
+<!-- mailto:spm111@yandex.ru -->

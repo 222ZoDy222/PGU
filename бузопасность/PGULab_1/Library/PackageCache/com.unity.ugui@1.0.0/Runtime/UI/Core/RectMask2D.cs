@@ -86,7 +86,7 @@ namespace UnityEngine.UI
         /// Returns a non-destroyed instance or a null reference.
         /// </remarks>
         [NonSerialized] private Canvas m_Canvas;
-        internal Canvas Canvas
+        private Canvas Canvas
         {
             get
             {
@@ -337,7 +337,6 @@ namespace UnityEngine.UI
 
         protected override void OnTransformParentChanged()
         {
-            m_Canvas = null;
             base.OnTransformParentChanged();
             m_ShouldRecalculateClipRects = true;
         }
