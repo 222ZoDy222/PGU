@@ -1,0 +1,5 @@
+
+
+Home Subnet.PC1 Web Browser,Home Subnet.Music Server,162.37,0,PC1 Web Browser --> Music Server,Home Subnet.PC1 Web Browser,Home Subnet.PC1 Web Browser <-> 100BT_Switch,Home Subnet.100BT_Switch,Home Subnet.100BT_Switch <-> Linksys Cable Modem Router,Home Subnet.Linksys Cable Modem Router,Home Subnet.Linksys Cable Modem Router <-> Internet,Home Subnet.Internet,Home Subnet.Internet <-> Music Server
+
+Home Subnet.Music Server,Home Subnet.PC1 Web Browser,166.85,1,Music Server --> PC1 Web Browser,Home Subnet.Music Server,Home Subnet.Internet <-> Music Server,Home Subnet.Internet,Home Subnet.Linksys Cable Modem Router <-> Internet,Home Subnet.Linksys Cable Modem Router,Home Subnet.100BT_Switch <-> Linksys Cable Modem Router,Home Subnet.100BT_Switch,Home Subnet.PC1 Web Browser <-> 100BT_Switch

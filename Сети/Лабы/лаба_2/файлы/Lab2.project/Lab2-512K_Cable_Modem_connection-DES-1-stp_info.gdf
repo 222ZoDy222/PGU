@@ -1,0 +1,9 @@
+# This file is an output of a discrete event simulation.
+# It contains spanning tree information to be parsed while
+# visualizing the spanning tree using the Protocols->STP menu.
+# Legend: node name, VID, VLAN/tree name, port/node type, link name.
+Home Subnet.100BT_Switch,0,Common ST,root,none
+Home Subnet.100BT_Switch,0,Common ST,designated_port,Home Subnet.Macintosh Game Player <-> 100BT_Switch
+Home Subnet.100BT_Switch,0,Common ST,designated_port,Home Subnet.PC2 Researcher <-> 100BT_Switch
+Home Subnet.100BT_Switch,0,Common ST,designated_port,Home Subnet.PC1 Web Browser <-> 100BT_Switch
+Home Subnet.100BT_Switch,0,Common ST,designated_port,Home Subnet.100BT_Switch <-> Linksys Cable Modem Router

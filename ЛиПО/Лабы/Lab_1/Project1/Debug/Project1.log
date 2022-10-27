@@ -1,4 +1,9 @@
 ﻿  Source.cpp
-D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\Source.cpp(33,20): warning C4244: инициализация: преобразование "std::streamoff" в "int", возможна потеря данных
-D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\Source.cpp(60,10): warning C4101: ch: неиспользованная локальная переменная
+D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\Source.cpp(117,20): warning C4244: инициализация: преобразование "std::streamoff" в "int", возможна потеря данных
+D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\Source.cpp(144,10): warning C4101: ch: неиспользованная локальная переменная
+D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\Source.cpp(160,23): warning C4018: <: несоответствие типов со знаком и без знака
+D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\Source.cpp(246,23): warning C4018: <: несоответствие типов со знаком и без знака
+D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\Source.cpp(254,23): warning C4018: <: несоответствие типов со знаком и без знака
+D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\Source.cpp(292,23): warning C4018: <: несоответствие типов со знаком и без знака
+D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\Source.cpp(325,20): warning C4244: инициализация: преобразование "std::streamoff" в "int", возможна потеря данных
   Project1.vcxproj -> D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\Debug\Project1.exe

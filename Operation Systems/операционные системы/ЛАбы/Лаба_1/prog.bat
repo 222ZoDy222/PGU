@@ -1,11 +1,36 @@
 
 
 
+@ECHO OFF
+SETLOCAL EnableDelayedExpansion
 
 
-@echo off 
 
 
-FOR %%G IN (*.txt) DO Echo %%G
+set /p str=
+set /p type=
 
-pause
+FOR %%G in (*.%type %) DO (
+	rem ------------------------
+	
+	
+	
+	
+	
+	
+	
+	findstr %str % %%G
+	
+	IF !ERRORLEVEL! EQU 0 (
+		echo in file %%G find string %str %
+
+	) ELSE (
+		echo in %%G not find %str %
+
+	)
+	rem -------------------------
+	
+
+
+)
+rem PAUSE
