@@ -1,0 +1,152 @@
+[Environment]
+duration=128.000000
+seed=3600
+net_name=Standard_Chartered_Bank_Network_Reference-PVCs_With_CIR_128k
+sim_log_delim=TAB
+
+[Run Info]
+run_date=13:53:27 Fri Aug 22 2003
+
+[Log Entries]
+0	4426	Choose From Maps Network.Frame Cloud.FrameRelay_ATM_1	Results	RIP	Performance	SYMPTOM(S): <NL>  1. No RIP routing updates past a certain <NL>  simulation time. <NL>  2. Lower than expected throughput or <NL>  utilization of the links. <NL>   <NL> CAUSE(S): <NL>  "RIP Sim Efficiency" simulation attribute <NL>  is set to "Enabled". <NL>   <NL> SUGGESTIONS: <NL>  Set "RIP Sim Efficiency" simulation <NL>  attribute to "Disabled". <NL>  
+5.00043921343	10578	Choose From Maps Network.Chicago Headquarters.HQ.70 Users Floor 1	Protocol	UDP	Packet Drop	SYMPTOM(S): <NL>  Discarding UDP datagram received (destined <NL>  for port number: 520) <NL>   <NL>  It is typical for end nodes (e.g., wkstn <NL>  and servers) to discard datagrams containing <NL>  RIP messages (i.e., port 520) and LDP (Label  <NL>  Distribution Protocol, port 646) messages.   <NL>  In that case, this message can be ignored. <NL>   <NL> EFFECT(S): <NL>  1. The datagram is discarded by the UDP. <NL>  2. Application data may not be received. <NL>  3. No Effects if the datagram was received <NL>     for port 520 and node is not using RIP. <NL>  4. No Effects if the datagram was received <NL>     for port 646 and node is not MPLS enabled. <NL>   <NL> SUGGESTIONS: <NL>  Make sure that the applications are <NL>  sending packets to a port that UDP <NL>  is listening on. <NL>   <NL>  This message will not be repeated. <NL>  
+75.9870764793	397400	Choose From Maps Network.Frame Cloud.FrameRelay_ATM_2	Protocol	Frame_Relay	Packet_Drop	BEHAVIOR: <NL>  Dropping frame relay packet ID (176966) destined <NL>  for node (Choose From Maps Network.Houston.Houston Router). <NL>   <NL> POSSIBLE EFFECT(S): <NL>  1. No application-layer data transfer. <NL>  2. Transport layer retransmissions. <NL>   <NL> REASON(S): <NL>  Sending this packet will violate this PVC's <NL>  parameters: <NL>   <NL>      CIR = 128000 bits/sec <NL>      Bc  = 64000 bits, and <NL>      Be  = 64000 bits. <NL>   <NL>  You can only send a maximum of 128000 bits <NL>  in 0.50 seconds. <NL>   <NL> SUGGESTIONS: <NL>  Modify the PVC parameters to allow more <NL>  traffic to be transmitted: <NL>   <NL>  1. Maximum transfer rate is (Bc + Be) bits <NL>     every (Bc/CIR) seconds. <NL>   <NL>  2. Use "Zero CIR" specification to avoid <NL>     all packet discards. To specify "Zero CIR" <NL>     option, set CIR, Bc, and Be to 0.0. All <NL>     frames will be marked discard eligible. <NL>   <NL>  3. This message will not be repeated for subsequent <NL>     packets being dropped by this node or by other <NL>     nodes. View "Residual Error Rate" statistic <NL>     to monitor amount of traffic being dropped on a PVC. <NL>   <NL>  
+76.1826693324	398225	Choose From Maps Network.Richmond - Processing Center.File Sharing Server	Protocol	TCP	Data_Transmission	SYMPTOM(S): <NL>  TCP is retransmitting data segments <NL>  which will cause additional overhead <NL>  on the lower layers and links <NL>   <NL> CAUSE(S): <NL>  This may be normal behavior on a  <NL>  network which has either: <NL>  1) Slow links <NL>  2) Possibly dropped packets (ATM or FR) <NL>  3) Queuing delays <NL>   <NL> SUGGESTIONS: <NL>  If any of the causes listed above are <NL>  expected, no action is required, as <NL>  this is normal protocol behavior for <NL>  TCP <NL>   <NL>  Otherwise look for problems in the <NL>  lower layers, such as IP dropped  <NL>  packets or other errors in the  <NL>  simulation log <NL>   <NL>  View TCP response time statistics <NL>  for data regarding the delays <NL>   <NL> This message will not be repeated <NL>  
+323.998232108	561933	Choose From Maps Network.Frame Cloud.FrameRelay_ATM_3	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Frame Cloud.FrameRelay_ATM_3.FRAD_08) <NL>      at T (323.998), EV (561933), MOD (top.Choose From Maps Network.Frame Cloud.FrameRelay_ATM_3.FRAD_08) <NL> Statistic value (0) at time (323.998) falling prior <NL> to current bucket starting at (324). Value discarded.
+323.998232108	561933	Choose From Maps Network.Frame Cloud.FrameRelay_ATM_3	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Frame Cloud.FrameRelay_ATM_3.FRAD_08) <NL>      at T (323.998), EV (561933), MOD (top.Choose From Maps Network.Frame Cloud.FrameRelay_ATM_3.FRAD_08) <NL> Statistic value (9.425) at time (323.998) falling prior <NL> to current bucket starting at (324). Value discarded.
+467.977693724	733953	Choose From Maps Network.Tampa.Tampa Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Tampa.Tampa Router.FRAD_16) <NL>      at T (467.978), EV (733953), MOD (top.Choose From Maps Network.Tampa.Tampa Router.FRAD_16) <NL> Statistic value (0) at time (467.978) falling prior <NL> to current bucket starting at (468). Value discarded.
+467.977693724	733953	Choose From Maps Network.Tampa.Tampa Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Tampa.Tampa Router.FRAD_16) <NL>      at T (467.978), EV (733953), MOD (top.Choose From Maps Network.Tampa.Tampa Router.FRAD_16) <NL> Statistic value (0) at time (467.978) falling prior <NL> to current bucket starting at (468). Value discarded.
+467.977693724	733953	Choose From Maps Network.Tampa.Tampa Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Tampa.Tampa Router.FRAD_16) <NL>      at T (467.978), EV (733953), MOD (top.Choose From Maps Network.Tampa.Tampa Router.FRAD_16) <NL> Statistic value (0) at time (467.978) falling prior <NL> to current bucket starting at (468). Value discarded.
+467.977693724	733953	Choose From Maps Network.Tampa.Tampa Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Tampa.Tampa Router.FRAD_16) <NL>      at T (467.978), EV (733953), MOD (top.Choose From Maps Network.Tampa.Tampa Router.FRAD_16) <NL> Statistic value (1) at time (467.978) falling prior <NL> to current bucket starting at (468). Value discarded.
+467.977693724	733953	Choose From Maps Network.Tampa.Tampa Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Tampa.Tampa Router.FRAD_16) <NL>      at T (467.978), EV (733953), MOD (top.Choose From Maps Network.Tampa.Tampa Router.FRAD_16) <NL> Statistic value (12000) at time (467.978) falling prior <NL> to current bucket starting at (468). Value discarded.
+467.977693724	733953	Choose From Maps Network.Tampa.Tampa Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Tampa.Tampa Router.FRAD_16) <NL>      at T (467.978), EV (733953), MOD (top.Choose From Maps Network.Tampa.Tampa Router.FRAD_16) <NL> Statistic value (9.375) at time (467.978) falling prior <NL> to current bucket starting at (468). Value discarded.
+467.999322131	734100	Choose From Maps Network.Richmond - Processing Center.Processing Center Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Richmond - Processing Center.Processing Center Router.FRAD_16) <NL>      at T (467.999), EV (734100), MOD (top.Choose From Maps Network.Richmond - Processing Center.Processing Center Router.FRAD_16) <NL> Statistic value (0) at time (467.999) falling prior <NL> to current bucket starting at (468). Value discarded.
+467.999322131	734100	Choose From Maps Network.Richmond - Processing Center.Processing Center Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Richmond - Processing Center.Processing Center Router.FRAD_16) <NL>      at T (467.999), EV (734100), MOD (top.Choose From Maps Network.Richmond - Processing Center.Processing Center Router.FRAD_16) <NL> Statistic value (0.0384) at time (467.999) falling prior <NL> to current bucket starting at (468). Value discarded.
+467.999322131	734100	Choose From Maps Network.Richmond - Processing Center.Processing Center Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Richmond - Processing Center.Processing Center Router.FRAD_16) <NL>      at T (467.999), EV (734100), MOD (top.Choose From Maps Network.Richmond - Processing Center.Processing Center Router.FRAD_16) <NL> Statistic value (0) at time (468) falling prior <NL> to current bucket starting at (468). Value discarded.
+1799.98681277	1876105	Choose From Maps Network.Frame Cloud.FrameRelay_ATM_3	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Frame Cloud.FrameRelay_ATM_3.FRAD_08) <NL>      at T (1799.99), EV (1876105), MOD (top.Choose From Maps Network.Frame Cloud.FrameRelay_ATM_3.FRAD_08) <NL> Statistic value (0) at time (1799.99) falling prior <NL> to current bucket starting at (1800). Value discarded.
+1799.98681277	1876105	Choose From Maps Network.Frame Cloud.FrameRelay_ATM_3	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Frame Cloud.FrameRelay_ATM_3.FRAD_08) <NL>      at T (1799.99), EV (1876105), MOD (top.Choose From Maps Network.Frame Cloud.FrameRelay_ATM_3.FRAD_08) <NL> Statistic value (9.425) at time (1799.99) falling prior <NL> to current bucket starting at (1800). Value discarded.
+1799.98992741	1876110	Choose From Maps Network.Minneapolis.Minneapolis Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Minneapolis.Minneapolis Router.FRAD_16) <NL>      at T (1799.99), EV (1876110), MOD (top.Choose From Maps Network.Minneapolis.Minneapolis Router.FRAD_16) <NL> Statistic value (0) at time (1799.99) falling prior <NL> to current bucket starting at (1800). Value discarded.
+1799.98992741	1876110	Choose From Maps Network.Minneapolis.Minneapolis Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Minneapolis.Minneapolis Router.FRAD_16) <NL>      at T (1799.99), EV (1876110), MOD (top.Choose From Maps Network.Minneapolis.Minneapolis Router.FRAD_16) <NL> Statistic value (0) at time (1799.99) falling prior <NL> to current bucket starting at (1800). Value discarded.
+1799.98992741	1876110	Choose From Maps Network.Minneapolis.Minneapolis Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Minneapolis.Minneapolis Router.FRAD_16) <NL>      at T (1799.99), EV (1876110), MOD (top.Choose From Maps Network.Minneapolis.Minneapolis Router.FRAD_16) <NL> Statistic value (0) at time (1799.99) falling prior <NL> to current bucket starting at (1800). Value discarded.
+1799.98992741	1876110	Choose From Maps Network.Minneapolis.Minneapolis Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Minneapolis.Minneapolis Router.FRAD_16) <NL>      at T (1799.99), EV (1876110), MOD (top.Choose From Maps Network.Minneapolis.Minneapolis Router.FRAD_16) <NL> Statistic value (1) at time (1799.99) falling prior <NL> to current bucket starting at (1800). Value discarded.
+1799.98992741	1876110	Choose From Maps Network.Minneapolis.Minneapolis Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Minneapolis.Minneapolis Router.FRAD_16) <NL>      at T (1799.99), EV (1876110), MOD (top.Choose From Maps Network.Minneapolis.Minneapolis Router.FRAD_16) <NL> Statistic value (12000) at time (1799.99) falling prior <NL> to current bucket starting at (1800). Value discarded.
+1799.98992741	1876110	Choose From Maps Network.Minneapolis.Minneapolis Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Minneapolis.Minneapolis Router.FRAD_16) <NL>      at T (1799.99), EV (1876110), MOD (top.Choose From Maps Network.Minneapolis.Minneapolis Router.FRAD_16) <NL> Statistic value (9.375) at time (1799.99) falling prior <NL> to current bucket starting at (1800). Value discarded.
+2339.96765992	2378380	Choose From Maps Network.Frame Cloud.FrameRelay_ATM_1	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Frame Cloud.FrameRelay_ATM_1.FRAD_08) <NL>      at T (2339.97), EV (2378380), MOD (top.Choose From Maps Network.Frame Cloud.FrameRelay_ATM_1.FRAD_08) <NL> Statistic value (0) at time (2339.97) falling prior <NL> to current bucket starting at (2340). Value discarded.
+2339.96765992	2378380	Choose From Maps Network.Frame Cloud.FrameRelay_ATM_1	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Frame Cloud.FrameRelay_ATM_1.FRAD_08) <NL>      at T (2339.97), EV (2378380), MOD (top.Choose From Maps Network.Frame Cloud.FrameRelay_ATM_1.FRAD_08) <NL> Statistic value (9.425) at time (2339.97) falling prior <NL> to current bucket starting at (2340). Value discarded.
+2339.97194523	2378385	Choose From Maps Network.Phoenix.Phoenix Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Phoenix.Phoenix Router.FRAD_16) <NL>      at T (2339.97), EV (2378385), MOD (top.Choose From Maps Network.Phoenix.Phoenix Router.FRAD_16) <NL> Statistic value (0) at time (2339.97) falling prior <NL> to current bucket starting at (2340). Value discarded.
+2339.97194523	2378385	Choose From Maps Network.Phoenix.Phoenix Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Phoenix.Phoenix Router.FRAD_16) <NL>      at T (2339.97), EV (2378385), MOD (top.Choose From Maps Network.Phoenix.Phoenix Router.FRAD_16) <NL> Statistic value (0) at time (2339.97) falling prior <NL> to current bucket starting at (2340). Value discarded.
+2339.97194523	2378385	Choose From Maps Network.Phoenix.Phoenix Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Phoenix.Phoenix Router.FRAD_16) <NL>      at T (2339.97), EV (2378385), MOD (top.Choose From Maps Network.Phoenix.Phoenix Router.FRAD_16) <NL> Statistic value (0) at time (2339.97) falling prior <NL> to current bucket starting at (2340). Value discarded.
+2339.97194523	2378385	Choose From Maps Network.Phoenix.Phoenix Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Phoenix.Phoenix Router.FRAD_16) <NL>      at T (2339.97), EV (2378385), MOD (top.Choose From Maps Network.Phoenix.Phoenix Router.FRAD_16) <NL> Statistic value (1) at time (2339.97) falling prior <NL> to current bucket starting at (2340). Value discarded.
+2339.97194523	2378385	Choose From Maps Network.Phoenix.Phoenix Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Phoenix.Phoenix Router.FRAD_16) <NL>      at T (2339.97), EV (2378385), MOD (top.Choose From Maps Network.Phoenix.Phoenix Router.FRAD_16) <NL> Statistic value (12000) at time (2339.97) falling prior <NL> to current bucket starting at (2340). Value discarded.
+2339.97194523	2378385	Choose From Maps Network.Phoenix.Phoenix Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Phoenix.Phoenix Router.FRAD_16) <NL>      at T (2339.97), EV (2378385), MOD (top.Choose From Maps Network.Phoenix.Phoenix Router.FRAD_16) <NL> Statistic value (9.375) at time (2339.97) falling prior <NL> to current bucket starting at (2340). Value discarded.
+2339.99604127	2378552	Choose From Maps Network.Richmond - Processing Center.Processing Center Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Richmond - Processing Center.Processing Center Router.FRAD_16) <NL>      at T (2340), EV (2378552), MOD (top.Choose From Maps Network.Richmond - Processing Center.Processing Center Router.FRAD_16) <NL> Statistic value (0) at time (2340) falling prior <NL> to current bucket starting at (2340). Value discarded.
+2339.99604127	2378552	Choose From Maps Network.Richmond - Processing Center.Processing Center Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Richmond - Processing Center.Processing Center Router.FRAD_16) <NL>      at T (2340), EV (2378552), MOD (top.Choose From Maps Network.Richmond - Processing Center.Processing Center Router.FRAD_16) <NL> Statistic value (1.2064) at time (2340) falling prior <NL> to current bucket starting at (2340). Value discarded.
+3131.955253	3233862	Choose From Maps Network.Frame Cloud.FrameRelay_ATM_2	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Frame Cloud.FrameRelay_ATM_2.FRAD_08) <NL>      at T (3131.96), EV (3233862), MOD (top.Choose From Maps Network.Frame Cloud.FrameRelay_ATM_2.FRAD_08) <NL> Statistic value (0) at time (3131.96) falling prior <NL> to current bucket starting at (3132). Value discarded.
+3131.955253	3233862	Choose From Maps Network.Frame Cloud.FrameRelay_ATM_2	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Frame Cloud.FrameRelay_ATM_2.FRAD_08) <NL>      at T (3131.96), EV (3233862), MOD (top.Choose From Maps Network.Frame Cloud.FrameRelay_ATM_2.FRAD_08) <NL> Statistic value (9.425) at time (3131.96) falling prior <NL> to current bucket starting at (3132). Value discarded.
+3131.95803372	3233867	Choose From Maps Network.Houston.Houston Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Houston.Houston Router.FRAD_16) <NL>      at T (3131.96), EV (3233867), MOD (top.Choose From Maps Network.Houston.Houston Router.FRAD_16) <NL> Statistic value (0) at time (3131.96) falling prior <NL> to current bucket starting at (3132). Value discarded.
+3131.95803372	3233867	Choose From Maps Network.Houston.Houston Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Houston.Houston Router.FRAD_16) <NL>      at T (3131.96), EV (3233867), MOD (top.Choose From Maps Network.Houston.Houston Router.FRAD_16) <NL> Statistic value (0) at time (3131.96) falling prior <NL> to current bucket starting at (3132). Value discarded.
+3131.95803372	3233867	Choose From Maps Network.Houston.Houston Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Houston.Houston Router.FRAD_16) <NL>      at T (3131.96), EV (3233867), MOD (top.Choose From Maps Network.Houston.Houston Router.FRAD_16) <NL> Statistic value (0) at time (3131.96) falling prior <NL> to current bucket starting at (3132). Value discarded.
+3131.95803372	3233867	Choose From Maps Network.Houston.Houston Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Houston.Houston Router.FRAD_16) <NL>      at T (3131.96), EV (3233867), MOD (top.Choose From Maps Network.Houston.Houston Router.FRAD_16) <NL> Statistic value (1) at time (3131.96) falling prior <NL> to current bucket starting at (3132). Value discarded.
+3131.95803372	3233867	Choose From Maps Network.Houston.Houston Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Houston.Houston Router.FRAD_16) <NL>      at T (3131.96), EV (3233867), MOD (top.Choose From Maps Network.Houston.Houston Router.FRAD_16) <NL> Statistic value (12000) at time (3131.96) falling prior <NL> to current bucket starting at (3132). Value discarded.
+3131.95803372	3233867	Choose From Maps Network.Houston.Houston Router	Low-Lev.	Simulation	Error	Diagnostic reported by process (frms_frad_conn_v2) at module (top.Choose From Maps Network.Houston.Houston Router.FRAD_16) <NL>      at T (3131.96), EV (3233867), MOD (top.Choose From Maps Network.Houston.Houston Router.FRAD_16) <NL> Statistic value (9.375) at time (3131.96) falling prior <NL> to current bucket starting at (3132). Value discarded.
+3600	3673810	N/A	Config.	Event Manager	Performance	Try setting the 'event_speed_parameter' preference to (10). <NL>   <NL> The advanced event management system in the Simulation <NL> Kernel can be tuned to maintain peak performance when <NL> simulating very large systems. Your trade-off is that <NL> higher values of event_speed_parameter require <NL> additional memory. <NL>   <NL> Optimal values depend on the type and size of models, <NL> so the value above is an estimate based on how this <NL> simulation performed. You may wish to experiment <NL> with different values and compare the simulation's <NL> performance. In general, increasing this parameter <NL> will not yield significant performance gains for small, <NL> lightly-loaded systems. <NL>  
+
+[Summary]
+Low-Lev.	Simulation	Error	37
+Config.	Application	Setup	0
+Protocol	Application	Cli-Svr	0
+Results	Application	No Results	0
+Results	Application	Invalid Results	0
+Results	Application	Traffic Generation	0
+Protocol	IP	Higher Layer Protocol Register	0
+Protocol	OSPF	Protocol_Error	0
+Protocol	OSPF	Protocol_Warning	0
+Config.	OSPF	Model_Configuration_Error	0
+Config.	OSPF	Model_Configuration_Warning	0
+Low-Lev.	OSPF	KP_Invocation_Error	0
+Results	OSPF	Unexpected_Results	0
+Protocol	OSPF	LSDB_Export	0
+Protocol	BGP	Protocol_Error	0
+Protocol	BGP	Protocol_Warning	0
+Config.	BGP	Model_Configuration_Error	0
+Config.	BGP	Model_Configuration_Warning	0
+Results	BGP	Unexpected_Results	0
+Low-Lev.	IP	Address_Mapping_via_NATO	0
+Protocol	IP	Protocol_Error	0
+Protocol	IP	Protocol_Warning	0
+Config.	IP	Model_Configuration_Error	0
+Config.	IP	Model_Configuration_Warning	0
+Low-Lev.	IP	KP_Invocation_Error	0
+Results	IP	Unexpected_Results	0
+Protocol	IP	Packet Drop	0
+Protocol	IP	Wireless2Intf_Auto_Assignment_Warning	0
+Protocol	IP	Static_Auto_Assignment_Warning	0
+Config.	RIP	Attribute Settings	0
+Config.	RIP	Neighbor Modules	0
+Config.	UDP	Neighbor Modules	0
+Protocol	RIP	Timeouts	0
+Protocol	UDP	Packet Drop	1
+Results	RIP	Performance	1
+Low-Lev.	UDP	LLM Related	0
+Low-Lev.	UDP	Create Local Port	0
+Low-Lev.	RIP	Create UDP Receive Port	0
+Config.	RIP	Routing Table Configuration	0
+Low-Lev.	TCP	Kernel_Error	0
+Config.	TCP	Setup	0
+Protocol	TCP	Data_Transmission	1
+Config.	Transport_Interface	Setup	0
+Protocol	Transport_Interface	Data_Transmission	0
+Results	Transport_Interface	No_Results	0
+Config.	ATM	Setup	0
+Config.	ATM	Call Setup	0
+Config.	ATM	Bkgrnd Traffic	0
+Config.	ATM	Feedback	0
+Protocol	ATM	Call_Admission	0
+Protocol	ATM	Cell Loss	0
+Protocol	ATM	 UPC Cell Loss	0
+Protocol	ATM	 Buffer Cell Loss	0
+Results	ATM	No_Results	0
+Results	ATM	Bkgrnd Util	0
+Protocol	ATM	SSCOP	0
+Config.	Frame_Relay	PVC_Setup	0
+Config.	Frame_Relay	Attribute_Settings	0
+Protocol	Frame_Relay	Congestion	0
+Protocol	Frame_Relay	Packet_Drop	1
+Results	Frame_Relay	No_Results	0
+Results	Frame_Relay	Performance	0
+Config.	LAN Nodes	Warning	0
+Protocol	LAN Nodes	Protocol Warning	0
+Results	LAN Nodes	Performance	0
+Config.	Server	Undefined_Server	0
+Config.	Server	Undefined_Job_Class	0
+Config.	Server	Disk_Access	0
+Config.	Server	Disk_Definition	0
+Config.	Server	Raid	0
+Config.	Server	Job_Definition	0
+Config.	Server	Attribute_Definition	0
+Config.	Server	Advanced_Server_Configuration	0
+Low-Lev.	Server	Missing_Child_Process	0
+Low-Lev.	Server	Disk	0
+Low-Lev.	Server	Job_Interarrival	0
+Low-Lev.	Server	Missing_Information	0
+Low-Lev.	Server	Missing_Attribute	0
+Low-Lev.	Server	Invalid_Event_Handle	0
+Low-Lev.	Server	Remote Storage Access	0
+Low-Lev.	Server	Instance_Internal	0
+Config.	ATM PVC	Configuration	0
+Results	ATM PVC	Result	0
+Config.	Ethernet	Model Configuration	0
+Protocol	Ethernet	Packet Drop	0
+Results	Ethernet	Performance	0
+Results	Ethernet	No Results	0
+Results	ICMP	Performance	0
+Protocol	ICMP	Timeout	0
+Config.	IGMP Host	Model_Configuration_Warning	0
+Low-Lev.	IGMP Host	Model_Internals_Error	0
+Config.	Bridge	Setup	0
+Protocol	Bridge	Protocol	0
+Results	Bridge	No_Results	0
+Protocol	RSVP	Model Configuration Error	0
+Config.	Application	Background Traffic	0
+Config.	SIP	Signaling	0
+Config.	Event Manager	Performance	1

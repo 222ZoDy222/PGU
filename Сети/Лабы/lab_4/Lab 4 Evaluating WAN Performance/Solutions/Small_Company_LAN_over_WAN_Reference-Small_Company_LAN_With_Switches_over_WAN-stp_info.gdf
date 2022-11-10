@@ -1,0 +1,32 @@
+# This file is an output of a discrete event simulation.
+# It contains spanning tree information to be parsed while
+# visualizing the spanning tree using the Protocols->STP menu.
+Company_LAN.10BT_Switch2,0,none,root,none
+Company_LAN.10BT_Switch2,0,none,designated_port,Company_LAN.10BT_Switch2 <-> user11
+Company_LAN.10BT_Switch2,0,none,designated_port,Company_LAN.10BT_Switch2 <-> user10
+Company_LAN.10BT_Switch2,0,none,designated_port,Company_LAN.user9 <-> 10BT_Switch2
+Company_LAN.10BT_Switch2,0,none,designated_port,Company_LAN.10BT_Switch2 <-> user8
+Company_LAN.10BT_Switch2,0,none,designated_port,Company_LAN.10BT_Switch2 <-> user7
+Company_LAN.10BT_Switch2,0,none,designated_port,Company_LAN.10BT_Switch2 <-> user6
+Company_LAN.10BT_Switch2,0,none,designated_port,Company_LAN.10BT_Switch2 <-> 10BT_Switch1
+Company_LAN.10BT_Switch2,0,none,designated_port,Company_LAN.user20 <-> 10BT_Switch2
+Company_LAN.10BT_Switch2,0,none,designated_port,Company_LAN.user4 <-> 10BT_Switch2
+Company_LAN.10BT_Switch2,0,none,designated_port,Company_LAN.10BT_Switch2 <-> Printer Server2
+Company_LAN.10BT_Switch2,0,none,designated_port,Company_LAN.user5 <-> 10BT_Switch2
+Company_LAN.10BT_Switch2,0,none,designated_port,Company_LAN.user3 <-> 10BT_Switch2
+Company_LAN.10BT_Switch2,0,none,designated_port,Company_LAN.File & Email Server <-> 10BT_Switch2
+Company_LAN.10BT_Switch2,0,none,designated_port,Company_LAN.10BT_Switch2 <-> Cisco Router_2
+Company_LAN.10BT_Switch1,0,none,designated_port,Company_LAN.10BT_Switch1 <-> user19
+Company_LAN.10BT_Switch1,0,none,designated_port,Company_LAN.10BT_Switch1 <-> user18
+Company_LAN.10BT_Switch1,0,none,designated_port,Company_LAN.10BT_Switch1 <-> user17
+Company_LAN.10BT_Switch1,0,none,designated_port,Company_LAN.10BT_Switch1 <-> user16
+Company_LAN.10BT_Switch1,0,none,designated_port,Company_LAN.10BT_Switch1 <-> user15
+Company_LAN.10BT_Switch1,0,none,designated_port,Company_LAN.10BT_Switch1 <-> user14
+Company_LAN.10BT_Switch1,0,none,designated_port,Company_LAN.10BT_Switch1 <-> user13
+Company_LAN.10BT_Switch1,0,none,designated_port,Company_LAN.10BT_Switch1 <-> user12
+Company_LAN.10BT_Switch1,0,none,root_port,Company_LAN.10BT_Switch2 <-> 10BT_Switch1
+Company_LAN.10BT_Switch1,0,none,designated_port,Company_LAN.10BT_Switch1 <-> user2
+Company_LAN.10BT_Switch1,0,none,designated_port,Company_LAN.user1 <-> 10BT_Switch1
+Company_LAN.10BT_Switch1,0,none,designated_port,Company_LAN.10BT_Switch1 <-> Cisco Router_1
+Company_LAN.10BT_Switch1,0,none,designated_port,Company_LAN.10BT_Switch1 <-> Printer Server3
+Company_LAN.10BT_Switch1,0,none,designated_port,Company_LAN.Printer Server1 <-> 10BT_Switch1

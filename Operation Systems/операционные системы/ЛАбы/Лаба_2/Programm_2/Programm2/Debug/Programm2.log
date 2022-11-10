@@ -1,0 +1,4 @@
+﻿  Source.cpp
+D:\универ\PGU\Operation Systems\операционные системы\ЛАбы\Лаба_2\Programm_2\Programm2\Source.cpp(29,4): warning C4102: std: неиспользованная метка
+D:\универ\PGU\Operation Systems\операционные системы\ЛАбы\Лаба_2\Programm_2\Programm2\Source.cpp(24,7): warning C4101: c: неиспользованная локальная переменная
+  Programm2.vcxproj -> D:\универ\PGU\Operation Systems\операционные системы\ЛАбы\Лаба_2\Programm_2\Programm2\Debug\Programm2.exe

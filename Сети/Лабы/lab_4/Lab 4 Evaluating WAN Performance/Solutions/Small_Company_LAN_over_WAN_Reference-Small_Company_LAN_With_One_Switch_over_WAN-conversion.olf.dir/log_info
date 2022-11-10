@@ -1,0 +1,12 @@
+
+[Log Info:]
+version :	1
+row_count :	1
+max_log_row :	infinity
+max_file_row :	1000
+hide_date :	FALSE
+include_severity :	TRUE
+file_count :	1
+
+[File List:]
+12508_11-07-2022_11.43.18	1	11:43:18 Nov 07 2022	11:43:18 Nov 07 2022

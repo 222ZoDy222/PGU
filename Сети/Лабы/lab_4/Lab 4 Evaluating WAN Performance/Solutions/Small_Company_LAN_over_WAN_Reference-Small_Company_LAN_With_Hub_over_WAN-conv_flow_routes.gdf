@@ -1,0 +1,15 @@
+
+
+Company_LAN.Video Conferencing Server,Company_LAN.user3,161.15,0,Video Conferencing Server --> user3,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 1,Company_LAN.Cisco Router,Company_LAN.duplex_20,Company_LAN.10BT_Switch,Company_LAN.duplex_2
+
+Company_LAN.Video Conferencing Server,Company_LAN.user9,162.84,1,Video Conferencing Server --> user9,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 1,Company_LAN.Cisco Router,Company_LAN.duplex_20,Company_LAN.10BT_Switch,Company_LAN.duplex_8
+
+Company_LAN.Video Conferencing Server,Company_LAN.user5,163.45,2,Video Conferencing Server --> user5,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 1,Company_LAN.Cisco Router,Company_LAN.duplex_20,Company_LAN.10BT_Switch,Company_LAN.duplex_4
+
+Company_LAN.Video Conferencing Server,Company_LAN.user11,164.14,3,Video Conferencing Server --> user11,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 1,Company_LAN.Cisco Router,Company_LAN.duplex_20,Company_LAN.10BT_Switch,Company_LAN.duplex_10
+
+Company_LAN.Video Conferencing Server,Company_LAN.user13,166.47,4,Video Conferencing Server --> user13,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 1,Company_LAN.Cisco Router,Company_LAN.duplex_20,Company_LAN.10BT_Switch,Company_LAN.duplex_12
+
+Company_LAN.Video Conferencing Server,Company_LAN.user12,167.29,5,Video Conferencing Server --> user12,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 1,Company_LAN.Cisco Router,Company_LAN.duplex_20,Company_LAN.10BT_Switch,Company_LAN.duplex_11
+
+Company_LAN.Video Conferencing Server,Company_LAN.user2,168.89,6,Video Conferencing Server --> user2,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 1,Company_LAN.Cisco Router,Company_LAN.duplex_20,Company_LAN.10BT_Switch,Company_LAN.duplex_1

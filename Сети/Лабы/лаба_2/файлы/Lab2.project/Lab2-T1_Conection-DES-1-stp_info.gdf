@@ -7,3 +7,4 @@ Home Subnet.100BT_Switch,0,Common ST,designated_port,Home Subnet.Macintosh Game 
 Home Subnet.100BT_Switch,0,Common ST,designated_port,Home Subnet.PC2 Researcher <-> 100BT_Switch
 Home Subnet.100BT_Switch,0,Common ST,designated_port,Home Subnet.PC1 Web Browser <-> 100BT_Switch
 Home Subnet.100BT_Switch,0,Common ST,designated_port,Home Subnet.100BT_Switch <-> Linksys Cable Modem Router
+Home Subnet.100BT_Switch,0,Common ST,designated_port,Home Subnet.PC2 Researcher_0 <-> 100BT_Switch

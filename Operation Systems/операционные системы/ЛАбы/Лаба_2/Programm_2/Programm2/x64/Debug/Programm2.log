@@ -1,0 +1,7 @@
+﻿  Source.cpp
+D:\универ\PGU\Operation Systems\операционные системы\ЛАбы\Лаба_2\Programm_2\Programm2\Source.cpp(30,35): warning C4312: приведение типов: преобразование из "int" в "void *" большего размера
+D:\универ\PGU\Operation Systems\операционные системы\ЛАбы\Лаба_2\Programm_2\Programm2\Source.cpp(29,4): warning C4102: std: неиспользованная метка
+D:\универ\PGU\Operation Systems\операционные системы\ЛАбы\Лаба_2\Programm_2\Programm2\Source.cpp(24,7): warning C4101: c: неиспользованная локальная переменная
+D:\универ\PGU\Operation Systems\операционные системы\ЛАбы\Лаба_2\Programm_2\Programm2\Source.cpp(79,23): warning C4311: приведение типов: усечение указателя из "void *" в "int"
+D:\универ\PGU\Operation Systems\операционные системы\ЛАбы\Лаба_2\Programm_2\Programm2\Source.cpp(79,23): warning C4302: приведение типов: усечение из "void *" к "int"
+  Programm2.vcxproj -> D:\универ\PGU\Operation Systems\операционные системы\ЛАбы\Лаба_2\Programm_2\Programm2\x64\Debug\Programm2.exe

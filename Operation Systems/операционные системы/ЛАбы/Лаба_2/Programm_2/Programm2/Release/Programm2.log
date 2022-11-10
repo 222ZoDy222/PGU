@@ -1,0 +1,5 @@
+﻿  Source.cpp
+D:\универ\PGU\Operation Systems\операционные системы\ЛАбы\Лаба_2\Programm_2\Programm2\Source.cpp(17,1): error C2045: std: переопределение метки
+D:\универ\PGU\Operation Systems\операционные системы\ЛАбы\Лаба_2\Programm_2\Programm2\Source.cpp(21,1): error C2045: std: переопределение метки
+D:\универ\PGU\Operation Systems\операционные системы\ЛАбы\Лаба_2\Programm_2\Programm2\Source.cpp(24,1): error C2045: std: переопределение метки
+D:\универ\PGU\Operation Systems\операционные системы\ЛАбы\Лаба_2\Programm_2\Programm2\Source.cpp(40,2): error C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.

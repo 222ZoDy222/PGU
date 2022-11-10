@@ -7,7 +7,7 @@
 				<attribute name="name" type="string" value="scenario"/>
 				<attribute name="network" type="typed file" spectype="4" value="Lab2-512K_Cable_Modem_connection"/>
 				<attribute name="probe file" type="typed file" spectype="27" value="Lab2-512K_Cable_Modem_connection"/>
-				<attribute name="vector file" type="string" spectype="29" value="Lab2-512K_Cable_Modem_connection-DES"/>
+				<attribute name="vector file" type="string" spectype="29" value="Lab2-512K_Cable_Modem_connection"/>
 				<attribute name="duration" type="double" value="8.0"/>
 				<attribute name="update interval" type="double" value="100,000"/>
 				<attribute name="anim hist" type="string" spectype="40" value="Lab2-512K_Cable_Modem_connection"/>

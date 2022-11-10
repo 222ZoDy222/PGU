@@ -1,0 +1,18 @@
+node models:
+10BaseT_LAN
+Application Config
+ATM_SPVx_Config
+ethernet_server
+FR PVC Config
+FrameRelay_ATM_Router
+FrameRelay_Ethernet
+Profile Config
+link models:
+10BaseT
+ATM_OC3
+FR_link_adv
+path models:
+demand models:
+atm_spvx
+fr_pvc
+wdomain models:

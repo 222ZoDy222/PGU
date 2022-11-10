@@ -1,8 +1,8 @@
-40K_dialup_connection1	1	0
+40K_dialup_connection	1	0
 ----------------- Static Environment Attribute Confirmations -----------------
 
 --------------------Name-------------------- --Source--- ------Value------
-ef                                           cmd line    Home_LAN-40K_dialup_connection1-DES-1
+ef                                           cmd line    Lab2-40K_dialup_connection-DES-1
 force_posix_locale                           default     TRUE
 handle_exception                             default     TRUE
 handle_exception_extended                    default     TRUE
@@ -13,6 +13,7 @@ mem_opt.grow_pool_planks                     default     TRUE
 mem_optimize                                 default     TRUE
 mem_shred                                    default     FALSE
 mod_dirs                                     env. file   C:\Users\nikgo\op_models,
+                                                         D:\универ\PGU\Сети\Лабы\лаба_2\файлы\,
                                                          "C:\\Users\\nikgo\\Desktop\\Lab Files\\Lab Files\\01 Home LAN\\Lab Files\\",
                                                          "D:\\универ\\Сети, телекоммуникации, сетевые технологии\\Бакалавриат\\Лабораторные работы\\Учебные проекты для практикума\\Lab Files\\Для 2 работы Home LAN\\Lab Files\\",
                                                          D:\Riverbet\17.5.A\sys\lib,
@@ -340,7 +341,7 @@ license_server_standalone_diagnose           default     FALSE
 license_username                             default     <null>
 livelock_thresh                              default     8192
 log_endsim_perf                              env. file   TRUE
-log_file                                     env. file   Home_LAN-40K_dialup_connection1-DES-1
+log_file                                     env. file   Lab2-40K_dialup_connection-DES-1
 log_time_precision                           default     12
 manage_loanable_licenses                     default     FALSE
 max_idle_time_microseconds                   default     1
@@ -348,20 +349,20 @@ max_log_entries                              env. file   200
 memstat_autogen                              default     <null>
 mtn_warn_int                                 default     3
 named_locks                                  default     FALSE
-net_name                                     cmd line    Home_LAN-40K_dialup_connection1
+net_name                                     cmd line    Lab2-40K_dialup_connection
 num_collect_values                           env. file   100
 num_err                                      default     10
-ot_file                                      env. file   Home_LAN-40K_dialup_connection1-DES-1
+ot_file                                      env. file   Lab2-40K_dialup_connection-DES-1
 ot_file.default_format                       default     write_many
 ot_mem_size                                  default     4
 ov_autogen                                   default     <null>
 ov_diff_tolerance                            default     5
-ov_file                                      env. file   Home_LAN-40K_dialup_connection1-DES-1
+ov_file                                      env. file   Lab2-40K_dialup_connection-DES-1
 ov_mem_size                                  default     16
 parallel_sim.event_execution_time_window     env. file   0
 parallel_sim.mutex_rank_ignore               default     FALSE
 per_module_random_stream                     default     FALSE
-probe                                        env. file   Home_LAN-40K_dialup_connection1
+probe                                        env. file   Lab2-40K_dialup_connection
 probe_error_enable                           default     FALSE
 probe_start_time                             default     -1
 probe_stop_time                              default     -1

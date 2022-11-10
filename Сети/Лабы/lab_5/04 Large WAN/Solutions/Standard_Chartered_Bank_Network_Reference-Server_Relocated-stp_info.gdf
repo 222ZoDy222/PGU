@@ -1,0 +1,25 @@
+# This file is an output of a discrete event simulation.
+# It contains spanning tree information to be parsed while
+# visualizing the spanning tree using the Protocols->STP menu.
+Choose From Maps Network.Chicago Headquarters.HQ.Core Switch,0,none,root,none
+Choose From Maps Network.Chicago Headquarters.HQ.Core Switch,0,none,designated_port,Choose From Maps Network.Chicago Headquarters.HQ.Core Switch <-> 7 File Print & Email Servers
+Choose From Maps Network.Chicago Headquarters.HQ.Core Switch,0,none,designated_port,Choose From Maps Network.Chicago Headquarters.HQ.Floor 1 Switch <-> Core Switch
+Choose From Maps Network.Chicago Headquarters.HQ.Core Switch,0,none,designated_port,Choose From Maps Network.Chicago Headquarters.Headqarters Router <-> HQ
+Choose From Maps Network.Chicago Headquarters.HQ.7 File Print & Email Servers.Switch,0,none,root_port,Choose From Maps Network.Chicago Headquarters.HQ.Core Switch <-> 7 File Print & Email Servers
+Choose From Maps Network.Chicago Headquarters.HQ.7 File Print & Email Servers.Switch,0,none,designated_port,Choose From Maps Network.Chicago Headquarters.HQ.7 File Print & Email Servers.Switch <-> server 5
+Choose From Maps Network.Chicago Headquarters.HQ.7 File Print & Email Servers.Switch,0,none,designated_port,Choose From Maps Network.Chicago Headquarters.HQ.7 File Print & Email Servers.Switch <-> server 4
+Choose From Maps Network.Chicago Headquarters.HQ.7 File Print & Email Servers.Switch,0,none,designated_port,Choose From Maps Network.Chicago Headquarters.HQ.7 File Print & Email Servers.server 1 <-> Switch
+Choose From Maps Network.Chicago Headquarters.HQ.7 File Print & Email Servers.Switch,0,none,designated_port,Choose From Maps Network.Chicago Headquarters.HQ.7 File Print & Email Servers.server 2 <-> Switch
+Choose From Maps Network.Chicago Headquarters.HQ.7 File Print & Email Servers.Switch,0,none,designated_port,Choose From Maps Network.Chicago Headquarters.HQ.7 File Print & Email Servers.Switch <-> server 3
+Choose From Maps Network.Chicago Headquarters.HQ.7 File Print & Email Servers.Switch,0,none,designated_port,Choose From Maps Network.Chicago Headquarters.HQ.7 File Print & Email Servers.Switch <-> server 6
+Choose From Maps Network.Chicago Headquarters.HQ.Floor 1 Switch,0,none,root_port,Choose From Maps Network.Chicago Headquarters.HQ.Floor 1 Switch <-> Core Switch
+Choose From Maps Network.Chicago Headquarters.HQ.Floor 1 Switch,0,none,designated_port,Choose From Maps Network.Chicago Headquarters.HQ.Floor 1 Switch <-> Floor 2 Switch
+Choose From Maps Network.Chicago Headquarters.HQ.Floor 1 Switch,0,none,designated_port,Choose From Maps Network.Chicago Headquarters.HQ.Floor 1 Switch <-> 70 Users Floor 1
+Choose From Maps Network.Chicago Headquarters.HQ.Floor 2 Switch,0,none,root_port,Choose From Maps Network.Chicago Headquarters.HQ.Floor 1 Switch <-> Floor 2 Switch
+Choose From Maps Network.Chicago Headquarters.HQ.Floor 2 Switch,0,none,designated_port,Choose From Maps Network.Chicago Headquarters.HQ.Floor 3 Switch <-> Floor 2 Switch
+Choose From Maps Network.Chicago Headquarters.HQ.Floor 2 Switch,0,none,designated_port,Choose From Maps Network.Chicago Headquarters.HQ.Floor 2 Switch <-> 175 Users Floor 2
+Choose From Maps Network.Chicago Headquarters.HQ.Floor 3 Switch,0,none,root_port,Choose From Maps Network.Chicago Headquarters.HQ.Floor 3 Switch <-> Floor 2 Switch
+Choose From Maps Network.Chicago Headquarters.HQ.Floor 3 Switch,0,none,designated_port,Choose From Maps Network.Chicago Headquarters.HQ.Floor 3 Switch <-> Floor 4 Switch
+Choose From Maps Network.Chicago Headquarters.HQ.Floor 3 Switch,0,none,designated_port,Choose From Maps Network.Chicago Headquarters.HQ.Floor 3 Switch <-> 110 Users Floor 3
+Choose From Maps Network.Chicago Headquarters.HQ.Floor 4 Switch,0,none,root_port,Choose From Maps Network.Chicago Headquarters.HQ.Floor 3 Switch <-> Floor 4 Switch
+Choose From Maps Network.Chicago Headquarters.HQ.Floor 4 Switch,0,none,designated_port,Choose From Maps Network.Chicago Headquarters.HQ.Floor 4 Switch <-> 85 Users Floor 4

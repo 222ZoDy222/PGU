@@ -1,7 +1,7 @@
 
 [Log Info:]
 version :	1
-row_count :	5
+row_count :	6
 max_log_row :	5000
 max_file_row :	1000
 hide_date :	TRUE
@@ -9,7 +9,7 @@ include_severity :	TRUE
 file_count :	1
 
 [File List:]
-12768_10-24-2022_09.57.22	5	09:57:23 Oct 24 2022	09:57:31 Oct 24 2022
+808_10-31-2022_10.16.19	6	10:16:19 Oct 31 2022	10:16:33 Oct 31 2022
 
 [Column Dependency List:]
 dependency_count :	1
@@ -431,7 +431,7 @@ log_handle_column_count :	3
 5	Category	2	Protocol
 6	Class	2	TCP
 7	SubClass	2	Data_Transmission
-incident_count :	2
+incident_count :	3
 
 log_handle_column_count :	3
 5	Category	2	Protocol

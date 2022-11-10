@@ -1,0 +1,37 @@
+
+
+Company_LAN.Video Conferencing Server,Company_LAN.user2,161.17,0,Video Conferencing Server --> user2,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 2,Company_LAN.Cisco Router_2,Company_LAN.10BT_Switch2 <-> Cisco Router_2,Company_LAN.10BT_Switch2,Company_LAN.user20 <-> 10BT_Switch2,Company_LAN.user20,Incomplete (Packet destined to another MAC)
+
+Company_LAN.Video Conferencing Server,Company_LAN.user2,161.17,0,Video Conferencing Server --> user2,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 2,Company_LAN.Cisco Router_2,Company_LAN.10BT_Switch2 <-> Cisco Router_2,Company_LAN.10BT_Switch2,Company_LAN.10BT_Switch2 <-> user10,Company_LAN.user10,Incomplete (Packet destined to another MAC)
+
+Company_LAN.Video Conferencing Server,Company_LAN.user2,161.17,0,Video Conferencing Server --> user2,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 2,Company_LAN.Cisco Router_2,Company_LAN.10BT_Switch2 <-> Cisco Router_2,Company_LAN.10BT_Switch2,Company_LAN.10BT_Switch2 <-> user6,Company_LAN.user6,Incomplete (Packet destined to another MAC)
+
+Company_LAN.Video Conferencing Server,Company_LAN.user2,161.17,0,Video Conferencing Server --> user2,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 2,Company_LAN.Cisco Router_2,Company_LAN.10BT_Switch2 <-> Cisco Router_2,Company_LAN.10BT_Switch2,Company_LAN.user9 <-> 10BT_Switch2,Company_LAN.user9,Incomplete (Packet destined to another MAC)
+
+Company_LAN.Video Conferencing Server,Company_LAN.user2,161.17,0,Video Conferencing Server --> user2,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 2,Company_LAN.Cisco Router_2,Company_LAN.10BT_Switch2 <-> Cisco Router_2,Company_LAN.10BT_Switch2,Company_LAN.10BT_Switch2 <-> user11,Company_LAN.user11,Incomplete (Packet destined to another MAC)
+
+Company_LAN.Video Conferencing Server,Company_LAN.user2,161.17,0,Video Conferencing Server --> user2,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 2,Company_LAN.Cisco Router_2,Company_LAN.10BT_Switch2 <-> Cisco Router_2,Company_LAN.10BT_Switch2,Company_LAN.10BT_Switch2 <-> user8,Company_LAN.user8,Incomplete (Packet destined to another MAC)
+
+Company_LAN.Video Conferencing Server,Company_LAN.user2,161.17,0,Video Conferencing Server --> user2,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 2,Company_LAN.Cisco Router_2,Company_LAN.10BT_Switch2 <-> Cisco Router_2,Company_LAN.10BT_Switch2,Company_LAN.user4 <-> 10BT_Switch2,Company_LAN.user4,Incomplete (Packet destined to another MAC)
+
+Company_LAN.Video Conferencing Server,Company_LAN.user2,161.17,0,Video Conferencing Server --> user2,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 2,Company_LAN.Cisco Router_2,Company_LAN.10BT_Switch2 <-> Cisco Router_2,Company_LAN.10BT_Switch2,Company_LAN.10BT_Switch2 <-> user7,Company_LAN.user7,Incomplete (Packet destined to another MAC)
+
+Company_LAN.Video Conferencing Server,Company_LAN.user2,161.17,0,Video Conferencing Server --> user2,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 2,Company_LAN.Cisco Router_2,Company_LAN.10BT_Switch2 <-> Cisco Router_2,Company_LAN.10BT_Switch2,Company_LAN.user5 <-> 10BT_Switch2,Company_LAN.user5,Incomplete (Packet destined to another MAC)
+
+Company_LAN.Video Conferencing Server,Company_LAN.user2,161.17,0,Video Conferencing Server --> user2,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 2,Company_LAN.Cisco Router_2,Company_LAN.10BT_Switch2 <-> Cisco Router_2,Company_LAN.10BT_Switch2,Company_LAN.File & Email Server <-> 10BT_Switch2,Company_LAN.File & Email Server,Incomplete (Packet destined to another MAC)
+
+Company_LAN.Video Conferencing Server,Company_LAN.user2,161.17,0,Video Conferencing Server --> user2,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 2,Company_LAN.Cisco Router_2,Company_LAN.10BT_Switch2 <-> Cisco Router_2,Company_LAN.10BT_Switch2,Company_LAN.user3 <-> 10BT_Switch2,Company_LAN.user3,Incomplete (Packet destined to another MAC)
+
+Company_LAN.Video Conferencing Server,Company_LAN.user2,161.17,0,Video Conferencing Server --> user2,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 2,Company_LAN.Cisco Router_2,Company_LAN.10BT_Switch2 <-> Cisco Router_2,Company_LAN.10BT_Switch2,Company_LAN.10BT_Switch2 <-> Printer Server2,Company_LAN.Printer Server2,Incomplete (Packet destined to another MAC)
+
+Company_LAN.Video Conferencing Server,Company_LAN.user2,161.17,0,Video Conferencing Server --> user2,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 2,Company_LAN.Cisco Router_2,Company_LAN.10BT_Switch2 <-> Cisco Router_2,Company_LAN.10BT_Switch2,Company_LAN.10BT_Switch2 <-> 10BT_Switch1,Company_LAN.10BT_Switch1,Company_LAN.10BT_Switch1 <-> user2
+
+Company_LAN.Video Conferencing Server,Company_LAN.user3,161.90,1,Video Conferencing Server --> user3,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 1,Company_LAN.Cisco Router_1,Company_LAN.10BT_Switch1 <-> Cisco Router_1,Company_LAN.10BT_Switch1,Company_LAN.10BT_Switch2 <-> 10BT_Switch1,Company_LAN.10BT_Switch2,Company_LAN.user3 <-> 10BT_Switch2
+
+Company_LAN.Video Conferencing Server,Company_LAN.user5,165.00,2,Video Conferencing Server --> user5,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 2,Company_LAN.Cisco Router_2,Company_LAN.10BT_Switch2 <-> Cisco Router_2,Company_LAN.10BT_Switch2,Company_LAN.user5 <-> 10BT_Switch2
+
+Company_LAN.Video Conferencing Server,Company_LAN.user13,165.37,3,Video Conferencing Server --> user13,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 1,Company_LAN.Cisco Router_1,Company_LAN.10BT_Switch1 <-> Cisco Router_1,Company_LAN.10BT_Switch1,Company_LAN.10BT_Switch1 <-> user13
+
+Company_LAN.Video Conferencing Server,Company_LAN.user9,168.80,4,Video Conferencing Server --> user9,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 2,Company_LAN.Cisco Router_2,Company_LAN.10BT_Switch2 <-> Cisco Router_2,Company_LAN.10BT_Switch2,Company_LAN.user9 <-> 10BT_Switch2
+
+Company_LAN.Video Conferencing Server,Company_LAN.user12,169.09,5,Video Conferencing Server --> user12,Company_LAN.Video Conferencing Server,Company_LAN.Internet <-> Video Conferencing Server,Company_LAN.Internet,Company_LAN.WAN LINK 1,Company_LAN.Cisco Router_1,Company_LAN.10BT_Switch1 <-> Cisco Router_1,Company_LAN.10BT_Switch1,Company_LAN.10BT_Switch1 <-> user12
