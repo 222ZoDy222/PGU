@@ -1,12 +1,12 @@
 
-Var a,b,c,d,e,g,PI;
+Var a,b,c,d,e,g;
 
 
 a:= 3;
-b:= 2;
-c := (a - b);
-d := c * a;
+b:= 5;
+c := 15;
+d := a + c;
 e := 12;
-g := "t";
-PI := 3.14;
+
+
 

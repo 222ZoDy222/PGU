@@ -13,8 +13,12 @@ class Word {
 public:
     string word;
     int rowNum;
+    int lecsemType;
 
+    Word()
+    {
 
+    }
     Word(string w, int n) {
         this->word = w;
         this->rowNum = n;
@@ -23,6 +27,8 @@ public:
     string GetWord() {
         return word;
     }
+
+    
 
 };
 
