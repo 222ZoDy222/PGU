@@ -31,22 +31,22 @@ public class Alghoritm : MonoBehaviour
         return result;
     }
 
-    public int CalculateTries(string pass)
+    public ulong CalculateTries(string pass)
     {
         int passLength = pass.Length;
 
         char[] pl = pass.ToCharArray();
-        int firstStep = 0;
+        ulong firstStep = 0;
         for (int i = L; i < passLength; i++)
         {
             firstStep += Pow(Length, i);
         }
         /////////////////////////////////////////////////////
 
-        int secondStep = 0;
+        ulong secondStep = 0;
         for (int i = 0; i < pl.Length; i++)
         {
-            secondStep += GetIndex(pl[i]) * Pow(Length, pl.Length - i);
+            secondStep += Convert.ToUInt64(GetIndex(pl[i])) * Pow(Length, pl.Length - i);
         }
 
         return firstStep + secondStep;
@@ -55,18 +55,18 @@ public class Alghoritm : MonoBehaviour
 
     }
 
-    public int CalculateDays(int tries, int tryiesAtDay)
+    public ulong CalculateDays(ulong tries, int tryiesAtDay)
     {
 
-        double days = (tries / tryiesAtDay);
+        double days = (tries / Convert.ToUInt64(tryiesAtDay));
 
-        return (int)days;
+        return (ulong)days;
 
     }
 
-    public int Pow(int a, int b)
+    public ulong Pow(int a, int b)
     {
-        return Convert.ToInt32(Math.Pow(a, b));
+        return Convert.ToUInt64(Math.Pow(a, b));
     }
 
     private int GetIndex(char c)

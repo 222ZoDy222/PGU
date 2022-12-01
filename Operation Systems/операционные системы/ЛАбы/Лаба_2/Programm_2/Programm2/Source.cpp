@@ -10,7 +10,7 @@ using namespace std;
 
 void wait(void* param);
 void SetStdinEcho(bool enable);
-int main(char argc, char* argv[])
+int main(int argc, char* argv[])
 {
 
 	setlocale(LC_ALL, "RUS");
@@ -20,7 +20,7 @@ int main(char argc, char* argv[])
 	string pass = "qwerty";
 	string userPass;
 
-	if (argc == 0) return 0;
+	if (argc != 2) return 0;
 	char c;
 	string time = argv[1];
 	//string time = "10";
@@ -31,14 +31,7 @@ std:cout << "¬ведите пароль : ";
 	SetStdinEcho(false);
 	std::cin >> userPass;
 	cout << "\n";
-	////c = _getch()
-	//while ((c = _getch()) != '\r')
-	//{
-	//	userPass += c;
-	//	cout << "\b";
-	//	//putc(0, stdout);
-	//	//std:cout << "*";
-	//}
+	
 	
 
 	if (userPass == pass) {

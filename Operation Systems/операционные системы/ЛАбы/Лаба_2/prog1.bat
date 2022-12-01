@@ -2,6 +2,7 @@
 
 @echo off
 
+SETLOCAL EnableDelayedExpansion
 
 
 "D:\универ\PGU\Operation Systems\операционные системы\ЛАбы\Лаба_2\Programm_2\Programm2\Debug\Programm2.exe" 10
@@ -22,14 +23,13 @@ exit
 ))
 
 :start 
+cls
 echo choose actions
 echo 1 - IDE
 echo 2 - Programming
 echo 0 - Exit
 
 set /p choice =
-
-echo %choice %
 
 if %choice % == 1 ( 
 	%dir1 %

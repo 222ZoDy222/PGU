@@ -8,7 +8,7 @@ int main(int argc, char* argv[])
     string input = "";
 	input += argv[1];
 	
-	cout << input;
+	//cout << input;
 
 	if (input == "Vs" || input == "vS" || input == "VS" || input == "vs" || input == "v" || input == "V")
 	{

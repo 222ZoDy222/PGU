@@ -1,0 +1,357 @@
+<?xml version="1.0"?>
+<simulation-sequence base-id="1">
+	<OPNET-info OPNET-release="17.5.A" OPNET-patchlevel="7" OPNET-model-data-version="17.5.B"/>
+	<simset-list>
+		<simset id="0" anim-enabled="no">
+			<simset-attributes>
+				<attribute name="name" type="string" value="scenario"/>
+				<attribute name="network" type="typed file" spectype="4" value="Standard_Chartered_Bank_Network-PVCs_With_CIR_128k"/>
+				<attribute name="probe file" type="typed file" spectype="27" value="Standard_Chartered_Bank_Network-PVCs_With_CIR_128k"/>
+				<attribute name="vector file" type="string" spectype="29" value="Standard_Chartered_Bank_Network-PVCs_With_CIR_128k"/>
+				<attribute name="update interval" type="double" value="100,000"/>
+				<attribute name="anim hist" type="string" spectype="40" value="Standard_Chartered_Bank_Network-PVCs_With_CIR_128k"/>
+				<attribute name="multi vector files" type="toggle" value="0"/>
+				<attribute name="SLA probe files" type="textlist"/>
+				<attribute name="Report probe files" type="textlist"/>
+				<attribute name="Date recording" type="enumerated" value="none"/>
+				<attribute name="profile output" type="enumerated" value="simulation console"/>
+				<attribute name="TMM legacy info" type="toggle" value="1"/>
+			</simset-attributes>
+			<promoted-attribute-list>
+				<promoted-attribute name="ARP Sim Efficiency" value="Enabled"/>
+				<promoted-attribute name="ATM SSCOP Sim Efficiency Mode" value="Enabled"/>
+				<promoted-attribute name="ATM Sim Efficiency" value="Disabled"/>
+				<promoted-attribute name="BGP Sim Efficiency Mode" value="Enabled"/>
+				<promoted-attribute name="EIGRP Sim Efficiency" value="Enabled"/>
+				<promoted-attribute name="EIGRP Stop Time" value="365"/>
+				<promoted-attribute name="FR Sim Efficiency Mode" value="Timer Management Efficiency"/>
+				<promoted-attribute name="IGMP Sim Efficiency" value="Enabled"/>
+				<promoted-attribute name="IGRP Sim Efficiency" value="Enabled"/>
+				<promoted-attribute name="IGRP Stop Time" value="365"/>
+				<promoted-attribute name="IPv6 ND Simulation Efficiency" value="Disabled"/>
+				<promoted-attribute name="ISIS Sim Efficiency" value="Enabled"/>
+				<promoted-attribute name="ISIS Stop Time" value="260"/>
+				<promoted-attribute name="LACP Simulation Efficiency" value="Enabled"/>
+				<promoted-attribute name="OSPF Sim Efficiency" value="Enabled"/>
+				<promoted-attribute name="OSPF Stop Time" value="260"/>
+				<promoted-attribute name="PIM-SM Sim Efficiency" value="Enabled"/>
+				<promoted-attribute name="RIP Sim Efficiency" value="Enabled"/>
+				<promoted-attribute name="RIP Stop Time" value="65"/>
+				<promoted-attribute name="RIPng Sim Efficiency" value="Enabled"/>
+				<promoted-attribute name="RIPng Stop Time" value="65"/>
+				<promoted-attribute name="Switch Sim Efficiency" value="Enabled"/>
+				<promoted-attribute name="compound_cell_enabled" value="Disabled"/>
+				<promoted-attribute name="ATM VC Routes Export" value="Do Not Export"/>
+				<promoted-attribute name="Application Tracking Directory" value="&lt;Primary Model Directory&gt;"/>
+				<promoted-attribute name="Custom Application Tracing" value="Do Not Export"/>
+				<promoted-attribute name="GNA API Safe Mode" value="Disabled"/>
+				<promoted-attribute name="RTP API Safe Mode" value="Disabled"/>
+				<promoted-attribute name="BGP Message DSCP" value="CS6"/>
+				<promoted-attribute name="Background Traffic Start Delay" value="150"/>
+				<promoted-attribute name="Hybrid Simulation Efficiency" value="Enabled"/>
+				<promoted-attribute name="Link Usage Report" value="Disabled"/>
+				<promoted-attribute name="Tracer Packet Redundancy" value="Enabled"/>
+				<promoted-attribute name="Tracer Packets Per Interval" value="2"/>
+				<promoted-attribute name="Traffic Scaling Factor" value="1.0"/>
+				<promoted-attribute name="Traffic Scaling Mode" value="Background Traffic"/>
+				<promoted-attribute name="Traffic from LSP Loads" value="Do Not Include"/>
+				<promoted-attribute name="Traffic from Link Loads" value="Include"/>
+				<promoted-attribute name="Traffic from Traffic Flows" value="Include"/>
+				<promoted-attribute name="Traffic from VC Loads" value="Do Not Include"/>
+				<promoted-attribute name="CSPF Retry Timer" value="45"/>
+				<promoted-attribute name="LDP Discovery End Time" value="250"/>
+				<promoted-attribute name="LDP Discovery Start Time" value="100"/>
+				<promoted-attribute name="LSP Signaling Protocol" value="RSVP"/>
+				<promoted-attribute name="DHCP Logging" value="Disabled"/>
+				<promoted-attribute name="DSR Record Routes" value="Enabled"/>
+				<promoted-attribute name="DSR Routes Export" value="Disabled"/>
+				<promoted-attribute name="GRP Quadrant Size" value="2000"/>
+				<promoted-attribute name="GRP Record Routes" value="Disabled"/>
+				<promoted-attribute name="GRP Routes Export" value="Disabled"/>
+				<promoted-attribute name="IMEP Route Injection" value="Disabled"/>
+				<promoted-attribute name="TORA Animated Destination RID" value="Specify..."/>
+				<promoted-attribute name="TORA IMEP Animation Refresh Interval" value="10"/>
+				<promoted-attribute name="TORA IMEP Efficiency" value="Disabled"/>
+				<promoted-attribute name="TORA IMEP Packet Delivery Cache Update" value="100"/>
+				<promoted-attribute name="TORA Infinite Loop Prevention" value="Disabled"/>
+				<promoted-attribute name="TORA Max Communication Distance" value="1150"/>
+				<promoted-attribute name="TORA Mode of Operation" value="Default"/>
+				<promoted-attribute name="EIGRP Message DSCP" value="CS6"/>
+				<promoted-attribute name="EIGRP Metric Component Specification File" value="eigrp_metric_compute_support"/>
+				<promoted-attribute name="H323 Call Reports" value="Do Not Export Reports"/>
+				<promoted-attribute name="H323 Reporting End Time" value="End of Simulation"/>
+				<promoted-attribute name="H323 Reporting Start Time" value="Beginning of Simulation"/>
+				<promoted-attribute name="IGMP Message DSCP" value="CS6"/>
+				<promoted-attribute name="PIM Message DSCP" value="CS6"/>
+				<promoted-attribute name="IGRP Message DSCP" value="CS6"/>
+				<promoted-attribute name="IGRP Metric Component Specification File" value="igrp_metric_compute_support"/>
+				<promoted-attribute name="IP Dynamic Routing Protocol" value="Default"/>
+				<promoted-attribute name="IP Interface Addressing Mode" value="Auto Addressed"/>
+				<promoted-attribute name="IP Routing Table Export/Import" value="Not Used"/>
+				<promoted-attribute name="IP Routing Table Source" value="Flow Analysis"/>
+				<promoted-attribute name="IP Version Preference" value="IPv6"/>
+				<promoted-attribute name="IPv6 Configuration" value="Consider"/>
+				<promoted-attribute name="IPv6 Interface Address Export" value="Disabled"/>
+				<promoted-attribute name="Interface Buffer Congestion Threshold" value="0.8"/>
+				<promoted-attribute name="Routing Activity Idle Timer" value="20"/>
+				<promoted-attribute name="IS-IS Message DSCP" value="CS6"/>
+				<promoted-attribute name="OSPF Message DSCP" value="CS6"/>
+				<promoted-attribute name="RIP Message DSCP" value="CS6"/>
+				<promoted-attribute name="TCP Real Payload Support" value="Auto"/>
+				<promoted-attribute name="RSVP Sim Efficiency" value="Enabled"/>
+				<promoted-attribute name="ATM Address Information" value="Do Not Export"/>
+				<promoted-attribute name="ATM Dynamic Routing Protocol" value="Distance Vector"/>
+				<promoted-attribute name="ATM Routing Stop Time" value="80"/>
+				<promoted-attribute name="PNNI Hello Stop Time" value="300"/>
+				<promoted-attribute name="PNNI Node Information" value="Do Not Export"/>
+				<promoted-attribute name="PNNI Start Time" value="0.1"/>
+			</promoted-attribute-list>
+			<attr-info-list>
+				<attr-info name="ARP Sim Efficiency" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="ATM SSCOP Sim Efficiency Mode" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="ATM Sim Efficiency" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="ATM VC Routes Export" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="Application Tracking Directory" type="string">
+					<value value=""/>
+				</attr-info>
+				<attr-info name="BGP Message DSCP" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="BGP Sim Efficiency Mode" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="Background Traffic Start Delay" type="double">
+					<value value="0.0"/>
+				</attr-info>
+				<attr-info name="CSPF Retry Timer" type="double">
+					<value value="0.0"/>
+				</attr-info>
+				<attr-info name="Custom Application Tracing" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="DHCP Logging" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="DSR Record Routes" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="DSR Routes Export" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="EIGRP Message DSCP" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="EIGRP Metric Component Specification File" type="string">
+					<value value=""/>
+				</attr-info>
+				<attr-info name="EIGRP Sim Efficiency" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="EIGRP Stop Time" type="double">
+					<value value="0.0"/>
+				</attr-info>
+				<attr-info name="FR Sim Efficiency Mode" type="string">
+					<value value=""/>
+				</attr-info>
+				<attr-info name="GNA API Safe Mode" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="GRP Quadrant Size" type="double">
+					<value value="0.0"/>
+				</attr-info>
+				<attr-info name="GRP Record Routes" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="GRP Routes Export" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="H323 Call Reports" type="string">
+					<value value=""/>
+				</attr-info>
+				<attr-info name="H323 Reporting End Time" type="double">
+					<value value="0.0"/>
+				</attr-info>
+				<attr-info name="H323 Reporting Start Time" type="double">
+					<value value="0.0"/>
+				</attr-info>
+				<attr-info name="Hybrid Simulation Efficiency" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="IGMP Message DSCP" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="IGMP Sim Efficiency" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="IGRP Message DSCP" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="IGRP Metric Component Specification File" type="string">
+					<value value=""/>
+				</attr-info>
+				<attr-info name="IGRP Sim Efficiency" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="IGRP Stop Time" type="double">
+					<value value="0.0"/>
+				</attr-info>
+				<attr-info name="IMEP Route Injection" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="IP Dynamic Routing Protocol" type="string">
+					<value value=""/>
+				</attr-info>
+				<attr-info name="IP Interface Addressing Mode" type="string">
+					<value value=""/>
+				</attr-info>
+				<attr-info name="IP Routing Table Export/Import" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="IP Routing Table Source" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="IP Version Preference" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="IPv6 Configuration" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="IPv6 Interface Address Export" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="IPv6 ND Simulation Efficiency" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="IS-IS Message DSCP" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="ISIS Sim Efficiency" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="ISIS Stop Time" type="double">
+					<value value="0.0"/>
+				</attr-info>
+				<attr-info name="Interface Buffer Congestion Threshold" type="double">
+					<value value="0.0"/>
+				</attr-info>
+				<attr-info name="LACP Simulation Efficiency" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="LDP Discovery End Time" type="double">
+					<value value="0.0"/>
+				</attr-info>
+				<attr-info name="LDP Discovery Start Time" type="double">
+					<value value="0.0"/>
+				</attr-info>
+				<attr-info name="LSP Signaling Protocol" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="Link Usage Report" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="OSPF Message DSCP" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="OSPF Sim Efficiency" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="OSPF Stop Time" type="double">
+					<value value="0.0"/>
+				</attr-info>
+				<attr-info name="PIM Message DSCP" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="PIM-SM Sim Efficiency" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="RIP Message DSCP" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="RIP Sim Efficiency" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="RIP Stop Time" type="double">
+					<value value="0.0"/>
+				</attr-info>
+				<attr-info name="RIPng Sim Efficiency" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="RIPng Stop Time" type="double">
+					<value value="0.0"/>
+				</attr-info>
+				<attr-info name="RTP API Safe Mode" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="Routing Activity Idle Timer" type="double">
+					<value value="0.0"/>
+				</attr-info>
+				<attr-info name="Switch Sim Efficiency" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="TCP Real Payload Support" type="string">
+					<value value=""/>
+				</attr-info>
+				<attr-info name="TORA Animated Destination RID" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="TORA IMEP Animation Refresh Interval" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="TORA IMEP Efficiency" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="TORA IMEP Packet Delivery Cache Update" type="double">
+					<value value="0.0"/>
+				</attr-info>
+				<attr-info name="TORA Infinite Loop Prevention" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="TORA Max Communication Distance" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="TORA Mode of Operation" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="Tracer Packet Redundancy" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="Tracer Packets Per Interval" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="Traffic Scaling Factor" type="double">
+					<value value="0.0"/>
+				</attr-info>
+				<attr-info name="Traffic Scaling Mode" type="integer">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="Traffic from LSP Loads" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="Traffic from Link Loads" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="Traffic from Traffic Flows" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="Traffic from VC Loads" type="toggle">
+					<value value="0"/>
+				</attr-info>
+				<attr-info name="compound_cell_enabled" type="integer">
+					<value value="0"/>
+				</attr-info>
+			</attr-info-list>
+			<selected-run-list>
+				<selected-run id="0"/>
+			</selected-run-list>
+			<traffic-trend count="1" units="month" time-gap="1.0" storage-method="each-simulation" import-options="nothing" method="regular-simple" growth-rate="10"/>
+		</simset>
+	</simset-list>
+</simulation-sequence>

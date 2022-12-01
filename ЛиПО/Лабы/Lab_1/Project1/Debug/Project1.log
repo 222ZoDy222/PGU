@@ -2,6 +2,8 @@
 D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\SyntaxAnalizator.cpp(1,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
 D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\Main.h(7,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
 D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\Main.h(8,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
-D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\SyntaxAnalizator.cpp(45,12): warning C4018: >=: несоответствие типов со знаком и без знака
-D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\SyntaxAnalizator.cpp(102,15): warning C4018: <: несоответствие типов со знаком и без знака
+D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\SyntaxAnalizator.cpp(55,12): warning C4018: >=: несоответствие типов со знаком и без знака
+D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\SyntaxAnalizator.cpp(65,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\SyntaxAnalizator.cpp(148,15): warning C4018: <: несоответствие типов со знаком и без знака
+D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\SyntaxAnalizator.cpp(289,15): warning C4018: <: несоответствие типов со знаком и без знака
   Project1.vcxproj -> D:\универ\PGU\ЛиПО\Лабы\Lab_1\Project1\Debug\Project1.exe

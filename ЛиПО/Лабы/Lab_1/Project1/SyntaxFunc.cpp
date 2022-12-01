@@ -46,7 +46,7 @@ std::vector<Word> GetWords(char* buf, int length) {
 
     string currentWord = "";
     char lastS = '\0';
-    int rowNum = 0;
+    int rowNum = 1;
 
     for (int i = 0; i < length; i++)
     {
@@ -58,7 +58,7 @@ std::vector<Word> GetWords(char* buf, int length) {
                 currentWord += buf[i];
             } // но последний считанный символ это не символ алфавита
             else {
-                if (currentWord != "" && currentWord != "\r" && currentWord != "\n" && currentWord != " ") words.push_back(Word(currentWord, rowNum));
+                if (currentWord != "" && currentWord != "\r" && currentWord != "\n" && currentWord != " " && currentWord != "\t") words.push_back(Word(currentWord, rowNum));
 
 
 
@@ -74,7 +74,7 @@ std::vector<Word> GetWords(char* buf, int length) {
                 lastS = buf[i];
             }
             else {
-                if (currentWord != "" && currentWord != "\r" && currentWord != "\n" && currentWord != " ") words.push_back(Word(currentWord, rowNum));
+                if (currentWord != "" && currentWord != "\r" && currentWord != "\n" && currentWord != " " && currentWord != "\t") words.push_back(Word(currentWord, rowNum));
                 currentWord = "";
                 currentWord += buf[i];
                 lastS = buf[i];
@@ -82,7 +82,7 @@ std::vector<Word> GetWords(char* buf, int length) {
         } // Если этот символ это не число и не буква
         else
         {
-            if (currentWord != "" && currentWord != "\r" && currentWord != "\n" && currentWord != " ") words.push_back(Word(currentWord, rowNum));
+            if (currentWord != "" && currentWord != "\r" && currentWord != "\n" && currentWord != " " && currentWord != "\t") words.push_back(Word(currentWord, rowNum));
             currentWord = "";
             currentWord += buf[i];
             lastS = buf[i];

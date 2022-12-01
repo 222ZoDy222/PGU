@@ -1,0 +1,30 @@
+# This file is an output of a discrete event simulation.
+# It contains spanning tree information to be parsed while
+# visualizing the spanning tree using the Protocols->STP menu.
+# Legend: node name, VID, VLAN/tree name, port/node type, link name.
+Company_LAN.10BT_Switch,0,Common ST,root,none
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_0
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_1
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_2
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_3
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_4
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_5
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_6
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_7
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_8
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_9
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_10
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_11
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_12
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_13
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_14
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_15
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_16
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_17
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_18
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_19
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.10BT_Switch <-> Printer Server2
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.10BT_Switch <-> Printer Server3
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.duplex_20
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.10BT_Switch <-> File & Email Server
+Company_LAN.10BT_Switch,0,Common ST,designated_port,Company_LAN.10BT_Switch <-> Printer Server1

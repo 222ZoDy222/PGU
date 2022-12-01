@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
 
-    [SerializeField] private Text resultText;
+    [SerializeField] private Text resultText, textBrut, textDays;
 
     [SerializeField] private InputField field;
 
@@ -20,8 +20,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private InputField symbolsField, LField;
 
-    [SerializeField] private Button tryAlghoritm, tryRandom, RandomGenerate;
-
+    //[SerializeField] private Button tryAlghoritm, tryRandom, RandomGenerate;
+    [SerializeField] private Button generateAll;
 
     private void Start()
     {
@@ -35,11 +35,23 @@ public class UIManager : MonoBehaviour
         path = Application.dataPath;
         path += "/data.txt";
         Log("start");
+
+        generateAll.onClick.AddListener(GenerateAll);
+    }
+
+
+    public void GenerateAll()
+    {
+        GeneratePassword();
+        CalculatePassword();
+        TryRandomBrut();
     }
 
     public void OnValueChangetDield(string msg)
     {
+        
         field.text = alghoritm.CleanText(msg);
+        Sync();
     }
 
     string path;
@@ -59,21 +71,23 @@ public class UIManager : MonoBehaviour
 
     public void TryRandomBrut()
     {
-        tryAlghoritm.gameObject.SetActive(false);
-        tryRandom.gameObject.SetActive(false);
-        RandomGenerate.gameObject.SetActive(false);
+        //tryAlghoritm.gameObject.SetActive(false);
+        //tryRandom.gameObject.SetActive(false);
+        //RandomGenerate.gameObject.SetActive(false);
+        generateAll.gameObject.SetActive(false);
         IEnumerator coroutine()
         {
             for (int i = 0; i < 100 * 12; i++)
             {
                 yield return null;
-                if(field.text == alghoritm.GeneratePassword())
+                string passGenerate = alghoritm.GeneratePassword();
+                textBrut.text = passGenerate;
+                if (field.text == passGenerate)
                 {
                     resultText.text = "ВАУ СГЕНЕРИРОВАЛСЯ!!!! попыток понадобилось " + i;
-                    Log("ВАУ СГЕНЕРИРОВАЛСЯ!!!! попыток понадобилось " + i);
-                    tryAlghoritm.gameObject.SetActive(true);
-                    tryRandom.gameObject.SetActive(true);
-                    RandomGenerate.gameObject.SetActive(true);
+                    Log("ВАУ СГЕНЕРИРОВАЛСЯ!!!! попыток понадобилось " + i + " Дней понадобилось " + Convert.ToInt32(Convert.ToInt32(i / 100) + 1));
+
+                    generateAll.gameObject.SetActive(true);
                     yield break;
                 }
                 else
@@ -83,9 +97,7 @@ public class UIManager : MonoBehaviour
             }
             resultText.text = "ЕХ, никак не получилось!";
             Log("ЕХ, никак не получилось!");
-            tryAlghoritm.gameObject.SetActive(true);
-            tryRandom.gameObject.SetActive(true);
-            RandomGenerate.gameObject.SetActive(true);
+            generateAll.gameObject.SetActive(true);
         }
         StartCoroutine(coroutine());
 
@@ -106,29 +118,53 @@ public class UIManager : MonoBehaviour
 
     public void checkBUttons()
     {
-        if(symbolsField.text == "" || LField.text == "")
+       
+        
+        if (symbolsField.text == "" || LField.text == "")
         {
-            tryAlghoritm.gameObject.SetActive(false);
-            tryRandom.gameObject.SetActive(false);
-            RandomGenerate.gameObject.SetActive(false);
+            //tryAlghoritm.gameObject.SetActive(false);
+            //tryRandom.gameObject.SetActive(false);
+            //RandomGenerate.gameObject.SetActive(false);
+            generateAll.gameObject.SetActive(false);
         } 
         else
         {
-            tryAlghoritm.gameObject.SetActive(true);
-            tryRandom.gameObject.SetActive(true);
-            RandomGenerate.gameObject.SetActive(true);
+            generateAll.gameObject.SetActive(true);
+            try
+            {
+                int value = Convert.ToInt32(LField.text);
+                if (value > 10)
+                {
+                    value = 10;
+                }
+                else if (value < 1) value = 1;
+                LField.text = value.ToString();
+                Sync();
+            } catch
+            {
+                generateAll.gameObject.SetActive(false);
+            }
+            
+            
+            //tryAlghoritm.gameObject.SetActive(true);
+            //tryRandom.gameObject.SetActive(true);
+            //RandomGenerate.gameObject.SetActive(true);
         }
+        
     }
 
-    public void CLick()
+   
+
+    private void CalculatePassword()
     {
         string msg = field.text;
-        int tries = alghoritm.CalculateTries(msg);
+        ulong tries = alghoritm.CalculateTries(msg);
 
-        resultText.text = alghoritm.CalculateDays(tries, triesAtDay) + " дней";
-        Log(resultText.text);
+
+
+        textDays.text = (alghoritm.CalculateDays(tries, triesAtDay) + 1) + " дней";
+        Log($"дней понадобилось {textDays.text}, попыток понадобилось {tries.ToString()}");
     }
-
 
 
 }

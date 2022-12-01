@@ -1,0 +1,445 @@
+PVCs_With_CIR_64k	1	0
+----------------- Static Environment Attribute Confirmations -----------------
+
+--------------------Name-------------------- --Source--- ------Value------
+ef                                           cmd line    Standard_Chartered_Bank_Network-PVCs_With_CIR_64k-DES-1
+force_posix_locale                           default     TRUE
+handle_exception                             default     TRUE
+handle_exception_extended                    default     TRUE
+mem_clear                                    default     0
+mem_opt.compact_pools                        default     TRUE
+mem_opt.pool_small_blocks                    default     TRUE
+mem_opt.grow_pool_planks                     default     TRUE
+mem_optimize                                 default     TRUE
+mem_shred                                    default     FALSE
+mod_dirs                                     env. file   C:\Users\nikgo\op_models,
+                                                         "D:\\универ\\PGU\\Сети\\Лабы\\lab_5\\04 Large WAN\\Lab Files\\",
+                                                         "D:\\универ\\PGU\\Сети\\Лабы\\lab_4\\Lab 4 Evaluating WAN Performance\\Solutions\\",
+                                                         "D:\\универ\\Сети, телекоммуникации, сетевые технологии Горбунов Исаев\\Бакалавриат\\Лабораторные работы\\Учебные проекты для практикума\\Lab Files\\Для 3 работы Evaluating WAN Performance\\Solutions\\",
+                                                         "D:\\универ\\Сети, телекоммуникации, сетевые технологии Горбунов Исаев\\Бакалавриат\\Лабораторные работы\\Учебные проекты для практикума\\Lab Files\\Для 4 работы Large WAN\\Solutions\\",
+                                                         "D:\\универ\\PGU\\Сети\\Лабы\\lab_3\\02 Multistory Building LAN\\Solutions\\",
+                                                         "D:\\универ\\PGU\\Сети\\Лабы\\lab_3\\02 Multistory Building LAN\\Lab Files\\",
+                                                         D:\универ\PGU\Сети\Лабы\лаба_2\файлы\,
+                                                         "C:\\Users\\nikgo\\Desktop\\Lab Files\\Lab Files\\01 Home LAN\\Lab Files\\",
+                                                         "D:\\универ\\Сети, телекоммуникации, сетевые технологии\\Бакалавриат\\Лабораторные работы\\Учебные проекты для практикума\\Lab Files\\Для 2 работы Home LAN\\Lab Files\\",
+                                                         D:\Riverbet\17.5.A\sys\lib,
+                                                         D:\Riverbet\17.5.A\sys\icons,
+                                                         D:\Riverbet\17.5.A\sys\images,
+                                                         D:\Riverbet\17.5.A\sys\include,
+                                                         D:\Riverbet\17.5.A\sys\images\maps,
+                                                         D:\Riverbet\17.5.A\sys\configs,
+                                                         D:\Riverbet\17.5.A\sys\help,
+                                                         D:\Riverbet\17.5.A\sys\utilities,
+                                                         D:\Riverbet\17.5.A\sys\utilities\3dnv,
+                                                         D:\Riverbet\17.5.A\sys\utilities\tmm,
+                                                         D:\Riverbet\17.5.A\sys\utilities\hla,
+                                                         D:\Riverbet\17.5.A\sys\utilities\sitl,
+                                                         D:\Riverbet\17.5.A\sys\reports\stylesheets,
+                                                         C:\Users\nikgo\op_admin\ace_logs,
+                                                         C:\Users\nikgo\op_admin\rmc\logs,
+                                                         D:\Riverbet\17.5.A\models\std\3dnv_examples,
+                                                         D:\Riverbet\17.5.A\models\std\advisories,
+                                                         D:\Riverbet\17.5.A\models\std\advisories\Advisory_Logs,
+                                                         D:\Riverbet\17.5.A\models\std\applications,
+                                                         D:\Riverbet\17.5.A\models\std\atm,
+                                                         D:\Riverbet\17.5.A\models\std\atv,
+                                                         D:\Riverbet\17.5.A\models\std\base,
+                                                         D:\Riverbet\17.5.A\models\std\bgp,
+                                                         D:\Riverbet\17.5.A\models\std\bridges,
+                                                         D:\Riverbet\17.5.A\models\std\cyber,
+                                                         D:\Riverbet\17.5.A\models\std\demands,
+                                                         D:\Riverbet\17.5.A\models\std\dhcp,
+                                                         D:\Riverbet\17.5.A\models\std\eigrp,
+                                                         D:\Riverbet\17.5.A\models\std\ethcoax,
+                                                         D:\Riverbet\17.5.A\models\std\ethernet,
+                                                         D:\Riverbet\17.5.A\models\std\example_networks,
+                                                         D:\Riverbet\17.5.A\models\std\example_networks\configs,
+                                                         D:\Riverbet\17.5.A\models\std\example_networks\configs\baseline,
+                                                         D:\Riverbet\17.5.A\models\std\example_networks\configs\baseline_no_unnum_links,
+                                                         D:\Riverbet\17.5.A\models\std\example_networks\configs\with_areas_bad_abr,
+                                                         D:\Riverbet\17.5.A\models\std\example_networks\configs\with_areas_broken,
+                                                         D:\Riverbet\17.5.A\models\std\example_networks\configs\with_areas_good_abr,
+                                                         D:\Riverbet\17.5.A\models\std\example_networks\configs\with_areas_good_summ,
+                                                         D:\Riverbet\17.5.A\models\std\example_networks\RIB,
+                                                         D:\Riverbet\17.5.A\models\std\example_networks\Security_Analysis,
+                                                         D:\Riverbet\17.5.A\models\std\example_networks\Security_Analysis\Baseline,
+                                                         D:\Riverbet\17.5.A\models\std\example_networks\traffic,
+                                                         D:\Riverbet\17.5.A\models\std\example_networks\traffic\one_time_period,
+                                                         D:\Riverbet\17.5.A\models\std\example_networks\traffic\time_varying,
+                                                         D:\Riverbet\17.5.A\models\std\example_networks\web_reports,
+                                                         D:\Riverbet\17.5.A\models\std\fc,
+                                                         D:\Riverbet\17.5.A\models\std\fddi,
+                                                         D:\Riverbet\17.5.A\models\std\frelay,
+                                                         D:\Riverbet\17.5.A\models\std\gdc,
+                                                         D:\Riverbet\17.5.A\models\std\h323,
+                                                         D:\Riverbet\17.5.A\models\std\haipe,
+                                                         D:\Riverbet\17.5.A\models\std\icons,
+                                                         D:\Riverbet\17.5.A\models\std\igrp,
+                                                         D:\Riverbet\17.5.A\models\std\ike,
+                                                         D:\Riverbet\17.5.A\models\std\include,
+                                                         D:\Riverbet\17.5.A\models\std\inet,
+                                                         D:\Riverbet\17.5.A\models\std\ip,
+                                                         D:\Riverbet\17.5.A\models\std\ip\ipv6_readiness,
+                                                         D:\Riverbet\17.5.A\models\std\ip\ipv6_readiness\en_US,
+                                                         D:\Riverbet\17.5.A\models\std\ip\utilities,
+                                                         D:\Riverbet\17.5.A\models\std\isis,
+                                                         D:\Riverbet\17.5.A\models\std\jammers,
+                                                         D:\Riverbet\17.5.A\models\std\l2tp,
+                                                         D:\Riverbet\17.5.A\models\std\lane,
+                                                         D:\Riverbet\17.5.A\models\std\lapb,
+                                                         D:\Riverbet\17.5.A\models\std\layer2_mss,
+                                                         D:\Riverbet\17.5.A\models\std\legacy,
+                                                         D:\Riverbet\17.5.A\models\std\links,
+                                                         D:\Riverbet\17.5.A\models\std\llm,
+                                                         D:\Riverbet\17.5.A\models\std\lte,
+                                                         D:\Riverbet\17.5.A\models\std\mainframe,
+                                                         D:\Riverbet\17.5.A\models\std\mainframe\Excel,
+                                                         D:\Riverbet\17.5.A\models\std\mainframe\SAS,
+                                                         D:\Riverbet\17.5.A\models\std\mainframe\SAS\MXG,
+                                                         D:\Riverbet\17.5.A\models\std\mainframe\SAS\NeuMICS,
+                                                         D:\Riverbet\17.5.A\models\std\manet,
+                                                         D:\Riverbet\17.5.A\models\std\mobile_ip,
+                                                         D:\Riverbet\17.5.A\models\std\mpls,
+                                                         D:\Riverbet\17.5.A\models\std\msdp,
+                                                         D:\Riverbet\17.5.A\models\std\ospf,
+                                                         D:\Riverbet\17.5.A\models\std\pnni,
+                                                         D:\Riverbet\17.5.A\models\std\pricing,
+                                                         D:\Riverbet\17.5.A\models\std\pricing\utilities,
+                                                         D:\Riverbet\17.5.A\models\std\pstn,
+                                                         D:\Riverbet\17.5.A\models\std\rip,
+                                                         D:\Riverbet\17.5.A\models\std\rohc,
+                                                         D:\Riverbet\17.5.A\models\std\rrp,
+                                                         D:\Riverbet\17.5.A\models\std\rsvp,
+                                                         D:\Riverbet\17.5.A\models\std\rtp,
+                                                         D:\Riverbet\17.5.A\models\std\servers,
+                                                         D:\Riverbet\17.5.A\models\std\servers\agents,
+                                                         D:\Riverbet\17.5.A\models\std\servers\agents\BMC,
+                                                         D:\Riverbet\17.5.A\models\std\servers\agents\BMC\nt,
+                                                         D:\Riverbet\17.5.A\models\std\servers\agents\BMC\unix,
+                                                         D:\Riverbet\17.5.A\models\std\servers\agents\NetIQ,
+                                                         D:\Riverbet\17.5.A\models\std\servers\agents\NetIQ\4.0,
+                                                         D:\Riverbet\17.5.A\models\std\servers\agents\NetIQ\5.0,
+                                                         D:\Riverbet\17.5.A\models\std\servers\agents\OpenView,
+                                                         D:\Riverbet\17.5.A\models\std\servers\agents\OpenView\nt,
+                                                         D:\Riverbet\17.5.A\models\std\servers\agents\OpenView\unix,
+                                                         D:\Riverbet\17.5.A\models\std\servers\agents\Perfmon,
+                                                         D:\Riverbet\17.5.A\models\std\sip,
+                                                         D:\Riverbet\17.5.A\models\std\sna,
+                                                         D:\Riverbet\17.5.A\models\std\srp,
+                                                         D:\Riverbet\17.5.A\models\std\tcp,
+                                                         D:\Riverbet\17.5.A\models\std\tdma,
+                                                         D:\Riverbet\17.5.A\models\std\tpal,
+                                                         D:\Riverbet\17.5.A\models\std\tr,
+                                                         D:\Riverbet\17.5.A\models\std\traf_gen,
+                                                         D:\Riverbet\17.5.A\models\std\tutorial_req,
+                                                         D:\Riverbet\17.5.A\models\std\tutorial_req\basic,
+                                                         D:\Riverbet\17.5.A\models\std\tutorial_req\basic\traffic,
+                                                         D:\Riverbet\17.5.A\models\std\tutorial_req\modeler,
+                                                         D:\Riverbet\17.5.A\models\std\umts,
+                                                         D:\Riverbet\17.5.A\models\std\utilities,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\common,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\ctr,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\ctr\des_profiles,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\ctr\en_US,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\ctr\ext,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\ctr\profiles,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\design,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\design\base,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\design\igp_te,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\design\lfa,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\design\mpls,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\design\mpls_qp,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\design\mpls_te,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\design\pstn,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\design\topo,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\device_creator,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\device_creator\generic,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\device_creator\vendor,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\flowan,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\flowan\capplan,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\flowan\failure_impact_analysis,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\flowan\ipv6,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\flowan\voip,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\groups,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\import,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\import\ai,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\import\csv,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\import\csv\config,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\import\csv\interface_naming_rules,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\import\imex_dste,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\import\rci,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\import\vnes,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\inv,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\inv\en_US,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\mcr,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\mcr\en_US,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\netdiff,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\netdiff\config_file_diff_css,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\netdoctor,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\netdoctor\en_US,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\netmapper,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\netone,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\odb_vis,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\oms,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\oms\bgp,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\oms\ets,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\oms\ets\base,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\oms\ets\conn,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\oms\peer,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\oms\svc,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\osc,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\osc\en_US,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\packet_analyzer,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\pnm,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\port_scan,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\udr,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\views,
+                                                         D:\Riverbet\17.5.A\models\std\utilities\vni,
+                                                         D:\Riverbet\17.5.A\models\std\voice,
+                                                         D:\Riverbet\17.5.A\models\std\web_reports,
+                                                         D:\Riverbet\17.5.A\models\std\wimax,
+                                                         D:\Riverbet\17.5.A\models\std\wireless,
+                                                         D:\Riverbet\17.5.A\models\std\wireless\smac,
+                                                         D:\Riverbet\17.5.A\models\std\wireless\wireless_wizard,
+                                                         D:\Riverbet\17.5.A\models\std\wireless\wrls_phy_mpath_data_files,
+                                                         D:\Riverbet\17.5.A\models\std\wireless_lan,
+                                                         D:\Riverbet\17.5.A\models\std\x25,
+                                                         D:\Riverbet\17.5.A\models\std\xdsl,
+                                                         D:\Riverbet\17.5.A\models\std\zigbee,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\3Com,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Alcatel_Lucent,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Alteon,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\AMD,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\antenna_models,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Ascend,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Avici,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Bay_Networks,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Brocade,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Cabletron,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\CheckPoint,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Cisco_Systems,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Compaq,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Coyote_Point,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Dell,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Equipe,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Extreme,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\f5,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Fore_Systems,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Foundry_Networks,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Hewlett_Packard,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Huawei,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\IBM,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Intel,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Juniper_Networks,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Lucent,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\McData,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Nec,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\NET,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Newbridge,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Nokia,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Nortel,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Radware,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Sun,
+                                                         D:\Riverbet\17.5.A\models\vendor_models\Xylan
+tfile_dir_cache_file                         default     opnet_dir_cache
+tfile_dir_cache                              default     use
+noprompt                                     cmd line    TRUE
+opnet_dir                                    env. file   D:\Riverbet
+opnet_user_home                              shell var   C:\Users\nikgo
+preferences_default_save_location            env. file   Local
+verbose_session_log                          default     FALSE
+java_prog                                    config file D:\Riverbet\17.5.A\jre7_modeler_ae\JRE\bin\java.exe
+java_prog64                                  default     java
+3dnv                                         default     FALSE
+3dnv.cleanup_at_the_end                      default     TRUE
+3dnv.fed_file_name                           default     <null>
+3dnv.federation_name                         default     OPNET_3DNV
+3dnv.history_file                            default     <null>
+3dnv.hla_standard                            default     "DOD 1.3"
+3dnv.initialization_delay                    default     1
+3dnv.mapping_argument                        default     <null>
+3dnv.mapping_library                         default     opnet_3dnv_default_mapping
+3dnv.max_request_rate                        default     0
+3dnv.rpr_fom_version                         default     1
+anim_attempts                                default     5
+anim_hist                                    default     <null>
+anim_host                                    default     localhost
+anim_port                                    default     0
+anim_timeout                                 default     3
+anim_view                                    env. file   FALSE
+antenna.spherical_model                      default     Mathematical
+attr_reqs_file                               default     <null>
+auto_disk_space_threshold                    default     1000
+automation_lock_max_wait_time                default     60
+beep_count_confirm                           default     1
+beep_count_error                             default     2
+bind_shobj_flags                             default     <null>
+bind_shobj_flags_32bit                       default     <null>
+bind_shobj_flags_64bit                       default     <null>
+bind_shobj_flags_devel                       default     /DEBUG
+bind_shobj_flags_optim                       default     <null>
+bind_shobj_libs                              default     <null>
+bind_shobj_libs_32bit                        default     <null>
+bind_shobj_libs_64bit                        default     <null>
+bind_shobj_libs_devel                        default     <null>
+bind_shobj_libs_optim                        default     <null>
+bind_shobj_prog                              default     bind_so_msvc
+check_newer_process_model_files              default     TRUE
+comp.no_fin_required_for_state_vars          default     FALSE
+comp_flags_32bit                             default     <null>
+comp_flags_64bit                             default     /GS-
+comp_flags_c++_specific                      default     <null>
+comp_flags_c_specific                        default     <null>
+comp_flags_common                            env. file   "/W3 /D_CRT_SECURE_NO_DEPRECATE /ID:\\Riverbet\\17.5.A\\models\\std\\include"
+comp_flags_devel                             default     "/Z7 /Od"
+comp_flags_mt                                default     <null>
+comp_flags_optim                             default     "/Ox /Ob2 /DOPD_NO_DEBUG /DOPD_INLINE_KPS"
+comp_globals_export                          default     FALSE
+comp_object_files_without_source             default     allow_with_warning
+comp_per_process_errors                      default     TRUE
+comp_prog                                    default     comp_msvc
+comp_prog_cpp                                default     comp_msvc
+comp_trace_info                              env. file   kernel-based
+console_exit_pause                           default     FALSE
+cosim                                        default     <null>
+cosimulation_optimization_mode               default     none
+debug_mk                                     default     FALSE
+default_site_position_cache_time_granularity env. file   0
+des.log_severity_filter                      env. file   -1
+diag_enable                                  default     FALSE
+display_timezone_string                      default     FALSE
+duration                                     env. file   3600
+edit_lock_mode                               default     FALSE
+endsim_memstats                              default     FALSE
+etrace_diff                                  default     <null>
+etrace_dump                                  default     <null>
+etrace_end_time                              default     1e+100
+etrace_start_time                            default     0
+event_order_method                           default     strict
+event_speed_parameter                        default     100000
+file_read_abort_suppress                     default     FALSE
+format_event_ids_with_1000s_separator        default     TRUE
+format_ici_ids_with_1000s_separator          default     TRUE
+format_object_ids_with_1000s_separator       default     TRUE
+format_packet_ids_with_1000s_separator       default     TRUE
+format_process_ids_with_1000s_separator      default     TRUE
+fully_serialized_event_execution_ids         default     TRUE
+fully_serialized_ici_ids                     default     TRUE
+fully_serialized_packet_ids                  default     TRUE
+geocentric_model                             default     right_sphere
+invalid_link_notification                    default     TRUE
+kernel_type                                  env. file   optimized
+license_broker_host                          default     <null>
+license_broker_port                          default     <null>
+license_expiration_warning_interval          default     3
+license_group                                default     <null>
+license_http_proxy_password                  default     <not set>
+license_http_proxy_port                      default     80
+license_http_proxy_server                    default     <null>
+license_http_proxy_user                      default     <null>
+license_http_server                          default     license01.opnet.com
+license_http_use_proxy                       default     FALSE
+license_password                             default     <not set>
+license_port                                 default     port_a
+license_server                               default     localhost
+license_server_standalone                    default     FALSE
+license_server_standalone_diagnose           default     FALSE
+license_username                             default     <null>
+livelock_thresh                              default     8192
+log_endsim_perf                              env. file   TRUE
+log_file                                     env. file   Standard_Chartered_Bank_Network-PVCs_With_CIR_64k-DES-1
+log_time_precision                           default     12
+manage_loanable_licenses                     default     FALSE
+max_idle_time_microseconds                   default     1
+max_log_entries                              env. file   200
+memstat_autogen                              default     <null>
+mtn_warn_int                                 default     3
+named_locks                                  default     FALSE
+net_name                                     cmd line    Standard_Chartered_Bank_Network-PVCs_With_CIR_64k
+num_collect_values                           env. file   100
+num_err                                      default     10
+ot_file                                      env. file   Standard_Chartered_Bank_Network-PVCs_With_CIR_64k-DES-1
+ot_file.default_format                       default     write_many
+ot_mem_size                                  default     4
+ov_autogen                                   default     <null>
+ov_diff_tolerance                            default     5
+ov_file                                      env. file   Standard_Chartered_Bank_Network-PVCs_With_CIR_64k-DES-1
+ov_mem_size                                  default     16
+parallel_sim.event_execution_time_window     env. file   0
+parallel_sim.mutex_rank_ignore               default     FALSE
+per_module_random_stream                     default     FALSE
+probe                                        env. file   Standard_Chartered_Bank_Network-PVCs_With_CIR_64k
+probe_error_enable                           default     FALSE
+probe_start_time                             default     -1
+probe_stop_time                              default     -1
+prof_output                                  default     console
+prof_output_separator                        default     <null>
+prof_track_func                              default     <null>
+prof_track_recurse                           default     TRUE
+psnone_tda.bu.closure.closure                default     TRUE
+psnone_tda.bu.collision.num_colls            default     0
+psnone_tda.bu.ecc.pk_accept                  default     TRUE
+psnone_tda.bu.error.num_errors               default     0
+psnone_tda.bu.propdel.prop_delay             default     0
+psnone_tda.bu.txdel.tx_delay                 default     0
+psnone_tda.pt.ecc.pk_accept                  default     TRUE
+psnone_tda.pt.error.num_errors               default     0
+psnone_tda.pt.propdel.prop_delay             default     0
+psnone_tda.pt.txdel.tx_delay                 default     0
+psnone_tda.ra.ber.ber                        default     0
+psnone_tda.ra.bkgnoise.bkgnoise              default     0
+psnone_tda.ra.chanmatch.match_status         default     valid
+psnone_tda.ra.closure.closure                default     TRUE
+psnone_tda.ra.ecc.pk_accept                  default     TRUE
+psnone_tda.ra.error.actual_ber               default     0
+psnone_tda.ra.error.num_errors               default     0
+psnone_tda.ra.power.rcvd_power               default     -1
+psnone_tda.ra.propdel.end_propdel            default     0
+psnone_tda.ra.propdel.start_propdel          default     0
+psnone_tda.ra.ragain.rx_gain                 default     0
+psnone_tda.ra.snr.snr                        default     1000
+psnone_tda.ra.tagain.tx_gain                 default     0
+psnone_tda.ra.txdel.tx_delay                 default     0
+radio_transmission_defer_packet_duplication  default     TRUE
+radio_transmission_on_demand_receiver_groups default     FALSE
+rand_gen_type                                default     Linear-Congruential
+rand_num_ext_res                             default     TRUE
+raw_err                                      default     FALSE
+realtime_ratio                               env. file   0
+rec_err_suppress                             default     FALSE
+record_gstats                                default     FALSE
+repositories                                 env. file   stdmod
+script_mode                                  default     none
+script_name                                  default     odb_script
+seed                                         env. file   128
+sim_packet_sharing                           env. file   conservative
+sim_process_priority                         default     normal
+sim_time_quantum                             env. file   0
+site_position_cache_size                     env. file   3
+sitl_realtime_ratio_check                    default     TRUE
+sla_compute_all_violations                   default     FALSE
+split_start_radio_transmission               default     FALSE
+timezone                                     default     "Local Timezone"
+tmm_data_directory                           default     <obsolete>
+tmm_data_type                                default     "USGS DEM"
+tmm_display_degrees                          default     FALSE
+tmm_include_antenna_height                   default     FALSE
+tmm_load_as_needed                           default     TRUE
+tmm_pathloss_cache_size                      default     2
+tmm_prop_model                               default     <null>
+tmm_prop_param                               default     <null>
+tmm_propagation_specification                default     <null>
+tmm_propagation_zone_ratio                   default     0
+tmm_propagation_zone_resolution              default     100
+tmm_simulate                                 env. file   FALSE
+tmm_terrain_cache_size                       default     10
+tmm_terrain_specification                    default     <null>
+tmm_use_cache                                default     TRUE
+tmm_verbose                                  default     FALSE
+update_interval                              env. file   100000
+updates_in_seconds                           default     FALSE
+user_lock_devname                            default     <null>
+verbose_load                                 env. file   TRUE
+verbose_mk                                   default     FALSE
+verbose_sim                                  env. file   TRUE
+warning_suppress                             default     FALSE

@@ -7,19 +7,22 @@ void S();
 void Prog();
 void V();
 void W();
-
-
+void CompleteSyntaxAnaliz();
+void ProgWhile();
 
 
 
 
 
 std::vector<Word> Words;
+
+std::vector<string> Vars;
+
 Word curWord;
 int index;
 
 
-
+int recursiveS = 0;
 
 // Если ошибка в синтаксисе
 bool errorInSyntax = false;
@@ -29,6 +32,13 @@ void Error() {
 
 	errorInSyntax = true;
 	cout << "Error on " << curWord.rowNum << "\n";
+}
+
+void Error(string str) 
+{
+	
+	errorInSyntax = true;
+	cout << "\n" << "Error on " << curWord.rowNum << "\n" << "\t" << str;
 }
 
 void SyntaxAnalizator(std::vector<Word> words) 
@@ -49,6 +59,16 @@ void Next() {
 	curWord = Words[index];
 }
 
+// Есть ли уже такой идентификатор
+bool CheckWasVar(string var) 
+{
+	for (int i = 0; i < Vars.size(); i++)
+	{
+		if (Vars[i] == var) return true;
+	} 
+	Vars.push_back(var);
+	return false;
+}
 
 void S() {
 
@@ -57,20 +77,30 @@ void S() {
 		Next();
 		// Если переменная
 		if (curWord.lecsemType == -2) {
+
+			CheckWasVar(curWord.word);
 			Next();
 			// Пока следующая лексема ","
 			while (curWord.lecsemType == 8) {
 				Next();
 				// Если переменная
 				if (curWord.lecsemType == -2) {
-
+					// Этот идентификатор повторяется (уже был объявлен)
+					if (CheckWasVar(curWord.word)) {
+						Error("Identifier '" + curWord.word + "' already exist");
+					}
 				}
 				// Если ";"
 				else if (curWord.lecsemType == 2) {
+					
 					break;
 				}
+				else if (curWord.lecsemType == 8) {
+					Error("The superfluous comma");
+					Next();
+				}
 				else {
-					Error();
+					Error("Undefined ';'");
 					
 				}
 				Next();
@@ -79,20 +109,36 @@ void S() {
 			if (curWord.lecsemType == 2) {
 				
 				Next();
-				Prog();
+				
 
 			}
-			else {
-				Error();
+			else 
+			{
+				Error("Undefined ';'");
 			}
-
+			Prog();
+		}
+		else {
+			
+			
+				Error("Undefined identifier");
+			
+			
 		}
 
 	}
 	else {
-		Error();
+		Error("Var is undefined");
+		Next();
+		recursiveS++;
+		S();
 	}
-
+	if (recursiveS == 0) {
+		CompleteSyntaxAnaliz();
+	}
+	else {
+		recursiveS--;
+	}
 }
 
 
@@ -103,10 +149,15 @@ void Prog()
 	{
 		// Если DO
 		if (curWord.lecsemType == 11) {
-
+			Next();
+			ProgWhile();
 		}
 		// Если переменная
 		else if (curWord.lecsemType == -2) {
+			if (!CheckWasVar(curWord.word)) 
+			{
+				Error("Undefined Variable");
+			}
 			Next();
 			// Если ":"
 			if (curWord.lecsemType == 3) {
@@ -120,12 +171,21 @@ void Prog()
 						Next();
 					}
 					else {
-						Error();
-						V();
+						Error("Can't find ';' ");
+						//V();
 					}
 				}
 				else {
-					Error();
+					Error("Undefined  '=' ");
+					V();
+					// Если ";"
+					if (curWord.lecsemType == 2) {
+						Next();
+					}
+					else {
+						Error("Can't find ';' ");
+						//V();
+					}
 				}
 
 			}
@@ -146,7 +206,7 @@ void Prog()
 void V() 
 {
 	// Если "-"
-	if (curWord.lecsemType == 6) {
+	if (curWord.word == "-") {
 		Next();
 	}
 	W();
@@ -164,9 +224,16 @@ void W()
 			Next();
 		}
 
-	} 
+	}
+	else if (curWord.lecsemType == 13) {
+		return;
+	}
 	else if (curWord.lecsemType == -1 || curWord.lecsemType == -2) 
 	{
+		if (curWord.lecsemType == -2 && !CheckWasVar(curWord.word))
+		{
+			Error("Undefined Variable");
+		}
 		Next();
 	}
 	else {
@@ -179,9 +246,117 @@ void W()
 		W();
 		
 	}
+	// Если ;
+	else if(curWord.lecsemType == 2)
+	{
+		
+		
+	}
+	else if (curWord.lecsemType == 13) {
+
+	}
+	else if (index == Words.size() - 1) {
+
+	}
+	else {
+		
+		byte testError = 0;
+		
+		// Если это последний символ
+		if (index == Words.size() - 1) {
+			Error("Unknown construction " + curWord.word);
+			return;
+		}
+		Error("Undefined identifier " + curWord.word);
+
+		while (curWord.lecsemType != 2) {
+			Next();
+			testError++;
+			if (testError == 255) break;
+			if (index == Words.size() - 1) break;
+		}
+		
+		
+	}
 
 }
 
-void ProgWhile() {
+void ProgWhile() 
+{
+	bool haveWhile = false;
+	
+	// пока это не последний символ программы
+	while (index < Words.size() - 1) {
+		// Если переменная
+		if (curWord.lecsemType == -2) {
+			if (!CheckWasVar(curWord.word))
+			{
+				Error("Undefined Variable");
+			}
+			Next();
+			// Если ":"
+			if (curWord.lecsemType == 3) {
+				Next();
+				// Если "="
+				if (curWord.lecsemType == 4) {
+					Next();
+					V();
+					// Если ";"
+					if (curWord.lecsemType == 2) {
+						Next();
+					}
+					else {
+						Error("Can't find ';' ");
+						//V();
+					}
+				}
+				else {
+					Error("Undefined  '=' ");
+					V();
+					// Если ";"
+					if (curWord.lecsemType == 2) {
+						Next();
+					}
+					else {
+						Error("Can't find ';' ");
+						//V();
+					}
+				}
+
+			}
+			else {
+				Error();
+			}
+		}
+		// Если WHILE
+		else if (curWord.lecsemType == 14) {
+			haveWhile = true;
+			Next();
+			V();
+		}
+		else {
+			Next();
+			Error("Undefined Constuct while");
+		}
+	}
+	
+	if (!haveWhile) {
+		Error("Undefine While");
+	}
+
+} 
+
+
+void CompleteSyntaxAnaliz() {
+
+	cout << "\n" << "Complete Syntax Analiz";
+
+	if (errorInSyntax) {
+		cout << "\n" << "Should fix the Errors";
+	}
+	else {
+		cout << "\n" << "Cool code Bro!";
+	}
+
 
 }
