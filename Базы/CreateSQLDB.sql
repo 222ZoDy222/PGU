@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`users` (
   PRIMARY KEY (`idusers`))
 ENGINE = InnoDB;
 
-CREATE UNIQUE INDEX `idusers_UNIQUE` ON `mydb`.`users` (`idusers` ASC) VISIBLE;
+CREATE UNIQUE INDEX `idusers_UNIQUE` ON `mydb`.`users` (`idusers` ASC);
 
 
 -- -----------------------------------------------------
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Task` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_subject_Subject1_idx` ON `mydb`.`Task` (`Subject_idSubject` ASC) VISIBLE;
+CREATE INDEX `fk_subject_Subject1_idx` ON `mydb`.`Task` (`Subject_idSubject` ASC);
 
 
 -- -----------------------------------------------------
@@ -84,9 +84,9 @@ CREATE TABLE IF NOT EXISTS `mydb`.`files` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_files_users1_idx` ON `mydb`.`files` (`users_idusers` ASC) VISIBLE;
+CREATE INDEX `fk_files_users1_idx` ON `mydb`.`files` (`users_idusers` ASC);
 
-CREATE INDEX `fk_files_Task1_idx` ON `mydb`.`files` (`Task_idTask` ASC) VISIBLE;
+CREATE INDEX `fk_files_Task1_idx` ON `mydb`.`files` (`Task_idTask` ASC);
 
 
 -- -----------------------------------------------------
@@ -110,9 +110,9 @@ CREATE TABLE IF NOT EXISTS `mydb`.`questions` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_questions_Task1_idx` ON `mydb`.`questions` (`Task_idTask` ASC) VISIBLE;
+CREATE INDEX `fk_questions_Task1_idx` ON `mydb`.`questions` (`Task_idTask` ASC);
 
-CREATE INDEX `fk_questions_users1_idx` ON `mydb`.`questions` (`users_idusers1` ASC) VISIBLE;
+CREATE INDEX `fk_questions_users1_idx` ON `mydb`.`questions` (`users_idusers1` ASC);
 
 
 -- -----------------------------------------------------
@@ -137,9 +137,9 @@ CREATE TABLE IF NOT EXISTS `mydb`.`answers` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_answers_users1_idx` ON `mydb`.`answers` (`users_idusers` ASC) VISIBLE;
+CREATE INDEX `fk_answers_users1_idx` ON `mydb`.`answers` (`users_idusers` ASC);
 
-CREATE INDEX `fk_answers_questions1_idx` ON `mydb`.`answers` (`questions_users_idusers1` ASC) VISIBLE;
+CREATE INDEX `fk_answers_questions1_idx` ON `mydb`.`answers` (`questions_users_idusers1` ASC);
 
 
 -- -----------------------------------------------------
@@ -164,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`completeData` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_completeData_users1_idx` ON `mydb`.`completeData` (`users_idusers` ASC) VISIBLE;
+CREATE INDEX `fk_completeData_users1_idx` ON `mydb`.`completeData` (`users_idusers` ASC);
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
