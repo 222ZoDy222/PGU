@@ -1,0 +1,104 @@
+[Environment]
+duration=128.000000
+seed=1800
+net_name=TCP_Window_Size_Reference-Window_Size_8K_WAN_Link_T1
+sim_log_delim=TAB
+
+[Run Info]
+run_date=19:05:19 Sun Aug 17 2003
+
+[Log Entries]
+0	245	Choose From Maps Network.Sydney Branch.Router	Results	RIP	Performance	SYMPTOM(S): <NL>  1. No RIP routing updates past a certain <NL>  simulation time. <NL>  2. Lower than expected throughput or <NL>  utilization of the links. <NL>   <NL> CAUSE(S): <NL>  "RIP Sim Efficiency" simulation attribute <NL>  is set to "Enabled". <NL>   <NL> SUGGESTIONS: <NL>  Set "RIP Sim Efficiency" simulation <NL>  attribute to "Disabled". <NL>  
+5.00001333333	338	Choose From Maps Network.Sydney Branch.Router	Results	Ethernet	No Results	SYMPTOMS(S): <NL>  Background Traffic not affecting some <NL>  ethernet link delays, throughput, or <NL>  utilization. <NL>   <NL> CAUSES(S): <NL>  Background Traffic will not affect <NL>  delays, throughput, or utilization of <NL>  ethernet links connected to a "Half <NL>  Duplex" mode ethernet MAC. Background <NL>  Traffic exists in this network, and some <NL>  Ethernet MACs in use in this network <NL>  are in "Half Duplex" mode. <NL>   <NL> REMEDIAL ACTION(S): <NL>  Use "Full Duplex" mode ethernet MACs. <NL>  Lan Level Models, stations, bridges, <NL>  switches and routers can have <NL>  "Full Duplex" mode ethernet MACs.  Hub <NL>  MACs always operate in "Half Duplex" mode.
+5.00011782846	391	Choose From Maps Network.Washington Backup Station.Backup Server	Protocol	UDP	Packet Drop	SYMPTOM(S): <NL>  Discarding UDP datagram received (destined <NL>  for port number: 520) <NL>   <NL>  It is typical for end nodes (e.g., wkstn <NL>  and servers) to discard datagrams containing <NL>  RIP messages (i.e., port 520) and LDP (Label  <NL>  Distribution Protocol, port 646) messages.   <NL>  In that case, this message can be ignored. <NL>   <NL> EFFECT(S): <NL>  1. The datagram is discarded by the UDP. <NL>  2. Application data may not be received. <NL>  3. No Effects if the datagram was received <NL>     for port 520 and node is not using RIP. <NL>  4. No Effects if the datagram was received <NL>     for port 646 and node is not MPLS enabled. <NL>   <NL> SUGGESTIONS: <NL>  Make sure that the applications are <NL>  sending packets to a port that UDP <NL>  is listening on. <NL>   <NL>  This message will not be repeated. <NL>  
+
+[Summary]
+Low-Lev.	Simulation	Error	0
+Config.	Application	Setup	0
+Protocol	Application	Cli-Svr	0
+Results	Application	No Results	0
+Results	Application	Invalid Results	0
+Results	Application	Traffic Generation	0
+Config.	RIP	Attribute Settings	0
+Config.	RIP	Neighbor Modules	0
+Config.	UDP	Neighbor Modules	0
+Protocol	RIP	Timeouts	0
+Protocol	UDP	Packet Drop	1
+Results	RIP	Performance	1
+Low-Lev.	UDP	LLM Related	0
+Low-Lev.	UDP	Create Local Port	0
+Low-Lev.	RIP	Create UDP Receive Port	0
+Config.	RIP	Routing Table Configuration	0
+Protocol	IP	Higher Layer Protocol Register	0
+Low-Lev.	TCP	Kernel_Error	0
+Config.	TCP	Setup	0
+Protocol	TCP	Data_Transmission	0
+Config.	Transport_Interface	Setup	0
+Protocol	Transport_Interface	Data_Transmission	0
+Results	Transport_Interface	No_Results	0
+Low-Lev.	IP	Address_Mapping_via_NATO	0
+Protocol	IP	Protocol_Error	0
+Protocol	IP	Protocol_Warning	0
+Config.	IP	Model_Configuration_Error	0
+Config.	IP	Model_Configuration_Warning	0
+Low-Lev.	IP	KP_Invocation_Error	0
+Results	IP	Unexpected_Results	0
+Protocol	IP	Packet Drop	0
+Protocol	IP	Wireless2Intf_Auto_Assignment_Warning	0
+Protocol	IP	Static_Auto_Assignment_Warning	0
+Config.	Server	Undefined_Server	0
+Config.	Server	Undefined_Job_Class	0
+Config.	Server	Disk_Access	0
+Config.	Server	Disk_Definition	0
+Config.	Server	Raid	0
+Config.	Server	Job_Definition	0
+Config.	Server	Attribute_Definition	0
+Config.	Server	Advanced_Server_Configuration	0
+Low-Lev.	Server	Missing_Child_Process	0
+Low-Lev.	Server	Disk	0
+Low-Lev.	Server	Job_Interarrival	0
+Low-Lev.	Server	Missing_Information	0
+Low-Lev.	Server	Missing_Attribute	0
+Low-Lev.	Server	Invalid_Event_Handle	0
+Low-Lev.	Server	Remote Storage Access	0
+Low-Lev.	Server	Instance_Internal	0
+Protocol	OSPF	Protocol_Error	0
+Protocol	OSPF	Protocol_Warning	0
+Config.	OSPF	Model_Configuration_Error	0
+Config.	OSPF	Model_Configuration_Warning	0
+Low-Lev.	OSPF	KP_Invocation_Error	0
+Results	OSPF	Unexpected_Results	0
+Protocol	OSPF	LSDB_Export	0
+Config.	Frame_Relay	PVC_Setup	0
+Config.	Frame_Relay	Attribute_Settings	0
+Protocol	Frame_Relay	Congestion	0
+Protocol	Frame_Relay	Packet_Drop	0
+Results	Frame_Relay	No_Results	0
+Results	Frame_Relay	Performance	0
+Protocol	BGP	Protocol_Error	0
+Protocol	BGP	Protocol_Warning	0
+Config.	BGP	Model_Configuration_Error	0
+Config.	BGP	Model_Configuration_Warning	0
+Results	BGP	Unexpected_Results	0
+Config.	ATM	Setup	0
+Config.	ATM	Call Setup	0
+Config.	ATM	Bkgrnd Traffic	0
+Config.	ATM	Feedback	0
+Protocol	ATM	Call_Admission	0
+Protocol	ATM	Cell Loss	0
+Protocol	ATM	 UPC Cell Loss	0
+Protocol	ATM	 Buffer Cell Loss	0
+Results	ATM	No_Results	0
+Results	ATM	Bkgrnd Util	0
+Protocol	ATM	SSCOP	0
+Config.	Ethernet	Model Configuration	0
+Protocol	Ethernet	Packet Drop	0
+Results	Ethernet	Performance	0
+Results	Ethernet	No Results	1
+Results	ICMP	Performance	0
+Protocol	ICMP	Timeout	0
+Config.	IGMP Host	Model_Configuration_Warning	0
+Low-Lev.	IGMP Host	Model_Internals_Error	0
+Protocol	RSVP	Model Configuration Error	0
+Config.	Application	Background Traffic	0
+Config.	SIP	Signaling	0

@@ -1,0 +1,12 @@
+
+[Log Info:]
+version :	1
+row_count :	2
+max_log_row :	infinity
+max_file_row :	1000
+hide_date :	FALSE
+include_severity :	TRUE
+file_count :	1
+
+[File List:]
+14608_12-05-2022_10.48.42	2	10:48:42 Dec 05 2022	10:48:42 Dec 05 2022

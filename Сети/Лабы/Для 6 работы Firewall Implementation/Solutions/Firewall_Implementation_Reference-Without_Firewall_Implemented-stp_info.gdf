@@ -1,0 +1,43 @@
+# This file is an output of a discrete event simulation.
+# It contains spanning tree information to be parsed while
+# visualizing the spanning tree using the Protocols->STP menu.
+Campus Network.Building_Subnet.Core Switch,0,none,root,none
+Campus Network.Building_Subnet.Core Switch,0,none,designated_port,Campus Network.Building_Subnet.Floor 1 Switch <-> Core Switch
+Campus Network.Building_Subnet.Core Switch,0,none,designated_port,Campus Network.Building_Subnet.Core Switch <-> CISCO PIX Firewall
+Campus Network.Building_Subnet.Core Switch,0,none,designated_port,Campus Network.Building_Subnet.Core Switch <-> 7 File Print & Email Servers
+Campus Network.Building_Subnet.7 File Print & Email Servers.Switch,0,none,root_port,Campus Network.Building_Subnet.Core Switch <-> 7 File Print & Email Servers
+Campus Network.Building_Subnet.7 File Print & Email Servers.Switch,0,none,designated_port,Campus Network.Building_Subnet.7 File Print & Email Servers.Switch <-> server 5
+Campus Network.Building_Subnet.7 File Print & Email Servers.Switch,0,none,designated_port,Campus Network.Building_Subnet.7 File Print & Email Servers.Switch <-> server 4
+Campus Network.Building_Subnet.7 File Print & Email Servers.Switch,0,none,designated_port,Campus Network.Building_Subnet.7 File Print & Email Servers.server 1 <-> Switch
+Campus Network.Building_Subnet.7 File Print & Email Servers.Switch,0,none,designated_port,Campus Network.Building_Subnet.7 File Print & Email Servers.server 2 <-> Switch
+Campus Network.Building_Subnet.7 File Print & Email Servers.Switch,0,none,designated_port,Campus Network.Building_Subnet.7 File Print & Email Servers.Switch <-> server 3
+Campus Network.Building_Subnet.7 File Print & Email Servers.Switch,0,none,designated_port,Campus Network.Building_Subnet.7 File Print & Email Servers.Switch <-> server 6
+Campus Network.Building_Subnet.Floor 1 Switch,0,none,root_port,Campus Network.Building_Subnet.Floor 1 Switch <-> Core Switch
+Campus Network.Building_Subnet.Floor 1 Switch,0,none,designated_port,Campus Network.Building_Subnet.Floor 1 Switch <-> Floor 2 Switch
+Campus Network.Building_Subnet.Floor 1 Switch,0,none,designated_port,Campus Network.Building_Subnet.Floor 1 Switch <-> 70 Users Floor 1
+Campus Network.Building_Subnet.Floor 2 Switch,0,none,root_port,Campus Network.Building_Subnet.Floor 1 Switch <-> Floor 2 Switch
+Campus Network.Building_Subnet.Floor 2 Switch,0,none,designated_port,Campus Network.Building_Subnet.Floor 3 Switch <-> Floor 2 Switch
+Campus Network.Building_Subnet.Floor 2 Switch,0,none,designated_port,Campus Network.Building_Subnet.Floor 2 Switch <-> 175 Users Floor 2
+Campus Network.Building_Subnet.Floor 3 Switch,0,none,root_port,Campus Network.Building_Subnet.Floor 3 Switch <-> Floor 2 Switch
+Campus Network.Building_Subnet.Floor 3 Switch,0,none,designated_port,Campus Network.Building_Subnet.Floor 3 Switch <-> Floor 4 Switch
+Campus Network.Building_Subnet.Floor 3 Switch,0,none,designated_port,Campus Network.Building_Subnet.Floor 3 Switch <-> 110 Users Floor 3
+Campus Network.Building_Subnet.Floor 4 Switch,0,none,root_port,Campus Network.Building_Subnet.Floor 3 Switch <-> Floor 4 Switch
+Campus Network.Building_Subnet.Floor 4 Switch,0,none,designated_port,Campus Network.Building_Subnet.Floor 5 Switch <-> Floor 4 Switch
+Campus Network.Building_Subnet.Floor 4 Switch,0,none,designated_port,Campus Network.Building_Subnet.Floor 4 Switch <-> 85 Users Floor 4
+Campus Network.Building_Subnet.Floor 5 Switch,0,none,root_port,Campus Network.Building_Subnet.Floor 5 Switch <-> Floor 4 Switch
+Campus Network.Building_Subnet.Floor 5 Switch,0,none,designated_port,Campus Network.Building_Subnet.Floor 5 Switch <-> Floor 6 Switch
+Campus Network.Building_Subnet.Floor 5 Switch,0,none,designated_port,Campus Network.Building_Subnet.Floor 5 Switch <-> 50 Users Floor 5
+Campus Network.Building_Subnet.Floor 6 Switch,0,none,root_port,Campus Network.Building_Subnet.Floor 5 Switch <-> Floor 6 Switch
+Campus Network.Building_Subnet.Floor 6 Switch,0,none,designated_port,Campus Network.Building_Subnet.Floor 7 Switch <-> Floor 6 Switch
+Campus Network.Building_Subnet.Floor 6 Switch,0,none,designated_port,Campus Network.Building_Subnet.Floor 6 Switch <-> 150 Users Floor 6
+Campus Network.Building_Subnet.Floor 7 Switch,0,none,root_port,Campus Network.Building_Subnet.Floor 7 Switch <-> Floor 6 Switch
+Campus Network.Building_Subnet.Floor 7 Switch,0,none,designated_port,Campus Network.Building_Subnet.Floor 7 Switch <-> Floor 8 Switch
+Campus Network.Building_Subnet.Floor 7 Switch,0,none,designated_port,Campus Network.Building_Subnet.Floor 7 Switch <-> 100 Users Floor 7
+Campus Network.Building_Subnet.Floor 8 Switch,0,none,root_port,Campus Network.Building_Subnet.Floor 7 Switch <-> Floor 8 Switch
+Campus Network.Building_Subnet.Floor 8 Switch,0,none,designated_port,Campus Network.Building_Subnet.Floor 9 Switch <-> Floor 8 Switch
+Campus Network.Building_Subnet.Floor 8 Switch,0,none,designated_port,Campus Network.Building_Subnet.200 Users Floor 8 <-> Floor 8 Switch
+Campus Network.Building_Subnet.Floor 9 Switch,0,none,root_port,Campus Network.Building_Subnet.Floor 9 Switch <-> Floor 8 Switch
+Campus Network.Building_Subnet.Floor 9 Switch,0,none,designated_port,Campus Network.Building_Subnet.Floor 9 Switch <-> Floor 10 Switch
+Campus Network.Building_Subnet.Floor 9 Switch,0,none,designated_port,Campus Network.Building_Subnet.Floor 9 Switch <-> 125 Users Floor 9
+Campus Network.Building_Subnet.Floor 10 Switch,0,none,root_port,Campus Network.Building_Subnet.Floor 9 Switch <-> Floor 10 Switch
+Campus Network.Building_Subnet.Floor 10 Switch,0,none,designated_port,Campus Network.Building_Subnet.95 Users Floor 10 <-> Floor 10 Switch

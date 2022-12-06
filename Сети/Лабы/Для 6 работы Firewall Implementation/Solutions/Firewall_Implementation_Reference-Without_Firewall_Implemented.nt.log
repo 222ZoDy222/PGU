@@ -1,0 +1,112 @@
+[Environment]
+duration=128.000000
+seed=3600
+net_name=Firewall_Implementation_Reference-Without_Firewall_Implemented
+sim_log_delim=TAB
+
+[Run Info]
+run_date=13:44:28 Thu Aug 21 2003
+
+[Log Entries]
+0	867	Campus Network.Building_Subnet.CISCO PIX Firewall	Results	RIP	Performance	SYMPTOM(S): <NL>  1. No RIP routing updates past a certain <NL>  simulation time. <NL>  2. Lower than expected throughput or <NL>  utilization of the links. <NL>   <NL> CAUSE(S): <NL>  "RIP Sim Efficiency" simulation attribute <NL>  is set to "Enabled". <NL>   <NL> SUGGESTIONS: <NL>  Set "RIP Sim Efficiency" simulation <NL>  attribute to "Disabled". <NL>  
+5.0004228186	4561	Campus Network.Building_Subnet.70 Users Floor 1	Protocol	UDP	Packet Drop	SYMPTOM(S): <NL>  Discarding UDP datagram received (destined <NL>  for port number: 520) <NL>   <NL>  It is typical for end nodes (e.g., wkstn <NL>  and servers) to discard datagrams containing <NL>  RIP messages (i.e., port 520) and LDP (Label  <NL>  Distribution Protocol, port 646) messages.   <NL>  In that case, this message can be ignored. <NL>   <NL> EFFECT(S): <NL>  1. The datagram is discarded by the UDP. <NL>  2. Application data may not be received. <NL>  3. No Effects if the datagram was received <NL>     for port 520 and node is not using RIP. <NL>  4. No Effects if the datagram was received <NL>     for port 646 and node is not MPLS enabled. <NL>   <NL> SUGGESTIONS: <NL>  Make sure that the applications are <NL>  sending packets to a port that UDP <NL>  is listening on. <NL>   <NL>  This message will not be repeated. <NL>  
+16.6456778343	184008	Campus Network.Building_Subnet.Music and Video Server	Results	Application	No Results	WARNING(S): <NL>  Some local statistics for 'Voice' Application <NL>  under group "Voice Called Party" won't be <NL>  written. <NL>   <NL> REASON(S): <NL>  The number of local statistics under group <NL>  "Voice Called Party" is limited to 128 <NL>  for memory efficiency. <NL>   <NL>  Exceeding statistics won't be written	for <NL>  "Voice Called Party" group but will be <NL>  written for other statistic groups. <NL>   <NL> SUGGESTION(S): <NL>  If you are a modeler user, you can change the <NL>  statistic dimension in the Voice process model. <NL>  
+17.0486204129	188375	Campus Network.Building_Subnet.Music and Video Server	Results	Application	No Results	WARNING(S): <NL>  Some local statistics for 'Voice' Application <NL>  under group "Voice Called Party" won't be <NL>  written. <NL>   <NL> REASON(S): <NL>  The number of local statistics under group <NL>  "Voice Called Party" is limited to 128 <NL>  for memory efficiency. <NL>   <NL>  Exceeding statistics won't be written	for <NL>  "Voice Called Party" group but will be <NL>  written for other statistic groups. <NL>   <NL> SUGGESTION(S): <NL>  If you are a modeler user, you can change the <NL>  statistic dimension in the Voice process model. <NL>  
+17.5310209177	188893	Campus Network.Building_Subnet.Music and Video Server	Results	Application	No Results	WARNING(S): <NL>  Some local statistics for 'Voice' Application <NL>  under group "Voice Called Party" won't be <NL>  written. <NL>   <NL> REASON(S): <NL>  The number of local statistics under group <NL>  "Voice Called Party" is limited to 128 <NL>  for memory efficiency. <NL>   <NL>  Exceeding statistics won't be written	for <NL>  "Voice Called Party" group but will be <NL>  written for other statistic groups. <NL>   <NL> SUGGESTION(S): <NL>  If you are a modeler user, you can change the <NL>  statistic dimension in the Voice process model. <NL>  
+18.5009672088	195689	Campus Network.Building_Subnet.Music and Video Server	Results	Application	No Results	WARNING(S): <NL>  Some local statistics for 'Voice' Application <NL>  under group "Voice Called Party" won't be <NL>  written. <NL>   <NL> REASON(S): <NL>  The number of local statistics under group <NL>  "Voice Called Party" is limited to 128 <NL>  for memory efficiency. <NL>   <NL>  Exceeding statistics won't be written	for <NL>  "Voice Called Party" group but will be <NL>  written for other statistic groups. <NL>   <NL> SUGGESTION(S): <NL>  If you are a modeler user, you can change the <NL>  statistic dimension in the Voice process model. <NL>  
+18.6273414616	196151	Campus Network.Building_Subnet.Music and Video Server	Results	Application	No Results	WARNING(S): <NL>  Some local statistics for 'Voice' Application <NL>  under group "Voice Called Party" won't be <NL>  written. <NL>   <NL> REASON(S): <NL>  The number of local statistics under group <NL>  "Voice Called Party" is limited to 128 <NL>  for memory efficiency. <NL>   <NL>  Exceeding statistics won't be written	for <NL>  "Voice Called Party" group but will be <NL>  written for other statistic groups. <NL>   <NL> SUGGESTION(S): <NL>  If you are a modeler user, you can change the <NL>  statistic dimension in the Voice process model. <NL>  
+19.0929584877	197006	Campus Network.Building_Subnet.Music and Video Server	Results	Application	No Results	WARNING(S): <NL>  Some local statistics for 'Voice' Application <NL>  under group "Voice Called Party" won't be <NL>  written. <NL>   <NL> REASON(S): <NL>  The number of local statistics under group <NL>  "Voice Called Party" is limited to 128 <NL>  for memory efficiency. <NL>   <NL>  Exceeding statistics won't be written	for <NL>  "Voice Called Party" group but will be <NL>  written for other statistic groups. <NL>   <NL> SUGGESTION(S): <NL>  If you are a modeler user, you can change the <NL>  statistic dimension in the Voice process model. <NL>  
+19.4402086535	197770	Campus Network.Building_Subnet.Music and Video Server	Results	Application	No Results	WARNING(S): <NL>  Some local statistics for 'Voice' Application <NL>  under group "Voice Called Party" won't be <NL>  written. <NL>   <NL> REASON(S): <NL>  The number of local statistics under group <NL>  "Voice Called Party" is limited to 128 <NL>  for memory efficiency. <NL>   <NL>  Exceeding statistics won't be written	for <NL>  "Voice Called Party" group but will be <NL>  written for other statistic groups. <NL>   <NL> SUGGESTION(S): <NL>  If you are a modeler user, you can change the <NL>  statistic dimension in the Voice process model. <NL>  
+19.7147116653	198160	Campus Network.Building_Subnet.Music and Video Server	Results	Application	No Results	WARNING(S): <NL>  Some local statistics for 'Voice' Application <NL>  under group "Voice Called Party" won't be <NL>  written. <NL>   <NL> REASON(S): <NL>  The number of local statistics under group <NL>  "Voice Called Party" is limited to 128 <NL>  for memory efficiency. <NL>   <NL>  Exceeding statistics won't be written	for <NL>  "Voice Called Party" group but will be <NL>  written for other statistic groups. <NL>   <NL> SUGGESTION(S): <NL>  If you are a modeler user, you can change the <NL>  statistic dimension in the Voice process model. <NL>  
+20.2584181701	199123	Campus Network.Building_Subnet.Music and Video Server	Results	Application	No Results	WARNING(S): <NL>  Some local statistics for 'Voice' Application <NL>  under group "Voice Called Party" won't be <NL>  written. <NL>   <NL> REASON(S): <NL>  The number of local statistics under group <NL>  "Voice Called Party" is limited to 128 <NL>  for memory efficiency. <NL>   <NL>  Exceeding statistics won't be written	for <NL>  "Voice Called Party" group but will be <NL>  written for other statistic groups. <NL>   <NL> SUGGESTION(S): <NL>  If you are a modeler user, you can change the <NL>  statistic dimension in the Voice process model. <NL>  
+20.3080341552	199645	Campus Network.Building_Subnet.Music and Video Server	Results	Application	No Results	WARNING(S): <NL>  Some local statistics for 'Voice' Application <NL>  under group "Voice Called Party" won't be <NL>  written. <NL>   <NL> REASON(S): <NL>  The number of local statistics under group <NL>  "Voice Called Party" is limited to 128 <NL>  for memory efficiency. <NL>   <NL>  Exceeding statistics won't be written	for <NL>  "Voice Called Party" group but will be <NL>  written for other statistic groups. <NL>   <NL> SUGGESTION(S): <NL>  If you are a modeler user, you can change the <NL>  statistic dimension in the Voice process model. <NL>  
+20.3977509744	200258	Campus Network.Building_Subnet.Music and Video Server	Results	Application	No Results	WARNING(S): <NL>  Some local statistics for 'Voice' Application <NL>  under group "Voice Called Party" won't be <NL>  written. <NL>   <NL> REASON(S): <NL>  The number of local statistics under group <NL>  "Voice Called Party" is limited to 128 <NL>  for memory efficiency. <NL>   <NL>  Exceeding statistics won't be written	for <NL>  "Voice Called Party" group but will be <NL>  written for other statistic groups. <NL>   <NL> SUGGESTION(S): <NL>  If you are a modeler user, you can change the <NL>  statistic dimension in the Voice process model. <NL>  
+20.7613337535	201210	Campus Network.Building_Subnet.Music and Video Server	Results	Application	No Results	WARNING(S): <NL>  Some local statistics for 'Voice' Application <NL>  under group "Voice Called Party" won't be <NL>  written. <NL>   <NL> REASON(S): <NL>  The number of local statistics under group <NL>  "Voice Called Party" is limited to 128 <NL>  for memory efficiency. <NL>   <NL>  Exceeding statistics won't be written	for <NL>  "Voice Called Party" group but will be <NL>  written for other statistic groups. <NL>   <NL> SUGGESTION(S): <NL>  If you are a modeler user, you can change the <NL>  statistic dimension in the Voice process model. <NL>  
+20.9143367033	201871	Campus Network.Building_Subnet.Music and Video Server	Results	Application	No Results	WARNING(S): <NL>  Some local statistics for 'Voice' Application <NL>  under group "Voice Called Party" won't be <NL>  written. <NL>   <NL> REASON(S): <NL>  The number of local statistics under group <NL>  "Voice Called Party" is limited to 128 <NL>  for memory efficiency. <NL>   <NL>  Exceeding statistics won't be written	for <NL>  "Voice Called Party" group but will be <NL>  written for other statistic groups. <NL>   <NL> SUGGESTION(S): <NL>  If you are a modeler user, you can change the <NL>  statistic dimension in the Voice process model. <NL>  
+21.3294377841	203009	Campus Network.Building_Subnet.Music and Video Server	Results	Application	No Results	WARNING(S): <NL>  Some local statistics for 'Voice' Application <NL>  under group "Voice Called Party" won't be <NL>  written. <NL>   <NL> REASON(S): <NL>  The number of local statistics under group <NL>  "Voice Called Party" is limited to 128 <NL>  for memory efficiency. <NL>   <NL>  Exceeding statistics won't be written	for <NL>  "Voice Called Party" group but will be <NL>  written for other statistic groups. <NL>   <NL> SUGGESTION(S): <NL>  If you are a modeler user, you can change the <NL>  statistic dimension in the Voice process model. <NL>  
+21.6083754047	203649	Campus Network.Building_Subnet.Music and Video Server	Results	Application	No Results	WARNING(S): <NL>  Some local statistics for 'Voice' Application <NL>  under group "Voice Called Party" won't be <NL>  written. <NL>   <NL> REASON(S): <NL>  The number of local statistics under group <NL>  "Voice Called Party" is limited to 128 <NL>  for memory efficiency. <NL>   <NL>  Exceeding statistics won't be written	for <NL>  "Voice Called Party" group but will be <NL>  written for other statistic groups. <NL>   <NL> SUGGESTION(S): <NL>  If you are a modeler user, you can change the <NL>  statistic dimension in the Voice process model. <NL>  
+21.8282227994	204617	Campus Network.Building_Subnet.Music and Video Server	Results	Application	No Results	WARNING(S): <NL>  Some local statistics for 'Voice' Application <NL>  under group "Voice Called Party" won't be <NL>  written. <NL>   <NL> REASON(S): <NL>  The number of local statistics under group <NL>  "Voice Called Party" is limited to 128 <NL>  for memory efficiency. <NL>   <NL>  Exceeding statistics won't be written	for <NL>  "Voice Called Party" group but will be <NL>  written for other statistic groups. <NL>   <NL> SUGGESTION(S): <NL>  If you are a modeler user, you can change the <NL>  statistic dimension in the Voice process model. <NL>  
+22.622206493	205648	Campus Network.Building_Subnet.Music and Video Server	Results	Application	No Results	WARNING(S): <NL>  Some local statistics for 'Voice' Application <NL>  under group "Voice Called Party" won't be <NL>  written. <NL>   <NL> REASON(S): <NL>  The number of local statistics under group <NL>  "Voice Called Party" is limited to 128 <NL>  for memory efficiency. <NL>   <NL>  Exceeding statistics won't be written	for <NL>  "Voice Called Party" group but will be <NL>  written for other statistic groups. <NL>   <NL> SUGGESTION(S): <NL>  If you are a modeler user, you can change the <NL>  statistic dimension in the Voice process model. <NL>  
+23.615814827	209532	Campus Network.Building_Subnet.Music and Video Server	Results	Application	No Results	WARNING(S): <NL>  Some local statistics for 'Voice' Application <NL>  under group "Voice Called Party" won't be <NL>  written. <NL>   <NL> REASON(S): <NL>  The number of local statistics under group <NL>  "Voice Called Party" is limited to 128 <NL>  for memory efficiency. <NL>   <NL>  Exceeding statistics won't be written	for <NL>  "Voice Called Party" group but will be <NL>  written for other statistic groups. <NL>   <NL> SUGGESTION(S): <NL>  If you are a modeler user, you can change the <NL>  statistic dimension in the Voice process model. <NL>  
+3600	1980746	N/A	Config.	Event Manager	Performance	Try setting the 'event_speed_parameter' preference to (712515). <NL>   <NL> The advanced event management system in the Simulation <NL> Kernel can be tuned to maintain peak performance when <NL> simulating very large systems. Your trade-off is that <NL> higher values of event_speed_parameter require <NL> additional memory. <NL>   <NL> Optimal values depend on the type and size of models, <NL> so the value above is an estimate based on how this <NL> simulation performed. You may wish to experiment <NL> with different values and compare the simulation's <NL> performance. In general, increasing this parameter <NL> will not yield significant performance gains for small, <NL> lightly-loaded systems. <NL>  
+
+[Summary]
+Low-Lev.	Simulation	Error	0
+Config.	Transport_Interface	Setup	0
+Protocol	Transport_Interface	Data_Transmission	0
+Results	Transport_Interface	No_Results	0
+Low-Lev.	TCP	Kernel_Error	0
+Config.	TCP	Setup	0
+Protocol	TCP	Data_Transmission	0
+Protocol	IP	Higher Layer Protocol Register	0
+Protocol	OSPF	Protocol_Error	0
+Protocol	OSPF	Protocol_Warning	0
+Config.	OSPF	Model_Configuration_Error	0
+Config.	OSPF	Model_Configuration_Warning	0
+Low-Lev.	OSPF	KP_Invocation_Error	0
+Results	OSPF	Unexpected_Results	0
+Protocol	OSPF	LSDB_Export	0
+Config.	RIP	Attribute Settings	0
+Config.	RIP	Neighbor Modules	0
+Config.	UDP	Neighbor Modules	0
+Protocol	RIP	Timeouts	0
+Protocol	UDP	Packet Drop	1
+Results	RIP	Performance	1
+Low-Lev.	UDP	LLM Related	0
+Low-Lev.	UDP	Create Local Port	0
+Low-Lev.	RIP	Create UDP Receive Port	0
+Config.	RIP	Routing Table Configuration	0
+Low-Lev.	IP	Address_Mapping_via_NATO	0
+Protocol	IP	Protocol_Error	0
+Protocol	IP	Protocol_Warning	0
+Config.	IP	Model_Configuration_Error	0
+Config.	IP	Model_Configuration_Warning	0
+Low-Lev.	IP	KP_Invocation_Error	0
+Results	IP	Unexpected_Results	0
+Protocol	IP	Packet Drop	0
+Protocol	IP	Wireless2Intf_Auto_Assignment_Warning	0
+Protocol	IP	Static_Auto_Assignment_Warning	0
+Config.	Server	Undefined_Server	0
+Config.	Server	Undefined_Job_Class	0
+Config.	Server	Disk_Access	0
+Config.	Server	Disk_Definition	0
+Config.	Server	Raid	0
+Config.	Server	Job_Definition	0
+Config.	Server	Attribute_Definition	0
+Config.	Server	Advanced_Server_Configuration	0
+Low-Lev.	Server	Missing_Child_Process	0
+Low-Lev.	Server	Disk	0
+Low-Lev.	Server	Job_Interarrival	0
+Low-Lev.	Server	Missing_Information	0
+Low-Lev.	Server	Missing_Attribute	0
+Low-Lev.	Server	Invalid_Event_Handle	0
+Low-Lev.	Server	Remote Storage Access	0
+Low-Lev.	Server	Instance_Internal	0
+Protocol	BGP	Protocol_Error	0
+Protocol	BGP	Protocol_Warning	0
+Config.	BGP	Model_Configuration_Error	0
+Config.	BGP	Model_Configuration_Warning	0
+Results	BGP	Unexpected_Results	0
+Config.	Application	Setup	0
+Protocol	Application	Cli-Svr	0
+Results	Application	No Results	18
+Results	Application	Invalid Results	0
+Results	Application	Traffic Generation	0
+Config.	LAN Nodes	Warning	0
+Protocol	LAN Nodes	Protocol Warning	0
+Results	LAN Nodes	Performance	0
+Config.	Ethernet	Model Configuration	0
+Protocol	Ethernet	Packet Drop	0
+Results	Ethernet	Performance	0
+Results	Ethernet	No Results	0
+Results	ICMP	Performance	0
+Protocol	ICMP	Timeout	0
+Config.	IGMP Host	Model_Configuration_Warning	0
+Low-Lev.	IGMP Host	Model_Internals_Error	0
+Config.	Bridge	Setup	0
+Protocol	Bridge	Protocol	0
+Results	Bridge	No_Results	0
+Protocol	RSVP	Model Configuration Error	0
+Config.	Application	Background Traffic	0
+Config.	SIP	Signaling	0
+Config.	Event Manager	Performance	1
