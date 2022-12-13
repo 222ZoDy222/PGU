@@ -1,0 +1,26 @@
+
+[Log Info:]
+version :	1
+row_count :	1
+max_log_row :	5000
+max_file_row :	1000
+hide_date :	TRUE
+include_severity :	TRUE
+file_count :	1
+
+[File List:]
+2032_12-04-2022_17.39.24	1	17:39:27 Dec 04 2022	17:39:27 Dec 04 2022
+
+[Column Dependency List:]
+dependency_count :	1
+6	7
+
+
+[Summary]
+
+
+log_handle_column_count :	3
+5	Category	2	Low-Level
+6	Class	2	Simulation
+7	SubClass	2	Message
+incident_count :	0

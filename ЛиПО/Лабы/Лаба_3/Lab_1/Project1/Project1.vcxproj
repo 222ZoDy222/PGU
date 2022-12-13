@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="PostfixCreator.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="SyntaxAnalizator.cpp" />
     <ClCompile Include="SyntaxFunc.cpp" />
