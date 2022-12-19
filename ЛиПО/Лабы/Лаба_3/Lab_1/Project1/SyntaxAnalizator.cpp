@@ -93,6 +93,7 @@ void SyntaxAnalizator(std::vector<Word> words)
 
 		cout << "\nNice!";
 
+		CreatePostfix(expression);
 
 
 
@@ -211,7 +212,7 @@ void Prog()
 			Next();
 			// Если ":"
 			if (curWord.lecsemType == 3) {
-				AddVarExpression(curWord);
+				//AddVarExpression(curWord);
 				Next();
 				// Если "="
 				if (curWord.lecsemType == 4) {
@@ -220,7 +221,7 @@ void Prog()
 					V();
 					// Если ";"
 					if (curWord.lecsemType == 2) {
-						AddVarExpression(curWord);
+						//AddVarExpression(curWord);
 						Next();
 					}
 					else {
@@ -358,7 +359,7 @@ void ProgWhile()
 			Next();
 			// Если ":"
 			if (curWord.lecsemType == 3) {
-				AddVarExpression(curWord);
+				//AddVarExpression(curWord);
 				Next();
 				// Если "="
 				if (curWord.lecsemType == 4) {
@@ -367,7 +368,7 @@ void ProgWhile()
 					V();
 					// Если ";"
 					if (curWord.lecsemType == 2) {
-						AddVarExpression(curWord);
+						//AddVarExpression(curWord);
 						Next();
 					}
 					else {

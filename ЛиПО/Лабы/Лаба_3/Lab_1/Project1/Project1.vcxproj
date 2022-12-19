@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Oleg.cpp" />
     <ClCompile Include="PostfixCreator.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="SyntaxAnalizator.cpp" />
@@ -147,6 +148,7 @@
   <ItemGroup>
     <ClInclude Include="Lecsems.h" />
     <ClInclude Include="Main.h" />
+    <ClInclude Include="PostfixCreator.h" />
     <ClInclude Include="Prototypes.h" />
     <ClInclude Include="SyntaxFunc.h" />
   </ItemGroup>
