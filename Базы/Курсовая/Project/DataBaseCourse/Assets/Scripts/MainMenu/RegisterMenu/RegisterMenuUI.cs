@@ -34,29 +34,28 @@ public class RegisterMenuUI : MonoBehaviour
 
     private void Start()
     {
-        //AddListeners();
-        Test();
+        AddListeners();
+        
     }
 
-    private void Test()
+    public void ShowMenu()
     {
-        WebManager.Registration("f", "f", (msg) =>
-        {
-            testClass testVar = JsonUtility.FromJson<testClass>(msg);
-            Debug.Log(testVar.name);
-            Debug.Log(testVar.var);
-        });
+        ClearFields();
     }
 
-    private class testClass
+    private void ClearFields()
     {
-        public string var;
-
-        public string name;
+        DeleteListeners();
+        regNameField.text = "";
+        authNameField.text = "";
+        regPassField.text = "";
+        authPassField.text = "";
+        AddListeners();
     }
 
     private void AddListeners()
     {
+        goToReg();
         CheckFields();
         regNameField.onValueChanged.AddListener((msg) =>
         {
@@ -70,7 +69,7 @@ public class RegisterMenuUI : MonoBehaviour
         });
         authNameField.onValueChanged.AddListener((msg) =>
         {
-            authPass = msg;
+            authName = msg;
             CheckFields();
         });
         authPassField.onValueChanged.AddListener((msg) =>
@@ -78,12 +77,43 @@ public class RegisterMenuUI : MonoBehaviour
             authPass = msg;
             CheckFields();
         });
+
+        authButtonSwitch.onClick.AddListener(goToAuth);
+
+        regButtonSwitch.onClick.AddListener(goToReg);
+
+    }
+
+    private void DeleteListeners()
+    {
+        regNameField.onValueChanged.RemoveAllListeners();
+        regPassField.onValueChanged.RemoveAllListeners();
+        authNameField.onValueChanged.RemoveAllListeners();
+        authPassField.onValueChanged.RemoveAllListeners();
+
+        authButtonSwitch.onClick.RemoveAllListeners();
+
+        regButtonSwitch.onClick.RemoveAllListeners();
+    }
+
+    private void goToAuth()
+    {
+        regMenuCanvas.AlphaAndRaycastToggle(false);
+        authMenuCanvas.AlphaAndRaycastToggle(true);
+    }
+
+    private void goToReg()
+    {
+        authMenuCanvas.AlphaAndRaycastToggle(false);
+        regMenuCanvas.AlphaAndRaycastToggle(true);
     }
 
     private void CheckFields()
     {
+        UndefinedUser(false);
+        NameExist(false);
         // Если оба поля регистрации заполнены
-        if(regName != "" && regPass != "")
+        if (regName != "" && regPass != "")
         {
             regButton.gameObject.SetActive(true);
         } else
@@ -102,12 +132,72 @@ public class RegisterMenuUI : MonoBehaviour
 
     public void Registration()
     {
+        WebManager.Registration(regName, regPass, (msg) =>
+        {
+            User user = JsonUtility.FromJson<User>(msg);
+            
+            // Если пользователь зарегестрировался
+            if(user.userID != 0)
+            {
+                // ИМя уже занято
+                if(user.username == NAME_EXIST)
+                {
+                    NameExist(true);
+                    return;
+                } 
+                UserInfo.user = user;
+                MenuSwitcher.instance.ShowProfileMenu();
+                Debug.Log("Пользователь зарегестрировался");
+            } 
+            else
+            {
+                Debug.Log("Пользователь НЕ зарегестрировался");
+            }
 
+        });
     }
+
+    [SerializeField] private TMP_Text nameExistTextError;
+    private void NameExist(bool flag)
+    {
+        nameExistTextError.gameObject.SetActive(flag);
+    }
+
+
+
+    // Если имя уже занято, то в username будет эта строка
+    public const string NAME_EXIST= "-AlreadyExist1925109251";
+
+    [SerializeField] private TMP_Text userUndefined;
+    private void UndefinedUser(bool flag)
+    {
+        userUndefined.gameObject.SetActive(flag);
+    }
+
 
     public void Authenfication()
     {
+        WebManager.Authentication(authName, authPass, (msg) =>
+        {
+            User user = JsonUtility.FromJson<User>(msg);
 
+            // Если пользователя нет
+            if (user.userID != 0)
+            {
+                
+                UserInfo.user = user;
+                MenuSwitcher.instance.ShowProfileMenu();
+                Debug.Log("Пользователь авторизировался");
+            }
+            else
+            {
+                UndefinedUser(true);
+                Debug.Log("Пользователь НЕ авторезировался");
+            }
+
+        });
     }
 
+
 }
+

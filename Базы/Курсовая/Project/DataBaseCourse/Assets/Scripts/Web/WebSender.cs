@@ -23,6 +23,7 @@ public class WebSender : MonoBehaviour
             if (data != null)
             {
                 string result = System.Text.Encoding.UTF8.GetString(data);
+                //Debug.Log(result);
                 callback.Invoke(result);
             }
             else
@@ -67,7 +68,7 @@ public class WebSender : MonoBehaviour
 
         if (www.result != UnityWebRequest.Result.Success)
         {
-            Debug.Log(www.error);
+            //Debug.Log(www.error);
             callback.Invoke(null);
         }
         else
@@ -90,7 +91,7 @@ public class WebSender : MonoBehaviour
 
         if (www.result != UnityWebRequest.Result.Success)
         {
-            Debug.Log(www.error);
+            //Debug.Log(www.error);
             callback.Invoke(null);
         }
         else

@@ -1,0 +1,14 @@
+D:\Универ\PGU\АКП\Лаба_6\Lab6\Lab6\bin\Debug\netcoreapp3.1\Lab6.exe
+D:\Универ\PGU\АКП\Лаба_6\Lab6\Lab6\bin\Debug\netcoreapp3.1\Lab6.deps.json
+D:\Универ\PGU\АКП\Лаба_6\Lab6\Lab6\bin\Debug\netcoreapp3.1\Lab6.runtimeconfig.json
+D:\Универ\PGU\АКП\Лаба_6\Lab6\Lab6\bin\Debug\netcoreapp3.1\Lab6.runtimeconfig.dev.json
+D:\Универ\PGU\АКП\Лаба_6\Lab6\Lab6\bin\Debug\netcoreapp3.1\Lab6.dll
+D:\Универ\PGU\АКП\Лаба_6\Lab6\Lab6\bin\Debug\netcoreapp3.1\Lab6.pdb
+D:\Универ\PGU\АКП\Лаба_6\Lab6\Lab6\obj\Debug\netcoreapp3.1\Lab6.csproj.AssemblyReference.cache
+D:\Универ\PGU\АКП\Лаба_6\Lab6\Lab6\obj\Debug\netcoreapp3.1\Lab6.GeneratedMSBuildEditorConfig.editorconfig
+D:\Универ\PGU\АКП\Лаба_6\Lab6\Lab6\obj\Debug\netcoreapp3.1\Lab6.AssemblyInfoInputs.cache
+D:\Универ\PGU\АКП\Лаба_6\Lab6\Lab6\obj\Debug\netcoreapp3.1\Lab6.AssemblyInfo.cs
+D:\Универ\PGU\АКП\Лаба_6\Lab6\Lab6\obj\Debug\netcoreapp3.1\Lab6.csproj.CoreCompileInputs.cache
+D:\Универ\PGU\АКП\Лаба_6\Lab6\Lab6\obj\Debug\netcoreapp3.1\Lab6.dll
+D:\Универ\PGU\АКП\Лаба_6\Lab6\Lab6\obj\Debug\netcoreapp3.1\Lab6.pdb
+D:\Универ\PGU\АКП\Лаба_6\Lab6\Lab6\obj\Debug\netcoreapp3.1\Lab6.genruntimeconfig.cache
