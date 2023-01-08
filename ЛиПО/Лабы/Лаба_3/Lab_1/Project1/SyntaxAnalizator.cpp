@@ -95,7 +95,7 @@ void SyntaxAnalizator(std::vector<Word> words)
 
 		CreatePostfix(expression);
 
-
+		StartCodeGeneretaion();
 
 	}
 
@@ -278,7 +278,7 @@ void W()
 		V();
 		// Если ")"
 		if (curWord.lecsemType == 13) {
-			AddVarExpression(curWord);
+			//AddVarExpression(curWord);
 			Next();
 		}
 

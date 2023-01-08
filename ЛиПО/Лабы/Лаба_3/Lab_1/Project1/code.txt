@@ -1,0 +1,38 @@
+LIT 15
+LIT 2
+SUB
+STO c
+
+LOAD c
+LOAD c
+SUB
+DIV
+LOAD d
+LOAD g
+MUL
+ADD
+STO d
+
+LIT 12
+STO e
+
+LIT 3
+STO g
+
+LOAD b
+STO a
+
+LOAD a
+LIT 1
+ADD
+STO a
+
+LOAD a
+STO b
+
+LOAD g
+LIT 1
+LOAD g
+SUB
+STO g
+

@@ -72,6 +72,8 @@ int prec(string c)
 		return -1;
 }
 
+
+
 vector<Word> infixToPostfix(vector<Word> s)
 {
 
@@ -98,7 +100,7 @@ vector<Word> infixToPostfix(vector<Word> s)
 		// pop and to output string from the stack
 		// until an ‘(‘ is encountered.
 		else if (c.lecsemType == 13) {
-			while (st.top().lecsemType != 12) {
+			while (!st.empty() && st.top().lecsemType != 12) {
 				result.push_back(st.top());
 				st.pop();
 			}
@@ -107,17 +109,11 @@ vector<Word> infixToPostfix(vector<Word> s)
 
 		// If an operator is scanned
 		else {
-			if (st.size() != 0) {
-				auto lastPrior = priority.find(st.top().word);
-				auto curPrior = priority.find(s[i].word);
-				while (!st.empty()
-					&& curPrior->second <= lastPrior->second)
-				{
-					result.push_back(st.top());
-					st.pop();
-				}
+			while (!st.empty()
+				&& prec(s[i].word) <= prec(st.top().word)) {
+				result.push_back(st.top());
+				st.pop();
 			}
-			
 			st.push(c);
 		}
 	}

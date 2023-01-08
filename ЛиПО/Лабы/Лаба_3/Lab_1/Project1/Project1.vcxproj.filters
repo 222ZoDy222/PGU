@@ -30,6 +30,9 @@
     <ClCompile Include="Oleg.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="CodeGeneration.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lecsems.h">
@@ -45,6 +48,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="PostfixCreator.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeGeneration.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
