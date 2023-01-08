@@ -1,0 +1,16 @@
+D:\универ\PGU\АКП\Лаба 6 прога\lab6Again\bin\Debug\net5.0\lab6Again.exe
+D:\универ\PGU\АКП\Лаба 6 прога\lab6Again\bin\Debug\net5.0\lab6Again.deps.json
+D:\универ\PGU\АКП\Лаба 6 прога\lab6Again\bin\Debug\net5.0\lab6Again.runtimeconfig.json
+D:\универ\PGU\АКП\Лаба 6 прога\lab6Again\bin\Debug\net5.0\lab6Again.runtimeconfig.dev.json
+D:\универ\PGU\АКП\Лаба 6 прога\lab6Again\bin\Debug\net5.0\lab6Again.dll
+D:\универ\PGU\АКП\Лаба 6 прога\lab6Again\bin\Debug\net5.0\ref\lab6Again.dll
+D:\универ\PGU\АКП\Лаба 6 прога\lab6Again\bin\Debug\net5.0\lab6Again.pdb
+D:\универ\PGU\АКП\Лаба 6 прога\lab6Again\obj\Debug\net5.0\lab6Again.csproj.AssemblyReference.cache
+D:\универ\PGU\АКП\Лаба 6 прога\lab6Again\obj\Debug\net5.0\lab6Again.GeneratedMSBuildEditorConfig.editorconfig
+D:\универ\PGU\АКП\Лаба 6 прога\lab6Again\obj\Debug\net5.0\lab6Again.AssemblyInfoInputs.cache
+D:\универ\PGU\АКП\Лаба 6 прога\lab6Again\obj\Debug\net5.0\lab6Again.AssemblyInfo.cs
+D:\универ\PGU\АКП\Лаба 6 прога\lab6Again\obj\Debug\net5.0\lab6Again.csproj.CoreCompileInputs.cache
+D:\универ\PGU\АКП\Лаба 6 прога\lab6Again\obj\Debug\net5.0\lab6Again.dll
+D:\универ\PGU\АКП\Лаба 6 прога\lab6Again\obj\Debug\net5.0\ref\lab6Again.dll
+D:\универ\PGU\АКП\Лаба 6 прога\lab6Again\obj\Debug\net5.0\lab6Again.pdb
+D:\универ\PGU\АКП\Лаба 6 прога\lab6Again\obj\Debug\net5.0\lab6Again.genruntimeconfig.cache
