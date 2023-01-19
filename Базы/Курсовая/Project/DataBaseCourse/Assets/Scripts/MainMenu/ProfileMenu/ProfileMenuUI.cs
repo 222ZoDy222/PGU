@@ -15,6 +15,8 @@ public class ProfileMenuUI : MonoBehaviour
 
         UserInfo.onUserUpdate += OnUserUpdate;
 
+        HideUsersWithFilesUI();
+
     }
 
     private void OnUserUpdate()
@@ -29,6 +31,50 @@ public class ProfileMenuUI : MonoBehaviour
 
     }
 
+
+
+
+    [SerializeField] private RectTransform usersWithFilesContainer;
+    [SerializeField] private UserWithFilesUI userWithFilesUIPrefab;
+    [SerializeField] private CanvasGroup usersWithFilesCanvas;
+    public void ShowUsersWithFilesUI()
+    {
+        usersWithFilesCanvas.AlphaAndRaycastToggle(true);
+        WebManager.GetBestUsers((msg) =>
+        {
+            Debug.Log(msg);
+            if (msg != null)
+            {
+                UserWithFiles[] users = JsonHelper.FromJson<UserWithFiles>(msg);
+                if (users != null && users.Length != 0)
+                {
+                    for (int i = 0; i < users.Length; i++)
+                    {
+                        SpawnUserWithFiles(users[i]);
+                    }
+                    
+
+                }
+
+
+
+            }
+            else
+            {
+                HideUsersWithFilesUI();
+            }
+        });
+    }
+
+    public void HideUsersWithFilesUI()
+    {
+        usersWithFilesCanvas.AlphaAndRaycastToggle(false);
+    }
+
+    private void SpawnUserWithFiles(UserWithFiles user)
+    {
+        Instantiate(userWithFilesUIPrefab, usersWithFilesContainer).Init(user);
+    }
 
 
 

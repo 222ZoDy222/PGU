@@ -71,3 +71,11 @@ public class Task
 }
 
 
+[Serializable]
+public class UserWithFiles
+{
+    public string username;
+    public int countOFFiles;
+}
+
+

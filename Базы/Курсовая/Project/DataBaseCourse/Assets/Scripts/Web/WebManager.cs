@@ -204,6 +204,14 @@ public class WebManager : MonoBehaviour
     #endregion
 
 
+    private const string GET_BEST_USERS_ACT = "46";
+    public static void GetBestUsers(Action<string> callback)
+    {
+        string post = $"act={GET_BEST_USERS_ACT}";
+        instance.webSender.PostQueryOnServer(post, QUESTIONS_URL, callback);
+    }
+
+
 
 
     #region USERS
