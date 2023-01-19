@@ -11,11 +11,13 @@ public class MenuSwitcher : MonoBehaviour
 	[SerializeField] private CanvasGroup 
 		registrationMenuCanvas,
 		profileMenuCanvas,
-		subjectsMenuCanvas
-		;
+		subjectsMenuCanvas,
+		mineLabsCanvas,
+		tasksMenuCanvas;
 
 	[SerializeField] private RegisterMenuUI registerMenuUI;
 	[SerializeField] private SubjectsMenuUI subjectsMenuUI;
+	[SerializeField] private MineLabsMenuUI mineLabsMenuUI;
 
 	private void Awake()
     {
@@ -34,6 +36,8 @@ public class MenuSwitcher : MonoBehaviour
 		registrationMenuCanvas.AlphaAndRaycastToggle(false);
 		profileMenuCanvas.AlphaAndRaycastToggle(false);
 		subjectsMenuCanvas.AlphaAndRaycastToggle(false);
+		mineLabsCanvas.AlphaAndRaycastToggle(false);
+		tasksMenuCanvas.AlphaAndRaycastToggle(false);
 	}
 
 	public void ShowRegistrationMenu()
@@ -54,6 +58,14 @@ public class MenuSwitcher : MonoBehaviour
 		HideAll();
 		subjectsMenuCanvas.AlphaAndRaycastToggle(true);
 		subjectsMenuUI.Show();
+
+	}
+
+	public void ShowMineLabs()
+    {
+		HideAll();
+		mineLabsCanvas.AlphaAndRaycastToggle(true);
+		mineLabsMenuUI.SpawnMineLabs();
 
 	}
 

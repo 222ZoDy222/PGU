@@ -23,16 +23,24 @@ public class SubjectsMenuUI : MonoBehaviour
 
     public Action<int> onSubjectPickAction;
 
-    public Action<int> onTaskPickAction;
+    public Action<Task> onTaskPickAction;
+
+    private List<Task> tasks = new List<Task>();
+
+    private int selectedSubject = -1;
+    private List<Subject> subjects = new List<Subject>();
+   
 
     private void Start()
     {
         onSubjectPickAction = OnSubjectPick;
+        onTaskPickAction = OnTaskPick;
     }
 
 
     private void OnSubjectPick(int idSubject)
     {
+        selectedSubject = idSubject;
         ShowTasksContainer();
         GetTasksForSubject(idSubject);
     }
@@ -75,7 +83,8 @@ public class SubjectsMenuUI : MonoBehaviour
 
     private void GetTasksForSubject(int subject_id)
     {
-        WebManager.GetTasks(subject_id, (msg) =>
+        ClearTasks();
+        WebManager.GetTasksBySubject(subject_id, (msg) =>
          {
              Debug.Log(msg);
              if(msg != null)
@@ -90,9 +99,16 @@ public class SubjectsMenuUI : MonoBehaviour
          });
     }
 
+
+    private void ClearTasks()
+    {
+        tasks.Clear();
+        tasksContainer.DestroyAllChildren();
+    }
+
     private void SpawnSubjects(Subject[] subjects)
     {
-
+        this.subjects.Clear();
         for (int i = 0; i < subjects.Length; i++)
         {
             SpawnSubject(subjects[i]);
@@ -103,6 +119,7 @@ public class SubjectsMenuUI : MonoBehaviour
     private void SpawnSubject(Subject sub)
     {
         Instantiate(subjectPrefab, subjectsContainer).Init(sub, onSubjectPickAction);
+        subjects.Add(sub);
     }
 
     private void SpawnTasks(Task[] tasks)
@@ -110,6 +127,7 @@ public class SubjectsMenuUI : MonoBehaviour
         for (int i = 0; i < tasks.Length; i++)
         {
             SpawnTask(tasks[i]);
+            this.tasks.Add(tasks[i]);
         }
     }
 
@@ -121,13 +139,100 @@ public class SubjectsMenuUI : MonoBehaviour
     private void ClearAllContainers()
     {
         subjectsContainer.DestroyAllChildren();
-        tasksContainer.DestroyAllChildren();
+        if(tasksContainer) tasksContainer.DestroyAllChildren();
     }
 
     private void ClearTaskContainer()
     {
         tasksContainer.DestroyAllChildren();
+        tasks.Clear();
     }
+
+    private void OnTaskPick(Task task)
+    {
+        for (int i = 0; i < tasks.Count; i++)
+        {
+            if (tasks[i] == task)
+            {
+                TaskMenuUI.Show(tasks[i]);
+            }
+        }
+    }
+
+
+
+
+    [Header("Adders")]
+    [SerializeField] private GameObject taskAdderContainer;
+    [SerializeField] private GameObject subjectAdderContainer;
+
+    [SerializeField] private TMP_InputField subjectNameField, taskNameField;
+
+    [SerializeField] private GameObject errorNameSubjectContainer;
+
+    public void ShowCreateSubjectContainer()
+    {
+        errorNameSubjectContainer.SetActive(false);
+        subjectAdderContainer.SetActive(true);
+    }
+    public void CloseCreateSubjectContainer()
+    {
+        subjectAdderContainer.SetActive(false);
+    }
+
+    public void CreateNewSubject()
+    {
+        if (subjectNameField.text == "") return;
+
+        WebManager.CreateNewSubject(subjectNameField.text, (msg) =>
+        {
+            Debug.Log(msg);
+            if(msg == "-1")
+            {
+                errorNameSubjectContainer.SetActive(true);
+            } else if(msg == "1")
+            {
+                CloseCreateSubjectContainer();
+                ClearAllContainers();
+                GetAllSubjects();
+                
+            }
+        });
+
+    }
+
+    public void ShowCreateTaskContainer()
+    {
+        
+        taskAdderContainer.SetActive(true);
+    }
+    public void CloseCreateTaskContainer()
+    {
+        taskAdderContainer.SetActive(false);
+    }
+
+    public void CreateNewTask()
+    {
+        if (taskNameField.text == "") return;
+
+        WebManager.CreateNewTask(taskNameField.text, selectedSubject, (msg) =>
+        {
+            Debug.Log(msg);
+            if (msg == "-1")
+            {
+                errorNameSubjectContainer.SetActive(true);
+            }
+            else if (msg == "1")
+            {
+                CloseCreateTaskContainer();
+                ClearTaskContainer();
+                GetTasksForSubject(selectedSubject);
+                
+            }
+        });
+
+    }
+
 
 
 }

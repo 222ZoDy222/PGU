@@ -75,6 +75,8 @@ public class WebSender : MonoBehaviour
         {
             callback.Invoke(www.downloadHandler.data);
         }
+
+        www.Dispose();
     }
 
 
@@ -98,6 +100,8 @@ public class WebSender : MonoBehaviour
         {
             callback.Invoke(www.downloadHandler.data);
         }
+
+        www.Dispose();
     }
 
 

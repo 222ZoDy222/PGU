@@ -38,9 +38,9 @@ public class File
     public string file;
     public string date;
     public string comment;
-    public int user_id;
-    public int task_id;
-    public int file_id;
+    public int users_idusers;
+    public int Task_idTask;
+    public int id_file;
 
 }
 [Serializable]

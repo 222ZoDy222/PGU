@@ -10,11 +10,11 @@ public class TaskUI : MonoBehaviour, IPointerClickHandler
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private TMP_Text dateText;
 
-    Action<int> onPick;
+    Action<Task> onPick;
     public Task currentTask;
 
 
-    public void Init(Task task, Action<int> pick)
+    public void Init(Task task, Action<Task> pick)
     {
         currentTask = task;
         nameText.text = currentTask.task_name;
@@ -24,7 +24,7 @@ public class TaskUI : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        onPick?.Invoke(currentTask.subject_id);
+        onPick?.Invoke(currentTask);
 
 
 

@@ -5,8 +5,17 @@ public static class JsonHelper
 {
     public static T[] FromJson<T>(string json)
     {
-        Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(json);
-        return wrapper.Items;
+        if (json == null) return null;
+        try
+        {
+            Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(json);
+            return wrapper.Items;
+        } catch
+        {
+            return null;
+        }
+        
+        
     }
 
     public static string ToJson<T>(T[] array)
