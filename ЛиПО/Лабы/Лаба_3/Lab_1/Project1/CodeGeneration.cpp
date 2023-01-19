@@ -19,7 +19,7 @@ using std::vector;
 using std::pair;
 using std::to_string;
 using std::map;
-void translitIf(ifstream& file, ofstream& out);
+void translitDoWhile(ifstream& file, ofstream& out);
 char GenLable();
 string GetCommand(string lex);
 bool GenCode(ifstream& file, ofstream& out);
@@ -51,47 +51,12 @@ bool GenCode(ifstream& file, ofstream& out)
 	}
 	while (getline(file, str))
 	{
-		if ("IF" == str)
+		// Если в коде DO
+		if ("do" == str || "DO" == str)
 		{
-			//getline(file, str);
-			//string firstLex = TranslitExpression(str);
-			//out << "LOAD " + firstLex + "\n";
-			//out << "LIT 0\n"; //в сетек помещается 0, чтобы сравнить с рещультатом выражения
-			//string label = std::to_string(GenLable());
-			//string endLabel = std::to_string(GenLable());
-			//out << "JEQ " + label + "\n"; // если равен нулю, то есть false
-			//getline(file, str);
-			//getline(file, str);// пропуск THEN
-			translitIf(file, out);
-			//while (str != "ELSE" && str != "ENDIF")
-			//{
-			//	 //done
-			//	if (str == "IF")
-			//	{
-			//		translitIf(file);
-			//	}
-			//	else
-			//	{
-			//		TranslitExpression(str);
-			//	}
-			//	getline(file, str);
-			//}
-			//if (str == "ELSE")
-			//{
-			//	out << "JMP " + endLabel + "\n"; //если встретился else, то перед ним нужно выполнить безусловный переход
-			//	out << label + ":\n"; // по этой метке выплолняется вход в блок else
-			//	getline(file, str); //пропуск else
-			//	while (str != "ENDIF")
-			//	{
-			//		TranslitExpression(str);
-			//		getline(file, str);
-			//	}
-			//	out << endLabel + ":\n"; //По этой метке выход из условия
-			//}
-			//else if (str == "ENDIF") // при отсутствии else используется одна метка
-			//{
-			//	out << label + ":\n";
-			//}
+			
+			translitDoWhile(file, out);
+			
 		}
 		else
 		{
@@ -189,7 +154,7 @@ char GenLable()
 }
 
 
-void translitIf(ifstream& file, ofstream& out)
+void translitDoWhile(ifstream& file, ofstream& out)
 {
 	string str{};
 	getline(file, str);
@@ -202,11 +167,11 @@ void translitIf(ifstream& file, ofstream& out)
 	getline(file, str);
 	getline(file, str);// пропуск THEN
 
-	while (str != "ELSE" && str != "ENDIF")
+	while (str != "while" && str != "WHILE")
 	{
-		if (str == "IF")
+		if (str == "DO" || str == "do")
 		{
-			translitIf(file, out);
+			translitDoWhile(file, out);
 		}
 		else
 		{

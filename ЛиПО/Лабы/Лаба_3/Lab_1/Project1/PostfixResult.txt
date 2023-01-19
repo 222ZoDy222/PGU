@@ -2,7 +2,10 @@ c 15 2 - =
 d c c - / d g * + = 
 e 12 = 
 g 3 = 
+do 
 a b = 
 a a 1 + = 
 b a = 
-g g 1 g - = 
+g g 1 - = 
+while 
+g 

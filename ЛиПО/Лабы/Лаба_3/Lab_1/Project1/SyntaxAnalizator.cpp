@@ -29,18 +29,20 @@ void CreateNewExpression(Word word)
 {
 
 	std::vector<Word> newVector;
+	
 	newVector.push_back(word);
 
 	expression.push_back(newVector);
 
 }
 
+
 void AddVarExpression(Word word) 
 {
 	int firstSize = expression.size() - 1;
 	int secondSize = expression[firstSize].size()-1;
-	// Если последнее слово == ;
-	if (expression[firstSize][secondSize].lecsemType == 2) {
+	// Если последнее слово == ; или while
+	if (expression[firstSize][secondSize].lecsemType == 2 || expression[firstSize][secondSize].lecsemType == 14) {
 		CreateNewExpression(word);
 	}
 	else {
@@ -199,6 +201,7 @@ void Prog()
 	{
 		// Если DO
 		if (curWord.lecsemType == 11) {
+			CreateNewExpression(curWord);
 			Next();
 			ProgWhile();
 		}
@@ -397,7 +400,9 @@ void ProgWhile()
 		// Если WHILE
 		else if (curWord.lecsemType == 14) {
 			haveWhile = true;
+			CreateNewExpression(curWord);
 			Next();
+			
 			V();
 		}
 		else {
