@@ -52,7 +52,7 @@ bool GenCode(ifstream& file, ofstream& out)
 	while (getline(file, str))
 	{
 		// Если в коде DO
-		if ("do" == str || "DO" == str)
+		if ("do " == str || "DO " == str)
 		{
 			
 			translitDoWhile(file, out);
@@ -134,10 +134,7 @@ string GetCommand(string lex)
 	{
 		command = ("LIT " + lex);
 	}
-	//else if ("=" == lex)
-	//{
-	//	command = ("LIT " + lex);
-	//}
+	
 	else
 	{
 		auto comm = operand_command.find(lex);
@@ -153,23 +150,22 @@ char GenLable()
 	return index;
 }
 
+static int FuncCounter = 1;
 
 void translitDoWhile(ifstream& file, ofstream& out)
 {
 	string str{};
 	getline(file, str);
 	string firstLex = TranslitExpression(str, out);
-	out << "LOAD " + firstLex + "\n";
-	out << "LIT 0\n"; //в сетек помещается 0, чтобы сравнить с рещультатом выражения
-	string label = std::to_string(GenLable());
-	string endLabel = std::to_string(GenLable());
-	out << "JEQ " + label + "\n"; // если равен нулю, то есть false
-	getline(file, str);
-	getline(file, str);// пропуск THEN
+	out << "JMP s" + to_string(++FuncCounter) + "\n";
+	out << "s" + to_string(FuncCounter) + ":" + "\n";
 
-	while (str != "while" && str != "WHILE")
+	int localFuncCounter = FuncCounter;
+
+	getline(file, str);
+	while (str != "while " && str != "WHILE ")
 	{
-		if (str == "DO" || str == "do")
+		if (str == "DO " || str == "do ")
 		{
 			translitDoWhile(file, out);
 		}
@@ -179,20 +175,20 @@ void translitDoWhile(ifstream& file, ofstream& out)
 		}
 		getline(file, str);
 	}
-	if (str == "ELSE")
+
+	if (str == "while " || str == "WHILE ")
 	{
-		out << "JMP " + endLabel + "\n"; //если встретился else, то перед ним нужно выполнить безусловный переход
-		out << label + ":\n"; // по этой метке выплолняется вход в блок else
-		getline(file, str); //пропуск else
-		while (str != "ENDIF")
-		{
-			TranslitExpression(str, out);
-			getline(file, str);
-		}
-		out << endLabel + ":\n"; //По этой метке выход из условия
+		getline(file, str);
+		TranslitExpression(str, out);
+
+		out << "LIT 1\n"; //в сетек помещается 0, чтобы сравнить с рещультатом выражения
+		out << "JEQ s" + to_string(localFuncCounter) + "\n"; // если равен нулю, то есть false
+
 	}
-	else if (str == "ENDIF") // при отсутствии else используется одна метка
-	{
-		out << label + ":\n";
-	}
+	
+	getline(file, str);
+	
+
+	
+	
 }

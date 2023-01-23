@@ -1,0 +1,53 @@
+LIT 1
+LIT 8
+LOAD c
+MUL
+ADD
+STO a
+
+LIT 7
+LOAD a
+LIT 3
+DIV
+ADD
+STO b
+
+LIT 1
+LIT 3
+ADD
+STO a
+
+LOAD a
+LIT 0
+JNE 1
+LOAD a
+LOAD b
+MUL
+STO c
+
+LIT 3
+LIT 2
+DIV
+STO a
+
+LOAD a
+LIT 0
+JEQ 3
+LIT 1
+LIT 8
+LIT 9
+MUL
+SUB
+LOAD f
+ADD
+STO f
+
+3:
+JMP 2
+1:
+LOAD a
+LOAD b
+DIV
+STO c
+
+2:
