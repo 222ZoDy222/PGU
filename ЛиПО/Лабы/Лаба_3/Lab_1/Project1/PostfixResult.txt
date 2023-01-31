@@ -8,4 +8,4 @@ a a 1 + =
 b a = 
 g g 1 - = 
 while 
-g 
+g 1 + 

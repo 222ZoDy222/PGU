@@ -150,15 +150,16 @@ char GenLable()
 	return index;
 }
 
-static int FuncCounter = 1;
+static int FuncCounter = 0;
 
 void translitDoWhile(ifstream& file, ofstream& out)
 {
+	// do
 	string str{};
 	getline(file, str);
 	string firstLex = TranslitExpression(str, out);
-	out << "JMP s" + to_string(++FuncCounter) + "\n";
-	out << "s" + to_string(FuncCounter) + ":" + "\n";
+	//out << "JMP s" + to_string(++FuncCounter) + "\n";
+	out << "s" + to_string(++FuncCounter) + ":" + "\n";
 
 	int localFuncCounter = FuncCounter;
 
@@ -181,8 +182,8 @@ void translitDoWhile(ifstream& file, ofstream& out)
 		getline(file, str);
 		TranslitExpression(str, out);
 
-		out << "LIT 1\n"; //в сетек помещается 0, чтобы сравнить с рещультатом выражения
-		out << "JEQ s" + to_string(localFuncCounter) + "\n"; // если равен нулю, то есть false
+		out << "LIT 0\n"; //в сетек помещается 0, чтобы сравнить с рещультатом выражения
+		out << "JNK s" + to_string(localFuncCounter) + "\n"; // если равен нулю, то есть false
 
 	}
 	

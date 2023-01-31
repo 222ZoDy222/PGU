@@ -27,9 +27,6 @@
     <ClCompile Include="PostfixCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Oleg.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="CodeGeneration.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>

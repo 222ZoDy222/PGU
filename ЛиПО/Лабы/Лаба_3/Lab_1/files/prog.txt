@@ -10,5 +10,5 @@ do
 	b := a;
 	g := g - 1;	
 	
-while g
+while g + 1
 

@@ -22,8 +22,7 @@ STO g
 LOAD b
 STO a
 
-JMP s2
-s2:
+s1:
 LOAD a
 LIT 1
 ADD
@@ -37,6 +36,8 @@ LIT 1
 SUB
 STO g
 
-
 LIT 1
-JEQ s2
+ADD
+
+LIT 0
+JNK s1
