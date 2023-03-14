@@ -1,0 +1,167 @@
+Министерство науки и высшего образования Российской Федерации
+Пензенский государственный университет
+Кафедра «Вычислительная техника»
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+ОТЧЕТ
+по лабораторной работе №2
+по курсу «ЭВМ и периферийные устройства»
+на тему
+«Работа процессора в линейных программах»
+     
+     
+     
+     
+     
+     
+
+
+       Выполнили студенты группы 20ВВС1:
+       Исаев С.Д.
+       Горбунов Н.А.
+       Приняли:
+       Коннов Н.Н.
+       Семенов А. О.
+       
+       
+       
+       
+       
+       
+       
+       
+       
+Пенза 2023
+
+
+
+Цель работы: изучение способов адресации и арифметико-логических и посылочных операций.
+Вариант 2:
+Y=A-B+(C-4)
+A=2; B= -14; C = 9;
+
+Ход работы
+Листинг программы:
+stseg   segment para    stack
+        dw      16      dup(?)
+stseg   ends
+dseg    segment para
+a       dw      2
+b       dw      -14
+c       dw      9
+y       dw      ?
+dseg    ends
+cseg    segment para
+lab1    proc    far
+        assume  cs:cseg,ds:dseg,ss:stseg
+        push    ds
+        mov     ax,0
+        push    ax
+        mov     ax,dseg
+        mov     ds,ax
+		;---------------------
+        lea bx, a
+		mov ax, [bx]
+		sub ax, [bx+2]
+		add ax, [bx+4]
+		sub ax, 4
+		mov y, ax
+		;---------------------
+        ret
+lab1    endp
+cseg    ends
+        end     lab1
+
+
+
+
+Листинг программы после компиляции:
+Turbo Assembler	 Version 2.5	    02/21/23 08:39:13	    Page 1
+prim.asm
+
+
+
+      1	0000			     stseg   segment para    stack
+      2	0000  10*(????)			     dw	     16	     dup(?)
+      3	0020			     stseg   ends
+      4	0000			     dseg    segment para
+      5	0000  0002		     a	     dw	     2
+      6	0002  FFF2		     b	     dw	     -14
+      7	0004  0009		     c	     dw	     9
+      8	0006  ????		     y	     dw	     ?
+      9	0008			     dseg    ends
+     10	0000			     cseg    segment para
+     11	0000			     lab1    proc    far
+     12					     assume  cs:cseg,ds:dseg,ss:stseg
+     13	0000  1E			     push    ds
+     14	0001  B8 0000			     mov     ax,0
+     15	0004  50			     push    ax
+     16	0005  B8 0000s			     mov     ax,dseg
+     17	0008  8E D8			     mov     ds,ax
+     18						     ;---------------------
+     19	000A  BB 0000r			     lea bx, a
+     20	000D  8B 07				     mov ax, [bx]
+     21	000F  2B 47 02				     sub ax, [bx+2]
+     22	0012  03 47 04				     add ax, [bx+4]
+     23	0015  2D 0004				     sub ax, 4
+     24	0018  A3 0006r				     mov y, ax
+     25						     ;---------------------
+     26	001B  CB			     ret
+     27	001C			     lab1    endp
+     28	001C			     cseg    ends
+     29					     end     lab1
+
+Turbo Assembler	 Version 2.5	    02/21/23 08:39:13	    Page 2
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??DATE				  Text	 "02/21/23"
+??FILENAME			  Text	 "prim	  "
+??TIME				  Text	 "08:39:13"
+??VERSION			  Number 0205
+@CPU				  Text	 0101H
+@CURSEG				  Text	 CSEG
+@FILENAME			  Text	 PRIM
+@WORDSIZE			  Text	 2
+A				  Word	 DSEG:0000
+B				  Word	 DSEG:0002
+C				  Word	 DSEG:0004
+LAB1				  Far	 CSEG:0000
+Y				  Word	 DSEG:0006
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+CSEG				  16  001C Para	  none
+DSEG				  16  0008 Para	  none
+STSEG				  16  0020 Para	  Stack
+
+
+Задание 2. Расшифровка команды.
+22	0012  03 47 04				     add ax, [bx+4]
+         |    |     |     |   disp   |
+00000011 | 00 | 000 | 111 | 00000100 |
+         | mod| reg | р/м |          |
+          AX  + BX  + DISP     
+
+Для всех операндов кроме Y используется способ адресации: базовая со смещением.
+
+Результат работы программы:
+
+
+В результате по адресу 6 было записано значение 0015, что соответствует десятичному числу  21, что равно значению выражения 2+14+(9-4).
+
+Вывод:в ходе выполнения работы мной была изучена работа процессора при выполнении линейной последовательности команд и способ адресации в процессоре i8086 –базовый со смещением.
+

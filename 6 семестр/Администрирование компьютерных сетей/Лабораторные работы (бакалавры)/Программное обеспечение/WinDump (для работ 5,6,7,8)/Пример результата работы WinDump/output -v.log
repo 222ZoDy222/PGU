@@ -1,0 +1,7 @@
+14:55:22.548429 IP6 (hlim 1, next-header: UDP (17), length: 104) SCAD05.scad.psu.546 > ff02::1:2.547: dhcp6 solicit (xid=a88c34 (elapsed time 0) (client ID hwaddr/time type 1 time 417202621 001e8cbda399)[|dhcp6ext])
+14:55:23.547788 IP6 (hlim 1, next-header: UDP (17), length: 104) SCAD05.scad.psu.546 > ff02::1:2.547: dhcp6 solicit (xid=a88c34 (elapsed time 100) (client ID hwaddr/time type 1 time 417202621 001e8cbda399)[|dhcp6ext])
+14:55:25.547880 IP6 (hlim 1, next-header: UDP (17), length: 104) SCAD05.scad.psu.546 > ff02::1:2.547: dhcp6 solicit (xid=a88c34 (elapsed time 300) (client ID hwaddr/time type 1 time 417202621 001e8cbda399)[|dhcp6ext])
+14:55:29.548006 IP6 (hlim 1, next-header: UDP (17), length: 104) SCAD05.scad.psu.546 > ff02::1:2.547: dhcp6 solicit (xid=a88c34 (elapsed time 700) (client ID hwaddr/time type 1 time 417202621 001e8cbda399)[|dhcp6ext])
+14:55:37.548284 IP6 (hlim 1, next-header: UDP (17), length: 104) SCAD05.scad.psu.546 > ff02::1:2.547: dhcp6 solicit (xid=a88c34 (elapsed time 1500) (client ID hwaddr/time type 1 time 417202621 001e8cbda399)[|dhcp6ext])
+14:55:53.548783 IP6 (hlim 1, next-header: UDP (17), length: 104) SCAD05.scad.psu.546 > ff02::1:2.547: dhcp6 solicit (xid=a88c34 (elapsed time 3100) (client ID hwaddr/time type 1 time 417202621 001e8cbda399)[|dhcp6ext])
+

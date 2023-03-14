@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="shortcut icon" href="../gallery/Practice.svg" type="image/x-icon">
+    <script src="../gc.js"></script>
+    <title>Работа №3 Программно-логическое управление технологическим процессом</title>
+</head>
+<body>
+    <div class="work-wrapper">
+        <div class="fade-menu">
+            <button class="menu-btn  " onclick="fade()">
+            </button>
+            <div id="menu-content">
+                <div class="wrapper">
+                    <div class="header onclick_header">
+                        <div class="teacher-card onclick_menu">
+                            <img src="../gallery/teacher_logo.png" alt="Portrait">
+                            <div class="teacher-text">
+                            <p class="demi-bold">Бурукина Ирина Петровна</p>
+                            <p>К.Т.Н., доцент</p>
+                            </div>
+                        </div>
+                        <div class="discipline-name">
+                            <p class="demi-bold">Компьютерное моделирование в системах автоматизированного проектирования</p>
+                        </div>
+                        <div class="university-name">
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="theory-column">
+                            <div class="theory-card  ">
+                                <a href="../pages/theory.html" target="_blank">
+                                <div class="card-wrapper">
+                                <p>Теория для работы Круг-2000</p>
+                                <img src="../gallery/Arrow.svg" alt="Перейти">
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="works-column">
+                            <div class="work-card  ">
+                                <a href="../pages/work_1.html">
+                                <div class="card-wrapper">
+                                    <div class="inner-card">
+                                        <p>Работа №1</p>
+                                    </div>
+                                    <p class="about">Разработка и описание технологического процесса</p>
+                                </div></a>
+                            </div>
+                            <div class="work-card  ">
+                                <a href="../pages/work_2.html">
+                                <div class="card-wrapper">
+                                    <div class="inner-card">
+                                        <p>Работа №2</p>
+                                    </div>
+                                    <p class="about">Создание базы данных переменных технологического процесса</p>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="work-card  ">
+                                <a href="../pages/work_3.html">
+                                <div class="card-wrapper">
+                                    <div class="inner-card">
+                                        <p>Работа №3</p>
+                                    </div>
+                                    <p class="about">Программно-логическое управление технологическим процессом</p>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="work-card  ">
+                                <a href="../pages/work_4.html">
+                                <div class="card-wrapper">
+                                    <div class="inner-card">
+                                        <p>Работа №4</p>
+                                    </div>
+                                    <p class="about">Формирование графического интерфейса станции оператора</p>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+        <div class="fixed_elements">
+            <a href="../pages/theory.html#second_step" target="blank">
+            <div class="fixed_card  ">
+                <p>Круг</p><p>2000</p>
+            </div>
+            </a>
+        </div>
+        <div class="content-work">
+                <div class="content-work-header">
+                    <p id="work-number" class="demi-bold">Работа №3</p>
+                    <p id="work-title">Программно-логическое управление технологическим процессом</p>
+                </div>
+                <div class="content-work-about">
+                    <div class="paragraph">
+                        <div class="paragraph-header">
+                            <p class="header-text demi-bold" >Цель работы</p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>Спроектировать программно-логическое управление 
+                                технологическим процессом
+                                </p>
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="paragraph-header">
+                            <p class="header-text demi-bold">Задание</p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>Разработать алгоритм и написать программу для контроллера в 
+                                интегрированной среде разработки КРУГОЛ, используя два инструмента: 
+                                язык структурированного текста и язык функционально-блочных 
+                                диаграмм. 
+                                </p>
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="paragraph-header">
+                            <p class="header-text demi-bold" id="first_task">Создать проект в ИСР КРУГОЛ </p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>КРУГОЛ — интегрированная среда разработки. В данной работе мы будем использовать КРУГОЛ для реализации правил поведения переменных, разработанных в <a href="../pages/work_1.html#fourth_task" class="anchor" target="_blank">лабораторной работе №1</a>.</p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>Перед началом написания программы в ИСР КРУГОЛ нам необходимо создать проект. Он будет объединять наши файлы и связывать программу с БД.</p>
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="paragraph-header">
+                            <p class="header-text demi-bold" id="second_task" >Создать файл ФБД или СТ</p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>Для реализации правил поведения переменных, разработанных в <a>лабораторной работе №1</a> в КРУГОЛ заложены два инструмента на выбор: языки структурного текста (СТ) и функциональных блочных диаграмм (ФБД). </p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>СТ представляет собой язык скриптов со своим синтаксисом. Для учебной задачи использование СТ ограничится написанием простейших конструкций «Если - то». Однако при необходимости возможна реализация и более сложных конструкций: циклы, процедуры и другие.
+</p>
+                        </div>
+                        <div class="paragraph-about">
+                           <table class="table__synt-example">
+                                <tr>
+                                    <td class="blue-color"><div class="td-wrapper"><span class="orange-text">ЕСЛИ</span> вд3 = 1 {  <span class="grey-text">:система ароматизации</span></br>
+                                    дв4 = 1</br>
+                                  }
+                                  <p><span class="orange-text">ИНАЧЕ</span> {</br>
+                                    дв4 = 0 </br>
+                                  } </br>
+                                  <span class="orange-text">ЕСЛИ</span> ва7 > 10 {  <span class="grey-text">:уровень хладагента</span></br>
+                                    дв3 = 1</br>
+                                    дв1=1 </br>
+                                    дв5=1  <span class="grey-text">:работа вентиляторов</span></br>
+                                  }
+                                    </div></td>
+                                <td valign="top" class="table__comment_section"><p><div class="ellipse orange__ellipse"></div> - Операторы</p><p><div class="ellipse"></div> - Комментарии</p></td>
+                                </tr>
+                           </table>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>Язык ФБД — графический. Работа с ним заключается в составлении графической схемы из блоков встроенной библиотеки. В рамках нашего задания нам понадобятся блоки простейших функций: арифметические операции, операции сравнения.  Результат получается более наглядным, но достаточно громоздким даже для небольшого учебного проекта.</p>
+</p>
+                        </div>
+                        <div class="paragraph-about">
+                            <div class="picture">
+                                <img src="../gallery/FBD-1.jpg" id="FBD" alt="fdb scheme">
+                                <p class="picture-about">Рис. 1. Аналог представленного кода на языке ФБД</p>
+                            </div>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>Перед написанием программы изучите <a href="../pages/theory.html#second_step" class="anchor" target="_blank">теоретический материал</a></p>
+</p>
+                        </div>
+                        
+                    </div>
+                    <div class="paragraph">
+                        <div class="paragraph-header">
+                            <p class="header-text demi-bold" id="third_task">Разработать программу</p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>В основе программы будут лежать правила поведения системы, которую вы разработали в первой работе. Программа будет изменять значения одних переменных (обычно выходных) в зависимости от значений других (обычно входных).
+                            </p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>Не забудьте <a href="../pages/theory.html#tran" class="anchor" target="_blank">отладить</a> программу после разработки.
+                            </p>
+                        </div>
+                  
+                </div>
+        </div>
+        <nav class="nav-bar">
+            <div class="progress-bar">
+                <p class="demi-bold">Задания</p>
+                <div class="progress-line">
+                    <div id="progress-done"></div>
+                </div>
+            </div>
+            <div class="task-bar">
+                <form id="tasks">
+                    <table>
+                        <tr><td><input type="checkbox" name="task" value="yes" onclick="update()" class="task_bar-checkbox"></td><td class="td_padding"><a href="#first_task">Создать проект в ИСР КРУГОЛ</a></td></tr>
+                        <tr><td><input type="checkbox" name="task" value="yes" onclick="update()" class="task_bar-checkbox"></td><td class="td_padding"><a href="#second_task">Создать файл ФБД или СТ</a></td></tr>
+                        <tr><td></label><input type="checkbox" name="task" value="yes" onclick="update()" class="task_bar-checkbox"></td><td class="td_padding"><a href="#third_task">Изучить теоретический материал</a></td></tr>
+                        <tr><td><input type="checkbox" name="task" value="yes" onclick="update()" class="task_bar-checkbox"></td><td class="td_padding"><a href="#fourth_task">Разработать программу</a></td></tr>
+                        <tr><td><input type="checkbox" name="task" value="yes" onclick="update()" class="task_bar-checkbox"></td><td class="td_padding"><a href="#fifth_task">Отладить программу</a></td></tr>
+                    </table>
+                </form>
+            </div>
+        </nav>
+    </div>
+</body>
+</html>

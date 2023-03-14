@@ -1,0 +1,199 @@
+Stochastic Petri Net Player
+[VERSION 0.83 Beta]
+
+
+--PLACE--
+possition_x, possition_y, color, width, time, type_of_time, marking, diameter, net_obj, time02 
+
+--TRANSITION--
+possition_x, possition_y, color, width, time, type_of_time, size_x, size_y, net_obj, time02 
+
+--ARC--
+possition_x, possition_y, color, width, time, type_of_time, orientation, source, destination, weight time02 
+
+--LINE--
+possition_x, possition_y, color, endpt.x, endpt_y, width, style, 
+
+--TEXT--
+possition_x, possition_y, color, size, bold, italic, underline, StrikeOut, text, name 
+
+
+[PLACE          1]:     56    105           0     1            0     0   0     9     0            0
+
+[PLACE          4]:    103     82           0     2            0     0   0     9     0            0
+
+[PLACE          3]:    103     57           0     2            0     0   0     9     0            0
+
+[PLACE          2]:    103     14           0     2            0     0   1     9     0            0
+
+[TRANSITION     1]:     14     22    16711680     2            1     4    13     4     0            0     3
+
+[TRANSITION     2]:     79     57           0     2        1e-06     2    13     4     0            0     3
+
+[TRANSITION     3]:     79     82           0     1            0     0    13     4     0            0     0
+
+[TRANSITION     4]:     79    105           0     1            0     0    13     4     0            0     0
+
+[TRANSITION     5]:    103     33         255     3            1     1    13     4     0          0.5     0
+
+[TRANSITION     6]:    135     72         255     3         0.01     1    13     4     0          0.5     0
+
+[PLACE         14]:     14     49           0     1            0     0   0     9     0            0
+
+[TRANSITION    14]:     14     82           0     1        1e-07     1    13     4     0            0     0
+
+[LINE           0]:     30     15           0     0    100     1     2
+
+[PLACE          6]:     61     57           0     1            0     0   0     9     0            0
+
+[TRANSITION     8]:     61     45       43520     3         0.01     1    13     4     0            0     0
+
+[PLACE         11]:     39     45           0     2            0     0   1     9     0            0
+
+[PLACE          7]:     84     14           0     1            0     0   0     9     0            0
+
+[TRANSITION     9]:     68     14       43520     3         0.01     1    13     4     0            0     0
+
+[TRANSITION    15]:    123     33         255     3          0.2     1    13     4     0            0     0
+
+[TRANSITION    16]:     79     68           0     2        1e-06     2    13     4     0            0     3
+
+[PLACE         15]:    123     57           0     2            0     0   0     9     0            0
+
+[TRANSITION    17]:     79     93           0     1            0     0    13     4     0            0     0
+
+[ARC           13]:      0      0           0     1            0     0     0     2     3     1            0
+
+[ARC           19]:      0      0           0     1            0     0     1     1     4     1            0
+
+[ARC           24]:      0      0           0     1            0     0     1     1     3     1            0
+
+[ARC           29]:      0      0           0     1            0     0     0     5     2     1            0
+
+[ARC           34]:      0      0           0     1            0     0     0     1    14     1            0
+
+[ARC           35]:      0      0           0     1            0     0     1    14    14     1            0
+
+[TEXT -       14736904]:     63    108           0     4     0     0     0     0 7 "Channel" 5 "Arial" 
+
+[TEXT -       14736904]:      4    108           0     4     0     0     0     0 12 "Media¶Access" 5 "Arial" 
+
+[ARC           57]:      0      0           0     1            0     0     1     3     3     1            0
+
+[ARC           58]:      0      0           0     1            0     0     0     3     4     1            0
+
+[ARC           59]:      0      0           0     1            0     0     1     4     4     1            0
+
+[ARC           61]:      0      0           0     1            0     0     0    14     1     1            0
+
+[POINT         61]:     14    105
+
+[ARC           62]:      0      0           0     1            0     0     0     6     2     1            0
+
+[POINT         62]:    135     14
+
+[ARC           63]:      0      0           0     1            0     0     1     2     2     1            0
+
+[POINT         63]:     79     27
+
+[ARC           64]:      0      0           0     1            0     0     1     4     6     1            0
+
+[POINT         64]:    118     82
+
+[ARC           65]:      0      0           0     1            0     0     1     1     2     1            0
+
+[POINT         65]:     56     72
+
+[ARC           76]:      0      0           0     1            0     0     0     2     6     1            0
+
+[ARC           79]:      0      0           0     1            0     0     1     6     8     1            0
+
+[ARC           81]:      0      0           0     1            0     0     0     5     7     1            0
+
+[ARC           83]:      0      0           0     1            0     0     1     7     9     1            0
+
+[ARC           90]:      0      0           0     1            0     0     1    11    14     1            0
+
+[POINT         90]:     26     45
+
+[TEXT -       656032]:    137     65           0     3     0     0     0     0 5 "t¶=¶b" 5 "Arial" 
+
+[TEXT -       656032]:    106     36           0     3     0     0     0     0 5 "t¶=¶1" 5 "Arial" 
+
+[TEXT -       656032]:     55      5           0     3     0     1     0     0 18 "t=a+interframe¶gap" 5 "Arial" 
+
+[TEXT -       656032]:     60     37           0     3     0     1     0     0 3 "t=a" 5 "Arial" 
+
+[TEXT -       656032]:     10     15           0     3     0     0     0     0 12 "E(t)=1,¶Exp." 5 "Arial" 
+
+[TEXT -       656032]:    105      6           0     3     0     0     0     0 4 "Free" 5 "Arial" 
+
+[TEXT -       656032]:    105     48           0     3     0     0     0     0 4 "Busy" 5 "Arial" 
+
+[TEXT -       656032]:    104     74           0     3     0     0     0     0 9 "Collision" 5 "Arial" 
+
+[TEXT -       656032]:     16     85           0     3     0     0     0     0 8 "Transmit" 5 "Arial" 
+
+[TEXT -       7602856]:     31     34           0     3     0     0     0     0 12 "Visibly¶Free" 5 "Arial" 
+
+[ARC          115]:      0      0           0     1            0     0     0    15     2     1            0
+
+[TEXT -       263134]:    126     36           0     3     0     0     0     0 5 "t=0.2" 5 "Arial" 
+
+[ARC          126]:      0      0           0     1            0     0     0    15     7     1            0
+
+[POINT        126]:     98     21
+
+[ARC          127]:      0      0           0     1            0     0     1     3     5     1            0
+
+[ARC          128]:      0      0           0     1            0     0     1    15    15     1            0
+
+[ARC          131]:      0      0           0     1            0     0     1     1    16     1            0
+
+[POINT        131]:     61     79
+
+[ARC          133]:      0      0           0     1            0     0     0    16    15     1            0
+
+[POINT        133]:    117     68
+
+[ARC          134]:      0      0           0     1            0     0     0     6     7     1            0
+
+[POINT        134]:     92     72
+
+[POINT        134]:     92     40
+
+[ARC          135]:      0      0           0     1            0     0     1     2    16     1            0
+
+[POINT        135]:     87     33
+
+[POINT        135]:     87     61
+
+[ARC          136]:      0      0           0     1            0     0     0    16     6     1            0
+
+[ARC          138]:      0      0           0     1            0     0     0    17     4     1            0
+
+[ARC          139]:      0      0           0     1            0     0     1     1    17     1            0
+
+[ARC          140]:      0      0           0     1            0     0     1    15    17     1            0
+
+[POINT        140]:     92     78
+
+[ARC          142]:      0      0           0     1            0     0     0     4     4     1            0
+
+[POINT        142]:    103    105
+
+[ARC          143]:      0      0           0     1            0     0     0    14    11     1            0
+
+[POINT        143]:     39     82
+
+[ARC          144]:      0      0           0     1            0     0     0     9    11     1            0
+
+[POINT        144]:     39     14
+
+[ARC          145]:      0      0           0     1            0     0     1    11     8     1            0
+
+
+--setting can be deleted in case of version conflict--
+[SETTINGS]        0 0 0 9 0 2 0 0 0 13 4 2 0 0 0 1 1 -1380274758 10 0 1 3 1 0 0 0 0
+[CHARTSETTINGS]   0 0 1  0 0 1 1 37 "Persistetnt¶CSMA-Performance_Analysis" -1 255 0 10 "New_Packet" 2 65280 0 12 "Transmittion" -1 65535 66 0 "" -1 1.67117e+07 0 2 "T4" -1 1.67119e+07 0 2 "T5" 5 1.6777e+07 0 7 "Success" -1 8.42138e+06 0 0 "" -1 32896 0 0 "" 1 0 0 19 "Offerred_Traffic--G"  1 -1 0 0 0 ""  -1 
+[SIMSETTINGS]     1000000000000 50 3 220  3 0 0.0009 1000 1 1 0 1 1 

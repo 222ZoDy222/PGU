@@ -1,0 +1,31 @@
+digraph bars {
+
+node [shape=plaintext]
+a_filename [label="filename1"]
+b_filename [label="filename2"]
+c_filename [label="for very very long filenames"]
+
+# \r aligns the sizes to the right of the bars.
+# don't know if you wanted that but i thought it looked neat.
+node [shape=box, style=filled, color=orange]
+a_bar [label="size1\r", width=5]
+b_bar [label="size2\r", width=3]
+c_bar [label="size3\r", width=7]
+
+edge [style=invis]
+
+# align the left sides of the bars. also coincidentally
+# aligns the right sides of the filename labels...
+a_bar:w->b_bar:w->c_bar:w
+
+# uncomment this if you want left-aligned filenames instead:
+#a_filename:e->b_filename:e->c_filename:e
+
+# or this for centered filenames:
+#a_filename->b_filename->c_filename
+
+rank=same {a_filename->a_bar}
+rank=same {b_filename->b_bar}
+rank=same {c_filename->c_bar}
+
+}

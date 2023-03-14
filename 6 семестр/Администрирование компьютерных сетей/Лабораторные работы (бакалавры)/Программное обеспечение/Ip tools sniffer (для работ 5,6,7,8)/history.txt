@@ -1,0 +1,774 @@
+promisc property on raw sniffer object
+todo : add advanced filter mode in ethernet mode
+
+v1.60
+added : 3 capture mode : raw ip / winpcap / ndis
+added : advanced filter mode in ethernet mode
+added : in ethernet mode, pcap filter is used
+added : play/stop in capture analysis
+fixed : smtp client "already connected" error
+fixed : tracert, if ip/hostname cannot be resolved no tracert
+fixed : timeout no longer freezes app. in tracert
+added : start/stop button in tracert
+fixed : send not triggered in tcp client if not connected
+added : ndisprot service automatically started
+
+v1.61
+added : ip sniffer renamed to ip tools (wmi does not like the name sniffer...)
+fixed : thread is freed in tracert
+fixed : thread is freed after stop in ndis mode
+tofix : ndis/readfile  waits for one last packet after thread is stopped
+todo : drvipflt ?
+added : add ip address (non permanent)
+tofix : one thread is created each time ndis is checked
+added : 1 thread to monitor ip changed (ballon tips)
+added : 1 thread to monitor route changed (ballon tips)
+todo : check balloon tips on w2k and below
+fixed : app (because of threads?) was preventing end session
+fixed : enablerouter is used instead of modifying setipstatistics/dwForwarding
+added : mac2ip on a thread
+added : ping on a thread
+added : resolve ip on a thread
+added : resolve hostname on a thread
+added : wmi remote lan monitor
+added : process/modules with exported/imported functions, unload modules, terminate process
+added : netbios names on a thread
+todo : nbt names does not free thread
+
+v1.62
+changed : delphi 5 to delphi 7
+changed : tnmudp to indy components
+added : winsquery listens on a thread
+added : dhcpfind listens on a thread
+fixed : thread.waitfor instruction removed (because of delphi7?)
+added : exitthread in all created threads
+todo :  dns query(error 87)
+fixed : getprocesses is done thru psapi, not thru NtQuerySystemInformation
+fixed : winsquery / checkbox for binding udp src port 137 (ok on w2k3 / nok on w2k)
+fixed : nbt spoof / checkbox for binding udp src port 138 (ok on w2k3 / nok on w2k)
+added : popupmenu synched on tools menu
+added : ping handles timeout
+added : wmi remote process
+fixed : reset to rewrite in save selected/all frames (compiler options?)
+added : source ip random ip tcp/icmp/udp spoof
+
+v1.63
+added : tcp ping (syn / fin / xmas / null)
+added : tcp syn scan
+todo : tcp syn scan multi thread
+todo : tcp ping range
+todo : tcp syn scan range
+added : add capture filter in netstat
+//added : show socket id in ports by process on nt4/w2k
+added : jump to regkey in netword cards
+
+v1.64
+added : ndis properties
+added : netbios names table fixed
+added : smnp query
+added : Process creation Monitor
+added : ICMP Information request
+added : dns parser more detailed
+todo : add capture filter fix for *.* in netstat
+added : message text for dns errors
+added : udp tools / mssqlping? 
+todo : stop sharedaccess on xp if started? necessary for spoofing
+added : winsnmp apis dynamically linked
+
+v1.65 (march 2005)
+added : udp tools / ntp client
+added : ndis will be grayed out if not installed
+added : howto install ndis driver
+todo  : capture to file (done for  ndis/winpcap)
+
+v1.66
+added : CryptUnprotectdata api added / decrypt password in rdp files
+added : decrypt passwords in mdp
+added : password reveal
+added : dialup password
+added : protected storage
+todo : lsa secrets (with dll inject)
+todo : dialup password dynamic link
+todo : protected storage dynamic link
+
+v1.67
+added : dialup password dynamic link
+fixed : hashes are now correct
+added : ntlm hash
+added : delete in protected storage
+added : refresh in protected storage
+added : mac to ip use local arp cache before scanning subnet
+added : enum windows server
+added : remote execution via wmi
+todo : active routes remote
+toto : nettomedia table remote
+todo : remote properties on windows server
+
+v1.68
+added : remote properties on windows server
+added : kill remote process via wmi
+added : launch computer management from enum windows server
+added : shutdown remote windows
+added : remote time of day
+added : fake net send
+todo :  uptime, ports
+todo : other ms products cdkeys
+todo : snmp scan
+
+v1.69
+added : snmp ping
+added : memory and vmsize in remote process
+added : list of wireless networks in ndis properties
+added : exclude non connected card from ndis
+added : tcp scan host & range in same window
+added : tcp syn scan host & subnet in same window
+added : tcp ping host & subnet in same window
+added : snmp ping host & subnet in same window
+added : ssdp ping
+added : parse LLC in 802.3
+
+v1.70
+//added : start sharedaccess on XP when spoofing //removed : works only on xp sp1
+added : all icmp spoofs function in same window
+added : resolve ip/hostname in same window
+todo : all sending forms with raw/winpcap/ndis (tcp spoof ok)
+todo : check sendit functions (lib/tsniffer unit?)
+fixed : send tcp/udp spoof via winpcap (ip.id was wrong, macs were wrong)
+//modified : sendit in lib //removed Socket(AF_INET, SOCK_RAW,  PIP_Header(@buf[0]).ip_protocol );
+todo : wincap/ndis has sometimes an incorrect frame len (??)
+added : temporary workaround for winpcap/ndis incorrect frame len
+todo : ndis read/write at the same time (createfile/openexisting...?)
+todo : promiscan
+added : flush dns / dns query in same window
+todo : tracert / ping in same window
+
+
+v1.71 (may 2005)
+added : querydns with more options
+added : incomplete snmp decode
+added : getnext in snmpget
+added ! mini mib browser in snmpget
+added : syslog client/server
+added : snmp get -> snmp get & set
+added : snmp ping on a specific community
+added : telnet client & server
+added : tcp server & client in same window
+
+v1.72
+added : sql login test
+fixed : mssql ping (data was truncated)
+added : tcp/udp bounce
+modified : tcp & udp spoof in same form
+todo : hexeditor on tcp/udp spoof
+added : filter displayed in main window using pcap syntax
+added : capture mode displayed in main windows (raw ip, winpcap, ndis)
+
+v1.73
+added : additional ndis stats data in ndisstats
+added : ndis stats graph	
+modified : wins query & locate user in one form
+added : decodenbt now decodes query type
+added : add arp entry in arp entries form
+added : mac dest field added in arp reply
+added : arp spoof works with winpcap AND ndis
+todo : pnp capabilities of ndis device
+todo : implement GetIpAddrTable
+todo : implement ndisuio to snif (not possible : filter 888e frames... and non promisc)
+fixed : replay frame was crashing in winpcap mode if not capturing
+fixed : ndissniffer frees thread correctly (has to go thru the execute method to be freed)
+
+v1.74
+added : exception handled by madshi exception handler. bug report more detailed.
+added : new ip is displayed in systray balloon tip
+
+v1.75
+added : list of interfaces entries via SNMP
+added : snmp switch port mapper / BRIDGE-MIB RFC
+added : snmp MAU table (medium attachment unit)
+added : goto web site & mail the author
+added : export to file from listviews will export columns headers as well
+added : default button in many (most?) screens
+added : decode IE history
+modified : can open cap file with ethernet type only
+to do : snmp route table
+to do : wmi remote ipconfig
+to do : find hidden ports
+bug fix : dynamic link to netapi32.dll (should work again on w9x)
+added : decode frames with ethernet type=0x2452 (centrino promiscuous)
+added : snmp net to media table
+added : mac address discovery (ip, mac address, vendor) multi threaded
+added : mac prefixes as resources
+to do : use pcap to open/save a cap file?
+bug fix : click twice on lan monitor was causing an error
+bug fix : dump file saved always get a dmp/cap extension
+bug fix : dump file is not created when cancel is pushed in the savedialog box
+bug fix : invalid selstart or invalid selend fix
+
+v1.76
+added : master browser and domain master browser types added in EnumServers
+added : enum WTS processes
+added : enum WTS sessions
+to do : implemente WTSWaitSystemEvent / WTSShutdownSystem
+added : impersonate client
+bug fix : wmilanmon create form fix
+bug fix : save a single frame on toolbar button was using the wrong procedure
+added : dhcp release spoof (raw socket, winpcap & ndis)
+added : more details on dhcp parsing
+bug fix : tcp ack/seq number decoded correctly (network byte to endian byte)
+added : time server (tcp & udp)	
+added : daytime server (tcp & udp)
+modified : dhcp discover uses only one socket
+bug fix : filter applies to ndis as well now (same logic as raw sockets)
+
+v1.77
+added : dhcp server
+added : dhcp options parsing in dhcp discover window
+todo : http server
+added : follow tcp stream (display text & hexa, modify and save hexa) 
+
+v1.78
+added : credential dump (via injection, not via credenumerateA)
+bug fix : wins query should not crash anymore (again...)
+modified : winsock hook-> one dll only for both winsock version (param via openmap).
+modified : winsock hook easier. dll included in main exe as ressource. 
+added : inject dll in processes window
+bug fix : follow tcp stream was blocked to 255 frames
+bug fix : numeric field allow numerics only
+added : decode SMTP & POP3
+added : dump process and module from processes window
+added : view memory for process and module from processes window
+added : display if client is directly connected to internet everytime ip changes or route changes
+added : event viewer, shared folders, AD users, services MMC from servers window
+added : smtp client can send HTML.
+added : smtp client automatically retrieves outlook info if available
+bug fix : AbstractErrorHandler fix on stats toolbar button click
+
+v1.79
+added : tftp server
+added : pxe boot options in dhcp server
+added : tsize option support in dhcp server
+added : can open URL from decode IE History window
+fixed : List index out of bounds (4) when "copy all lines to clpbrd"
+
+
+v1.80
+modified : recompiled with jcl 1.95+jvcl 3.00
+fixed : exception class   : EZeroDivide, exception message : Floating point division by zero.
+added : enum print ports
+added : enum print drivers
+added : enum drivers
+added : enum AT jobs
+added : enum scheduled tasks
+added : can associate / disassociate a wifi spot from ndis properties form (using ndisuio to set oid)
+
+v1.81
+info : sniffing on centrino does not work in promiscuous mode with driver 9.x
+added : enum wep keys (xp only via wzcsvc)
+fixed : snmp tools work with any community
+added : kill process, hook process, add filter in open ports
+added : wifi stumbler form
+added : stop wzcsvc service in wifi stumbler to set/unset ssid
+added : wifi stumbler use wzcsvc if started (quicker), else set oid=list_scan
+todo : implement OID_GEN_MAXIMUM_TOTAL_SIZE & OID_GEN_MAXIMUM_FRAME_SIZE
+fixed : snmp rewritten with indy component
+fixed : help/goto web site works on w9x
+added : get all cdkeys in windows properties
+added : get full display name for installed apps in windows properties
+added : external scripts can be called from enumsrv passing the hostname as parameter
+added : try..except for all udp tools
+fixed : ping host does not crash anymore
+added : ttl option on ping host.
+added : icmp ping with replies<>success are displayed
+
+v1.82
+added : tcp scan half connect works with both raw and winpcap mode
+added : tcp ping works with bot raw and winpcap mode
+added : can choose another dns server in dns query form
+added : dns query will handle properly dns_type_text entries
+fixed : rdp decode works on rdp where password is not at the end of file
+added : resolve ip in tcpsyn scan
+added : resolve ip in snmp ping scan
+added : tiny dns server (only A & PTR type)
+fixed : PAGE_READWRITE to PAGE_EXECUTE_READWRITE in dump credentials form (for xpsp2)
+added : open hosts, lmhosts, services file
+modified : recompiled with delphi 7.0 build 8.1
+todo : check all declarations (move to implementation)
+
+v1.83
+added : can load and decode 802.11 frames (mac header + mgmt frames)
+	can be used along with aircap
+fixed : all unit scope variables moved to implementation block (to avoid scope confusion)
+added : rarp client
+todo  : rarp daemon
+added : wmi process display username
+
+v1.84
+added : sessions, opened files, connections, remote disks
+modified : moved to netapi services :logged users , netbios names , at jobs, remote tod
+added : add connection
+modified : enum ports & enum printer drivers moved to winspool services
+todo : try catch in frmnetapi
+added : choose font menu for main screen, setting will be saved/restored
+modified : main screen can be resized
+added : toolbar view menu (will keep only the toolbar visible)
+fixed : no more "Invalid SelStart"
+added : snmp requests for ms services (shares, users, processes, disks)
+modified : enum servers is multi threaded
+modified : add connection is multi threaded
+added : ping first in netapi services
+modified : lowered level for netshareenum and netsession enum (no remote admin rights required anymore)
+modified : ping first in add connection
+todo : multi thread netapi services
+added : enum users in netapi services
+added : will ask to switch to PTR if ip is type in DNS form
+added : regular expression filter in enum windows servers
+added : run an external script on all selected hosts in enum windows servers
+added : enumerate connections between local host and remotenames + del local connection
+added : ms time between 2 frames in follow tcp stream
+added : sharedservice started on demand
+fixed : will not crash anymore while capturing on unknown ip protocol
+added : enum printers in winspool window
+
+v1.85
+added : host report will make a detail html report on a remote host
+added : add services tab in drivers window
+todo : add tasks, at jobs to reports
+todo : rewrite & share enumprinters code
+added : local and global groups in netapi services
+added : local and global groups in reports
+added : printers and remote windows properties in reports
+added : save to file in html format
+fixed : config.ini was incorrectly parsed and filters were not working anymore
+added : spoof net send will check if local messenger is started
+added : a set of vbs files included in _scripts directory
+fixed : additional checks in dhcpfind 
+todo : look at HNetCfg.NATUPnP com object
+added : loaduserprofile option in impersonate user form
+added : in netapi services :
+	getlocalgroupmembers,getgroupusers
+	getuserlocalgroups,getusergroups
+	deluser,adduser
+	unlock user (lock user not possible)
+	disable/enable account
+	reset password
+	change Homedir / ScriptPath
+todo : edit user
+added : deleteprinter, deleteport, deleteprinterdriver
+added : deleteprinterdriverex (delete associated files)
+added : can be installed/run as service (under system account)
+added : can launch a process (from list processes), useful when run under system account
+
+v1.86
+added : new version wep keys decoder (wzcsvc api no longer works)
+added : ping button in toolbar
+added : enable/disable proxy menu
+added : monitor if internet proxy is enabled or not
+fixed : EConvertError / 'xx.xx.xxxx' is not a valid date.
+fixed : Canvas.TryLock in frmping  (thread would sometimes crash)
+fixed : report filenames end with htm
+added : add persistent route in add route
+added : ping gateway in route print
+added : route print button in toolbar
+added : arp entries in toolbar
+fixed : userenv.dll dynamically linked (for w9x compatibility)
+added : Canvas.TryLock in wins query form (thread would sometimes crash)
+fixed : does not check if launched by services.exe (for w9x compatibility)
+fixed : Canvas.TryLock in frmdhcpfind  (thread would sometimes crash)
+fixed : no more getdomains in enumsrv windows (non threaded and does sometimes freezes)
+
+v1.87
+modified : get open tcp/udp ports (native) reviewed
+added : choose between native api and xp api in open ports
+fixed : dcsock will not report non connected state (whois, etc...)
+added : context menu on ping subnet
+modified : lock in arp scan
+added : added enum print jobs
+added : delete print job
+modified : rewritten netstat
+fixed : try except implemented in wins subroutine
+	Access violation at address 00552076 in module 'iptools.exe'. Read of address 000001D8. 
+	ufrmwinsquery 243 Tfrmwinsquery.query 
+fixed : canvas.lock in pingthread (ping subnet)
+	Access violation at address 004F0D69 in module 'iptools.exe'. Read of address 6DEB12D1.
+	UfrmPing  214 PingThread
+fixed : open all in main menu
+	exception message : File not found.
+	Umain    2799 TFrmMain.open_all
+fixed : checked snmp fields in snmpget
+	Access violation at address 00592769 in module 'iptools.exe'. Read of address 00000000.
+	Ufrmsnmpget 665 Tfrmsnmpget.Button2Click
+todo : 	HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\defaulttl
+	Specify the Default Time to Live for TCP/IP Packets / check with router fonction
+	EnableICMPRedirect to 0 to disable modifying routes for client
+todo : ie decoder by cookies/files/history, with profiles dialog & open file dialog
+todo : file system handles open by a process
+todo : check threadvar
+updated : mac prefixes
+added : dhcp manager
+added : windows handles
+added : thread system handles
+fixed : wep keys decoder
+added : mac vendor in dhcp manager
+added : flush table in arp window
+modified : tracert in ping window
+fixed : tracert is more accurate (timeout in the path are handled)
+
+v1.88
+added : notification of dropped packets in firewall
+added : stats in firewall
+todo : upgrade to indy10
+todo : add proxy support to tcp clients
+todo : check dot3StatsDuplexStatus / 1.3.6.1.2.1.10.7.2.1.19
+added : save to html in ip stats and ndis stats
+added : save to html in arp scan
+added : save to html function now copy style.css nearby the htm file
+todo : add html suffix in html function
+added : percentages in ndis stats
+fixed : snmp interfaces and mau table
+fixed : getdomain on a separate thread in enumsrv
+added : can save frames to a file directly
+added : udp client/server
+fixed : uicmp.ping resolve name to ip first and return false if name cannot be resolved
+fixed : get adapter names works ok with multiple lana (was taking the last one before)
+fixed : cannot choose xp api in 'processes opening ports' window
+fixed : inputs are controlled in filter window
+todo : check IP_HDRINCL for ip spoof functions only (remove from tcp scan functions?)
+todo : check RCVALL_OFF / RCVALL_IPLEVEL
+added : QueryServiceConfig in drivers window
+todo : check firewall support for more than one filter 
+todo : implement rasapi hook
+fixed : ConvertErrorFmt in write_cap_packet
+
+v1.89
+modified : madexcept upgraded to 3.0b
+added : logged on users (remote and local)
+added : option to display local frames with colors
+fixed : checksum was incorrect for odd length frames
+fixed : wol fixed (dest port number 7 specified)
+added : show/hide hexa & decode panels
+fixed : wep hexa key decoded with 2 chars per hex code
+added : lsasecrets , local and remote
+added : remote wep keys
+modified : cannot load or save a file during capture
+fixed : tsize support back (regression)
+fixed : tcp host syn scan ok in winpcap mode (with the right dest mac)
+fixed : tcp host ping in winpcap mode (with the right dest mac)
+todo : implement remote arp cache
+todo : OID_TCP_TASK_OFFLOAD=0xFC010201 for sniffing incoming packet with sio_rcvall under xpsp2? 
+fixed : wifistumbler ok with more than one ssid
+todo : check NotifySecurityHealthChange & CancelSecurityHealthChangeNotify
+added : parse dns answer (1st one)
+todo : keep view settings in config file
+
+v1.90
+added : raw ip tools option DisableTaskOffload to re enable sniffing of outgoing packets with raw sockets
+added : mssql enterprise manager dump
+fixed : cosmetic designs (all windows to bssingle)
+fixed : faster loading (all forms are created on demand)
+added : icmp ping are marked with iptools
+added : event threads can be disabled in config.ini
+fixed : will not ping an internet host every time route or ip change
+added : will display internet gateway when systray icon is clicked
+added : closeall / minimizeall windows
+todo : migrate config file to xml
+added : (most) view settings and capture settings can be configured via config.ini file
+todo : iptools web server
+fixed : dhcp server sends ip filled in opt54/dhcp server field as server address
+added : dhcp server + pxe tested with vmware+ghost in bridged & host only mode
+fixed : cannot close ping subnet window anymore until all threads are closed
+fixed : call process hook from netstat would crash
+fixed : can add dest ip in filter window
+fixed : pcap filter (if one) is displayed in advanced tab in filter window
+fixed : tcp subnet syn scan ok in winpcap mode (with the right dest mac)
+fixed : tcp subnet ping in winpcap mode (with the right dest mac)
+added : display some details about packet sent in tcp syn scan and tcp ping
+fixed : ip spoof works with ndis and winpcap, source and dest mac addresses are displayed, full packet in displayed in the replay frame
+added : dropdown list for local ips in dhcp server and subnet according to the ip class
+todo : hunt all getlocalip other than text fields
+
+v1.91
+fixed : bind ip in tftpd window and dhcpsrv window
+fixed : dhcpd:offline button will create memory access error anymore (canvas/thread...)
+fixed : dhcpd:closing the window wil not create memory access anymore (if nul...)
+fixed : tftpd:ip is binded before socket is activated
+fixed : tftpd:sends correct tsize when file is readonly
+added : tftpd:blocksize is sent per client request
+fixed : tftpd:interface is binded correctly on 1st start
+added : enumsrv:one thread at the time
+added : tcpscan:check ping first option
+added : addip can also delete last added ip
+added : create proxy arp address
+todo : look on netsh routing ip nat / install / add interface "xxx"  full / add portmapping "xxx" tcp 0.0.0.0 1234 192.168.1.2 1234
+added : filename field for dhcp server (for compatibility with older computer)
+added : opened files (using driver)
+todo : crc32 & md5sums for files
+added : performance counters with graph options
+fixed : trylock in tracert form
+fixed : cannot launch a thread anymore while running getdomain thread
+
+v1.92
+fixed : dynamic link for native apis in openedfiles windows for w9x compatibility
+fixed : List index out of bounds (0) in showinfos proc
+added : resolve ip in ARP scan
+added : nt event logs (local & remote)
+fixed : memory leak in savelistview function
+fixed : createthread replaced by tthread/synchronise in dhcp discover
+added : export to xml function with xsl stylesheet
+added : cipher encrypt/decrypt
+added : new section in ini file to start iptools as a different user
+todo : generic wmi loop function (classname and properties to fetch)
+added : ftp server (stor ok, retr ok, dele ok, rmd ok, mkd ok)
+added : filter ftp commands in ftpd
+added : http server
+fixed : removed setcurrentdir/getcurrentdir from tftpd (modified idtrivialftpserver with tftppath var)
+fixed : removed useless setcurrentdir from httpd/ftpd
+added : settings gui. decoders settings missing.
+added : ftp proxy
+
+v1.93
+removed : telnet server
+added : telnet proxy
+modified : mac vendor codes loaded in an array intead of tstrings
+modified : mac vendor codes loaded on 1st call not on main form create
+modified : mac vendor codes updated (10199 items)
+modified : can choose subnet in mac2ip window
+added : upnp services
+added : dump user (using LookupAccountSid to bypass rights to enum users)
+todo : fake netbios ns
+added : default password list
+added : change service config
+added : EnumDependentServices
+added : display all ip (ok and failed) in ping subnet
+added : color scheme in ping subnet
+todo : fingerprinting
+modified : improved tcp scan (connect) scan (linger = hard reset)
+modified : improved tcp scan (half connect) scan (sendarp for each node, but slower)
+modified : use snoop filter in tcp syn scan  (faster)
+modified : disable raw feature in tcp syn scan/ping
+todo : use snoop.filter in tcp ping
+fixed : windows properties works locally with remote reg service disabled
+todo : generic form oncreate/onclose
+todo : quicker mac to ip in tcp syn scan/ping
+todo : checkout IdNetworkCalculator
+added : removed mac to ip (can be done from arp scan)
+modified : more reliable rarp client (use snoop.filter)
+added : rarp server
+added : rarp frames decoded
+todo : passive monitoring via arp reply/request sniffing
+added : crc32 & md5 file sum
+added : netservergetinfo in netapi window
+todo : check [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters]\TcpTimedWaitDelay
+added : local & remote devices using setupapi.dll
+fixed : buffersize in wep key decrypt using cryptoapi (note : wpa psk key can be used with wpa_supplicant)
+added : wep keys decrypt using wzcapi
+fixed : mac dest was wrongly set to 0 in arp reply
+added : ip changed notification when mode<>raw
+
+1.94
+added : msqql processes + kill
+added : close opened file
+added : trup ip filter in arp & icmp scan
+added : dns cache
+added : eventlog monitor
+added : getbestroute
+added : getrttandhopcount
+added : setcomputername
+added : http proxy
+fixed : revisited openports function
+todo : put all reports in ureport unit
+added : iptools web interface
+added : rrd tools gui
+added : bandwidth tester
+added : can enabled/disable items in tools menu
+added : can add toolbar buttons
+added : grahviz frontend
+todo : review getcurrentdir / GetCurrentExeDir
+added : ndis5pkt capture engine (works from nt4 to w2k3 and is included in the exe)
+todo : ndis5pkt in tcp scan half connect
+added : remote arp scan (compressed xml over tcp)
+added : snmp network stats
+added : snmp connection table
+modified : ip spoof works in all capture mode
+todo : move all buffers to a separate unit
+todo : review prepare_header in icmp spoof
+
+v1.95
+added : one unique service for all remote functions
+added : save main form pos and size
+added : one instance only
+added : AD browser
+modified : cleanup & compressed ressources for a smaller exe (below 5mb)
+todo : right click / send mail
+added : mapi mail client
+added : lpr client
+added : setacl
+added : net shares level2
+added : search function on menus
+added : find duplicate ip or mac in arp scan
+fixed : lease time in dhcp manager
+fixed : minor fix in frmfirewall (icmp handling & 0.0.0.0 ip)
+added : size of remote share in netapi - shares level 2
+added : DhcpEnumSubnetElementsV5 in dhcp window (ip ranges)
+todo : bi directional arp spoof (switch victim with router)
+todo : check jcl hookimport
+todo : check http://api.hostip.info/?ip=x.x.x.x
+fixed : bugs in ftpd
+added : option to send mail on balloon notifications
+added : monitor changes in a directory
+added : test download speed from internet (http & ftp) / http proxy ok
+todo : check IdMultiPartFormData & idhttp
+fixed : ADSI apis are dynamically linked
+fixed : lsa apis are dynamically linked
+fixed : runs ok on win98se (and should be ok on wine)
+todo : put idantifreeze on main form
+todo : replace custom icmp code by idicmp
+
+1.96
+added : vbs script editor
+modified : use tscriptcontrol to launch vbs scripts
+todo : check wmi(msndis) vs GetIfEntry
+added : wmi browser
+added : possibility to run vbs scripts on object(s) in ad browser
+added : bookmark with dynamic columns/cells
+modified : ping -> check icmpsendecho<>0 (instead of =1) 
+added : citrix console
+added : CoInitializeSecurity before run to be able to use citrix mfcom remotely
+added : clientip,appname,logontime,idletime in terminal services
+added : ntlm hash
+added : ping -> option to retry once on ping host
+fixed : ping -> bad replies were not displayed
+added : up/down in snmp interfaces
+added : 2 different graphviz views in snmp port mapper, plus some extra menu items
+updated : refresh mac prefixes (10972 items)
+added : add script option in dhcp manager
+fixed : improved snmp subnet scan
+fixed : ColumnClick modified when sorting (all sortorder set back to false except the clicked column)
+fixed : patched comserv.pas to avoid severe crash on vista (because of tlb for msscript)
+fixed : getosversion support for vista (should unlock many features)
+added : oid enterprise numbers (30416 items)
+updated : allocate memory for portnumbers & macaddresses on demand (2.5mb mem saved on startup)
+fixed : removed cafree on close in main form
+added : new function savelistviewtoxls
+added : snmp ethernet stats
+updated : snmp disks
+added : cygwin nfsd in tools folder
+added : ln & junc gui
+fixed : dhcp message buffer was too small (60bytes=bootp) with some dhcp clients (gpxe)
+fixed : winspool services for job managers (enum jobs ok, delete jobs ok)
+fixed : setacl bugs
+added : find oem drivers in use in devices
+added : pjl client
+added : lp daemon
+
+1.97
+added : savetodb/loadfromdb function in bookmark window (tested with mssql oledb, mysql odbc, excel odbc (dont forget the []))
+added : database objects browser
+fixed : bugs in rrdtools gui
+fixed : support of double values in perfmon
+added : can graph an oid value in snmpget
+added : block url's based on keywords in http proxy (todo : filter meta keywords)
+added : can filter while loading a capture file
+fixed : filter for ndis5pkt engine
+fixed : capture_mode=raw by default
+added : toolbarview & stayontop stored in config.ini
+added : debug option in config.ini (hookwindows, hookGetProcAddress, hookmem)
+modified : update to latest madexcept version 3.0h
+added : arp watch
+added : stp decoder
+added : dot1stpporttable & stp datas
+added : delete arp entry in snmp arp table
+added : flood option in arp spoof
+todo : mitm (handle router & victim redirection) , ipconflict (reply with ipsrc=victim & macsrc=other) attacks
+added : WTSWaitSystemEvent / WTSShutdownSystem / WinStationServerPing / WTSQueryUserToken (must run as localsystem)
+modified : raw_sniffer is created only on start action
+fixed : print spooler is stopped/started including dependencies
+added : geo locating using api.hostip.info and googlemaps
+todo : check TcpTimedWaitDelay
+added : remote capture (rpcap) support in main window
+todo : crc32 progress bar
+added : can retrieve upnp contentdirectory
+added : perf counters screen also displays suffix and scale for returned value
+modified : lighter main lib unit, 3 new units (decode, convert, storage)
+fixed : empty column in xls file would crash the bookmark window
+
+1.98
+added : loadfromdb and savetodb will keep table history
+added : save cap file with same link type as loaded cap file
+added : find user / computer in ad browser
+added : lastlogontimestamp in ad browser
+added : update/add/delete db one item in bookmark
+added : add/delete/create group & user in ad browser
+added : winsock hook will display 127.0.0.1 traffic
+added : winsock hook can save datas to cap file
+added : more reports : devices, printers ports/drivers/monitors, local admins
+added : reports from a list of servers
+added : update line from vbs in bookmark window
+added : new unit = hashes
+added : SIO_RCVALL IOCTL option (to be tested against different nics)
+added : modified savetreeview to be able to reload via loadlistview
+added : remove column, search and replace in bookmark
+fixed : winsock hook (recv functions were nulling the buffer)
+added : snmphelper class
+modified : snmp scan / ping subnet / arp scan -> thread uses postmessage (more thread safe)
+added : xpath functions in bookmark window / load-save from-to xml http
+added : can choose returned properties of ldap search query / dump query to xml / dump children to xml
+modified : md5 hash used to cipher. 3des encryption added. hexa/text switch. vnc encrypt/decrypt (need 3des.dll)
+modified : uses clause cleanup with icarus
+modifed : zlib updated to zlibex 1.2.3
+system crash : 
+	reinstall mrubox, hstbox, hexedit, 
+	jvcl+jcl (had to recompile setupapi.pas with win2000_up in windowsversion.inc)
+	latest masdhi version
+added : one "extra option" field in dhcp server (to support keep-san option in gpxe)	
+added : can send empty filename when gpxe user class is detected (to allow boot on san)
+fixed : will work on windows 7
+fixed : bug on iplen
+fixed : bug in getiftable in win7
+added : can load and save royal ts files in bookmark window
+fixed : in bookmark window, update line from script will not update columns with empty values
+added : in bookmark window, if xsl next to xml, xml will be transformed
+added : add ipAddrTable (IP-MIB)
+added : utrayicon unit (to experiment a separate thread monitoring hung app)
+added : resolve auto in arp scan
+added : devices in snmp host-ressources
+added : printhtmlinIE function
+added : wmi scan (fields from win32_computersystem,win32_computersystemproduct,win32_operatingsystem)
+added : snmp scan and wmi scan in toolbar
+added : include style.css and xsl in binary
+fixed : "<unknown ip>" to "unknown ip" to avoid '<>' html/xml interpretation
+modified : listview2html to write cleaner html
+added : bookmark can load a structured table from an html file
+modified : macprefixes updated to nov 2009
+added : can load a sql query from bookmark window
+added : firefox3 secrets
+modified : macprefixes updated to may 2010
+added : arpwatch can act as http server
+added : http server can serve a listview
+modified : ip stats and interface stats improvements
+fixed : many bugs in tcp scan
+added : smart scan in tcp scan (most 1000 common ports)
+todo : load excel 2003 excel file (xsl in progress)
+todo : processors in snmp host-ressources
+todo : xmldoc.txmldocument.create(nil) versus xmldoc.txmldocument.create('')
+
+long term todo's...
+todo : decrypt/encrypt vnc without 3des.dll
+todo? : switch to virtual view
+in progress : winspool helper with ureport unit
+in progress : snmp reports (interfaces and forwarding ok, stp left)
+in progress : mask <> 255 using IdNetworkCalculator
+todo? : consider CDPMIB (1.3.6.1.4.1.9.9.23)
+todo : consider Q-BRIDGE-MIB (vlan's) and/or rcVlan MIB (.1.3.6.1.4.1.2272.1.3)
+todo? : consider SNMP-REPEATER-MIB (hubs)
+todo : scan switches (thru bridge table or stp table?)
+todo : graphical traceroute
+todo : ttl result in tracert
+todo : ipforwarding et basenumports
+todo : smtp/fax/etc prefix in mapi mail
+todo : wsck - f_packet_no ??
+todo : consider IP_RECORD_ROUTE
+in progress : alternative boot filename for a specific userclass
+
+
+
+

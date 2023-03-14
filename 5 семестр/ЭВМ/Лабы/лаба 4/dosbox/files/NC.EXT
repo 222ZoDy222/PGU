@@ -1,0 +1,22 @@
+txt: browse !.!
+lst: browse !.!
+fw3: c:\fw3\fw !.!
+ddi: c:\utils\ddi !.!
+ima: c:\utils\img !.! vc
+obj: link !.!;
+pcx: pcxshow !.!;
+bsa: bsa -x !.!
+:doc: pkzip ! !.!
+do:  perenos.exe !.!
+do?: d:\word\wordt !.!
+pas: c:\tp\turbo !.!
+arj: arj x -y -v !.!
+a0?: arj x -y !.!
+a1?: arj x -y !.!
+zip: pkunzip -d !.!
+lzh: lha x !.!
+ubt: ubl_view.exe -54 !.!
+ha : ha xy !.!
+sve: word !.!
+rar: rar !.!
+??_: expand !.! !

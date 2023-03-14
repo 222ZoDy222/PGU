@@ -1,0 +1,7 @@
+6
+if d2 off then k1 = 1 result d1 on
+if d1 on and d3 on and d5 off then k1 = 0 result d2 off
+if d4 off then k3 = 1 result d3 on
+if d3 on and d1 on and d5 off then k3 = 0 result d4 off
+if d2 off and d4 off then k5 = 0 result T off
+if T off then k5 = 1 result d5 off

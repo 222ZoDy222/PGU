@@ -1,0 +1,11 @@
+digraph BLOCK2 {
+         node [shape=box]
+         edge [style=invis]
+         subgraph cluster_TOP {
+                 label="TOP"
+                 MODULE1->MODULE3->MODULE99
+                 rank=same { MODULE1->MODULE2 }
+                 rank=same { MODULE3->MODULE4 }
+                 MODULE99
+         }
+ }

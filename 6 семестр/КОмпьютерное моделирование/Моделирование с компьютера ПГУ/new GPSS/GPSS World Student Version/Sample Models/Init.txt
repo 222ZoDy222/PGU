@@ -1,0 +1,4 @@
+; GPSS World Sample File - INIT.TXT
+; Initials Savevalues
+   INITIAL X$One,45
+   INITIAL X$Two,765

@@ -1,0 +1,17 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 0001FH 00020H STSEG              
+ 00020H 00035H 00016H DSEG               
+ 00040H 0006AH 0002BH CSEG               
+
+
+Detailed map of segments
+
+ 0000:0000 0020 C=       S=STSEG          G=(none)  M=PRIM.ASM   ACBP=74
+ 0002:0000 0016 C=       S=DSEG           G=(none)  M=PRIM.ASM   ACBP=60
+ 0004:0000 002B C=       S=CSEG           G=(none)  M=PRIM.ASM   ACBP=60
+
+Program entry point at 0004:0010
+Warning: No stack
+

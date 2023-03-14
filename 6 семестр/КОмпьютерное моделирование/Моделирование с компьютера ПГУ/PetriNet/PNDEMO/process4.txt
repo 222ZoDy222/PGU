@@ -1,0 +1,12 @@
+11
+{1: } if D2 off  then k1=1 and k2 = 0      result (D1 on);
+{2: } if (D1 on)   then k1 = 0 and k2 = 0    result D1 on;
+{3: } if D1 on and D3 on and D5 off then k1 = 0 and k2 = 1 result (D2 off);
+{4: } if (D2 off)  then k1 = 0 and k2 = 0    result D2 off;
+{5: } if D4 off  then k3 = 1 and k4 = 0    result (D3 on);
+{6: } if (D3 on)   then k3 = 0 and k4 = 0    result D3 on;
+{7: } if D3 on and D1 on and D5 off then k3 = 0 and k4 = 1 result (D4 off);
+{8: } if (D4 off)  then k3 = 0 and k4 = 0    result D4 off;
+{9: } if D2 off and D4 off then k5 = 1 and M = 1   result T off;
+{10: } if T off   then k5 = 1 and M = 0     result (D5 off);
+{11: } if (D5 off)  then k5 = 0 and M = 0     result D5 off

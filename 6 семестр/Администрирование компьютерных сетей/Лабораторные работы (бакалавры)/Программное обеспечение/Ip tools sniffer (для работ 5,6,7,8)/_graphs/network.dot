@@ -1,0 +1,200 @@
+graph home_network {
+
+	rankdir="LR";
+
+node [shape="box"];
+
+
+	internet [shape="egg",style=filled,fillcolor=gray];
+
+	subgraph cluster_room1 {
+		label="office";
+
+
+	subgraph cluster_router1 {
+		label="Internet Router";
+
+		router1_wan [label="WAN"];
+		router1_eth1 [label="Ethernet 10/100\nPort 1"];
+		router1_eth2 [label="Ethernet 10/100\nPort 2"];
+		router1_eth3 [label="Ethernet 10/100\nPort 3"];
+		router1_eth4 [label="Ethernet 10/100\nPort 4"];
+		router1_wlan [shape="egg",label="802.11g\nWireless"];
+
+	}
+
+	subgraph cluster_switch1 {
+		label="Switch";
+
+		switch1_eth1 [label="Ethernet 10/100\nPort 1"];
+		switch1_eth2 [label="Ethernet 10/100\nPort 2"];
+		switch1_eth3 [label="Ethernet 10/100\nPort 3"];
+		switch1_eth4 [label="Ethernet 10/100\nPort 4"];
+		switch1_eth5 [label="Ethernet 10/100\nPort 5"];
+		switch1_eth5_uplink [label="Ethernet 10/100\nPort 5\n(Uplink)"];
+	}
+
+	subgraph cluster_printer1 {
+		label="Multi-function Inkjet";
+
+		printer1_rs232 [label="RS-232"];
+		printer1_usb [label="USB"];
+	}
+
+	subgraph cluster_printer2 {
+		label="Color Laser";
+
+		printer2_rs232 [label="RS-232"];
+		printer2_usb [label="USB"];
+		printer2_eth [label="Ethernet 10/100"];
+	}
+
+	subgraph cluster_pc1 {
+		label="PC: mother";
+		style="filled";
+		fillcolor="aliceblue";
+
+		pc1_eth0 [label="Ethernet 10/100\nMotherboard"];
+		pc1_usb [label="USB 1.1"];
+	}
+
+	subgraph cluster_pc2 {
+		label="PC: father";
+		style="filled";
+		fillcolor="aliceblue";
+
+		pc2_eth0 [label="Ethernet 10/100\nMotherboard"];
+		pc2_eth1 [label="Ethernet 10/100\nPCI"];
+		pc2_usb [label="USB 2.0"];
+	}
+
+	subgraph cluster_server1 {
+		label="Server: penguin";
+		style="filled";
+		fillcolor="aliceblue";
+
+		server1_eth0 [label="Ethernet 10/100\nPCI"];
+		server1_eth1 [label="Ethernet 10/100\nPCI"];
+	}
+
+	}
+
+
+	subgraph cluster_room2 {
+		label = "Family Room";
+
+	subgraph cluster_dvr1 {
+		label="DVR";
+		style="filled";
+		fillcolor="aliceblue";
+
+		dvr1_usb [label="USB"];
+		dvr1_eth [label="Ethernet 10/100"];
+
+		dvr1_usb -- dvr1_eth;
+	}
+
+	}
+
+	subgraph cluster_room3 {
+		label = "Master Bedroom"
+
+	subgraph cluster_dvr2 {
+		label="DVR";
+		style="filled";
+		fillcolor="aliceblue";
+
+		dvr2_usb [label="USB"];
+		dvr2_wlan [label="802.11b Wireless",shape="egg"];
+
+		dvr2_usb -- dvr2_wlan;
+	}
+	}
+
+	subgraph cluster_room4{
+		label = "Bedroom 1";
+
+	subgraph cluster_pc3 {
+		label="PC: daughter";
+		style="filled";
+		fillcolor="aliceblue";
+
+		pc3_eth0 [label="Ethernet 10/100\nMotherboard"];
+		pc3_wlan [label="802.11g Wireless\nPCI"];
+	}
+
+	}
+
+
+	subgraph cluster_room5{
+		label = "Bedroom 2";
+
+
+	subgraph cluster_pc4 {
+		label="PC: son";
+		style="filled";
+		fillcolor="aliceblue";
+
+		pc4_eth0 [label="Ethernet 10/100\nMotherboard"];
+		pc4_wlan [label="802.11g Wireless\nPCI",shape="egg"];
+	}
+	}
+
+
+
+
+	subgraph cluster_notebook1 {
+		label="PC: notebook";
+		style="filled";
+		fillcolor="aliceblue";
+
+		notebook1_eth0 [label="Ethernet 10/100"];
+		notebook1_wlan [label="802.11g Wireless\nPCI",shape="egg"];
+	}
+
+	subgraph cluster_pocketPC1 {
+		label="PPC: father";
+		style="filled";
+		fillcolor="aliceblue";
+
+		pocketPC1_bus [label="Dock"];
+		pocketPC1_wlan [label="802.11b Wireless",shape="egg"];
+	}
+
+	subgraph cluster_pocketPC2 {
+		label="PPC: mother";
+		style="filled";
+		fillcolor="aliceblue";
+
+		pocketPC2_bus [label="Dock"];
+	}
+
+	pocketPC1_wlan -- router1_wlan [style="dashed"];
+
+	pocketPC2_bus -- pc1_usb;
+	pocketPC1_bus -- pc2_usb;
+
+
+	router1_wan -- internet [label="Adelphia"];
+	dvr1_eth -- switch1_eth2;
+	dvr2_wlan -- router1_wlan [style="dashed"];
+	server1_eth0 -- router1_eth3;
+
+	pc3_wlan -- router1_wlan [style="dashed"];
+	pc4_wlan -- router1_wlan [style="dashed"];
+	notebook1_wlan -- router1_wlan [style="dashed"];
+	notebook1_eth0 -- switch1_eth4;
+
+
+	pc1_eth0 -- router1_eth4;
+	pc1_usb -- printer1_usb;
+
+	printer2_eth -- switch1_eth3;
+
+
+	switch1_eth5_uplink -- router1_eth1;
+
+	pc2_eth0 -- switch1_eth1;
+
+
+}

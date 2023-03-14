@@ -1,0 +1,39 @@
+digraph G {
+graph [page = "11,8.5",ratio=auto,rankdir=RL];
+
+node [shape=box];
+a1;a2;a6;
+
+node [shape=hexagon];
+a3;a9;a10;a11 
+
+node [shape=invhouse];
+a4;a7;a29
+
+node [shape=circle];
+a5;a8;a30
+
+node [shape=point]
+p1;p2;p3;p4;p5;p6;p7;
+
+{rank=same;a1 ->a2}
+a2 ->a3;
+{rank=same;p1;a3;p2 [dir=none]}
+p1 -> a3 [dir=none];
+a3 -> p2 [dir=none];
+
+p1->a4->a7->a29;
+{rank=same;a4->a5};
+{rank=same;a7->a8};
+{rank=same;a29->a30};
+
+p2->a6->a9 ;
+
+{rank=same;p3;a9;p4};
+p3->a9[dir=none];
+a9->p4 [dir=none];
+
+/* p3->a10; */
+/* p4->a11; */
+
+}

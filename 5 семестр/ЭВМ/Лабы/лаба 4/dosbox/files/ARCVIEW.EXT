@@ -1,0 +1,24 @@
+arj: arcview.exe
+a0?: arcview.exe
+a1?: arcview.exe
+lzh: arcview.exe
+ice: arcview.exe
+zip: arcview.exe
+arc: arcview.exe
+pak: arcview.exe
+msg: msgview.exe
+chz: arcview.exe
+bsa: arcview.exe
+exe: hiew.exe
+com: hiew.exe !\!.!
+ovl: hiew.exe !\!.!
+chi: chiview.exe !\!.!
+pcx: vpic.exe !\!.! /e
+fli: aaplay.exe !\!.!
+ans: typ_ansi.exe !\!.!
+db: paraview.exe
+ha: haview.exe
+123: 123view.exe
+dbf: dbview.exe
+gif: command.com /c av.bat
+???: wpview.exe

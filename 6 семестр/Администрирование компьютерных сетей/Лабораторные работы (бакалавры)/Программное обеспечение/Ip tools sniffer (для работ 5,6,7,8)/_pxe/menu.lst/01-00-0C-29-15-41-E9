@@ -1,0 +1,128 @@
+# This is a sample menu.lst file. You should make some changes to it.
+# The old install method of booting via the stage-files has been removed.
+# Please install GRLDR boot strap code to MBR with the bootlace.com
+# utility under DOS/Win9x or Linux.
+
+color blue/green yellow/red white/magenta white/magenta
+timeout 30
+default /default
+
+title xpe.img
+map --mem (hd0,0)/_images/xpe.img (hd0)
+map --hook
+root (hd0,0)
+chainloader /ntldr
+
+title find and load NTLDR of Windows NT/2K/XP
+fallback 1
+find --set-root --ignore-floppies /ntldr
+chainloader /ntldr
+savedefault --wait=2
+
+title find and load BOOTMGR of Windows VISTA
+fallback 2
+find --set-root --ignore-floppies /bootmgr
+chainloader /bootmgr
+savedefault --wait=2
+
+title find and load CMLDR, the Recovery Console of Windows NT/2K/XP
+fallback 3
+find --set-root --ignore-floppies /cmldr
+chainloader /cmldr
+#####################################################################
+# write string "cmdcons" to memory 0000:7C03 in 2 steps:
+#####################################################################
+# step 1. Write 4 chars "cmdc" at 0000:7C03
+write 0x7C03 0x63646D63
+# step 2. Write 3 chars "ons" and an ending null at 0000:7C07
+write 0x7C07 0x00736E6F
+savedefault --wait=2
+
+title find and load IO.SYS of Windows 9x/Me
+fallback 4
+find --set-root /io.sys
+chainloader /io.sys
+savedefault --wait=2
+
+title find and boot 0PE.ISO
+fallback 5
+find --set-root /0PE/0PE.ISO
+map /0PE/0PE.ISO (0xff) || map --mem /0PE/0PE.ISO (0xff)
+map --hook
+chainloader (0xff)
+savedefault --wait=2
+
+title boot from SDI
+chainloader --sdi (pd)/sdi/xpe.sdi
+#chainloader --sdi (pd)/images/bartpe.sdi
+boot
+
+title Return to PXELinux
+pxe keep
+chainloader --force --raw (pd)/pxelinux.0
+
+title Load grub.exe with PXE support
+pxe keep
+terminal console
+kernel (pd)/grub.exe
+
+title Load grldr with PXE support
+pxe keep
+terminal console
+chainloader --force --raw (pd)/grldr
+
+title BartPE
+pxe keep
+chainloader --raw (pd)/startrom.0 
+
+title WinPE 2.1
+pxe keep
+chainloader --raw (pd)/winpe/pxeboot.n12
+
+title commandline
+commandline
+
+title floppy (fd0)
+chainloader (fd0)+1
+rootnoverify (fd0)
+
+title back to dos
+quit
+
+title reboot
+reboot
+
+title halt
+halt
+
+title MAXDOS.IMG
+find --set-root --ignore-floppies /boot/MAXDOS.IMG
+map --mem /boot/MAXDOS.IMG (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+
+title Parted Magic V4.2
+kernel /memdisk iso
+initrd /images/pmagic/pmagic-4.2.iso
+
+title Xen [/images/xen/xen-3.1.0.gz]
+#root   (hd0,0)
+kernel /images/xen/xen-3.1.0.gz dom0_mem=262144 noreboot
+module /images/xen/vmlinuz-2.6.18-xen root=/dev/sda1 ro all-generic-ide irqpoll panic=0
+
+title Paragon HD manager 8.0
+find --set-root /hdmanager.iso
+map /hdmanager.iso (hd32)
+map --hook
+root (hd32)
+chainloader (hd32)
+
+#Use grldr as the pxe boot file, and you can map an ISO to memory and boot from it:
+title boot from iso
+map --mem (pd)/mybootable.iso (0xff)
+map --hook
+chainloader (0xff)
+boot
+
+

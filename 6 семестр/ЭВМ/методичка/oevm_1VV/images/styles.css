@@ -1,0 +1,66 @@
+body{
+    background-image: url(sbgr0150vsm.jpg);
+		
+}
+H1{
+    color: #003399; FONT-FAMILY: "Arial Cyr", Arial, sans-serif; font-size: 18px; font-style: normal; font-weight: bold
+}
+H2{
+	color: #003399; FONT-FAMILY: "Arial Cyr", Arial, sans-serif; font-size: 24px; font-weight: bold
+; font-style: normal; line-height: normal
+}
+H3{
+    FONT-FAMILY: "Times New Roman", Times, serif; color:#000000; font-size: 16px; font-style: normal; font-weight: bold
+; font-variant: small-caps
+}
+H4{
+	color: 0000ff; FONT-FAMILY: Arial Cyr, Arial, sans-serif
+}
+H5{
+	color: 0000ff; FONT-FAMILY: Arial Cyr, Arial, sans-serif
+}
+H6{
+	color: #660000; FONT-FAMILY: "Courier New", Courier, mono; font-size: 16px; font-style: normal; line-height: normal; font-weight: bold
+}
+ 
+p{
+    color: black
+; font-family: "Times New Roman", Times, serif; font-size: 16px; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal
+; background: url(sbgr0150sm.jpg)
+}
+
+li{
+    color: black
+; font-family: "Times New Roman", Times, serif; font-size: 16px; font-style: normal; line-height: 10pt; font-weight: normal
+}
+
+A:link{
+    color: blue;
+; font: normal 16px "Times New Roman", Times, serif
+}
+
+A:visited{
+    color: #FF3333;
+; font: bold 16px "Times New Roman", Times, serif
+}
+A:active{
+    color: #990033
+; font-family: "Times New Roman", Times, serif; font-size: 16px; font-style: normal
+; font-weight: bold
+} 
+A:hover{
+	color: 00cc00;
+}
+	   
+td{
+    color: black
+}	       
+
+
+ 
+
+
+
+
+           
+

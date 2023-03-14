@@ -1,0 +1,446 @@
+<html>
+<head>
+<title>Команды пересылки</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<link rel="stylesheet" href="../images/styles.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h1 align="center"> Команды пересылки данных </h1>
+<p>Команды этой группы осуществляют пересылку данных между регистрами процессора 
+  или регистрами и ячейками оперативной памяти. По функциональному назначению 
+  их можно разбить на следующие группы: </p>
+<ul>
+  <li> пересылки данных общего назначения</li>
+  <br>
+  <li> ввода-вывода в порт</li>
+  <br>
+  <li> работы с адресами и указателями</li>
+  <br>
+  <li> работы со стеком</li>  <br>
+</ul>
+<p> Коды команд данной группы приведены в таблице1.</p>
+<p>Процессор i8086 и более поздние версии относятся к двухадресным машинам. Это 
+  значит, что его команда может содержать не более двух операндов. Код определяет 
+  выполняемое командой действие, операнды показывают адреса ячеек, хранящих исходные 
+  данные, необходимые для выполнения команды и адрес ячейки результата. Чтобы 
+  показать, какой из операндов будет хранить результат, его обозначают при описании 
+  команды как <b>dst</b>(destination - назначение), операнд, ко-торый используется 
+  только как адрес исходных данных, обозначается как <b>src</b>(source - источник). 
+  В двухоперандных командах операнд dst указывает, перед выполнением команды, 
+  адрес исходного данного, а после выполне-ния - адрес результата. </p>
+<table border=1 cellspacing=0 cellpadding=0 align=center>
+  <thead> 
+  <tr> 
+    <td colspan=9 class="Normal" height="21"> 
+      <p style='text-align:center;      '><span style='font-weight:normal'>Команды 
+        пересылки и двоичной арифметики</span></p>
+    </td>
+  </tr>
+  </thead> 
+  <tr> 
+    <td colspan=2 valign=top class="Normal"> 
+      <p style='text-align:center;    '>Мнемокод</p>
+    </td>
+    <td colspan=6 valign=top class="Normal"> 
+      <p style='text-align:center;    '>Флаги</p>
+    </td>
+    <td width=305 rowspan=2 class="Normal"> 
+      <p style='text-align:center;    '><span style='font-weight:normal'>Действие</span></p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal" height="23"> 
+      <p style='  '><b>Код</b></p>
+    </td>
+    <td width=106 valign=top class="Normal" height="23"> 
+      <p style='  '><b>Операнды</b></p>
+    </td>
+    <td width=24 valign=top class="Normal" height="23"> 
+      <p><span lang=EN-US
+  style='font-weight:normal'>O</span><span style='  font-weight:normal'></span></p>
+    </td>
+    <td width=22 valign=top class="Normal" height="23"> 
+      <p style='text-align:center;    '><span lang=EN-US>S</span></p>
+    </td>
+    <td width=21 valign=top class="Normal" height="23"> 
+      <p style='text-align:center;    '><span lang=EN-US>Z</span></p>
+    </td>
+    <td width=22 valign=top class="Normal" height="23"> 
+      <p style='text-align:center;    '><span lang=EN-US>A</span></p>
+    </td>
+    <td width=22 valign=top class="Normal" height="23"> 
+      <p style='text-align:center;    '><span lang=EN-US>P</span></p>
+    </td>
+    <td width=23 valign=top class="Normal" height="23"> 
+      <p style='text-align:center;    '><span lang=EN-US>C</span></p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>mov</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b>dst, src.</b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>пересылка</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b>х<span lang=EN-US>chg</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>dst, src</span></b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US>-</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US>-</span></p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US>-</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US>-</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US>-</span></p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US>-</span></p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>обмен<span lang=EN-US></span></p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>push</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b>src</b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>сохранение слова в стеке</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>pop</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b>dst</b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>восстановление слова из стека</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>xlat</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b>таблица</b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>трансляция байтов из таблицы</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>lea</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>dst, src</span></b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>загрузка исполнительного адреса</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>lds</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>dst, src</span></b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>загрузка указателя с <span lang=EN-US>DS</span></p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>les</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>dst, src</span></b></p>
+    </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>загрузка указателя с <span lang=EN-US>ES</span></p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>lahf</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"><b></b> </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>загрузка флагов в АН</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>sahf</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"><b></b> </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US>-</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US style='font-size:12.0pt;'>r</span><span lang=EN-US></span></p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US style='font-size:12.0pt;'>r</span><span lang=EN-US></span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US style='font-size:12.0pt;'>r</span><span lang=EN-US></span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US style='font-size:12.0pt;'>r</span><span lang=EN-US></span></p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US style='font-size:12.0pt;'>r</span><span lang=EN-US></span></p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>установка флагов из АН</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>pushf</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"><b></b> </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '>-</p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>х</span></p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>сохранение флагов в стеке</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=55 valign=top class="Normal"> 
+      <p style='  '><b><span lang=EN-US>popf</span></b></p>
+    </td>
+    <td width=106 valign=top class="Normal"><b></b> </td>
+    <td width=24 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US style='font-size:12.0pt;'>r</span><span lang=EN-US></span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US style='font-size:12.0pt;'>r</span><span lang=EN-US></span></p>
+    </td>
+    <td width=21 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US style='font-size:12.0pt;'>r</span><span lang=EN-US></span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US style='font-size:12.0pt;'>r</span><span lang=EN-US></span></p>
+    </td>
+    <td width=22 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span lang=EN-US style='font-size:12.0pt;'>r</span><span lang=EN-US></span></p>
+    </td>
+    <td width=23 valign=top class="Normal"> 
+      <p style='text-align:center;    '><span style='font-size:12.0pt'>r</span></p>
+    </td>
+    <td width=305 valign=top class="Normal"> 
+      <p style='text-align:left;    '>восстановление флагов из стека</p>
+    </td>
+  </tr>
+</table>
+<p>Примечание:<br>
+  - флажок не модифицируется; <br>
+  х Устанавливается или сбрасывается в соответствии с результатом;<br>
+  u не определен;<br>
+  0 Сбрасывается в 0.</p>
+<p>Подробное описание этих команд можно посмотреть в <a href="../library/asm/guide/guide/Start.htm" target=_blank>справочнике</a>, 
+  там же приведены на примерах особенности их <a href="../library/asm/guide/guide/LESSON/LESSON07/Les_07.htm"target=_blank>использования</a> 
+</p>
+<hr class=forhr align="center">
+<table width="600" align="center">
+  <tr> 
+    <td> 
+      <p align="center"><b><a href="adres.htm"target="mainFrame">назад</a></b></p>
+    </td>
+    <td> 
+      <p align="center"><b> <a href="cpu.htm"target="mainFrame">в начало раздела</a></b></p>
+    </td>
+    <td> 
+      <p align="center"><b><a href="istr1.htm " target="mainFrame">вперед</a></b></p>
+    </td>
+  </tr>
+</table>
+<h1>&nbsp;</h1  >
+<p><strong></strong> <strong><font color="#0000FF"></font></strong></p>
+<p>&nbsp; </p>
+</body>
+</html>

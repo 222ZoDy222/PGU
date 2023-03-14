@@ -1,0 +1,55 @@
+:Base HPSim.hlp>Main
+:Title HPSim
+:Index HPSim=HPSim.hlp
+1 HPSim
+2 Version=Version
+2 Program Description=Programmbeschreibung
+2 Installation=Installation
+2 Running HPSim=StartenvonHPSim
+2 Basics=Allgemein
+2 Info=Info
+2 New Document=NeuesDokument
+2 Load and Save=LadenundSpeichern
+2 Export Import=ExportImport
+2 Termination of HPSim=Anwendungbeenden
+2 Document Properties=DokumentEigenschaften
+2 Window=Ansicht
+2 Splitting a Window=Fensterteiler
+2 Zooming=Zoomfunktion
+2 Tool Bars=Werkzeugleisten
+2 Context Menu=Kontextmenü
+2 Project Explorer=ProjektExplorer
+2 Status Bar=Statusleiste
+2 Creating a Graphical Object=EingraphischesObjekterstellen
+2 Change the Properties of an Object=DieEigenschafteneinesObjektesÄndern
+2 Selecting Objects=EinodermehrereObjektezurBearbeitungAuswä
+2 Passive Graphical Objects=PassivegraphischeObjekte
+2 Line=Linie
+2 Rectangle=Rechteck
+2 Polygon=Polygon
+2 Text=Text
+2 Label=Label
+2 Active Graphical Objects=AktivegraphischeObjekte
+2 Place=Platz
+2 Transition=Transition
+2 Arc=Kante
+2 Deleting Graphical Objects=LöschengraphischerObjekte
+2 Grouping and Ungrouping=Gruppieren
+2 Clipboard=Zwischenablage
+2 Masking=Maskieren
+2 Printing=Drucken
+2 Starting a Simulation=SimulationStarten
+2 Resetting the Simulation=RücksetzenderSimulation
+2 Activation of the Output File=AusgabedateiAktivieren
+2 Simulation Single Step=SimulationEinzelschritt
+2 Simulation Run=SimulationLauf
+2 Simulation Run Fast=SimulationSchnellLauf
+2 Simulation Pause=SimulationPause
+2 Simulation Status Window=SimulationAusgabefenster
+1 First Steps
+2 First Steps=ErsteSchritte
+2 Step 1: Document Properties=Schritt1DokumentEigenschaften
+2 Step 2: Drawing the Net=Schritt2Netzentwerfen
+2 Step 3: Adjusting the Net Object Properties=Schritt3EigenschaftenderNetzObjekte
+2 Step 4: Decorating and Describing the Net=Schritt4IllustrierenundBeschreiben
+2 Step 5: Simulation=Schritt5Simulation

@@ -1,0 +1,36 @@
+
+               MINUTEMAN SOFTWARE STUDENT VERSION LICENSE AGREEMENT
+
+    Minuteman Software provides this Software free of charge to the Simulation Community but licenses its use. Title to the licensed Software and copyrights shall remain with Minuteman Software. It is to be used solely for noncommercial educational purposes.
+
+                                        LICENSE
+     You may:
+a. use the Software on any number of computers;
+b. copy the Software backup purposes in support of your use of the Software; and,
+c. transfer a copy of the Software to another party if the party agrees to accept the terms and conditions of this Agreement between that party and Minuteman Software.
+     You must:
+a. reproduce and include the copyright notice on every copy.
+     You may not:
+a. sublicense, rent, or lease the Software,
+b. remove copyright or proprietary notices,
+c. modify internal logic or serial numbers,
+d. reverse assemble or reverse compile the Software, or
+e. allow any third party to violate the terms of this agreement.
+
+     YOU MAY NOT USE, COPY, MODIFY, OR TRANSFER THE PROGRAM, OR ANY COPY, MODIFICATION, OR MERGED PORTION, IN WHOLE OR IN PART, EXCEPT AS EXPRESSLY PROVIDED FOR IN THIS LICENSE.
+
+                                 TERM
+     The license is effective until terminated. You may terminate it at any other time by destroying the Software together with all copies in any form. It will also terminate upon conditions set forth elsewhere in this Agreement or if you fail to comply with any term or condition of this Agreement. You agree upon such termination to destroy the Software together with all copies in any form.
+
+                                 AS IS
+     Minuteman Software provides this Software free of charge 'as is', without warranty of any kind. No Warranty is expressed or implied. THE FOREGOING IS IN LIEU OF ALL OTHER WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT
+LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+                           LIMITATIONS OF REMEDIES
+     IN NO EVENT WILL MINUTEMAN SOFTWARE BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING ANY LOST PROFITS, LOST SAVINGS OR OTHER INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE SUCH PROGRAM EVEN IF MINUTEMAN SOFTWARE OR AN AUTHORIZED DEALER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, OR FOR ANY CLAIM BY ANY OTHER PARTY.
+
+                                        GENERAL
+     You may not sublicense, assign, or transfer this license except as expressly provided for in this agreement. Any attempt otherwise to sublicense, assign, or transfer any of the rights, duties, or obligations is void. 
+     This Agreement shall be governed by the laws of the State of North Carolina, United States of America. Failure by any party to enforce any contract term will not be deemed a waiver of the right to enforce that term later. This Agreement replaces all prior communications and constitutes the entire Agreement between the parties with respect to its subject matter. No deviations from these terms and conditions will be binding unless in writing and signed by the party against whom the same is sought to be enforced.
+     Should you have any questions concerning this Agreement, you may contact Minuteman Software by email to Support@MinutemanSoftware.com.
+

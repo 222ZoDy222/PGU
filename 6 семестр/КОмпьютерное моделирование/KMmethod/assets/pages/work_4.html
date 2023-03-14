@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="shortcut icon" href="../gallery/Practice.svg" type="image/x-icon">
+    <script src="../gc.js"></script>
+    <title>Работа №4 Формирование графического интерфейса станции оператора</title>
+</head>
+<body>
+    <div class="work-wrapper">
+        <div class="fade-menu">
+            <button class="menu-btn  " onclick="fade()">
+            </button>
+            <div id="menu-content">
+                <div class="wrapper">
+                    <div class="header onclick_header">
+                        <div class="teacher-card onclick_menu">
+                            <img src="../gallery/teacher_logo.png" alt="Portrait">
+                            <div class="teacher-text">
+                            <p class="demi-bold">Бурукина Ирина Петровна</p>
+                            <p>К.Т.Н., доцент</p>
+                            </div>
+                        </div>
+                        <div class="discipline-name">
+                            <p class="demi-bold">Компьютерное моделирование в системах автоматизированного проектирования</p>
+                        </div>
+                        <div class="university-name">
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="theory-column">
+                            <div class="theory-card  ">
+                                <a href="../pages/theory.html" target="_blank">
+                                <div class="card-wrapper">
+                                <p>Теория для работы Круг-2000</p>
+                                <img src="../gallery/Arrow.svg" alt="Перейти">
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="works-column">
+                            <div class="work-card  ">
+                                <a href="../pages/work_1.html">
+                                <div class="card-wrapper">
+                                    <div class="inner-card">
+                                        <p>Работа №1</p>
+                                    </div>
+                                    <p class="about">Разработка и описание технологического процесса</p>
+                                </div></a>
+                            </div>
+                            <div class="work-card  ">
+                                <a href="../pages/work_2.html">
+                                <div class="card-wrapper">
+                                    <div class="inner-card">
+                                        <p>Работа №2</p>
+                                    </div>
+                                    <p class="about">Создание базы данных переменных технологического процесса</p>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="work-card  ">
+                                <a href="../pages/work_3.html">
+                                <div class="card-wrapper">
+                                    <div class="inner-card">
+                                        <p>Работа №3</p>
+                                    </div>
+                                    <p class="about">Программно-логическое управление технологическим процессом</p>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="work-card  ">
+                                <a href="../pages/work_4.html">
+                                <div class="card-wrapper">
+                                    <div class="inner-card">
+                                        <p>Работа №4</p>
+                                    </div>
+                                    <p class="about">Формирование графического интерфейса станции оператора</p>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+        <div class="fixed_elements">
+            <a href="../pages/theory.html#third_step" target="blank">
+            <div class="fixed_card  ">
+                <p>Круг</p><p>2000</p>
+            </div>
+            </a>
+        </div>
+        <div class="content-work">
+                <div class="content-work-header">
+                    <p id="work-number" class="demi-bold">Работа №4</p>
+                    <p id="work-title">Формирование графического интерфейса станции оператора</p>
+                </div>
+                <div class="content-work-about">
+                    <div class="paragraph">
+                        <div class="paragraph-header">
+                            <p class="header-text demi-bold" >Цель работы</p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>Создание графического интерфейса станции оператора.
+                                </p>
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="paragraph-header">
+                            <p class="header-text demi-bold">Задание</p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>Создать и настроить графический интерфейс для модели управления технологического процесса для станции оператора. 
+                                </p>
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="paragraph-header">
+                            <p class="header-text demi-bold" id="first_task">Создать проект в менеджере задач</p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>Это работа завершающая. В результате неё у вас получится модель управления ТП, которая объединяет в себе все предыдущие работы.</p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>В данной работе используются 2 приложения: <b>Генератор динамики</b> и <b>Станция оператора</b>. С помощью генератора динамики вы создаёте и настраиваете графический интерфейс. Через станцию оператора вы взаимодействуете с этим интерфейсом в роли оператора.</p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>В <b>Менеджере задач</b> необходимо создать проект, к которому в дальнейшем подключим остальные составные модули. При создании указать имя и путь к БД, созданной в <a href="../pages/work_2.html#first_task" class="anchor" target="_blank">работе №2</a>.</p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>Для дальнейшей настройки проекта необходимо запустить созданный проект через генератор динамики и создать в нём проект графической базы данных.</p>
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="paragraph-header">
+                            <p class="header-text demi-bold" id="second_task" >Настроить проект </p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>Для работы с <b>Генератором динамики</b> нужно указать рабочую директорию (расположение проекта). Для корректной работы модели в директории с проектом должны находиться файлы:</p> 
+                        </div>
+                        <div class="paragraph-about">
+                            <ul>
+                                <li>Папка с БД, </li>
+                                <li>файл <span class="green-text">.kgp</span>,  </li>
+                                <li>файл <span class="green-text">.kgx</span>, </li>
+                                <li>файл <span class="green-text">.kgp.gdi</span> </li>
+                            </ul>  
+                        </div>
+                        <div class="paragraph-about">
+                            <p>В дополнительных свойствах проекта настройте параметры запуска для <b>Генератора динамики</b> и <b>Графического интерфейса</b>. Для этого укажите абсолютный путь до файла генератора динамики <span class="green-text">.kgp</span> в кавычках<a href="#proj-config" class="anchor"> (Рис. 1)</a>.</p>
+</p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p><b>Конфигурация</b> — вариант запуска проекта. Для данной работы достаточно 1 конфигурации.</p>
+</p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>В свойствах конфигурации укажите абсолютный адрес до файла генератора динамики <span class="green-text">.kgp</span> в кавычках <a href="#proj-config" class="anchor"> (Рис 1.)</a></p>
+</p>
+                        </div>
+                        <div class="paragraph-about">
+                            <div class="picture">
+                            <img src="../gallery/options-manager.jpg" id="proj-config" alt="TimeManager">
+                            <p class="picture-about">Рис. 1. Настройка проекта</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="paragraph">
+                        <div class="paragraph-header">
+                            <p class="header-text demi-bold" id="third_task">Создать мнемосхему</p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p><b>Мнемосхема</b> — это визуализация вашей системы с динамическими элементами, состояние которых зависит от значений переменных. Например, лампочка, которая загорается, когда температура (ВА) падает ниже заданного значения <a href="../pages/work_3.html#second_task" class="anchor" target="_blank">(правила заданные в 3 работе)</a>.
+                            </p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>В данной работе вам требуется создать минимум 3 мнемосхемы. Зачастую это:
+                            </p>
+                        </div>
+                        <div class="paragraph-about">
+                            <ul>
+                                <li>Главная мнемосхема, отражающая работу систему, </li>
+                                <li>Мнемосхема с трендами, </li>
+                                <li>Мнемосхема с управлением — элементами переключения между мнемосхемами на рабочем столе (содержаться в базовой библиотеке).</li>
+                            </ul>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>Мнемосхемы составляются из геометрических примитивов, можно брать элементы из стандартной библиотеки. При необходимости возможно добавить изображение.
+                            </p>
+                        </div>
+                        <div class="paragraph-about">
+                            <p>Для данной работы могут понадобиться индикаторы, кнопки, тренды, ёмкости, приборы и другие элементы. Для манипуляции с переменными ручного ввода используйте приборы соответствующего типа.
+                            </p>
+                        </div>
+        
+                </div>
+                <div class="paragraph">
+                    <div class="paragraph-header">
+                        <p class="header-text demi-bold" id="fourth_task">Подключить динамику к переменным</p>
+                    </div>
+                    <div class="paragraph-about">
+                        <p>Настройка динамики заключается в привязывании переменных к элементам мнемосхемы (значений переменных к состояниям элементов).
+                        </p>
+                    </div>
+                </div> 
+                <div class="paragraph">
+                    <div class="paragraph-header">
+                        <p class="header-text demi-bold" id="fifth_task">Создать рабочий стол</p>
+                    </div>
+                    <div class="paragraph-about">
+                        <p><b>Рабочий стол</b> — пространство, в котором отображается совокупность мнемосхем, с которым будет взаимодействовать оператор. 
+                        </p>
+                    </div>
+                    <div class="paragraph-about">
+                        <p>В данной учебной задаче достаточно создать 1 рабочий стол. В настройках рабочего стола укажите его содержание (управляющая мнемосхема) и отметьте основной стол. 
+                        </p>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <div class="paragraph-header">
+                        <p class="header-text demi-bold" id="sixth_task">Назначить переходы</p>
+                    </div>
+                    <div class="paragraph-about">
+                        <p>Чтобы элементы переходов работали, необходимо создать сами переходы и привязать к ним мнемосхемы. В настройках переходов укажите какая мнемосхема откроется и в каком месте рабочего стола будет расположена<a href="#TransConf" class="anchor"> (Рис. 2)</a>.  
+                        </p>
+                    </div>
+                    <div class="paragraph-about">
+                        <div class="picture">
+                        <img src="../gallery/transition-configre.jpg" id="TransConf" alt="TimeManager">
+                        <p class="picture-about">Рис. 2. Настройка перехода</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <div class="paragraph-header">
+                        <p class="header-text demi-bold" id="seventh_task">Проверить модель на работоспособность</p>
+                    </div>
+                    <div class="paragraph-about">
+                        <p>Корректность работы системы можно проверить в режиме имитации в Генераторе динамики. Проверка рабочих столов проводится в Станции оператора. 
+                        </p>
+                    </div>
+                </div> 
+        </div>
+        <nav class="nav-bar">
+            <div class="progress-bar">
+                <p class="demi-bold">Задания</p>
+                <div class="progress-line">
+                    <div id="progress-done"></div>
+                </div>
+            </div>
+            <div class="task-bar">
+                <form id="tasks">
+                    <table>
+                        <tr><td><input type="checkbox" name="task" value="yes" onclick="update()" class="task_bar-checkbox"></td><td class="td_padding"><a href="#first_task">Создать проект в менеджере задач</a></td></tr>
+                        <tr><td><input type="checkbox" name="task" value="yes" onclick="update()" class="task_bar-checkbox"></td><td class="td_padding"><a href="#second_task">Настроить проект</a></td></tr>
+                        <tr><td></label><input type="checkbox" name="task" value="yes" onclick="update()" class="task_bar-checkbox"></td><td class="td_padding"><a href="#third_task">Создать мнемосхему</a></td></tr>
+                        <tr><td><input type="checkbox" name="task" value="yes" onclick="update()" class="task_bar-checkbox"></td><td class="td_padding"><a href="#fourth_task">Подключить динамику к переменным</a></td></tr>
+                        <tr><td><input type="checkbox" name="task" value="yes" onclick="update()" class="task_bar-checkbox"></td><td class="td_padding"><a href="#fifth_task">Создать рабочий стол</a></td></tr>
+                        <tr><td><input type="checkbox" name="task" value="yes" onclick="update()" class="task_bar-checkbox"></td><td class="td_padding"><a href="#sixth_task">Назначить переходы</a></td></tr>
+                        <tr><td><input type="checkbox" name="task" value="yes" onclick="update()" class="task_bar-checkbox"></td><td class="td_padding"><a href="#seventh_task">Проверить модель на работоспособность</a></td></tr>
+                    </table>
+                </form>
+            </div>
+        </nav>
+    </div>
+</body>
+</html>

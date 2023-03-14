@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+<root>
+  <node>
+    <MAC>ABCDEF-ABCDEF</MAC>
+    <IP>192.168.1.98</IP>
+    <Hostname>PC_TEST</Hostname>
+    <Vendor>Intel Corporate</Vendor>
+    <Description>PC</Description>
+    <Site>Nantes</Site>
+    <AssetNumber>123456</AssetNumber>
+  </node>
+</root>

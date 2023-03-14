@@ -1,0 +1,5 @@
+4
+if d1=on or d2=off or d3=on then k1=0 result d4 on or d5 on or d6 off;
+if d4 on then k1=1 result d1 on;
+if d5 on then k1=1 result d2 off;
+if d6 off then k1=1 result d3 on
