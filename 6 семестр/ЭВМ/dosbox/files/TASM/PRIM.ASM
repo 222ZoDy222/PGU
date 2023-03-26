@@ -16,6 +16,14 @@ assume  cs:cseg,ds:dseg,ss:stseg
 		; -------------------------------------------- F U N C --------------------------------------------
 		Func proc near
 
+		push dx
+		push cx
+		push si
+		push bp
+		mov  bp, sp	; указатель на вершину, ниже - IP, размер массива, адрес массива вершину стека
+
+		mov si, [bp + 12]
+		mov cx, [bp + 10]
 		mov bx, [si]
 
 		StartLoop:
@@ -37,7 +45,18 @@ assume  cs:cseg,ds:dseg,ss:stseg
 			
 
 		EndProg:
-		 ret ; Выход из процедуры
+
+		; Сохранение результата в конец стека
+		mov [bp + 12], bx
+
+		; Востановление регистров
+		pop bp
+		pop si
+		pop cx
+		pop dx
+
+		; Удаление из стека второго значения, чтобы остался только результат
+		ret 2; Выход из процедуры
 
 		Func endp
 		; -------------------------------------------- E N D   F U N C ------------------------------------
@@ -58,10 +77,14 @@ assume  cs:cseg,ds:dseg,ss:stseg
 
 		mov cx, 8    
 		lea si, array
+
+		push si
+		push cx
 		
 
 		call Func ; Вызов процедуры алгоритма
 
+		pop bx
 		mov y, bx
 		
 		ret ; Выход из main

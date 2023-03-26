@@ -1,0 +1,134 @@
+Turbo Assembler	 Version 2.5	    03/21/23 09:18:34	    Page 1
+cr4.asm
+
+
+
+      1	0000			     stseg   segment para    stack
+      2	0000  10*(????)			     dw	     16	     dup(?)
+      3	0020			     stseg   ends
+      4	0000			     dseg    segment para
+      5	0000  0002 0008	0003 0004 +  array dw 2,8,3,4,1,6,7,5
+      6	      0001 0006	0007 0005
+      7	0010  0002		     a	     dw	     2
+      8
+      9	0012  0000		     index   dw		     0
+     10
+     11	0014  ????		     y	     dw	     ?
+     12	0016			     dseg    ends
+     13	0000			     cseg    segment para
+     14				     ; --- Команда для компилятора --- ;
+     15				     assume  cs:cseg,ds:dseg,ss:stseg
+     16				     ; --------------------------------
+     17						     ; -------------------------------------------- F U	N C			    +
+     18				     --------------------------------------------
+     19	0000					     Func proc near
+     20
+     21	0000  8B 1C				     mov bx, [si]
+     22
+     23	0002					     StartLoop:
+     24
+     25	0002  8B 04				     mov ax, [si]
+     26
+     27	0004  3B C3				     cmp ax, bx
+     28	0006  7D 02				     jge Continue
+     29	0008  8B 1C				     mov bx, [si]
+     30
+     31	000A					     Continue:
+     32	000A  46				     inc si
+     33	000B  46				     inc si
+     34	000C  E2 F4				     loop StartLoop
+     35
+     36	000E  EB 01 90				     jmp EndProg
+     37
+     38	0011					     Count:
+     39
+     40
+     41	0011					     EndProg:
+     42	0011  C3				      ret ; Выход из процедуры
+     43
+     44	0012					     Func endp
+     45						     ; -------------------------------------------- E N	D   F U	N C		    +
+     46				     ------------------------------------
+     47
+     48
+     49						     ; -------------------------------------------- M A	I N			    +
+     50				     --------------------------------------------
+     51	0012					     main proc far
+     52
+     53						     ; --- Обнуление регистров --- ;
+     54						     ;------------------------------------------
+     55	0012  1E			     push    ds
+     56	0013  B8 0000			     mov     ax,0
+     57	0016  50			     push    ax
+Turbo Assembler	 Version 2.5	    03/21/23 09:18:34	    Page 2
+cr4.asm
+
+
+
+     58	0017  B8 0000s			     mov     ax,dseg
+     59	001A  8E D8			     mov     ds,ax
+     60						     ;------------------------------------------
+     61						     ; --- Начало программы ---	;
+     62
+     63	001C  B9 0008				     mov cx, 8
+     64	001F  BE 0000r				     lea si, array
+     65
+     66
+     67	0022  E8 FFDB				     call Func ; Вызов процедуры алгоритма
+     68
+     69	0025  89 1E 0014r			     mov y, bx
+     70
+     71	0029  CB				     ret ; Выход из main
+     72
+     73	002A					     main endp
+     74						     ; -------------------------------------------- E N	D    M A I N		    +
+     75				     -----------------------------------
+     76
+     77
+     78
+     79
+     80						     ; -------------------------------------------- E N	D			    +
+     81				     ----------------------------------------------
+     82
+     83
+     84
+     85
+     86
+     87						     ;---------------------
+     88	002A  C3			     ret
+     89
+     90	002B			     cseg    ends
+     91					    end	main
+Turbo Assembler	 Version 2.5	    03/21/23 09:18:34	    Page 3
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??DATE				  Text	 "03/21/23"
+??FILENAME			  Text	 "cr4	  "
+??TIME				  Text	 "09:18:34"
+??VERSION			  Number 0205
+@CPU				  Text	 0101H
+@CURSEG				  Text	 CSEG
+@FILENAME			  Text	 CR4
+@WORDSIZE			  Text	 2
+A				  Word	 DSEG:0010
+ARRAY				  Word	 DSEG:0000
+CONTINUE			  Near	 CSEG:000A
+COUNT				  Near	 CSEG:0011
+ENDPROG				  Near	 CSEG:0011
+FUNC				  Near	 CSEG:0000
+INDEX				  Word	 DSEG:0012
+MAIN				  Far	 CSEG:0012
+STARTLOOP			  Near	 CSEG:0002
+Y				  Word	 DSEG:0014
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+CSEG				  16  002B Para	  none
+DSEG				  16  0016 Para	  none
+STSEG				  16  0020 Para	  Stack
+

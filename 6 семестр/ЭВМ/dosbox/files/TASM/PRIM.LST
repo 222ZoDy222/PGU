@@ -1,4 +1,4 @@
-Turbo Assembler	 Version 2.5	    02/21/23 09:19:22	    Page 1
+Turbo Assembler	 Version 2.5	    03/21/23 09:06:24	    Page 1
 prim.asm
 
 
@@ -16,42 +16,119 @@ prim.asm
      11	0014  ????		     y	     dw	     ?
      12	0016			     dseg    ends
      13	0000			     cseg    segment para
-     14	0000			     lab1    proc    far
-     15					     assume  cs:cseg,ds:dseg,ss:stseg
-     16	0000  1E			     push    ds
-     17	0001  B8 0000			     mov     ax,0
-     18	0004  50			     push    ax
-     19	0005  B8 0000s			     mov     ax,dseg
-     20	0008  8E D8			     mov     ds,ax
-     21						     ;---------------------
-     22	000A  B9 0008				     mov cx, 8
-     23	000D  BB 00FF				     mov bx, 255
-     24	0010  BE 0000r				     lea si, array
-     25	0013					     StartLoop:
-     26
-     27	0013  8B 04				     mov ax, [si]
-     28
-     29	0015  3B C3				     cmp ax, bx
-     30	0017  7C 07				     jl	Count
-     31	0019					     Continue:
-     32	0019  46				     inc si
-     33	001A  46				     inc si
-     34	001B  E2 F6				     loop StartLoop
+     14				     ; --- Команда для компилятора --- ;
+     15				     assume  cs:cseg,ds:dseg,ss:stseg
+     16				     ; --------------------------------
+     17						     ; -------------------------------------------- F U	N C			    +
+     18				     --------------------------------------------
+     19	0000					     Func proc near
+     20
+     21	0000  52				     push dx
+     22	0001  51				     push cx
+     23	0002  56				     push si
+     24	0003  55				     push bp
+     25	0004  8B EC				     mov  bp, sp     ; указатель на вершину, ниже - IP,	размер массива,	адрес	    +
+     26				     массива вершину стека
+     27
+     28	0006  8B 76 0C				     mov si, [bp + 12]
+     29	0009  8B 4E 0A				     mov cx, [bp + 10]
+     30	000C  8B 1C				     mov bx, [si]
+     31
+     32	000E					     StartLoop:
+     33
+     34	000E  8B 04				     mov ax, [si]
      35
-     36	001D  EB 05 90				     jmp EndProg
-     37
-     38	0020					     Count:
-     39	0020  8B 1C					     mov bx, [si]
-     40	0022  EB F5					     jmp Continue
-     41
-     42	0024					     EndProg:
-     43	0024  89 1E 0014r			     mov y, bx
-     44						     ;---------------------
-     45	0028  CB			     ret
-     46	0029			     lab1    endp
-     47	0029			     cseg    ends
-     48					     end     lab1
-Turbo Assembler	 Version 2.5	    02/21/23 09:19:22	    Page 2
+     36	0010  3B C3				     cmp ax, bx
+     37	0012  7D 02				     jge Continue
+     38	0014  8B 1C				     mov bx, [si]
+     39
+     40	0016					     Continue:
+     41	0016  46				     inc si
+     42	0017  46				     inc si
+     43	0018  E2 F4				     loop StartLoop
+     44
+     45	001A  EB 01 90				     jmp EndProg
+     46
+     47	001D					     Count:
+     48
+     49
+     50	001D					     EndProg:
+     51
+     52						     ; Сохранение результата в конец стека
+     53	001D  89 5E 0C				     mov [bp + 12], bx
+     54
+     55						     ; Востановление регистров
+     56	0020  5D				     pop bp
+     57	0021  5E				     pop si
+Turbo Assembler	 Version 2.5	    03/21/23 09:06:24	    Page 2
+prim.asm
+
+
+
+     58	0022  59				     pop cx
+     59	0023  5A				     pop dx
+     60
+     61						     ; Удаление	из стека второго значения, чтобы остался только	результат
+     62	0024  C2 0002				     ret 2; Выход из процедуры
+     63
+     64	0027					     Func endp
+     65						     ; -------------------------------------------- E N	D   F U	N C		    +
+     66				     ------------------------------------
+     67
+     68
+     69						     ; -------------------------------------------- M A	I N			    +
+     70				     --------------------------------------------
+     71	0027					     main proc far
+     72
+     73						     ; --- Обнуление регистров --- ;
+     74						     ;------------------------------------------
+     75	0027  1E			     push    ds
+     76	0028  B8 0000			     mov     ax,0
+     77	002B  50			     push    ax
+     78	002C  B8 0000s			     mov     ax,dseg
+     79	002F  8E D8			     mov     ds,ax
+     80						     ;------------------------------------------
+     81						     ; --- Начало программы ---	;
+     82
+     83	0031  B9 0008				     mov cx, 8
+     84	0034  BE 0000r				     lea si, array
+     85
+     86	0037  56				     push si
+     87	0038  51				     push cx
+     88
+     89
+     90	0039  E8 FFC4				     call Func ; Вызов процедуры алгоритма
+     91
+     92	003C  5B				     pop bx
+     93	003D  89 1E 0014r			     mov y, bx
+     94
+     95	0041  CB				     ret ; Выход из main
+     96
+     97	0042					     main endp
+     98						     ; -------------------------------------------- E N	D    M A I N		    +
+     99				     -----------------------------------
+    100
+    101
+    102
+    103
+    104						     ; -------------------------------------------- E N	D			    +
+    105				     ----------------------------------------------
+    106
+    107
+    108
+    109
+    110
+    111						     ;---------------------
+    112	0042  C3			     ret
+    113
+    114	0043			     cseg    ends
+Turbo Assembler	 Version 2.5	    03/21/23 09:06:24	    Page 3
+prim.asm
+
+
+
+    115					    end	main
+Turbo Assembler	 Version 2.5	    03/21/23 09:06:24	    Page 4
 Symbol Table
 
 
@@ -59,9 +136,9 @@ Symbol Table
 
 Symbol Name			  Type	 Value
 
-??DATE				  Text	 "02/21/23"
+??DATE				  Text	 "03/21/23"
 ??FILENAME			  Text	 "prim	  "
-??TIME				  Text	 "09:19:22"
+??TIME				  Text	 "09:06:24"
 ??VERSION			  Number 0205
 @CPU				  Text	 0101H
 @CURSEG				  Text	 CSEG
@@ -69,17 +146,18 @@ Symbol Name			  Type	 Value
 @WORDSIZE			  Text	 2
 A				  Word	 DSEG:0010
 ARRAY				  Word	 DSEG:0000
-CONTINUE			  Near	 CSEG:0019
-COUNT				  Near	 CSEG:0020
-ENDPROG				  Near	 CSEG:0024
+CONTINUE			  Near	 CSEG:0016
+COUNT				  Near	 CSEG:001D
+ENDPROG				  Near	 CSEG:001D
+FUNC				  Near	 CSEG:0000
 INDEX				  Word	 DSEG:0012
-LAB1				  Far	 CSEG:0000
-STARTLOOP			  Near	 CSEG:0013
+MAIN				  Far	 CSEG:0027
+STARTLOOP			  Near	 CSEG:000E
 Y				  Word	 DSEG:0014
 
 Groups & Segments		  Bit Size Align  Combine Class
 
-CSEG				  16  0029 Para	  none
+CSEG				  16  0043 Para	  none
 DSEG				  16  0016 Para	  none
 STSEG				  16  0020 Para	  Stack
 
