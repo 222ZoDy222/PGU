@@ -1,0 +1,39 @@
+mov   ah,2            ; запрос на вывод строки
+          lea   dx, mes_0        
+          int   21h   
+          
+          lea si,buf
+          mov cx,5               ; задаем количеств символов в строке
+a1:
+          mov ah,01h             ; ожидание ввода
+          int 21h   
+          cmp al,0Dh             ;прекращение ввода чисел и выход по нажатию клавиши Enter
+          jz exit
+          mov [si],al            ; обращаемся к памяти занятой в регистре si
+          inc si
+          loop a1
+          
+          mov ah,9               ; запрос на ввод Числа
+          lea dx, mes_1
+          int 21h
+          
+          mov ah,01h
+          int 21h                 ;принимаем строку
+          sub al,30h              ; делаем число
+          
+          lea bx, buf            ; отправили введеннубю строку в переменнуб buff
+          xlat
+          mov Result,al         ; присвоили номер введенный ранее переменной result 
+          
+          mov ah,9               ; запрос на ввод строки
+          lea dx, mes_2
+          int 21h
+         
+          aam                   
+          add ax,3030h 
+          mov dl,ah 
+          mov dh,al 
+          mov ah,02     
+          int 21h 
+          mov dl,dh 
+          int 21h

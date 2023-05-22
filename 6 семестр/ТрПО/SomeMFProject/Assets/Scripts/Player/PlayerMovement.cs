@@ -12,6 +12,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private LayerMask groundLayer;
 
+    public void Die()
+    {
+        speed = 0;
+    }
+
     private State _state;
     private State state
     {
@@ -125,6 +130,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
+
+    
 
 
 }
