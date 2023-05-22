@@ -53,7 +53,7 @@ count=0
 [PROGRAMS]
 count=1
 program1_name=Сигнализация
-program1_line=1
+program1_line=3
 program1_filename=filest0.lg
 program1_loadtocontrdb=0
 [DEBUG_VARIABLES]
