@@ -1,0 +1,15 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 002BEH 002BFH _TEXT              CODE
+ 002C0H 002C0H 00000H _DATA              DATA
+
+
+Detailed map of segments
+
+ 0000:0000 02BF C=CODE   S=_TEXT          G=DGROUP  M=P.ASM      ACBP=48
+ 0000:02C0 0000 C=DATA   S=_DATA          G=DGROUP  M=P.ASM      ACBP=48
+
+Program entry point at 0000:0100
+Warning: No stack
+
