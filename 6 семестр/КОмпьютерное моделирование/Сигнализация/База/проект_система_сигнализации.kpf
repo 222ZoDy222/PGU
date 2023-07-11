@@ -1,0 +1,9 @@
+[WINDOWS]
+count=1
+[FILE1]
+name=filest0.lg
+PositionX=26
+PositionY=26
+SizeX=920
+SizeY=225
+ShowType=3
