@@ -1,0 +1,12 @@
+BODY {margin-top: 15pt; margin-left: 12pt; margin-right: 12pt} 
+H4 {font-size: 16pt;font-style:oblique ;color: #003366 }
+H3 {font-size: 14pt;font-style: normal ;color: #003366 }
+H2 {font-size: 12pt;font-style: normal;color: #003366  }
+H2.char {font-size: 11pt;font-style: normal;background:  "Ivory";color: #996666; padding-left: 5pt; padding-right: 5pt; padding-top:5pt; padding-bottom: 5pt;margin-left: 50pt; margin-right: 30pt} 
+
+
+P {font: 12pt times; text-indent: 12pt}
+P.caption {font: 12pt times; text-indent: 12pt; color: #663366; font-style:oblique}
+UL{font-size: 12pt}
+OL{font-size: 12pt;font-weight:normal}
+A {color: #663366 ;font-style:oblique}

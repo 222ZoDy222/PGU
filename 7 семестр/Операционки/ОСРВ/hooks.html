@@ -1,0 +1,1770 @@
+<HTML>
+<HEAD>
+<TITLE> Методические указаня по СРВ</TITLE>
+<STYLE> 
+@import URL("stil.css"); 
+</STYLE> 
+</HEAD>
+<BODY background="images/whttxtr2.jpg">
+<A name=hook></A>
+<CENTER><H3>WinAPI: Hook System</H3></CENTER>
+       
+      	&nbsp;
+      	<h2>Content:<br>
+  &nbsp; Hook System Functions:<br>
+  &nbsp;&nbsp;&nbsp; <a href="#CallMsgFilter">CallMsgFilter</a><br>
+  &nbsp;&nbsp;&nbsp; <a href="#CallNextHookEx">CallNextHookEx</a><br>
+  &nbsp;&nbsp;&nbsp; <a href="#CallWndProc">CallWndProc</a><br>
+  &nbsp;&nbsp;&nbsp; <a href="#CallWndRetProc">CallWndRetProc</a><br>
+  &nbsp;&nbsp;&nbsp; <a href="#CBTProc">CBTProc</a><br>
+  &nbsp;&nbsp;&nbsp; <a href="#DebugProc">DebugProc</a><br>
+  &nbsp;&nbsp;&nbsp; <a href="#ForegroundIdleProc">ForegroundIdleProc</a><br>
+  &nbsp;&nbsp;&nbsp; <a href="#GetMsgProc">GetMsgProc</a><br>
+  &nbsp;&nbsp;&nbsp; <a href="#JournalPlaybackProc">JournalPlaybackProc</a><br>
+  &nbsp;&nbsp;&nbsp; <a href="#JournalRecordProc">JournalRecordProc</a><br>
+  &nbsp;&nbsp;&nbsp; <a href="#KeyboardProc">KeyboardProc</a><br>
+  &nbsp;&nbsp;&nbsp; <a href="#MessageProc">MessageProc</a><br>
+  &nbsp;&nbsp;&nbsp; <a href="#MouseProc">MouseProc</a><br>
+  &nbsp;&nbsp;&nbsp; <a href="#SetWindowsHookEx">SetWindowsHookEx</a><br>
+  &nbsp;&nbsp;&nbsp; <a href="#ShellProc">ShellProc</a><br>
+  &nbsp;&nbsp;&nbsp; <a href="#SysMsgProc">SysMsgProc</a><br>
+  &nbsp;&nbsp;&nbsp; <a href="#UnhookWindowsHookEx">UnhookWindowsHookEx</a><br>
+      	  <br>
+      	  </font> </font>
+      	  </h1>
+  </h2>
+      	<strong><font face=arial><strong> Function </strong></font></strong>
+      <strong><font face=arial><b> <i> HookFunctions<br>
+         </i></b><a name="CallMsgFilter"></a> 
+         </font></strong>
+   	    <hr>
+      <p><font face=arial> <!--webbot bot="HTMLMarkup" StartSpan --><a name="CallMsgFilter"></a><!--webbot BOT="HTMLMarkup" endspan -->
+      <u>CallMsgFilter</u> </font></p>
+      <p><font face=arial> Функция 
+        CallMsgFilter фильтрует определенное сообщение и передает управление в 
+        процедуры, связанные с захватами WH_SYSMSGFILTER и WH_MSGFILTER. WH_SYSMSGFILTER 
+        и WH_MSGFILTER перехватывающие процедуры - программно-определенные функции 
+        обратного вызова (callback), которые проверяют и, дополнительно, модифицируют 
+        сообщения для диалогового окна, сообщения меню, или перемещает зону. </font></p>
+      <p><font face=arial> BOOL 
+        CallMsgFilter( </font></p>
+      <p><font face=arial> LPMSG 
+        lpMsg, // Ссылка на структуру с данными о сообщении </font></p>
+      <p><font face=arial> int 
+        nCode // Код перехвата </font></p>
+      <p><font face=arial>); </font></p>
+      <p><font face=arial><i> Параметры </i></font></p>
+      <p><font face=arial> lpMsg </font></p>
+      <p><font face=arial> Ссылка 
+        на MSG структуру, которая содержит сообщение, фильтруемое для перехватывающей 
+        процедуры </font></p>
+      <p><font face=arial> nCode </font></p>
+      <p><font face=arial> Определяется 
+        приложением и используется перехватом для того, чтоб ыопределить как обрабатывать 
+        сообщение. Код должен иметь одинаковые значения с системно-определенными 
+        кодами перехвата (MSGF_ и HC) ассоциированы с WH_SYSMSGFILTER и WH_MSGFILTER. </font></p>
+      <p><font face=arial><i><strong> Возвращаемые 
+        значения </strong></i></font></p>
+      <p><font face=arial> Если 
+        приложение будет обрабатывать процесс в дальнейшем, то возвращается 0. </font></p>
+      <p><font face=arial> Если 
+        нет, то возвращается не 0. </font></p>
+      <p><font face=arial><i><strong> Заметки </strong></i></font></p>
+      <p><font face=arial> Windows 
+        вызывает CallMsgFilter, чтобы позволить приложению проверять и контролировать 
+        поток сообщений в процессе внутренней обработки диалоговых окон, меню 
+        и scroll bar’ов, или когда пользователь активирует окно нажатием комбинации 
+        ALT+TAB. </font></p>
+      <p><font face=arial> Приложение 
+        устанавливает перехват используя функцию SetWindowsHook. </font></p>
+      <p><font face=arial><i><strong> Смотри 
+        также: </strong></i></font></p>
+      <p><font face=arial> MessageProc, 
+        MSG, SetWindowsHookEx, SysMsgProc </font></p>
+      <p>&nbsp;</p>
+      <hr>
+      <p><font face=arial><!--webbot bot="HTMLMarkup" StartSpan --><a name="CallNextHookEx"></a> 
+        <!--webbot BOT="HTMLMarkup" endspan -->CallNextHookEx </font></p>
+      <p><font face=arial> Функция 
+        CallNextHookEx пропускает информацию перехвата в следующую процедуру перехвата 
+        в текущий цепь перехвата. Эта функция заменяется функцией DefHookProc. </font></p>
+      <p><font face=arial> LRESULT 
+        CallNextHookEx( </font></p>
+      <p><font face=arial> HHOOK 
+        hhk, // Описатель (Handle) данного перехвата </font></p>
+      <p><font face=arial> int 
+        nCode, // Код перехвата, передаваемый в процедуру перехвата </font></p>
+      <p><font face=arial> WPARAM 
+        wParam, // value passed to hook procedure </font></p>
+      <p><font face=arial> LPARAM 
+        lParam // value passed to hook procedure </font></p>
+      <p><font face=arial>); </font></p>
+      <p><font face=arial><i><strong> Параметры </strong></i></font></p>
+      <p><font face=arial> hhk </font></p>
+      <p><font face=arial> Идентифицирует 
+        текущий перехват. Приложение возвращает этот описатель как результат предыдущего 
+        вызова функции SetWindowsHookEx. </font></p>
+      <p><font face=arial> nCode </font></p>
+      <p><font face=arial> Определяет 
+        код перехвата, пришедший в процедуру перехвата. Следующая процедура перехвата 
+        использует этот код для того, чтобы определить, как обрабатывать информацию 
+        о перехвате. </font></p>
+      <p><font face=arial> wParam </font></p>
+      <p><font face=arial> Определяет 
+        приходящую величину в процедуру перехвата.Значение этого параметра зависит 
+        от типа захвата, связываемого с текущей цепью перехватов. </font></p>
+      <p><font face=arial> lParam </font></p>
+      <p><font face=arial> Определяет 
+        приходящую величину в процедуру перехвата. Значение этого параметра зависит 
+        от типа захвата, связываемого с текущей цепью захватов. </font></p>
+      <p><font face=arial><i><strong> Возвращаемые 
+        значения </strong></i></font></p>
+      <p><font face=arial> Если 
+        функция успешно завершается, то возвращенным значением будет значение, 
+        возвращенное следующей процедурой перехвата в цепи перехватов. Текущая 
+        процедура перехвата также должна возвратить эту величину. Значение величины 
+        зависит от типа захвата. Для получения большей информации сморти описания 
+        индивидуальных процедур перехвата. </font></p>
+      <p><font face=arial><i><strong> Заметки </strong></i></font></p>
+      <p><font face=arial> Процедуры 
+        перехвата устанавливаются в цепи определенных типов перехватов. CallNextHookEx 
+        вызывает следующий перехват в цеппи. </font></p>
+      <p><font face=arial> Вызов 
+        CallNextHookEx является дополнительной функцией. Процедура перехвата может 
+        вызывать эту функцию до или после обработки информации о перехвате. Если 
+        процедура перехвата не вызывает CallNextHookEx, Windows не выхывает перехваты, 
+        установленные до установки данного перехвата. </font></p>
+      <p><font face=arial><i><strong> Смотри 
+        также: </strong></i></font></p>
+      <p><font face=arial> SetWindowsHook, 
+        SetWindowsHookEx, UnhookWindowsHook, UnhookWindowsHookEx </font></p>
+      <p>&nbsp;</p>
+      <hr>
+      <p><font face=arial><!--webbot bot="HTMLMarkup" StartSpan --><a name="CallWndProc"></a> 
+        <!--webbot BOT="HTMLMarkup" endspan -->CallWndProc </font></p>
+      <p><font face=arial> CallWndProc 
+        –callback процедура перехвата, определенная в приложении или в библиотеке, 
+        которую система вызывает всякий раз, когда вызывается функция SendMessage. 
+        До прохождения сообщения в конечную окнную процедуру, система прогоняет 
+        сообщения через процедуры перехвата. Процедуры, перехватывающие сообщение 
+        могут проверять его, но не могут изменять. </font></p>
+      <p><font face=arial> CallWndProc 
+        – это метка-заполнитель для программно – определенной или библиотечной 
+        функции. </font></p>
+      <p><font face=arial> LRESULT 
+        CALLBACK CallWndProc( </font></p>
+      <p><font face=arial> int 
+        nCode, // код перехвата </font></p>
+      <p><font face=arial> WPARAM 
+        wParam, // флаг текущего процесса </font></p>
+      <p><font face=arial> LPARAM 
+        lParam // адрес на структуру с данными о сообщении </font></p>
+      <p><font face=arial>); </font></p>
+      <p><font face=arial><i><strong> Параметры </strong></i></font></p>
+      <p><font face=arial> nCode </font></p>
+      <p><font face=arial> Определяет 
+        процедуру, которая должна обработать перехват сообщения. Если nCode=HC_ACTION, 
+        то процедура захвата должна обработать сообщение. Если nCode меньше 0, 
+        то процедура перехвата должна передать значение в функцию CallNextHookEx 
+        без дальнейшей обработки и вернуть значение, возвращенное CallNextHookEx. </font></p>
+      <p><font face=arial> wParam </font></p>
+      <p><font face=arial> Устанавливается 
+        тогда, когда сообщение было послано текущим процессом. Если сообщение 
+        было послано текущим процессом, это ненулевое; в противном случае, это 
+        NULL. </font></p>
+      <p><font face=arial> lParam </font></p>
+      <p><font face=arial> Указатель 
+        на структуру CWPSTRUCT, которая содержит подробности о сообщении </font></p>
+      <p><font face=arial><i><strong> Возвращаемое 
+        значение </strong></i></font></p>
+      <p><font face=arial> Возвращаемое 
+        значение дожно быть 0. </font></p>
+      <p><font face=arial><i><strong> Заметки </strong></i></font></p>
+      <p><font face=arial> Процедура 
+        перехвата CallWndProc не может модифицировать сообщение. После перехвата 
+        процедура возвращает управление системе, а сообщение проходит в оконную 
+        процедуру. </font></p>
+      <p><font face=arial> Приложение 
+        устанавливает перехват определяя перехват типа WH_CALLWNDPROC и адрес 
+        перехватывающей процедуры на вызове процедуры SetWindowsHookEx. </font></p>
+      <p><font face=arial> Перехват 
+        WM_CALLWNDPROC не вызывается вызывает контекст нити, вызвавшей SendMessage, 
+        но не контекст нити, получившей сообщение. </font></p>
+      <p><font face=arial><i><strong> Смотри 
+        также: </strong></i></font></p>
+      <p><font face=arial> CallNextHookEx, 
+        CWPSTRUCT, SendMessage, SetWindowsHookEx </font></p>
+      <p>&nbsp;</p>
+      <hr>
+      <p><font face=arial><!--webbot bot="HTMLMarkup" StartSpan --><a name="CallWndRetProc"></a> 
+        <!--webbot BOT="HTMLMarkup" endspan -->CallWndRetProc </font></p>
+      <p><font face=arial> Процедура 
+        CallWndRetProc сейчас поддерживается и WinNT. </font></p>
+      <p><font face=arial> Процедура 
+        – процедура перехвата, определенная приложением или библиотекой callback 
+        функция вызываемая после функции SendMessage. После прохода сообщения 
+        к окну-приемнику, система проходит по хук процедурам. Хук процедура может 
+        исследовать сообщение, но не может его изменять. </font></p>
+      <p><font face=arial> LRESULT 
+        CALLBACK CallWndRetProc( </font></p>
+      <p><font face=arial> int 
+        nCode, // Код перехвата </font></p>
+      <p><font face=arial> WPARAM 
+        wParam, // Флаг текущего процесса </font></p>
+      <p><font face=arial> LPARAM 
+        lParam // Адрес структуры с данными о сообщении </font></p>
+      <p><font face=arial>); </font></p>
+      <p><font face=arial><i><strong> Параметры </strong></i></font></p>
+      <p><font face=arial> nCode </font></p>
+      <p><font face=arial> Определяет, 
+        когда хук процедура должна перехватывать сообщение. Если nCode=HC_ACTION, 
+        тогда хук процедура будет обрабатывать сообщение. Если nCode меньше 0, 
+        то процедура перехвата должна передать сообщение функции CallNextHookEx 
+        без дальнейшей обработки и возвратить значение, от CallNextHookEx. </font></p>
+      <p><font face=arial> wParam </font></p>
+      <p><font face=arial> Определяет, 
+        послано ли сообщение текущим процессом. Если сообщение послано текущим 
+        процессом, то wParam; иначе, это NULL. </font></p>
+      <p><font face=arial> lParam </font></p>
+      <p><font face=arial> Указатель 
+        на структуру CWPRETSTRUCT, которая содержит детальную информацию о сообщении. </font></p>
+      <p><font face=arial><i><strong> Возвращаемое 
+        значение </strong></i></font></p>
+      <p><font face=arial> Возвращаемое 
+        значение должно быть 0. </font></p>
+      <p><font face=arial><i><strong> Заметки </strong></i></font></p>
+      <p><font face=arial> An 
+        application installs the hook procedure by specifying the WH_CALLWNDPROCRET 
+        hook type and the address of the hook procedure in a call to the SetWindowsHookEx 
+        function.  </font></p>
+      <p><font face=arial> CallWndRetProc 
+        is a placeholder for the application-defined or library-defined function 
+        name.  </font></p>
+      <p><font face=arial> Приложение 
+        устанавливает хук процедуру, определяя тип хука WH_CALLWNDPROCRET и адрес 
+        процедуры хука в запросе к функции SetWindowsHookEx.  </font></p>
+      <p><font face=arial> CallWndRetProc 
+        –держатель для определенного заявлением или определенного библиотекой 
+        названия(имени) функции. </font></p>
+      <p><font face=arial><i><strong> Смотри 
+        также </strong></i></font></p>
+      <p><font face=arial> CallNextHookEx, 
+        CallWndProc, CWPRETSTRUCT, SendMessage, SetWindowsHookEx </font></p>
+      <hr>
+      <p><font face=arial><!--webbot bot="HTMLMarkup" StartSpan --><a name="CBTProc"></a> 
+        <!--webbot BOT="HTMLMarkup" endspan --><br>
+        CBTProc </font></p>
+      <p><font face=arial> Процедура 
+        перехвата CBTProc определенная приложением или callback функцией в библиотеке, 
+        которую система вызывает до активации, создания, уничтожения, минимизации, 
+        максимизации, перемещения или изменением размера окна; до окончания системной 
+        команды; до удаления события от мыши, клавиатуры в системной очереди. 
+        Значение, возвращаемое хук процедурой определяет позволяет ли Windows 
+        или предотвращает эту операцию. Приложения обучения (A computer-based 
+        training (CBT) application) используют эту хук процедуру для получения 
+        полезной информации от системы. </font></p>
+      <p><font face=arial> LRESULT 
+        CALLBACK CBTProc( </font></p>
+      <p><font face=arial> int 
+        nCode, // Код перехвата </font></p>
+      <p><font face=arial> WPARAM 
+        wParam, // Зависит от кода хука </font></p>
+      <p><font face=arial> LPARAM 
+        lParam // Зависит от кода хука </font></p>
+      <p><font face=arial>); </font></p>
+      <p><font face=arial><i><strong> Параметры </strong></i></font></p>
+      <p><font face=arial> nCode </font></p>
+      <p><font face=arial> Определяет 
+        значение, которое хук процедура использует, чтобы определить, как использовать 
+        сообщение. Этот параметр может иметь следующие значения: </font></p>
+      <table border="1" cellspacing="1" cellpadding="9" width=100%>
+        <tr> 
+          <td width="50%" valign="TOP"> 
+            <p align="CENTER"><i><strong> Значение </strong></i> 
+          </td>
+          <td width="50%" valign="TOP"> 
+            <p align="CENTER"><i><strong> Описание </strong></i> 
+          </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HCBT_ACTIVATE </td>
+          <td width="50%" valign="TOP"> Система 
+            собирается активировать окно.  </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HCBT_CLICKSKIPPED </td>
+          <td width="50%" valign="TOP"> Система 
+            удалила удалила сообщение мыши из очереди. После получения этого хук 
+            кода CBT приложение должно установить WH_JOURNALPLAYBACK хук в ответ 
+            на сообщение мыши </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HCBT_CREATEWND </td>
+          <td width="50%" valign="TOP"> Окно 
+            готово к созданию. Система вызывает эту хук процедуру до посылки сообщений 
+            WM_CREATE и WM_NCCREATE к окну. Если хук процедура возвратит ненулевое 
+            значение, то система уичтожит окно; функция CreateWindow возвратит 
+            NULL, но сообщение WM_DESTROY не будет послано. Если хук процедура 
+            возвратит 0, то окно будет создано как обычно.  
+            <p> В 
+              момент уведомления HCBT_CREATEWND, окно было создано, но окончательный 
+              размер и положение может быть неопределен, и возможно его родительское 
+              окно не установлено.  </p>
+            <p> Это 
+              возможность посылать сообщения в только что созданное окно, хотя 
+              это окно еще не получило сообщения WM_NCCREATE или WM_CREATE. </p>
+            <p> Также 
+              возможно изменить позицию в Z order только что созданного окна путем 
+              изменения параметра hwndInsertAfter из структуры CBT_CREATEWND  
+          </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HCBT_DESTROYWND </td>
+          <td width="50%" valign="TOP"> Окно 
+            готово для уничтожения </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HCBT_KEYSKIPPED </td>
+          <td width="50%" valign="TOP"> Система 
+            удаляет сообщение с клавиатуры из очереди. После получения хук кода 
+            CBT приложение должно установить хук процедуру WH_JOURNALPLAYBACK_hook 
+            в ответ на сообщение с клавиатуры </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HCBT_MINMAX </td>
+          <td width="50%" valign="TOP"> Окно 
+            собирается минимизироваться или максимизироваться </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HCBT_MOVESIZE </td>
+          <td width="50%" valign="TOP"> Окно 
+            собирается передвигаться или измененять размеры </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HCBT_QS 
+          </td>
+          <td width="50%" valign="TOP"> Система 
+            восстановила из очереди сообщение WM_QUEUESYNC </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HCBT_SETFOCUS 
+          </td>
+          <td width="50%" valign="TOP"> Окно 
+            собирается получить фокус ввода с клавиатуры </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HCBT_SYSCOMMAND 
+          </td>
+          <td width="50%" valign="TOP"> A 
+            system command is about to be carried out. This allows a CBT application 
+            to prevent task switching by means of hot keys.  
+            <p> Системная 
+              команда готова к выполнению. Это позволяет CBT приложению переключать 
+              задачи посредством горячих клавиш  
+          </td>
+        </tr>
+      </table>
+      <p><font face=arial> Если 
+        nCode - меньше нуля, процедура ловушки должна передать управление функции 
+        CallNextHookEx без дальнейшей обработки сообщения и должна возвратить 
+        значение, возвращенное CallNextHookEx.  </font></p>
+      <p><font face=arial><i> wParam </i></font></p>
+      <p><font face=arial> Зависит 
+        от параметра nCode. Для подробностей, см. следующий раздел Заметок. </font></p>
+      <p><font face=arial><i> lParam </i></font></p>
+      <p><font face=arial> Зависит 
+        от параметра nCode. Для подробностей, см. следующий раздел Заметок. </font></p>
+      <p><font face=arial><i><strong> Возвращаемые 
+        значения </strong></i></font></p>
+      <p><font face=arial> Для 
+        действий, соответствующих следующим кодам ловушки CBT, возвращаемое значение 
+        должно быть 0, чтобы позволить операцию, или 1 не позволить: </font></p>
+      <p><font face=arial> HCBT_ACTIVATEHCBT_CREATEWNDHCBT_DESTROYWNDHCBT_MINMAXHCBT_MOVESIZEHCBT_SETFOCUSHCBT_SYSCOMMAND </font></p>
+      <p><font face=arial> Для 
+        действий, соответствующих следующим кодам ловушки CBT, возвращаемое значение 
+        игнорируется:  </font></p>
+      <p><font face=arial> HCBT_CLICKSKIPPEDHCBT_KEYSKIPPEDHCBT_QS </font></p>
+      <p><font face=arial><i><strong> Заметки </strong></i></font></p>
+      <p><font face=arial> Процедура 
+        ловушки не должна установить процедуру ловушки WH_JOURNALPLAYBACK_HOOK 
+        за исключением ситуаций, описанных в предшествующем списке кодов ловушки. 
+         </font></p>
+      <p><font face=arial> Эта 
+        процедура ловушки должна быть в библиотеке динамических связей (DLL). 
+        Приложение устанавливает процедуру ловушки, определяя тип ловушки как 
+        WH_CBT и адрес процедуры ловушки обращаясь к функции SetWindowsHookEx. 
+         </font></p>
+      <p><font face=arial> Следующая 
+        таблица описывает wParam и lParam параметры для каждого кода ловушки HCBT_: 
+         </font></p>
+      <table border="1" cellspacing="1" cellpadding="9" width=100%>
+        <tr> 
+          <td width="33%" valign="TOP"><b>Значение</b> </td>
+          <td width="33%" valign="TOP"><b>WParam</b> </td>
+          <td width="33%" valign="TOP"><b>lParam</b> </td>
+        </tr>
+        <tr> 
+          <td width="33%" valign="TOP"> HCBT_ACTIVATE </td>
+          <td width="33%" valign="TOP"> Определяет 
+            дескриптор окнf, собирающегося активизироваться </td>
+          <td width="33%" valign="TOP"> Определяет 
+            длинный указатель на структуру CBTACTIVATESTRUCT, содержащую дескриптор 
+            активного окна и определяет, изменяется ли активация из-за щелчка 
+            мыши.  </td>
+        </tr>
+        <tr> 
+          <td width="33%" valign="TOP"> HCBT_CLICKSKIPPED 
+          </td>
+          <td width="33%" valign="TOP"> Идентифицирует 
+            сообщение мыши, удаленное из очереди сообщений системы </td>
+          <td width="33%" valign="TOP"> Определяет 
+            длинный указатель на структуру MOUSEHOOKSTRUCT, содержащую результаты 
+            hit-test испытаний и дескриптор окна, для которого сообщение мыши 
+            предназначено.  </td>
+        </tr>
+        <tr> 
+          <td width="33%" valign="TOP"> HCBT_CREATEWND </td>
+          <td width="33%" valign="TOP"> Определяет 
+            дескриптор нового окна </td>
+          <td width="33%" valign="TOP"> Определяет 
+            длинный указатель на структуру CBT_CREATEWND, содержащую параметры 
+            инициализации окна. Параметры включают координаты и габариты окна. 
+            Изменяя эти параметры, процедура ловушки CBTPROC может устанавливать 
+            начальный размер и позицию окна.  </td>
+        </tr>
+        <tr> 
+          <td width="33%" valign="TOP"> HCBT_DESTROYWND 
+          </td>
+          <td width="33%" valign="TOP"> Определяет 
+            дескриптор окна, которое будет разрушено. </td>
+          <td width="33%" valign="TOP"> Является 
+            неопределенным и должен быть установлен на нуль. </td>
+        </tr>
+        <tr> 
+          <td width="33%" valign="TOP"> HCBT_KEYSKIPPED 
+          </td>
+          <td width="33%" valign="TOP"> Идентифицирует 
+            кнопку с виртуальным кодом. </td>
+          <td width="33%" valign="TOP"> Определяет 
+            число повторов, скэн-код, код перехода клавиши, предыдущее состояние 
+            клавиши, и контекстный код. Значение HCBT_KEYSKIPPED послано процедуре 
+            ловушки CBTPROC только, если установлена ловушка WH_KEYBOARD . Для 
+            подробной информации, см. WM_KEYUP или сообщение WM_KEYDOWN. </td>
+        </tr>
+        <tr> 
+          <td width="33%" valign="TOP"> HCBT_MINMAX 
+          </td>
+          <td width="33%" valign="TOP"> Определяет 
+            дескриптор окна, минимизируемого или максимизируемого. </td>
+          <td width="33%" valign="TOP"> Определяет, 
+            младшее слово, значение видимого окна (SW) _ определябщего операцию. 
+            Для списка значений окна, см. ShowWindow. Старшее слово неопределено. 
+          </td>
+        </tr>
+        <tr> 
+          <td width="33%" valign="TOP"> HCBT_MOVESIZE 
+          </td>
+          <td width="33%" valign="TOP"> Определяет 
+            дескриптор окна, которое нужно переместить или установить размер. </td>
+          <td width="33%" valign="TOP"> Определяет 
+            длинный указатель на структуру RECT, содержащую координаты окна. Изменяя 
+            значения в структуре, процедура ловушки CBTPROC может устанавливать 
+            окончательные координаты окна.  </td>
+        </tr>
+        <tr> 
+          <td width="33%" valign="TOP"> HCBT_QS 
+          </td>
+          <td width="33%" valign="TOP"> Неопределен, 
+            должен быть 0. </td>
+          <td width="33%" valign="TOP"> Неопределен, 
+            должен быть 0. </td>
+        </tr>
+        <tr> 
+          <td width="33%" valign="TOP"> HCBT_SETFOCUS 
+          </td>
+          <td width="33%" valign="TOP"> Определяет 
+            дескриптор окна, получающему фокус ввода. </td>
+          <td width="33%" valign="TOP"> Определяет 
+            дескриптор окна, теряющему фокус ввода. </td>
+        </tr>
+        <tr> 
+          <td width="33%" valign="TOP"> HCBT_SYSCOMMAND </td>
+          <td width="33%" valign="TOP"> Определяет 
+            значение команды системы (CS_) определение команды системы. Для подробной 
+            информации относительно значений команд системы, см. WM_SYSCOMMAND </td>
+          <td width="33%" valign="TOP"> Содержит 
+            те же самые данные что и значение lParam WM_SYSCOMMAND сообщения: 
+            Если команда системного меню выбрана мышью, слово младшего разряда 
+            содержит x-координату курсора, в аппаратных координатах устройства, 
+            и старшее слово содержит y-координату; иначе, параметр не используется. 
+          </td>
+        </tr>
+      </table>
+      <p><font face=arial><i><strong> Смотри 
+        также </strong></i></font></p>
+      <p><font face=arial> CallNextHookEx, 
+        CreateWindow, SetWindowsHookEx, WM_SYSCOMMAND </font></p>
+      <p>&nbsp;</p>
+      <hr>
+      <p><font face=arial><!--webbot bot="HTMLMarkup" StartSpan --><a name="DebugProc"></a><!--webbot BOT="HTMLMarkup" endspan -->DebugProc </font></p>
+      <p><font face=arial> Хук 
+        процедура DebugProc определяемая приложением или библиотекой callback 
+        функция, которую Windows вызывает до вызова хук процедуры, которая связана 
+        с любым другим типом перехвата. Система предоставляет информацию о хуке, 
+        который должен быть вызван, и DebugProc определяет, позволить ли хуку 
+        запуститься. </font></p>
+      <p><font face=arial> LRESULT 
+        CALLBACK DebugProc( </font></p>
+      <p><font face=arial> int 
+        nCode, // Код перехвата </font></p>
+      <p><font face=arial> WPARAM 
+        wParam, // Тип хука, собирающегося запуститься </font></p>
+      <p><font face=arial> LPARAM 
+        lParam // Адрес структуры с отладочной информацией </font></p>
+      <p><font face=arial>); </font></p>
+      <p><font face=arial><i><strong> Параметры </strong></i></font></p>
+      <p><font face=arial> nCode </font></p>
+      <p><font face=arial> Определяет, 
+        должна ли процедура перехвата обработать сообщение. Если nCode=HC_ACTION, 
+        то хук процедура должна обработать сообщение. Если nCode меньше нуля, 
+        то хук процедура должна пропустить сообщение в функцию CallNextHookEx 
+        без дальнейшей обработке и должна вернуть значение, возвращенное CallNextHookEx. </font></p>
+      <p><font face=arial> wParam </font></p>
+      <p><font face=arial> Определяет 
+        тип перехвата, который будет вызван. Этот параметр может принимать следующие 
+        значения: </font></p>
+      <table border="1" cellspacing="1" cellpadding="9" width=100%>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_CALLWNDPROC </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру перехвата, которая просматривает посланные сообщения к оконной 
+            процедуре. Для дополнительной информации, смотрите описание процедуры 
+            CallWndProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_CALLWNDPROCRET </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру перехвата, которая просматривает сообщения, которые только 
+            что были обработаны оконной процедурой. Для дополнительной информации 
+            смотрите описание процедуры CallWndProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_CBT </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру перехвата, которая получает уведомления, полезные для CBT 
+            (программ компьютерного обучения). Для дополнительной информации смотри 
+            описание процедуры CBTProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_DEBUG </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру перехвата, полезную при отладке других хук процедур. Для 
+            дополнительной информации смотри описание процедуры DebugProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_GETMESSAGE </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру перехвата, которая контролирует сообщения, записанные в 
+            очередь. Для дополнительной информации смотри описание процедуры GetMsgProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_JOURNALPLAYBACK </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру перехвата, которая посылает сообщения, предварительно записываемые 
+            процедурой перехвата WH_JOURNALRECORD. Для дополнительной информации 
+            смотри описание процедуры JournalPlaybackProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_JOURNALRECORD </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру перехвата, которая записывает сообщения, посланные в системную 
+            очередь. Эта хук процедура полезна для записи макросов. Для дополнительной 
+            информации смотри описание процедуры JournalRecordProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_KEYBOARD </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру перехвата, которая контролирует сообщения от клавиатуры. 
+            См. описание KeyboardProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_MOUSE </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру перехвата, которая контролирует сообщения от мыши. См. описание 
+            процедуры MouseProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_MSGFILTER </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру перехвата, которая просматривает сообщения, генерируемые 
+            в результате ввода в dialog box, message box, menu, или scroll bar. 
+            Хук процедура контролирует эти сообщения, только для приложения, которое 
+            установило этот хук. См описание процедуры MessageProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_SHELL </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру перехвата, которая получает уведомления, полезные для расширенных 
+            приложений. См описание процедуры ShellProc </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_SYSMSGFILTER </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру перехвата, которая контролирует сообщения, генерируемые 
+            как результат ввода в dialog box, message box, menu, or scroll bar. 
+            Такая хук процедура контролирует все сообщения для всех приложений 
+            в системе. См описание процедуры SysMsgProc. </td>
+        </tr>
+      </table>
+      <p><font face=arial> lParam </font></p>
+      <p><font face=arial> Указатель 
+        на структуру DEBUGHOOKINFO, которая содержит параметры, для прохода к 
+        предназначенной хук процедуре. </font></p>
+      <p><font face=arial><i><strong> Возвращаемые 
+        значения </strong></i></font></p>
+      <p><font face=arial> Для 
+        предотвращения установки перехватов в системе, возвращаемое значение должно 
+        быть ненулевым. Иначе процедура перехвата должна передать информацию о 
+        перехвате функции CallNextHookEx.  </font></p>
+      <p><font face=arial><i><strong> Заметки </strong></i></font></p>
+      <p><font face=arial> Приложение 
+        устанавливает эту процедуру перехвата, определяя тип перехвата WH_DEBUG 
+        и указатель на процедуру перехвата, в запросе к функции SetWindowsHookEx. </font></p>
+      <p><font face=arial> CallWndProc 
+        и CallWndRetProc хранители имен функций для приложения или библиотеки. </font></p>
+      <p><font face=arial><i><strong> Смотри 
+        также: </strong></i></font></p>
+      <p><font face=arial> CallNextHookEx, 
+        CallWndProc, CallWndRetProc, CBTProc, DEBUGHOOKINFO, GetMsgProc, JournalPlaybackProc, 
+        JournalRecordProc, KeyboardProc, MessageProc, MouseProc, SetWindowsHookEx, 
+        ShellProc, SysMsgProc </font></p>
+      <p>&nbsp;</p>
+      <hr>
+      <p><font face=arial><!--webbot bot="HTMLMarkup" StartSpan --><a name="ForegroundIdleProc"></a> 
+        <!--webbot BOT="HTMLMarkup" endspan -->ForegroundIdleProc </font></p>
+      <p><font face=arial> Процедура 
+        перехвата ForegroundIdleProc определенная приложением callback функция, 
+        вызывается системой, когда 32 битная нить переднего плана собирается перейти 
+        в ожидание (приоритет idle). </font></p>
+      <p><font face=arial> DWORD 
+        ForegroundIdleProc( </font></p>
+      <p><font face=arial> int 
+        code, // Код перехвата </font></p>
+      <p><font face=arial> DWORD 
+        wParam, // Не используется </font></p>
+      <p><font face=arial> LONG 
+        lParam // Не используется </font></p>
+      <p><font face=arial>); 
+         </font></p>
+      <p><font face=arial><i><strong> Параметры </strong></i></font></p>
+      <p><font face=arial> code </font></p>
+      <p><font face=arial> Определяет 
+        когда должна процедура перехвата обработать сообщение. Если code равен 
+        HC_ACTION, хук процедура должна обработать сообщение. Если code меньше 
+        нуля, хук процедура должна передать сообщение к функции CallNextHookEx 
+        без дальнейшей обработки и должна возвратить значение, возвращенное функцией 
+        CallNextHookEx. </font></p>
+      <p><font face=arial> wParam </font></p>
+      <p><font face=arial> Не 
+        используется. </font></p>
+      <p><font face=arial> lParam </font></p>
+      <p><font face=arial> Не 
+        используется. </font></p>
+      <p><font face=arial><i><strong> Заметки </strong></i></font></p>
+      <p><font face=arial> Приложение 
+        устанавливает эту хук процедуру, определяя тип перехвата WH_FOREGROUNDIDLE 
+        и указатель на хук процедуру в запросе к функции SetWindowsHookEx. </font></p>
+      <p><font face=arial> ForegroundIdleProc 
+        – место хранения имен функций в приложении. </font></p>
+      <p><font face=arial> Это 
+        приспособленный к нитям перехват. </font></p>
+      <p><font face=arial><i><strong> Смотри 
+        также </strong></i></font></p>
+      <p><font face=arial> CallNextHookEx, 
+        SetWindowsHookEx </font></p>
+      <p>&nbsp;</p>
+      <p><font face=arial><!--webbot bot="HTMLMarkup" StartSpan --><a name="GetMsgProc"></a><!--webbot BOT="HTMLMarkup" endspan -->GetMsgProc </font></p>
+      <p><font face=arial> Процедура 
+        ловушки GetMsgProc - определенная приложением или библиотекой функция 
+        обратного вызова, вызывается системой тогда, когда функция GetMessage 
+        отыскала сообщение в очереди сообщений приложения. Перед прохождением 
+        найденного сообщения к процедуре окна адресата, система передает сообщение 
+        к процедуре ловушки.  </font></p>
+      <p><font face=arial> LRESULT 
+        CALLBACK GetMsgProc( </font></p>
+      <p><font face=arial> int 
+        code, // Код ловушки </font></p>
+      <p><font face=arial> WPARAM 
+        wParam, // Флажок удаления </font></p>
+      <p><font face=arial> LPARAM 
+        lParam // Адрес структуры с сообщением </font></p>
+      <p><font face=arial>); 
+         </font></p>
+      <p><font face=arial><i><strong> Параметры </strong></i></font></p>
+      <p><font face=arial><i> code </i></font></p>
+      <p><font face=arial> Определяет, 
+        должна ли процедура ловушки обработать сообщение. Если <i>code</i> равен 
+        HC_ACTION, процедура ловушки должна обработать сообщение. Если код - меньше 
+        чем нуль, процедура ловушки должна передать управление функции CallNextHookEx 
+        без дальнейшей обработки сообщения и должна возвратить значение, возвращенное 
+        CallNextHookEx.  </font></p>
+      <p><font face=arial><i> wParam </i></font></p>
+      <p><font face=arial> Определяет, 
+        было ли сообщение удалено из очереди. Этот параметр может иметь одно из 
+        следующих значений: </font></p>
+      <table border="1" cellspacing="1" cellpadding="9" width=100%>
+        <tr> 
+          <td width="50%" valign="TOP"><b>Значение</b> </td>
+          <td width="50%" valign="TOP"><b>Описание</b> </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> PM_NOREMOVE </td>
+          <td width="50%" valign="TOP"> Определяет, 
+            что сообщение не было удалено из очереди. (Приложение вызвало функцию 
+            PeekMessage, определяя флажок PM_NOREMOVE.) </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> PM_REMOVE 
+          </td>
+          <td width="50%" valign="TOP"> Определяет, 
+            что сообщение было удалено из очереди. (Приложение вызвало функцию 
+            GetMessage, или функцию PeekMessage, определяя флажок PM_REMOVE.) </td>
+        </tr>
+      </table>
+      <p><font face=arial><i> lParam </i></font></p>
+      <p><font face=arial> Указатель 
+        на структуру MSG, содержащую подробную информацию о сообщении. </font></p>
+      <p><font face=arial><i><strong> Возвращаемые 
+        значения </strong></i></font></p>
+      <p><font face=arial> Возвращаемое 
+        значение должно быть нулем. </font></p>
+      <p><font face=arial><i><strong> Заметки </strong></i></font></p>
+      <p><font face=arial> Процедура 
+        ловушки GetMsgProc может исследовать или изменять сообщение. После возврата 
+        управления системе, функция GetMessage возвращает сообщение со всеми изменениями, 
+        приложению, которое первоначально вызвало его.  </font></p>
+      <p><font face=arial> Приложение 
+        устанавливает эту процедуру ловушки, определяя тип ловушки как WH_GETMESSAGE 
+        и адрес процедуры ловушки обращаясь к функции SetWindowsHookEx.  </font></p>
+      <p><font face=arial> GetMsgProc 
+        - метка - заполнитель для определенного приложением или определенного 
+        библиотекой имени функции.  </font></p>
+      <p><font face=arial><i><strong> Смотри 
+        также </strong></i></font></p>
+      <p><font face=arial> CallNextHookEx, 
+        GetMessage, MSG, PeekMessage, SetWindowsHookEx </font></p>
+      <p>&nbsp;</p>
+      <hr>
+      <p><font face=arial><!--webbot bot="HTMLMarkup" StartSpan --><a name="JournalPlaybackProc"></a><!--webbot BOT="HTMLMarkup" endspan -->JournalPlaybackProc </font></p>
+      <p><font face=arial> Процедура 
+        ловушки JournalPlaybackProc – callback (обратного вызова) функция, которая 
+        вставляет сообщения от мыши и клавиатуры в системную очередь сообщений. 
+        Обычно, приложения используют эту процедуру, чтобы воспроизвести ряд действий 
+        мыши и клавиатуры, предварительно записанных процедурой ловушки JournalRecordProc. 
+        Пока процедура ловушки JournalPlaybackProc установлена, ввод с мыши и 
+        клавиатуры заблокирован. </font></p>
+      <p><font face=arial> LRESULT 
+        CALLBACK JournalPlaybackProc( </font></p>
+      <p><font face=arial> int 
+        code, // Код ловушки </font></p>
+      <p><font face=arial> WPARAM 
+        wParam, // неопределено </font></p>
+      <p><font face=arial> LPARAM 
+        lParam // Адрес обрабатываемого сообщения </font></p>
+      <p><font face=arial>); </font></p>
+      <p><font face=arial><i><strong> Параметры </strong></i></font></p>
+      <p><font face=arial> code </font></p>
+      <p><font face=arial> Определяет 
+        код процедуры ловушки, используемый для определения способа обработки 
+        сообщения. Этот параметр может иметь одно из следующих значений: </font></p>
+      <table border="1" cellspacing="1" cellpadding="9" width=100%>
+        <tr> 
+          <td width="50%" valign="TOP"><b>Значение</b> </td>
+          <td width="50%" valign="TOP"><b>Описание</b> </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HC_GETNEXT </td>
+          <td width="50%" valign="TOP"> Процедура 
+            ловушки должна копировать текущее сообщение мыши или сообщение клавиатуры 
+            в структуру EVENTMSG, указатель на которую находиться в lParam.  </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HC_NOREMOVE </td>
+          <td width="50%" valign="TOP"> Приложение 
+            вызвало функцию PeekMessage с wRemoveMsg установленным как PM_NOREMOVE, 
+            указывая, что сообщение не удалено из очереди после обработки PeekMessage. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HC_SKIP </td>
+          <td width="50%" valign="TOP"> Процедура 
+            ловушки должна подготовиться скопировать следующее сообщение мыши 
+            или сообщение клавиатуры в структуру EVENTMSG, на которую указывает 
+            lParam. После получения кода HC_GETNEXT, процедура ловушки должна 
+            копировать сообщение в структуру. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HC_SYSMODALOFF </td>
+          <td width="50%" valign="TOP"> Системно-модальное 
+            диалоговое окно было разрушено. Процедура ловушки должна продолжить 
+            воспроизводить сообщения. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HC_SYSMODALON </td>
+          <td width="50%" valign="TOP"> Системно-модальное 
+            диалоговое окно отображается. Пока диалоговое окно не разрушено, процедура 
+            ловушки должна прекратить воспроизводить сообщения. </td>
+        </tr>
+      </table>
+      <p><font face=arial> Если 
+        code - меньше нуля, процедура ловушки должна передать управление функции 
+        CallNextHookEx без дальнейшей обработки и должна возвратить значение, 
+        возвращенное CallNextHookEx.  </font></p>
+      <p><font face=arial> WParam </font></p>
+      <p><font face=arial> Определено 
+        как NULL. </font></p>
+      <p><font face=arial> LParam </font></p>
+      <p><font face=arial> Указывает 
+        на структуру EVENTMSG, которая представляет собой сообщение, обрабатываемое 
+        процедурой ловушки. Этот параметр допустим только, когда параметр code 
+        - HC_GETNEXT.  </font></p>
+      <p><font face=arial><i><strong> Возвращаемые 
+        значения </strong></i></font></p>
+      <p><font face=arial> Для 
+        того, чтобы заставить систему ждать перед обработкой сообщения, возвращаемое 
+        значение должно быть количеством времени, в импульсах сигнала времени 
+        часов, которое система должна ждать. (Это значение может быть получено, 
+        замеряя различие между элементами времени в текущих и предыдущих входных 
+        сообщениях.) Чтобы обработать сообщение немедленно, возвращаемое значение 
+        должно быть нуль. Возвращаемое значение используется только, если код 
+        ловушки - HC_GETNEXT; иначе, он игнорируется.  </font></p>
+      <p><font face=arial><i><strong> Заметки </strong></i></font></p>
+      <p><font face=arial> Процедура 
+        ловушки JournalPlaybackProc должна копировать входное сообщение к параметру 
+        lParam. Сообщение должно быть предварительно записано, используя процедуру 
+        ловушки JournalRecordProc, которая не должна изменять его.  </font></p>
+      <p><font face=arial> Чтобы 
+        выполнять одно и то же сообщение много раз, процедура ловушки может называться 
+        несколько раз с набором параметров кодов к HC_GETNEXT без вмешивающегося 
+        обращения с code, равным HC_SKIP.  </font></p>
+      <p><font face=arial> Если 
+        code - HC_GETNEXT, и возвращаемое значение больше нуля, система бездействует 
+        столько миллисекунд, сколько определено возвращаемым значением. Когда 
+        система пробуждается, то вызывает процедуру ловушки снова с code, равным 
+        HC_GETNEXT, чтобы восстановить то же самое сообщение. Возвращаемое значение 
+        от этого нового обращения до JournalPlaybackProc должно быть нуль; иначе, 
+        система опять будет бездействовать столько миллисекунд, сколько определено 
+        возвращаемым значением, вызывать JournalPlaybackProc снова, и так далее. 
+        Система может повиснуть.  </font></p>
+      <p><font face=arial> В 
+        отличие от большинства других глобальных процедур ловушек, JournalRecordProc 
+        и JournalPlaybackProc - процедуры ловушки всегда вызвываемые контекстом 
+        нити, которая устанавливают ловушку.  </font></p>
+      <p><font face=arial> После 
+        возврата управления системе, сообщение продолжает обработываться. Если 
+        code - HC_SKIP, процедура ловушки должна быть готова возвратить следующее 
+        записанное сообщение при следующем обращении.  </font></p>
+      <p><font face=arial> Приложение 
+        устанавливает процедуру ловушки JournalPlaybackProc, определяя тип ловушки 
+        как WH_JOURNALPLAYBACK и адрес процедуры ловушки в обращении к функции 
+        SetWindowsHookEx.  </font></p>
+      <p><font face=arial> Win32 
+        JournalRecordProc не должна помещаться в DLL, она может находиться только 
+        непосредственно в приложении. Если пользователь нажимает CTRL + ESC или 
+        CTRL + ALT + DEL в течение воспроизведения журнала, система останавливает 
+        проигрыватель, отсоединяет процедуру проигрывателя журнала, и посылает 
+        сообщение WM_CANCELJOURNAL проигрывающему приложению. </font></p>
+      <p><font face=arial> Если 
+        процедура ловушки возвращает сообщение в диапазоне от WM_KEYFIRST до WM_KEYLAST, 
+        то применяются следующие условия: </font></p>
+      <p><font face=arial>· 
+        ParamL элемент структуры EVENTMSG определяет виртуальный код клавиши, 
+        которая была нажата. </font></p>
+      <p><font face=arial>· 
+        ParamH элемент структуры EVENTMSG определяет скан-код. </font></p>
+      <p><font face=arial>· 
+        Не имеется никакого способа определить счет repeast (?). Событие всегда 
+        возьмет представляющее событие клавиши. </font></p>
+      <p><font face=arial> JournalPlaybackProc 
+        - метка - заполнитель для определенного приложением или определенного 
+        библиотекой имени функции.  </font></p>
+      <p><font face=arial><i><strong> Смотри 
+        также: </strong></i></font></p>
+      <p><font face=arial> CallNextHookEx, 
+        EVENTMSG, JournalRecordProc, PeekMessage, SetWindowsHookEx, WM_CANCELJOURNAL </font></p>
+      <p>&nbsp;</p>
+      <hr>
+      <p><font face=arial><!--webbot bot="HTMLMarkup" StartSpan --><a name="JournalRecordProc"></a><!--webbot BOT="HTMLMarkup" endspan -->JournalRecordProc </font></p>
+      <p><font face=arial> Процедура 
+        ловушки JournalRecordProc - функция обратного вызова, которая записывает 
+        сообщения, а система удаляет их из очереди. Позже, приложение может использовать 
+        процедуру ловушки JournalPlaybackProc, чтобы воспроизвести записанные 
+        сообщения.  </font></p>
+      <p><font face=arial> LRESULT 
+        CALLBACK JournalRecordProc( </font></p>
+      <p><font face=arial> int 
+        code, // Код ловушки </font></p>
+      <p><font face=arial> WPARAM 
+        wParam, // Неопределено </font></p>
+      <p><font face=arial> LPARAM 
+        lParam // Адрес обрабатываемого сообщения </font></p>
+      <p><font face=arial>); </font></p>
+      <p><font face=arial><i><strong> Параметры </strong></i></font></p>
+      <p><font face=arial><i> Code </i></font></p>
+      <p><font face=arial> Определяет, 
+        как обработать сообщение. Этот параметр может иметь одно из следующих 
+        значений: </font></p>
+      <table border="1" cellspacing="1" cellpadding="9" width=100%>
+        <tr> 
+          <td width="50%" valign="TOP"><b>Значение</b> </td>
+          <td width="50%" valign="TOP"><b>Описание</b> </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HC_ACTION </td>
+          <td width="50%" valign="TOP"> LParam 
+            указывает на структуру EVENTMSG, содержащую информацию относительно 
+            сообщения, удаленного из системной очереди сообщений. Процедура ловушки 
+            должна записать содержанимое структуры, копируя их в свой буфер или 
+            файл. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HC_SYSMODALOFF </td>
+          <td width="50%" valign="TOP"> Системно-модальное 
+            диалоговое окно было разрушено. Процедура ловушки должна продолжить 
+            к запись. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HC_SYSMODALON 
+          </td>
+          <td width="50%" valign="TOP"> Системно-модальное 
+            диалоговое окно отображается. Пока диалоговое окно не разрушено, процедура 
+            ловушки должна прекратить делать запись. </td>
+        </tr>
+      </table>
+      <p><font face=arial> Если 
+        <i>code</i> - меньше нуля, процедура ловушки должна передать сообщение 
+        функции CallNextHookEx без дальнейшей обработки и должна возвратить значение, 
+        возвращенное CallNextHookEx. </font></p>
+      <p><font face=arial><i> WParam </i></font></p>
+      <p><font face=arial> Должно 
+        иметь значение NULL. </font></p>
+      <p><font face=arial><i> LParam </i></font></p>
+      <p><font face=arial> Указатель 
+        на структуру EVENTMSG, которая содержит информацию о сообщении, которую 
+        нужно записать. </font></p>
+      <p><font face=arial><i><strong> Возвращаемые 
+        значения </strong></i></font></p>
+      <p><font face=arial> Возвращаемое 
+        значение игнорируется. </font></p>
+      <p><font face=arial><i><strong> Заметки </strong></i></font></p>
+      <p><font face=arial> Процедура 
+        ловушки JournalRecordProc должна копировать, но не изменять сообщения. 
+        После возврата управления системе, сообщение продолжает обрабатываться. 
+         </font></p>
+      <p><font face=arial> Приложение 
+        устанавливает процедуру ловушки JournalRecordProc, определяя тип ловушки 
+        WH_JOURNALRECORD и адрес процедуры ловушки обращаясь к функции SetWindowsHookEx. 
+         </font></p>
+      <p><font face=arial> Win32 
+        ловушка JournalRecordProc не должна располагаться в DLL. Win32 JournalRecordProc 
+        можно располагать только непосредственно в приложении.  </font></p>
+      <p><font face=arial> В 
+        отличие от большинства других глобальных процедур ловушк, JournalRecordProc 
+        и JournalPlaybackProc всегда вызванются контекстом нити, которая устанавливает 
+        ловушку.  </font></p>
+      <p><font face=arial> Приложение, 
+        которое установило ловушку JournalRecordProc, должно наблюдать за VK_CANCEL 
+        виртуальный keycode (который определен как CTRL + Break на большинстве 
+        клавиатур). Этот виртуальный keycode должен быть проинтерпретирован приложением 
+        как сигнал, что пользователь хочет останавливаться запись журнала. Приложение 
+        должно отреагировать на останов, заканчивая запись и удаление процедуры 
+        ловушки JournalRecordProc. Удаление важно. Это предотвращает приложение, 
+        записывающее журнал событий от зависания система, приводя к останову внутри 
+        процедуры ловушки.  </font></p>
+      <p><font face=arial> Это 
+        как сигнал, чтобы остановить запись журнала, так что CTRL + Break не может 
+        быть записан обычным методом. Начиная с CTRL + C комбинация не имеет никакой 
+        роли как сигнал для контроля записи, следовательно, могут быть записаны. 
+        Имеются две других комбинации клавиш, которые не могут быть записаны: 
+        CTRL + ESC и CTRL + ALT + DEL. Те две комбинации клавиш заставляют систему 
+        останавливать все записывающие действия, удалять все ловушки (journaling), 
+        и посылать сообщение WM_CANCELJOURNAL к записывающему приложению.  </font></p>
+      <p><font face=arial><i><strong> Смотри 
+        также: </strong></i></font></p>
+      <p><font face=arial> CallNextHookEx, 
+        EVENTMSG, JournalPlaybackProc, SetWindowsHookEx, WM_CANCELJOURNAL </font></p>
+      <p>&nbsp;</p>
+      <hr>
+      <p><font face=arial><!--webbot bot="HTMLMarkup" StartSpan --><a name="KeyboardProc"></a> 
+        <!--webbot BOT="HTMLMarkup" endspan -->KeyboardProc </font></p>
+      <p><font face=arial> Процедура 
+        ловушки KeyboardProc - определенная приложением или библиотекой функция 
+        обратного вызова вызывается системой всякий раз, когда из прикладной программы 
+        вызывается функция GetMessage или PeekMessage и имеется сообщение от клавиатуры 
+        (WM_KEYUP или WM_KEYDOWN).  </font></p>
+      <p><font face=arial> LRESULT 
+        CALLBACK KeyboardProc( </font></p>
+      <p><font face=arial> int 
+        code, // Код ловушки </font></p>
+      <p><font face=arial> WPARAM 
+        wParam, // Виртуальный клуч-код </font></p>
+      <p><font face=arial> LPARAM 
+        lParam // Информация о нажатой клавише </font></p>
+      <p><font face=arial>); </font></p>
+      <p><font face=arial><i><strong> Параметры </strong></i></font></p>
+      <p><font face=arial><i> Code 
+         </i></font></p>
+      <p><font face=arial> Определяет 
+        код использования процедуры ловушки, чтобы определить, как обработать 
+        сообщение. Этот параметр может быть одно из следующих значений:  </font></p>
+      <table border="1" cellspacing="1" cellpadding="9" width=100%>
+        <tr> 
+          <td width="50%" valign="TOP"><b>Значение</b> </td>
+          <td width="50%" valign="TOP"><b>Описание</b> </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HC_ACTION </td>
+          <td width="50%" valign="TOP"> WParam 
+            и lParam параметры содержат информацию относительно нажатой клавиши. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HC_NOREMOVE </td>
+          <td width="50%" valign="TOP"> Параметры 
+            WParam и lParam содержат информацию относительно нажатой клавиши, 
+            и сообщение не было удалено из очереди сообщений. (Приложение вызвало 
+            функцию PeekMessage, определяя флажок PM_NOREMOVE.) </td>
+        </tr>
+      </table>
+      <p><font face=arial> Если 
+        <i>code</i> - меньше нуля, процедура ловушки должна передать управление 
+        функции CallNextHookEx без дальнейшей обработки и должна возвратить значение, 
+        возвращенное CallNextHookEx.  </font></p>
+      <p><font face=arial><i> WParam </i></font></p>
+      <p><font face=arial> Определяет 
+        код с виртуальным идентификатором клавиши, которая генерировала сообщение 
+        нажатия клавиши. </font></p>
+      <p><font face=arial><i> LParam </i></font></p>
+      <p><font face=arial> Определяет 
+        повторный счет, скэн-код, флажок расширенной клавиши, контекстный код, 
+        предыдущий флажок состояния клавиши, и флажок переходного состояния. Этот 
+        параметр может быть комбинация следующих значений:  </font></p>
+      <table border="1" cellspacing="1" cellpadding="9" width=100%>
+        <tr> 
+          <td width="50%" valign="TOP"><b>Значение</b> </td>
+          <td width="50%" valign="TOP"><b>Описание</b> </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> 0-15 </td>
+          <td width="50%" valign="TOP"> Определяет 
+            повторный счет. Значение - число раз, сколько нажатие клавиши повторено 
+            в результате удерживания пользователем кнопки. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> 16-23 </td>
+          <td width="50%" valign="TOP"> Определяет 
+            скэн-код. Значение зависит от первоначального изготовителя борудования 
+            (OEM). </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> 24 </td>
+          <td width="50%" valign="TOP"> Определяет,является 
+            ли клавиша расширенной кнопкой, типа функциональной кнопки или кнопки 
+            на цифровой клавиатуре. Значение 1, если кнопка – расширенная; иначе, 
+            это - 0. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> 25-28 </td>
+          <td width="50%" valign="TOP"> Зарезервировано </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> 29 
+          </td>
+          <td width="50%" valign="TOP"> Определяет 
+            контекстный код. Значение 1, если клавиша ALT -; иначе, это - 0. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> 30 </td>
+          <td width="50%" valign="TOP"> Определяет 
+            предыдущее состояние клавиши. Значение 1, если клавиша нажата прежде, 
+            чем сообщение послано; значение - 0, если клавиша была отпущена. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> 31 </td>
+          <td width="50%" valign="TOP"> Определяет 
+            переходное состояние. Значение - 0, если клавиша нажимается и 1, если 
+            это отпускается. </td>
+        </tr>
+      </table>
+      <p><font face=arial> Для 
+        подробной информации относительно параметра lParam, см. Флажки Keystroke 
+        Message Flags. </font></p>
+      <p><font face=arial><i><strong> Возвращаемые 
+        значения </strong></i></font></p>
+      <p><font face=arial> Чтобы 
+        предотвратить Windows от прохождения сообщения к остальной части цепочки 
+        ловушок или к выходной оконной процедуре, возвращаемое значение должно 
+        быть отличное от нуля. Чтобы позволить Windows передавать сообщение к 
+        выходной процедуре окна, обходя(шунтируя) процедуры дальнейшего пребывания 
+        в цепочке, возвращаемое значение должно быть нуль.  </font></p>
+      <p><font face=arial><i><strong> Заметки </strong></i></font></p>
+      <p><font face=arial> Приложение 
+        устанавливает процедуру ловушки, определяя тип ловушки WH_KEYBOARD и адрес 
+        процедуры ловушки вызывая вунуйию SetWindowsHookEx.  </font></p>
+      <p><font face=arial><i><strong> Смотри 
+        также </strong></i></font></p>
+      <p><font face=arial> CallNextHookEx, 
+        GetMessage, PeekMessage, SetWindowsHookEx, WM_KEYUP, WM_KEYDOWN </font></p>
+      <p>&nbsp;</p>
+      <hr>
+      <p><font face=arial><!--webbot bot="HTMLMarkup" StartSpan --><a name="MessageProc"></a> 
+        <!--webbot BOT="HTMLMarkup" endspan -->MessageProc </font></p>
+      <p><font face=arial> Процедуру 
+        ловушки MessageProc - определенную приложением функцию обратного вызова 
+        система вызывает после того, как входное событие происходит в диалоговом 
+        окне, окне сообщения, меню, или полосе прокрутки, но прежде, чем сообщение, 
+        сгенерированное входным событием будет обработано. Процедура ловушки может 
+        контролировать сообщения для диалогового окна, окна сообщения, меню, или 
+        полосы прокрутки, созданной специфическим приложением или всеми приложениями. 
+         </font></p>
+      <p><font face=arial> LRESULT 
+        CALLBACK MessageProc( </font></p>
+      <p><font face=arial> int 
+        code, // Код ловушки </font></p>
+      <p><font face=arial> WPARAM 
+        wParam, // Неопределено </font></p>
+      <p><font face=arial> LPARAM 
+        lParam // Адрес структуры с данными сообщения </font></p>
+      <p><font face=arial>); </font></p>
+      <p><font face=arial><i><strong> Параметры </strong></i></font></p>
+      <p><font face=arial><i> Code </i></font></p>
+      <p><font face=arial> Определяет 
+        тип входного события, которое генерировало сообщение. Этот параметр может 
+        быть одно из следующих значений:  </font></p>
+      <table border="1" cellspacing="1" cellpadding="9" width=100%>
+        <tr> 
+          <td width="50%" valign="TOP"><b>Значение</b> </td>
+          <td width="50%" valign="TOP"><b>Описание</b> </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> MSGF_DDEMGR </td>
+          <td width="50%" valign="TOP"> Входное 
+            событие произошло, в то время как Библиотека Управлений Динамических 
+            обменов данными (DDEML) ждала окончания синхронной транзакции. Для 
+            подробной информации относительно DDEML, см. Библиотеку Управлений 
+            Динамических обменов данными (Dynamic Data Exchange Management Library). </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> MSGF_DIALOGBOX </td>
+          <td width="50%" valign="TOP"> Входное 
+            событие произошло в окне сообщения или диалоговом окне. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> MSGF_MENU 
+          </td>
+          <td width="50%" valign="TOP"> Входное 
+            событие произошло в меню </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> MSGF_NEXTWINDOW 
+          </td>
+          <td width="50%" valign="TOP"> Входное 
+            событие произошло в результате нажатия пользователем ALT + TAB, чтобы 
+            активизировать другое окно. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> MSGF_SCROLLBAR 
+          </td>
+          <td width="50%" valign="TOP"> Входное 
+            событие произошло в полосе прокрутки. </td>
+        </tr>
+      </table>
+      <p><font face=arial> Если 
+        <i>code</i> - меньше нуля, процедура ловушки должна передать управление 
+        функции CallNextHookEx без дальнейшей обработки сообщения и возвратить 
+        значение, возвращенное CallNextHookEx.  </font></p>
+      <p><font face=arial><i> WParam </i></font></p>
+      <p><font face=arial> Должно 
+        иметь значение NULL. </font></p>
+      <p><font face=arial><i> LParam </i></font></p>
+      <p><font face=arial> Указатель 
+        на структуру MSG. </font></p>
+      <p><font face=arial><i><strong> Возвращаемые 
+        значения </strong></i></font></p>
+      <p><font face=arial> Если 
+        процедура ловушки обрабатывает сообщение, возвращаемое значение должно 
+        быть отличное от нуля. Иначе, должно быть нулем.  </font></p>
+      <p><font face=arial><i><strong> Заметки </strong></i></font></p>
+      <p><font face=arial> Приложение 
+        устанавливает процедуру ловушки, определяя тип ловушки WH_MSGFILTER и 
+        адрес процедуры ловушки обращаясь к функции SetWindowsHookEx.  </font></p>
+      <p><font face=arial> Если 
+        приложение, которое использует DDEML и выполняет синхронные трансакции, 
+        должно обработать сообщения прежде, чем оно будет послано, оно должно 
+        использовать ловушку WH_MSGFILTER.  </font></p>
+      <p><font face=arial> MessageProc 
+        - метка - заполнитель для определенного приложением имени функции.  </font></p>
+      <p><font face=arial><i><strong> Смотри 
+        также </strong></i></font></p>
+      <p><font face=arial> CallNextHookEx, 
+        SetWindowsHookEx, MSG </font></p>
+      <p>&nbsp;</p>
+      <hr>
+      <p><font face=arial><!--webbot bot="HTMLMarkup" StartSpan --><a name="MouseProc"></a> 
+        <!--webbot BOT="HTMLMarkup" endspan -->MouseProc </font></p>
+      <p><font face=arial> Процедура 
+        ловушки MouseProc - определенная приложением библиотекой функция обратного 
+        вызова вызывается системой всякий раз, когда из прикладной программы вызваны 
+        функции GetMessage или PeekMessage и имеется сообщение мыши, которое следует 
+        обработать.  </font></p>
+      <p><font face=arial> LRESULT 
+        CALLBACK MouseProc( </font></p>
+      <p><font face=arial> int 
+        nCode, // Код ловушки </font></p>
+      <p><font face=arial> WPARAM 
+        wParam, // Идентификатор сообщения </font></p>
+      <p><font face=arial> LPARAM 
+        lParam // Координаты мыши </font></p>
+      <p><font face=arial>); </font></p>
+      <p><font face=arial><i><strong> Параметры </strong></i></font></p>
+      <p><font face=arial><i> nCode </i></font></p>
+      <p><font face=arial> Определяет 
+        код использования процедуры ловушки, чтобы определить, как обработать 
+        сообщение. Этот параметр может иметь одно из следующих значений:  </font></p>
+      <table border="1" cellspacing="1" cellpadding="9" width=100%>
+        <tr> 
+          <td width="50%" valign="TOP"><b>Значение</b> </td>
+          <td width="50%" valign="TOP"><b>Описание</b> </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HC_ACTION </td>
+          <td width="50%" valign="TOP"> Параметры 
+            WParam и lParam содержат информацию относительно сообщения мыши. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HC_NOREMOVE </td>
+          <td width="50%" valign="TOP"> Параметры 
+            WParam и lParam содержат информацию относительно сообщения мыши, и 
+            сообщение мыши не было удалено из очереди сообщений. (Приложение вызвало 
+            функцию PeekMessage, определяя флажок PM_NOREMOVE.) </td>
+        </tr>
+      </table>
+      <p><font face=arial> Если 
+        <i>nCode</i> - меньше нуля, процедура ловушки должна передать управление 
+        функции CallNextHookEx без дальнейшей обработки сообщения и должна возвратить 
+        значение, возвращенное CallNextHookEx.  </font></p>
+      <p><font face=arial><i> wParam </i></font></p>
+      <p><font face=arial> Определяет 
+        идентификатор сообщения мыши. </font></p>
+      <p><font face=arial><i> lParam </i></font></p>
+      <p><font face=arial> Указывает 
+        на структуру MOUSEHOOKSTRUCT. </font></p>
+      <p><font face=arial><i><strong> Возвращаемые 
+        значения </strong></i></font></p>
+      <p><font face=arial> Чтобы 
+        давать возможность системе обработать сообщение, возвращаемое значение 
+        должно быть нулем. Чтобы отбросить сообщение, возвращаемое значение должно 
+        быть отлично от нуля.  </font></p>
+      <p><font face=arial><i><strong> Заметки </strong></i></font></p>
+      <p><font face=arial> Процедура 
+        ловушки не должна установить функцию повторного вызова JournalPlaybackProc. 
+         </font></p>
+      <p><font face=arial> Приложение 
+        устанавливает процедуру ловушки, определяя тип ловушки WH_MOUSE и адрес 
+        процедуры ловушки обращаясь к функции SetWindowsHookEx. </font></p>
+      <p><font face=arial><i><strong> Смотри 
+        также: </strong></i></font></p>
+      <p><font face=arial> CallNextHookEx, 
+        GetMessage, JournalPlaybackProc, MOUSEHOOKSTRUCT, PeekMessage, SetWindowsHookEx. </font></p>
+      <p>&nbsp;</p>
+      <hr>
+      <p><font face=arial><!--webbot bot="HTMLMarkup" StartSpan --><a name="SetWindowsHookEx"></a> 
+        <!--webbot BOT="HTMLMarkup" endspan -->SetWindowsHookEx </font></p>
+      <p><font face=arial> Функция 
+        SetWindowsHookEx устанавливает определенную приложением процедуру ловушки 
+        в цепочку ловушек. Приложение устанавливает процедуру ловушки, чтобы контролировать 
+        некоторые типы событий в системе. Процедура ловушки может контролировать 
+        события, связанные со специфической нитью или со всеми нитями в системе. 
+        Эта функция отменяет функцию SetWindowsHook.  </font></p>
+      <p><font face=arial> HHOOK 
+        SetWindowsHookEx( </font></p>
+      <p><font face=arial> int 
+        idHook, // Тип устанавливаемой ловушки </font></p>
+      <p><font face=arial> HOOKPROC 
+        lpfn, // Адрес процедуры ловушки </font></p>
+      <p><font face=arial> HINSTANCE 
+        hMod, // Дескриптор образца приложения </font></p>
+      <p><font face=arial> DWORD 
+        dwThreadId // Идентификатор нити, для которой установить ловушку </font></p>
+      <p><font face=arial>); </font></p>
+      <p><font face=arial><i><strong> Параметры </strong></i></font></p>
+      <p><font face=arial><i> idHook </i></font></p>
+      <p><font face=arial> Определяет 
+        тип процедуры ловушки, которая будет установлена. Этот параметр можетиметь 
+        одно из следующих значений:  </font></p>
+      <table border="1" cellspacing="1" cellpadding="9" width=100%>
+        <tr> 
+          <td width="50%" valign="TOP"><b>Значение</b> </td>
+          <td width="50%" valign="TOP"><b>Описание</b> </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_CALLWNDPROC 
+          </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру ловушки, которая контролирует сообщения прежде, чем система 
+            посылает его процедуре окна адресата. Для подробной информации, см. 
+            процедуру ловушки CallWndProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_CALLWNDPROCRET 
+          </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру ловушки, которая контролирует сообщения после того, как 
+            они были обработаны процедурой окна адресата. Для подробной информации, 
+            см. процедуру ловушки CallWndRetProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_CBT 
+          </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру ловушки, которая получает уведомления, полезные для обучающих 
+            приложений (CBT). Для подробной информации, см. процедуру ловушки 
+            CBTPROC. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_DEBUG </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру ловушки, полезную для отладки других процедур ловушки. Для 
+            подробной информации, см. процедуру ловушки DebugProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_GETMESSAGE 
+          </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру ловушки, которая контролирует сообщения, зарегистрированные 
+            в очереди сообщений. Для подробной информации, см. процедуру ловушки 
+            GetMsgProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_JOURNALPLAYBACK 
+          </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру ловушки, которая регистрирует сообщения, предварительно 
+            записанные процедурой ловушки WH_JOURNALRECORD. Для подробной информации, 
+            см. процедуру ловушки JournalPlaybackProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_JOURNALRECORD 
+          </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру ловушки, которая записывает входные сообщения, зарегистрированные 
+            в очереди сообщений системы. Эта ловушка полезна для записи макрокоманд. 
+            Для подробной информации, см. процедуру ловушки JournalRecordProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_KEYBOARD 
+          </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру ловушки, которая контролирует сообщения нажатия клавиш. 
+            Для подробной информации, см. процедуру ловушки KeyboardProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_MOUSE 
+          </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру ловушки, которая контролирует сообщения мыши. Для подробной 
+            информации, см. процедуру ловушки MouseProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_MSGFILTER 
+          </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру ловушки, которая контролирует сообщения, сгенерированные 
+            в результате входного события в диалоговом окне, окне сообщения, меню, 
+            или полосе прокрутки. Для подробной информации, см. процедуру ловушки 
+            MessageProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_SHELL 
+          </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру ловушки, которая получает уведомления, полезные для приложений 
+            оболочки. Для подробной информации, см. процедуру ловушки ShellProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_SYSMSGFILTER 
+          </td>
+          <td width="50%" valign="TOP"> Устанавливает 
+            процедуру ловушки, которая контролирует сообщения, сгенерированные 
+            в результате входного события в диалоговом окне, окне сообщения, меню, 
+            или полосе прокрутки. Процедура ловушки контролирует эти сообщения 
+            для всех приложений в системе. Для подробной информации, см. процедуру 
+            ловушки SysMsgProc. </td>
+        </tr>
+      </table>
+      <p><font face=arial><i> lpfn </i></font></p>
+      <p><font face=arial> Указывает 
+        на процедуру ловушки. Если dwThreadId параметр, равен нулю или определяет 
+        идентификатор нити, созданного другим процессом, параметр lpfn должен 
+        указать на процедуру ловушки в библиотеке динамических связей (DLL). Иначе, 
+        lpfn может указывать на процедуру ловушки в коде, связанном с текущим 
+        процессом.  </font></p>
+      <p><font face=arial><i> hMod </i></font></p>
+      <p><font face=arial> Идентифицирует 
+        DLL, содержащую процедуру ловушки, на которую указывает параметр lpfn. 
+        Параметр hMod должен быть установлен как NULL, если параметр dwThreadId 
+        определяет нить, созданную текущим процессом и если процедура ловушки 
+        - внутри кода, связанного с текущим процессом.  </font></p>
+      <p><font face=arial><i> dwThreadId </i></font></p>
+      <p><font face=arial> Определяет 
+        идентификатор нити, с которым процедура ловушки должна быть связана. Если 
+        этот параметр - нуль, то процедура ловушки связана со всеми существующими 
+        нитями.  </font></p>
+      <p><font face=arial><i><strong> Возвращаемые 
+        значения </strong></i></font></p>
+      <p><font face=arial> Если 
+        функция обработана, возвращаемое значение - дескриптор процедуры ловушки. 
+         </font></p>
+      <p><font face=arial> Если 
+        запрос провален, возвращаемое значение NULL.  </font></p>
+      <p><font face=arial><i><strong> Заметки </strong></i></font></p>
+      <p><font face=arial> Ошибка 
+        может происходить, если параметр hMod равен NULL, и параметр dwThreadId 
+        - нуль или определяет идентификатор нити, созданного другим процессом. 
+         </font></p>
+      <p><font face=arial> Формирование 
+        цепочки к следующей процедуре ловушки (то есть вызыв функции CallNextHookEx) 
+        по выбору. Приложение или библиотека может вызывать следующую процедуру 
+        ловушки или прежде или после любой обработки в собственной процедуре ловушки. 
+        Хотя формирование цепочки на следующую ловушку выборочно, это строго рекомендуется; 
+        иначе, другие приложения, которые установили ловушки, не будут получать 
+        уведомления ловушки и могут в результате вести себя неправильно. </font></p>
+      <p><font face=arial> Перед 
+        завершением, приложение должно вызвать функцию UnhookWindowsHookEx, чтобы 
+        освободить ресурсы, связанные с ловушкой.  </font></p>
+      <p><font face=arial> Контекст 
+        ловушки зависит от типа ловушки. Некоторые ловушки могут быть установлены 
+        только с контекстом системы; другие могут также быть установлены только 
+        для специфической нити, как показано в следующем списке:  </font></p>
+      <table border="1" cellspacing="1" cellpadding="9" width=100%>
+        <tr> 
+          <td width="50%" valign="TOP"><b>Ловушка</b> </td>
+          <td width="50%" valign="TOP"><b>Контекст</b> </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_CALLWNDPROC 
+          </td>
+          <td width="50%" valign="TOP"> Thread 
+            or system </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_CBT 
+          </td>
+          <td width="50%" valign="TOP"> Thread 
+            or system </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_DEBUG 
+          </td>
+          <td width="50%" valign="TOP"> Thread 
+            or system </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_GETMESSAGE 
+          </td>
+          <td width="50%" valign="TOP"> Thread 
+            or system </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_JOURNALPLAYBACK 
+          </td>
+          <td width="50%" valign="TOP"> System 
+            only </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_JOURNALRECORD 
+          </td>
+          <td width="50%" valign="TOP"> System 
+            only </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_KEYBOARD 
+          </td>
+          <td width="50%" valign="TOP"> Thread 
+            or system </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_MOUSE 
+          </td>
+          <td width="50%" valign="TOP"> Thread 
+            or system </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_MSGFILTER 
+          </td>
+          <td width="50%" valign="TOP"> Thread 
+            or system </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_SHELL 
+          </td>
+          <td width="50%" valign="TOP"> Thread 
+            or system </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> WH_SYSMSGFILTER 
+          </td>
+          <td width="50%" valign="TOP"> System 
+            only </td>
+        </tr>
+      </table>
+      <p><font face=arial> Для 
+        определенного типа ловушки, сначала вызываются ловушки нити, затем ловушки 
+        системы.  </font></p>
+      <p><font face=arial> Ловушки 
+        системы - общедоступнный ресурс, и их установка воздействует на все приложения. 
+        Все системные функции ловушки должны быть в библиотеках (DLL). Системные 
+        ловушки должны быть ограничены приложениями специального назначения или 
+        использоваться как помощь в разработке и в течение отладки приложения. 
+        Библиотеки, которые больше не нуждаются в ловушках, должны удалить процедуры 
+        ловушек.  </font></p>
+      <p><font face=arial><i><strong> Смотри 
+        также </strong></i></font></p>
+      <p><font face=arial> CallNextHookEx, 
+        CallWndProc, CallWndRetProc, CBTProc, DebugProc, GetMsgProc, JournalPlaybackProc, 
+        JournalRecordProc, KeyboardProc, MouseProc, MessageProc, ShellProc, SysMsgProc, 
+        UnhookWindowsHookEx. </font></p>
+      <p>&nbsp;</p>
+      <hr>
+      <p><font face=arial><!--webbot bot="HTMLMarkup" StartSpan --><a name="ShellProc"></a><!--webbot BOT="HTMLMarkup" endspan -->ShellProc </font></p>
+      <p><font face=arial> Процедура 
+        ловушки ShellProc - определенная приложением или библиотекой функция обратного 
+        вызова используется приложениями оболочками, чтобы получать полезные уведомления 
+        от системы.  </font></p>
+      <p><font face=arial> LRESULT 
+        CALLBACK ShellProc( </font></p>
+      <p><font face=arial> int 
+        nCode, // Код ловушки </font></p>
+      <p><font face=arial> WPARAM 
+        wParam, // Специфическая для события информация </font></p>
+      <p><font face=arial> LPARAM 
+        lParam // Специфическая для события информация </font></p>
+      <p><font face=arial>); </font></p>
+      <p><font face=arial><i><strong> Параметры </strong></i></font></p>
+      <p><font face=arial><i> nCode </i></font></p>
+      <p><font face=arial> Определяет 
+        код ловушки. Этот параметр может быть одно из следующих значений: </font></p>
+      <table border="1" cellspacing="1" cellpadding="9" width=100%>
+        <tr> 
+          <td width="50%" valign="TOP"><b>Значение</b> </td>
+          <td width="50%" valign="TOP"><b>Описание</b> </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HSHELL_ACTIVATESHELLWINDOW </td>
+          <td width="50%" valign="TOP"> Оболочка 
+            должна активизировать основное окно. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HSHELL_GETMINRECT 
+          </td>
+          <td width="50%" valign="TOP"> Только 
+            для Windows 95: окно минимизируется или максимизируется, и система 
+            нуждается в координатах минимизированного прямоугольника для окна. 
+            WParam параметр содержит дескриптор окна, и параметр lParam содержит 
+            адрес структуры RECT, которая получает координаты. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HSHELL_LANGUAGE 
+          </td>
+          <td width="50%" valign="TOP"> Только 
+            для Windows 95: язык был изменен, или была загружена новая раскладка 
+            клавиатуры. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HSHELL_REDRAW 
+          </td>
+          <td width="50%" valign="TOP"> Только 
+            для Windows 95: заголовок окна на панели задач был повторно выведен. 
+            WParam параметр содержит дескриптор окна. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HSHELL_TASKMAN 
+          </td>
+          <td width="50%" valign="TOP"> Только 
+            для Windows 95: пользователь выбрал список задач. WParam параметр 
+            неопределен и должен игнорироваться. Приложение оболочка, которое 
+            обеспечивает список задач, должно возвратить TRUE, чтобы предотвратить 
+            систему от показа списка задач. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HSHELL_WINDOWACTIVATED 
+          </td>
+          <td width="50%" valign="TOP"> Только 
+            для Windows 95: Активизировалось окно. WParam параметр содержит дескриптор 
+            окна. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HSHELL_WINDOWCREATED 
+          </td>
+          <td width="50%" valign="TOP"> Окно 
+            верхнего уровня, ненаходящееся в собственности было создано. Окно 
+            уже существует когда система вызовет функцию ShellProc. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> HSHELL_WINDOWDESTROYED 
+          </td>
+          <td width="50%" valign="TOP"> Окно 
+            верхнего уровня, ненаходящееся в собственности собирается быть разрушенным. 
+            Окно все еще существует когда система вызовет функцию ShellProc. </td>
+        </tr>
+      </table>
+      <p><font face=arial> Если 
+        nCode - меньше нуля, процедура ловушки должна передать управление функции 
+        CallNextHookEx без дальнейшей обработки сообщения и должна возвратить 
+        значение, возвращенное CallNextHookEx.  </font></p>
+      <p><font face=arial><i> wParam </i></font></p>
+      <p><font face=arial> Определяет 
+        дополнительную информацию, которая может понадобиться приложению оболочке. 
+        Если параметр nCode - HSHELL_ACTIVATESHELLWINDOW, то параметр wParam не 
+        используется. Если nCode - HSHELL_WINDOWCREATED или HSHELL_WINDOWDESTROYED, 
+        wParam определяет дескриптор окна, создаваемого или разрушенного, соответственно. </font></p>
+      <p><font face=arial><i> lParam </i></font></p>
+      <p><font face=arial> Windows 
+        95:  </font></p>
+      <p><font face=arial> Определяет 
+        дополнительную информацию. Точное значение зависит от значения параметра 
+        nCode. Если nCode - HSHELL_GETMINRECT, lParam - LPRECT. Если nCode - HSHELL_WINDOWSACTIVATED, 
+        lParam - fFullScreen. Если nCode - HSHELL_REDRAW, lParam - fNewFlash. </font></p>
+      <p><font face=arial> Windows 
+        NT:  </font></p>
+      <p><font face=arial> Этот 
+        параметр должен быть нулем.  </font></p>
+      <p><font face=arial><i><strong> Возвращаемые 
+        значения </strong></i></font></p>
+      <p><font face=arial> Возвращаемое 
+        значение должно быть нулем </font></p>
+      <p><font face=arial><i><strong> Заметки </strong></i></font></p>
+      <p><font face=arial> Приложение 
+        устанавливает процедуру ловушки, определяя тип ловушки WH_SHELL и адрес 
+        процедуры ловушки обращаясь к функции SetWindowsHookEx.  </font></p>
+      <p><font face=arial> ShellProc 
+        - метка - заполнитель для определенного приложением или определенного 
+        библиотекой имени функции.  </font></p>
+      <p><font face=arial><i><strong> Смотри 
+        также </strong></i></font></p>
+      <p><font face=arial> CallNextHookEx, 
+        SendMessage, SetWindowsHookEx </font></p>
+      <p>&nbsp;</p>
+      <hr>
+      <p><font face=arial><!--webbot bot="HTMLMarkup" StartSpan --><a name="SysMsgProc"></a><!--webbot BOT="HTMLMarkup" endspan -->SysMsgProc </font></p>
+      <p><font face=arial> Процедура 
+        ловушки SysMsgProc - определенная библиотекой функция обратного вызова 
+        вызывается системой после того, как входное событие происходит в диалоговом 
+        окне, окне сообщения, меню, или полосе прокрутки, но прежде, чем сообщение, 
+        сгенерированное входным событием будет обработано. Процедура ловушки может 
+        контролировать сообщения для любого диалогового окна, окна сообщения, 
+        меню, или полосы прокрутки в системе.  </font></p>
+      <p><font face=arial> LRESULT 
+        CALLBACK SysMsgProc( </font></p>
+      <p><font face=arial> int 
+        nCode, // Флаг сообщения </font></p>
+      <p><font face=arial> WPARAM 
+        wParam, // Неопределено </font></p>
+      <p><font face=arial> LPARAM 
+        lParam // Адрес структуры с данными о сообщении </font></p>
+      <p><font face=arial>); 
+         </font></p>
+      <p><font face=arial><i><strong> Параметры </strong></i></font></p>
+      <p><font face=arial><i> nCode </i></font></p>
+      <p><font face=arial> Определяет 
+        тип входного события, которое генерировало сообщение. Этот параметр можетиметь 
+        одно из следующих значений:  </font></p>
+      <table border="1" cellspacing="1" cellpadding="9" width=100%>
+        <tr> 
+          <td width="50%" valign="TOP"><b>Значение</b> </td>
+          <td width="50%" valign="TOP"><b>Описание</b> </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> MSGF_DIALOGBOX </td>
+          <td width="50%" valign="TOP"> Входное 
+            событие произошло в окне сообщения или диалоговом окне. </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> MSGF_MENU </td>
+          <td width="50%" valign="TOP"> В 
+            меню </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> MSGF_SCROLLBAR 
+          </td>
+          <td width="50%" valign="TOP"> Для 
+            полосы прокрутки </td>
+        </tr>
+        <tr> 
+          <td width="50%" valign="TOP"> MSGF_NEXTWINDOW 
+          </td>
+          <td width="50%" valign="TOP"> Входное 
+            событие произошло в результате нажатия пользователем комбинации ALT 
+            + Tab, чтобы активизировать другое окно. </td>
+        </tr>
+      </table>
+      <p><font face=arial> Если 
+        <i>nCode</i> - меньше нуля, процедура ловушки должна передать управление 
+        к функции CallNextHookEx без дальнейшей обработки сообщения и должна возвратить 
+        значение, возвращенное CallNextHookEx.  </font></p>
+      <p><font face=arial><i> WParam </i></font></p>
+      <p><font face=arial> Должно 
+        быть NULL.  </font></p>
+      <p><font face=arial><i> LParam </i></font></p>
+      <p><font face=arial> Указывает 
+        на структуру сообщения MSG.  </font></p>
+      <p><font face=arial><i><strong> Возвращаемые 
+        значения </strong></i></font></p>
+      <p><font face=arial> Если 
+        процедура ловушки обрабатывает сообщение, возвращаемое значение должно 
+        быть отлично от нуля. Иначе, должно быть нулем.  </font></p>
+      <p><font face=arial><i><strong> Заметки </strong></i></font></p>
+      <p><font face=arial> Приложение 
+        устанавливает процедуру ловушки, определяя тип ловушки как WH_SYSMSGFILTER 
+        и адрес процедуры ловушки обращаясь к функции SetWindowsHookEx.  </font></p>
+      <p><font face=arial> SysMsgProc 
+        - метка - заполнитель для определенного библиотекой имени функции.  </font></p>
+      <p><font face=arial><i><strong> См. 
+        Также </strong></i></font></p>
+      <p><font face=arial> CallNextHookEx, 
+        СООБЩЕНИЕ, SetWindowsHookEx  </font></p>
+      <p>&nbsp;</p>
+      <hr>
+      <p><font face=arial><!--webbot bot="HTMLMarkup" StartSpan --><a name="UnhookWindowsHookEx"></a> 
+        <!--webbot BOT="HTMLMarkup" endspan -->UnhookWindowsHookEx </font></p>
+      <p><font face=arial> Функция 
+        UnhookWindowsHookEx удаляет процедуру ловушки, установленную в цепочку 
+        ловушок функцией SetWindowsHookEx.  </font></p>
+      <p><font face=arial> BOOL 
+        UnhookWindowsHookEx ( </font></p>
+      <p><font face=arial> HHOOK 
+        hhk // дескриптор процедуры ловушки, которую нужно удалить </font></p>
+      <p><font face=arial>); 
+         </font></p>
+      <p><font face=arial><i><strong> Параметры </strong></i></font></p>
+      <p><font face=arial> Hhk </font></p>
+      <p><font face=arial> Идентифицирует 
+        ловушку, которая будет удалена. Этот параметр - дескриптор ловушки, полученный 
+        предыдущим обращением к функции SetWindowsHookEx.  </font></p>
+      <p><font face=arial><i><strong> Возвращаемые 
+        значения </strong></i></font></p>
+      <p><font face=arial> Если 
+        функция отрабатывает успешно, возвращаемое значение отлично от нуля. </font></p>
+      <p><font face=arial> Если 
+        функция потерпел акрах, возвращаемое значение - нуль.  </font></p>
+      <p><font face=arial><i><strong> Заметки </strong></i></font></p>
+      <p><font face=arial> Процедура 
+        ловушки может быть в таком состоянии, что ее вызвали другой нитью даже 
+        после возврата из UnhookWindowsHookEx. Если процедура ловушки не вызывается 
+        сразу, то она будет немедленно удалена, не дожидаясь возврата из UnhookWindowsHookEx. 
+         </font></p>
+      <p><font face=arial><i><strong> См. 
+        Также </strong></i></font></p>
+      <p><font face=arial> SetWindowsHookEx, 
+        UnhookWindowsHook  </font></p>
+      <p>&nbsp;</p></table>
+</body>
+</html>
