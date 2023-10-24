@@ -59,42 +59,48 @@ LRESULT CALLBACK CallWndProc(int nCode, WPARAM wParam, LPARAM lParam) {
     //This is a must
     return CallNextHookEx(hMouseHook, nCode, wParam, lParam);
 }
+LPWSTR windowName;
+
+bool Click = false;
 
 LRESULT CALLBACK mouseProc(int nCode, WPARAM wParam, LPARAM lParam)
 {
+    //printf("mouseProc");
     MOUSEHOOKSTRUCT* pMouseStruct = (MOUSEHOOKSTRUCT*)lParam;
     UINT HitTestCode;
     HitTestCode = ((MOUSEHOOKSTRUCT*)lParam)->wHitTestCode;
-    std::cout << HitTestCode;
+    //std::cout << HitTestCode;
 
     if (pMouseStruct != NULL) 
     {
+
         
-        a1 = pMouseStruct->wHitTestCode;
-        //std::cout << ("dwExtraInfo" + (pMouseStruct->dwExtraInfo));
-        
-        //std::cout << ("pt.y" + pMouseStruct->hwnd);
-        if (pMouseStruct->wHitTestCode == HTCAPTION) 
+        POINT p;
+
+        GetCursorPos(&p);
+        HWND window = WindowFromPoint(p);
+
+        RECT rect;
+        if (GetWindowRect(window, &rect))
         {
-            printf("header");
-            //isHeader = true;
-        }
-        else {
-            //isHeader = false;
-        }
-        if (wParam == WM_LBUTTONDOWN)
-        {
-            printf("clicked");
-            //lastClickRight = true;
-        }
-        else {
-            //lastClickRight = false;
+            int width = rect.right - rect.left;
+            int height = rect.bottom - rect.top;
+
+            if (p.y >= rect.top && p.y <= rect.top + 30) {
+                
+                if (wParam == WM_LBUTTONDOWN) {
+                    printf("Click\n");
+                }
+            }
+            
+            
+            
+            
+
+            
         }
 
-        //printf("wp = %8x,x = %d, y = %d, flag = %8x,einfo = %d\n", wParam, input.mi.dx, input.mi.dy, input.mi.dwFlags, input.mi.dwExtraInfo);
-        printf("Mouse position X = %d  Mouse Position Y = %d\n", pMouseStruct->pt.x, pMouseStruct->pt.y);
-        std::cout << pMouseStruct->wHitTestCode;
-        
+
     }
     return CallNextHookEx(hMouseHook, nCode, wParam, lParam);
 }
@@ -110,18 +116,20 @@ DWORD WINAPI MyMouseLogger()
     DWORD pid = NULL; // If we dont know -> NULL
     DWORD tid = GetWindowThreadProcessId(hwnd, &pid);
     // here I put WH_MOUSE instead of WH_MOUSE_LL
-    //hMouseHook = SetWindowsHookEx(WH_MOUSE, mouseProc, hInstance, NULL);
+    hMouseHook = SetWindowsHookEx(WH_MOUSE_LL, mouseProc, hInstance, NULL);
     //hMouseHook = SetWindowsHookEx(WH_CALLWNDPROC, CallWndProc, hInstance, NULL);
     //hMouseHook = SetWindowsHookEx(WH_MOUSE, CallWndProc, hInstance, tid); //WORKS
-    hMouseHook = SetWindowsHookEx(WH_MOUSE, CallWndProc, hInstance, tid); // The local callback version
+    //hMouseHook = SetWindowsHookEx(WH_MOUSE, CallWndProc, hInstance, tid); // The local callback version
 
-    MSG message;
+    //hMouseHook = SetWindowsHookEx(WH_MOUSE_LL, mouseProc, hInstance, 0);
+
+    /*MSG message;
     while (GetMessage(&message, NULL, 0, 0)) {
         TranslateMessage(&message);
         DispatchMessage(&message);
     }
 
-    UnhookWindowsHookEx(hMouseHook);
+    UnhookWindowsHookEx(hMouseHook);*/
     return 0;
 }
 
@@ -132,67 +140,49 @@ HHOOK _hook;
 // the dll instance
 HINSTANCE _dllInstance;
 
-// This functions installs a hook to a window with given title
-int InstallHook(const wchar_t* title) {
-
-    /* 1. Get window handle of given title */
-    std::wcout << "INFO: Getting window handle for \"" << title << "\"...\n";
-    HWND hwnd = FindWindow(NULL, UNIQUE_NAME);
-
-    if (hwnd == NULL) {
-        std::cout << "ERROR: Could not find target window.\n";
-        return -1;
-    }
-
-    /* 2. Get ThreadID (TID) of the window handle */
-    std::wcout << "INFO: Getting TheadID (TID) of \"" << title << "\"...\n";
-    DWORD pid = NULL; // If we dont know -> NULL
-    DWORD tid = GetWindowThreadProcessId(hwnd, &pid);
-    if (tid == NULL) {
-        std::cout << "ERROR: Could not find target window.\n";
-        return -2;
-    }
-
-    /* 3. Load in the DLL */
-    std::wcout << "INFO: Loading the DLL\n";
-    _dllInstance = LoadLibrary(TEXT("winhooks_dll.dll"));
-    if (_dllInstance == NULL) {
-        std::cout << "ERROR: Could not load DLL...\n";
-        return -3;
-    }
-
-    /* 3.5 Get Callback function from dll*/
-    //_dllCallback = (HOOKPROC)GetProcAddress(_dllInstance, "_wmProcCallback@12");
-    //if (_dllCallback == NULL) {
-    //  std::cout << "ERROR: Could not get Callback function from dll instance\n";
-    //  return -4;
-    //}
-
-    /* 4. Install the hook and set the handle */
-    std::wcout << "INFO: Setting the hook...\n";
-    _hook = SetWindowsHookEx(WH_MOUSE, CallWndProc, _dllInstance, tid); // The local callback version
-    //_hook = SetWindowsHookEx(WH_CALLWNDPROCRET, _dllCallback, _dllInstance, tid); // The dll callback function
-    if (_dllInstance == NULL) {
-        std::cout << "ERROR: Could not set hook handle\n";
-        return -5;
-    }
-
-    return 0;
-}
 
 int main() {
 
-    const wchar_t* title = L"Untitled - Notepad";
+
+   
+    //while (true) {
+    //    POINT p;
+
+    //    GetCursorPos(&p);
+    //    HWND window = WindowFromPoint(p);
+
+    //    RECT rect;
+    //    if (GetWindowRect(window, &rect))
+    //    {
+    //        int width = rect.right - rect.left;
+    //        int height = rect.bottom - rect.top;
+
+    //        if (p.y >= rect.top && p.y <= rect.top + 30) {
+    //            printf("Header");
+    //        }
+
+    //        if (Click) {
+    //            printf("Click");
+    //        }
+
+    //        //std::cout << rect.top + "\t";
+    //        //std::cout << pMouseStruct->pt.y + "\n";
+    //        //printf("Mouse position X = %d  Mouse Position Y = %d\n", pMouseStruct->pt.x, pMouseStruct->pt.y);
+    //        //printf("Windows position X = %d  Window Position Y = %d\n", rect.top, rect.left);
+    //        /*system("cls");
+    //        printf("Mouse position X = %d  Mouse Position Y = %d\n", p.x, p.y);
+    //        printf("Windows Top = %d Windows bottom = %d Windows left = %d Windows right = %d \n", rect.top, rect.bottom, rect.left, rect.right);
+    //        Sleep(100);*/
+    //    }
+
+
+    //}
+
+    
     MyMouseLogger();
-   /* if (InstallHook(title) != 0) {
-        std::wcout << "ERROR: Could not install hook on " << title << " last error -> " << GetLastError() << "\n";
-        system("pause");
-        return 1;
-    }*/
+   
 
-    std::wcout << "SUCCESS: Hook is successfully installed on " << title << "\n";
-    std::wcout << "Running message loop..." << std::endl;
-
+    
     MSG msg;
     while (GetMessage(&msg, NULL, 0, 0)) {
         TranslateMessage(&msg);
