@@ -1,0 +1,24 @@
+:Base winapi_rus.hlp>Main
+1 Общая информация=ЗаголовокID
+1 Диалоговые окна
+2 Функции=DialogsHeaderID
+1 Окна
+2 Функции=WindowsHeaderID
+1 Память
+2 Функции=MemoryHeaderID
+1 Таймеры
+2 Функции=TimersHeaderID
+1 Строки
+2 Функции=StringsHeaderID
+1 Каретка
+2 Функции=CaretHeaderID
+1 Атомы
+2 Функции=AtomsHeaderID
+1 Прямоугольники
+2 Функции=RectsHeaderID
+1 Время
+2 Функции=TimeHeaderID
+1 Меню
+2 Функции=MenusHeaderID
+1 Области
+2 Функции=RegionsHeaderID
