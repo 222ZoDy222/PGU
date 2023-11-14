@@ -87,7 +87,7 @@ public class SwipePanel : MonoBehaviour
         if (rt == null)
         {
             Debug.Log($"Swipe panel RT is null in {this.name} - Try to GetComponent");
-            rt = GetComponent<RectTransform>();
+            TryGetComponent<RectTransform>(out rt);
         }
 
         if (!RightLeftSwipe)
@@ -142,11 +142,11 @@ public class SwipePanel : MonoBehaviour
                 {
                     if (RightLeftSwipe)
                     {
-                        rt.position = new Vector2(startPanelPosition.x - (startSwipePisition.x - tapPosition.x), rt.position.y);
+                        if(rt) rt.position = new Vector2(startPanelPosition.x - (startSwipePisition.x - tapPosition.x), rt.position.y);
                     }
                     else
                     {
-                        rt.position = new Vector2(rt.position.x, startPanelPosition.y - (startSwipePisition.y - tapPosition.y));
+                        if (rt) rt.position = new Vector2(rt.position.x, startPanelPosition.y - (startSwipePisition.y - tapPosition.y));
                     }
                 }
 
@@ -202,12 +202,12 @@ public class SwipePanel : MonoBehaviour
     /// <summary>
     /// Вызывается, если пользователь свайпает и меню открывается
     /// </summary>
-    public static onSwipe onSwipeShow;
+    public onSwipe onSwipeShow;
 
     /// <summary>
     /// Вызывается, если пользователь свайпает и меню закрывается
     /// </summary>
-    public static onSwipe onSwipeHide;
+    public onSwipe onSwipeHide;
 
 
     private float distanceToSwipe;
@@ -321,7 +321,7 @@ public class SwipePanel : MonoBehaviour
         lockSwiping = true;
 
         isHide = false;
-        rt.DOMove(showPosition.position, CalculateTime()).OnComplete(() =>
+        if(rt) rt.DOMove(showPosition.position, CalculateTime()).OnComplete(() =>
         {
             lockSwiping = false;
 
@@ -333,7 +333,7 @@ public class SwipePanel : MonoBehaviour
         lockSwiping = true;
 
         isHide = true;
-        rt.DOMove(hidePosition.position, CalculateTime()).OnComplete(() =>
+        if (rt) rt.DOMove(hidePosition.position, CalculateTime()).OnComplete(() =>
         {
             lockSwiping = false;
 
