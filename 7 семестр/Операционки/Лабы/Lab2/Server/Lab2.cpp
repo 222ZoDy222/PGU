@@ -11,6 +11,7 @@
 
 
 
+
 HANDLE hSlot;
 LPCTSTR SlotName = TEXT("\\\\.\\mailslot\\sample_mailslot");
 

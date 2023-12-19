@@ -1,2 +1,8 @@
 ﻿  Client.cpp
-  Client.vcxproj -> D:\!универ\PGU\7 семестр\Операционки\Лабы\Lab2\Client\Debug\Client.exe
+D:\!универ\PGU\7 семестр\Операционки\Лабы\Lab2\Client\Client.cpp(40,5): error C2065: PROCESS_MEMORY_COUNTERS: необъявленный идентификатор
+D:\!универ\PGU\7 семестр\Операционки\Лабы\Lab2\Client\Client.cpp(40,29): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "memCounter"
+D:\!универ\PGU\7 семестр\Операционки\Лабы\Lab2\Client\Client.cpp(40,29): error C2065: memCounter: необъявленный идентификатор
+D:\!универ\PGU\7 семестр\Операционки\Лабы\Lab2\Client\Client.cpp(42,10): error C2065: memCounter: необъявленный идентификатор
+D:\!универ\PGU\7 семестр\Операционки\Лабы\Lab2\Client\Client.cpp(43,16): error C2065: memCounter: необъявленный идентификатор
+D:\!универ\PGU\7 семестр\Операционки\Лабы\Lab2\Client\Client.cpp(41,19): error C3861: GetProcessMemoryInfo: идентификатор не найден
+D:\!универ\PGU\7 семестр\Операционки\Лабы\Lab2\Client\Client.cpp(46,44): error C2065: memCounter: необъявленный идентификатор
