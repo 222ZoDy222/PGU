@@ -1,0 +1,10 @@
+D:\Уник\PGU\8 семестр\Геометрическое Моделирование\1Lab\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\Уник\PGU\8 семестр\Геометрическое Моделирование\1Lab\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\Уник\PGU\8 семестр\Геометрическое Моделирование\1Lab\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\Уник\PGU\8 семестр\Геометрическое Моделирование\1Lab\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+D:\Уник\PGU\8 семестр\Геометрическое Моделирование\1Lab\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+D:\Уник\PGU\8 семестр\Геометрическое Моделирование\1Lab\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\Уник\PGU\8 семестр\Геометрическое Моделирование\1Lab\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+D:\Уник\PGU\8 семестр\Геометрическое Моделирование\1Lab\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\Уник\PGU\8 семестр\Геометрическое Моделирование\1Lab\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\Уник\PGU\8 семестр\Геометрическое Моделирование\1Lab\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
