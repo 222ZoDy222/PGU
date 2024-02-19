@@ -1,0 +1,10 @@
+D:\Уник\PGU\8 семестр\Тестирование\1 Лаба\Lab1\bin\Debug\Lab1.exe.config
+D:\Уник\PGU\8 семестр\Тестирование\1 Лаба\Lab1\bin\Debug\Lab1.exe
+D:\Уник\PGU\8 семестр\Тестирование\1 Лаба\Lab1\bin\Debug\Lab1.pdb
+D:\Уник\PGU\8 семестр\Тестирование\1 Лаба\Lab1\obj\Debug\Lab1.csproj.AssemblyReference.cache
+D:\Уник\PGU\8 семестр\Тестирование\1 Лаба\Lab1\obj\Debug\Lab1.Form1.resources
+D:\Уник\PGU\8 семестр\Тестирование\1 Лаба\Lab1\obj\Debug\Lab1.Properties.Resources.resources
+D:\Уник\PGU\8 семестр\Тестирование\1 Лаба\Lab1\obj\Debug\Lab1.csproj.GenerateResource.cache
+D:\Уник\PGU\8 семестр\Тестирование\1 Лаба\Lab1\obj\Debug\Lab1.csproj.CoreCompileInputs.cache
+D:\Уник\PGU\8 семестр\Тестирование\1 Лаба\Lab1\obj\Debug\Lab1.exe
+D:\Уник\PGU\8 семестр\Тестирование\1 Лаба\Lab1\obj\Debug\Lab1.pdb
