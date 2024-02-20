@@ -1,0 +1,10 @@
+D:\Универ\PGU\8 семестр\Тестирование\Project\ProjectArrayShifter\bin\Debug\ProjectArrayShifter.exe.config
+D:\Универ\PGU\8 семестр\Тестирование\Project\ProjectArrayShifter\bin\Debug\ProjectArrayShifter.exe
+D:\Универ\PGU\8 семестр\Тестирование\Project\ProjectArrayShifter\bin\Debug\ProjectArrayShifter.pdb
+D:\Универ\PGU\8 семестр\Тестирование\Project\ProjectArrayShifter\obj\Debug\ProjectArrayShifter.csproj.AssemblyReference.cache
+D:\Универ\PGU\8 семестр\Тестирование\Project\ProjectArrayShifter\obj\Debug\ProjectArrayShifter.Form1.resources
+D:\Универ\PGU\8 семестр\Тестирование\Project\ProjectArrayShifter\obj\Debug\ProjectArrayShifter.Properties.Resources.resources
+D:\Универ\PGU\8 семестр\Тестирование\Project\ProjectArrayShifter\obj\Debug\ProjectArrayShifter.csproj.GenerateResource.cache
+D:\Универ\PGU\8 семестр\Тестирование\Project\ProjectArrayShifter\obj\Debug\ProjectArrayShifter.csproj.CoreCompileInputs.cache
+D:\Универ\PGU\8 семестр\Тестирование\Project\ProjectArrayShifter\obj\Debug\ProjectArrayShifter.exe
+D:\Универ\PGU\8 семестр\Тестирование\Project\ProjectArrayShifter\obj\Debug\ProjectArrayShifter.pdb
