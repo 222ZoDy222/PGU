@@ -34,12 +34,15 @@ namespace ProjectArrayShifter
             this.button2 = new System.Windows.Forms.Button();
             this.ArrayInputField = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.labelCountElements = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ErrorLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -47,16 +50,16 @@ namespace ProjectArrayShifter
             // inputArraySize
             // 
             this.inputArraySize.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.inputArraySize.Location = new System.Drawing.Point(70, 55);
+            this.inputArraySize.Location = new System.Drawing.Point(60, 109);
             this.inputArraySize.Name = "inputArraySize";
-            this.inputArraySize.Size = new System.Drawing.Size(75, 29);
+            this.inputArraySize.Size = new System.Drawing.Size(95, 29);
             this.inputArraySize.TabIndex = 0;
             this.inputArraySize.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // buttonArraySize
             // 
             this.buttonArraySize.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonArraySize.Location = new System.Drawing.Point(61, 101);
+            this.buttonArraySize.Location = new System.Drawing.Point(60, 158);
             this.buttonArraySize.Name = "buttonArraySize";
             this.buttonArraySize.Size = new System.Drawing.Size(95, 32);
             this.buttonArraySize.TabIndex = 1;
@@ -67,7 +70,7 @@ namespace ProjectArrayShifter
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(455, 125);
+            this.button2.Location = new System.Drawing.Point(484, 149);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 41);
             this.button2.TabIndex = 3;
@@ -89,19 +92,30 @@ namespace ProjectArrayShifter
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.buttonArraySize);
             this.panel1.Controls.Add(this.labelCountElements);
             this.panel1.Controls.Add(this.inputArraySize);
             this.panel1.Location = new System.Drawing.Point(15, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 151);
+            this.panel1.Size = new System.Drawing.Size(255, 251);
             this.panel1.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(57, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 24);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "2<=N<=15";
             // 
             // labelCountElements
             // 
             this.labelCountElements.AutoSize = true;
             this.labelCountElements.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCountElements.Location = new System.Drawing.Point(-2, 24);
+            this.labelCountElements.Location = new System.Drawing.Point(1, 24);
             this.labelCountElements.Name = "labelCountElements";
             this.labelCountElements.Size = new System.Drawing.Size(254, 24);
             this.labelCountElements.TabIndex = 4;
@@ -109,6 +123,7 @@ namespace ProjectArrayShifter
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
@@ -119,6 +134,16 @@ namespace ProjectArrayShifter
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(849, 453);
             this.panel2.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(261, 114);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(281, 24);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "-127 000 <= элемент <=127 000";
             // 
             // label4
             // 
@@ -160,13 +185,26 @@ namespace ProjectArrayShifter
             this.label1.TabIndex = 5;
             this.label1.Text = "Введите";
             // 
+            // ErrorLabel
+            // 
+            this.ErrorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ErrorLabel.AutoSize = true;
+            this.ErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ErrorLabel.Location = new System.Drawing.Point(406, 261);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(52, 24);
+            this.ErrorLabel.TabIndex = 10;
+            this.ErrorLabel.Text = "Error";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 480);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -174,6 +212,7 @@ namespace ProjectArrayShifter
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -190,6 +229,9 @@ namespace ProjectArrayShifter
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label ErrorLabel;
     }
 }
 
