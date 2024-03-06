@@ -92,14 +92,18 @@ namespace ProjectArrayShifter
 
             set
             {
+                if (ArrayInputField.Text == value) return;
                 ArrayInputField.Text = value;
-                if(value == "")
+                
+                if (value == "")
                 {
                     button2.Visible = false;
+                    Logger.Log($"Значение массива очищено");
                 }
                 else
                 {
                     button2.Visible = true;
+                    Logger.Log($"Значение массива изменено на {ArrayInput}");
                 }
             }
 
@@ -110,6 +114,7 @@ namespace ProjectArrayShifter
         {
             ArrayInput = "";
             error.SetError(null);
+            Logger.Log($"Значение длины массива изменено на {inputArraySize.Text}");
             if (int.TryParse(inputArraySize.Text, out int sizeArray))
             {
 
@@ -133,6 +138,7 @@ namespace ProjectArrayShifter
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Logger.Log("Нажата кнопка ввода длины массива");
             inputArraySize_OnChanged();
         }
 
@@ -143,6 +149,7 @@ namespace ProjectArrayShifter
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
+            Logger.Log("Нажата кнопка сдвинуть");
             ShiftArray();
         }
 
@@ -185,7 +192,7 @@ namespace ProjectArrayShifter
             string stringArray = "";
             foreach(var val in newArray)
             {
-                stringArray += val + " ";
+                stringArray += val.ToString(CultureInfo.InvariantCulture) + " ";
             }
 
 
@@ -421,6 +428,7 @@ namespace ProjectArrayShifter
 
         void Form1_DragDrop(object sender, DragEventArgs e)
         {
+            Logger.Log("Был загружен файл");
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
             if(files.Length == 1)
             {
@@ -469,6 +477,7 @@ namespace ProjectArrayShifter
 
         private void Random()
         {
+            Logger.Log("Генерация случайных чисел");
             //Создание объекта для генерации чисел
             Random rnd = new Random();
 

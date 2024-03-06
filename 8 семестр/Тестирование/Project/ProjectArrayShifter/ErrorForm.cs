@@ -22,6 +22,7 @@ namespace ProjectArrayShifter
         {            
             ErrorLabel.ForeColor = System.Drawing.Color.Red;
             ErrorLabel.Text = msg;
+            Logger.Log(msg);
         }
 
     }

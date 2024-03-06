@@ -20,3 +20,5 @@ D:\!универ\PGU\8 семестр\Тестирование\Project\ProjectAr
 D:\!универ\PGU\8 семестр\Тестирование\Project\ProjectArrayShifter\obj\Debug\ProjectArrayShifter.pdb
 D:\!универ\PGU\8 семестр\Тестирование\Project\ProjectArrayShifter\obj\Debug\ProjectArrayShifter.ResultForm.resources
 D:\!универ\PGU\8 семестр\Тестирование\Project\ProjectArrayShifter\obj\Debug\ProjectArrayShifter.ErrorForm.resources
+D:\Универ\PGU\8 семестр\Тестирование\Project\ProjectArrayShifter\obj\Debug\ProjectArrayShifter.ErrorForm.resources
+D:\Универ\PGU\8 семестр\Тестирование\Project\ProjectArrayShifter\obj\Debug\ProjectArrayShifter.ResultForm.resources
