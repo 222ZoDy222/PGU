@@ -1,0 +1,4598 @@
+/3.1
+(ODB.1
+	FirstRootClassName:	"Project"
+	Roots:	2
+	Version:	31
+)
+
+(Project.2
+	Name:	"russia.apr"
+	CreationDate:	"22 Май 1997 г. 11:39:23"
+	GUIName:	"Project"
+	Win:	3
+	CSMgr:	4
+	DocExts:	5
+	VisGUIWidth:	100
+	Doc:	6
+	Buttons:	315
+	Buttons:	316
+	Buttons:	317
+	Scripts:	318
+	Prefs:	319
+	GUI:	321
+	WorkDir:	1184
+	WinX:	31
+	WinY:	18
+	WinW:	803
+	WinH:	647
+	SerialNumber:	"555551666666"
+	SelColor:	1185
+	GUINames:	1186
+	GUINames:	1187
+	GUINames:	1188
+	GUINames:	1189
+	GUINames:	1190
+	GUINames:	1191
+	GUINames:	1192
+	TocWidthScale:	1.00000000000000
+)
+
+(DocWin.3
+	Owner:	2
+	Open:	1
+	X:	2
+	Y:	1
+	W:	313
+	H:	318
+)
+
+(CSMgr.4
+)
+
+(DocAct.5
+	Doc:	2
+)
+
+(View.6
+	Name:	"Российская Федерация"
+	CreationDate:	"22 Май 1997 г. 12:09:51"
+	GUIName:	"View"
+	Win:	7
+	CSMgr:	8
+	DocExts:	10
+	DocExts:	11
+	Graphics:	12
+	Theme:	19
+	Theme:	54
+	Theme:	89
+	Theme:	125
+	Theme:	164
+	Theme:	201
+	Theme:	243
+	Theme:	280
+	Projection:	313
+	LastScale:	79346296.23104080600000
+	Dpy:	13
+	TOCWidth:	190
+	CoordPrecision:	2
+)
+
+(DocWin.7
+	Owner:	6
+	Open:	1
+	X:	79
+	Y:	39
+	W:	622
+	H:	369
+)
+
+(CSMgr.8
+	Client:	9
+)
+
+(CSClient.9
+	Client:	10
+	ReqName:	"ClientNfy"
+)
+
+(PanMgr.10
+	Doc:	6
+)
+
+(DocAct.11
+	Doc:	6
+)
+
+(GList.12
+	Dpy:	13
+	FormatNumb:	18
+)
+
+(MapDpy.13
+	Left:	-4646738.20737910460000
+	Bottom:	-1068622.56395531560000
+	Top:	2942354.56275876980000
+	Right:	4107655.34744902700000
+	Units:	7
+	Scale:	14
+	FrameTop:	3.52083333333333
+	FrameRight:	4.34375000000000
+	PageDpy:	15
+	FitToPage:	1
+	MouseLoc:	17
+)
+
+(Numb.14
+	N:	0.00000049617943
+)
+
+(PageDpy.15
+	Top:	3.52083333333333
+	Right:	4.34375000000000
+	ReportUnits:	1
+	Units:	1
+	Scale:	16
+	ZoomRight:	4.34375000000000
+	ZoomTop:	3.52083333333333
+	GridSpacingX:	0.25000000000000
+	GridSpacingY:	0.25000000000000
+)
+
+(Numb.16
+	N:	96.00000000000000
+)
+
+(PointD.17
+	x:	-3660031.97937689300000
+	y:	286059.76391090686000
+)
+
+(Numb.18
+)
+
+(FTheme.19
+	Name:	"Дороги"
+	Source:	20
+	Flags:	0x06
+	Legend:	35
+	Threshold:	44
+	View:	6
+	GSet:	45
+	LegEditScript:	"View.EditLegend"
+	TxPos:	46
+	AttrRules:	47
+	AttrRules:	48
+	AttrRules:	49
+	AttrRules:	50
+	AttrRules:	51
+	AttrRules:	52
+	AttrRules:	53
+)
+
+(ShpSrc.20
+	Name:	21
+	FTab:	23
+)
+
+(SrcName.21
+	FileName:	22
+	Name:	"rfroads.shp"
+	SubName:	"Arc"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.22
+	Path:	"rfroads.shp"
+)
+
+(FTab.23
+	Name:	"rfroads.dbf"
+	BTab:	24
+	Fields:	33
+	Fields:	25
+	Fields:	26
+	Fields:	27
+	Fields:	28
+	Fields:	29
+	Fields:	30
+	Fields:	31
+	SelBits:	34
+	FSrc:	20
+)
+
+(dBASE.24
+	Name:	"rfroads.dbf"
+	Fields:	25
+	Fields:	26
+	Fields:	27
+	Fields:	28
+	Fields:	29
+	Fields:	30
+	Fields:	31
+	FileName:	32
+)
+
+(Field.25
+	Name:	"Fnode_"
+	Btab:	24
+	Alias:	"Fnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.26
+	Name:	"Tnode_"
+	Btab:	24
+	Alias:	"Tnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.27
+	Name:	"Lpoly_"
+	Btab:	24
+	Alias:	"Lpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.28
+	Name:	"Rpoly_"
+	Btab:	24
+	Alias:	"Rpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.29
+	Name:	"Length"
+	Btab:	24
+	Alias:	"Length"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.30
+	Name:	"Roaddd_"
+	Btab:	24
+	Alias:	"Roaddd_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.31
+	Name:	"Roaddd_id"
+	Btab:	24
+	Alias:	"Roaddd_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(FN.32
+	Path:	"rfroads.dbf"
+)
+
+(Field.33
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	18
+	Order:	-1
+)
+
+(Bitmap.34
+	NumBits:	40
+
+)
+
+(Legend.35
+	SymType:	0x01
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	36
+	Class:	39
+	StdDevs:	1.00000000000000
+	NullSym:	40
+	NullValues:	42
+	StatValues:	43
+	Precision:	-3
+)
+
+(SymList.36
+	Child:	37
+)
+
+(BLnSym.37
+	Color:	38
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.38
+	Red:	0xffff
+)
+
+(LClass.39
+	IsText:	1
+	Precision:	-3
+)
+
+(BLnSym.40
+	Color:	41
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.41
+	Name:	"Transparent"
+)
+
+(NameDict.42
+)
+
+(NameDict.43
+)
+
+(Thresh.44
+)
+
+(GSet.45
+)
+
+(TxPosArc.46
+	HAlign:	3
+	VAlign:	1
+)
+
+(AttrSingle.47
+	FTab:	23
+	Field:	25
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.48
+	FTab:	23
+	Field:	26
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.49
+	FTab:	23
+	Field:	27
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.50
+	FTab:	23
+	Field:	28
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.51
+	FTab:	23
+	Field:	29
+	UnionRule:	6
+	SplitRule:	4
+)
+
+(AttrSingle.52
+	FTab:	23
+	Field:	30
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.53
+	FTab:	23
+	Field:	31
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(FTheme.54
+	Name:	"Железные дороги"
+	Source:	55
+	Flags:	0x06
+	Legend:	70
+	Threshold:	79
+	View:	6
+	GSet:	80
+	LegEditScript:	"View.EditLegend"
+	TxPos:	81
+	AttrRules:	82
+	AttrRules:	83
+	AttrRules:	84
+	AttrRules:	85
+	AttrRules:	86
+	AttrRules:	87
+	AttrRules:	88
+)
+
+(ShpSrc.55
+	Name:	56
+	FTab:	58
+)
+
+(SrcName.56
+	FileName:	57
+	Name:	"rfrway.shp"
+	SubName:	"Arc"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.57
+	Path:	"rfrway.shp"
+)
+
+(FTab.58
+	Name:	"rfrway.dbf"
+	BTab:	59
+	Fields:	68
+	Fields:	60
+	Fields:	61
+	Fields:	62
+	Fields:	63
+	Fields:	64
+	Fields:	65
+	Fields:	66
+	SelBits:	69
+	FSrc:	55
+)
+
+(dBASE.59
+	Name:	"rfrway.dbf"
+	Fields:	60
+	Fields:	61
+	Fields:	62
+	Fields:	63
+	Fields:	64
+	Fields:	65
+	Fields:	66
+	FileName:	67
+)
+
+(Field.60
+	Name:	"Fnode_"
+	Btab:	59
+	Alias:	"Fnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.61
+	Name:	"Tnode_"
+	Btab:	59
+	Alias:	"Tnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.62
+	Name:	"Lpoly_"
+	Btab:	59
+	Alias:	"Lpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.63
+	Name:	"Rpoly_"
+	Btab:	59
+	Alias:	"Rpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.64
+	Name:	"Length"
+	Btab:	59
+	Alias:	"Length"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.65
+	Name:	"Rwaydd_"
+	Btab:	59
+	Alias:	"Rwaydd_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.66
+	Name:	"Rwaydd_id"
+	Btab:	59
+	Alias:	"Rwaydd_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(FN.67
+	Path:	"rfrway.dbf"
+)
+
+(Field.68
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	18
+	Order:	-1
+)
+
+(Bitmap.69
+	NumBits:	760
+
+)
+
+(Legend.70
+	SymType:	0x01
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	71
+	Class:	74
+	StdDevs:	1.00000000000000
+	NullSym:	75
+	NullValues:	77
+	StatValues:	78
+	Precision:	-3
+)
+
+(SymList.71
+	Child:	72
+)
+
+(BLnSym.72
+	Color:	73
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.73
+)
+
+(LClass.74
+	IsText:	1
+	Precision:	-3
+)
+
+(BLnSym.75
+	Color:	76
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.76
+	Name:	"Transparent"
+)
+
+(NameDict.77
+)
+
+(NameDict.78
+)
+
+(Thresh.79
+)
+
+(GSet.80
+)
+
+(TxPosArc.81
+	HAlign:	3
+	VAlign:	1
+)
+
+(AttrSingle.82
+	FTab:	58
+	Field:	60
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.83
+	FTab:	58
+	Field:	61
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.84
+	FTab:	58
+	Field:	62
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.85
+	FTab:	58
+	Field:	63
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.86
+	FTab:	58
+	Field:	64
+	UnionRule:	6
+	SplitRule:	4
+)
+
+(AttrSingle.87
+	FTab:	58
+	Field:	65
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.88
+	FTab:	58
+	Field:	66
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(FTheme.89
+	Name:	"Населенные пункты"
+	Source:	90
+	Flags:	0x06
+	Legend:	107
+	Threshold:	122
+	View:	6
+	GSet:	123
+	LegEditScript:	"View.EditLegend"
+	TxPos:	124
+	LabelField:	99
+)
+
+(ShpSrc.90
+	Name:	91
+	FTab:	93
+)
+
+(SrcName.91
+	FileName:	92
+	Name:	"rfcities.shp"
+	SubName:	"Point"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.92
+	Path:	"rfcities.shp"
+)
+
+(FTab.93
+	Name:	"rfcities.dbf"
+	BTab:	94
+	Fields:	105
+	Fields:	95
+	Fields:	96
+	Fields:	97
+	Fields:	98
+	Fields:	99
+	Fields:	100
+	Fields:	101
+	Fields:	102
+	Fields:	103
+	SelBits:	106
+	FSrc:	90
+)
+
+(dBASE.94
+	Name:	"rfcities.dbf"
+	Fields:	95
+	Fields:	96
+	Fields:	97
+	Fields:	98
+	Fields:	99
+	Fields:	100
+	Fields:	101
+	Fields:	102
+	Fields:	103
+	FileName:	104
+)
+
+(Field.95
+	Name:	"Area"
+	Btab:	94
+	Alias:	"Area"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	83
+)
+
+(Field.96
+	Name:	"Perimeter"
+	Btab:	94
+	Alias:	"Perimeter"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	83
+)
+
+(Field.97
+	Name:	"Towndd_"
+	Btab:	94
+	Alias:	"Towndd_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.98
+	Name:	"Towndd_id"
+	Btab:	94
+	Alias:	"Towndd_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.99
+	Name:	"Name_rwin"
+	Btab:	94
+	Alias:	"Name_rwin"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(Field.100
+	Name:	"Status"
+	Btab:	94
+	Alias:	"Status"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	36
+)
+
+(Field.101
+	Name:	"Region"
+	Btab:	94
+	Alias:	"Region"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(Field.102
+	Name:	"Pop_95"
+	Btab:	94
+	Alias:	"Pop_95"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	41
+)
+
+(Field.103
+	Name:	"Capital"
+	Btab:	94
+	Alias:	"Capital"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	37
+)
+
+(FN.104
+	Path:	"rfcities.dbf"
+)
+
+(Field.105
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	17
+	Order:	-1
+	Pixels:	41
+)
+
+(Bitmap.106
+	NumBits:	2380
+
+)
+
+(Legend.107
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	108
+	Class:	116
+	StdDevs:	1.00000000000000
+	NullSym:	117
+	NullValues:	120
+	StatValues:	121
+	Precision:	-3
+)
+
+(SymList.108
+	Child:	109
+)
+
+(BMkSym.109
+	Color:	110
+	BgColor:	111
+	Font:	112
+	Size:	4.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.110
+	Red:	0xffff
+	Blue:	0xffff
+)
+
+(TClr.111
+	Name:	"Transparent"
+)
+
+(NFont.112
+	Family:	113
+	Name:	114
+	Style:	115
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.113
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.114
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.115
+	S:	"Normal"
+)
+
+(LClass.116
+	IsText:	1
+	Precision:	-3
+)
+
+(BMkSym.117
+	Color:	118
+	BgColor:	119
+	Font:	112
+	Size:	8.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.118
+	Name:	"Transparent"
+)
+
+(TClr.119
+	Name:	"Transparent"
+)
+
+(NameDict.120
+)
+
+(NameDict.121
+)
+
+(Thresh.122
+)
+
+(GSet.123
+)
+
+(TxPosPt.124
+	HAlign:	4
+	VAlign:	3
+)
+
+(FTheme.125
+	Name:	"Реки"
+	Source:	126
+	Flags:	0x05
+	Legend:	144
+	Threshold:	153
+	View:	6
+	GSet:	154
+	LegEditScript:	"View.EditLegend"
+	TxPos:	155
+	AttrRules:	156
+	AttrRules:	157
+	AttrRules:	158
+	AttrRules:	159
+	AttrRules:	160
+	AttrRules:	161
+	AttrRules:	162
+	AttrRules:	163
+)
+
+(ShpSrc.126
+	Name:	127
+	FTab:	129
+)
+
+(SrcName.127
+	FileName:	128
+	Name:	"rfrivers.shp"
+	SubName:	"Arc"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.128
+	Path:	"rfrivers.shp"
+)
+
+(FTab.129
+	Name:	"rfrivers.dbf"
+	BTab:	130
+	Fields:	142
+	Fields:	131
+	Fields:	132
+	Fields:	133
+	Fields:	134
+	Fields:	135
+	Fields:	136
+	Fields:	137
+	Fields:	139
+	Fields:	140
+	Fields:	138
+	SelBits:	143
+	FSrc:	126
+)
+
+(dBASE.130
+	Name:	"rfrivers.dbf"
+	Fields:	131
+	Fields:	132
+	Fields:	133
+	Fields:	134
+	Fields:	135
+	Fields:	136
+	Fields:	137
+	Fields:	138
+	Fields:	139
+	Fields:	140
+	FileName:	141
+)
+
+(Field.131
+	Name:	"Fnode_"
+	Btab:	130
+	Alias:	"Fnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.132
+	Name:	"Tnode_"
+	Btab:	130
+	Alias:	"Tnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.133
+	Name:	"Lpoly_"
+	Btab:	130
+	Alias:	"Lpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.134
+	Name:	"Rpoly_"
+	Btab:	130
+	Alias:	"Rpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.135
+	Name:	"Length"
+	Btab:	130
+	Alias:	"Length"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	83
+)
+
+(Field.136
+	Name:	"Rivdd_"
+	Btab:	130
+	Alias:	"Rivdd_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.137
+	Name:	"Rivdd_id"
+	Btab:	130
+	Alias:	"Rivdd_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.138
+	Name:	"Order"
+	Btab:	130
+	Alias:	"Order"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	95
+)
+
+(Field.139
+	Name:	"Name"
+	Btab:	130
+	Alias:	"Name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(Field.140
+	Name:	"Type"
+	Btab:	130
+	Alias:	"Type"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	95
+)
+
+(FN.141
+	Path:	"rfrivers.dbf"
+)
+
+(Field.142
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	18
+	Order:	-1
+	Pixels:	59
+)
+
+(Bitmap.143
+	NumBits:	4289
+
+)
+
+(Legend.144
+	SymType:	0x01
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	145
+	Class:	148
+	StdDevs:	1.00000000000000
+	NullSym:	149
+	NullValues:	151
+	StatValues:	152
+	Precision:	-3
+)
+
+(SymList.145
+	Child:	146
+)
+
+(BLnSym.146
+	Color:	147
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.147
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(LClass.148
+	IsText:	1
+	Precision:	-3
+)
+
+(BLnSym.149
+	Color:	150
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.150
+	Name:	"Transparent"
+)
+
+(NameDict.151
+)
+
+(NameDict.152
+)
+
+(Thresh.153
+)
+
+(GSet.154
+)
+
+(TxPosArc.155
+	HAlign:	3
+	VAlign:	1
+)
+
+(AttrSingle.156
+	FTab:	129
+	Field:	131
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.157
+	FTab:	129
+	Field:	132
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.158
+	FTab:	129
+	Field:	133
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.159
+	FTab:	129
+	Field:	134
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.160
+	FTab:	129
+	Field:	135
+	UnionRule:	6
+	SplitRule:	4
+)
+
+(AttrSingle.161
+	FTab:	129
+	Field:	136
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.162
+	FTab:	129
+	Field:	137
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.163
+	FTab:	129
+	Field:	138
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(FTheme.164
+	Name:	"Озера, водохранилища"
+	Source:	165
+	Flags:	0x06
+	Legend:	180
+	Threshold:	193
+	View:	6
+	GSet:	194
+	LegEditScript:	"View.EditLegend"
+	TxPos:	195
+	AttrRules:	196
+	AttrRules:	197
+	AttrRules:	198
+	AttrRules:	199
+	AttrRules:	200
+)
+
+(ShpSrc.165
+	Name:	166
+	FTab:	168
+)
+
+(SrcName.166
+	FileName:	167
+	Name:	"rflakes.shp"
+	SubName:	"Polygon"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.167
+	Path:	"rflakes.shp"
+)
+
+(FTab.168
+	Name:	"rflakes.dbf"
+	BTab:	169
+	Fields:	178
+	Fields:	170
+	Fields:	171
+	Fields:	172
+	Fields:	173
+	Fields:	175
+	Fields:	176
+	Fields:	174
+	SelBits:	179
+	FSrc:	165
+)
+
+(dBASE.169
+	Name:	"rflakes.dbf"
+	Fields:	170
+	Fields:	171
+	Fields:	172
+	Fields:	173
+	Fields:	174
+	Fields:	175
+	Fields:	176
+	FileName:	177
+)
+
+(Field.170
+	Name:	"Area"
+	Btab:	169
+	Alias:	"Area"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	83
+)
+
+(Field.171
+	Name:	"Perimeter"
+	Btab:	169
+	Alias:	"Perimeter"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	83
+)
+
+(Field.172
+	Name:	"Rivdd_"
+	Btab:	169
+	Alias:	"Rivdd_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.173
+	Name:	"Rivdd_id"
+	Btab:	169
+	Alias:	"Rivdd_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.174
+	Name:	"Level"
+	Btab:	169
+	Alias:	"Level"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	31
+)
+
+(Field.175
+	Name:	"Name"
+	Btab:	169
+	Alias:	"Name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(Field.176
+	Name:	"Type"
+	Btab:	169
+	Alias:	"Type"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	95
+)
+
+(FN.177
+	Path:	"rflakes.dbf"
+)
+
+(Field.178
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	19
+	Order:	-1
+	Pixels:	53
+)
+
+(Bitmap.179
+	NumBits:	447
+
+)
+
+(Legend.180
+	SymType:	0x02
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	181
+	Class:	186
+	StdDevs:	1.00000000000000
+	NullSym:	187
+	NullValues:	191
+	StatValues:	192
+	Precision:	-3
+)
+
+(SymList.181
+	Child:	182
+)
+
+(BShSym.182
+	Color:	183
+	Outline:	1
+	OutlineColor:	184
+	OutlineWidth:	0.10000000000000
+	BgColor:	185
+)
+
+(TClr.183
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(TClr.184
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(TClr.185
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(LClass.186
+	IsText:	1
+	Precision:	-3
+)
+
+(BShSym.187
+	Color:	188
+	Outline:	1
+	OutlineColor:	189
+	OutlineWidth:	0.10000000000000
+	BgColor:	190
+)
+
+(TClr.188
+	Name:	"Transparent"
+)
+
+(TClr.189
+	Name:	"Transparent"
+)
+
+(TClr.190
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NameDict.191
+)
+
+(NameDict.192
+)
+
+(Thresh.193
+)
+
+(GSet.194
+)
+
+(TxPosPly.195
+	HAlign:	3
+	VAlign:	3
+)
+
+(AttrSingle.196
+	FTab:	168
+	Field:	170
+	UnionRule:	5
+	SplitRule:	3
+)
+
+(AttrSingle.197
+	FTab:	168
+	Field:	171
+	UnionRule:	6
+	SplitRule:	4
+)
+
+(AttrSingle.198
+	FTab:	168
+	Field:	172
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.199
+	FTab:	168
+	Field:	173
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.200
+	FTab:	168
+	Field:	174
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(FTheme.201
+	Name:	"Административное деление"
+	Source:	202
+	Flags:	0x06
+	Legend:	219
+	Threshold:	232
+	View:	6
+	GSet:	233
+	LegEditScript:	"View.EditLegend"
+	TxPos:	234
+	LabelField:	211
+	AttrRules:	235
+	AttrRules:	236
+	AttrRules:	237
+	AttrRules:	238
+	AttrRules:	239
+	AttrRules:	240
+	AttrRules:	241
+	AttrRules:	242
+)
+
+(ShpSrc.202
+	Name:	203
+	FTab:	205
+)
+
+(SrcName.203
+	FileName:	204
+	Name:	"rfobldd.shp"
+	SubName:	"Polygon"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.204
+	Path:	"rfobldd.shp"
+)
+
+(FTab.205
+	Name:	"rfobldd.dbf"
+	BTab:	206
+	Fields:	217
+	Fields:	207
+	Fields:	208
+	Fields:	209
+	Fields:	210
+	Fields:	215
+	Fields:	211
+	Fields:	212
+	Fields:	213
+	Fields:	214
+	SelBits:	218
+	FSrc:	202
+)
+
+(dBASE.206
+	Name:	"rfobldd.dbf"
+	Fields:	207
+	Fields:	208
+	Fields:	209
+	Fields:	210
+	Fields:	211
+	Fields:	212
+	Fields:	213
+	Fields:	214
+	Fields:	215
+	FileName:	216
+)
+
+(Field.207
+	Name:	"Area"
+	Btab:	206
+	Alias:	"Area"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	83
+)
+
+(Field.208
+	Name:	"Perimeter"
+	Btab:	206
+	Alias:	"Perimeter"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	83
+)
+
+(Field.209
+	Name:	"Obldd_"
+	Btab:	206
+	Alias:	"Obldd_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.210
+	Name:	"Obldd_id"
+	Btab:	206
+	Alias:	"Obldd_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.211
+	Name:	"Name"
+	Btab:	206
+	Alias:	"Name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(Field.212
+	Name:	"Econ_reg"
+	Btab:	206
+	Alias:	"Econ_reg"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(Field.213
+	Name:	"Sq_tkm"
+	Btab:	206
+	Alias:	"Sq_tkm"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	41
+)
+
+(Field.214
+	Name:	"Soato"
+	Btab:	206
+	Alias:	"Soato"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	53
+)
+
+(Field.215
+	Name:	"Center"
+	Btab:	206
+	Alias:	"Center"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(FN.216
+	Path:	"rfobldd.dbf"
+)
+
+(Field.217
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	19
+	Order:	-1
+	Pixels:	53
+)
+
+(Bitmap.218
+	NumBits:	287
+
+)
+
+(Legend.219
+	SymType:	0x02
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	220
+	Class:	225
+	StdDevs:	1.00000000000000
+	NullSym:	226
+	NullValues:	230
+	StatValues:	231
+	Precision:	-3
+)
+
+(SymList.220
+	Child:	221
+)
+
+(BShSym.221
+	Color:	222
+	Outline:	1
+	OutlineColor:	223
+	OutlineWidth:	0.10000000000000
+	BgColor:	224
+)
+
+(TClr.222
+	Red:	0xff00
+	Green:	0xf963
+	Blue:	0xa559
+)
+
+(TClr.223
+	Red:	0xa5a5
+	Green:	0xa5a5
+	Blue:	0xa5a5
+)
+
+(TClr.224
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(LClass.225
+	IsText:	1
+	Precision:	-3
+)
+
+(BShSym.226
+	Color:	227
+	Outline:	1
+	OutlineColor:	228
+	OutlineWidth:	0.10000000000000
+	BgColor:	229
+)
+
+(TClr.227
+	Name:	"Transparent"
+)
+
+(TClr.228
+	Name:	"Transparent"
+)
+
+(TClr.229
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NameDict.230
+)
+
+(NameDict.231
+)
+
+(Thresh.232
+)
+
+(GSet.233
+)
+
+(TxPosPly.234
+	HAlign:	3
+	VAlign:	3
+)
+
+(AttrSingle.235
+	FTab:	205
+	Field:	207
+	UnionRule:	5
+	SplitRule:	3
+)
+
+(AttrSingle.236
+	FTab:	205
+	Field:	208
+	UnionRule:	6
+	SplitRule:	4
+)
+
+(AttrSingle.237
+	FTab:	205
+	Field:	209
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.238
+	FTab:	205
+	Field:	210
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.239
+	FTab:	205
+	Field:	211
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.240
+	FTab:	205
+	Field:	212
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.241
+	FTab:	205
+	Field:	213
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.242
+	FTab:	205
+	Field:	214
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(FTheme.243
+	Name:	"Евразия"
+	Source:	244
+	Flags:	0x06
+	Legend:	258
+	Threshold:	271
+	View:	6
+	GSet:	272
+	LegEditScript:	"View.EditLegend"
+	TxPos:	273
+	LabelField:	253
+	AttrRules:	274
+	AttrRules:	275
+	AttrRules:	276
+	AttrRules:	277
+	AttrRules:	278
+	AttrRules:	279
+)
+
+(ShpSrc.244
+	Name:	245
+	FTab:	247
+)
+
+(SrcName.245
+	FileName:	246
+	Name:	"euasdd.shp"
+	SubName:	"Polygon"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.246
+	Path:	"euasdd.shp"
+)
+
+(FTab.247
+	Name:	"euasdd.dbf"
+	BTab:	248
+	Query:	"( [Euascn_id] <> 99999 )"
+	Fields:	256
+	Fields:	249
+	Fields:	250
+	Fields:	251
+	Fields:	252
+	Fields:	253
+	Fields:	254
+	SelBits:	257
+	FSrc:	244
+)
+
+(dBASE.248
+	Name:	"euasdd.dbf"
+	Fields:	249
+	Fields:	250
+	Fields:	251
+	Fields:	252
+	Fields:	253
+	Fields:	254
+	FileName:	255
+)
+
+(Field.249
+	Name:	"Area"
+	Btab:	248
+	Alias:	"Area"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.250
+	Name:	"Perimeter"
+	Btab:	248
+	Alias:	"Perimeter"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.251
+	Name:	"Euascn_"
+	Btab:	248
+	Alias:	"Euascn_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.252
+	Name:	"Euascn_id"
+	Btab:	248
+	Alias:	"Euascn_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.253
+	Name:	"Cntry_name"
+	Btab:	248
+	Alias:	"Cntry_name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(Field.254
+	Name:	"Fips_cntry"
+	Btab:	248
+	Alias:	"Fips_cntry"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(FN.255
+	Path:	"euasdd.dbf"
+)
+
+(Field.256
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	19
+	Order:	-1
+)
+
+(Bitmap.257
+	NumBits:	864
+
+)
+
+(Legend.258
+	SymType:	0x02
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	259
+	Class:	264
+	StdDevs:	1.00000000000000
+	NullSym:	265
+	NullValues:	269
+	StatValues:	270
+	Precision:	-3
+)
+
+(SymList.259
+	Child:	260
+)
+
+(BShSym.260
+	Color:	261
+	Outline:	1
+	OutlineColor:	262
+	OutlineWidth:	0.10000000000000
+	BgColor:	263
+)
+
+(TClr.261
+	Red:	0xd2d2
+	Green:	0xd2d2
+	Blue:	0xd2d2
+)
+
+(TClr.262
+	Red:	0xa5a5
+	Green:	0xa5a5
+	Blue:	0xa5a5
+)
+
+(TClr.263
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(LClass.264
+	IsText:	1
+	Precision:	-3
+)
+
+(BShSym.265
+	Color:	266
+	Outline:	1
+	OutlineColor:	267
+	OutlineWidth:	0.10000000000000
+	BgColor:	268
+)
+
+(TClr.266
+	Name:	"Transparent"
+)
+
+(TClr.267
+	Name:	"Transparent"
+)
+
+(TClr.268
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NameDict.269
+)
+
+(NameDict.270
+)
+
+(Thresh.271
+)
+
+(GSet.272
+)
+
+(TxPosPly.273
+	HAlign:	3
+	VAlign:	3
+)
+
+(AttrSingle.274
+	FTab:	247
+	Field:	249
+	UnionRule:	5
+	SplitRule:	3
+)
+
+(AttrSingle.275
+	FTab:	247
+	Field:	250
+	UnionRule:	6
+	SplitRule:	4
+)
+
+(AttrSingle.276
+	FTab:	247
+	Field:	251
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.277
+	FTab:	247
+	Field:	252
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.278
+	FTab:	247
+	Field:	253
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.279
+	FTab:	247
+	Field:	254
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(FTheme.280
+	Name:	"Океан"
+	Source:	281
+	Flags:	0x06
+	Legend:	293
+	Threshold:	306
+	View:	6
+	GSet:	307
+	LegEditScript:	"View.EditLegend"
+	TxPos:	308
+	AttrRules:	309
+	AttrRules:	310
+	AttrRules:	311
+	AttrRules:	312
+)
+
+(ShpSrc.281
+	Name:	282
+	FTab:	284
+)
+
+(SrcName.282
+	FileName:	283
+	Name:	"grid30.shp"
+	SubName:	"Polygon"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.283
+	Path:	"grid30.shp"
+)
+
+(FTab.284
+	Name:	"grid30.dbf"
+	BTab:	285
+	Fields:	291
+	Fields:	286
+	Fields:	287
+	Fields:	288
+	Fields:	289
+	SelBits:	292
+	FSrc:	281
+)
+
+(dBASE.285
+	Name:	"grid30.dbf"
+	Fields:	286
+	Fields:	287
+	Fields:	288
+	Fields:	289
+	FileName:	290
+)
+
+(Field.286
+	Name:	"Area"
+	Btab:	285
+	Alias:	"Area"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.287
+	Name:	"Perimeter"
+	Btab:	285
+	Alias:	"Perimeter"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.288
+	Name:	"Wrld30_"
+	Btab:	285
+	Alias:	"Wrld30_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.289
+	Name:	"Wrld30_id"
+	Btab:	285
+	Alias:	"Wrld30_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(FN.290
+	Path:	"grid30.dbf"
+)
+
+(Field.291
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	19
+	Order:	-1
+)
+
+(Bitmap.292
+	NumBits:	72
+
+)
+
+(Legend.293
+	SymType:	0x02
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	294
+	Class:	299
+	StdDevs:	1.00000000000000
+	NullSym:	300
+	NullValues:	304
+	StatValues:	305
+	Precision:	-3
+)
+
+(SymList.294
+	Child:	295
+)
+
+(BShSym.295
+	Color:	296
+	Outline:	1
+	OutlineColor:	297
+	OutlineWidth:	0.10000000000000
+	BgColor:	298
+)
+
+(TClr.296
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(TClr.297
+	Red:	0xa5a5
+	Green:	0xa5a5
+	Blue:	0xa5a5
+)
+
+(TClr.298
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(LClass.299
+	IsText:	1
+	Precision:	-3
+)
+
+(BShSym.300
+	Color:	301
+	Outline:	1
+	OutlineColor:	302
+	OutlineWidth:	0.10000000000000
+	BgColor:	303
+)
+
+(TClr.301
+	Name:	"Transparent"
+)
+
+(TClr.302
+	Name:	"Transparent"
+)
+
+(TClr.303
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NameDict.304
+)
+
+(NameDict.305
+)
+
+(Thresh.306
+)
+
+(GSet.307
+)
+
+(TxPosPly.308
+	HAlign:	3
+	VAlign:	3
+)
+
+(AttrSingle.309
+	FTab:	284
+	Field:	286
+	UnionRule:	5
+	SplitRule:	3
+)
+
+(AttrSingle.310
+	FTab:	284
+	Field:	287
+	UnionRule:	6
+	SplitRule:	4
+)
+
+(AttrSingle.311
+	FTab:	284
+	Field:	288
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.312
+	FTab:	284
+	Field:	289
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(Eqarazi.313
+	InternalName:	"Равновеликая азимутальная Альберта"
+	Description:	"Custom Равновеликая азимутальная Альберта"
+	Ellipsoid:	314
+	Lambda0:	1.74331526970893
+	Phi1:	1.07384460843138
+)
+
+(Elpsoid.314
+	Radius:	6370997.00000000000000
+	Type:	10
+	Units:	0x07
+)
+
+(LButn.315
+	HelpTopic:	"New_button"
+	Update:	"Doc.NewUpdate"
+	Label:	"&Новый"
+	Click:	"Table.New"
+)
+
+(LButn.316
+	Disabled:	1
+	HelpTopic:	"Open_button"
+	Update:	"Doc.OpenUpdate"
+	Label:	"От&крыть"
+	Click:	"Doc.Open"
+)
+
+(LButn.317
+	HelpTopic:	"Add_button"
+	Update:	"Table.ActionUpdate"
+	Label:	"&Добавить"
+	Click:	"Table.Action"
+)
+
+(NameDict.318
+)
+
+(NameDict.319
+	Obj:	320
+)
+
+(AVDict.320
+	InternalName:	"Table of Contents Defaults Dialog"
+)
+
+(DocGUI.321
+	Name:	"View"
+	Type:	"View"
+	Modified:	1
+	Visible:	1
+	MenuBar:	322
+	ButnBar:	454
+	Popups:	495
+	ToolBar:	515
+	NewScript:	"View.New"
+	OpenScript:	"Doc.Open"
+	ActionScript:	"Doc.Action"
+	NewUpdateScript:	"Doc.NewUpdate"
+	OpenUpdateScript:	"Doc.OpenUpdate"
+	ActionUpdateScript:	"Doc.ActionUpdate"
+	Title:	"Виды"
+	Icon:	592
+)
+
+(MenuBar.322
+	Child:	323
+	Child:	342
+	Child:	362
+	Child:	399
+	Child:	422
+	Child:	439
+	Child:	449
+)
+
+(PMenu.323
+	InternalName:	"File"
+	Child:	324
+	Child:	325
+	Child:	326
+	Child:	327
+	Child:	328
+	Child:	329
+	Child:	330
+	Child:	331
+	Child:	332
+	Child:	333
+	Child:	334
+	Child:	335
+	Child:	336
+	Child:	337
+	Child:	338
+	Child:	339
+	Child:	340
+	Child:	341
+	Label:	"&Файл"
+)
+
+(Choice.324
+	Help:	"Закрывает активный компонент"
+	HelpTopic:	"Close"
+	Label:	"&Закрыть"
+	Click:	"Project.CloseDoc"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.325
+	Help:	"Закрывает все компоненты"
+	HelpTopic:	"Close_All"
+	Label:	"Закрыть &все"
+	Click:	"Project.CloseAll"
+	Shortcut:	"Keys.None"
+)
+
+(Space.326
+)
+
+(Choice.327
+	Help:	"Указывает текущий рабочий каталог"
+	HelpTopic:	"Set_Working_Directory"
+	Label:	"Указать &рабочий каталог..."
+	Click:	"Project.SetProjectWorkDir"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.328
+	Help:	"Сохраняет текущий проект"
+	HelpTopic:	"Save_Project"
+	Label:	"&Сохранить проект"
+	Click:	"Project.Save"
+	Shortcut:	"Keys.Ctrl+S"
+)
+
+(Choice.329
+	Help:	"Сохраняет текущий проект с новым именем"
+	HelpTopic:	"Save_Project_As"
+	Label:	"Сохранить проект как..."
+	Click:	"Project.SaveAs"
+	Shortcut:	"Keys.None"
+)
+
+(Space.330
+)
+
+(Choice.331
+	Help:	"Вызывает диалоговое окно модулей"
+	HelpTopic:	"Extensions"
+	Label:	"Модули..."
+	Click:	"Appl.GetExtensionWin"
+	Shortcut:	"Keys.None"
+)
+
+(Space.332
+)
+
+(Choice.333
+	Help:	"Печатает вид"
+	HelpTopic:	"Print"
+	Update:	"Doc.PrintUpdate"
+	Label:	"&Печатать..."
+	Click:	"View.Print"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.334
+	Help:	"Устанавливает параметры принтера и опции печати"
+	HelpTopic:	"Print_Setup"
+	Label:	"&Установка печати..."
+	Click:	"Project.PrintSetup"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.335
+	Help:	"Экспортирует вид"
+	HelpTopic:	"Export"
+	Update:	"View.HasThemesUpdate"
+	Label:	"&Экспорт..."
+	Click:	"View.ExportDisp"
+	Shortcut:	"Keys.None"
+)
+
+(Space.336
+)
+
+(Choice.337
+	Help:	"Показывает диалоговое окно параметров кодовой страницы"
+	HelpTopic:	"Code_Page_Profile"
+	Label:	"П&араметры кодовой страницы..."
+	Click:	"ShowCodepage"
+	Shortcut:	"Keys.None"
+)
+
+(Space.338
+)
+
+(Choice.339
+	Help:	"Выводит диалоговое окно для удаления, редактирования и копирования исходных данных"
+	HelpTopic:	"Manage_Sources"
+	Label:	"&Управление исходными данными..."
+	Click:	"View.ManageSources"
+	Shortcut:	"Keys.None"
+)
+
+(Space.340
+)
+
+(Choice.341
+	Help:	"Выход из ArcView"
+	HelpTopic:	"Exit"
+	Label:	"В&ыход"
+	Click:	"Project.Exit"
+	Shortcut:	"Keys.None"
+)
+
+(PMenu.342
+	InternalName:	"Edit"
+	Child:	343
+	Child:	344
+	Child:	345
+	Child:	346
+	Child:	347
+	Child:	348
+	Child:	349
+	Child:	350
+	Child:	351
+	Child:	352
+	Child:	353
+	Child:	354
+	Child:	355
+	Child:	356
+	Child:	357
+	Child:	358
+	Child:	359
+	Child:	360
+	Child:	361
+	Label:	"&Редактировать"
+)
+
+(Choice.343
+	Help:	"Вырезает активные темы и помещает их в буфер обмена"
+	HelpTopic:	"Cut_Themes"
+	Update:	"View.ActiveDeletableThemesUpdate"
+	Label:	"Вырезать &темы"
+	Click:	"View.CutThemes"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.344
+	Help:	"Копирует выбранные темы в буфер обмена"
+	HelpTopic:	"Copy_Themes"
+	Update:	"View.ActiveThemesUpdate"
+	Label:	"Коп&ировать темы"
+	Click:	"View.CopyThemes"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.345
+	Help:	"Удаляет активные темы из вида"
+	HelpTopic:	"Delete_Themes"
+	Update:	"View.ActiveDeletableThemesUpdate"
+	Label:	"Уд&алить темы"
+	Click:	"View.DeleteThemes"
+	Shortcut:	"Keys.None"
+)
+
+(Space.346
+)
+
+(Choice.347
+	Disabled:	1
+	Help:	"Отменяет последнее редактирование графических объектов в Виде"
+	HelpTopic:	"Undo_Graphic_Edit_on_a_view"
+	Update:	"View.UndoEditUpdate"
+	Label:	"&Отменить изменения графики"
+	Click:	"View.UndoEdit"
+	Shortcut:	"Keys.Ctrl+Z"
+)
+
+(Choice.348
+	Disabled:	1
+	Invisible:	1
+	Help:	"Повторно выполняет ранее отмененную операцию редактирования темы"
+	HelpTopic:	"Redo_Edit_on_a_view"
+	Update:	"View.RedoEditUpdate"
+	Label:	"&Повторить редактирование объекта"
+	Click:	"View.RedoEdit"
+	Shortcut:	"Keys.Ctrl+Y"
+)
+
+(Space.349
+)
+
+(Choice.350
+	Disabled:	1
+	Help:	"Помещает выбранные графические объекты в буфер обмена"
+	HelpTopic:	"Cut_Graphics"
+	Update:	"View.CutUpdate"
+	Label:	"В&ырезать графику"
+	Click:	"View.CutGraphics"
+	Shortcut:	"Keys.Ctrl+X"
+)
+
+(Choice.351
+	Disabled:	1
+	Help:	"Копирует выбранные графические объекты в буфер обмена"
+	HelpTopic:	"Copy_Graphics"
+	Update:	"View.CopyUpdate"
+	Label:	"&Копировать графику"
+	Click:	"View.CopyGraphics"
+	Shortcut:	"Keys.Ctrl+C"
+)
+
+(Choice.352
+	Disabled:	1
+	Help:	"Удаляет выбранные графические объекты из Вида"
+	HelpTopic:	"Delete_Graphics"
+	Update:	"View.DeleteUpdate"
+	Label:	"&Удалить графику"
+	Click:	"View.DeleteGraphics"
+	Shortcut:	"Keys.Del"
+)
+
+(Space.353
+)
+
+(Choice.354
+	Disabled:	1
+	Help:	"Объединяет выбранные полигоны"
+	HelpTopic:	"Combine_Graphics"
+	Update:	"View.CombineUpdate"
+	Label:	"Ко&мбинировать графику"
+	Click:	"View.CombineGraphics"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.355
+	Disabled:	1
+	Help:	"Объединяет выбранные графические объекты для создания нового графического объекта"
+	HelpTopic:	"Union_Graphics"
+	Update:	"View.UnionUpdate"
+	Label:	"О&бъединить графику"
+	Click:	"View.UnionGraphics"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.356
+	Disabled:	1
+	Help:	"Вычитает один выбранный полигон из другого выбранного полигона"
+	HelpTopic:	"Subtract_Graphics"
+	Update:	"View.SubtractUpdate"
+	Label:	"&Вычесть графику"
+	Click:	"View.SubtractGraphics"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.357
+	Disabled:	1
+	Help:	"Создает новый полигон из пересечения областей выбранных полигонов"
+	HelpTopic:	"Intersect_Graphics"
+	Update:	"View.IntersectUpdate"
+	Label:	"Пе&ресечь графику"
+	Click:	"View.IntersectGraphics"
+	Shortcut:	"Keys.None"
+)
+
+(Space.358
+)
+
+(Choice.359
+	Disabled:	1
+	Help:	"Вставляет содержимое буфера обмена"
+	HelpTopic:	"Paste"
+	Update:	"View.PasteUpdate"
+	Label:	"В&ставить"
+	Click:	"View.Paste"
+	Shortcut:	"Keys.Ctrl+V"
+)
+
+(Space.360
+)
+
+(Choice.361
+	Disabled:	1
+	Help:	"Выбирает все графические элементы в виде"
+	HelpTopic:	"Select_All_Graphics"
+	Update:	"View.HasGraphicsUpdate"
+	Label:	"Выбрать всю &графику"
+	Click:	"Graphic.SelectAll"
+	Shortcut:	"Keys.None"
+)
+
+(PMenu.362
+	InternalName:	"View"
+	Child:	363
+	Child:	364
+	Child:	365
+	Child:	366
+	Child:	367
+	Child:	368
+	Child:	369
+	Child:	370
+	Child:	371
+	Child:	372
+	Child:	373
+	Child:	374
+	Child:	375
+	Child:	376
+	Child:	377
+	Child:	378
+	Child:	379
+	Child:	380
+	Child:	381
+	Child:	382
+	Child:	383
+	Child:	384
+	Child:	385
+	Child:	386
+	Child:	387
+	Child:	388
+	Child:	389
+	Child:	390
+	Child:	391
+	Child:	392
+	Child:	393
+	Child:	394
+	Child:	395
+	Child:	396
+	Child:	397
+	Child:	398
+	Label:	"&Вид"
+)
+
+(Choice.363
+	Help:	"Показывает диалоговое окно для редактирования свойств вида"
+	HelpTopic:	"View_Properties"
+	Label:	"&Свойства..."
+	Click:	"View.Properties"
+	Shortcut:	"Keys.None"
+)
+
+(Space.364
+)
+
+(Choice.365
+	Disabled:	1
+	Help:	"Показывает диалоговое окно для создания темы с адресной привязкой"
+	HelpTopic:	"Geocode_Addresses"
+	Update:	"View.GeocodeUpdate"
+	Label:	"&Геокодировать адреса..."
+	Click:	"View.Geocode"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.366
+	Disabled:	1
+	Help:	"Показывет диалоговое окно для создания темы по  координатам XY или данным  динамической сегментации"
+	HelpTopic:	"Add_Event_Theme"
+	Update:	"View.AddEventUpdate"
+	Label:	"Добав&ить тему событий..."
+	Click:	"View.AddEvent"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.367
+	Help:	"Создает новую тему"
+	HelpTopic:	"New_Theme"
+	Label:	"Нова&я тема..."
+	Click:	"View.NewTheme"
+	Shortcut:	"Keys.None"
+)
+
+(Space.368
+)
+
+(Choice.369
+	Help:	"Создает компоновку из вида"
+	HelpTopic:	"Layout_menu_choice"
+	Update:	"View.HasThemesUpdate"
+	Label:	"Ко&мпоновка..."
+	Click:	"View.Layout"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.370
+	Help:	"Делает все темы невидимыми"
+	HelpTopic:	"Themes_On_Themes_Off"
+	Update:	"View.HasThemesUpdate"
+	Label:	"Вык&лючить темы"
+	Click:	"View.ThemesOff"
+	Shortcut:	"Keys.None"
+)
+
+(Space.371
+)
+
+(Choice.372
+	Help:	"Приближает к экстенту всех тем"
+	HelpTopic:	"Zoom_to_Full_Extent"
+	Update:	"View.HasDataUpdate"
+	Label:	"Полный э&кстент"
+	Click:	"View.ZoomFullExtent"
+	Shortcut:	"Keys.None"
+)
+
+(Space.373
+)
+
+(Choice.374
+	Help:	"Показывает диалог, в котором можно изменить стиль Оглавления"
+	HelpTopic:	"TOC_Defaults"
+	Update:	"TocDefs.ShowUpdate"
+	Label:	"Стиль Таблицы содержания..."
+	Click:	"TocDefs.Show"
+	Shortcut:	"Keys.None"
+)
+
+(Space.375
+)
+
+(Choice.376
+	Help:	"Приближает к центру изображения"
+	HelpTopic:	"Zoom_In"
+	Update:	"View.HasDataUpdate"
+	Label:	"Уве&личить"
+	Click:	"View.ZoomIn"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.377
+	Help:	"Отодвигает от центра изображения"
+	HelpTopic:	"Zoom_Out"
+	Update:	"View.HasDataUpdate"
+	Label:	"Уме&ньшить"
+	Click:	"View.ZoomOut"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.378
+	Help:	"Приближает к экстенту активных тем"
+	HelpTopic:	"Zoom_to_Active_Theme"
+	Update:	"View.ActiveThemesUpdate"
+	Label:	"Экс&тент активных тем"
+	Click:	"View.ZoomToThemes"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.379
+	Help:	"Приближает к экстенту выбранных объектов"
+	HelpTopic:	"Zoom_to_Selected"
+	Update:	"View.SelectableThemesUpdate"
+	Label:	"Экстент  &выбранного объекта"
+	Click:	"View.ZoomToSelected"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.380
+	Disabled:	1
+	Help:	"Возвращается в предыдущий экстент "
+	HelpTopic:	"Zoom_Previous"
+	Update:	"View.UndoZoomUpdate"
+	Label:	"Предыдущий &экстент"
+	Click:	"View.UndoZoom"
+	Shortcut:	"Keys.None"
+)
+
+(Space.381
+)
+
+(Choice.382
+	Help:	"Находит объекты в активных темах с использованием текста, введенного пользователем"
+	HelpTopic:	"Find"
+	Update:	"View.TabularThemesUpdate"
+	Label:	"&Найти..."
+	Click:	"View.Find"
+	Shortcut:	"Keys.Ctrl+F"
+)
+
+(Choice.383
+	Disabled:	1
+	Help:	"Определяет адрес в геокодированной активной теме"
+	HelpTopic:	"Locate_Address"
+	Update:	"View.LocateUpdate"
+	Label:	"На&йти адрес..."
+	Click:	"View.Locate"
+	Shortcut:	"Keys.None"
+)
+
+(Space.384
+)
+
+(Space.385
+)
+
+(Space.386
+)
+
+(Space.387
+)
+
+(Space.388
+)
+
+(Space.389
+)
+
+(Space.390
+)
+
+(Space.391
+)
+
+(Space.392
+)
+
+(Space.393
+)
+
+(Space.394
+)
+
+(Space.395
+)
+
+(Space.396
+)
+
+(Space.397
+)
+
+(Space.398
+)
+
+(PMenu.399
+	InternalName:	"Theme"
+	Child:	400
+	Child:	401
+	Child:	402
+	Child:	403
+	Child:	404
+	Child:	405
+	Child:	406
+	Child:	407
+	Child:	408
+	Child:	409
+	Child:	410
+	Child:	411
+	Child:	412
+	Child:	413
+	Child:	414
+	Child:	415
+	Child:	416
+	Child:	417
+	Child:	418
+	Child:	419
+	Child:	420
+	Child:	421
+	Label:	"&Тема"
+)
+
+(Choice.400
+	Help:	"Показывает диалоговое окно для редактирования свойств активной темы"
+	HelpTopic:	"Theme_Properties"
+	Update:	"View.ActiveThemesUpdate"
+	Label:	"&Свойства..."
+	Click:	"View.ThemeProperties"
+	Shortcut:	"Keys.None"
+)
+
+(Space.401
+)
+
+(Choice.402
+	Disabled:	1
+	Help:	"Начинает или прекращает редактирование шейп-файла"
+	HelpTopic:	"Start_Stop_Editing_in_a_view"
+	Update:	"View.ToggleEditingUpdate"
+	Label:	"Начать редакт&ирование"
+	Click:	"View.ToggleEditing"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.403
+	Disabled:	1
+	Help:	"Сохраняет изменения в исходный шейп-файл"
+	HelpTopic:	"Save_edits_theme"
+	Update:	"View.SaveEditsUpdate"
+	Label:	"Сохра&нить изменения"
+	Click:	"View.SaveEdits"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.404
+	Disabled:	1
+	Help:	"Сохраняет изменения в новый шейп-файл"
+	HelpTopic:	"Save_edits_as_theme"
+	Update:	"View.SaveEditsUpdate"
+	Label:	"Сохранить изменения &как..."
+	Click:	"View.SaveEditsAs"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.405
+	Help:	"Преобразует тему в шейп-файл"
+	HelpTopic:	"Convert_to_Shapefile"
+	Update:	"View.ExportUpdate"
+	Label:	"Преобразовать в &шейп-файл..."
+	Click:	"View.Export"
+	Shortcut:	"Keys.None"
+)
+
+(Space.406
+)
+
+(Choice.407
+	Help:	"Показывает редактор легенд активных тем"
+	HelpTopic:	"Edit_Legend"
+	Update:	"View.ActiveThemesUpdate"
+	Label:	"Редактировать &легенду..."
+	Click:	"View.EditLegendClick"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.408
+	Help:	"Показывает или прячет легенды активных тем"
+	HelpTopic:	"Hide_show_Legend"
+	Update:	"View.ActiveThemesUpdate"
+	Label:	"Спр&ятать/показать легенду"
+	Click:	"View.ToggleLegend"
+	Shortcut:	"Keys.None"
+)
+
+(Space.409
+)
+
+(Choice.410
+	Disabled:	1
+	Help:	"Показывает диалоговое окно повторного поиска адресов"
+	HelpTopic:	"Re_match_Addresses"
+	Update:	"View.EditMatchUpdate"
+	Label:	"Повторить адресны&й поиск..."
+	Click:	"View.EditMatch"
+	Shortcut:	"Keys.None"
+)
+
+(Space.411
+)
+
+(Choice.412
+	Disabled:	1
+	Help:	"Подписывает объекты активных отображаемых тем"
+	HelpTopic:	"Auto_label"
+	Update:	"View.LabelThemesUpdate"
+	Label:	"&Автоподпись..."
+	Click:	"View.LabelThemes"
+	Shortcut:	"Keys.Ctrl+L"
+)
+
+(Choice.413
+	Disabled:	1
+	Help:	"Удаляет любые подписи из активных тем"
+	HelpTopic:	"Remove_Labels"
+	Update:	"View.RemoveThemeLabelsUpdate"
+	Label:	"&Удалить подписи"
+	Click:	"View.RemoveThemeLabels"
+	Shortcut:	"Keys.Ctrl+R"
+)
+
+(Choice.414
+	Disabled:	1
+	Help:	"Удаляет перекрывающиеся подписи активных тем, выделенные зеленым цветом"
+	HelpTopic:	"Remove_Overlapping_Labels"
+	Update:	"View.RemoveOverlapThemeLabelsUpdate"
+	Label:	"Удалить перекр&ывающиеся подписи"
+	Click:	"View.RemoveOverlapThemeLabels"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.415
+	Disabled:	1
+	Help:	"Преобразует выбранные перекрывающиеся подписи в символы подписей"
+	HelpTopic:	"Convert_Overlapping_Labels"
+	Update:	"View.ConvertOverlapLabelsUpdate"
+	Label:	"Прео&бразовать перекрывающиеся подписи"
+	Click:	"View.ConvertOverlapLabels"
+	Shortcut:	"Keys.Ctrl+O"
+)
+
+(Space.416
+)
+
+(Choice.417
+	Help:	"Открывает таблицы активных тем"
+	HelpTopic:	"Open_Theme_Table"
+	Update:	"View.TabularThemesUpdate"
+	Label:	"&Таблица..."
+	Click:	"View.ShowTable"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.418
+	Help:	"Показывает окно конструктора запросов для выбора записей по логическому выражению"
+	HelpTopic:	"Query_Builder"
+	Update:	"View.AttributeThemesUpdate"
+	Label:	"&Запрос..."
+	Click:	"View.Query"
+	Shortcut:	"Keys.Ctrl+Q"
+)
+
+(Choice.419
+	Help:	"Выбирает объекты в активных темах, используя объекты другой темы"
+	HelpTopic:	"Select_By_Theme"
+	Update:	"View.SelectableThemesUpdate"
+	Label:	"&Выборка темой..."
+	Click:	"View.SelectByTheme"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.420
+	Disabled:	1
+	Help:	"Создает буферные зоны вокруг объектов"
+	HelpTopic:	"Create_Buffer_Choice"
+	Update:	"WizardBuffer.OpenDialogUpdate"
+	Label:	"Создать буферные зоны..."
+	Click:	"WizardBuffer.OpenDialog"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.421
+	Help:	"Отменяет выбор объектов во всех активных темах"
+	HelpTopic:	"Clear_Selected_Features"
+	Update:	"View.AttributeThemesUpdate"
+	Label:	"От&менить выборку"
+	Click:	"View.ClearSelect"
+	Shortcut:	"Keys.None"
+)
+
+(PMenu.422
+	InternalName:	"Graphics"
+	Child:	423
+	Child:	424
+	Child:	425
+	Child:	426
+	Child:	427
+	Child:	428
+	Child:	429
+	Child:	430
+	Child:	431
+	Child:	432
+	Child:	433
+	Child:	434
+	Child:	435
+	Child:	436
+	Child:	437
+	Child:	438
+	Label:	"&Графика"
+)
+
+(Choice.423
+	Disabled:	1
+	Help:	"Показывает диалоговое окно для редактирования свойств  выбранной графики"
+	HelpTopic:	"Graphic_Properties"
+	Update:	"Graphic.HasSelectionUpdate"
+	Label:	"&Свойства..."
+	Click:	"Graphic.Edit"
+	Shortcut:	"Keys.None"
+)
+
+(Space.424
+)
+
+(Space.425
+)
+
+(Choice.426
+	Help:	"Показывает диалог, в котором можно задать значения по умолчанию для инструментов подписи и текста"
+	HelpTopic:	"Default_settings_for_text_and_label_tools"
+	Label:	"П&араметры инструментов Текст и Подпись..."
+	Click:	"Graphic.Label Defaults Show"
+	Shortcut:	"Keys.None"
+)
+
+(Space.427
+)
+
+(Choice.428
+	Disabled:	1
+	Help:	"Показывает диалоговое окно для настройки размера и положения выбранного графического элемента"
+	HelpTopic:	"Size_and_Position"
+	Update:	"Graphic.SingleSelectionUpdate"
+	Label:	"Ра&змер и положение..."
+	Click:	"Graphic.SizePos"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.429
+	Disabled:	1
+	Help:	"Выравнивает выбранные графические элементы"
+	HelpTopic:	"Align"
+	Update:	"Graphic.HasSelectionUpdate"
+	Label:	"Выровн&ять..."
+	Click:	"Graphic.Align"
+	Shortcut:	"Keys.Ctrl+A"
+)
+
+(Space.430
+)
+
+(Choice.431
+	Disabled:	1
+	Help:	"Помещает выбранные графические элементы перед другими графическими элементами"
+	HelpTopic:	"Bring_to_Front_on_a_view"
+	Update:	"Graphic.HasSelectionUpdate"
+	Label:	"На &передний план"
+	Click:	"Graphic.ToFront"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.432
+	Disabled:	1
+	Help:	"Помещает выбранные графические элементы за другими графическими элементами"
+	HelpTopic:	"Send_to_Back_on_a_view"
+	Update:	"Graphic.HasSelectionUpdate"
+	Label:	"&На задний план"
+	Click:	"Graphic.ToBack"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.433
+	Disabled:	1
+	Help:	"Группирует выбранные графические элементы"
+	HelpTopic:	"Group_on_a_view"
+	Update:	"Graphic.GroupUpdate"
+	Label:	"&Группировать"
+	Click:	"Graphic.Group"
+	Shortcut:	"Keys.Ctrl+G"
+)
+
+(Choice.434
+	Disabled:	1
+	Help:	"Отменяет группировку выбранных графических элементов"
+	HelpTopic:	"Ungroup_on_a_view"
+	Update:	"Graphic.UngroupUpdate"
+	Label:	"&Разгруппировать"
+	Click:	"Graphic.Ungroup"
+	Shortcut:	"Keys.Ctrl+U"
+)
+
+(Space.435
+)
+
+(Choice.436
+	Disabled:	1
+	Help:	"Присоединяет выбранную графику к активной теме"
+	HelpTopic:	"Attach_Graphics"
+	Update:	"View.AddGraphicsUpdate"
+	Label:	"Пр&исоединить графику"
+	Click:	"View.AddGraphics"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.437
+	Disabled:	1
+	Help:	"Отсоединяет графику от активных тем"
+	HelpTopic:	"Detach_Graphics"
+	Update:	"View.ClearGraphicsUpdate"
+	Label:	"&Отсоединить графику"
+	Click:	"View.ClearGraphics"
+	Shortcut:	"Keys.None"
+)
+
+(Space.438
+)
+
+(PMenu.439
+	InternalName:	"Window"
+	Child:	440
+	Child:	441
+	Child:	442
+	Child:	443
+	Child:	444
+	Child:	445
+	Child:	447
+	Child:	448
+	Label:	"&Окно"
+)
+
+(Choice.440
+	Help:	"Упорядочивает окна в виде неперекрывающихся экранов"
+	HelpTopic:	"Tile"
+	Label:	"&Мозаика"
+	Click:	"Project.Tile"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.441
+	Help:	"Упорядочивает окна в виде накладывающихся экранов"
+	HelpTopic:	"Cascade"
+	Label:	"&Каскад"
+	Click:	"Project.Cascade"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.442
+	Help:	"Упорядочивает значки окон"
+	HelpTopic:	"Arrange_Icons"
+	Label:	"&Упорядочить значки"
+	Click:	"Project.ArrangeIcons"
+	Shortcut:	"Keys.None"
+)
+
+(Space.443
+)
+
+(Choice.444
+	Help:	"Показывает окно символов"
+	HelpTopic:	"Show_Symbol_Window"
+	Label:	"Показать окно символов..."
+	Click:	"Project.ShowHideSymWin"
+	Shortcut:	"Keys.Ctrl+P"
+)
+
+(Space.445
+	ObjectTag:	446
+	Update:	"WindowMenuUpdate"
+)
+
+(AVStr.446
+	S:	"russia.apr Российская Федерация"
+)
+
+(Choice.447
+	Help:	"Активизирует russia.apr"
+	Label:	"&1 russia.apr"
+	Click:	"WindowActivate"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.448
+	Help:	"Активизирует Российская Федерация"
+	Label:	"&2 Российская Федерация"
+	Click:	"WindowActivate"
+	Shortcut:	"Keys.None"
+)
+
+(PMenu.449
+	InternalName:	"Help"
+	Child:	450
+	Child:	451
+	Child:	452
+	Child:	453
+	Label:	"&Справка"
+)
+
+(Choice.450
+	Help:	"Вызывает диалог для просмотра и поиска справок ArcView"
+	HelpTopic:	"Help_on_Help_Topics"
+	Label:	"&Разделы справки..."
+	Click:	"Project.HelpTopics"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.451
+	Help:	"Предоставляет инструкции о том, как получить справку в ArcView"
+	HelpTopic:	"Help_on_How_to_Get_Help"
+	Label:	"&Как получить справку..."
+	Click:	"Project.HelpHelp"
+	Shortcut:	"Keys.None"
+)
+
+(Space.452
+)
+
+(Choice.453
+	Help:	"Предоставляет информацию об ArcView"
+	HelpTopic:	"About"
+	Label:	"О&б ArcView..."
+	Click:	"Project.About"
+	Shortcut:	"Keys.None"
+)
+
+(ButnBar.454
+	Child:	455
+	Child:	457
+	Child:	458
+	Child:	460
+	Child:	461
+	Child:	463
+	Child:	465
+	Child:	467
+	Child:	468
+	Child:	470
+	Child:	472
+	Child:	474
+	Child:	475
+	Child:	477
+	Child:	479
+	Child:	481
+	Child:	483
+	Child:	485
+	Child:	487
+	Child:	488
+	Child:	490
+	Child:	492
+	Child:	493
+)
+
+(Butn.455
+	Help:	"Сохранить проект//Сохраняет текущий проект"
+	HelpTopic:	"Save_Project"
+	Icon:	456
+	Click:	"Project.Save"
+)
+
+(AVIcon.456
+	Name:	"Save"
+	Res:	"Icons.Save"
+
+)
+
+(Space.457
+)
+
+(Butn.458
+	Help:	"Добавить тему//Добавляет темы в вид"
+	HelpTopic:	"Add_Theme"
+	Icon:	459
+	Click:	"View.Add"
+)
+
+(AVIcon.459
+	Name:	"AddTheme"
+	Res:	"Icons.AddTheme"
+
+)
+
+(Space.460
+)
+
+(Butn.461
+	Help:	"Свойства темы//Показывает диалоговое окно для редактирования свойств активной темы"
+	HelpTopic:	"Theme_Properties"
+	Update:	"View.ActiveThemesUpdate"
+	Icon:	462
+	Click:	"View.ThemeProperties"
+)
+
+(AVIcon.462
+	Name:	"Props"
+	Res:	"Icons.Props"
+
+)
+
+(Butn.463
+	Help:	"Редактировать легенду//Открывает редактор легенд активных тем"
+	HelpTopic:	"Edit_Legend"
+	Update:	"View.ActiveThemesUpdate"
+	Icon:	464
+	Click:	"View.EditLegendClick"
+)
+
+(AVIcon.464
+	Name:	"Legend"
+	Res:	"Icons.Legend"
+
+)
+
+(Butn.465
+	Help:	"Открыть таблицу темы //Открывает таблицы активных тем"
+	HelpTopic:	"Open_Theme_Table"
+	Update:	"View.TabularThemesUpdate"
+	Icon:	466
+	Click:	"View.ShowTable"
+)
+
+(AVIcon.466
+	Name:	"Table"
+	Res:	"Icons.Table"
+
+)
+
+(Space.467
+)
+
+(Butn.468
+	Help:	"Найти//Находит объекты в активных темах с использованием текста, введенного пользователем"
+	HelpTopic:	"Find"
+	Update:	"View.TabularThemesUpdate"
+	Icon:	469
+	Click:	"View.Find"
+)
+
+(AVIcon.469
+	Name:	"Find"
+	Res:	"Icons.Find"
+
+)
+
+(Butn.470
+	Disabled:	1
+	Help:	"Найти адрес//Определяет адрес в геокодированной активной теме"
+	HelpTopic:	"Locate_Address"
+	Update:	"View.LocateUpdate"
+	Icon:	471
+	Click:	"View.Locate"
+)
+
+(AVIcon.471
+	Name:	"AddMatch"
+	Res:	"Icons.AddMatch"
+
+)
+
+(Butn.472
+	Help:	"Конструктор запросов//Показывает конструктор запросов для выбора записей по логическому выражению"
+	HelpTopic:	"Query_Builder"
+	Update:	"View.AttributeThemesUpdate"
+	Icon:	473
+	Click:	"View.Query"
+)
+
+(AVIcon.473
+	Name:	"QueryBuilder"
+	Res:	"Icons.QueryBuilder"
+
+)
+
+(Space.474
+)
+
+(Butn.475
+	Help:	"Полный экстент//Приближает к экстенту всех тем"
+	HelpTopic:	"Zoom_to_Full_Extent"
+	Update:	"View.HasDataUpdate"
+	Icon:	476
+	Click:	"View.ZoomFullExtent"
+)
+
+(AVIcon.476
+	Name:	"ZoomView"
+	Res:	"Icons.ZoomView"
+
+)
+
+(Butn.477
+	Help:	"Экстент активной темы (тем)//Приближает к экстенту активных тем"
+	HelpTopic:	"Zoom_to_Active_Theme"
+	Update:	"View.ActiveThemesUpdate"
+	Icon:	478
+	Click:	"View.ZoomToThemes"
+)
+
+(AVIcon.478
+	Name:	"ZoomTheme"
+	Res:	"Icons.ZoomTheme"
+
+)
+
+(Butn.479
+	Help:	"Экстент  выбранного объекта//Приближает к экстенту выбранных объектов"
+	HelpTopic:	"Zoom_to_Selected"
+	Update:	"View.SelectableThemesUpdate"
+	Icon:	480
+	Click:	"View.ZoomToSelected"
+)
+
+(AVIcon.480
+	Name:	"ZoomToSelected"
+	Res:	"Icons.ZoomToSelected"
+
+)
+
+(Butn.481
+	Help:	"Увеличить//Приближает к центру изображения"
+	HelpTopic:	"Zoom_In"
+	Update:	"View.HasDataUpdate"
+	Icon:	482
+	Click:	"View.ZoomIn"
+)
+
+(AVIcon.482
+	Name:	"ZoomIn"
+	Res:	"Icons.ZoomIn"
+
+)
+
+(Butn.483
+	Help:	"Уменьшить//Отодвигает от центра изображения"
+	HelpTopic:	"Zoom_Out"
+	Update:	"View.HasDataUpdate"
+	Icon:	484
+	Click:	"View.ZoomOut"
+)
+
+(AVIcon.484
+	Name:	"ZoomOut"
+	Res:	"Icons.ZoomOut"
+
+)
+
+(Butn.485
+	Disabled:	1
+	Help:	"Предыдущий экстент//Возвращается в предыдущий экстент "
+	HelpTopic:	"Zoom_Previous"
+	Update:	"View.UndoZoomUpdate"
+	Icon:	486
+	Click:	"View.UndoZoom"
+)
+
+(AVIcon.486
+	Name:	"ZoomPrevious"
+	Res:	"Icons.ZoomPrevious"
+
+)
+
+(Space.487
+)
+
+(Butn.488
+	Disabled:	1
+	Help:	"Выбор объектов графикой//Выбирает объекты в активных темах, используя выбранные графические элементы"
+	HelpTopic:	"Select_Features_Using_Graphic"
+	Update:	"View.SpatialSelectUpdate"
+	Icon:	489
+	Click:	"View.SpatialSelect"
+)
+
+(AVIcon.489
+	Name:	"SpatialSelect"
+	Res:	"Icons.SpatialSelect"
+
+)
+
+(Butn.490
+	Help:	"Отменить выборку//Отменяет выбор объектов во всех активных темах"
+	HelpTopic:	"Clear_Selected_Features"
+	Update:	"View.AttributeThemesUpdate"
+	Icon:	491
+	Click:	"View.ClearSelect"
+)
+
+(AVIcon.491
+	Name:	"SelectNone"
+	Res:	"Icons.SelectNone"
+
+)
+
+(Space.492
+)
+
+(Butn.493
+	Help:	"Справка//Показывает справку о кнопке, инструменте или пункте меню, на который будет переведен курсор"
+	HelpTopic:	"Help_button"
+	Icon:	494
+	Click:	"Help.Tool"
+)
+
+(AVIcon.494
+	Name:	"HelpTool"
+	Res:	"Icons.HelpTool"
+
+)
+
+(PopupSet.495
+	Child:	496
+)
+
+(Popup.496
+	Child:	497
+	Child:	498
+	Child:	499
+	Child:	500
+	Child:	501
+	Child:	502
+	Child:	503
+	Child:	504
+	Child:	505
+	Child:	506
+	Child:	507
+	Child:	508
+	Child:	509
+	Child:	510
+	Child:	511
+	Child:	512
+	Child:	513
+	Child:	514
+	Label:	"Меню"
+)
+
+(Choice.497
+	Disabled:	1
+	Invisible:	1
+	Help:	"Удаляет последнюю введенную точку рисуемой линии или полигона"
+	Update:	"View.DelLastPointUpdate"
+	Label:	"Удалить последнюю точку"
+	Click:	"View.DeleteLastPoint"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.498
+	Disabled:	1
+	Help:	"Отменяет последнее редактирование объектов темы"
+	HelpTopic:	"Undo_Feature_Edit_on_a_view"
+	Update:	"View.UndoEditUpdate"
+	Label:	"Отменить изменения объекта"
+	Click:	"View.UndoEdit"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.499
+	Disabled:	1
+	Help:	"Повторно выполняет ранее отмененную операцию редактирования темы"
+	Update:	"View.RedoEditUpdate"
+	Label:	"Повторить редактирование объекта"
+	Click:	"View.RedoEdit"
+	Shortcut:	"Keys.None"
+)
+
+(Space.500
+)
+
+(Choice.501
+	Help:	"Включает общее замыкание"
+	Update:	"View.ToggleGeneralSnapUpdate"
+	Label:	"Включить общее замыкание"
+	Click:	"View.ToggleGeneralSnap"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.502
+	Help:	"Включает интерактивное замыкание"
+	Update:	"View.ToggleInteractiveSnapUpdate"
+	Label:	"Включить интерактивное замыкание"
+	Click:	"View.ToggleInteractiveSnap"
+	Shortcut:	"Keys.None"
+)
+
+(Space.503
+)
+
+(Choice.504
+	Disabled:	1
+	Invisible:	1
+	Help:	"Замыкает следующую введенную точку с ближайшей вершиной в пределах установленного допуска"
+	Update:	"View.InteractiveSnapUpdate"
+	Label:	"Замкнуть с вершиной"
+	Click:	"View.SnapToVertex"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.505
+	Disabled:	1
+	Invisible:	1
+	Help:	"Замыкает следующую введенную точку с ближайшим линейным сегментом"
+	Update:	"View.InteractiveSnapUpdate"
+	Label:	"Замкнуть на границе"
+	Click:	"View.SnapToBoundary"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.506
+	Disabled:	1
+	Invisible:	1
+	Help:	"Замыкает следующую введенную точку с ближайшим общим узлом для двух или более объектов"
+	Update:	"View.InteractiveSnapUpdate"
+	Label:	"Замкнуть на пересечении"
+	Click:	"View.SnapToIntersection"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.507
+	Disabled:	1
+	Invisible:	1
+	Help:	"Замыкает следующую введенную точку с ближайшей конечной точкой существующей линии"
+	Update:	"View.SnapToEndPointUpdate"
+	Label:	"Замкнуть на конечную точку"
+	Click:	"View.SnapToEndPoint"
+	Shortcut:	"Keys.None"
+)
+
+(Space.508
+)
+
+(Choice.509
+	Help:	"Отменяет выбор объектов  в активных темах"
+	Update:	"View.AttributeThemesUpdate"
+	Label:	"Отменить выборку"
+	Click:	"View.ClearSelect"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.510
+	Help:	"Приближает в точке, заданной щелчком для вывода раскрывающегося меню"
+	Update:	"View.HasDataUpdate"
+	Label:	"Увеличить"
+	Click:	"View.PopupZoomIn"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.511
+	Help:	"Отодвигает от точки, заданной щелчком для вывода раскрывающегося меню"
+	Update:	"View.HasDataUpdate"
+	Label:	"Уменьшить"
+	Click:	"View.PopupZoomOut"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.512
+	Help:	"Приближает к размерам выбранных объектов"
+	Update:	"View.SelectableThemesUpdate"
+	Label:	"Приблизить к выбранному объекту"
+	Click:	"View.ZoomToSelected"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.513
+	Help:	"Передвигает в центр в точку,заданную щелчком для вывода раскрывающегося меню"
+	Update:	"View.HasDataUpdate"
+	Label:	"Передвинуть"
+	Click:	"View.PopupPan"
+	Shortcut:	"Keys.None"
+)
+
+(Choice.514
+	Help:	"Открывает окно свойств графических примитивов для редактирования положения вершин"
+	Update:	"ShapeWin.PopUp Update"
+	Label:	"Свойства графических примитивов"
+	Click:	"ShapeWin.PopUp Open"
+	Shortcut:	"Keys.None"
+)
+
+(ToolBar.515
+	Child:	516
+	Child:	518
+	Child:	520
+	Child:	522
+	Child:	524
+	Child:	526
+	Child:	528
+	Child:	530
+	Child:	532
+	Child:	534
+	Child:	536
+	Child:	555
+	Child:	568
+	Child:	587
+)
+
+(Tool.516
+	Help:	"Идентифицировать//Выводит информацию об объекте"
+	HelpTopic:	"Identify_tool"
+	Update:	"View.IdentifyUpdate"
+	Icon:	517
+	Cursor:	"Cursors.ID"
+	Apply:	"View.Identify"
+)
+
+(AVIcon.517
+	Name:	"ID"
+	Res:	"Icons.ID"
+
+)
+
+(Tool.518
+	Help:	"Указатель//Выбирает, передвигает или масштабирует графику"
+	HelpTopic:	"Pointer_tool"
+	Update:	"View.HasDataUpdate"
+	Icon:	519
+	Cursor:	"Cursors.Select"
+	Apply:	"View.Select"
+	Click:	"View.SelectTool"
+)
+
+(AVIcon.519
+	Name:	"Select"
+	Res:	"Icons.Select"
+
+)
+
+(Tool.520
+	Disabled:	1
+	Help:	"Редактировать вершины//Добавляет, передвигает или удаляет вершины объектов или графики"
+	HelpTopic:	"Vertex_Edit_tool"
+	Update:	"View.SelectToEditUpdate"
+	Icon:	521
+	Cursor:	"Cursors.SelectEdit"
+	Apply:	"View.SelectToEdit"
+	Click:	"View.SelectToEditTool"
+)
+
+(AVIcon.521
+	Name:	"SelectEdit"
+	Res:	"Icons.SelectEdit"
+
+)
+
+(Tool.522
+	Help:	"Выбор объекта//Выбирает объекты в активных темах указыванием или растягиванием прямоугольника"
+	HelpTopic:	"Select_Feature_tool"
+	Update:	"View.SelectableThemesUpdate"
+	Icon:	523
+	Cursor:	"Cursors.Default"
+	Apply:	"View.SelectPoint"
+)
+
+(AVIcon.523
+	Name:	"FeatureSelect"
+	Res:	"Icons.FeatureSelect"
+
+)
+
+(Tool.524
+	Help:	"Увеличить//Приближает к точке, где произведен щелчок, или к растягиваемому прямоугольнику"
+	HelpTopic:	"Zoom_In_tool"
+	Update:	"View.HasDataUpdate"
+	Icon:	525
+	Cursor:	"Cursors.ZoomIn"
+	Apply:	"View.ZoomInTool"
+)
+
+(AVIcon.525
+	Name:	"ZoomInTool"
+	Res:	"Icons.ZoomInTool"
+
+)
+
+(Tool.526
+	Help:	"Уменьшить//Отодвигает от точки, где произведен щелчок, или от растягиваемого прямоугольника"
+	HelpTopic:	"Zoom_Out_tool"
+	Update:	"View.HasDataUpdate"
+	Icon:	527
+	Cursor:	"Cursors.ZoomOut"
+	Apply:	"View.ZoomOutTool"
+)
+
+(AVIcon.527
+	Name:	"ZoomOutTool"
+	Res:	"Icons.ZoomOutTool"
+
+)
+
+(Tool.528
+	Help:	"Передвинуть//Сдвигает изображение в направлении перемещения курсора"
+	HelpTopic:	"Pan_tool"
+	Update:	"View.HasDataUpdate"
+	Icon:	529
+	Cursor:	"Cursors.Pan"
+	Apply:	"View.Pan"
+)
+
+(AVIcon.529
+	Name:	"Pan"
+	Res:	"Icons.Pan"
+
+)
+
+(Tool.530
+	Help:	"Измерить//Измеряет расстояние"
+	HelpTopic:	"Measure_tool"
+	Update:	"View.HasDataUpdate"
+	Icon:	531
+	Cursor:	"Cursors.Measure"
+	Apply:	"View.Measure"
+)
+
+(AVIcon.531
+	Name:	"Measure"
+	Res:	"Icons.Measure"
+
+)
+
+(Tool.532
+	Disabled:	1
+	Help:	"Горячая связь//Обеспечивает lдинамическую связь для активных тем"
+	HelpTopic:	"Hot_Link_tool"
+	Update:	"View.HotLinkUpdate"
+	Icon:	533
+	Cursor:	"Cursors.Media"
+	Apply:	"View.HotLink"
+)
+
+(AVIcon.533
+	Name:	"Media"
+	Res:	"Icons.Media"
+
+)
+
+(Tool.534
+	Disabled:	1
+	Help:	"Рассматриваемая область//Устанавливает  рабочую область для тем, составляющих библиотеку карт"
+	HelpTopic:	"Area_Of_Interest_tool"
+	Update:	"View.AOIToolUpdate"
+	Icon:	535
+	Cursor:	"Cursors.Default"
+	Apply:	"View.AOITool"
+)
+
+(AVIcon.535
+	Name:	"AOI"
+	Res:	"Icons.AOI"
+
+)
+
+(ToolMenu.536
+	Disabled:	1
+	Help:	"Подписать//Подписывает объекты активной темы атрибутами таблицы"
+	HelpTopic:	"Label_Tool"
+	Update:	"View.LabelToolUpdate"
+	Icon:	537
+	Cursor:	"Cursors.Tag"
+	Apply:	"View.LabelTool"
+	Child:	538
+	Child:	539
+	Child:	541
+	Child:	543
+	Child:	545
+	Child:	547
+	Child:	549
+	Child:	551
+	Child:	553
+)
+
+(AVIcon.537
+	Name:	"Tag"
+	Res:	"Icons.Tag"
+
+)
+
+(Tool.538
+	Disabled:	1
+	Help:	"Подписать//Подписывает объекты активной темы атрибутами таблицы"
+	HelpTopic:	"Label_Tool"
+	Update:	"View.LabelToolUpdate"
+	Icon:	537
+	Cursor:	"Cursors.Tag"
+	Apply:	"View.LabelTool"
+)
+
+(Tool.539
+	Disabled:	1
+	Help:	"Выносная подпись в рамке//Щелкните на объекте и укажите направление выноски подписи"
+	HelpTopic:	"Label_Tool"
+	Update:	"View.CalloutUpdate"
+	Icon:	540
+	Cursor:	"Cursors.Tag"
+	Apply:	"View.CalloutLabelTool"
+)
+
+(AVIcon.540
+	Name:	"CallOutLabel1"
+	Res:	"Icons.CallOutLabel1"
+
+)
+
+(Tool.541
+	Disabled:	1
+	Help:	"Выносная подпись//Щелкните на объекте и укажите направление выноски подписи"
+	HelpTopic:	"Label_Tool"
+	Update:	"View.CalloutUpdate"
+	Icon:	542
+	Cursor:	"Cursors.Tag"
+	Apply:	"View.BulletLeaderLabelTool"
+)
+
+(AVIcon.542
+	Name:	"CallOutLabel2"
+	Res:	"Icons.CallOutLabel2"
+
+)
+
+(Tool.543
+	Disabled:	1
+	Help:	"Подпись в рамке//Щелкните на объекте, к которому вы хотите создать подпись"
+	HelpTopic:	"Label_Tool"
+	Update:	"View.CalloutUpdate"
+	Icon:	544
+	Cursor:	"Cursors.Tag"
+	Apply:	"View.ShadowBoxLabelTool"
+)
+
+(AVIcon.544
+	Name:	"CallOutLabel3"
+	Res:	"Icons.CallOutLabel3"
+
+)
+
+(Tool.545
+	Disabled:	1
+	Help:	"Знак шоссе между штатами США//Щелкните в позиции, в которой вы хотите поместить знак с номером"
+	HelpTopic:	"Label_Tool"
+	Update:	"View.CalloutUpdate"
+	Icon:	546
+	Cursor:	"Cursors.Tag"
+	Apply:	"View.Highway1 Apply"
+)
+
+(AVIcon.546
+	Name:	"BW US Interstate"
+	Res:	"Icons.BW US Interstate"
+
+)
+
+(Tool.547
+	Disabled:	1
+	Help:	"Знак шоссе США//Щелкните в позиции, в которой вы хотите поместить знак с номером  шоссе"
+	HelpTopic:	"Label_Tool"
+	Update:	"View.CalloutUpdate"
+	Icon:	548
+	Cursor:	"Cursors.Tag"
+	Apply:	"View.Highway2 Apply"
+)
+
+(AVIcon.548
+	Name:	"USRoute"
+	Res:	"Icons.USRoute"
+
+)
+
+(Tool.549
+	Disabled:	1
+	Help:	"Круглый знак основного шоссе США//Щелкните в позиции, в которой вы хотите поместить  знак с номером  шоссе"
+	HelpTopic:	"Label_Tool"
+	Update:	"View.CalloutUpdate"
+	Icon:	550
+	Cursor:	"Cursors.Tag"
+	Apply:	"View.Highway3 Apply"
+)
+
+(AVIcon.550
+	Name:	"GenericStateHighway"
+	Res:	"Icons.GenericStateHighway"
+
+)
+
+(Tool.551
+	Disabled:	1
+	Help:	"Квадратный знак основного шоссе США//Щелкните в позиции, в которой вы хотите поместить знак с номером шоссе"
+	HelpTopic:	"Label_Tool"
+	Update:	"View.CalloutUpdate"
+	Icon:	552
+	Cursor:	"Cursors.Tag"
+	Apply:	"View.Highway4 Apply"
+)
+
+(AVIcon.552
+	Name:	"GenericHighway1"
+	Res:	"Icons.GenericHighway1"
+
+)
+
+(Tool.553
+	Disabled:	1
+	Help:	"Овальный знак основного шоссе США//Щелкните в позиции, в которой вы хотите поместить знак с номером шоссе"
+	Update:	"View.CalloutUpdate"
+	Icon:	554
+	Cursor:	"Cursors.Tag"
+	Apply:	"View.Highway5 Apply"
+)
+
+(AVIcon.554
+	Name:	"GenericHighway2"
+	Res:	"Icons.GenericHighway2"
+
+)
+
+(ToolMenu.555
+	Help:	"Текст//Создает текст на изображении"
+	HelpTopic:	"Text_tool"
+	Update:	"View.TextToolUpdate"
+	Icon:	556
+	Cursor:	"Cursors.Text"
+	Apply:	"View.TextTool"
+	Click:	"SymWin.DisplayFontPanel"
+	Child:	557
+	Child:	558
+	Child:	560
+	Child:	562
+	Child:	564
+	Child:	566
+)
+
+(AVIcon.556
+	Name:	"Text"
+	Res:	"Icons.Text"
+
+)
+
+(Tool.557
+	Help:	"Текст//Создает текст на изображении"
+	HelpTopic:	"Text_tool"
+	Update:	"View.TextToolUpdate"
+	Icon:	556
+	Cursor:	"Cursors.Text"
+	Apply:	"View.TextTool"
+	Click:	"SymWin.DisplayFontPanel"
+)
+
+(Tool.558
+	Help:	"Выносной текст в рамке//Щелкните в Виде, укажите направление выноски текста и введите текст"
+	HelpTopic:	"Text_tool"
+	Update:	"View.TextToolUpdate"
+	Icon:	559
+	Cursor:	"Cursors.Bullseye"
+	Apply:	"View.CalloutTextTool"
+)
+
+(AVIcon.559
+	Name:	"CallOutText1"
+	Res:	"Icons.CallOutText1"
+
+)
+
+(Tool.560
+	Help:	"Выносной текст//Щелкните в Виде, укажите направление выноски текста и введите текст"
+	HelpTopic:	"Text_tool"
+	Update:	"View.TextToolUpdate"
+	Icon:	561
+	Cursor:	"Cursors.Bullseye"
+	Apply:	"View.BulletLeaderTextTool"
+)
+
+(AVIcon.561
+	Name:	"CallOutText2"
+	Res:	"Icons.CallOutText2"
+
+)
+
+(Tool.562
+	Help:	"Текст в рамке//Щелкните в  предполагаемой позиции текста и введите текст"
+	HelpTopic:	"Text_tool"
+	Update:	"View.TextToolUpdate"
+	Icon:	563
+	Cursor:	"Cursors.Bullseye"
+	Apply:	"View.ShadowBoxTextTool"
+)
+
+(AVIcon.563
+	Name:	"CallOutText3"
+	Res:	"Icons.CallOutText3"
+
+)
+
+(Tool.564
+	Help:	"Текст с оттенением//Щелкните в позиции, в которой должен выводиться текст, и введите текст"
+	HelpTopic:	"Text_tool"
+	Update:	"View.TextToolUpdate"
+	Icon:	565
+	Cursor:	"Cursors.Target"
+	Apply:	"View.CreateDropShadowText"
+)
+
+(AVIcon.565
+	Name:	"DropShadowText"
+	Res:	"Icons.DropShadowText"
+
+)
+
+(Tool.566
+	Help:	"Текст вдоль кривой//Задайте курсором кривую,  затем введите текст"
+	HelpTopic:	"Text_tool"
+	Update:	"View.TextToolUpdate"
+	Icon:	567
+	Cursor:	"Cursors.Bullseye"
+	Apply:	"View.SplineText"
+)
+
+(AVIcon.567
+	Name:	"TextAligned"
+	Res:	"Icons.TextAligned"
+
+)
+
+(ToolMenu.568
+	Help:	"Точка//Создает точку "
+	HelpTopic:	"Draw_tool"
+	Update:	"View.PointToolUpdate"
+	Icon:	569
+	Cursor:	"Cursors.CrossHair"
+	Apply:	"View.PointTool"
+	Click:	"SymWin.DisplayMarkerPanel"
+	Child:	570
+	Child:	571
+	Child:	573
+	Child:	575
+	Child:	577
+	Child:	579
+	Child:	581
+	Child:	583
+	Child:	585
+)
+
+(AVIcon.569
+	Name:	"Point"
+	Res:	"Icons.Point"
+
+)
+
+(Tool.570
+	Help:	"Точка//Создает точку "
+	HelpTopic:	"Draw_tool"
+	Update:	"View.PointToolUpdate"
+	Icon:	569
+	Cursor:	"Cursors.CrossHair"
+	Apply:	"View.PointTool"
+	Click:	"SymWin.DisplayMarkerPanel"
+)
+
+(Tool.571
+	Help:	"Прямая//Создает прямую линию "
+	HelpTopic:	"Draw_tool"
+	Update:	"View.GraphicToolUpdate"
+	Icon:	572
+	Cursor:	"Cursors.CrossHair"
+	Apply:	"View.LineTool"
+	Click:	"SymWin.DisplayPenPanel"
+)
+
+(AVIcon.572
+	Name:	"SelectLine"
+	Res:	"Icons.SelectLine"
+
+)
+
+(Tool.573
+	Help:	"Линия//Создает линию  по двум или нескольким точкам"
+	HelpTopic:	"Draw_tool"
+	Update:	"View.PolyLineToolUpdate"
+	Icon:	574
+	Cursor:	"Cursors.CrossHair"
+	Apply:	"View.PolyLineTool"
+	Click:	"SymWin.DisplayPenPanel"
+)
+
+(AVIcon.574
+	Name:	"Lines"
+	Res:	"Icons.Lines"
+
+)
+
+(Tool.575
+	Help:	"Прямоугольник//Создает прямоугольник "
+	HelpTopic:	"Draw_tool"
+	Update:	"View.PolyToolUpdate"
+	Icon:	576
+	Cursor:	"Cursors.CrossHair"
+	Apply:	"View.RectTool"
+	Click:	"SymWin.DisplayFillPanel"
+)
+
+(AVIcon.576
+	Name:	"Rect"
+	Res:	"Icons.Rect"
+
+)
+
+(Tool.577
+	Help:	"Окружность//Создает окружность  "
+	HelpTopic:	"Draw_tool"
+	Update:	"View.PolyToolUpdate"
+	Icon:	578
+	Cursor:	"Cursors.CrossHair"
+	Apply:	"View.CircleTool"
+	Click:	"SymWin.DisplayFillPanel"
+)
+
+(AVIcon.578
+	Name:	"Disk"
+	Res:	"Icons.Disk"
+
+)
+
+(Tool.579
+	Help:	"Полигон//Создает полигон "
+	HelpTopic:	"Draw_tool"
+	Update:	"View.PolyToolUpdate"
+	Icon:	580
+	Cursor:	"Cursors.CrossHair"
+	Apply:	"View.PolyTool"
+	Click:	"SymWin.DisplayFillPanel"
+)
+
+(AVIcon.580
+	Name:	"Poly"
+	Res:	"Icons.Poly"
+
+)
+
+(Tool.581
+	Disabled:	1
+	Help:	"Линия разбивки объекта//Создает линию для разбиения линейных объектов"
+	HelpTopic:	"Draw_tool"
+	Update:	"View.SplitLineToolUpdate"
+	Icon:	582
+	Cursor:	"Cursors.CrossHair"
+	Apply:	"View.SplitTool"
+)
+
+(AVIcon.582
+	Name:	"SplitLine"
+	Res:	"Icons.SplitLine"
+
+)
+
+(Tool.583
+	Disabled:	1
+	Help:	"Линия разбивки полигона//Создает линию для разбиения полигональных объектов"
+	HelpTopic:	"Draw_tool"
+	Update:	"View.SplitPolyToolUpdate"
+	Icon:	584
+	Cursor:	"Cursors.CrossHair"
+	Apply:	"View.SplitTool"
+)
+
+(AVIcon.584
+	Name:	"SplitPoly"
+	Res:	"Icons.SplitPoly"
+
+)
+
+(Tool.585
+	Disabled:	1
+	Help:	"Линия для добавления полигона//Добавляет новый полигон, примыкающий к другим полигонам"
+	HelpTopic:	"Draw_tool"
+	Update:	"View.AutoCompleteUpdate"
+	Icon:	586
+	Cursor:	"Cursors.CrossHair"
+	Apply:	"View.AutoCompleteTool"
+)
+
+(AVIcon.586
+	Name:	"AutoComplete"
+	Res:	"Icons.AutoComplete"
+
+)
+
+(ToolMenu.587
+	Disabled:	1
+	Invisible:	1
+	Help:	"Замыкание//Устанавливает режим общего замыкания для редактируемой темы"
+	HelpTopic:	"Snap_tools"
+	Update:	"View.SnapToolUpdate"
+	Icon:	588
+	Cursor:	"Cursors.Default"
+	Apply:	"View.SnapTool"
+	Child:	589
+	Child:	590
+)
+
+(AVIcon.588
+	Name:	"SnapTool"
+	Res:	"Icons.SnapTool"
+
+)
+
+(Tool.589
+	Disabled:	1
+	Invisible:	1
+	Help:	"Замыкание//Устанавливает режим общего замыкания для редактируемой темы"
+	HelpTopic:	"Snap_tools"
+	Update:	"View.SnapToolUpdate"
+	Icon:	588
+	Cursor:	"Cursors.Default"
+	Apply:	"View.SnapTool"
+)
+
+(Tool.590
+	Disabled:	1
+	Invisible:	1
+	Help:	"Замыкание//Устанавливает режим интерактивного замыкания для редактируемой темы"
+	HelpTopic:	"Snap_tools"
+	Update:	"View.InteractiveSnapToolUpdate"
+	Icon:	591
+	Cursor:	"Cursors.Default"
+	Apply:	"View.InteractiveSnapTool"
+)
+
+(AVIcon.591
+	Name:	"SnapFeatureTool"
+	Res:	"Icons.SnapFeatureTool"
+
+)
+
+(AVIcon.592
+	Name:	"Icon"
+	Res:	"View.Icon"
+
+)
+
+(FN.1184
+	Path:	"$HOME"
+)
+
+(TClr.1185
+	Red:	0xffff
+	Green:	0xffff
+)
+
+(AVStr.1186
+	S:	"View"
+)
+
+(AVStr.1187
+	S:	"Table"
+)
+
+(AVStr.1188
+	S:	"Chart"
+)
+
+(AVStr.1189
+	S:	"Layout"
+)
+
+(AVStr.1190
+	S:	"Script"
+)
+
+(AVStr.1191
+	S:	"Project"
+)
+
+(AVStr.1192
+	S:	"Appl"
+)
+

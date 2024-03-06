@@ -1,0 +1,139 @@
+/3.1
+(ODB.1
+	FirstRootClassName:	"MSrc"
+	Roots:	2
+	Version:	31
+)
+
+(MSrc.2
+	MTab:	3
+	MaxScore:	0x8ee
+	IntMaxScore:	0xe7a
+	IntDelimit:	" & "
+	DefSqueeze:	5.00000000000000
+)
+
+(MTab.3
+	Name:	"US Streets"
+	IndexFlag:	"879944570"
+	RecordLength:	82
+	IntRecLen:	84
+	MFieldList:	4
+	MFieldList:	5
+	MFieldList:	6
+	MFieldList:	7
+	MFieldList:	8
+	MIndexList:	9
+	MIndexList:	10
+	MQueryList:	11
+	MQueryList:	12
+	StanRules:	"us_addr.stn"
+	MatchRules:	"us_addr2.mat"
+	IntFieldList:	13
+	IntFieldList:	14
+	IntIndexList:	9
+	IntQueryList:	15
+	IntQueryList:	16
+	IntStanRules:	"us_intsc.stn"
+	IntMatchRules:	"us_intsc.mat"
+)
+
+(MField.4
+	FieldName:	"LeftFrom"
+	StartPos:	1
+	Width:	10
+	Required:	1
+	Justification:	2
+	VTabFieldName:	"Fromleft"
+)
+
+(MField.5
+	FieldName:	"LeftTo"
+	StartPos:	21
+	Width:	10
+	Required:	1
+	Justification:	2
+	VTabFieldName:	"Toleft"
+)
+
+(MField.6
+	FieldName:	"RightFrom"
+	StartPos:	11
+	Width:	10
+	Required:	1
+	Justification:	2
+	VTabFieldName:	"Fromright"
+)
+
+(MField.7
+	FieldName:	"RightTo"
+	StartPos:	31
+	Width:	10
+	Required:	1
+	Justification:	2
+	VTabFieldName:	"Toright"
+)
+
+(MField.8
+	FieldName:	"StreetName"
+	StartPos:	47
+	Width:	28
+	Required:	1
+	Justification:	1
+	VTabFieldName:	"Name"
+)
+
+(MIndex.9
+	IndexName:	"I1"
+	IndexType:	7
+	MatchFields:	8
+)
+
+(MIndex.10
+	IndexName:	"I2"
+	IndexType:	6
+	MatchFields:	4
+	MatchFields:	6
+	MatchFields:	5
+	MatchFields:	7
+)
+
+(MQuery.11
+	Query:	"I1 = \"%SN%\"?"
+	FieldName:	"SN"
+	Status:	1
+)
+
+(MQuery.12
+	Query:	"I2 = %HN%"
+	FieldName:	"HN"
+)
+
+(MField.13
+	FieldName:	"StreetName1"
+	StartPos:	7
+	Width:	28
+	Justification:	1
+	VTabFieldName:	"Name"
+)
+
+(MField.14
+	FieldName:	"StreetName2"
+	StartPos:	49
+	Width:	28
+	Justification:	1
+	VTabFieldName:	"Name"
+)
+
+(MQuery.15
+	Query:	"I1 = \"%S1%\"?"
+	FieldName:	"S1"
+	Status:	1
+)
+
+(MQuery.16
+	Query:	"I1 = \"%S2%\"?"
+	FieldName:	"S2"
+	Status:	1
+)
+

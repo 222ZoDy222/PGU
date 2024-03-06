@@ -1,0 +1,2 @@
+199612151829   1     0     0 f:\temp\grid3 = EucDistance(f:\temp\grid2,#,#,#)
+199612151829   0     0     0 f:\temp\hlshd2 = HILLSHADE(f:\temp\dist2,315,45,#,#)

@@ -1,0 +1,982 @@
+/3.1
+(ODB.1
+	FirstRootClassName:	"Project"
+	Roots:	2
+	Version:	31
+)
+
+(Project.2
+	Name:	"europe.apr"
+	CreationDate:	"Monday, July 19, 1999 04:14:04"
+	GUIName:	"Project"
+	Win:	3
+	CSMgr:	4
+	DocExts:	5
+	VisGUIWidth:	70
+	Doc:	6
+	ActiveDoc:	6
+	Buttons:	136
+	Buttons:	137
+	Buttons:	138
+	Scripts:	139
+	Prefs:	140
+	WorkDir:	967
+	WinX:	28
+	WinW:	712
+	WinH:	507
+	SelColor:	968
+	GUINames:	969
+	GUINames:	970
+	GUINames:	971
+	GUINames:	972
+	GUINames:	973
+	GUINames:	974
+	GUINames:	975
+	TocWidthScale:	1.00000000000000
+)
+
+(DocWin.3
+	Owner:	2
+	Open:	1
+	X:	5
+	Y:	5
+	W:	238
+	H:	317
+)
+
+(CSMgr.4
+)
+
+(DocAct.5
+	Doc:	2
+)
+
+(View.6
+	Name:	"Europe"
+	CreationDate:	"Monday, July 19, 1999 04:14:53"
+	GUIName:	"View"
+	Win:	7
+	CSMgr:	8
+	DocExts:	10
+	DocExts:	11
+	Graphics:	12
+	Theme:	19
+	Theme:	57
+	Theme:	80
+	Theme:	109
+	LastScale:	53951586.09241560100000
+	Dpy:	13
+	TOCWidth:	131
+	CoordPrecision:	2
+)
+
+(DocWin.7
+	Owner:	6
+	Open:	1
+	X:	1
+	W:	704
+	H:	383
+)
+
+(CSMgr.8
+	Client:	9
+)
+
+(CSClient.9
+	Client:	10
+	ReqName:	"ClientNfy"
+)
+
+(PanMgr.10
+	Doc:	6
+)
+
+(DocAct.11
+	Doc:	6
+)
+
+(GList.12
+	Dpy:	13
+	FormatNumb:	18
+)
+
+(MapDpy.13
+	Left:	-18.79576742614189
+	Bottom:	32.24453742426765
+	Top:	77.43278217325523
+	Right:	50.26551228457498
+	ReportUnits:	4
+	Units:	10
+	Scale:	14
+	FrameTop:	3.66666666666667
+	FrameRight:	5.81250000000000
+	PageDpy:	15
+	FitToPage:	1
+	MouseLoc:	17
+)
+
+(Numb.14
+	N:	0.08114204672110
+)
+
+(PageDpy.15
+	Top:	3.66666666666667
+	Right:	5.81250000000000
+	ReportUnits:	1
+	Units:	1
+	Scale:	16
+	ZoomRight:	5.81250000000000
+	ZoomTop:	3.66666666666667
+	GridSpacingX:	0.25000000000000
+	GridSpacingY:	0.25000000000000
+)
+
+(Numb.16
+	N:	96.00000000000000
+)
+
+(PointD.17
+	x:	-16.48742709349904
+	y:	70.24374323591630
+)
+
+(Numb.18
+)
+
+(FTheme.19
+	Name:	"Cities.shp"
+	Source:	20
+	Flags:	0x06
+	Legend:	35
+	Threshold:	54
+	View:	6
+	GSet:	55
+	LegEditScript:	"View.EditLegend"
+	TxPos:	56
+	LabelField:	25
+	SnapTolCursor:	1
+)
+
+(ShpSrc.20
+	Name:	21
+	FTab:	23
+)
+
+(SrcName.21
+	FileName:	22
+	Name:	"cities.shp"
+	SubName:	"Point"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.22
+	Path:	"europe/cities.shp"
+)
+
+(FTab.23
+	Name:	"cities.dbf"
+	BTab:	24
+	Fields:	33
+	Fields:	25
+	Fields:	26
+	Fields:	27
+	Fields:	28
+	Fields:	29
+	Fields:	30
+	Fields:	31
+	SelBits:	34
+	FSrc:	20
+)
+
+(dBASE.24
+	Name:	"cities.dbf"
+	Fields:	25
+	Fields:	26
+	Fields:	27
+	Fields:	28
+	Fields:	29
+	Fields:	30
+	Fields:	31
+	FileName:	32
+)
+
+(Field.25
+	Name:	"City_name"
+	Btab:	24
+	Alias:	"City_name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(Field.26
+	Name:	"Admin_name"
+	Btab:	24
+	Alias:	"Admin_name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(Field.27
+	Name:	"Cntry_name"
+	Btab:	24
+	Alias:	"Cntry_name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(Field.28
+	Name:	"Status"
+	Btab:	24
+	Alias:	"Status"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(Field.29
+	Name:	"Pop_rank"
+	Btab:	24
+	Alias:	"Pop_rank"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.30
+	Name:	"Pop_class"
+	Btab:	24
+	Alias:	"Pop_class"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(Field.31
+	Name:	"Port_id"
+	Btab:	24
+	Alias:	"Port_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(FN.32
+	Path:	"europe/cities.dbf"
+)
+
+(Field.33
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	17
+	Order:	-1
+)
+
+(Bitmap.34
+	NumBits:	605
+
+)
+
+(Legend.35
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	36
+	Class:	44
+	StdDevs:	1.00000000000000
+	NullSym:	45
+	NullValues:	52
+	StatValues:	53
+	Precision:	-3
+)
+
+(SymList.36
+	Child:	37
+)
+
+(BMkSym.37
+	Color:	38
+	BgColor:	39
+	Font:	40
+	Size:	6.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.38
+)
+
+(TClr.39
+	Name:	"Transparent"
+)
+
+(NFont.40
+	Family:	41
+	Name:	42
+	Style:	43
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.41
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.42
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.43
+	S:	"Normal"
+)
+
+(LClass.44
+	IsText:	1
+	Precision:	-3
+)
+
+(BMkSym.45
+	Color:	46
+	BgColor:	47
+	Font:	48
+	Size:	8.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.46
+	Name:	"Transparent"
+)
+
+(TClr.47
+	Name:	"Transparent"
+)
+
+(NFont.48
+	Family:	49
+	Name:	50
+	Style:	51
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.49
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.50
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.51
+	S:	"Normal"
+)
+
+(NameDict.52
+)
+
+(NameDict.53
+)
+
+(Thresh.54
+)
+
+(GSet.55
+)
+
+(TxPosPt.56
+	HAlign:	4
+	VAlign:	3
+)
+
+(FTheme.57
+	Name:	"Mjrivers.shp"
+	Source:	58
+	Flags:	0x06
+	Legend:	67
+	Threshold:	76
+	View:	6
+	GSet:	77
+	LegEditScript:	"View.EditLegend"
+	TxPos:	78
+	LabelField:	63
+	AttrRules:	79
+	SnapTolCursor:	1
+)
+
+(ShpSrc.58
+	Name:	59
+	FTab:	61
+)
+
+(SrcName.59
+	FileName:	60
+	Name:	"mjrivers.shp"
+	SubName:	"Arc"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.60
+	Path:	"europe/mjrivers.shp"
+)
+
+(FTab.61
+	Name:	"mjrivers.dbf"
+	BTab:	62
+	Fields:	65
+	Fields:	63
+	SelBits:	66
+	FSrc:	58
+)
+
+(dBASE.62
+	Name:	"mjrivers.dbf"
+	Fields:	63
+	FileName:	64
+)
+
+(Field.63
+	Name:	"Name"
+	Btab:	62
+	Alias:	"Name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(FN.64
+	Path:	"europe/mjrivers.dbf"
+)
+
+(Field.65
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	18
+	Order:	-1
+)
+
+(Bitmap.66
+	NumBits:	367
+
+)
+
+(Legend.67
+	SymType:	0x01
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	68
+	Class:	71
+	StdDevs:	1.00000000000000
+	NullSym:	72
+	NullValues:	74
+	StatValues:	75
+	Precision:	-3
+)
+
+(SymList.68
+	Child:	69
+)
+
+(BLnSym.69
+	Color:	70
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.70
+	Red:	0xfe
+	Green:	0x820c
+	Blue:	0xff00
+)
+
+(LClass.71
+	IsText:	1
+	Precision:	-3
+)
+
+(BLnSym.72
+	Color:	73
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.73
+	Name:	"Transparent"
+)
+
+(NameDict.74
+)
+
+(NameDict.75
+)
+
+(Thresh.76
+)
+
+(GSet.77
+)
+
+(TxPosArc.78
+	HAlign:	3
+	VAlign:	1
+)
+
+(AttrSingle.79
+	FTab:	61
+	Field:	63
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(FTheme.80
+	Name:	"Mjurban.shp"
+	Source:	81
+	Flags:	0x06
+	Legend:	91
+	Threshold:	104
+	View:	6
+	GSet:	105
+	LegEditScript:	"View.EditLegend"
+	TxPos:	106
+	LabelField:	87
+	AttrRules:	107
+	AttrRules:	108
+	SnapTolCursor:	1
+)
+
+(ShpSrc.81
+	Name:	82
+	FTab:	84
+)
+
+(SrcName.82
+	FileName:	83
+	Name:	"mjurban.shp"
+	SubName:	"Polygon"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.83
+	Path:	"europe/mjurban.shp"
+)
+
+(FTab.84
+	Name:	"mjurban.dbf"
+	BTab:	85
+	Fields:	89
+	Fields:	86
+	Fields:	87
+	SelBits:	90
+	FSrc:	81
+)
+
+(dBASE.85
+	Name:	"mjurban.dbf"
+	Fields:	86
+	Fields:	87
+	FileName:	88
+)
+
+(Field.86
+	Name:	"Type_desc"
+	Btab:	85
+	Alias:	"Type_desc"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(Field.87
+	Name:	"Name"
+	Btab:	85
+	Alias:	"Name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(FN.88
+	Path:	"europe/mjurban.dbf"
+)
+
+(Field.89
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	19
+	Order:	-1
+)
+
+(Bitmap.90
+	NumBits:	5832
+
+)
+
+(Legend.91
+	SymType:	0x02
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	92
+	Class:	97
+	StdDevs:	1.00000000000000
+	NullSym:	98
+	NullValues:	102
+	StatValues:	103
+	Precision:	-3
+)
+
+(SymList.92
+	Child:	93
+)
+
+(BShSym.93
+	Color:	94
+	Outline:	1
+	OutlineColor:	95
+	OutlineWidth:	0.10000000000000
+	BgColor:	96
+)
+
+(TClr.94
+	Red:	0xf7f6
+	Green:	0xa559
+	Blue:	0xff00
+)
+
+(TClr.95
+)
+
+(TClr.96
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(LClass.97
+	IsText:	1
+	Precision:	-3
+)
+
+(BShSym.98
+	Color:	99
+	Outline:	1
+	OutlineColor:	100
+	OutlineWidth:	0.10000000000000
+	BgColor:	101
+)
+
+(TClr.99
+	Name:	"Transparent"
+)
+
+(TClr.100
+	Name:	"Transparent"
+)
+
+(TClr.101
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NameDict.102
+)
+
+(NameDict.103
+)
+
+(Thresh.104
+)
+
+(GSet.105
+)
+
+(TxPosPly.106
+	HAlign:	3
+	VAlign:	3
+)
+
+(AttrSingle.107
+	FTab:	84
+	Field:	86
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.108
+	FTab:	84
+	Field:	87
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(FTheme.109
+	Name:	"Country.shp"
+	Source:	110
+	Flags:	0x06
+	Legend:	119
+	Threshold:	132
+	View:	6
+	GSet:	133
+	LegEditScript:	"View.EditLegend"
+	TxPos:	134
+	LabelField:	115
+	AttrRules:	135
+	SnapTolCursor:	1
+)
+
+(ShpSrc.110
+	Name:	111
+	FTab:	113
+)
+
+(SrcName.111
+	FileName:	112
+	Name:	"country.shp"
+	SubName:	"Polygon"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.112
+	Path:	"europe/country.shp"
+)
+
+(FTab.113
+	Name:	"country.dbf"
+	BTab:	114
+	Fields:	117
+	Fields:	115
+	SelBits:	118
+	FSrc:	110
+)
+
+(dBASE.114
+	Name:	"country.dbf"
+	Fields:	115
+	FileName:	116
+)
+
+(Field.115
+	Name:	"Name"
+	Btab:	114
+	Alias:	"Name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(FN.116
+	Path:	"europe/country.dbf"
+)
+
+(Field.117
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	19
+	Order:	-1
+)
+
+(Bitmap.118
+	NumBits:	54
+
+)
+
+(Legend.119
+	SymType:	0x02
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	120
+	Class:	125
+	StdDevs:	1.00000000000000
+	NullSym:	126
+	NullValues:	130
+	StatValues:	131
+	Precision:	-3
+)
+
+(SymList.120
+	Child:	121
+)
+
+(BShSym.121
+	Color:	122
+	Outline:	1
+	OutlineColor:	123
+	OutlineWidth:	0.10000000000000
+	BgColor:	124
+)
+
+(TClr.122
+	Red:	0xff00
+	Green:	0xfb42
+	Blue:	0xc33b
+)
+
+(TClr.123
+)
+
+(TClr.124
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(LClass.125
+	IsText:	1
+	Precision:	-3
+)
+
+(BShSym.126
+	Color:	127
+	Outline:	1
+	OutlineColor:	128
+	OutlineWidth:	0.10000000000000
+	BgColor:	129
+)
+
+(TClr.127
+	Name:	"Transparent"
+)
+
+(TClr.128
+	Name:	"Transparent"
+)
+
+(TClr.129
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NameDict.130
+)
+
+(NameDict.131
+)
+
+(Thresh.132
+)
+
+(GSet.133
+)
+
+(TxPosPly.134
+	HAlign:	3
+	VAlign:	3
+)
+
+(AttrSingle.135
+	FTab:	113
+	Field:	115
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(LButn.136
+	HelpTopic:	"New_button"
+	Update:	"Doc.NewUpdate"
+	Label:	"&New"
+	Click:	"View.New"
+)
+
+(LButn.137
+	HelpTopic:	"Open_button"
+	Update:	"Doc.OpenUpdate"
+	Label:	"&Open"
+	Click:	"Doc.Open"
+)
+
+(LButn.138
+	HelpTopic:	"Print_button"
+	Update:	"Doc.ActionUpdate"
+	Label:	"P&rint"
+	Click:	"Doc.Action"
+)
+
+(NameDict.139
+)
+
+(NameDict.140
+	Obj:	141
+	Obj:	142
+)
+
+(AVDict.141
+	InternalName:	"Table of Contents Defaults Dialog"
+)
+
+(AVDict.142
+	InternalName:	"_Thor_"
+)
+
+(FN.967
+	Path:	"$HOME"
+)
+
+(TClr.968
+	Red:	0xffff
+	Green:	0xffff
+)
+
+(AVStr.969
+	S:	"View"
+)
+
+(AVStr.970
+	S:	"Table"
+)
+
+(AVStr.971
+	S:	"Chart"
+)
+
+(AVStr.972
+	S:	"Layout"
+)
+
+(AVStr.973
+	S:	"Script"
+)
+
+(AVStr.974
+	S:	"Project"
+)
+
+(AVStr.975
+	S:	"Appl"
+)
+

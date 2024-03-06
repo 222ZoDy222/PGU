@@ -1,0 +1,45 @@
+/3.2
+(ODB.1
+	FirstRootClassName:	"MSrc"
+	Roots:	2
+	Version:	32
+)
+
+(MSrc.2
+	MTab:	3
+	MaxScore:	0x28a
+	DefOffset:	-1.00000000000000
+)
+
+(MTab.3
+	Name:	"5-Digit ZIP"
+	IndexFlag:	"930612624"
+	RecordLength:	10
+	MFieldList:	4
+	MIndexList:	5
+	MQueryList:	6
+	StanRules:	"zip.stn"
+	MatchRules:	"zip.mat"
+)
+
+(MField.4
+	FieldName:	"ZIP"
+	StartPos:	1
+	Width:	10
+	Required:	1
+	Justification:	1
+	VTabFieldName:	"Zip"
+)
+
+(MIndex.5
+	IndexName:	"I1"
+	IndexType:	2
+	MatchFields:	4
+)
+
+(MQuery.6
+	Query:	"I1 = \"%ZP%\"?"
+	FieldName:	"ZP"
+	Status:	1
+)
+

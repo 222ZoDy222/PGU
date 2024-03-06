@@ -1,0 +1,3397 @@
+/3.1
+(ODB.1
+	FirstRootClassName:	"Project"
+	Roots:	2
+	Version:	31
+)
+
+(Project.2
+	Name:	"mosobl.apr"
+	CreationDate:	"Tuesday, December 19, 1995 02:55:45"
+	GUIName:	"Project"
+	Win:	3
+	CSMgr:	4
+	DocExts:	5
+	VisGUIWidth:	70
+	Doc:	6
+	Doc:	10
+	Doc:	24
+	Buttons:	429
+	Buttons:	430
+	Buttons:	431
+	Scripts:	432
+	Prefs:	433
+	WorkDir:	1286
+	WinX:	10
+	WinY:	65
+	WinW:	829
+	WinH:	615
+	StartUp:	"conv"
+	SerialNumber:	"684791100494"
+	SelColor:	1287
+	GUINames:	1288
+	GUINames:	1289
+	GUINames:	1290
+	GUINames:	1291
+	GUINames:	1292
+	GUINames:	1293
+	GUINames:	1294
+	TocWidthScale:	1.00000000000000
+)
+
+(DocWin.3
+	Owner:	2
+	Open:	1
+	X:	5
+	Y:	3
+	W:	303
+	H:	398
+)
+
+(CSMgr.4
+)
+
+(DocAct.5
+	Doc:	2
+)
+
+(SEd.6
+	Name:	"conv"
+	CreationDate:	"Saturday, December 23, 1995 04:40:18"
+	GUIName:	"Script"
+	Win:	7
+	CSMgr:	8
+	DocExts:	9
+	Source:	"av.SetCodePageConvert(True)"
+)
+
+(DocWin.7
+	Owner:	6
+	X:	65
+	Y:	65
+	W:	363
+	H:	254
+)
+
+(CSMgr.8
+)
+
+(DocAct.9
+	Doc:	6
+)
+
+(Layout.10
+	Name:	"Layout1"
+	CreationDate:	"09 Апрель 1997 г. 13:46:55"
+	GUIName:	"Layout"
+	Win:	11
+	CSMgr:	12
+	DocExts:	14
+	DocExts:	15
+	Graphics:	16
+	Dpy:	424
+)
+
+(DocWin.11
+	Owner:	10
+	X:	-2
+	Y:	1
+	W:	676
+	H:	576
+)
+
+(CSMgr.12
+	Client:	13
+)
+
+(CSClient.13
+	Client:	14
+	ReqName:	"ClientNfy"
+)
+
+(PanMgr.14
+	Doc:	10
+)
+
+(DocAct.15
+	Doc:	10
+)
+
+(GList.16
+	Child:	17
+	Dpy:	424
+	FormatNumb:	428
+)
+
+(GView.17
+	Name:	"ViewFrame1"
+	Bounds:	18
+	Sym:	19
+	Selected:	0x01
+	Flags:	0x01
+	UserBounds:	23
+	Refresh:	2
+	Quality:	1
+	View:	24
+	LiveLink:	1
+	PreserveScale:	1
+	MapDpy:	422
+	CSMgr:	427
+)
+
+(RectD.18
+	Left:	744.40499999999997
+	Top:	753.61500000000001
+	Right:	755.40499999999997
+	Bottom:	746.11500000000001
+)
+
+(BShSym.19
+	Color:	20
+	OutlineColor:	21
+	BgColor:	22
+	Style:	0x01
+)
+
+(TClr.20
+)
+
+(TClr.21
+)
+
+(TClr.22
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(RectD.23
+	Left:	744.40499999999997
+	Top:	753.61500000000001
+	Right:	755.40499999999997
+	Bottom:	746.11500000000001
+)
+
+(View.24
+	Name:	"Московская область"
+	CreationDate:	"Saturday, December 23, 1995 04:27:22"
+	GUIName:	"View"
+	Win:	25
+	CSMgr:	26
+	DocExts:	29
+	DocExts:	30
+	Graphics:	31
+	Theme:	38
+	Theme:	68
+	Theme:	114
+	Theme:	156
+	Theme:	191
+	Theme:	245
+	Theme:	282
+	Theme:	328
+	Theme:	369
+	Projection:	420
+	LastScale:	2984039.67511363890000
+	Dpy:	32
+	TOCWidth:	240
+	CoordPrecision:	2
+)
+
+(DocWin.25
+	Owner:	24
+	Open:	1
+	X:	46
+	Y:	3
+	W:	693
+	H:	440
+)
+
+(CSMgr.26
+	Client:	27
+	Client:	28
+)
+
+(CSClient.27
+	Client:	17
+	ReqName:	"ViewChangedCB"
+)
+
+(CSClient.28
+	Client:	29
+	ReqName:	"ClientNfy"
+)
+
+(PanMgr.29
+	Doc:	24
+)
+
+(DocAct.30
+	Doc:	24
+)
+
+(GList.31
+	Dpy:	32
+	FormatNumb:	37
+)
+
+(MapDpy.32
+	Left:	372084.40967091586000
+	Bottom:	5996716.92770534010000
+	Top:	6310731.51081330790000
+	Right:	717897.99914782669000
+	ReportUnits:	8
+	Units:	7
+	Scale:	33
+	FrameTop:	4.26041666666667
+	FrameRight:	4.56250000000000
+	PageDpy:	34
+	FitToPage:	1
+	MouseLoc:	36
+)
+
+(Numb.33
+	N:	0.00001319352431
+)
+
+(PageDpy.34
+	Top:	4.26041666666667
+	Right:	4.56250000000000
+	ReportUnits:	1
+	Units:	1
+	Scale:	35
+	ZoomRight:	4.56250000000000
+	ZoomTop:	4.26041666666667
+	GridSpacingX:	0.25000000000000
+	GridSpacingY:	0.25000000000000
+)
+
+(Numb.35
+	N:	96.00000000000000
+)
+
+(PointD.36
+	x:	386295.92704667931000
+	y:	6297813.21487470340000
+)
+
+(Numb.37
+)
+
+(FTheme.38
+	Name:	"Координатная сетка"
+	Source:	39
+	Flags:	0x06
+	Legend:	56
+	Threshold:	65
+	View:	24
+	GSet:	66
+	LegEditScript:	"View.EditLegend"
+	TxPos:	67
+	SnapTolCursor:	1
+)
+
+(ShpSrc.39
+	Name:	40
+	FTab:	42
+)
+
+(SrcName.40
+	FileName:	41
+	Name:	"mogrid.shp"
+	SubName:	"Arc"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.41
+	Path:	"mogrid.shp"
+)
+
+(FTab.42
+	Name:	"mogrid.dbf"
+	BTab:	43
+	Fields:	54
+	Fields:	44
+	Fields:	45
+	Fields:	46
+	Fields:	47
+	Fields:	48
+	Fields:	49
+	Fields:	50
+	Fields:	51
+	Fields:	52
+	SelBits:	55
+	FSrc:	39
+)
+
+(dBASE.43
+	Name:	"mogrid.dbf"
+	Fields:	44
+	Fields:	45
+	Fields:	46
+	Fields:	47
+	Fields:	48
+	Fields:	49
+	Fields:	50
+	Fields:	51
+	Fields:	52
+	FileName:	53
+)
+
+(Field.44
+	Name:	"Fnode_"
+	Btab:	43
+	Alias:	"Fnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	93
+)
+
+(Field.45
+	Name:	"Tnode_"
+	Btab:	43
+	Alias:	"Tnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	93
+)
+
+(Field.46
+	Name:	"Lpoly_"
+	Btab:	43
+	Alias:	"Lpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	93
+)
+
+(Field.47
+	Name:	"Rpoly_"
+	Btab:	43
+	Alias:	"Rpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	93
+)
+
+(Field.48
+	Name:	"Length"
+	Btab:	43
+	Alias:	"Length"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	109
+)
+
+(Field.49
+	Name:	"Mogrid_"
+	Btab:	43
+	Alias:	"Mogrid_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	93
+)
+
+(Field.50
+	Name:	"Mogrid_id"
+	Btab:	43
+	Alias:	"Mogrid_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	93
+)
+
+(Field.51
+	Name:	"Long"
+	Btab:	43
+	Alias:	"Long"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	37
+)
+
+(Field.52
+	Name:	"Latit"
+	Btab:	43
+	Alias:	"Latit"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	37
+)
+
+(FN.53
+	Path:	"mogrid.dbf"
+)
+
+(Field.54
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	18
+	Order:	-1
+	Pixels:	77
+)
+
+(Bitmap.55
+	NumBits:	149
+
+)
+
+(Legend.56
+	SymType:	0x01
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	57
+	Class:	60
+	StdDevs:	1.00000000000000
+	NullSym:	61
+	NullValues:	63
+	StatValues:	64
+	Precision:	-3
+)
+
+(SymList.57
+	Child:	58
+)
+
+(BLnSym.58
+	Color:	59
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.59
+	Red:	0xa5a5
+	Green:	0xa5a5
+	Blue:	0xa5a5
+)
+
+(LClass.60
+	IsText:	1
+	Precision:	-3
+)
+
+(BLnSym.61
+	Color:	62
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.62
+	Name:	"Transparent"
+)
+
+(NameDict.63
+)
+
+(NameDict.64
+)
+
+(Thresh.65
+)
+
+(GSet.66
+)
+
+(TxPosArc.67
+	HAlign:	3
+	VAlign:	1
+)
+
+(FTheme.68
+	Name:	"Мелкие поселения"
+	Source:	69
+	Flags:	0x04
+	Legend:	81
+	Threshold:	111
+	View:	24
+	GSet:	112
+	LegEditScript:	"View.EditLegend"
+	TxPos:	113
+	LabelField:	75
+)
+
+(ShpSrc.69
+	Name:	70
+	FTab:	72
+)
+
+(SrcName.70
+	FileName:	71
+	Name:	"movil.shp"
+	SubName:	"Point"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.71
+	Path:	"movil.shp"
+)
+
+(FTab.72
+	Name:	"movilages.dbf"
+	BTab:	73
+	Query:	"( [Pop_96] > 100 )"
+	Fields:	79
+	Fields:	74
+	Fields:	75
+	Fields:	76
+	Fields:	77
+	SelBits:	80
+	FSrc:	69
+)
+
+(dBASE.73
+	Name:	"movilages.dbf"
+	Fields:	74
+	Fields:	75
+	Fields:	76
+	Fields:	77
+	FileName:	78
+)
+
+(Field.74
+	Name:	"Vilall_id"
+	Btab:	73
+	Alias:	"Vilall_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	93
+)
+
+(Field.75
+	Name:	"Vil_name"
+	Btab:	73
+	Alias:	"Vil_name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(Field.76
+	Name:	"Reg"
+	Btab:	73
+	Alias:	"Reg"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(Field.77
+	Name:	"Pop_96"
+	Btab:	73
+	Alias:	"Pop_96"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	69
+)
+
+(FN.78
+	Path:	"movil.dbf"
+)
+
+(Field.79
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	17
+	Order:	-1
+	Pixels:	41
+)
+
+(Bitmap.80
+	NumBits:	2129
+
+)
+
+(Legend.81
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	82
+	Class:	101
+	StdDevs:	1.00000000000000
+	NullSym:	102
+	NullValues:	109
+	StatValues:	110
+	Precision:	-3
+)
+
+(SymList.82
+	Child:	83
+)
+
+(CMkSym.83
+	Color:	84
+	Symbols:	85
+	BgColor:	100
+	Size:	5.00000000000000
+)
+
+(TClr.84
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(SymList.85
+	Child:	86
+	Child:	93
+)
+
+(BMkSym.86
+	Color:	87
+	BgColor:	88
+	Font:	89
+	Size:	5.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.87
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(TClr.88
+	Name:	"Transparent"
+)
+
+(NFont.89
+	Family:	90
+	Name:	91
+	Style:	92
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.90
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.91
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.92
+	S:	"Normal"
+)
+
+(BMkSym.93
+	Color:	94
+	ColorLock:	1
+	BgColor:	95
+	Font:	96
+	Size:	5.00000000000000
+	Pattern:	89
+	Angle:	360.00000000000000
+)
+
+(TClr.94
+)
+
+(TClr.95
+	Name:	"Transparent"
+)
+
+(NFont.96
+	Family:	97
+	Name:	98
+	Style:	99
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.97
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.98
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.99
+	S:	"Normal"
+)
+
+(TClr.100
+	Name:	"Transparent"
+)
+
+(LClass.101
+	IsText:	1
+	Precision:	-3
+)
+
+(BMkSym.102
+	Color:	103
+	BgColor:	104
+	Font:	105
+	Size:	8.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.103
+	Name:	"Transparent"
+)
+
+(TClr.104
+	Name:	"Transparent"
+)
+
+(NFont.105
+	Family:	106
+	Name:	107
+	Style:	108
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.106
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.107
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.108
+	S:	"Normal"
+)
+
+(NameDict.109
+)
+
+(NameDict.110
+)
+
+(Thresh.111
+)
+
+(GSet.112
+)
+
+(TxPosPt.113
+	HAlign:	4
+	VAlign:	3
+)
+
+(FTheme.114
+	Name:	"Районы"
+	Source:	115
+	Flags:	0x06
+	Legend:	131
+	Threshold:	145
+	View:	24
+	GSet:	146
+	LegEditScript:	"View.EditLegend"
+	TxPos:	147
+	LabelField:	124
+	InteractiveSnapping:	1
+	InteractiveSnapTol:	0.00139568939373
+	AttrRules:	148
+	AttrRules:	149
+	AttrRules:	150
+	AttrRules:	151
+	AttrRules:	152
+	AttrRules:	153
+	AttrRules:	154
+	AttrRules:	155
+)
+
+(ShpSrc.115
+	Name:	116
+	FTab:	118
+	Snapping:	1
+	SnapTol:	0.00123899707120
+)
+
+(SrcName.116
+	FileName:	117
+	Name:	"moregion.shp"
+	SubName:	"Polygon"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.117
+	Path:	"moregion.shp"
+)
+
+(FTab.118
+	Name:	"moregion.dbf"
+	BTab:	119
+	Fields:	129
+	Fields:	120
+	Fields:	121
+	Fields:	122
+	Fields:	123
+	Fields:	124
+	Fields:	125
+	Fields:	126
+	Fields:	127
+	SelBits:	130
+	FSrc:	115
+)
+
+(dBASE.119
+	Name:	"moregion.dbf"
+	Fields:	120
+	Fields:	121
+	Fields:	122
+	Fields:	123
+	Fields:	124
+	Fields:	125
+	Fields:	126
+	Fields:	127
+	FileName:	128
+)
+
+(Field.120
+	Name:	"Area"
+	Btab:	119
+	Alias:	"Area"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	83
+)
+
+(Field.121
+	Name:	"Perimeter"
+	Btab:	119
+	Alias:	"Perimeter"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	83
+)
+
+(Field.122
+	Name:	"Moadmdd_"
+	Btab:	119
+	Alias:	"Moadmdd_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.123
+	Name:	"Moadmdd_id"
+	Btab:	119
+	Alias:	"Moadmdd_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.124
+	Name:	"Name"
+	Btab:	119
+	Alias:	"Name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(Field.125
+	Name:	"Center"
+	Btab:	119
+	Alias:	"Center"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	125
+)
+
+(Field.126
+	Name:	"SOATO"
+	Btab:	119
+	Alias:	"SOATO"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	42
+)
+
+(Field.127
+	Name:	"Cq_km"
+	Btab:	119
+	Alias:	"Cq_km"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	53
+)
+
+(FN.128
+	Path:	"moregion.dbf"
+)
+
+(Field.129
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	19
+	Order:	-1
+	Pixels:	53
+)
+
+(Bitmap.130
+	NumBits:	44
+	Bits:	00000000 00000000 
+)
+
+(Legend.131
+	SymType:	0x02
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	132
+	Class:	138
+	StdDevs:	1.00000000000000
+	NullSym:	139
+	NullValues:	143
+	StatValues:	144
+	Precision:	-3
+)
+
+(SymList.132
+	Child:	133
+)
+
+(BShSym.133
+	Color:	134
+	Outline:	1
+	OutlineColor:	135
+	OutlineWidth:	1.00000000000000
+	BgColor:	136
+	Style:	0x01
+	Stipple:	137
+)
+
+(TClr.134
+	Red:	0xffff
+	Blue:	0xffff
+)
+
+(TClr.135
+)
+
+(TClr.136
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(Stipple.137
+	Columns:	8
+	Rows:	8
+	Bits:	00000000 00000000 
+)
+
+(LClass.138
+	IsText:	1
+	Precision:	-3
+)
+
+(BShSym.139
+	Color:	140
+	Outline:	1
+	OutlineColor:	141
+	BgColor:	142
+)
+
+(TClr.140
+	Name:	"Transparent"
+)
+
+(TClr.141
+	Name:	"Transparent"
+)
+
+(TClr.142
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NameDict.143
+)
+
+(NameDict.144
+)
+
+(Thresh.145
+)
+
+(GSet.146
+)
+
+(TxPosPly.147
+	HAlign:	3
+	VAlign:	3
+)
+
+(AttrSingle.148
+	FTab:	118
+	Field:	120
+	UnionRule:	5
+	SplitRule:	3
+)
+
+(AttrSingle.149
+	FTab:	118
+	Field:	121
+	UnionRule:	6
+	SplitRule:	4
+)
+
+(AttrSingle.150
+	FTab:	118
+	Field:	122
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.151
+	FTab:	118
+	Field:	123
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.152
+	FTab:	118
+	Field:	124
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.153
+	FTab:	118
+	Field:	125
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.154
+	FTab:	118
+	Field:	126
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.155
+	FTab:	118
+	Field:	127
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(FTheme.156
+	Name:	"Железные дороги"
+	Source:	157
+	Flags:	0x04
+	Legend:	172
+	Threshold:	181
+	View:	24
+	GSet:	182
+	LegEditScript:	"View.EditLegend"
+	TxPos:	183
+	AttrRules:	184
+	AttrRules:	185
+	AttrRules:	186
+	AttrRules:	187
+	AttrRules:	188
+	AttrRules:	189
+	AttrRules:	190
+)
+
+(ShpSrc.157
+	Name:	158
+	FTab:	160
+)
+
+(SrcName.158
+	FileName:	159
+	Name:	"morways.shp"
+	SubName:	"Arc"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.159
+	Path:	"morways.shp"
+)
+
+(FTab.160
+	Name:	"morways.dbf"
+	BTab:	161
+	Fields:	170
+	Fields:	162
+	Fields:	163
+	Fields:	164
+	Fields:	165
+	Fields:	166
+	Fields:	167
+	Fields:	168
+	SelBits:	171
+	FSrc:	157
+)
+
+(dBASE.161
+	Name:	"morways.dbf"
+	Fields:	162
+	Fields:	163
+	Fields:	164
+	Fields:	165
+	Fields:	166
+	Fields:	167
+	Fields:	168
+	FileName:	169
+)
+
+(Field.162
+	Name:	"Fnode_"
+	Btab:	161
+	Alias:	"Fnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.163
+	Name:	"Tnode_"
+	Btab:	161
+	Alias:	"Tnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.164
+	Name:	"Lpoly_"
+	Btab:	161
+	Alias:	"Lpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.165
+	Name:	"Rpoly_"
+	Btab:	161
+	Alias:	"Rpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.166
+	Name:	"Length"
+	Btab:	161
+	Alias:	"Length"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	83
+)
+
+(Field.167
+	Name:	"Morwdd_"
+	Btab:	161
+	Alias:	"Morwdd_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.168
+	Name:	"Morwdd_id"
+	Btab:	161
+	Alias:	"Morwdd_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(FN.169
+	Path:	"morways.dbf"
+)
+
+(Field.170
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	18
+	Order:	-1
+	Pixels:	59
+)
+
+(Bitmap.171
+	NumBits:	697
+
+)
+
+(Legend.172
+	SymType:	0x01
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	173
+	Class:	176
+	StdDevs:	1.00000000000000
+	NullSym:	177
+	NullValues:	179
+	StatValues:	180
+	Precision:	-3
+)
+
+(SymList.173
+	Child:	174
+)
+
+(BLnSym.174
+	Color:	175
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.175
+)
+
+(LClass.176
+	IsText:	1
+	Precision:	-3
+)
+
+(BLnSym.177
+	Color:	178
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.178
+	Name:	"Transparent"
+)
+
+(NameDict.179
+)
+
+(NameDict.180
+)
+
+(Thresh.181
+)
+
+(GSet.182
+)
+
+(TxPosArc.183
+	HAlign:	3
+	VAlign:	1
+)
+
+(AttrSingle.184
+	FTab:	160
+	Field:	162
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.185
+	FTab:	160
+	Field:	163
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.186
+	FTab:	160
+	Field:	164
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.187
+	FTab:	160
+	Field:	165
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.188
+	FTab:	160
+	Field:	166
+	UnionRule:	6
+	SplitRule:	4
+)
+
+(AttrSingle.189
+	FTab:	160
+	Field:	167
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.190
+	FTab:	160
+	Field:	168
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(FTheme.191
+	Name:	"Автомобильные дороги"
+	Source:	192
+	Flags:	0x06
+	Legend:	210
+	Threshold:	232
+	View:	24
+	GSet:	233
+	LegEditScript:	"View.EditLegend"
+	TxPos:	234
+	LabelField:	198
+	AttrRules:	235
+	AttrRules:	236
+	AttrRules:	237
+	AttrRules:	238
+	AttrRules:	239
+	AttrRules:	240
+	AttrRules:	241
+	AttrRules:	242
+	AttrRules:	243
+	AttrRules:	244
+)
+
+(ShpSrc.192
+	Name:	193
+	FTab:	195
+)
+
+(SrcName.193
+	FileName:	194
+	Name:	"moroads.shp"
+	SubName:	"Arc"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.194
+	Path:	"moroads.shp"
+)
+
+(FTab.195
+	Name:	"moroads.dbf"
+	BTab:	196
+	Fields:	208
+	Fields:	200
+	Fields:	201
+	Fields:	202
+	Fields:	203
+	Fields:	204
+	Fields:	205
+	Fields:	206
+	Fields:	197
+	Fields:	198
+	Fields:	199
+	SelBits:	209
+	FSrc:	192
+)
+
+(dBASE.196
+	Name:	"moroads.dbf"
+	Fields:	197
+	Fields:	198
+	Fields:	199
+	Fields:	200
+	Fields:	201
+	Fields:	202
+	Fields:	203
+	Fields:	204
+	Fields:	205
+	Fields:	206
+	FileName:	207
+)
+
+(Field.197
+	Name:	"Type"
+	Btab:	196
+	Alias:	"Type"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	29
+)
+
+(Field.198
+	Name:	"Number"
+	Btab:	196
+	Alias:	"Number"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	42
+)
+
+(Field.199
+	Name:	"Status"
+	Btab:	196
+	Alias:	"Status"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	35
+)
+
+(Field.200
+	Name:	"Fnode_"
+	Btab:	196
+	Alias:	"Fnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.201
+	Name:	"Tnode_"
+	Btab:	196
+	Alias:	"Tnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.202
+	Name:	"Lpoly_"
+	Btab:	196
+	Alias:	"Lpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.203
+	Name:	"Rpoly_"
+	Btab:	196
+	Alias:	"Rpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.204
+	Name:	"Length"
+	Btab:	196
+	Alias:	"Length"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	83
+)
+
+(Field.205
+	Name:	"Moroads_"
+	Btab:	196
+	Alias:	"Moroads_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.206
+	Name:	"Moroads_id"
+	Btab:	196
+	Alias:	"Moroads_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(FN.207
+	Path:	"moroads.dbf"
+)
+
+(Field.208
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	18
+	Order:	-1
+	Pixels:	59
+)
+
+(Bitmap.209
+	NumBits:	2874
+
+)
+
+(Legend.210
+	SymType:	0x01
+	LegType:	0x08
+	ClassType:	0x03
+	FieldNames:	211
+	Symbols:	212
+	Class:	223
+	Class:	224
+	Class:	225
+	Class:	226
+	Class:	227
+	StdDevs:	1.00000000000000
+	NullSym:	228
+	NullValues:	230
+	StatValues:	231
+	Precision:	-3
+)
+
+(AVStr.211
+	S:	"Status"
+)
+
+(SymList.212
+	Child:	213
+	Child:	215
+	Child:	217
+	Child:	219
+	Child:	221
+)
+
+(BLnSym.213
+	Color:	214
+	Width:	1.50000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.214
+	Red:	0xffff
+)
+
+(BLnSym.215
+	Color:	216
+	Width:	1.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.216
+	Red:	0xffff
+)
+
+(BLnSym.217
+	Color:	218
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.218
+	Red:	0xffff
+	Blue:	0xffff
+)
+
+(BLnSym.219
+	Color:	220
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.220
+	Red:	0xf7f6
+	Green:	0xa559
+	Blue:	0xff00
+)
+
+(BLnSym.221
+	Color:	222
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.222
+	Name:	"Transparent"
+)
+
+(LClass.223
+	Label:	"магистральные гос. значения"
+	MinNum:	1.00000000000000
+	MaxNum:	1.00000000000000
+	Precision:	-3
+)
+
+(LClass.224
+	Label:	"прочие гос. значения"
+	MinNum:	2.00000000000000
+	MaxNum:	2.00000000000000
+	Precision:	-3
+)
+
+(LClass.225
+	Label:	"областного значения"
+	MinNum:	3.00000000000000
+	MaxNum:	3.00000000000000
+	Precision:	-3
+)
+
+(LClass.226
+	Label:	"прочие"
+	MinNum:	4.00000000000000
+	MaxNum:	4.00000000000000
+	Precision:	-3
+)
+
+(LClass.227
+	IsNoData:	1
+	Label:	"Нет данных"
+	MaxNum:	-1.00000000000000
+	Precision:	-3
+)
+
+(BLnSym.228
+	Color:	229
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.229
+	Name:	"Transparent"
+)
+
+(NameDict.230
+)
+
+(NameDict.231
+)
+
+(Thresh.232
+)
+
+(GSet.233
+)
+
+(TxPosArc.234
+	HAlign:	3
+	VAlign:	1
+)
+
+(AttrSingle.235
+	FTab:	195
+	Field:	197
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.236
+	FTab:	195
+	Field:	198
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.237
+	FTab:	195
+	Field:	199
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.238
+	FTab:	195
+	Field:	200
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.239
+	FTab:	195
+	Field:	201
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.240
+	FTab:	195
+	Field:	202
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.241
+	FTab:	195
+	Field:	203
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.242
+	FTab:	195
+	Field:	204
+	UnionRule:	6
+	SplitRule:	4
+)
+
+(AttrSingle.243
+	FTab:	195
+	Field:	205
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.244
+	FTab:	195
+	Field:	206
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(FTheme.245
+	Name:	"Озера, водохранилища"
+	Source:	246
+	Flags:	0x06
+	Legend:	260
+	Threshold:	273
+	View:	24
+	GSet:	274
+	LegEditScript:	"View.EditLegend"
+	TxPos:	275
+	AttrRules:	276
+	AttrRules:	277
+	AttrRules:	278
+	AttrRules:	279
+	AttrRules:	280
+	AttrRules:	281
+)
+
+(ShpSrc.246
+	Name:	247
+	FTab:	249
+)
+
+(SrcName.247
+	FileName:	248
+	Name:	"molakes.shp"
+	SubName:	"Polygon"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.248
+	Path:	"molakes.shp"
+)
+
+(FTab.249
+	Name:	"molakes.dbf"
+	BTab:	250
+	Query:	"( [Name] <> \"\" )"
+	Fields:	258
+	Fields:	251
+	Fields:	252
+	Fields:	253
+	Fields:	254
+	Fields:	255
+	Fields:	256
+	SelBits:	259
+	FSrc:	246
+)
+
+(dBASE.250
+	Name:	"molakes.dbf"
+	Fields:	251
+	Fields:	252
+	Fields:	253
+	Fields:	254
+	Fields:	255
+	Fields:	256
+	FileName:	257
+)
+
+(Field.251
+	Name:	"Area"
+	Btab:	250
+	Alias:	"Area"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	83
+)
+
+(Field.252
+	Name:	"Perimeter"
+	Btab:	250
+	Alias:	"Perimeter"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	83
+)
+
+(Field.253
+	Name:	"Msrivdd_"
+	Btab:	250
+	Alias:	"Msrivdd_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.254
+	Name:	"Msrivdd_id"
+	Btab:	250
+	Alias:	"Msrivdd_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.255
+	Name:	"Code"
+	Btab:	250
+	Alias:	"Code"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	35
+)
+
+(Field.256
+	Name:	"Name"
+	Btab:	250
+	Alias:	"Name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(FN.257
+	Path:	"molakes.dbf"
+)
+
+(Field.258
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	19
+	Order:	-1
+	Pixels:	53
+)
+
+(Bitmap.259
+	NumBits:	786
+
+)
+
+(Legend.260
+	SymType:	0x02
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	261
+	Class:	266
+	StdDevs:	1.00000000000000
+	NullSym:	267
+	NullValues:	271
+	StatValues:	272
+	Precision:	-3
+)
+
+(SymList.261
+	Child:	262
+)
+
+(BShSym.262
+	Color:	263
+	Outline:	1
+	OutlineColor:	264
+	OutlineWidth:	0.10000000000000
+	BgColor:	265
+)
+
+(TClr.263
+	Red:	0xa559
+	Green:	0xfad1
+	Blue:	0xff00
+)
+
+(TClr.264
+	Red:	0xfe
+	Green:	0x820c
+	Blue:	0xff00
+)
+
+(TClr.265
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(LClass.266
+	IsText:	1
+	Precision:	-3
+)
+
+(BShSym.267
+	Color:	268
+	Outline:	1
+	OutlineColor:	269
+	OutlineWidth:	0.10000000000000
+	BgColor:	270
+)
+
+(TClr.268
+	Name:	"Transparent"
+)
+
+(TClr.269
+	Name:	"Transparent"
+)
+
+(TClr.270
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NameDict.271
+)
+
+(NameDict.272
+)
+
+(Thresh.273
+)
+
+(GSet.274
+)
+
+(TxPosPly.275
+	HAlign:	3
+	VAlign:	3
+)
+
+(AttrSingle.276
+	FTab:	249
+	Field:	251
+	UnionRule:	5
+	SplitRule:	3
+)
+
+(AttrSingle.277
+	FTab:	249
+	Field:	252
+	UnionRule:	6
+	SplitRule:	4
+)
+
+(AttrSingle.278
+	FTab:	249
+	Field:	253
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.279
+	FTab:	249
+	Field:	254
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.280
+	FTab:	249
+	Field:	255
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.281
+	FTab:	249
+	Field:	256
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(FTheme.282
+	Name:	"Реки"
+	Source:	283
+	Flags:	0x06
+	Legend:	300
+	Threshold:	316
+	View:	24
+	GSet:	317
+	LegEditScript:	"View.EditLegend"
+	TxPos:	318
+	LabelField:	296
+	AttrRules:	319
+	AttrRules:	320
+	AttrRules:	321
+	AttrRules:	322
+	AttrRules:	323
+	AttrRules:	324
+	AttrRules:	325
+	AttrRules:	326
+	AttrRules:	327
+)
+
+(ShpSrc.283
+	Name:	284
+	FTab:	286
+)
+
+(SrcName.284
+	FileName:	285
+	Name:	"morivers.shp"
+	SubName:	"Arc"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.285
+	Path:	"morivers.shp"
+)
+
+(FTab.286
+	Name:	"morivers.dbf"
+	BTab:	287
+	Query:	"(  [Name]<> \"\" )"
+	Fields:	298
+	Fields:	288
+	Fields:	289
+	Fields:	290
+	Fields:	291
+	Fields:	292
+	Fields:	293
+	Fields:	294
+	Fields:	295
+	Fields:	296
+	SelBits:	299
+	FSrc:	283
+)
+
+(dBASE.287
+	Name:	"morivers.dbf"
+	Fields:	288
+	Fields:	289
+	Fields:	290
+	Fields:	291
+	Fields:	292
+	Fields:	293
+	Fields:	294
+	Fields:	295
+	Fields:	296
+	FileName:	297
+)
+
+(Field.288
+	Name:	"Fnode_"
+	Btab:	287
+	Alias:	"Fnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.289
+	Name:	"Tnode_"
+	Btab:	287
+	Alias:	"Tnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.290
+	Name:	"Lpoly_"
+	Btab:	287
+	Alias:	"Lpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.291
+	Name:	"Rpoly_"
+	Btab:	287
+	Alias:	"Rpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.292
+	Name:	"Length"
+	Btab:	287
+	Alias:	"Length"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	83
+)
+
+(Field.293
+	Name:	"Msrivdd_"
+	Btab:	287
+	Alias:	"Msrivdd_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.294
+	Name:	"Msrivdd_id"
+	Btab:	287
+	Alias:	"Msrivdd_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.295
+	Name:	"Code"
+	Btab:	287
+	Alias:	"Code"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	35
+)
+
+(Field.296
+	Name:	"Name"
+	Btab:	287
+	Alias:	"Name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(FN.297
+	Path:	"morivers.dbf"
+)
+
+(Field.298
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	18
+	Order:	-1
+	Pixels:	59
+)
+
+(Bitmap.299
+	NumBits:	3552
+
+)
+
+(Legend.300
+	SymType:	0x01
+	LegType:	0x08
+	ClassType:	0x03
+	FieldNames:	301
+	Symbols:	302
+	Class:	309
+	Class:	310
+	Class:	311
+	StdDevs:	1.00000000000000
+	NullSym:	312
+	NullValues:	314
+	StatValues:	315
+	Precision:	-3
+)
+
+(AVStr.301
+	S:	"Code"
+)
+
+(SymList.302
+	Child:	303
+	Child:	305
+	Child:	307
+)
+
+(BLnSym.303
+	Color:	304
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.304
+	Red:	0xfe
+	Green:	0x820c
+	Blue:	0xff00
+)
+
+(BLnSym.305
+	Color:	306
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.306
+	Blue:	0xffff
+)
+
+(BLnSym.307
+	Color:	308
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.308
+	Name:	"Transparent"
+)
+
+(LClass.309
+	IsText:	1
+	Label:	"реки"
+	MinStr:	"р"
+	MaxStr:	"р"
+	Precision:	-3
+)
+
+(LClass.310
+	IsText:	1
+	Label:	"каналы"
+	MinStr:	"к"
+	MaxStr:	"к"
+	Precision:	-3
+)
+
+(LClass.311
+	IsNoData:	1
+	IsText:	1
+	Label:	"Нет данных"
+	Precision:	-3
+)
+
+(BLnSym.312
+	Color:	313
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.313
+	Name:	"Transparent"
+)
+
+(NameDict.314
+)
+
+(NameDict.315
+)
+
+(Thresh.316
+)
+
+(GSet.317
+)
+
+(TxPosArc.318
+	HAlign:	3
+	VAlign:	1
+)
+
+(AttrSingle.319
+	FTab:	286
+	Field:	288
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.320
+	FTab:	286
+	Field:	289
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.321
+	FTab:	286
+	Field:	290
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.322
+	FTab:	286
+	Field:	291
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.323
+	FTab:	286
+	Field:	292
+	UnionRule:	6
+	SplitRule:	4
+)
+
+(AttrSingle.324
+	FTab:	286
+	Field:	293
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.325
+	FTab:	286
+	Field:	294
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.326
+	FTab:	286
+	Field:	295
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.327
+	FTab:	286
+	Field:	296
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(FTheme.328
+	Name:	"Крупные населенные пункты"
+	Source:	329
+	Flags:	0x07
+	Legend:	345
+	Threshold:	358
+	View:	24
+	GSet:	359
+	LegEditScript:	"View.EditLegend"
+	TxPos:	360
+	LabelField:	338
+	AttrRules:	361
+	AttrRules:	362
+	AttrRules:	363
+	AttrRules:	364
+	AttrRules:	365
+	AttrRules:	366
+	AttrRules:	367
+	AttrRules:	368
+)
+
+(ShpSrc.329
+	Name:	330
+	FTab:	332
+)
+
+(SrcName.330
+	FileName:	331
+	Name:	"mocities.shp"
+	SubName:	"Polygon"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.331
+	Path:	"mocities.shp"
+)
+
+(FTab.332
+	Name:	"mocities.dbf"
+	BTab:	333
+	Fields:	343
+	Fields:	334
+	Fields:	335
+	Fields:	336
+	Fields:	337
+	Fields:	338
+	Fields:	339
+	Fields:	340
+	Fields:	341
+	SelBits:	344
+	FSrc:	329
+)
+
+(dBASE.333
+	Name:	"mocities.dbf"
+	Fields:	334
+	Fields:	335
+	Fields:	336
+	Fields:	337
+	Fields:	338
+	Fields:	339
+	Fields:	340
+	Fields:	341
+	FileName:	342
+)
+
+(Field.334
+	Name:	"Area"
+	Btab:	333
+	Alias:	"Area"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	109
+)
+
+(Field.335
+	Name:	"Perimeter"
+	Btab:	333
+	Alias:	"Perimeter"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	109
+)
+
+(Field.336
+	Name:	"Cityun_"
+	Btab:	333
+	Alias:	"Cityun_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	93
+)
+
+(Field.337
+	Name:	"Cityun_id"
+	Btab:	333
+	Alias:	"Cityun_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	93
+)
+
+(Field.338
+	Name:	"Name"
+	Btab:	333
+	Alias:	"Name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	81
+)
+
+(Field.339
+	Name:	"Status"
+	Btab:	333
+	Alias:	"Status"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	45
+)
+
+(Field.340
+	Name:	"Region"
+	Btab:	333
+	Alias:	"Region"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	80
+)
+
+(Field.341
+	Name:	"Type"
+	Btab:	333
+	Alias:	"Type"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	41
+)
+
+(FN.342
+	Path:	"mocities.dbf"
+)
+
+(Field.343
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	19
+	Order:	-1
+	Pixels:	53
+)
+
+(Bitmap.344
+	NumBits:	188
+	Bits:	00000000 00000000 00000000 00000000 
+	Bits:	00000000 00000000 
+)
+
+(Legend.345
+	SymType:	0x02
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	346
+	Class:	351
+	StdDevs:	1.00000000000000
+	NullSym:	352
+	NullValues:	356
+	StatValues:	357
+	Precision:	-3
+)
+
+(SymList.346
+	Child:	347
+)
+
+(BShSym.347
+	Color:	348
+	Outline:	1
+	OutlineColor:	349
+	OutlineWidth:	0.10000000000000
+	BgColor:	350
+)
+
+(TClr.348
+	Red:	0xff00
+	Green:	0xad9f
+	Blue:	0xfe
+)
+
+(TClr.349
+	Red:	0xa100
+	Green:	0x6686
+	Blue:	0x32f0
+)
+
+(TClr.350
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(LClass.351
+	IsText:	1
+	Precision:	-3
+)
+
+(BShSym.352
+	Color:	353
+	Outline:	1
+	OutlineColor:	354
+	OutlineWidth:	0.10000000000000
+	BgColor:	355
+)
+
+(TClr.353
+	Name:	"Transparent"
+)
+
+(TClr.354
+	Name:	"Transparent"
+)
+
+(TClr.355
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NameDict.356
+)
+
+(NameDict.357
+)
+
+(Thresh.358
+)
+
+(GSet.359
+)
+
+(TxPosPly.360
+	HAlign:	3
+	VAlign:	3
+)
+
+(AttrSingle.361
+	FTab:	332
+	Field:	334
+	UnionRule:	5
+	SplitRule:	3
+)
+
+(AttrSingle.362
+	FTab:	332
+	Field:	335
+	UnionRule:	6
+	SplitRule:	4
+)
+
+(AttrSingle.363
+	FTab:	332
+	Field:	336
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.364
+	FTab:	332
+	Field:	337
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.365
+	FTab:	332
+	Field:	338
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.366
+	FTab:	332
+	Field:	339
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.367
+	FTab:	332
+	Field:	340
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.368
+	FTab:	332
+	Field:	341
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(FTheme.369
+	Name:	"Использование земель"
+	Source:	370
+	Flags:	0x06
+	Legend:	383
+	Threshold:	412
+	View:	24
+	GSet:	413
+	LegEditScript:	"View.EditLegend"
+	TxPos:	414
+	AttrRules:	415
+	AttrRules:	416
+	AttrRules:	417
+	AttrRules:	418
+	AttrRules:	419
+)
+
+(ShpSrc.370
+	Name:	371
+	FTab:	373
+)
+
+(SrcName.371
+	FileName:	372
+	Name:	"molus.shp"
+	SubName:	"Polygon"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.372
+	Path:	"molus.shp"
+)
+
+(FTab.373
+	Name:	"molus.dbf"
+	BTab:	374
+	Fields:	381
+	Fields:	375
+	Fields:	376
+	Fields:	377
+	Fields:	378
+	Fields:	379
+	SelBits:	382
+	FSrc:	370
+)
+
+(dBASE.374
+	Name:	"molus.dbf"
+	Fields:	375
+	Fields:	376
+	Fields:	377
+	Fields:	378
+	Fields:	379
+	FileName:	380
+)
+
+(Field.375
+	Name:	"Area"
+	Btab:	374
+	Alias:	"Area"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	83
+)
+
+(Field.376
+	Name:	"Perimeter"
+	Btab:	374
+	Alias:	"Perimeter"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	83
+)
+
+(Field.377
+	Name:	"Mofordd_"
+	Btab:	374
+	Alias:	"Mofordd_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.378
+	Name:	"Mofordd_id"
+	Btab:	374
+	Alias:	"Mofordd_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.379
+	Name:	"Type"
+	Btab:	374
+	Alias:	"Type"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	29
+)
+
+(FN.380
+	Path:	"molus.dbf"
+)
+
+(Field.381
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	19
+	Order:	-1
+	Pixels:	53
+)
+
+(Bitmap.382
+	NumBits:	929
+
+)
+
+(Legend.383
+	SymType:	0x02
+	LegType:	0x08
+	ClassType:	0x03
+	FieldNames:	384
+	Symbols:	385
+	Class:	402
+	Class:	403
+	Class:	404
+	Class:	405
+	StdDevs:	1.00000000000000
+	NullSym:	406
+	NullValues:	410
+	StatValues:	411
+	Precision:	-3
+)
+
+(AVStr.384
+	S:	"Type"
+)
+
+(SymList.385
+	Child:	386
+	Child:	390
+	Child:	394
+	Child:	398
+)
+
+(BShSym.386
+	Color:	387
+	Outline:	1
+	OutlineColor:	388
+	OutlineWidth:	0.10000000000000
+	BgColor:	389
+)
+
+(TClr.387
+	Red:	0xff00
+	Green:	0xf963
+	Blue:	0xa559
+)
+
+(TClr.388
+	Red:	0xb7b7
+	Green:	0xdfdf
+	Blue:	0x8686
+)
+
+(TClr.389
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(BShSym.390
+	Color:	391
+	Outline:	1
+	OutlineColor:	392
+	OutlineWidth:	0.10000000000000
+	BgColor:	393
+)
+
+(TClr.391
+	Red:	0xc3b5
+	Green:	0xff00
+	Blue:	0xc33b
+)
+
+(TClr.392
+	Red:	0xb7b7
+	Green:	0xdfdf
+	Blue:	0x8686
+)
+
+(TClr.393
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(BShSym.394
+	Color:	395
+	Outline:	1
+	OutlineColor:	396
+	OutlineWidth:	0.10000000000000
+	BgColor:	397
+)
+
+(TClr.395
+	Red:	0xa610
+	Green:	0xff00
+	Blue:	0xa559
+)
+
+(TClr.396
+	Red:	0xb7b7
+	Green:	0xdfdf
+	Blue:	0x8686
+)
+
+(TClr.397
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(BShSym.398
+	Color:	399
+	Outline:	1
+	OutlineColor:	400
+	OutlineWidth:	0.10000000000000
+	BgColor:	401
+)
+
+(TClr.399
+	Name:	"Transparent"
+)
+
+(TClr.400
+	Name:	"Transparent"
+)
+
+(TClr.401
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(LClass.402
+	Label:	"с/х и селитебные земли"
+	MinNum:	1.00000000000000
+	MaxNum:	1.00000000000000
+	Precision:	-3
+)
+
+(LClass.403
+	Label:	"кустарник"
+	MinNum:	2.00000000000000
+	MaxNum:	2.00000000000000
+	Precision:	-3
+)
+
+(LClass.404
+	Label:	"леса"
+	MinNum:	3.00000000000000
+	MaxNum:	3.00000000000000
+	Precision:	-3
+)
+
+(LClass.405
+	IsNoData:	1
+	Label:	"Нет данных"
+	MaxNum:	-1.00000000000000
+	Precision:	-3
+)
+
+(BShSym.406
+	Color:	407
+	Outline:	1
+	OutlineColor:	408
+	OutlineWidth:	0.10000000000000
+	BgColor:	409
+)
+
+(TClr.407
+	Name:	"Transparent"
+)
+
+(TClr.408
+	Name:	"Transparent"
+)
+
+(TClr.409
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NameDict.410
+)
+
+(NameDict.411
+)
+
+(Thresh.412
+)
+
+(GSet.413
+)
+
+(TxPosPly.414
+	HAlign:	3
+	VAlign:	3
+)
+
+(AttrSingle.415
+	FTab:	373
+	Field:	375
+	UnionRule:	5
+	SplitRule:	3
+)
+
+(AttrSingle.416
+	FTab:	373
+	Field:	376
+	UnionRule:	6
+	SplitRule:	4
+)
+
+(AttrSingle.417
+	FTab:	373
+	Field:	377
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.418
+	FTab:	373
+	Field:	378
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.419
+	FTab:	373
+	Field:	379
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(Trnmerc.420
+	InternalName:	"Поперечная Меркатора"
+	Description:	"Custom Поперечная Меркатора"
+	Ellipsoid:	421
+	Lambda0:	0.64577182323770
+	k0:	1.00000000000000
+	FalseEasting:	500000.00000000000000
+)
+
+(Elpsoid.421
+	Radius:	6378245.00000000000000
+	Eccentricity:	0.00669342100000
+	Type:	9
+	Units:	0x07
+)
+
+(MapDpy.422
+	Left:	128120.02477286707000
+	Bottom:	5869493.86950716190000
+	Top:	6437954.56901148610000
+	Right:	961862.38404587551000
+	Scale:	423
+	FrameLeft:	744.40499999999997
+	FrameBottom:	746.11500000000001
+	FrameTop:	753.61500000000001
+	FrameRight:	755.40499999999997
+	PageDpy:	424
+	MouseLoc:	426
+)
+
+(Numb.423
+	N:	0.00001319352421
+)
+
+(PageDpy.424
+	Top:	1500.00000000000000
+	Right:	1500.00000000000000
+	ReportUnits:	1
+	Units:	1
+	Scale:	425
+	Type:	1
+	ZoomLeft:	745.45150000000001
+	ZoomRight:	754.54849999999999
+	ZoomTop:	756.42950000000008
+	ZoomBottom:	743.57049999999992
+	PageLeft:	744.15499999999997
+	PageRight:	755.84500000000003
+	PageTop:	754.13499999999999
+	PageBottom:	745.86500000000001
+	GridSpacingX:	0.25000000000000
+	GridSpacingY:	0.25000000000000
+	MarginLeft:	0.13000000000000
+	MarginRight:	0.24000000000000
+	MarginTop:	0.25000000000000
+	MarginBottom:	0.20000000000000
+	UsePrtMargins:	1
+	UsePrtPageSize:	1
+	Options:	63
+)
+
+(Numb.425
+	N:	0.07776654483241
+)
+
+(PointD.426
+)
+
+(CSMgr.427
+)
+
+(Numb.428
+)
+
+(LButn.429
+	HelpTopic:	"New_button"
+	Update:	"Doc.NewUpdate"
+	Label:	"&Новый"
+	Click:	"Table.New"
+)
+
+(LButn.430
+	Disabled:	1
+	HelpTopic:	"Open_button"
+	Update:	"Doc.OpenUpdate"
+	Label:	"От&крыть"
+	Click:	"Doc.Open"
+)
+
+(LButn.431
+	HelpTopic:	"Add_button"
+	Update:	"Table.ActionUpdate"
+	Label:	"&Добавить"
+	Click:	"Table.Action"
+)
+
+(NameDict.432
+)
+
+(NameDict.433
+	Obj:	434
+)
+
+(AVDict.434
+	InternalName:	"Table of Contents Defaults Dialog"
+)
+
+(FN.1286
+	Path:	"$HOME"
+)
+
+(TClr.1287
+	Red:	0xffff
+	Green:	0xffff
+)
+
+(AVStr.1288
+	S:	"View"
+)
+
+(AVStr.1289
+	S:	"Table"
+)
+
+(AVStr.1290
+	S:	"Chart"
+)
+
+(AVStr.1291
+	S:	"Layout"
+)
+
+(AVStr.1292
+	S:	"Script"
+)
+
+(AVStr.1293
+	S:	"Project"
+)
+
+(AVStr.1294
+	S:	"Appl"
+)
+

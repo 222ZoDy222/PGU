@@ -1,0 +1,45 @@
+/3.1
+(ODB.1
+	FirstRootClassName:	"MSrc"
+	Roots:	2
+	Version:	31
+)
+
+(MSrc.2
+	MTab:	3
+	MaxScore:	0x28a
+	DefOffset:	-1.00000000000000
+)
+
+(MTab.3
+	Name:	"Single Field"
+	IndexFlag:	"930259643"
+	RecordLength:	28
+	MFieldList:	4
+	MIndexList:	5
+	MQueryList:	6
+	StanRules:	"key_1.stn"
+	MatchRules:	"key_1.mat"
+)
+
+(MField.4
+	FieldName:	"KeyField"
+	StartPos:	1
+	Width:	28
+	Required:	1
+	Justification:	1
+	VTabFieldName:	"Areaname"
+)
+
+(MIndex.5
+	IndexName:	"I1"
+	IndexType:	2
+	MatchFields:	4
+)
+
+(MQuery.6
+	Query:	"I1 = \"%K1%\"?"
+	FieldName:	"K1"
+	Status:	1
+)
+

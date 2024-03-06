@@ -1,0 +1,3304 @@
+/3.1
+(ODB.1
+	FirstRootClassName:	"Project"
+	Roots:	2
+	Version:	31
+)
+
+(Project.2
+	Name:	"usa.apr"
+	CreationDate:	"Wednesday, August 14, 1996 08:02:53"
+	GUIName:	"Project"
+	Win:	3
+	CSMgr:	4
+	DocExts:	5
+	VisGUIWidth:	70
+	Doc:	6
+	Doc:	85
+	ActiveDoc:	85
+	Buttons:	378
+	Buttons:	379
+	Buttons:	380
+	Scripts:	381
+	Prefs:	382
+	WorkDir:	1208
+	WinX:	91
+	WinY:	-3
+	WinW:	623
+	WinH:	452
+	SelColor:	1209
+	GUINames:	1210
+	GUINames:	1211
+	GUINames:	1212
+	GUINames:	1213
+	GUINames:	1214
+	GUINames:	1215
+	GUINames:	1216
+	TocWidthScale:	1.00000000000000
+)
+
+(DocWin.3
+	Owner:	2
+	Open:	1
+	X:	5
+	Y:	5
+	W:	243
+	H:	318
+)
+
+(CSMgr.4
+)
+
+(DocAct.5
+	Doc:	2
+)
+
+(Table.6
+	Name:	"Attributes of US Counties"
+	CreationDate:	"Wednesday, June 03, 1998 01:13:00"
+	GUIName:	"Table"
+	Win:	7
+	CSMgr:	8
+	DocExts:	377
+	VTab:	14
+)
+
+(DocWin.7
+	Owner:	6
+	X:	20
+	Y:	20
+	W:	365
+	H:	248
+)
+
+(CSMgr.8
+	Client:	9
+)
+
+(CSClient.9
+	Client:	10
+	ReqName:	"RespondTable"
+)
+
+(FTheme.10
+	Name:	"US Counties"
+	Source:	11
+	Flags:	0x06
+	Legend:	71
+	Threshold:	84
+	View:	85
+	GSet:	375
+	LegEditScript:	"View.EditLegend"
+	TxPos:	376
+	LabelField:	16
+	Table:	6
+)
+
+(ShpSrc.11
+	Name:	12
+	FTab:	14
+)
+
+(SrcName.12
+	FileName:	13
+	Name:	"counties.shp"
+	SubName:	"Polygon"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.13
+	Path:	"usa/counties.shp"
+)
+
+(FTab.14
+	Name:	"counties.dbf"
+	BTab:	15
+	Fields:	69
+	Fields:	16
+	Fields:	17
+	Fields:	18
+	Fields:	19
+	Fields:	20
+	Fields:	21
+	Fields:	22
+	Fields:	23
+	Fields:	24
+	Fields:	25
+	Fields:	26
+	Fields:	27
+	Fields:	28
+	Fields:	29
+	Fields:	30
+	Fields:	31
+	Fields:	32
+	Fields:	33
+	Fields:	34
+	Fields:	35
+	Fields:	36
+	Fields:	37
+	Fields:	38
+	Fields:	39
+	Fields:	40
+	Fields:	41
+	Fields:	42
+	Fields:	43
+	Fields:	44
+	Fields:	45
+	Fields:	46
+	Fields:	47
+	Fields:	48
+	Fields:	49
+	Fields:	50
+	Fields:	51
+	Fields:	52
+	Fields:	53
+	Fields:	54
+	Fields:	55
+	Fields:	56
+	Fields:	57
+	Fields:	58
+	Fields:	59
+	Fields:	60
+	Fields:	61
+	Fields:	62
+	Fields:	63
+	Fields:	64
+	Fields:	65
+	Fields:	66
+	Fields:	67
+	SelBits:	70
+	FSrc:	11
+)
+
+(dBASE.15
+	Name:	"counties.dbf"
+	Fields:	16
+	Fields:	17
+	Fields:	18
+	Fields:	19
+	Fields:	20
+	Fields:	21
+	Fields:	22
+	Fields:	23
+	Fields:	24
+	Fields:	25
+	Fields:	26
+	Fields:	27
+	Fields:	28
+	Fields:	29
+	Fields:	30
+	Fields:	31
+	Fields:	32
+	Fields:	33
+	Fields:	34
+	Fields:	35
+	Fields:	36
+	Fields:	37
+	Fields:	38
+	Fields:	39
+	Fields:	40
+	Fields:	41
+	Fields:	42
+	Fields:	43
+	Fields:	44
+	Fields:	45
+	Fields:	46
+	Fields:	47
+	Fields:	48
+	Fields:	49
+	Fields:	50
+	Fields:	51
+	Fields:	52
+	Fields:	53
+	Fields:	54
+	Fields:	55
+	Fields:	56
+	Fields:	57
+	Fields:	58
+	Fields:	59
+	Fields:	60
+	Fields:	61
+	Fields:	62
+	Fields:	63
+	Fields:	64
+	Fields:	65
+	Fields:	66
+	Fields:	67
+	FileName:	68
+)
+
+(Field.16
+	Name:	"Name"
+	Btab:	15
+	Alias:	"Name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(Field.17
+	Name:	"State_name"
+	Btab:	15
+	Alias:	"State_name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(Field.18
+	Name:	"State_fips"
+	Btab:	15
+	Alias:	"State_fips"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	52
+)
+
+(Field.19
+	Name:	"Cnty_fips"
+	Btab:	15
+	Alias:	"Cnty_fips"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	48
+)
+
+(Field.20
+	Name:	"Fips"
+	Btab:	15
+	Alias:	"Fips"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	35
+)
+
+(Field.21
+	Name:	"Area"
+	Btab:	15
+	Alias:	"Area"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	113
+)
+
+(Field.22
+	Name:	"Pop1990"
+	Btab:	15
+	Alias:	"Pop1990"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	65
+)
+
+(Field.23
+	Name:	"Pop1999"
+	Btab:	15
+	Alias:	"Pop1999"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	65
+)
+
+(Field.24
+	Name:	"Pop90_sqmi"
+	Btab:	15
+	Alias:	"Pop90_sqmi"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	63
+)
+
+(Field.25
+	Name:	"Households"
+	Btab:	15
+	Alias:	"Households"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	62
+)
+
+(Field.26
+	Name:	"Males"
+	Btab:	15
+	Alias:	"Males"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	53
+)
+
+(Field.27
+	Name:	"Females"
+	Btab:	15
+	Alias:	"Females"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	53
+)
+
+(Field.28
+	Name:	"White"
+	Btab:	15
+	Alias:	"White"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	53
+)
+
+(Field.29
+	Name:	"Black"
+	Btab:	15
+	Alias:	"Black"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	53
+)
+
+(Field.30
+	Name:	"Ameri_es"
+	Btab:	15
+	Alias:	"Ameri_es"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	51
+)
+
+(Field.31
+	Name:	"Asian_pi"
+	Btab:	15
+	Alias:	"Asian_pi"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	47
+)
+
+(Field.32
+	Name:	"Other"
+	Btab:	15
+	Alias:	"Other"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	53
+)
+
+(Field.33
+	Name:	"Hispanic"
+	Btab:	15
+	Alias:	"Hispanic"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	53
+)
+
+(Field.34
+	Name:	"Age_under5"
+	Btab:	15
+	Alias:	"Age_under5"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	65
+)
+
+(Field.35
+	Name:	"Age_5_17"
+	Btab:	15
+	Alias:	"Age_5_17"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	55
+)
+
+(Field.36
+	Name:	"Age_18_29"
+	Btab:	15
+	Alias:	"Age_18_29"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	61
+)
+
+(Field.37
+	Name:	"Age_30_49"
+	Btab:	15
+	Alias:	"Age_30_49"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	61
+)
+
+(Field.38
+	Name:	"Age_50_64"
+	Btab:	15
+	Alias:	"Age_50_64"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	61
+)
+
+(Field.39
+	Name:	"Age_65_up"
+	Btab:	15
+	Alias:	"Age_65_up"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	61
+)
+
+(Field.40
+	Name:	"Nevermarry"
+	Btab:	15
+	Alias:	"Nevermarry"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	62
+)
+
+(Field.41
+	Name:	"Married"
+	Btab:	15
+	Alias:	"Married"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	53
+)
+
+(Field.42
+	Name:	"Separated"
+	Btab:	15
+	Alias:	"Separated"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	55
+)
+
+(Field.43
+	Name:	"Widowed"
+	Btab:	15
+	Alias:	"Widowed"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	51
+)
+
+(Field.44
+	Name:	"Divorced"
+	Btab:	15
+	Alias:	"Divorced"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	48
+)
+
+(Field.45
+	Name:	"Hsehld_1_m"
+	Btab:	15
+	Alias:	"Hsehld_1_m"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	64
+)
+
+(Field.46
+	Name:	"Hsehld_1_f"
+	Btab:	15
+	Alias:	"Hsehld_1_f"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	60
+)
+
+(Field.47
+	Name:	"Marhh_chd"
+	Btab:	15
+	Alias:	"Marhh_chd"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	59
+)
+
+(Field.48
+	Name:	"Marhh_no_c"
+	Btab:	15
+	Alias:	"Marhh_no_c"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	65
+)
+
+(Field.49
+	Name:	"Mhh_child"
+	Btab:	15
+	Alias:	"Mhh_child"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	53
+)
+
+(Field.50
+	Name:	"Fhh_child"
+	Btab:	15
+	Alias:	"Fhh_child"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	51
+)
+
+(Field.51
+	Name:	"Hse_units"
+	Btab:	15
+	Alias:	"Hse_units"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	53
+)
+
+(Field.52
+	Name:	"Vacant"
+	Btab:	15
+	Alias:	"Vacant"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	47
+)
+
+(Field.53
+	Name:	"Owner_occ"
+	Btab:	15
+	Alias:	"Owner_occ"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	63
+)
+
+(Field.54
+	Name:	"Renter_occ"
+	Btab:	15
+	Alias:	"Renter_occ"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	61
+)
+
+(Field.55
+	Name:	"Median_val"
+	Btab:	15
+	Alias:	"Median_val"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	59
+)
+
+(Field.56
+	Name:	"Medianrent"
+	Btab:	15
+	Alias:	"Medianrent"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	58
+)
+
+(Field.57
+	Name:	"Units_1det"
+	Btab:	15
+	Alias:	"Units_1det"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	56
+)
+
+(Field.58
+	Name:	"Units_1att"
+	Btab:	15
+	Alias:	"Units_1att"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	53
+)
+
+(Field.59
+	Name:	"Units2"
+	Btab:	15
+	Alias:	"Units2"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	47
+)
+
+(Field.60
+	Name:	"Units3_9"
+	Btab:	15
+	Alias:	"Units3_9"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	47
+)
+
+(Field.61
+	Name:	"Units10_49"
+	Btab:	15
+	Alias:	"Units10_49"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	59
+)
+
+(Field.62
+	Name:	"Units50_up"
+	Btab:	15
+	Alias:	"Units50_up"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	59
+)
+
+(Field.63
+	Name:	"Mobilehome"
+	Btab:	15
+	Alias:	"Mobilehome"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	61
+)
+
+(Field.64
+	Name:	"No_farms87"
+	Btab:	15
+	Alias:	"No_farms87"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	64
+)
+
+(Field.65
+	Name:	"Avg_size87"
+	Btab:	15
+	Alias:	"Avg_size87"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	63
+)
+
+(Field.66
+	Name:	"Crop_acr87"
+	Btab:	15
+	Alias:	"Crop_acr87"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	62
+)
+
+(Field.67
+	Name:	"Avg_sale87"
+	Btab:	15
+	Alias:	"Avg_sale87"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	63
+)
+
+(FN.68
+	Path:	"usa/counties.dbf"
+)
+
+(Field.69
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	19
+	Order:	-1
+	Pixels:	53
+)
+
+(Bitmap.70
+	NumBits:	3140
+
+)
+
+(Legend.71
+	SymType:	0x02
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	72
+	Class:	77
+	StdDevs:	1.00000000000000
+	NullSym:	78
+	NullValues:	82
+	StatValues:	83
+	Precision:	-3
+)
+
+(SymList.72
+	Child:	73
+)
+
+(BShSym.73
+	Color:	74
+	Outline:	1
+	OutlineColor:	75
+	OutlineWidth:	0.10000000000000
+	BgColor:	76
+)
+
+(TClr.74
+	Red:	0xff00
+	Green:	0xf963
+	Blue:	0xa559
+)
+
+(TClr.75
+)
+
+(TClr.76
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(LClass.77
+	IsText:	1
+	Precision:	-3
+)
+
+(BShSym.78
+	Color:	79
+	Outline:	1
+	OutlineColor:	80
+	OutlineWidth:	0.10000000000000
+	BgColor:	81
+)
+
+(TClr.79
+	Name:	"Transparent"
+)
+
+(TClr.80
+	Name:	"Transparent"
+)
+
+(TClr.81
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NameDict.82
+)
+
+(NameDict.83
+)
+
+(Thresh.84
+	Flags:	0x02
+	Max:	20000000.00000000000000
+)
+
+(View.85
+	Name:	"Continental United States"
+	CreationDate:	"Wednesday, August 14, 1996 08:02:55"
+	GUIName:	"View"
+	Win:	86
+	CSMgr:	87
+	DocExts:	89
+	DocExts:	90
+	Graphics:	91
+	Theme:	98
+	Theme:	139
+	Theme:	212
+	Theme:	239
+	Theme:	274
+	Theme:	10
+	Theme:	297
+	Projection:	373
+	LastScale:	39549690.80804162500000
+	Dpy:	92
+	TOCWidth:	150
+	CoordPrecision:	2
+)
+
+(DocWin.86
+	Owner:	85
+	Open:	1
+	X:	1
+	W:	616
+	H:	330
+)
+
+(CSMgr.87
+	Client:	88
+)
+
+(CSClient.88
+	Client:	89
+	ReqName:	"ClientNfy"
+)
+
+(PanMgr.89
+	Doc:	85
+)
+
+(DocAct.90
+	Doc:	85
+)
+
+(GList.91
+	Dpy:	92
+	FormatNumb:	97
+)
+
+(MapDpy.92
+	Left:	-2403706.18407605540000
+	Bottom:	-1311873.88536260700000
+	Top:	1699978.14265834070000
+	Right:	2315652.50550007540000
+	ReportUnits:	4
+	Units:	7
+	Scale:	93
+	FrameTop:	3.11458333333333
+	FrameRight:	4.69791666666667
+	PageDpy:	94
+	FitToPage:	1
+	MouseLoc:	96
+)
+
+(Numb.93
+	N:	0.00000099545658
+)
+
+(PageDpy.94
+	Top:	3.11458333333333
+	Right:	4.69791666666667
+	ReportUnits:	1
+	Units:	1
+	Scale:	95
+	ZoomRight:	4.69791666666667
+	ZoomTop:	3.11458333333333
+	GridSpacingX:	0.25000000000000
+	GridSpacingY:	0.25000000000000
+)
+
+(Numb.95
+	N:	96.00000000000000
+)
+
+(PointD.96
+	x:	-1032894.68000848800000
+	y:	199284.23362522433000
+)
+
+(Numb.97
+)
+
+(FTheme.98
+	Name:	"ZIP Codes"
+	Source:	99
+	Flags:	0x05
+	Legend:	111
+	Threshold:	130
+	View:	85
+	GSet:	131
+	LegEditScript:	"View.EditLegend"
+	TxPos:	132
+	MatchSource:	133
+	LabelField:	107
+	SnapTolCursor:	1
+)
+
+(ShpSrc.99
+	Name:	100
+	FTab:	102
+)
+
+(SrcName.100
+	FileName:	101
+	Name:	"zip_usa.shp"
+	SubName:	"Point"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.101
+	Path:	"usa/zip_usa.shp"
+)
+
+(FTab.102
+	Name:	"zip_usa.dbf"
+	BTab:	103
+	Fields:	109
+	Fields:	104
+	Fields:	105
+	Fields:	106
+	Fields:	107
+	SelBits:	110
+	FSrc:	99
+)
+
+(dBASE.103
+	Name:	"zip_usa.dbf"
+	Fields:	104
+	Fields:	105
+	Fields:	106
+	Fields:	107
+	FileName:	108
+)
+
+(Field.104
+	Name:	"Zip"
+	Btab:	103
+	Alias:	"Zip"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(Field.105
+	Name:	"State"
+	Btab:	103
+	Alias:	"State"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(Field.106
+	Name:	"Area"
+	Btab:	103
+	Alias:	"Area"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.107
+	Name:	"Poname"
+	Btab:	103
+	Alias:	"Poname"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(FN.108
+	Path:	"usa/zip_usa.dbf"
+)
+
+(Field.109
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	17
+	Order:	-1
+)
+
+(Bitmap.110
+	NumBits:	41692
+
+)
+
+(Legend.111
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	112
+	Class:	120
+	StdDevs:	1.00000000000000
+	NullSym:	121
+	NullValues:	128
+	StatValues:	129
+	Precision:	-3
+)
+
+(SymList.112
+	Child:	113
+)
+
+(BMkSym.113
+	Color:	114
+	BgColor:	115
+	Font:	116
+	Size:	4.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.114
+	Red:	0xffff
+)
+
+(TClr.115
+	Name:	"Transparent"
+)
+
+(NFont.116
+	Family:	117
+	Name:	118
+	Style:	119
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.117
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.118
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.119
+	S:	"Normal"
+)
+
+(LClass.120
+	IsText:	1
+	Precision:	-3
+)
+
+(BMkSym.121
+	Color:	122
+	BgColor:	123
+	Font:	124
+	Size:	8.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.122
+	Name:	"Transparent"
+)
+
+(TClr.123
+	Name:	"Transparent"
+)
+
+(NFont.124
+	Family:	125
+	Name:	126
+	Style:	127
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.125
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.126
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.127
+	S:	"Normal"
+)
+
+(NameDict.128
+)
+
+(NameDict.129
+)
+
+(Thresh.130
+	Flags:	0x02
+	Max:	20000000.00000000000000
+)
+
+(GSet.131
+)
+
+(TxPosPt.132
+	HAlign:	4
+	VAlign:	3
+)
+
+(MSrc.133
+	FSrc:	99
+	RefVTab:	102
+	MTab:	134
+	MaxScore:	0x28a
+	DefOffset:	-1.00000000000000
+)
+
+(MTab.134
+	Name:	"5-Digit ZIP"
+	IndexFile:	135
+	IndexFlag:	"873399060"
+	RecordLength:	10
+	VTab:	102
+	MFieldList:	136
+	MIndexList:	137
+	MQueryList:	138
+	StanRules:	"zip.stn"
+	MatchRules:	"zip.mat"
+)
+
+(FN.135
+	Path:	"usa/zip_usa.ixs"
+)
+
+(MField.136
+	FieldName:	"ZIP"
+	StartPos:	1
+	Width:	10
+	Required:	1
+	Justification:	1
+	VTabField:	104
+)
+
+(MIndex.137
+	IndexName:	"I1"
+	IndexType:	2
+	MatchFields:	136
+)
+
+(MQuery.138
+	Query:	"I1 = \"%ZP%\"?"
+	FieldName:	"ZP"
+	Status:	1
+)
+
+(FTheme.139
+	Name:	"Major Cities"
+	Source:	140
+	Flags:	0x06
+	Legend:	194
+	Threshold:	209
+	View:	85
+	GSet:	210
+	LegEditScript:	"View.EditLegend"
+	TxPos:	211
+	LabelField:	146
+)
+
+(ShpSrc.140
+	Name:	141
+	FTab:	143
+)
+
+(SrcName.141
+	FileName:	142
+	Name:	"cities.shp"
+	SubName:	"Point"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.142
+	Path:	"usa/cities.shp"
+)
+
+(FTab.143
+	Name:	"cities.dbf"
+	BTab:	144
+	Fields:	192
+	Fields:	145
+	Fields:	146
+	Fields:	147
+	Fields:	148
+	Fields:	149
+	Fields:	150
+	Fields:	151
+	Fields:	152
+	Fields:	153
+	Fields:	154
+	Fields:	155
+	Fields:	156
+	Fields:	157
+	Fields:	158
+	Fields:	159
+	Fields:	160
+	Fields:	161
+	Fields:	162
+	Fields:	163
+	Fields:	164
+	Fields:	165
+	Fields:	166
+	Fields:	167
+	Fields:	168
+	Fields:	169
+	Fields:	170
+	Fields:	171
+	Fields:	172
+	Fields:	173
+	Fields:	174
+	Fields:	175
+	Fields:	176
+	Fields:	177
+	Fields:	178
+	Fields:	179
+	Fields:	180
+	Fields:	181
+	Fields:	182
+	Fields:	183
+	Fields:	184
+	Fields:	185
+	Fields:	186
+	Fields:	187
+	Fields:	188
+	Fields:	189
+	Fields:	190
+	SelBits:	193
+	FSrc:	140
+)
+
+(dBASE.144
+	Name:	"cities.dbf"
+	Fields:	145
+	Fields:	146
+	Fields:	147
+	Fields:	148
+	Fields:	149
+	Fields:	150
+	Fields:	151
+	Fields:	152
+	Fields:	153
+	Fields:	154
+	Fields:	155
+	Fields:	156
+	Fields:	157
+	Fields:	158
+	Fields:	159
+	Fields:	160
+	Fields:	161
+	Fields:	162
+	Fields:	163
+	Fields:	164
+	Fields:	165
+	Fields:	166
+	Fields:	167
+	Fields:	168
+	Fields:	169
+	Fields:	170
+	Fields:	171
+	Fields:	172
+	Fields:	173
+	Fields:	174
+	Fields:	175
+	Fields:	176
+	Fields:	177
+	Fields:	178
+	Fields:	179
+	Fields:	180
+	Fields:	181
+	Fields:	182
+	Fields:	183
+	Fields:	184
+	Fields:	185
+	Fields:	186
+	Fields:	187
+	Fields:	188
+	Fields:	189
+	Fields:	190
+	FileName:	191
+)
+
+(Field.145
+	Name:	"City_fips"
+	Btab:	144
+	Alias:	"City_fips"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	44
+)
+
+(Field.146
+	Name:	"City_name"
+	Btab:	144
+	Alias:	"City_name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(Field.147
+	Name:	"State_fips"
+	Btab:	144
+	Alias:	"State_fips"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	52
+)
+
+(Field.148
+	Name:	"State_name"
+	Btab:	144
+	Alias:	"State_name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(Field.149
+	Name:	"State_city"
+	Btab:	144
+	Alias:	"State_city"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	52
+)
+
+(Field.150
+	Name:	"Type"
+	Btab:	144
+	Alias:	"Type"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(Field.151
+	Name:	"Capital"
+	Btab:	144
+	Alias:	"Capital"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	37
+)
+
+(Field.152
+	Name:	"Elevation"
+	Btab:	144
+	Alias:	"Elevation"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	49
+)
+
+(Field.153
+	Name:	"Pop1990"
+	Btab:	144
+	Alias:	"Pop1990"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.154
+	Name:	"Households"
+	Btab:	144
+	Alias:	"Households"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.155
+	Name:	"Males"
+	Btab:	144
+	Alias:	"Males"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.156
+	Name:	"Females"
+	Btab:	144
+	Alias:	"Females"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.157
+	Name:	"White"
+	Btab:	144
+	Alias:	"White"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.158
+	Name:	"Black"
+	Btab:	144
+	Alias:	"Black"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.159
+	Name:	"Ameri_es"
+	Btab:	144
+	Alias:	"Ameri_es"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.160
+	Name:	"Asian_pi"
+	Btab:	144
+	Alias:	"Asian_pi"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.161
+	Name:	"Other"
+	Btab:	144
+	Alias:	"Other"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.162
+	Name:	"Hispanic"
+	Btab:	144
+	Alias:	"Hispanic"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.163
+	Name:	"Age_under5"
+	Btab:	144
+	Alias:	"Age_under5"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.164
+	Name:	"Age_5_17"
+	Btab:	144
+	Alias:	"Age_5_17"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.165
+	Name:	"Age_18_64"
+	Btab:	144
+	Alias:	"Age_18_64"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.166
+	Name:	"Age_65_up"
+	Btab:	144
+	Alias:	"Age_65_up"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.167
+	Name:	"Nevermarry"
+	Btab:	144
+	Alias:	"Nevermarry"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.168
+	Name:	"Married"
+	Btab:	144
+	Alias:	"Married"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.169
+	Name:	"Separated"
+	Btab:	144
+	Alias:	"Separated"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.170
+	Name:	"Widowed"
+	Btab:	144
+	Alias:	"Widowed"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.171
+	Name:	"Divorced"
+	Btab:	144
+	Alias:	"Divorced"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.172
+	Name:	"Hsehld_1_m"
+	Btab:	144
+	Alias:	"Hsehld_1_m"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.173
+	Name:	"Hsehld_1_f"
+	Btab:	144
+	Alias:	"Hsehld_1_f"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.174
+	Name:	"Marhh_chd"
+	Btab:	144
+	Alias:	"Marhh_chd"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.175
+	Name:	"Marhh_no_c"
+	Btab:	144
+	Alias:	"Marhh_no_c"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.176
+	Name:	"Mhh_child"
+	Btab:	144
+	Alias:	"Mhh_child"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.177
+	Name:	"Fhh_child"
+	Btab:	144
+	Alias:	"Fhh_child"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.178
+	Name:	"Hse_units"
+	Btab:	144
+	Alias:	"Hse_units"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.179
+	Name:	"Vacant"
+	Btab:	144
+	Alias:	"Vacant"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.180
+	Name:	"Owner_occ"
+	Btab:	144
+	Alias:	"Owner_occ"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.181
+	Name:	"Renter_occ"
+	Btab:	144
+	Alias:	"Renter_occ"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.182
+	Name:	"Median_val"
+	Btab:	144
+	Alias:	"Median_val"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.183
+	Name:	"Medianrent"
+	Btab:	144
+	Alias:	"Medianrent"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.184
+	Name:	"Units_1det"
+	Btab:	144
+	Alias:	"Units_1det"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.185
+	Name:	"Units_1att"
+	Btab:	144
+	Alias:	"Units_1att"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.186
+	Name:	"Units2"
+	Btab:	144
+	Alias:	"Units2"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.187
+	Name:	"Units3_9"
+	Btab:	144
+	Alias:	"Units3_9"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.188
+	Name:	"Units10_49"
+	Btab:	144
+	Alias:	"Units10_49"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.189
+	Name:	"Units50_up"
+	Btab:	144
+	Alias:	"Units50_up"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.190
+	Name:	"Mobilehome"
+	Btab:	144
+	Alias:	"Mobilehome"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(FN.191
+	Path:	"usa/cities.dbf"
+)
+
+(Field.192
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	17
+	Order:	-1
+	Pixels:	41
+)
+
+(Bitmap.193
+	NumBits:	3149
+
+)
+
+(Legend.194
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	195
+	Class:	203
+	StdDevs:	1.00000000000000
+	NullSym:	204
+	NullValues:	207
+	StatValues:	208
+	Precision:	-3
+)
+
+(SymList.195
+	Child:	196
+)
+
+(BMkSym.196
+	Color:	197
+	BgColor:	198
+	Font:	199
+	Size:	6.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.197
+)
+
+(TClr.198
+	Name:	"Transparent"
+)
+
+(NFont.199
+	Family:	200
+	Name:	201
+	Style:	202
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.200
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.201
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.202
+	S:	"Normal"
+)
+
+(LClass.203
+	IsText:	1
+	Precision:	-3
+)
+
+(BMkSym.204
+	Color:	205
+	BgColor:	206
+	Font:	199
+	Size:	8.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.205
+	Name:	"Transparent"
+)
+
+(TClr.206
+	Name:	"Transparent"
+)
+
+(NameDict.207
+)
+
+(NameDict.208
+)
+
+(Thresh.209
+	Flags:	0x02
+	Max:	10000000.00000000000000
+)
+
+(GSet.210
+)
+
+(TxPosPt.211
+	HAlign:	4
+	VAlign:	3
+)
+
+(FTheme.212
+	Name:	"Major Lakes"
+	Source:	213
+	Flags:	0x06
+	Legend:	223
+	Threshold:	236
+	View:	85
+	GSet:	237
+	LegEditScript:	"View.EditLegend"
+	TxPos:	238
+	LabelField:	219
+)
+
+(ShpSrc.213
+	Name:	214
+	FTab:	216
+)
+
+(SrcName.214
+	FileName:	215
+	Name:	"lakes.shp"
+	SubName:	"Polygon"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.215
+	Path:	"usa/lakes.shp"
+)
+
+(FTab.216
+	Name:	"lakes.dbf"
+	BTab:	217
+	Fields:	221
+	Fields:	218
+	Fields:	219
+	SelBits:	222
+	FSrc:	213
+)
+
+(dBASE.217
+	Name:	"lakes.dbf"
+	Fields:	218
+	Fields:	219
+	FileName:	220
+)
+
+(Field.218
+	Name:	"Area"
+	Btab:	217
+	Alias:	"Area"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.219
+	Name:	"Name"
+	Btab:	217
+	Alias:	"Name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(FN.220
+	Path:	"usa/lakes.dbf"
+)
+
+(Field.221
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	19
+	Order:	-1
+)
+
+(Bitmap.222
+	NumBits:	29
+
+)
+
+(Legend.223
+	SymType:	0x02
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	224
+	Class:	229
+	StdDevs:	1.00000000000000
+	NullSym:	230
+	NullValues:	234
+	StatValues:	235
+	Precision:	-3
+)
+
+(SymList.224
+	Child:	225
+)
+
+(BShSym.225
+	Color:	226
+	Outline:	1
+	OutlineColor:	227
+	OutlineWidth:	0.10000000000000
+	BgColor:	228
+)
+
+(TClr.226
+	Blue:	0xffff
+)
+
+(TClr.227
+)
+
+(TClr.228
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(LClass.229
+	IsText:	1
+	Precision:	-3
+)
+
+(BShSym.230
+	Color:	231
+	Outline:	1
+	OutlineColor:	232
+	OutlineWidth:	0.10000000000000
+	BgColor:	233
+)
+
+(TClr.231
+	Name:	"Transparent"
+)
+
+(TClr.232
+	Name:	"Transparent"
+)
+
+(TClr.233
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NameDict.234
+)
+
+(NameDict.235
+)
+
+(Thresh.236
+)
+
+(GSet.237
+)
+
+(TxPosPly.238
+	HAlign:	3
+	VAlign:	3
+)
+
+(FTheme.239
+	Name:	"Major Highways"
+	Source:	240
+	Flags:	0x04
+	Legend:	255
+	Threshold:	271
+	View:	85
+	GSet:	272
+	LegEditScript:	"View.EditLegend"
+	TxPos:	273
+	LabelField:	251
+)
+
+(ShpSrc.240
+	Name:	241
+	FTab:	243
+)
+
+(SrcName.241
+	FileName:	242
+	Name:	"roads.shp"
+	SubName:	"Arc"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.242
+	Path:	"usa/roads.shp"
+)
+
+(FTab.243
+	Name:	"roads.dbf"
+	BTab:	244
+	Fields:	253
+	Fields:	245
+	Fields:	246
+	Fields:	247
+	Fields:	248
+	Fields:	249
+	Fields:	250
+	Fields:	251
+	SelBits:	254
+	FSrc:	240
+)
+
+(dBASE.244
+	Name:	"roads.dbf"
+	Fields:	245
+	Fields:	246
+	Fields:	247
+	Fields:	248
+	Fields:	249
+	Fields:	250
+	Fields:	251
+	FileName:	252
+)
+
+(Field.245
+	Name:	"Length"
+	Btab:	244
+	Alias:	"Length"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	77
+)
+
+(Field.246
+	Name:	"Type"
+	Btab:	244
+	Alias:	"Type"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(Field.247
+	Name:	"Admn_class"
+	Btab:	244
+	Alias:	"Admn_class"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	125
+)
+
+(Field.248
+	Name:	"Toll_rd"
+	Btab:	244
+	Alias:	"Toll_rd"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	37
+)
+
+(Field.249
+	Name:	"Rte_num1"
+	Btab:	244
+	Alias:	"Rte_num1"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	53
+)
+
+(Field.250
+	Name:	"Rte_num2"
+	Btab:	244
+	Alias:	"Rte_num2"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	53
+)
+
+(Field.251
+	Name:	"Route"
+	Btab:	244
+	Alias:	"Route"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(FN.252
+	Path:	"usa/roads.dbf"
+)
+
+(Field.253
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	18
+	Order:	-1
+	Pixels:	59
+)
+
+(Bitmap.254
+	NumBits:	679
+
+)
+
+(Legend.255
+	SymType:	0x01
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	256
+	Class:	266
+	StdDevs:	1.00000000000000
+	NullSym:	267
+	NullValues:	269
+	StatValues:	270
+	Precision:	-3
+)
+
+(SymList.256
+	Child:	257
+)
+
+(CLnSym.257
+	Color:	258
+	Size:	2.00000000000000
+	Symbols:	259
+)
+
+(TClr.258
+	Red:	0xdc00
+	Green:	0xdb
+	Blue:	0xdb
+)
+
+(SymList.259
+	Child:	260
+	Child:	262
+)
+
+(BLnSym.260
+	Color:	261
+	Width:	2.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.261
+	Red:	0xdc00
+	Green:	0xdb
+	Blue:	0xdb
+)
+
+(VLnHlw.262
+	Color:	263
+	ColorLock:	1
+	Size:	2.00000000000000
+	AltSize:	0.80000000000000
+	BasicLine:	264
+)
+
+(TClr.263
+)
+
+(BLnSym.264
+	Color:	265
+	Width:	0.60000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.265
+)
+
+(LClass.266
+	IsText:	1
+	Precision:	-3
+)
+
+(BLnSym.267
+	Color:	268
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.268
+	Name:	"Transparent"
+)
+
+(NameDict.269
+)
+
+(NameDict.270
+)
+
+(Thresh.271
+)
+
+(GSet.272
+)
+
+(TxPosArc.273
+	HAlign:	3
+	VAlign:	1
+)
+
+(FTheme.274
+	Name:	"Major Rivers"
+	Source:	275
+	Flags:	0x06
+	Legend:	285
+	Threshold:	294
+	View:	85
+	GSet:	295
+	LegEditScript:	"View.EditLegend"
+	TxPos:	296
+	LabelField:	280
+)
+
+(ShpSrc.275
+	Name:	276
+	FTab:	278
+)
+
+(SrcName.276
+	FileName:	277
+	Name:	"rivers.shp"
+	SubName:	"Arc"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.277
+	Path:	"usa/rivers.shp"
+)
+
+(FTab.278
+	Name:	"rivers.dbf"
+	BTab:	279
+	Fields:	283
+	Fields:	280
+	Fields:	281
+	SelBits:	284
+	FSrc:	275
+)
+
+(dBASE.279
+	Name:	"rivers.dbf"
+	Fields:	280
+	Fields:	281
+	FileName:	282
+)
+
+(Field.280
+	Name:	"Name"
+	Btab:	279
+	Alias:	"Name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(Field.281
+	Name:	"System"
+	Btab:	279
+	Alias:	"System"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(FN.282
+	Path:	"usa/rivers.dbf"
+)
+
+(Field.283
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	18
+	Order:	-1
+)
+
+(Bitmap.284
+	NumBits:	56
+
+)
+
+(Legend.285
+	SymType:	0x01
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	286
+	Class:	289
+	StdDevs:	1.00000000000000
+	NullSym:	290
+	NullValues:	292
+	StatValues:	293
+	Precision:	-3
+)
+
+(SymList.286
+	Child:	287
+)
+
+(BLnSym.287
+	Color:	288
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.288
+	Red:	0x170b
+	Green:	0xdb
+	Blue:	0xdc00
+)
+
+(LClass.289
+	IsText:	1
+	Precision:	-3
+)
+
+(BLnSym.290
+	Color:	291
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.291
+	Name:	"Transparent"
+)
+
+(NameDict.292
+)
+
+(NameDict.293
+)
+
+(Thresh.294
+)
+
+(GSet.295
+)
+
+(TxPosArc.296
+	HAlign:	3
+	VAlign:	1
+)
+
+(FTheme.297
+	Name:	"US States"
+	Source:	298
+	Flags:	0x06
+	Legend:	357
+	Threshold:	370
+	View:	85
+	GSet:	371
+	LegEditScript:	"View.EditLegend"
+	TxPos:	372
+	LabelField:	304
+)
+
+(ShpSrc.298
+	Name:	299
+	FTab:	301
+)
+
+(SrcName.299
+	FileName:	300
+	Name:	"states.shp"
+	SubName:	"Polygon"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.300
+	Path:	"usa/states.shp"
+)
+
+(FTab.301
+	Name:	"states.dbf"
+	BTab:	302
+	Fields:	355
+	Fields:	303
+	Fields:	304
+	Fields:	305
+	Fields:	306
+	Fields:	307
+	Fields:	308
+	Fields:	309
+	Fields:	310
+	Fields:	311
+	Fields:	312
+	Fields:	313
+	Fields:	314
+	Fields:	315
+	Fields:	316
+	Fields:	317
+	Fields:	318
+	Fields:	319
+	Fields:	320
+	Fields:	321
+	Fields:	322
+	Fields:	323
+	Fields:	324
+	Fields:	325
+	Fields:	326
+	Fields:	327
+	Fields:	328
+	Fields:	329
+	Fields:	330
+	Fields:	331
+	Fields:	332
+	Fields:	333
+	Fields:	334
+	Fields:	335
+	Fields:	336
+	Fields:	337
+	Fields:	338
+	Fields:	339
+	Fields:	340
+	Fields:	341
+	Fields:	342
+	Fields:	343
+	Fields:	344
+	Fields:	345
+	Fields:	346
+	Fields:	347
+	Fields:	348
+	Fields:	349
+	Fields:	350
+	Fields:	351
+	Fields:	352
+	Fields:	353
+	SelBits:	356
+	FSrc:	298
+)
+
+(dBASE.302
+	Name:	"states.dbf"
+	Fields:	303
+	Fields:	304
+	Fields:	305
+	Fields:	306
+	Fields:	307
+	Fields:	308
+	Fields:	309
+	Fields:	310
+	Fields:	311
+	Fields:	312
+	Fields:	313
+	Fields:	314
+	Fields:	315
+	Fields:	316
+	Fields:	317
+	Fields:	318
+	Fields:	319
+	Fields:	320
+	Fields:	321
+	Fields:	322
+	Fields:	323
+	Fields:	324
+	Fields:	325
+	Fields:	326
+	Fields:	327
+	Fields:	328
+	Fields:	329
+	Fields:	330
+	Fields:	331
+	Fields:	332
+	Fields:	333
+	Fields:	334
+	Fields:	335
+	Fields:	336
+	Fields:	337
+	Fields:	338
+	Fields:	339
+	Fields:	340
+	Fields:	341
+	Fields:	342
+	Fields:	343
+	Fields:	344
+	Fields:	345
+	Fields:	346
+	Fields:	347
+	Fields:	348
+	Fields:	349
+	Fields:	350
+	Fields:	351
+	Fields:	352
+	Fields:	353
+	FileName:	354
+)
+
+(Field.303
+	Name:	"Area"
+	Btab:	302
+	Alias:	"Area"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	77
+)
+
+(Field.304
+	Name:	"State_name"
+	Btab:	302
+	Alias:	"State_name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(Field.305
+	Name:	"State_fips"
+	Btab:	302
+	Alias:	"State_fips"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	52
+)
+
+(Field.306
+	Name:	"Sub_region"
+	Btab:	302
+	Alias:	"Sub_region"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	59
+)
+
+(Field.307
+	Name:	"State_abbr"
+	Btab:	302
+	Alias:	"State_abbr"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	57
+)
+
+(Field.308
+	Name:	"Pop1990"
+	Btab:	302
+	Alias:	"Pop1990"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	65
+)
+
+(Field.309
+	Name:	"Pop1999"
+	Btab:	302
+	Alias:	"Pop1999"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.310
+	Name:	"Pop90_sqmi"
+	Btab:	302
+	Alias:	"Pop90_sqmi"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.311
+	Name:	"Households"
+	Btab:	302
+	Alias:	"Households"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.312
+	Name:	"Males"
+	Btab:	302
+	Alias:	"Males"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.313
+	Name:	"Females"
+	Btab:	302
+	Alias:	"Females"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.314
+	Name:	"White"
+	Btab:	302
+	Alias:	"White"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.315
+	Name:	"Black"
+	Btab:	302
+	Alias:	"Black"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.316
+	Name:	"Ameri_es"
+	Btab:	302
+	Alias:	"Ameri_es"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.317
+	Name:	"Asian_pi"
+	Btab:	302
+	Alias:	"Asian_pi"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.318
+	Name:	"Other"
+	Btab:	302
+	Alias:	"Other"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.319
+	Name:	"Hispanic"
+	Btab:	302
+	Alias:	"Hispanic"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.320
+	Name:	"Age_under5"
+	Btab:	302
+	Alias:	"Age_under5"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.321
+	Name:	"Age_5_17"
+	Btab:	302
+	Alias:	"Age_5_17"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.322
+	Name:	"Age_18_29"
+	Btab:	302
+	Alias:	"Age_18_29"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.323
+	Name:	"Age_30_49"
+	Btab:	302
+	Alias:	"Age_30_49"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.324
+	Name:	"Age_50_64"
+	Btab:	302
+	Alias:	"Age_50_64"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.325
+	Name:	"Age_65_up"
+	Btab:	302
+	Alias:	"Age_65_up"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.326
+	Name:	"Nevermarry"
+	Btab:	302
+	Alias:	"Nevermarry"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.327
+	Name:	"Married"
+	Btab:	302
+	Alias:	"Married"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.328
+	Name:	"Separated"
+	Btab:	302
+	Alias:	"Separated"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.329
+	Name:	"Widowed"
+	Btab:	302
+	Alias:	"Widowed"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.330
+	Name:	"Divorced"
+	Btab:	302
+	Alias:	"Divorced"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.331
+	Name:	"Hsehld_1_m"
+	Btab:	302
+	Alias:	"Hsehld_1_m"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.332
+	Name:	"Hsehld_1_f"
+	Btab:	302
+	Alias:	"Hsehld_1_f"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.333
+	Name:	"Marhh_chd"
+	Btab:	302
+	Alias:	"Marhh_chd"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.334
+	Name:	"Marhh_no_c"
+	Btab:	302
+	Alias:	"Marhh_no_c"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.335
+	Name:	"Mhh_child"
+	Btab:	302
+	Alias:	"Mhh_child"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.336
+	Name:	"Fhh_child"
+	Btab:	302
+	Alias:	"Fhh_child"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.337
+	Name:	"Hse_units"
+	Btab:	302
+	Alias:	"Hse_units"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.338
+	Name:	"Vacant"
+	Btab:	302
+	Alias:	"Vacant"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.339
+	Name:	"Owner_occ"
+	Btab:	302
+	Alias:	"Owner_occ"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.340
+	Name:	"Renter_occ"
+	Btab:	302
+	Alias:	"Renter_occ"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.341
+	Name:	"Median_val"
+	Btab:	302
+	Alias:	"Median_val"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.342
+	Name:	"Medianrent"
+	Btab:	302
+	Alias:	"Medianrent"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.343
+	Name:	"Units_1det"
+	Btab:	302
+	Alias:	"Units_1det"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.344
+	Name:	"Units_1att"
+	Btab:	302
+	Alias:	"Units_1att"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.345
+	Name:	"Units2"
+	Btab:	302
+	Alias:	"Units2"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.346
+	Name:	"Units3_9"
+	Btab:	302
+	Alias:	"Units3_9"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.347
+	Name:	"Units10_49"
+	Btab:	302
+	Alias:	"Units10_49"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.348
+	Name:	"Units50_up"
+	Btab:	302
+	Alias:	"Units50_up"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.349
+	Name:	"Mobilehome"
+	Btab:	302
+	Alias:	"Mobilehome"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.350
+	Name:	"No_farms87"
+	Btab:	302
+	Alias:	"No_farms87"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.351
+	Name:	"Avg_size87"
+	Btab:	302
+	Alias:	"Avg_size87"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.352
+	Name:	"Crop_acr87"
+	Btab:	302
+	Alias:	"Crop_acr87"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.353
+	Name:	"Avg_sale87"
+	Btab:	302
+	Alias:	"Avg_sale87"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(FN.354
+	Path:	"usa/states.dbf"
+)
+
+(Field.355
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	19
+	Order:	-1
+	Pixels:	53
+)
+
+(Bitmap.356
+	NumBits:	51
+
+)
+
+(Legend.357
+	SymType:	0x02
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	358
+	Class:	363
+	StdDevs:	1.00000000000000
+	NullSym:	364
+	NullValues:	368
+	StatValues:	369
+	Precision:	-3
+)
+
+(SymList.358
+	Child:	359
+)
+
+(BShSym.359
+	Color:	360
+	Outline:	1
+	OutlineColor:	361
+	OutlineWidth:	0.10000000000000
+	BgColor:	362
+)
+
+(TClr.360
+	Red:	0xff00
+	Green:	0xfb42
+	Blue:	0xc33b
+)
+
+(TClr.361
+)
+
+(TClr.362
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(LClass.363
+	IsText:	1
+	Precision:	-3
+)
+
+(BShSym.364
+	Color:	365
+	Outline:	1
+	OutlineColor:	366
+	OutlineWidth:	0.10000000000000
+	BgColor:	367
+)
+
+(TClr.365
+	Name:	"Transparent"
+)
+
+(TClr.366
+	Name:	"Transparent"
+)
+
+(TClr.367
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NameDict.368
+)
+
+(NameDict.369
+)
+
+(Thresh.370
+)
+
+(GSet.371
+)
+
+(TxPosPly.372
+	HAlign:	3
+	VAlign:	3
+)
+
+(Equicon.373
+	InternalName:	"Equidistant Conic"
+	Description:	"Projections of the United States ; Equidistant Conic (Conterminous U.S.)"
+	Ellipsoid:	374
+	Lambda0:	-1.67551608191456
+	Phi0:	0.65449846949787
+	Phi1:	0.51487212933833
+	Phi2:	0.79412480965742
+)
+
+(Elpsoid.374
+	Radius:	6378206.40000000040000
+	Eccentricity:	0.00676865800000
+	Type:	4
+	Units:	0x07
+)
+
+(GSet.375
+)
+
+(TxPosPly.376
+	HAlign:	3
+	VAlign:	3
+)
+
+(DocAct.377
+	Doc:	6
+)
+
+(LButn.378
+	HelpTopic:	"New_button"
+	Update:	"Doc.NewUpdate"
+	Label:	"&New"
+	Click:	"View.New"
+)
+
+(LButn.379
+	HelpTopic:	"Open_button"
+	Update:	"Doc.OpenUpdate"
+	Label:	"&Open"
+	Click:	"Doc.Open"
+)
+
+(LButn.380
+	HelpTopic:	"Print_button"
+	Update:	"Doc.ActionUpdate"
+	Label:	"P&rint"
+	Click:	"Doc.Action"
+)
+
+(NameDict.381
+)
+
+(NameDict.382
+	Obj:	383
+)
+
+(AVDict.383
+	InternalName:	"Table of Contents Defaults Dialog"
+)
+
+(FN.1208
+	Path:	"$HOME"
+)
+
+(TClr.1209
+	Red:	0xffff
+	Green:	0xffff
+)
+
+(AVStr.1210
+	S:	"View"
+)
+
+(AVStr.1211
+	S:	"Table"
+)
+
+(AVStr.1212
+	S:	"Chart"
+)
+
+(AVStr.1213
+	S:	"Layout"
+)
+
+(AVStr.1214
+	S:	"Script"
+)
+
+(AVStr.1215
+	S:	"Project"
+)
+
+(AVStr.1216
+	S:	"Appl"
+)
+

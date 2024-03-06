@@ -1,0 +1,2660 @@
+/3.1
+(ODB.1
+	FirstRootClassName:	"Project"
+	Roots:	2
+	Version:	31
+)
+
+(Project.2
+	Name:	"moscow.apr"
+	CreationDate:	"22 Май 1997 г. 15:03:44"
+	GUIName:	"Project"
+	Win:	3
+	CSMgr:	4
+	DocExts:	5
+	VisGUIWidth:	100
+	Doc:	6
+	ActiveDoc:	6
+	Buttons:	348
+	Buttons:	349
+	Buttons:	350
+	Scripts:	351
+	Prefs:	352
+	WorkDir:	1205
+	WinX:	8
+	WinY:	1
+	WinW:	792
+	WinH:	716
+	SerialNumber:	"555551666666"
+	SelColor:	1206
+	GUINames:	1207
+	GUINames:	1208
+	GUINames:	1209
+	GUINames:	1210
+	GUINames:	1211
+	GUINames:	1212
+	GUINames:	1213
+	TocWidthScale:	1.00000000000000
+)
+
+(DocWin.3
+	Owner:	2
+	Open:	1
+	X:	5
+	Y:	5
+	W:	313
+	H:	318
+)
+
+(CSMgr.4
+)
+
+(DocAct.5
+	Doc:	2
+)
+
+(View.6
+	Name:	"г.Москва"
+	CreationDate:	"22 Май 1997 г. 15:03:45"
+	GUIName:	"View"
+	Win:	7
+	CSMgr:	8
+	DocExts:	10
+	DocExts:	11
+	Graphics:	12
+	Theme:	19
+	Theme:	47
+	Theme:	82
+	Theme:	117
+	Theme:	152
+	Theme:	186
+	Theme:	257
+	LastScale:	223830.20244126607000
+	Dpy:	13
+	TOCWidth:	150
+	CoordPrecision:	2
+)
+
+(DocWin.7
+	Owner:	6
+	Open:	1
+	X:	67
+	Y:	5
+	W:	679
+	H:	575
+)
+
+(CSMgr.8
+	Client:	9
+)
+
+(CSClient.9
+	Client:	10
+	ReqName:	"ClientNfy"
+)
+
+(PanMgr.10
+	Doc:	6
+)
+
+(DocAct.11
+	Doc:	6
+)
+
+(GList.12
+	Dpy:	13
+	FormatNumb:	18
+)
+
+(MapDpy.13
+	Left:	492888.63256696431000
+	Bottom:	6163871.87472209800000
+	Top:	6196088.56629352740000
+	Right:	522580.88188839291000
+	ReportUnits:	7
+	Units:	7
+	Scale:	14
+	FrameTop:	5.66666666666667
+	FrameRight:	5.35416666666667
+	PageDpy:	15
+	FitToPage:	1
+	MouseLoc:	17
+)
+
+(Numb.14
+	N:	0.00017589225927
+)
+
+(PageDpy.15
+	Top:	5.66666666666667
+	Right:	5.35416666666667
+	ReportUnits:	1
+	Units:	1
+	Scale:	16
+	ZoomRight:	5.35416666666667
+	ZoomTop:	5.66666666666667
+	GridSpacingX:	0.25000000000000
+	GridSpacingY:	0.25000000000000
+)
+
+(Numb.16
+	N:	96.00000000000000
+)
+
+(PointD.17
+	x:	493521.51094616565000
+	y:	6188330.50269820170000
+)
+
+(Numb.18
+)
+
+(FTheme.19
+	Name:	"Административное деление"
+	Source:	20
+	Flags:	0x06
+	Legend:	31
+	Threshold:	44
+	View:	6
+	GSet:	45
+	LegEditScript:	"View.EditLegend"
+	TxPos:	46
+)
+
+(ShpSrc.20
+	Name:	21
+	FTab:	23
+)
+
+(SrcName.21
+	FileName:	22
+	Name:	"msadm.shp"
+	SubName:	"Polygon"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.22
+	Path:	"msadm.shp"
+)
+
+(FTab.23
+	Name:	"msadm.dbf"
+	BTab:	24
+	Fields:	29
+	Fields:	25
+	Fields:	26
+	Fields:	27
+	SelBits:	30
+	FSrc:	20
+)
+
+(dBASE.24
+	Name:	"msadm.dbf"
+	Fields:	25
+	Fields:	26
+	Fields:	27
+	FileName:	28
+)
+
+(Field.25
+	Name:	"Cennew_id"
+	Btab:	24
+	Alias:	"Cennew_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.26
+	Name:	"Okrug"
+	Btab:	24
+	Alias:	"Okrug"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(Field.27
+	Name:	"Munic"
+	Btab:	24
+	Alias:	"Munic"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(FN.28
+	Path:	"msadm.dbf"
+)
+
+(Field.29
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	19
+	Order:	-1
+	Pixels:	53
+)
+
+(Bitmap.30
+	NumBits:	135
+
+)
+
+(Legend.31
+	SymType:	0x02
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	32
+	Class:	37
+	StdDevs:	1.00000000000000
+	NullSym:	38
+	NullValues:	42
+	StatValues:	43
+	Precision:	-3
+)
+
+(SymList.32
+	Child:	33
+)
+
+(BShSym.33
+	Color:	34
+	Outline:	1
+	OutlineColor:	35
+	OutlineWidth:	0.10000000000000
+	BgColor:	36
+)
+
+(TClr.34
+	Name:	"Transparent"
+)
+
+(TClr.35
+	Red:	0xffff
+)
+
+(TClr.36
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(LClass.37
+	IsText:	1
+	Precision:	-3
+)
+
+(BShSym.38
+	Color:	39
+	Outline:	1
+	OutlineColor:	40
+	OutlineWidth:	0.10000000000000
+	BgColor:	41
+)
+
+(TClr.39
+	Name:	"Transparent"
+)
+
+(TClr.40
+	Name:	"Transparent"
+)
+
+(TClr.41
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NameDict.42
+)
+
+(NameDict.43
+)
+
+(Thresh.44
+)
+
+(GSet.45
+)
+
+(TxPosPly.46
+	HAlign:	3
+	VAlign:	3
+)
+
+(FTheme.47
+	Name:	"Железные дороги"
+	Source:	48
+	Flags:	0x06
+	Legend:	63
+	Threshold:	72
+	View:	6
+	GSet:	73
+	LegEditScript:	"View.EditLegend"
+	TxPos:	74
+	AttrRules:	75
+	AttrRules:	76
+	AttrRules:	77
+	AttrRules:	78
+	AttrRules:	79
+	AttrRules:	80
+	AttrRules:	81
+)
+
+(ShpSrc.48
+	Name:	49
+	FTab:	51
+)
+
+(SrcName.49
+	FileName:	50
+	Name:	"msrway.shp"
+	SubName:	"Arc"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.50
+	Path:	"msrway.shp"
+)
+
+(FTab.51
+	Name:	"msrway.dbf"
+	BTab:	52
+	Fields:	61
+	Fields:	53
+	Fields:	54
+	Fields:	55
+	Fields:	56
+	Fields:	57
+	Fields:	58
+	Fields:	59
+	SelBits:	62
+	FSrc:	48
+)
+
+(dBASE.52
+	Name:	"msrway.dbf"
+	Fields:	53
+	Fields:	54
+	Fields:	55
+	Fields:	56
+	Fields:	57
+	Fields:	58
+	Fields:	59
+	FileName:	60
+)
+
+(Field.53
+	Name:	"Fnode_"
+	Btab:	52
+	Alias:	"Fnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.54
+	Name:	"Tnode_"
+	Btab:	52
+	Alias:	"Tnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.55
+	Name:	"Lpoly_"
+	Btab:	52
+	Alias:	"Lpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.56
+	Name:	"Rpoly_"
+	Btab:	52
+	Alias:	"Rpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.57
+	Name:	"Length"
+	Btab:	52
+	Alias:	"Length"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.58
+	Name:	"Rwaygs_"
+	Btab:	52
+	Alias:	"Rwaygs_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.59
+	Name:	"Rwaygs_id"
+	Btab:	52
+	Alias:	"Rwaygs_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(FN.60
+	Path:	"msrway.dbf"
+)
+
+(Field.61
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	18
+	Order:	-1
+)
+
+(Bitmap.62
+	NumBits:	224
+
+)
+
+(Legend.63
+	SymType:	0x01
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	64
+	Class:	67
+	StdDevs:	1.00000000000000
+	NullSym:	68
+	NullValues:	70
+	StatValues:	71
+	Precision:	-3
+)
+
+(SymList.64
+	Child:	65
+)
+
+(BLnSym.65
+	Color:	66
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.66
+)
+
+(LClass.67
+	IsText:	1
+	Precision:	-3
+)
+
+(BLnSym.68
+	Color:	69
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.69
+	Name:	"Transparent"
+)
+
+(NameDict.70
+)
+
+(NameDict.71
+)
+
+(Thresh.72
+)
+
+(GSet.73
+)
+
+(TxPosArc.74
+	HAlign:	3
+	VAlign:	1
+)
+
+(AttrSingle.75
+	FTab:	51
+	Field:	53
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.76
+	FTab:	51
+	Field:	54
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.77
+	FTab:	51
+	Field:	55
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.78
+	FTab:	51
+	Field:	56
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.79
+	FTab:	51
+	Field:	57
+	UnionRule:	6
+	SplitRule:	4
+)
+
+(AttrSingle.80
+	FTab:	51
+	Field:	58
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.81
+	FTab:	51
+	Field:	59
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(FTheme.82
+	Name:	"Мелкие водные объекты"
+	Source:	83
+	Flags:	0x06
+	Legend:	98
+	Threshold:	107
+	View:	6
+	GSet:	108
+	LegEditScript:	"View.EditLegend"
+	TxPos:	109
+	AttrRules:	110
+	AttrRules:	111
+	AttrRules:	112
+	AttrRules:	113
+	AttrRules:	114
+	AttrRules:	115
+	AttrRules:	116
+)
+
+(ShpSrc.83
+	Name:	84
+	FTab:	86
+)
+
+(SrcName.84
+	FileName:	85
+	Name:	"msriv.shp"
+	SubName:	"Arc"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.85
+	Path:	"msriv.shp"
+)
+
+(FTab.86
+	Name:	"msriv.dbf"
+	BTab:	87
+	Fields:	96
+	Fields:	88
+	Fields:	89
+	Fields:	90
+	Fields:	91
+	Fields:	92
+	Fields:	93
+	Fields:	94
+	SelBits:	97
+	FSrc:	83
+)
+
+(dBASE.87
+	Name:	"msriv.dbf"
+	Fields:	88
+	Fields:	89
+	Fields:	90
+	Fields:	91
+	Fields:	92
+	Fields:	93
+	Fields:	94
+	FileName:	95
+)
+
+(Field.88
+	Name:	"Fnode_"
+	Btab:	87
+	Alias:	"Fnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.89
+	Name:	"Tnode_"
+	Btab:	87
+	Alias:	"Tnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.90
+	Name:	"Lpoly_"
+	Btab:	87
+	Alias:	"Lpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.91
+	Name:	"Rpoly_"
+	Btab:	87
+	Alias:	"Rpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.92
+	Name:	"Length"
+	Btab:	87
+	Alias:	"Length"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.93
+	Name:	"Rivgs_"
+	Btab:	87
+	Alias:	"Rivgs_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.94
+	Name:	"Rivgs_id"
+	Btab:	87
+	Alias:	"Rivgs_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(FN.95
+	Path:	"msriv.dbf"
+)
+
+(Field.96
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	18
+	Order:	-1
+)
+
+(Bitmap.97
+	NumBits:	1093
+
+)
+
+(Legend.98
+	SymType:	0x01
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	99
+	Class:	102
+	StdDevs:	1.00000000000000
+	NullSym:	103
+	NullValues:	105
+	StatValues:	106
+	Precision:	-3
+)
+
+(SymList.99
+	Child:	100
+)
+
+(BLnSym.100
+	Color:	101
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.101
+	Red:	0xfe
+	Green:	0x820c
+	Blue:	0xff00
+)
+
+(LClass.102
+	IsText:	1
+	Precision:	-3
+)
+
+(BLnSym.103
+	Color:	104
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.104
+	Name:	"Transparent"
+)
+
+(NameDict.105
+)
+
+(NameDict.106
+)
+
+(Thresh.107
+)
+
+(GSet.108
+)
+
+(TxPosArc.109
+	HAlign:	3
+	VAlign:	1
+)
+
+(AttrSingle.110
+	FTab:	86
+	Field:	88
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.111
+	FTab:	86
+	Field:	89
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.112
+	FTab:	86
+	Field:	90
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.113
+	FTab:	86
+	Field:	91
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.114
+	FTab:	86
+	Field:	92
+	UnionRule:	6
+	SplitRule:	4
+)
+
+(AttrSingle.115
+	FTab:	86
+	Field:	93
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.116
+	FTab:	86
+	Field:	94
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(FTheme.117
+	Name:	"Водные объекты"
+	Source:	118
+	Flags:	0x07
+	Legend:	131
+	Threshold:	144
+	View:	6
+	GSet:	145
+	LegEditScript:	"View.EditLegend"
+	TxPos:	146
+	LabelField:	127
+	AttrRules:	147
+	AttrRules:	148
+	AttrRules:	149
+	AttrRules:	150
+	AttrRules:	151
+)
+
+(ShpSrc.118
+	Name:	119
+	FTab:	121
+)
+
+(SrcName.119
+	FileName:	120
+	Name:	"mslak.shp"
+	SubName:	"Polygon"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.120
+	Path:	"mslak.shp"
+)
+
+(FTab.121
+	Name:	"mslak.dbf"
+	BTab:	122
+	Query:	"( [Type]  <>  \"\" )"
+	Fields:	129
+	Fields:	123
+	Fields:	124
+	Fields:	125
+	Fields:	126
+	Fields:	127
+	SelBits:	130
+	FSrc:	118
+)
+
+(dBASE.122
+	Name:	"mslak.dbf"
+	Fields:	123
+	Fields:	124
+	Fields:	125
+	Fields:	126
+	Fields:	127
+	FileName:	128
+)
+
+(Field.123
+	Name:	"Area"
+	Btab:	122
+	Alias:	"Area"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.124
+	Name:	"Perimeter"
+	Btab:	122
+	Alias:	"Perimeter"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.125
+	Name:	"Rivgs_"
+	Btab:	122
+	Alias:	"Rivgs_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.126
+	Name:	"Rivgs_id"
+	Btab:	122
+	Alias:	"Rivgs_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.127
+	Name:	"Type"
+	Btab:	122
+	Alias:	"Type"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(FN.128
+	Path:	"mslak.dbf"
+)
+
+(Field.129
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	19
+	Order:	-1
+)
+
+(Bitmap.130
+	NumBits:	510
+
+)
+
+(Legend.131
+	SymType:	0x02
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	132
+	Class:	137
+	StdDevs:	1.00000000000000
+	NullSym:	138
+	NullValues:	142
+	StatValues:	143
+	Precision:	-3
+)
+
+(SymList.132
+	Child:	133
+)
+
+(BShSym.133
+	Color:	134
+	OutlineColor:	135
+	OutlineWidth:	0.10000000000000
+	BgColor:	136
+)
+
+(TClr.134
+	Red:	0xfe
+	Green:	0x820c
+	Blue:	0xff00
+)
+
+(TClr.135
+	Red:	0xfe
+	Green:	0x820c
+	Blue:	0xff00
+)
+
+(TClr.136
+	Red:	0xfe
+	Green:	0x820c
+	Blue:	0xff00
+)
+
+(LClass.137
+	IsText:	1
+	Precision:	-3
+)
+
+(BShSym.138
+	Color:	139
+	Outline:	1
+	OutlineColor:	140
+	OutlineWidth:	0.10000000000000
+	BgColor:	141
+)
+
+(TClr.139
+	Name:	"Transparent"
+)
+
+(TClr.140
+	Name:	"Transparent"
+)
+
+(TClr.141
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NameDict.142
+)
+
+(NameDict.143
+)
+
+(Thresh.144
+)
+
+(GSet.145
+)
+
+(TxPosPly.146
+	HAlign:	3
+	VAlign:	3
+)
+
+(AttrSingle.147
+	FTab:	121
+	Field:	123
+	UnionRule:	5
+	SplitRule:	3
+)
+
+(AttrSingle.148
+	FTab:	121
+	Field:	124
+	UnionRule:	6
+	SplitRule:	4
+)
+
+(AttrSingle.149
+	FTab:	121
+	Field:	125
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.150
+	FTab:	121
+	Field:	126
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.151
+	FTab:	121
+	Field:	127
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(FTheme.152
+	Name:	"Станции метро"
+	Source:	153
+	Flags:	0x06
+	Legend:	168
+	Threshold:	183
+	View:	6
+	GSet:	184
+	LegEditScript:	"View.EditLegend"
+	TxPos:	185
+	LabelField:	162
+)
+
+(ShpSrc.153
+	Name:	154
+	FTab:	156
+)
+
+(SrcName.154
+	FileName:	155
+	Name:	"msmetro.shp"
+	SubName:	"Point"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.155
+	Path:	"msmetro.shp"
+)
+
+(FTab.156
+	Name:	"msmetro.dbf"
+	BTab:	157
+	Fields:	166
+	Fields:	158
+	Fields:	159
+	Fields:	160
+	Fields:	161
+	Fields:	162
+	Fields:	163
+	Fields:	164
+	SelBits:	167
+	FSrc:	153
+)
+
+(dBASE.157
+	Name:	"msmetro.dbf"
+	Fields:	158
+	Fields:	159
+	Fields:	160
+	Fields:	161
+	Fields:	162
+	Fields:	163
+	Fields:	164
+	FileName:	165
+)
+
+(Field.158
+	Name:	"Area"
+	Btab:	157
+	Alias:	"Area"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.159
+	Name:	"Perimeter"
+	Btab:	157
+	Alias:	"Perimeter"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.160
+	Name:	"Metrogs_"
+	Btab:	157
+	Alias:	"Metrogs_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.161
+	Name:	"Metrogs_id"
+	Btab:	157
+	Alias:	"Metrogs_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.162
+	Name:	"Name"
+	Btab:	157
+	Alias:	"Name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(Field.163
+	Name:	"Line1"
+	Btab:	157
+	Alias:	"Line1"
+	Visible:	1
+	Type:	9
+	Order:	-1
+)
+
+(Field.164
+	Name:	"Name_e"
+	Btab:	157
+	Alias:	"Name_e"
+	Visible:	1
+	Type:	4
+	Order:	-1
+)
+
+(FN.165
+	Path:	"msmetro.dbf"
+)
+
+(Field.166
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	17
+	Order:	-1
+)
+
+(Bitmap.167
+	NumBits:	242
+
+)
+
+(Legend.168
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	169
+	Class:	177
+	StdDevs:	1.00000000000000
+	NullSym:	178
+	NullValues:	181
+	StatValues:	182
+	Precision:	-3
+)
+
+(SymList.169
+	Child:	170
+)
+
+(BMkSym.170
+	Color:	171
+	BgColor:	172
+	Font:	173
+	Size:	6.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.171
+	Red:	0xffff
+	Blue:	0xffff
+)
+
+(TClr.172
+	Name:	"Transparent"
+)
+
+(NFont.173
+	Family:	174
+	Name:	175
+	Style:	176
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.174
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.175
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.176
+	S:	"Normal"
+)
+
+(LClass.177
+	IsText:	1
+	Precision:	-3
+)
+
+(BMkSym.178
+	Color:	179
+	BgColor:	180
+	Font:	173
+	Size:	8.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.179
+	Name:	"Transparent"
+)
+
+(TClr.180
+	Name:	"Transparent"
+)
+
+(NameDict.181
+)
+
+(NameDict.182
+)
+
+(Thresh.183
+)
+
+(GSet.184
+)
+
+(TxPosPt.185
+	HAlign:	4
+	VAlign:	3
+)
+
+(FTheme.186
+	Name:	"Улицы"
+	Source:	187
+	Flags:	0x06
+	Legend:	212
+	Threshold:	221
+	View:	6
+	GSet:	222
+	LegEditScript:	"View.EditLegend"
+	TxPos:	223
+	MatchSource:	224
+	LabelField:	199
+	AttrRules:	240
+	AttrRules:	241
+	AttrRules:	242
+	AttrRules:	243
+	AttrRules:	244
+	AttrRules:	245
+	AttrRules:	246
+	AttrRules:	247
+	AttrRules:	248
+	AttrRules:	249
+	AttrRules:	250
+	AttrRules:	251
+	AttrRules:	252
+	AttrRules:	253
+	AttrRules:	254
+	AttrRules:	255
+	AttrRules:	256
+)
+
+(ShpSrc.187
+	Name:	188
+	FTab:	190
+)
+
+(SrcName.188
+	FileName:	189
+	Name:	"mcl.shp"
+	SubName:	"Arc"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.189
+	Path:	"mcl.shp"
+)
+
+(FTab.190
+	Name:	"mcl.dbf"
+	BTab:	191
+	Fields:	210
+	Fields:	192
+	Fields:	193
+	Fields:	194
+	Fields:	195
+	Fields:	196
+	Fields:	197
+	Fields:	198
+	Fields:	199
+	Fields:	200
+	Fields:	201
+	Fields:	202
+	Fields:	203
+	Fields:	204
+	Fields:	205
+	Fields:	206
+	Fields:	207
+	Fields:	208
+	SelBits:	211
+	FSrc:	187
+)
+
+(dBASE.191
+	Name:	"mcl.dbf"
+	Fields:	192
+	Fields:	193
+	Fields:	194
+	Fields:	195
+	Fields:	196
+	Fields:	197
+	Fields:	198
+	Fields:	199
+	Fields:	200
+	Fields:	201
+	Fields:	202
+	Fields:	203
+	Fields:	204
+	Fields:	205
+	Fields:	206
+	Fields:	207
+	Fields:	208
+	FileName:	209
+)
+
+(Field.192
+	Name:	"Fnode_"
+	Btab:	191
+	Alias:	"Fnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.193
+	Name:	"Tnode_"
+	Btab:	191
+	Alias:	"Tnode_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.194
+	Name:	"Lpoly_"
+	Btab:	191
+	Alias:	"Lpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.195
+	Name:	"Rpoly_"
+	Btab:	191
+	Alias:	"Rpoly_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.196
+	Name:	"Length"
+	Btab:	191
+	Alias:	"Length"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	83
+)
+
+(Field.197
+	Name:	"Mclallgs_"
+	Btab:	191
+	Alias:	"Mclallgs_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.198
+	Name:	"Mclallgs_i"
+	Btab:	191
+	Alias:	"Mclallgs_i"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.199
+	Name:	"Name"
+	Btab:	191
+	Alias:	"Name"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(Field.200
+	Name:	"Fromleft"
+	Btab:	191
+	Alias:	"Fromleft"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	42
+)
+
+(Field.201
+	Name:	"Toleft"
+	Btab:	191
+	Alias:	"Toleft"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	41
+)
+
+(Field.202
+	Name:	"Fromright"
+	Btab:	191
+	Alias:	"Fromright"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	48
+)
+
+(Field.203
+	Name:	"Toright"
+	Btab:	191
+	Alias:	"Toright"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	41
+)
+
+(Field.204
+	Name:	"Code"
+	Btab:	191
+	Alias:	"Code"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	41
+)
+
+(Field.205
+	Name:	"Hw"
+	Btab:	191
+	Alias:	"Hw"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(Field.206
+	Name:	"Oneway"
+	Btab:	191
+	Alias:	"Oneway"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	44
+)
+
+(Field.207
+	Name:	"F_elev"
+	Btab:	191
+	Alias:	"F_elev"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	37
+)
+
+(Field.208
+	Name:	"T_elev"
+	Btab:	191
+	Alias:	"T_elev"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	38
+)
+
+(FN.209
+	Path:	"mcl.dbf"
+)
+
+(Field.210
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	18
+	Order:	-1
+	Pixels:	59
+)
+
+(Bitmap.211
+	NumBits:	13027
+
+)
+
+(Legend.212
+	SymType:	0x01
+	LegType:	0x01
+	ClassType:	0x03
+	Symbols:	213
+	Class:	216
+	StdDevs:	1.00000000000000
+	NullSym:	217
+	NullValues:	219
+	StatValues:	220
+	Precision:	-3
+)
+
+(SymList.213
+	Child:	214
+)
+
+(BLnSym.214
+	Color:	215
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.215
+	Red:	0xa5a5
+	Green:	0xa5a5
+	Blue:	0xa5a5
+)
+
+(LClass.216
+	IsText:	1
+	Precision:	-3
+)
+
+(BLnSym.217
+	Color:	218
+	Width:	0.10000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+	Pattern:	0.00000000000000
+)
+
+(TClr.218
+	Name:	"Transparent"
+)
+
+(NameDict.219
+)
+
+(NameDict.220
+)
+
+(Thresh.221
+)
+
+(GSet.222
+)
+
+(TxPosArc.223
+	HAlign:	3
+	VAlign:	1
+)
+
+(MSrc.224
+	FSrc:	187
+	RefVTab:	190
+	MTab:	225
+	MaxScore:	0x8ee
+	IntMaxScore:	0xe7a
+	IntDelimit:	" & "
+	DefSqueeze:	5.00000000000000
+)
+
+(MTab.225
+	Name:	"US Streets"
+	IndexFile:	226
+	IndexFlag:	"864289800"
+	RecordLength:	82
+	IntRecLen:	84
+	VTab:	190
+	MFieldList:	227
+	MFieldList:	228
+	MFieldList:	229
+	MFieldList:	230
+	MFieldList:	231
+	MIndexList:	232
+	MIndexList:	233
+	MQueryList:	234
+	MQueryList:	235
+	StanRules:	"us_addr.stn"
+	MatchRules:	"us_addr2.mat"
+	IntFieldList:	236
+	IntFieldList:	237
+	IntIndexList:	232
+	IntQueryList:	238
+	IntQueryList:	239
+	IntStanRules:	"us_intsc.stn"
+	IntMatchRules:	"us_intsc.mat"
+)
+
+(FN.226
+	Path:	"c:/russia/russia/mcl.ixs"
+)
+
+(MField.227
+	FieldName:	"LeftFrom"
+	StartPos:	1
+	Width:	10
+	Required:	1
+	Justification:	2
+	VTabField:	200
+)
+
+(MField.228
+	FieldName:	"LeftTo"
+	StartPos:	21
+	Width:	10
+	Required:	1
+	Justification:	2
+	VTabField:	201
+)
+
+(MField.229
+	FieldName:	"RightFrom"
+	StartPos:	11
+	Width:	10
+	Required:	1
+	Justification:	2
+	VTabField:	202
+)
+
+(MField.230
+	FieldName:	"RightTo"
+	StartPos:	31
+	Width:	10
+	Required:	1
+	Justification:	2
+	VTabField:	203
+)
+
+(MField.231
+	FieldName:	"StreetName"
+	StartPos:	47
+	Width:	28
+	Required:	1
+	Justification:	1
+	VTabField:	199
+)
+
+(MIndex.232
+	IndexName:	"I1"
+	IndexType:	7
+	MatchFields:	231
+)
+
+(MIndex.233
+	IndexName:	"I2"
+	IndexType:	6
+	MatchFields:	227
+	MatchFields:	229
+	MatchFields:	228
+	MatchFields:	230
+)
+
+(MQuery.234
+	Query:	"I1 = \"%SN%\"?"
+	FieldName:	"SN"
+	Status:	1
+)
+
+(MQuery.235
+	Query:	"I2 = %HN%"
+	FieldName:	"HN"
+	Status:	1
+)
+
+(MField.236
+	FieldName:	"StreetName1"
+	StartPos:	7
+	Width:	28
+	Justification:	1
+	VTabField:	199
+)
+
+(MField.237
+	FieldName:	"StreetName2"
+	StartPos:	49
+	Width:	28
+	Justification:	1
+	VTabField:	199
+)
+
+(MQuery.238
+	Query:	"I1 = \"%S1%\"?"
+	FieldName:	"S1"
+	Status:	1
+)
+
+(MQuery.239
+	Query:	"I1 = \"%S2%\"?"
+	FieldName:	"S2"
+	Status:	1
+)
+
+(AttrSingle.240
+	FTab:	190
+	Field:	192
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.241
+	FTab:	190
+	Field:	193
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.242
+	FTab:	190
+	Field:	194
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.243
+	FTab:	190
+	Field:	195
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.244
+	FTab:	190
+	Field:	196
+	UnionRule:	6
+	SplitRule:	4
+)
+
+(AttrSingle.245
+	FTab:	190
+	Field:	197
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.246
+	FTab:	190
+	Field:	198
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.247
+	FTab:	190
+	Field:	199
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.248
+	FTab:	190
+	Field:	200
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.249
+	FTab:	190
+	Field:	201
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.250
+	FTab:	190
+	Field:	202
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.251
+	FTab:	190
+	Field:	203
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.252
+	FTab:	190
+	Field:	204
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.253
+	FTab:	190
+	Field:	205
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.254
+	FTab:	190
+	Field:	206
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.255
+	FTab:	190
+	Field:	207
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.256
+	FTab:	190
+	Field:	208
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(FTheme.257
+	Name:	"Кварталы"
+	Source:	258
+	Flags:	0x06
+	Legend:	271
+	Threshold:	340
+	View:	6
+	GSet:	341
+	LegEditScript:	"View.EditLegend"
+	TxPos:	342
+	LabelField:	267
+	AttrRules:	343
+	AttrRules:	344
+	AttrRules:	345
+	AttrRules:	346
+	AttrRules:	347
+)
+
+(ShpSrc.258
+	Name:	259
+	FTab:	261
+)
+
+(SrcName.259
+	FileName:	260
+	Name:	"mskv.shp"
+	SubName:	"Polygon"
+	OwnerClass:	"ShpSrc"
+)
+
+(FN.260
+	Path:	"mskv.shp"
+)
+
+(FTab.261
+	Name:	"mskv.dbf"
+	BTab:	262
+	Fields:	269
+	Fields:	263
+	Fields:	264
+	Fields:	265
+	Fields:	266
+	Fields:	267
+	SelBits:	270
+	FSrc:	258
+)
+
+(dBASE.262
+	Name:	"mskv.dbf"
+	Fields:	263
+	Fields:	264
+	Fields:	265
+	Fields:	266
+	Fields:	267
+	FileName:	268
+)
+
+(Field.263
+	Name:	"Area"
+	Btab:	262
+	Alias:	"Area"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	83
+)
+
+(Field.264
+	Name:	"Perimeter"
+	Btab:	262
+	Alias:	"Perimeter"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	83
+)
+
+(Field.265
+	Name:	"Mkvgs_"
+	Btab:	262
+	Alias:	"Mkvgs_"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.266
+	Name:	"Mkvgs_id"
+	Btab:	262
+	Alias:	"Mkvgs_id"
+	Visible:	1
+	Type:	9
+	Order:	-1
+	Pixels:	71
+)
+
+(Field.267
+	Name:	"Usage"
+	Btab:	262
+	Alias:	"Usage"
+	Visible:	1
+	Type:	4
+	Order:	-1
+	Pixels:	150
+)
+
+(FN.268
+	Path:	"mskv.dbf"
+)
+
+(Field.269
+	Name:	"Shape"
+	Alias:	"Shape"
+	Visible:	1
+	Type:	19
+	Order:	-1
+	Pixels:	53
+)
+
+(Bitmap.270
+	NumBits:	7963
+
+)
+
+(Legend.271
+	SymType:	0x02
+	LegType:	0x08
+	ClassType:	0x03
+	FieldNames:	272
+	Symbols:	273
+	Class:	322
+	Class:	323
+	Class:	324
+	Class:	325
+	Class:	326
+	Class:	327
+	Class:	328
+	Class:	329
+	Class:	330
+	Class:	331
+	Class:	332
+	Class:	333
+	StdDevs:	1.00000000000000
+	NullSym:	334
+	NullValues:	338
+	StatValues:	339
+	Precision:	-3
+)
+
+(AVStr.272
+	S:	"Usage"
+)
+
+(SymList.273
+	Child:	274
+	Child:	278
+	Child:	282
+	Child:	286
+	Child:	290
+	Child:	294
+	Child:	298
+	Child:	302
+	Child:	306
+	Child:	310
+	Child:	314
+	Child:	318
+)
+
+(BShSym.274
+	Color:	275
+	OutlineColor:	276
+	OutlineWidth:	0.10000000000000
+	BgColor:	277
+)
+
+(TClr.275
+	Red:	0xfe
+	Green:	0x820c
+	Blue:	0xff00
+)
+
+(TClr.276
+)
+
+(TClr.277
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(BShSym.278
+	Color:	279
+	OutlineColor:	280
+	OutlineWidth:	0.10000000000000
+	BgColor:	281
+)
+
+(TClr.279
+	Red:	0xa610
+	Green:	0xff00
+	Blue:	0xa559
+)
+
+(TClr.280
+)
+
+(TClr.281
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(BShSym.282
+	Color:	283
+	OutlineColor:	284
+	OutlineWidth:	0.10000000000000
+	BgColor:	285
+)
+
+(TClr.283
+	Red:	0x299
+	Green:	0xdc00
+	Blue:	0xdb
+)
+
+(TClr.284
+)
+
+(TClr.285
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(BShSym.286
+	Color:	287
+	OutlineColor:	288
+	OutlineWidth:	0.10000000000000
+	BgColor:	289
+)
+
+(TClr.287
+	Red:	0xa5a5
+	Green:	0xa5a5
+	Blue:	0xa5a5
+)
+
+(TClr.288
+)
+
+(TClr.289
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(BShSym.290
+	Color:	291
+	OutlineColor:	292
+	OutlineWidth:	0.10000000000000
+	BgColor:	293
+)
+
+(TClr.291
+	Red:	0xff00
+	Green:	0xf963
+	Blue:	0xa559
+)
+
+(TClr.292
+)
+
+(TClr.293
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(BShSym.294
+	Color:	295
+	OutlineColor:	296
+	OutlineWidth:	0.10000000000000
+	BgColor:	297
+)
+
+(TClr.295
+	Red:	0x189
+	Green:	0x8200
+	Blue:	0x81
+)
+
+(TClr.296
+)
+
+(TClr.297
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(BShSym.298
+	Color:	299
+	OutlineColor:	300
+	OutlineWidth:	0.10000000000000
+	BgColor:	301
+)
+
+(TClr.299
+	Red:	0xc948
+	Green:	0xc33b
+	Blue:	0xff00
+)
+
+(TClr.300
+)
+
+(TClr.301
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(BShSym.302
+	Color:	303
+	OutlineColor:	304
+	OutlineWidth:	0.10000000000000
+	BgColor:	305
+)
+
+(TClr.303
+	Green:	0xffff
+)
+
+(TClr.304
+)
+
+(TClr.305
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(BShSym.306
+	Color:	307
+	OutlineColor:	308
+	OutlineWidth:	0.10000000000000
+	BgColor:	309
+)
+
+(TClr.307
+	Red:	0xff00
+	Green:	0xc33b
+	Blue:	0xc33b
+)
+
+(TClr.308
+)
+
+(TClr.309
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(BShSym.310
+	Color:	311
+	OutlineColor:	312
+	OutlineWidth:	0.10000000000000
+	BgColor:	313
+)
+
+(TClr.311
+	Red:	0xfa4e
+	Green:	0xc33b
+	Blue:	0xff00
+)
+
+(TClr.312
+)
+
+(TClr.313
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(BShSym.314
+	Color:	315
+	OutlineColor:	316
+	OutlineWidth:	0.10000000000000
+	BgColor:	317
+)
+
+(TClr.315
+	Red:	0xd2d2
+	Green:	0xd2d2
+	Blue:	0xd2d2
+)
+
+(TClr.316
+)
+
+(TClr.317
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(BShSym.318
+	Color:	319
+	Outline:	1
+	OutlineColor:	320
+	OutlineWidth:	0.10000000000000
+	BgColor:	321
+)
+
+(TClr.319
+	Name:	"Transparent"
+)
+
+(TClr.320
+	Name:	"Transparent"
+)
+
+(TClr.321
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(LClass.322
+	IsText:	1
+	Label:	"водный объект"
+	MinStr:	"водный объект"
+	MaxStr:	"водный объект"
+	Precision:	-3
+)
+
+(LClass.323
+	IsText:	1
+	Label:	"газоны,пустыри"
+	MinStr:	"газоны,пустыри"
+	MaxStr:	"газоны,пустыри"
+	Precision:	-3
+)
+
+(LClass.324
+	IsText:	1
+	Label:	"дачный поселок"
+	MinStr:	"дачный поселок"
+	MaxStr:	"дачный поселок"
+	Precision:	-3
+)
+
+(LClass.325
+	IsText:	1
+	Label:	"ж/д мост"
+	MinStr:	"ж/д мост"
+	MaxStr:	"ж/д мост"
+	Precision:	-3
+)
+
+(LClass.326
+	IsText:	1
+	Label:	"квартал"
+	MinStr:	"квартал"
+	MaxStr:	"квартал"
+	Precision:	-3
+)
+
+(LClass.327
+	IsText:	1
+	Label:	"кладбище"
+	MinStr:	"кладбище"
+	MaxStr:	"кладбище"
+	Precision:	-3
+)
+
+(LClass.328
+	IsText:	1
+	Label:	"отчужденные земли"
+	MinStr:	"отчужденные земли"
+	MaxStr:	"отчужденные земли"
+	Precision:	-3
+)
+
+(LClass.329
+	IsText:	1
+	Label:	"парк"
+	MinStr:	"парк"
+	MaxStr:	"парк"
+	Precision:	-3
+)
+
+(LClass.330
+	IsText:	1
+	Label:	"пригород"
+	MinStr:	"пригород"
+	MaxStr:	"пригород"
+	Precision:	-3
+)
+
+(LClass.331
+	IsText:	1
+	Label:	"стадион"
+	MinStr:	"стадион"
+	MaxStr:	"стадион"
+	Precision:	-3
+)
+
+(LClass.332
+	IsText:	1
+	Label:	"улицы"
+	MinStr:	"улицы"
+	MaxStr:	"улицы"
+	Precision:	-3
+)
+
+(LClass.333
+	IsNoData:	1
+	IsText:	1
+	Label:	"Нет данных"
+	Precision:	-3
+)
+
+(BShSym.334
+	Color:	335
+	Outline:	1
+	OutlineColor:	336
+	OutlineWidth:	0.10000000000000
+	BgColor:	337
+)
+
+(TClr.335
+	Name:	"Transparent"
+)
+
+(TClr.336
+	Name:	"Transparent"
+)
+
+(TClr.337
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NameDict.338
+)
+
+(NameDict.339
+)
+
+(Thresh.340
+)
+
+(GSet.341
+)
+
+(TxPosPly.342
+	HAlign:	3
+	VAlign:	3
+)
+
+(AttrSingle.343
+	FTab:	261
+	Field:	263
+	UnionRule:	5
+	SplitRule:	3
+)
+
+(AttrSingle.344
+	FTab:	261
+	Field:	264
+	UnionRule:	6
+	SplitRule:	4
+)
+
+(AttrSingle.345
+	FTab:	261
+	Field:	265
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.346
+	FTab:	261
+	Field:	266
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(AttrSingle.347
+	FTab:	261
+	Field:	267
+	UnionRule:	1
+	SplitRule:	1
+)
+
+(LButn.348
+	HelpTopic:	"New_button"
+	Update:	"Doc.NewUpdate"
+	Label:	"&Новый"
+	Click:	"Table.New"
+)
+
+(LButn.349
+	Disabled:	1
+	HelpTopic:	"Open_button"
+	Update:	"Doc.OpenUpdate"
+	Label:	"От&крыть"
+	Click:	"Doc.Open"
+)
+
+(LButn.350
+	HelpTopic:	"Add_button"
+	Update:	"Table.ActionUpdate"
+	Label:	"&Добавить"
+	Click:	"Table.Action"
+)
+
+(NameDict.351
+)
+
+(NameDict.352
+	Obj:	353
+)
+
+(AVDict.353
+	InternalName:	"Table of Contents Defaults Dialog"
+)
+
+(FN.1205
+	Path:	"$HOME"
+)
+
+(TClr.1206
+	Red:	0xffff
+	Green:	0xffff
+)
+
+(AVStr.1207
+	S:	"View"
+)
+
+(AVStr.1208
+	S:	"Table"
+)
+
+(AVStr.1209
+	S:	"Chart"
+)
+
+(AVStr.1210
+	S:	"Layout"
+)
+
+(AVStr.1211
+	S:	"Script"
+)
+
+(AVStr.1212
+	S:	"Project"
+)
+
+(AVStr.1213
+	S:	"Appl"
+)
+
