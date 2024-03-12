@@ -13,9 +13,9 @@ using System.Windows.Forms;
 /*
  * Задания:
  * 
- * 1) Откуда были введены данные
- * 2) Данные были отредактированы
- * 3) Убрать считывание данных из файла, если есть ошибка
+ * 1) Откуда были введены данные 
+ * 2) Данные были отредактированы 
+ * 3) Убрать считывание данных из файла, если есть ошибка ✓
  * 
  */
 
@@ -39,7 +39,8 @@ namespace ProjectArrayShifter
         private void InitForm()
         {
             ArrayInput = "";
-            SetStartValue();
+            SetStartValue(startValues.Null);
+            UpdateStartValue();
             panel2.Visible = false;
             error = new ErrorUI();
             this.AllowDrop = true;
@@ -113,7 +114,7 @@ namespace ProjectArrayShifter
                 {
                     button2.Visible = false;
                     Logger.Log($"Значение массива очищено");
-                    isRed = false;
+                    
                 }
                 else
                 {
@@ -127,6 +128,7 @@ namespace ProjectArrayShifter
 
         private bool inputArraySize_OnChanged(startValues startValues)
         {
+            
             data = startValues;
             ArrayInput = "";
             error.SetError(null);
@@ -142,14 +144,26 @@ namespace ProjectArrayShifter
             {
                 panel2.Visible = false;
                 // TODO: Введено неверное значение
-                error.SetError("Введено неверное значение");
+                error.SetError("Введено неверное значение длины массива");
                 inputArraySize.Text = "";
                 return false;
             }
             return true;
         }
 
-        
+        private bool CheckArraySize(string sizeArray)
+        {
+            if (int.TryParse(sizeArray, out int size))
+            {
+                return true;
+            }
+            else
+            {              
+                error.SetError("Введено неверное значение длины массива");                
+                return false;
+            }
+            
+        }
         
 
         private void button1_Click(object sender, EventArgs e)
@@ -165,38 +179,44 @@ namespace ProjectArrayShifter
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            Logger.Log("Нажата кнопка сдвинуть");
+            Logger.Log("Нажата кнопка сдвинуть");            
             ShiftArray();
         }
 
 
-        private void ShiftArray()
+        private bool ShiftArray()
         {
-            SetStartValue();
+            
             // проверить верные ли значения в InputField
             if (!CheckArrayField())
             {
-                return;
+                return false;
             }
             
             var array = GetArrayFromField();
-            if (array == null) return;
+            if (array == null) return false;
             if(array.Count > ArraySize)
             {
                 // Значений в массиве больше чем указано
                 error.SetError("Значений в массиве больше чем указано");
-                return;
+                return false;
             } else if(array.Count < ArraySize)
             {
                 error.SetError("Значений в массиве меньше чем указано");
-                return;
+                return false;
             }
             shift(array);
+            UpdateStartValue();
+            return true;
 
 
         }
 
 
+        private void onKeyPressed(object sender, EventArgs e)
+        {
+            isRed = true;
+        }
 
         private void shift(List<double> array) 
         {
@@ -413,12 +433,26 @@ namespace ProjectArrayShifter
             }
             else if(fileSplitter.Length == 2)
             {
-                inputArraySize.Text = fileSplitter[0];
-                if (inputArraySize_OnChanged(startValues.file))
+                var arraySize = fileSplitter[0].Replace("\r","");
+                if (CheckArraySize(arraySize))
                 {
-                    ArrayInput = fileSplitter[1];
-                    ShiftArray();
+                    inputArraySize.Text = arraySize;
+                    if (inputArraySize_OnChanged(startValues.file))
+                    {
+                        ArrayInput = fileSplitter[1];
+                        if (!ShiftArray())
+                        {
+                            inputArraySize.Text = "";
+                            ArrayInput = "";
+                            panel2.Visible = false;
+                        }
+                    }
+                    else
+                    {
+
+                    }
                 }
+                
                 
             }
             else
@@ -447,7 +481,9 @@ namespace ProjectArrayShifter
 
         void Form1_DragDrop(object sender, DragEventArgs e)
         {
-            data = startValues.file;
+            
+            SetStartValue(startValues.file);
+            
             Logger.Log("Был загружен файл");
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
             if(files.Length == 1)
@@ -533,7 +569,8 @@ namespace ProjectArrayShifter
 
         private void button3_Click(object sender, EventArgs e)
         {
-            data = startValues.random;
+            SetStartValue(startValues.random);
+            
             Random();
         }
 
@@ -549,22 +586,50 @@ namespace ProjectArrayShifter
             }
         }
 
-        private void SetStartValue()
+        private void SetStartValue(startValues value)
         {
-            if(m_data == startValues.hands)
+            m_data = value;
+            if (m_data == startValues.random)
+            {
+                isRed = false;
+                
+            }
+            else if (m_data == startValues.file)
+            {
+                isRed = false;
+                
+            }
+            else if (m_data == startValues.Null)
+            {
+                isRed = false;
+                
+            }
+        }
+
+        private void UpdateStartValue()
+        {
+            if (m_data == startValues.hands)
             {
                 label7.Text = "Данные были введены вручную";
-            } 
-            else if(m_data == startValues.random)
+            }
+            
+            else if (isRed)
             {
+                label7.Text = "Данные были отредактированы";
+            }
+            else if (m_data == startValues.random)
+            {
+                isRed = false;
                 label7.Text = "Данные были введены случайно";
             }
             else if (m_data == startValues.file)
             {
+                isRed = false;
                 label7.Text = "Данные были введены с файла";
             }
             else if (m_data == startValues.Null)
             {
+                isRed = false;
                 label7.Text = "";
             }
         }
@@ -573,6 +638,8 @@ namespace ProjectArrayShifter
         /// Это редактированные данные, а не введенные вручную
         /// </summary>
         private bool isRed = false;
+        
+        private bool wasNone = true;
 
         private enum startValues
         {
@@ -580,6 +647,11 @@ namespace ProjectArrayShifter
             random,
             file,
             Null,
+        }
+
+        private void ArrayInputField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            isRed = true;
         }
     }
 }
