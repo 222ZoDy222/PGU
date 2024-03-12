@@ -19,8 +19,9 @@ namespace ProjectArrayShifter
 
 
 
-        public void SetResult(string result)
+        public void SetResult(string result, string start)
         {
+            Logger.LogResult($"Результат сдвига {result} \n Начальные значения: {start}");
             ResultText.Text = result;
         }
 

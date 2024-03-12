@@ -49,6 +49,17 @@ namespace ProjectArrayShifter
 
         }
 
+        public static void LogResult(string result)
+        {
+            var baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string fileName = "Last_Output" + ".txt";
+            string filePath = Path.Combine(baseDir, fileName);
+            File.WriteAllText(filePath, result);
+
+        }
+
+
+
         private void CheckDir()
         {
 

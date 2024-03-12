@@ -1,0 +1,355 @@
+/3.1
+(ODB.1
+	FirstRootClassName:	"Legend"
+	Roots:	2
+	Version:	32
+)
+
+(Legend.2
+	LegType:	0x04
+	ClassType:	0x03
+	FieldNames:	3
+	Symbols:	4
+	Class:	47
+	Class:	48
+	Class:	49
+	Class:	50
+	Class:	51
+	Class:	52
+	StdDevs:	1.00000000000000
+	NullSym:	53
+	NullValues:	60
+	StatValues:	61
+	Precision:	-3
+)
+
+(AVStr.3
+	S:	"Population"
+)
+
+(SymList.4
+	Child:	5
+	Child:	12
+	Child:	19
+	Child:	26
+	Child:	33
+	Child:	40
+)
+
+(BMkSym.5
+	Color:	6
+	BgColor:	7
+	Font:	8
+	Size:	4.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.6
+	Red:	0xc429
+	Green:	0x2541
+	Blue:	0xd1db
+)
+
+(TClr.7
+	Name:	"Transparent"
+)
+
+(NFont.8
+	Family:	9
+	Name:	10
+	Style:	11
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.9
+	S:	"@Arial Unicode MS"
+)
+
+(AVStr.10
+	S:	"@Arial Unicode MS"
+)
+
+(AVStr.11
+	S:	"Обычный"
+)
+
+(BMkSym.12
+	Color:	13
+	BgColor:	14
+	Font:	15
+	Size:	6.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.13
+	Red:	0xc429
+	Green:	0x2541
+	Blue:	0xd1db
+)
+
+(TClr.14
+	Name:	"Transparent"
+)
+
+(NFont.15
+	Family:	16
+	Name:	17
+	Style:	18
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.16
+	S:	"@Arial Unicode MS"
+)
+
+(AVStr.17
+	S:	"@Arial Unicode MS"
+)
+
+(AVStr.18
+	S:	"Обычный"
+)
+
+(BMkSym.19
+	Color:	20
+	BgColor:	21
+	Font:	22
+	Size:	8.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.20
+	Red:	0xc429
+	Green:	0x2541
+	Blue:	0xd1db
+)
+
+(TClr.21
+	Name:	"Transparent"
+)
+
+(NFont.22
+	Family:	23
+	Name:	24
+	Style:	25
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.23
+	S:	"@Arial Unicode MS"
+)
+
+(AVStr.24
+	S:	"@Arial Unicode MS"
+)
+
+(AVStr.25
+	S:	"Обычный"
+)
+
+(BMkSym.26
+	Color:	27
+	BgColor:	28
+	Font:	29
+	Size:	10.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.27
+	Red:	0xc429
+	Green:	0x2541
+	Blue:	0xd1db
+)
+
+(TClr.28
+	Name:	"Transparent"
+)
+
+(NFont.29
+	Family:	30
+	Name:	31
+	Style:	32
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.30
+	S:	"@Arial Unicode MS"
+)
+
+(AVStr.31
+	S:	"@Arial Unicode MS"
+)
+
+(AVStr.32
+	S:	"Обычный"
+)
+
+(BMkSym.33
+	Color:	34
+	BgColor:	35
+	Font:	36
+	Size:	12.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.34
+	Red:	0xc429
+	Green:	0x2541
+	Blue:	0xd1db
+)
+
+(TClr.35
+	Name:	"Transparent"
+)
+
+(NFont.36
+	Family:	37
+	Name:	38
+	Style:	39
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.37
+	S:	"@Arial Unicode MS"
+)
+
+(AVStr.38
+	S:	"@Arial Unicode MS"
+)
+
+(AVStr.39
+	S:	"Обычный"
+)
+
+(BMkSym.40
+	Color:	41
+	BgColor:	42
+	Font:	43
+	Size:	8.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.41
+	Name:	"Transparent"
+)
+
+(TClr.42
+	Name:	"Transparent"
+)
+
+(NFont.43
+	Family:	44
+	Name:	45
+	Style:	46
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.44
+	S:	"@Arial Unicode MS"
+)
+
+(AVStr.45
+	S:	"@Arial Unicode MS"
+)
+
+(AVStr.46
+	S:	"Обычный"
+)
+
+(LClass.47
+	Label:	"-99 - 909000"
+	MinNum:	-99.00000000000000
+	MaxNum:	909000.00000000000000
+	Precision:	-3
+)
+
+(LClass.48
+	Label:	"909001 - 2600000"
+	MinNum:	909001.00000000000000
+	MaxNum:	2600000.00000000000000
+	Precision:	-3
+)
+
+(LClass.49
+	Label:	"2600001 - 6130000"
+	MinNum:	2600001.00000000000000
+	MaxNum:	6130000.00000000000000
+	Precision:	-3
+)
+
+(LClass.50
+	Label:	"6130001 - 11100000"
+	MinNum:	6130001.00000000000000
+	MaxNum:	11100000.00000000000000
+	Precision:	-3
+)
+
+(LClass.51
+	Label:	"11100001 - 23620000"
+	MinNum:	11100001.00000000000000
+	MaxNum:	23620000.00000000000000
+	Precision:	-3
+)
+
+(LClass.52
+	IsNoData:	1
+	Label:	"Данные отсутствуют"
+	MaxNum:	-1.00000000000000
+	Precision:	-3
+)
+
+(BMkSym.53
+	Color:	54
+	BgColor:	55
+	Font:	56
+	Size:	8.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.54
+	Name:	"Transparent"
+)
+
+(TClr.55
+	Name:	"Transparent"
+)
+
+(NFont.56
+	Family:	57
+	Name:	58
+	Style:	59
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.57
+	S:	"@Arial Unicode MS"
+)
+
+(AVStr.58
+	S:	"@Arial Unicode MS"
+)
+
+(AVStr.59
+	S:	"Обычный"
+)
+
+(NameDict.60
+)
+
+(NameDict.61
+)
+

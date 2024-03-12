@@ -10,6 +10,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ * Задания:
+ * 
+ * 1) Откуда были введены данные
+ * 2) Данные были отредактированы
+ * 3) Убрать считывание данных из файла, если есть ошибка
+ * 
+ */
+
 namespace ProjectArrayShifter
 {
     public partial class Form1 : Form
@@ -29,6 +38,8 @@ namespace ProjectArrayShifter
 
         private void InitForm()
         {
+            ArrayInput = "";
+            SetStartValue();
             panel2.Visible = false;
             error = new ErrorUI();
             this.AllowDrop = true;
@@ -36,6 +47,8 @@ namespace ProjectArrayShifter
             this.DragDrop += new DragEventHandler(Form1_DragDrop);
         }
         
+
+
 
         private const int minSizeArray = 2;
         private const int maxSizeArray = 15;
@@ -85,20 +98,22 @@ namespace ProjectArrayShifter
         }
 
 
-        
+        private string lastValue = "g";
         public string ArrayInput
         {
             get => ArrayInputField.Text;
 
             set
             {
-                if (ArrayInputField.Text == value) return;
+                if (lastValue == value) return;
+                lastValue = ArrayInputField.Text;
                 ArrayInputField.Text = value;
                 
                 if (value == "")
                 {
                     button2.Visible = false;
                     Logger.Log($"Значение массива очищено");
+                    isRed = false;
                 }
                 else
                 {
@@ -110,8 +125,9 @@ namespace ProjectArrayShifter
 
         }
 
-        private bool inputArraySize_OnChanged()
+        private bool inputArraySize_OnChanged(startValues startValues)
         {
+            data = startValues;
             ArrayInput = "";
             error.SetError(null);
             Logger.Log($"Значение длины массива изменено на {inputArraySize.Text}");
@@ -139,7 +155,7 @@ namespace ProjectArrayShifter
         private void button1_Click(object sender, EventArgs e)
         {
             Logger.Log("Нажата кнопка ввода длины массива");
-            inputArraySize_OnChanged();
+            inputArraySize_OnChanged(startValues.hands);
         }
 
         /// <summary>
@@ -156,6 +172,7 @@ namespace ProjectArrayShifter
 
         private void ShiftArray()
         {
+            SetStartValue();
             // проверить верные ли значения в InputField
             if (!CheckArrayField())
             {
@@ -183,6 +200,7 @@ namespace ProjectArrayShifter
 
         private void shift(List<double> array) 
         {
+            
             List<double> newArray = new List<double>();
             newArray.Add(0);
             newArray.AddRange(array);
@@ -198,7 +216,7 @@ namespace ProjectArrayShifter
 
 
             ResultForm resultForm = new ResultForm();
-            resultForm.SetResult(stringArray);
+            resultForm.SetResult(stringArray, ArrayInput);
             resultForm.ShowDialog();
 
         }
@@ -396,7 +414,7 @@ namespace ProjectArrayShifter
             else if(fileSplitter.Length == 2)
             {
                 inputArraySize.Text = fileSplitter[0];
-                if (inputArraySize_OnChanged())
+                if (inputArraySize_OnChanged(startValues.file))
                 {
                     ArrayInput = fileSplitter[1];
                     ShiftArray();
@@ -416,6 +434,7 @@ namespace ProjectArrayShifter
             if(textBox != null)
             {
                 ArrayInput = textBox.Text;
+                
             }
         }
 
@@ -428,6 +447,7 @@ namespace ProjectArrayShifter
 
         void Form1_DragDrop(object sender, DragEventArgs e)
         {
+            data = startValues.file;
             Logger.Log("Был загружен файл");
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
             if(files.Length == 1)
@@ -497,7 +517,7 @@ namespace ProjectArrayShifter
             stringArray = stringArray.Remove(stringArray.Length - 1);
 
 
-            if (inputArraySize_OnChanged())
+            if (inputArraySize_OnChanged(startValues.random))
             {
                 ArrayInput = stringArray;
                 ShiftArray();
@@ -513,7 +533,53 @@ namespace ProjectArrayShifter
 
         private void button3_Click(object sender, EventArgs e)
         {
+            data = startValues.random;
             Random();
+        }
+
+
+        startValues m_data = startValues.Null;
+        startValues data
+        {
+            get => m_data;
+
+            set
+            {
+                m_data = value;
+            }
+        }
+
+        private void SetStartValue()
+        {
+            if(m_data == startValues.hands)
+            {
+                label7.Text = "Данные были введены вручную";
+            } 
+            else if(m_data == startValues.random)
+            {
+                label7.Text = "Данные были введены случайно";
+            }
+            else if (m_data == startValues.file)
+            {
+                label7.Text = "Данные были введены с файла";
+            }
+            else if (m_data == startValues.Null)
+            {
+                label7.Text = "";
+            }
+        }
+
+        /// <summary>
+        /// Это редактированные данные, а не введенные вручную
+        /// </summary>
+        private bool isRed = false;
+
+        private enum startValues
+        {
+            hands,
+            random,
+            file,
+            Null,
         }
     }
 }

@@ -100,7 +100,10 @@ namespace lab5
 
 
             // Лагранж
-            Lagrange(userPoints);
+            //Lagrange(userPoints);
+
+            // Ньютон
+            Newton();
         }
 
         private void ResetPoints()
@@ -190,8 +193,89 @@ namespace lab5
 
 
 
+        private const double STEP = 10;
+        private const double BLOCK = 1;
+
         private void Newton()
         {
+            if (userPoints.Count < 3) return;
+            List<double> a = new List<double>();
+
+            
+
+
+            #region Comments
+            
+            a.Add(userPoints[0].Y);
+
+
+
+            for (int i = 1; i < userPoints.Count; i++)
+            {
+                //3
+                double temp = userPoints[i].Y;
+                for (int j = 0; j < i; j++)
+                {
+                    double temphuy = a[j];
+                    for (int k = 0; k < j; k++)
+                    {
+                        temphuy *= userPoints[i].X - userPoints[k].X;
+                    }
+                    temp -= temphuy;
+                }
+
+                double summDel = 1;
+                for (int j = 0; j < i; j++)
+                {
+                    summDel *= userPoints[i].X - userPoints[j].X;
+                }
+
+                if (summDel != 0)
+                    temp /= summDel;
+
+                a.Add(temp);
+            }
+
+            List<Point> newPoints = new List<Point>();
+
+
+            for (int i = 0; i < userPoints.Count - 1; i++)
+            {
+                newPoints.Add(new Point(userPoints[i].X, userPoints[i].Y));
+                double stepX = userPoints[i].X;
+                while(stepX + STEP <= userPoints[i + 1].X)
+                {
+                    stepX += STEP;
+
+                    double summ = a[0];
+                    for (int j = 1; j < a.Count; j++)
+                    {
+                        //a[j] * ()
+                        double mult = 1;
+                        for (int k = 0; k < j; k++)
+                        {
+                            var tmp = stepX - userPoints[k].X;
+                            mult *= tmp;
+                        }
+
+                        mult *= a[j];
+
+                        summ += mult;
+                    }
+
+                    newPoints.Add(new Point((int)(stepX), (int)(summ)));
+                }
+
+                
+
+            }
+
+            Brush aBrush = (Brush)Brushes.Blue;
+            foreach (var p in newPoints)
+            {
+                graphics.FillRectangle(aBrush, p.X, p.Y, 5, 5);
+            }
+            #endregion
 
         }
 
