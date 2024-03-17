@@ -100,7 +100,7 @@ namespace lab5
 
 
             // Лагранж
-            //Lagrange(userPoints);
+            Lagrange(userPoints);
 
             // Ньютон
             Newton();
@@ -188,7 +188,11 @@ namespace lab5
 
             Pen greenPen = new Pen(Color.Green, 3);
             graphics.DrawLines(greenPen, result.ToArray());
-
+            //Brush aBrush = (Brush)Brushes.Green;
+            //foreach (var p in result)
+            //{
+            //    graphics.FillRectangle(aBrush, p.X, p.Y, 5, 5);
+            //}
         }
 
 
