@@ -389,7 +389,7 @@ namespace lab5
 
 
         const int border = 1000000; //Максимальный Х, с которым может работать программа
-        private List<Point> Calc_Lagrange(List<PointCurve> point)//Вычисление функции Лагранжа
+        private List<Point> Calc_Lagrange1(List<PointCurve> point)//Вычисление функции Лагранжа
         {
             List<Point> lagrange = new List<Point>();
 
@@ -426,7 +426,33 @@ namespace lab5
             return lagrange;
         }
 
-        
+
+        private double t_STEP = 0.1;
+        private List<Point> Calc_Lagrange(List<PointCurve> point)
+        {
+            double t = 0;
+            List<Point> newPoints = new List<Point>();
+            for (int i = 0; i < point.Count; i++)
+            {
+                newPoints.Add(new Point((int)(point[i].X), (int)(point[i].Y)));
+                for (int j = 0; j < 10; j++)
+                {
+                    t += t_STEP;
+
+                    if(i != j)
+                    {
+                        var x = t / i - j;
+                    }
+                    
+
+                }
+
+
+            }
+
+
+            return null;
+        }
 
 
     }

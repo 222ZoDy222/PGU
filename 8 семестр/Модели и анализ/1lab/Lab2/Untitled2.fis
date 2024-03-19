@@ -1,0 +1,45 @@
+[System]
+Name='Untitled2'
+Type='sugeno'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=0
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='input1'
+Range=[2 4]
+NumMFs=9
+MF1='mf1':'gaussmf',[0.1062 2]
+MF2='mf2':'gaussmf',[0.1062 2.25]
+MF3='mf3':'gaussmf',[0.1062 2.5]
+MF4='mf4':'gaussmf',[0.1062 2.75]
+MF5='mf5':'gaussmf',[0.1062 3]
+MF6='mf6':'gaussmf',[0.1062 3.25]
+MF7='mf7':'gaussmf',[0.1062 3.5]
+MF8='mf8':'gaussmf',[0.1062 3.75]
+MF9='mf9':'gaussmf',[0.1062 4]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=12
+MF1='mf1':'constant',[0]
+MF2='mf2':'constant',[0.5]
+MF3='mf3':'constant',[1]
+MF4='mf4':'constant',[0]
+MF5='mf5':'constant',[0.125]
+MF6='mf6':'constant',[0.25]
+MF7='mf7':'constant',[0.375]
+MF8='mf8':'constant',[0.5]
+MF9='mf9':'constant',[0.625]
+MF10='mf10':'constant',[0.75]
+MF11='mf11':'constant',[0.875]
+MF12='mf12':'constant',[1]
+
+[Rules]

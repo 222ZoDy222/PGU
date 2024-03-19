@@ -1,21 +1,23 @@
+clear
+clc
+x = (2:0.1:4);
+x1 = (2:0.01:4);
+xCool = (2:0.001:4);
+yCool = cos(exp(xCool))./sin(log10(xCool));
+ 
+y = cos(exp(x))./sin(log10(x));
+%y1 = cos(exp(x1))./sin(log10(x1));
 
-L = 200;
-x = (2:4);
-x2 = (2:4);
+p=polyfit(x,y,8);
+f=polyval(p,x1);
+plot(x,y,'*');
+hold on;
+%plot(x,y,'-',x,f,':');
+plot(x1,f,'o');
+plot(xCool,yCool, '-');
 
-N_team = 2;
 
-%cos(exp(x))/sin(ln(x)), x?[2,4]  
 
-y = cos(exp(x))/sin(log(x));
-y2 = cos(exp(x2))/sin(log(x2));
-
-p=polyfit(x,y,3);
-p1=polyval(p,x);
-
-plot(x,p1,'o');
-%hold on 
-%plot(x2,y2,'*')
 
 
 
