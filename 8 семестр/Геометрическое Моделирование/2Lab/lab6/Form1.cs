@@ -103,7 +103,7 @@ namespace lab5
             Lagrange(userPoints);
 
             // Ньютон
-            Newton();
+            Newton(userPoints);
         }
 
         private void ResetPoints()
@@ -186,13 +186,9 @@ namespace lab5
 
             var result = Calc_Lagrange(pointsCurve);
 
-            Pen greenPen = new Pen(Color.Green, 3);
+            Pen greenPen = new Pen(Color.Green, 6);
             graphics.DrawLines(greenPen, result.ToArray());
-            //Brush aBrush = (Brush)Brushes.Green;
-            //foreach (var p in result)
-            //{
-            //    graphics.FillRectangle(aBrush, p.X, p.Y, 5, 5);
-            //}
+            
         }
 
 
@@ -200,7 +196,84 @@ namespace lab5
         private const double STEP = 10;
         private const double BLOCK = 1;
 
-        private void Newton()
+        private void Newton(List<Point> points)
+        {
+            List<Point> newtonPoints = new List<Point>();
+
+            float max_x = points.Max(p => p.X);
+            float min_x = points.Min(x => x.X);
+
+            List<double> xval = new List<double>();
+            List<double> yval = new List<double>();
+
+            for (int i = 0; i < points.Count; i++)
+            {
+                xval.Add(points[i].X);
+                yval.Add(points[i].Y);
+            }
+            double[] prev_point = NewtonPolynomial(xval.ToArray(), yval.ToArray(), 0);
+
+            for (double t = 0; t <= xval.Count - 1; t += 0.01)
+            {
+                var r = NewtonPolynomial(xval.ToArray(), yval.ToArray(), t);
+                //g.DrawLine(bp, new PointF((float)prev_point[0] + 5F, (float)prev_point[1] + 5F), new PointF((float)r[0] + 5F, (float)r[1] + 5F));
+                prev_point[0] = r[0];
+                prev_point[1] = r[1];
+                var point = new Point((int)r[0], (int)r[1]);
+                newtonPoints.Add(point);
+                //g.DrawEllipse(bp, (int)r[0], (int)r[1] + 5, 1, 1);
+            }
+
+
+            Pen greenPen = new Pen(Color.Blue, 3);
+
+            graphics.DrawLines(greenPen, newtonPoints.ToArray());
+
+        }
+
+        public double[] NewtonPolynomial(double[] xValues, double[] yValues, double t)
+        {
+            double[] result = new double[2];
+
+            for (int i = 0; i < xValues.Length; i++)
+            {
+                double[] a = F(xValues, yValues, 0, i);
+                for (int j = 0; j < i; j++)
+                {
+                    a[0] *= (t - j);
+                    a[1] *= (t - j);
+                }
+                result[0] += a[0];
+                result[1] += a[1];
+            }
+            return result;
+        }
+
+        private double[] ConvF(double[] p1, double[] p2, double[] xValues, double[] yValues, int i, int j)
+        {
+            double[] result = new double[2];
+            //result[0] = (p1[0] - p2[0]) / (xValues[i+j] - xValues[i]);
+            // result[1] = (p1[1] - p2[1]) / (yValues[i + j] - yValues[i]);
+            result[0] = (p1[0] - p2[0]) / (i + j - i);
+            result[1] = (p1[1] - p2[1]) / (i + j - i);
+            return result;
+
+        }
+        public double[] F(double[] xValues, double[] yValues, int i, int j)
+        {
+            if (j == 0)
+            {
+                return new double[] { xValues[i], yValues[i] };
+            }
+            else
+            {
+                //return (F(xValues, yValues, i + 1, j - 1) - F(xValues, yValues, i, j - 1)) / (xValues[i + j] - xValues[i]);
+                return ConvF(F(xValues, yValues, i + 1, j - 1), F(xValues, yValues, i, j - 1), xValues, yValues, i, j);
+            }
+        }
+
+
+        private void Newton1()
         {
             if (userPoints.Count < 3) return;
             List<double> a = new List<double>();
@@ -389,69 +462,96 @@ namespace lab5
 
 
         const int border = 1000000; //Максимальный Х, с которым может работать программа
-        private List<Point> Calc_Lagrange1(List<PointCurve> point)//Вычисление функции Лагранжа
+        private List<Point> Calc_Lagrange1(List<PointCurve> points)//Вычисление функции Лагранжа
         {
-            List<Point> lagrange = new List<Point>();
+            #region SHIT
+            //List<Point> lagrange = new List<Point>();
 
-            //Установим максимум/минимум для X
-            double minX = border;
-            double maxX = -border;
+            ////Установим максимум/минимум для X
+            //double minX = border;
+            //double maxX = -border;
 
-            //Вычисляем область определения, на которой будем строить график:
-            for (int i = 0; i < point.Count; i++)
-            {
-                if (point[i].X > maxX) maxX = point[i].X;
-                if (point[i].X < minX) minX = point[i].X;
-            }
+            ////Вычисляем область определения, на которой будем строить график:
+            //for (int i = 0; i < point.Count; i++)
+            //{
+            //    if (point[i].X > maxX) maxX = point[i].X;
+            //    if (point[i].X < minX) minX = point[i].X;
+            //}
 
-            //Работа с БАЗИСНЫМ полиномом:
-            for (int X = Convert.ToInt32(minX); X <= Convert.ToInt32(maxX); X++)
-            {
-                double Y = 0.0;
-                for (int i = 0; i < point.Count; i++)
-                {
-                    //Вычисляем х для базисного полинома
-                    double basis = 1.0;
-                    for (int j = 0; j < point.Count; j++)
-                        if (j != i)
-                            basis *= (X - point[j].X) / (point[i].X - point[j].X);
-                    //Вычисляем y
-                    Y += basis * point[i].Y;
-                }
+            ////Работа с БАЗИСНЫМ полиномом:
+            //for (int X = Convert.ToInt32(minX); X <= Convert.ToInt32(maxX); X++)
+            //{
+            //    double Y = 0.0;
+            //    for (int i = 0; i < point.Count; i++)
+            //    {
+            //        //Вычисляем х для базисного полинома
+            //        double basis = 1.0;
+            //        for (int j = 0; j < point.Count; j++)
+            //            if (j != i)
+            //                basis *= (X - point[j].X) / (point[i].X - point[j].X);
+            //        //Вычисляем y
+            //        Y += basis * point[i].Y;
+            //    }
 
-                //Записываем координаты полученной точки в массив
-                Point newPoint = new Point(X, (int)Y);                
-                lagrange.Add(newPoint);
-            }
-            return lagrange;
-        }
-
-
-        private double t_STEP = 0.1;
-        private List<Point> Calc_Lagrange(List<PointCurve> point)
-        {
-            double t = 0;
-            List<Point> newPoints = new List<Point>();
-            for (int i = 0; i < point.Count; i++)
-            {
-                newPoints.Add(new Point((int)(point[i].X), (int)(point[i].Y)));
-                for (int j = 0; j < 10; j++)
-                {
-                    t += t_STEP;
-
-                    if(i != j)
-                    {
-                        var x = t / i - j;
-                    }
-                    
-
-                }
-
-
-            }
-
+            //    //Записываем координаты полученной точки в массив
+            //    Point newPoint = new Point(X, (int)Y);                
+            //    lagrange.Add(newPoint);
+            //}
+            //return lagrange;
+            #endregion
 
             return null;
+           
+
+        }
+
+        public double[] LagrangePolynomialNew(float t, List<PointCurve> points)
+        {
+            double[] r = new double[2];
+            for (int i = 0; i < points.Count; i++)
+            {
+                float basicsPol = 1;
+                for (int j = 0; j < points.Count; j++)
+                {
+                    if (i != j)
+                    {
+                        basicsPol *= (t - j) / (i - j);
+                    }
+                }
+                r[0] += basicsPol * points[i].X;
+                r[1] += basicsPol * points[i].Y;
+            }
+
+            return r;
+        }
+
+        private double t_STEP = 0.1;
+        private List<Point> Calc_Lagrange(List<PointCurve> points)
+        {
+            List<Point> lagrangePoints = new List<Point>();
+
+            List<double> xval = new List<double>();
+            List<double> yval = new List<double>();
+            for (int i = 0; i < points.Count; i++)
+            {
+                xval.Add(points[i].X);
+                yval.Add(points[i].Y);
+            }
+
+            double[] prev_point = new double[2];
+            for (float t = 0; t <= xval.Count-1; t += (float)0.01)
+            {
+
+                double[] r = LagrangePolynomialNew(t, points);
+                
+                prev_point[0] = r[0];
+                prev_point[1] = r[1];
+                var newPoint = new Point((int)r[0], (int)r[1]);
+                lagrangePoints.Add(newPoint);
+                //g.DrawEllipse(rp, r[0], r[1], 1, 1);
+            }
+
+            return lagrangePoints;
         }
 
 

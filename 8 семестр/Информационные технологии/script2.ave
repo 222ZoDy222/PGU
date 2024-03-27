@@ -1,0 +1,54 @@
+' Name:  Новое имя
+'
+' Title:  Структура таблицы
+'
+' Topics:  Tables
+'
+' Description:  Выводит описание структуры таблицы
+'
+' Условия:  Активным элементом должна быть таблица.
+'
+' Self:  
+'
+' Returns:  
+
+
+atbl=av.getactivedoc
+if(atbl.is(table).not) then
+ msgbox.error("A table document must be active.","Error")
+ exit
+end
+
+theVTab1 = atbl.getvtab
+theBitMap1 = theVTab1.GetSelection
+fList = theVTab1.GetFields
+atab=tab+tab+tab+tab
+totalchar = "Alias"+atab+"Type"+atab+"Width"+atab+"Decimal"
+totalchar=totalchar+nl+"---------------------------------------------------------------------"
+longname=0
+
+for each afld in flist
+ aname=afld.getalias
+ if (aname.count > longname) then
+   longname=aname.count
+ end
+end
+
+
+for each subitem in flist
+  aspace=" "
+  itList = subitem.gettype
+  itPrecision=subitem.getPrecision
+  itwidth=subitem.getwidth
+  aname=subitem.getalias
+    
+  compilation=aname+","+atab+itlist.asString+","+atab+itWidth.asString+","
+    +atab+itPrecision.asString   
+  totalchar=totalchar +nl+ compilation
+    
+end
+
+MsgBox.report(totalchar, "Items from "+atbl.getname.asstring)
+
+
+

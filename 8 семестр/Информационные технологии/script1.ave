@@ -1,0 +1,104 @@
+' Name:  Project.SaveAllScripts
+' 
+' Title:  Saves all scripts to current working directory
+' Заголовок: Сохраняет все скрипты в рабочую директорию
+'
+' Topics:  Scripts
+'
+'
+'
+'
+' Описание:
+' записывает все скрипты текущего проекта в рабочий
+' каталог. Имя файла по умолчанию будет именем SEd в
+' проект. Пробелы в названии заменяются. Пользователь может по желанию
+' выбираем принудительное использование уникальных имен файлов, совместимых с версией 8.3. 
+' В противном случае предупреждение
+' отображается, если файл уже существует.
+'
+'
+'
+'
+'
+' Description:  Writes all scripts in the current project to the working
+' directory.  The default filename will be the name of the SEd in the
+' project.  Blanks in the name are substituted.  The user may optionally 
+' choose to enforce unique 8.3 compliant filenames.  Otherwise, a warning 
+' is displayed if the file already exists.
+'
+' Requires:  
+'
+' Self:  
+'
+' Returns:  
+
+' 
+' Если скрипты должны будут сохраняться в другом месте, измените строки снизу
+'
+saveDir = av.GetProject.GetWorkDir 
+saveDirStr = av.GetProject.GetWorkDir.GetFullName
+
+if (File.Exists(saveDir).Not) then
+  MsgBox.Error("Working directory:"++saveDirStr++"does not exist", "")
+  exit 
+end
+
+theScriptList = List.Make
+
+for each d in av.GetProject.GetDocs
+  if (d.Is(SEd)) then
+    theScriptList.Add(d)
+  end
+end
+
+
+ok = MsgBox.YesNo("Are you sure you want to write all scripts to:"+NL+
+  saveDirStr+"?", "Save Scripts", true)
+if (ok.Not) then
+  exit
+end
+
+
+' 
+' Циклическая запись каждого сценария в системный файл
+'
+enforce = MsgBox.YesNoCancel("Create 8.3 unique file names?", 
+  "Save Scripts", true)
+if (enforce = Nil) then
+  exit
+end
+
+for each scriptName in theScriptList
+  
+  theFile = scriptName.AsString.LCase.Substitute(" ","_")
+
+  if (enforce) then
+    theFile = scriptName.AsString.LCase.Substitute("","_")
+    outFile = FN.Make(saveDirStr).MakeTmp(theFile, "ave")
+  else
+    theFile = scriptName.AsString.LCase.Substitute(" ","_")
+    outFile = FileName.Merge(saveDirStr, theFile)
+    outFile.SetExtension("ave")
+    if (outFile.IsFile) then
+      ok = MsgBox.YesNoCancel("Overwrite"++outFile.GetFullName+"?", 
+        "Save Scripts", true)
+      if (ok = Nil) then
+        exit
+      elseif (Not ok) then
+        continue 
+      end
+    end
+  end 
+  
+  lf = LineFile.Make(outFile, #FILE_PERM_WRITE)
+  if (lf <> nil) then
+    lf.WriteElt(scriptName.GetScript.AsString)
+    lf.Close
+  else
+    MsgBox.Warning("Unable to write:"++outFile.GetFullName,"")
+  end
+end
+
+av.ShowMsg("Scripts written to:"++saveDirStr)
+
+

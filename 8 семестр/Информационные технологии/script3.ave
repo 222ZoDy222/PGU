@@ -1,0 +1,104 @@
+' Name:  Script.MakeScriptFromFile
+' 
+' Title:  Imports text from file into new SEd document(s)
+' Заголовок: Импортирует текст из файла в новый скриптовый файл проекта
+
+' Topics:  Scripts
+'
+' Description:  Creates a new SEd from the specified source file(s) and
+' adds the new SEd to the project.  Checks for a Name specified in the header
+' and if found sets the SEd name to the header name, otherwise uses the 
+' basename of the source file.  Uses the ArcView standard header.
+'
+' Описание: Создает новый SEd из указанных исходных файлов и
+' добавляет в проект новый SEd. Проверяет имя, указанное в заголовке
+' и если он найден, устанавливает имя SEd в имя заголовка, в противном случае используется
+' базовое имя исходного файла. Использует стандартный заголовок ArcView.
+' 
+'
+' Requires:  
+'
+' Self:  
+'
+' Returns:  
+
+' Only search the first few lines in the header for the script name...
+'
+lineSearchLimit = 5 
+
+aveFileNameList = FileDialog.ReturnFiles( {"*.ave", "*.txt"}, {"Script (*.ave)",
+  "Text File (*.txt)"}, "Load Scripts",0 )
+if ( aveFileNameList.Count < 1 ) then 
+  exit 
+end
+
+total = aveFileNameList.Count
+counter = 0
+
+for each aveFileName in aveFileNameList
+  counter = counter + 1
+  lineCount = 0
+  av.ShowMsg( aveFileName.GetBaseName )
+
+  aveFile = LineFile.Make( aveFileName, #FILE_PERM_READ )
+
+  ' Ищем в файле имя заголовка
+  ' 
+  hasName  = false
+  done     = false
+
+  While ( done.Not )
+    theString = aveFile.ReadElt
+    lineCount = lineCount + 1
+    if ( theString = nil ) then
+      done = true
+    elseif ( theString.Contains( "Name:" )) then
+      sedName = theString.Substitute( "Name:", "").BasicTrim( "' "," " )
+      if ( sedName <> "" ) then
+        hasName = true
+      end 
+      done = true
+    elseif( lineCount = lineSearchLimit ) then 
+      done = true
+    else
+      continue
+    end
+  end
+
+  
+  ' Загружаем все содержимое файла в лист
+  '
+  stringList = List.Make 
+  aveFile.GotoBeg
+  aveFile.Read( stringList, aveFile.GetSize ) 
+  aveFile.Close
+  
+  ' Ковертируем лист строк в длинный список строк
+  '
+  sourceString = nil
+  for each s in stringList 
+    if ( sourceString = nil ) then
+      sourceString = s 
+    else
+      sourceString = sourceString + nl + s  
+    end
+  end
+
+  ' Создаем скрипт в проекте и вставляем туда строку кода из основного файла 
+  '
+  if ( hasName.Not ) then
+    sedName = aveFileName.GetBaseName
+  end
+
+  theSEd = SEd.MakeFromSource( sourceString, sedName )
+
+  av.GetProject.AddDOC( theSEd )
+  theSEd.GetWin.Open 
+
+  av.SetStatus( (counter/total) * 100 )
+end
+
+av.ClearStatus
+av.ClearMsg
+
+
