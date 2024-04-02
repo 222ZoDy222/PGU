@@ -200,82 +200,46 @@ namespace lab5
         {
             List<Point> newtonPoints = new List<Point>();
 
-            float max_x = points.Max(p => p.X);
-            float min_x = points.Min(x => x.X);
+            List<double> a_x = Newton_2_x();
+            List<double> a_y = Newton_2_y();
 
-            List<double> xval = new List<double>();
-            List<double> yval = new List<double>();
 
-            for (int i = 0; i < points.Count; i++)
+            for (double t = 0; t <= points.Count - 1; t += STEP)
             {
-                xval.Add(points[i].X);
-                yval.Add(points[i].Y);
-            }
-            double[] prev_point = NewtonPolynomial(xval.ToArray(), yval.ToArray(), 0);
+                var point = NewtonPolynomial(a_x.ToArray(),a_y.ToArray(), t);
 
-            for (double t = 0; t <= xval.Count - 1; t += STEP)
-            {
-                var r = NewtonPolynomial(xval.ToArray(), yval.ToArray(), t);
-                
-                prev_point[0] = r[0];
-                prev_point[1] = r[1];
-                var point = new Point((int)r[0], (int)r[1]);
                 newtonPoints.Add(point);
-                //g.DrawEllipse(bp, (int)r[0], (int)r[1] + 5, 1, 1);
             }
 
 
-            Pen greenPen = new Pen(Color.Blue, 3);
-
-            graphics.DrawLines(greenPen, newtonPoints.ToArray());
+            Pen bluePen = new Pen(Color.Blue, 3);
+            graphics.DrawLines(bluePen, newtonPoints.ToArray());
 
         }
 
-        public double[] NewtonPolynomial(double[] xValues, double[] yValues, double t)
+        public Point NewtonPolynomial(double[] a_x, double[] a_y, double t)
         {
-            double[] result = new double[2];
+            Point result = new Point();
+            //double[] result = new double[2];
 
-            for (int i = 0; i < xValues.Length; i++)
-            {
-                double[] a = F(xValues, yValues, 0, i);
-                List<double> a_x = Newton_2_x(t);
-                List<double> a_y = Newton_2_y(t);
-
+            for (int i = 0; i < a_x.Length; i++)
+            {                
                 for (int j = 0; j < i; j++)
                 {
-                    a[0] *= (t - j);
-                    a[1] *= (t - j);
+                    a_x[i] *= (t - j);
+                    a_y[i] *= (t - j);
                 }
-                result[0] += a[0];
-                result[1] += a[1];
+                result.X += (int)a_x[i];
+                result.Y += (int)a_y[i];
             }
+
+            
             return result;
         }
 
-        private double[] ConvF(double[] p1, double[] p2, double[] xValues, double[] yValues, int i, int j)
-        {
-            double[] result = new double[2];
-            //result[0] = (p1[0] - p2[0]) / (xValues[i+j] - xValues[i]);
-            // result[1] = (p1[1] - p2[1]) / (yValues[i + j] - yValues[i]);
-            result[0] = (p1[0] - p2[0]) / (i + j - i);
-            result[1] = (p1[1] - p2[1]) / (i + j - i);
-            return result;
+        
 
-        }
-        public double[] F(double[] xValues, double[] yValues, int i, int j)
-        {
-            if (j == 0)
-            {
-                return new double[] { xValues[i], yValues[i] };
-            }
-            else
-            {
-                //return (F(xValues, yValues, i + 1, j - 1) - F(xValues, yValues, i, j - 1)) / (xValues[i + j] - xValues[i]);
-                return ConvF(F(xValues, yValues, i + 1, j - 1), F(xValues, yValues, i, j - 1), xValues, yValues, i, j);
-            }
-        }
-
-        private List<double> Newton_2_x(double t)
+        private List<double> Newton_2_y()
         {
             
             List<double> a = new List<double>();
@@ -293,7 +257,7 @@ namespace lab5
                     double tempMult = a[j];
                     for (int k = 0; k < j; k++)
                     {
-                        tempMult *= t - k;
+                        tempMult *= i - k;
                     }
                     temp -= tempMult;
                 }
@@ -301,7 +265,7 @@ namespace lab5
                 double summDel = 1;
                 for (int j = 0; j < i; j++)
                 {
-                    summDel *= t - j;
+                    summDel *= i - j;
                 }
 
                 if (summDel != 0)
@@ -313,7 +277,7 @@ namespace lab5
             return a;
         }
 
-        private List<double> Newton_2_y(double t)
+        private List<double> Newton_2_x()
         {
 
             List<double> a = new List<double>();
@@ -331,7 +295,7 @@ namespace lab5
                     double tempMult = a[j];
                     for (int k = 0; k < j; k++)
                     {
-                        tempMult *= t - k;
+                        tempMult *= i - k;
                     }
                     temp -= tempMult;
                 }
@@ -339,7 +303,7 @@ namespace lab5
                 double summDel = 1;
                 for (int j = 0; j < i; j++)
                 {
-                    summDel *= t - j;
+                    summDel *= i - j;
                 }
 
                 if (summDel != 0)
