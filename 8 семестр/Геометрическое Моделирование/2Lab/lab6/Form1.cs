@@ -193,7 +193,7 @@ namespace lab5
 
 
 
-        private const double STEP = 10;
+        private const double STEP = 0.01;
         private const double BLOCK = 1;
 
         private void Newton(List<Point> points)
@@ -213,10 +213,10 @@ namespace lab5
             }
             double[] prev_point = NewtonPolynomial(xval.ToArray(), yval.ToArray(), 0);
 
-            for (double t = 0; t <= xval.Count - 1; t += 0.01)
+            for (double t = 0; t <= xval.Count - 1; t += STEP)
             {
                 var r = NewtonPolynomial(xval.ToArray(), yval.ToArray(), t);
-                //g.DrawLine(bp, new PointF((float)prev_point[0] + 5F, (float)prev_point[1] + 5F), new PointF((float)r[0] + 5F, (float)r[1] + 5F));
+                
                 prev_point[0] = r[0];
                 prev_point[1] = r[1];
                 var point = new Point((int)r[0], (int)r[1]);
@@ -238,6 +238,9 @@ namespace lab5
             for (int i = 0; i < xValues.Length; i++)
             {
                 double[] a = F(xValues, yValues, 0, i);
+                List<double> a_x = Newton_2_x(t);
+                List<double> a_y = Newton_2_y(t);
+
                 for (int j = 0; j < i; j++)
                 {
                     a[0] *= (t - j);
@@ -272,6 +275,81 @@ namespace lab5
             }
         }
 
+        private List<double> Newton_2_x(double t)
+        {
+            
+            List<double> a = new List<double>();
+
+            a.Add(userPoints[0].Y);
+
+
+
+            for (int i = 1; i < userPoints.Count; i++)
+            {
+                //3
+                double temp = userPoints[i].Y;
+                for (int j = 0; j < i; j++)
+                {
+                    double tempMult = a[j];
+                    for (int k = 0; k < j; k++)
+                    {
+                        tempMult *= t - k;
+                    }
+                    temp -= tempMult;
+                }
+
+                double summDel = 1;
+                for (int j = 0; j < i; j++)
+                {
+                    summDel *= t - j;
+                }
+
+                if (summDel != 0)
+                    temp /= summDel;
+
+                a.Add(temp);
+            }
+
+            return a;
+        }
+
+        private List<double> Newton_2_y(double t)
+        {
+
+            List<double> a = new List<double>();
+
+            a.Add(userPoints[0].X);
+
+
+
+            for (int i = 1; i < userPoints.Count; i++)
+            {
+                //3
+                double temp = userPoints[i].X;
+                for (int j = 0; j < i; j++)
+                {
+                    double tempMult = a[j];
+                    for (int k = 0; k < j; k++)
+                    {
+                        tempMult *= t - k;
+                    }
+                    temp -= tempMult;
+                }
+
+                double summDel = 1;
+                for (int j = 0; j < i; j++)
+                {
+                    summDel *= t - j;
+                }
+
+                if (summDel != 0)
+                    temp /= summDel;
+
+                a.Add(temp);
+            }
+
+            return a;
+        }
 
         private void Newton1()
         {
@@ -293,12 +371,12 @@ namespace lab5
                 double temp = userPoints[i].Y;
                 for (int j = 0; j < i; j++)
                 {
-                    double temphuy = a[j];
+                    double tempMult = a[j];
                     for (int k = 0; k < j; k++)
                     {
-                        temphuy *= userPoints[i].X - userPoints[k].X;
+                        tempMult *= userPoints[i].X - userPoints[k].X;
                     }
-                    temp -= temphuy;
+                    temp -= tempMult;
                 }
 
                 double summDel = 1;
