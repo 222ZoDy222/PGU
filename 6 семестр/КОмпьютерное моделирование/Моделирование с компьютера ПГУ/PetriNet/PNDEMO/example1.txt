@@ -1,4 +1,0 @@
-3
-if  d1 = on then k1 = 1 result d2 = on and d3 = on;
-if d3 on then k2 = 1 result d4 = on;
-if d2 = on and d4 = on then k1 = 0 result d1 = on

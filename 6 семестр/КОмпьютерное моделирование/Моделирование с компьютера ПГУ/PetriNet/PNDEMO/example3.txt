@@ -1,9 +1,0 @@
-8
-if p1 on then
-  begin
-    if [p6 on] then k1=0 and k2=1 result p2 on;
-    if [p6 off] then k1=1 and k2=0 result p3 on;
-    if p5 on then k1=1 and k2=1 result p4 on
-  end;
-if p2 on and p4 on then k3=1 result p1 on;
-if p3 on then k3=0 result p5 on
